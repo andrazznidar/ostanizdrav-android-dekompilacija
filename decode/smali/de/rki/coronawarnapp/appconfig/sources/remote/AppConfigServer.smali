@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAppConfigServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AppConfigServer.kt\nde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,108:1\n1#2:109\n*E\n"
+    value = "SMAP\nAppConfigServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AppConfigServer.kt\nde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,120:1\n1#2:121\n*E\n"
 .end annotation
 
 
@@ -26,11 +26,11 @@
     .end annotation
 .end field
 
+.field public final signatureValidation:Lde/rki/coronawarnapp/util/security/SignatureValidation;
+
 .field public final testSettings:Lde/rki/coronawarnapp/storage/TestSettings;
 
 .field public final timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
-
-.field public final verificationKeys:Lde/rki/coronawarnapp/util/security/VerificationKeys;
 
 
 # direct methods
@@ -51,22 +51,14 @@
 
     sput-object v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->DATE_FORMAT:Lorg/joda/time/format/DateTimeFormatter;
 
-    const-class v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "AppConfigServer::class.java.simpleName"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "AppConfigServer"
 
     sput-object v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->TAG:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>(Ldagger/Lazy;Lde/rki/coronawarnapp/util/security/VerificationKeys;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/storage/TestSettings;)V
+.method public constructor <init>(Ldagger/Lazy;Lde/rki/coronawarnapp/util/security/SignatureValidation;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/storage/TestSettings;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -74,7 +66,7 @@
             "Ldagger/Lazy<",
             "Lde/rki/coronawarnapp/appconfig/download/AppConfigApiV2;",
             ">;",
-            "Lde/rki/coronawarnapp/util/security/VerificationKeys;",
+            "Lde/rki/coronawarnapp/util/security/SignatureValidation;",
             "Lde/rki/coronawarnapp/util/TimeStamper;",
             "Lde/rki/coronawarnapp/storage/TestSettings;",
             ")V"
@@ -85,15 +77,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "verificationKeys"
+    const-string/jumbo v0, "signatureValidation"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "timeStamper"
+    const-string/jumbo v0, "timeStamper"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "testSettings"
+    const-string/jumbo v0, "testSettings"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -101,7 +93,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->api:Ldagger/Lazy;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->verificationKeys:Lde/rki/coronawarnapp/util/security/VerificationKeys;
+    iput-object p2, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->signatureValidation:Lde/rki/coronawarnapp/util/security/SignatureValidation;
 
     iput-object p3, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
@@ -113,7 +105,7 @@
 
 # virtual methods
 .method public final downloadAppConfig$Corona_Warn_App_deviceRelease(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 12
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -159,19 +151,21 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer$downloadAppConfig$1;->label:I
 
-    const/4 v3, 0x0
+    const-string v3, "TAG"
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v4, :cond_1
+    if-ne v2, v5, :cond_1
 
     iget-object v0, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer$downloadAppConfig$1;->L$0:Ljava/lang/Object;
 
     check-cast v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -185,19 +179,21 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    sget-object p1, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v2, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->TAG:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-array v2, v3, [Ljava/lang/Object;
+    invoke-virtual {p1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const-string v5, "Fetching app config."
+    new-array v2, v4, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v5, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v6, "Fetching app config."
+
+    invoke-virtual {p1, v6, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->api:Ldagger/Lazy;
 
@@ -209,7 +205,7 @@
 
     iput-object p0, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer$downloadAppConfig$1;->L$0:Ljava/lang/Object;
 
-    iput v4, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer$downloadAppConfig$1;->label:I
+    iput v5, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer$downloadAppConfig$1;->label:I
 
     invoke-interface {p1, v0}, Lde/rki/coronawarnapp/appconfig/download/AppConfigApiV2;->getApplicationConfiguration(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -229,11 +225,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     iget-object v1, p1, Lretrofit2/Response;->body:Ljava/lang/Object;
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
     check-cast v1, Lokhttp3/ResponseBody;
 
@@ -243,23 +239,9 @@
 
     move-result-object v1
 
-    const-string v2, "$this$unzip"
+    invoke-static {v1}, Lde/rki/coronawarnapp/util/ZipHelper;->unzip(Ljava/io/InputStream;)Lkotlin/sequences/Sequence;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v2, Lde/rki/coronawarnapp/util/ZipHelper$unzip$1;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v2, v1, v5}, Lde/rki/coronawarnapp/util/ZipHelper$unzip$1;-><init>(Ljava/io/InputStream;Lkotlin/coroutines/Continuation;)V
-
-    const-string v1, "block"
-
-    invoke-static {v2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v1, Lkotlin/sequences/SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1;
-
-    invoke-direct {v1, v2}, Lkotlin/sequences/SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1;-><init>(Lkotlin/jvm/functions/Function2;)V
+    move-result-object v1
 
     invoke-static {v1}, Lde/rki/coronawarnapp/util/ZipHelper;->readIntoMap(Lkotlin/sequences/Sequence;)Ljava/util/Map;
 
@@ -283,123 +265,168 @@
 
     check-cast v2, [B
 
-    if-eqz v7, :cond_9
+    const/4 v6, 0x0
 
-    if-eqz v2, :cond_9
+    if-eqz v7, :cond_a
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->verificationKeys:Lde/rki/coronawarnapp/util/security/VerificationKeys;
+    if-eqz v2, :cond_a
 
-    invoke-virtual {v1, v7, v2}, Lde/rki/coronawarnapp/util/security/VerificationKeys;->hasInvalidSignature([B[B)Z
+    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->signatureValidation:Lde/rki/coronawarnapp/util/security/SignatureValidation;
+
+    :try_start_0
+    sget-object v8, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;
+
+    invoke-static {v8, v2}, Lcom/google/protobuf/GeneratedMessageLite;->parseFrom(Lcom/google/protobuf/GeneratedMessageLite;[B)Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object v8
+
+    check-cast v8, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;
+
+    iget-object v8, v8, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;->signatures_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    const-string v9, "parseFrom(signatureListP\u2026          .signaturesList"
+
+    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v8}, Lkotlin/collections/CollectionsKt___CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
+
+    move-result-object v8
+
+    sget-object v9, Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$1;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$1;
+
+    const-string v10, "action"
+
+    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v10, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;
+
+    invoke-direct {v10, v9}, Lkotlin/sequences/SequencesKt___SequencesKt$onEach$1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-static {v8, v10}, Lkotlin/sequences/SequencesKt___SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+
+    move-result-object v8
+
+    sget-object v9, Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$2;->INSTANCE:Lde/rki/coronawarnapp/util/security/SignatureValidation$Companion$parseTEKStyleSignature$2;
+
+    invoke-static {v8, v9}, Lkotlin/sequences/SequencesKt___SequencesKt;->mapNotNull(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+
+    move-result-object v2
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    invoke-virtual {v1, v7, v2}, Lde/rki/coronawarnapp/util/security/SignatureValidation;->hasValidSignature([BLkotlin/sequences/Sequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_8
+    if-eqz v1, :cond_9
 
     iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    new-instance v1, Lorg/joda/time/Instant;
+
+    invoke-direct {v1}, Lorg/joda/time/Instant;-><init>()V
 
     iget-object v2, p1, Lretrofit2/Response;->rawResponse:Lokhttp3/Response;
 
     iget-object v2, v2, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
-    const-string v6, "headers"
+    const-string v8, "headers"
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "$this$etag"
+    const-string v8, "ETag"
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v2, v8}, Lokhttp3/Headers;->values(Ljava/lang/String;)Ljava/util/List;
 
-    const-string v6, "ETag"
+    move-result-object v8
 
-    invoke-virtual {v2, v6}, Lokhttp3/Headers;->values(Ljava/lang/String;)Ljava/util/List;
+    invoke-static {v8}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
 
-    move-result-object v6
-
-    invoke-static {v6}, Lkotlin/collections/ArraysKt___ArraysKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    move-object v8, v6
+    move-result-object v8
 
     check-cast v8, Ljava/lang/String;
 
-    if-eqz v8, :cond_7
+    if-eqz v8, :cond_8
 
-    :try_start_0
-    iget-object v6, p1, Lretrofit2/Response;->rawResponse:Lokhttp3/Response;
+    :try_start_1
+    iget-object v9, p1, Lretrofit2/Response;->rawResponse:Lokhttp3/Response;
 
-    iget-object v6, v6, Lokhttp3/Response;->headers:Lokhttp3/Headers;
+    iget-object v9, v9, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
-    const-string v9, "Date"
+    const-string v10, "Date"
 
-    invoke-virtual {v6, v9}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v9, v10}, Lokhttp3/Headers;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v9
 
-    if-eqz v6, :cond_4
+    if-eqz v9, :cond_4
 
     sget-object p1, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->DATE_FORMAT:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-static {v6, p1}, Lorg/joda/time/Instant;->parse(Ljava/lang/String;Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/Instant;
+    invoke-virtual {p1, v9}, Lorg/joda/time/format/DateTimeFormatter;->parseDateTime(Ljava/lang/String;)Lorg/joda/time/DateTime;
 
-    move-result-object v5
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/joda/time/base/AbstractInstant;->toInstant()Lorg/joda/time/Instant;
+
+    move-result-object v6
 
     goto :goto_2
 
     :cond_4
-    new-instance v6, Ljava/lang/IllegalArgumentException;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Server date unavailable: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v9, Ljava/lang/IllegalArgumentException;
 
     iget-object p1, p1, Lretrofit2/Response;->rawResponse:Lokhttp3/Response;
 
     iget-object p1, p1, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
-    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "Server date unavailable: "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v6, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v6
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    throw v9
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     :catch_0
-    new-array p1, v3, [Ljava/lang/Object;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v9, v4, [Ljava/lang/Object;
 
-    const-string v9, "Failed to get server time."
+    const-string v10, "Failed to get server time."
 
-    invoke-virtual {v6, v9, p1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v10, v9}, Ltimber/log/Timber$Forest;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_2
-    if-eqz v5, :cond_5
+    if-nez v6, :cond_5
 
-    move-object v9, v5
+    move-object v9, v1
 
     goto :goto_3
 
     :cond_5
-    move-object v9, v1
+    move-object v9, v6
 
     :goto_3
     sget-object p1, Lde/rki/coronawarnapp/util/CWADebug;->INSTANCE:Lde/rki/coronawarnapp/util/CWADebug;
 
-    sget-boolean p1, Lde/rki/coronawarnapp/util/CWADebug;->isDeviceForTestersBuild:Z
+    invoke-static {}, Lde/rki/coronawarnapp/util/CWADebug;->isDeviceForTestersBuild()Z
+
+    move-result p1
 
     if-eqz p1, :cond_6
 
@@ -419,17 +446,19 @@
 
     if-eqz p1, :cond_6
 
-    sget-object p1, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->TAG:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-array v0, v3, [Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v0, v4, [Ljava/lang/Object;
 
     const-string v1, "Test setting \'fakeCorrectDeviceTime\' is active; time offset is now 0"
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
 
@@ -443,49 +472,67 @@
     :goto_4
     move-object v10, p1
 
-    sget-object p1, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;->TAG:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-array v0, v4, [Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const-string v1, "offset"
+    new-array v1, v5, [Ljava/lang/Object;
 
-    invoke-static {v10, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-wide v11, v10, Lorg/joda/time/base/BaseDuration;->iMillis:J
 
-    iget-wide v4, v10, Lorg/joda/time/base/BaseDuration;->iMillis:J
+    new-instance v3, Ljava/lang/Long;
 
-    new-instance v1, Ljava/lang/Long;
+    invoke-direct {v3, v11, v12}, Ljava/lang/Long;-><init>(J)V
 
-    invoke-direct {v1, v4, v5}, Ljava/lang/Long;-><init>(J)V
+    aput-object v3, v1, v4
 
-    aput-object v1, v0, v3
+    const-string v3, "Time offset was %dms"
 
-    const-string v1, "Time offset was %dms"
+    invoke-virtual {p1, v3, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object v1, Lokhttp3/CacheControl;->Companion:Lokhttp3/CacheControl$Companion;
 
-    sget-object p1, Lokhttp3/CacheControl;->Companion:Lokhttp3/CacheControl$Companion;
+    invoke-virtual {v1, v2}, Lokhttp3/CacheControl$Companion;->parse(Lokhttp3/Headers;)Lokhttp3/CacheControl;
 
-    invoke-virtual {p1, v2}, Lokhttp3/CacheControl$Companion;->parse(Lokhttp3/Headers;)Lokhttp3/CacheControl;
+    move-result-object v1
 
-    move-result-object p1
+    iget v2, v1, Lokhttp3/CacheControl;->maxAgeSeconds:I
 
-    iget p1, p1, Lokhttp3/CacheControl;->maxAgeSeconds:I
+    if-nez v2, :cond_7
 
-    int-to-long v0, p1
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v0, v5, [Ljava/lang/Object;
+
+    aput-object v1, v0, v4
+
+    const-string v1, "Server returned max-age=0: %s"
+
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    const-wide/16 v0, 0x12c
 
     invoke-static {v0, v1}, Lorg/joda/time/Duration;->standardSeconds(J)Lorg/joda/time/Duration;
 
-    move-result-object v11
+    move-result-object p1
+
+    goto :goto_5
+
+    :cond_7
+    int-to-long v0, v2
+
+    invoke-static {v0, v1}, Lorg/joda/time/Duration;->standardSeconds(J)Lorg/joda/time/Duration;
+
+    move-result-object p1
+
+    :goto_5
+    move-object v11, p1
 
     new-instance p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;
-
-    const-string v0, "maxCacheAge"
-
-    invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v6, p1
 
@@ -493,46 +540,67 @@
 
     return-object p1
 
-    :cond_7
+    :cond_8
     new-instance p1, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
 
     const-string v0, "Server has no ETAG."
 
-    invoke-direct {p1, v5, v0, v4}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+    invoke-direct {p1, v6, v0, v5}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
 
     throw p1
 
-    :cond_8
+    :cond_9
     new-instance p1, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationCorruptException;
 
     invoke-direct {p1}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationCorruptException;-><init>()V
 
     throw p1
 
-    :cond_9
+    :catch_1
+    move-exception p1
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    new-array v1, v5, [Ljava/lang/Object;
+
+    aput-object v2, v1, v4
+
+    const-string v2, "%s is not a valid TEKSignatureList"
+
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance v0, Lde/rki/coronawarnapp/exception/CwaSecurityException;
+
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/exception/CwaSecurityException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :cond_a
     new-instance p1, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
-
-    const-string v0, "Unknown files: "
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
 
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unknown files: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {p1, v5, v0, v4}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+    invoke-direct {p1, v6, v0, v5}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
 
     throw p1
 
-    :cond_a
+    :cond_b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Response was successful but body was null"
@@ -545,7 +613,7 @@
 
     throw p1
 
-    :cond_b
+    :cond_c
     new-instance v0, Lretrofit2/HttpException;
 
     invoke-direct {v0, p1}, Lretrofit2/HttpException;-><init>(Lretrofit2/Response;)V

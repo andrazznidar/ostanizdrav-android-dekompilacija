@@ -97,7 +97,7 @@
 
     const-string v6, "android.permission.ACCESS_COARSE_LOCATION"
 
-    invoke-static {v3, v6}, Landroidx/core/app/AppOpsManagerCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v3, v6}, Landroidx/core/content/PermissionChecker;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v3
 
@@ -121,7 +121,7 @@
 
     const-string v8, "android.permission.ACCESS_FINE_LOCATION"
 
-    invoke-static {v7, v8}, Landroidx/core/app/AppOpsManagerCompat;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v7, v8}, Landroidx/core/content/PermissionChecker;->checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v7
 

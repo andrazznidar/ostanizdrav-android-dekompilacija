@@ -34,13 +34,13 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
 
 .field public static final HOURSSINCETESTREGISTRATIONTOSUBMITTESTRESULTMETADATA_FIELD_NUMBER:I = 0x3
 
 .field public static final HOURSSINCETESTRESULTTOSUBMITKEYSUBMISSIONMETADATA_FIELD_NUMBER:I = 0x4
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -56,16 +56,88 @@
 
 
 # instance fields
-.field public hoursSinceTestRegistrationToSubmitTestResultMetadata_:I
+.field private hoursSinceTestRegistrationToSubmitTestResultMetadata_:I
 
-.field public hoursSinceTestResultToSubmitKeySubmissionMetadata_:I
+.field private hoursSinceTestResultToSubmitKeySubmissionMetadata_:I
 
-.field public probabilityToSubmitExposureWindows_:D
+.field private probabilityToSubmitExposureWindows_:D
 
-.field public probabilityToSubmit_:D
+.field private probabilityToSubmit_:D
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearHoursSinceTestRegistrationToSubmitTestResultMetadata(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearHoursSinceTestRegistrationToSubmitTestResultMetadata()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearHoursSinceTestResultToSubmitKeySubmissionMetadata(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearHoursSinceTestResultToSubmitKeySubmissionMetadata()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearProbabilityToSubmit(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearProbabilityToSubmit()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearProbabilityToSubmitExposureWindows(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearProbabilityToSubmitExposureWindows()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHoursSinceTestRegistrationToSubmitTestResultMetadata(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setHoursSinceTestRegistrationToSubmitTestResultMetadata(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHoursSinceTestResultToSubmitKeySubmissionMetadata(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setHoursSinceTestResultToSubmitKeySubmissionMetadata(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetProbabilityToSubmit(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setProbabilityToSubmit(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetProbabilityToSubmitExposureWindows(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setProbabilityToSubmitExposureWindows(D)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -80,82 +152,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2000()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$2100(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setProbabilityToSubmit(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2200(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearProbabilityToSubmit()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2300(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setProbabilityToSubmitExposureWindows(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2400(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearProbabilityToSubmitExposureWindows()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2500(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setHoursSinceTestRegistrationToSubmitTestResultMetadata(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2600(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearHoursSinceTestRegistrationToSubmitTestResultMetadata()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2700(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->setHoursSinceTestResultToSubmitKeySubmissionMetadata(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2800(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->clearHoursSinceTestResultToSubmitKeySubmissionMetadata()V
 
     return-void
 .end method
@@ -683,11 +683,11 @@
 
     check-cast p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmit_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmit_:D
 
     const-wide/16 v10, 0x0
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_9
 
@@ -699,11 +699,9 @@
     move v4, v1
 
     :goto_4
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmit_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmit_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmit_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_a
 
@@ -715,8 +713,6 @@
     move v7, v1
 
     :goto_5
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmit_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -725,9 +721,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmit_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmitExposureWindows_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmitExposureWindows_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_b
 
@@ -739,11 +735,9 @@
     move v4, v1
 
     :goto_6
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmitExposureWindows_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmitExposureWindows_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmitExposureWindows_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_c
 
@@ -755,8 +749,6 @@
     move v7, v1
 
     :goto_7
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->probabilityToSubmitExposureWindows_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -769,31 +761,27 @@
 
     if-eqz p1, :cond_d
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_8
 
     :cond_d
-    move p1, v1
+    move v0, v1
 
     :goto_8
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->hoursSinceTestRegistrationToSubmitTestResultMetadata_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->hoursSinceTestRegistrationToSubmitTestResultMetadata_:I
 
     if-eqz v3, :cond_e
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_9
 
     :cond_e
-    move v3, v1
+    move v4, v1
 
     :goto_9
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->hoursSinceTestRegistrationToSubmitTestResultMetadata_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -803,26 +791,22 @@
 
     if-eqz p1, :cond_f
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_a
 
     :cond_f
-    move p1, v1
+    move v0, v1
 
     :goto_a
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->hoursSinceTestResultToSubmitKeySubmissionMetadata_:I
+    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->hoursSinceTestResultToSubmitKeySubmissionMetadata_:I
 
-    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->hoursSinceTestResultToSubmitKeySubmissionMetadata_:I
-
-    if-eqz v3, :cond_10
+    if-eqz p3, :cond_10
 
     move v1, v2
 
     :cond_10
-    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->hoursSinceTestResultToSubmitKeySubmissionMetadata_:I
-
-    invoke-interface {p2, p1, v0, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -833,7 +817,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon$Builder-IA;)V
 
     return-object p1
 

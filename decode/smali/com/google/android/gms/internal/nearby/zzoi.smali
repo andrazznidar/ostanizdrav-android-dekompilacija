@@ -5,6 +5,7 @@
 # interfaces
 .implements Ljava/util/ListIterator;
 .implements Ljava/util/Iterator;
+.implements Lj$/util/Iterator;
 
 
 # annotations
@@ -12,9 +13,11 @@
     value = {
         "<E:",
         "Ljava/lang/Object;",
-        "><TE>",
+        ">",
+        "Ljava/lang/Object;",
         "Ljava/util/ListIterator<",
-        "TE;>;"
+        "TE;>;",
+        "Lj$/util/Iterator;"
     }
 .end annotation
 
@@ -46,6 +49,14 @@
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw p1
+.end method
+
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
 .end method
 
 .method public final remove()V

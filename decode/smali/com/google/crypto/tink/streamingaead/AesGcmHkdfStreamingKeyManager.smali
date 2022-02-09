@@ -99,7 +99,7 @@
     :cond_1
     new-instance p0, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "unknown HKDF hash type"
+    const-string/jumbo v0, "unknown HKDF hash type"
 
     invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
@@ -111,7 +111,7 @@
 .method public getKeyType()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesGcmHkdfStreamingKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.AesGcmHkdfStreamingKey"
 
     return-object v0
 .end method

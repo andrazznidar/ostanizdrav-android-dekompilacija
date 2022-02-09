@@ -57,19 +57,17 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;)Lde/rki/coronawarnapp/databinding/FragmentOnboardingPpaBinding;
+    sget-object v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentOnboardingPpaBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingPpaBinding;->ageGroupRowBody:Landroid/widget/TextView;
 
-    const-string v1, "binding.ageGroupRowBody"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->getLabelStringRes(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;)I
+    invoke-static {p1}, Lde/rki/coronawarnapp/datadonation/analytics/common/PpaDataExtensionsKt;->getLabelStringRes(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;)I
 
     move-result p1
 

@@ -38,11 +38,11 @@
 
 .field public static final DATE_FIELD_NUMBER:I = 0x1
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;
 
 .field public static final INFECTIOUSNESS_FIELD_NUMBER:I = 0x3
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -58,17 +58,17 @@
 
 
 # instance fields
-.field public bitField0_:I
+.field private bitField0_:I
 
-.field public calibrationConfidence_:I
+.field private calibrationConfidence_:I
 
-.field public date_:J
+.field private date_:J
 
-.field public infectiousness_:I
+.field private infectiousness_:I
 
-.field public reportType_:I
+.field private reportType_:I
 
-.field public scanInstances_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private scanInstances_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -80,6 +80,175 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addAllScanInstances(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearCalibrationConfidence(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearCalibrationConfidence()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearDate(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearDate()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearInfectiousness(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearInfectiousness()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportType(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearReportType()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearScanInstances()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->removeScanInstances(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetCalibrationConfidence(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setCalibrationConfidence(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetDate(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;J)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setDate(J)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetInfectiousness(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowInfectiousness;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setInfectiousness(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowInfectiousness;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetInfectiousnessValue(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setInfectiousnessValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportType(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowReportType;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setReportType(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowReportType;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeValue(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setReportTypeValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -94,7 +263,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -104,166 +273,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->scanInstances_:Lcom/google/protobuf/Internal$ProtobufList;
-
-    return-void
-.end method
-
-.method public static synthetic access$15600()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$15700(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;J)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setDate(J)V
-
-    return-void
-.end method
-
-.method public static synthetic access$15800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearDate()V
-
-    return-void
-.end method
-
-.method public static synthetic access$15900(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setReportTypeValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$16000(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowReportType;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setReportType(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowReportType;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$16100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearReportType()V
-
-    return-void
-.end method
-
-.method public static synthetic access$16200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setInfectiousnessValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$16300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowInfectiousness;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setInfectiousness(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowInfectiousness;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$16400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearInfectiousness()V
-
-    return-void
-.end method
-
-.method public static synthetic access$16500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setCalibrationConfidence(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$16600(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearCalibrationConfidence()V
-
-    return-void
-.end method
-
-.method public static synthetic access$16700(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$16800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->setScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$16900(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$17000(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$17100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$17200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$17300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->addAllScanInstances(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$17400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->clearScanInstances()V
-
-    return-void
-.end method
-
-.method public static synthetic access$17500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->removeScanInstances(I)V
 
     return-void
 .end method
@@ -310,7 +319,7 @@
 .method private addScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->ensureScanInstancesIsMutable()V
 
@@ -319,11 +328,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance$Builder;)V
@@ -339,7 +343,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -347,20 +353,17 @@
 .method private addScanInstances(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->ensureScanInstancesIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->scanInstances_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private clearCalibrationConfidence()V
@@ -721,7 +724,7 @@
 .method private setInfectiousness(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowInfectiousness;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowInfectiousness;->getNumber()I
 
@@ -730,11 +733,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->infectiousness_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setInfectiousnessValue(I)V
@@ -748,7 +746,7 @@
 .method private setReportType(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowReportType;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowReportType;->getNumber()I
 
@@ -757,11 +755,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->reportType_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setReportTypeValue(I)V
@@ -793,7 +786,7 @@
 .method private setScanInstances(ILde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->ensureScanInstancesIsMutable()V
 
@@ -802,17 +795,12 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
 # virtual methods
 .method public final dynamicMethod(Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+    .locals 10
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
@@ -921,13 +909,13 @@
     :cond_3
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->scanInstances_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_4
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->scanInstances_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v0, :cond_4
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -948,7 +936,9 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindowScanInstance;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
@@ -1046,47 +1036,39 @@
 
     check-cast p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->date_:J
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->date_:J
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v3, 0x0
 
-    cmp-long p1, v3, v5
+    cmp-long p1, v5, v3
 
     if-eqz p1, :cond_b
 
-    move v4, v1
+    move p1, v1
 
     goto :goto_4
 
     :cond_b
-    move v4, v2
+    move p1, v2
 
     :goto_4
-    iget-wide v7, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->date_:J
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->date_:J
 
-    iget-wide v9, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->date_:J
+    cmp-long v0, v8, v3
 
-    cmp-long p1, v9, v5
+    if-eqz v0, :cond_c
 
-    if-eqz p1, :cond_c
-
-    move p1, v1
+    move v7, v1
 
     goto :goto_5
 
     :cond_c
-    move p1, v2
+    move v7, v2
 
     :goto_5
-    iget-wide v9, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->date_:J
-
     move-object v3, p2
 
-    move-wide v5, v7
-
-    move v7, p1
-
-    move-wide v8, v9
+    move v4, p1
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitLong(ZJZJ)J
 
@@ -1098,31 +1080,27 @@
 
     if-eqz p1, :cond_d
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_6
 
     :cond_d
-    move p1, v2
+    move v0, v2
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->reportType_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->reportType_:I
 
     if-eqz v3, :cond_e
 
-    move v3, v1
+    move v4, v1
 
     goto :goto_7
 
     :cond_e
-    move v3, v2
+    move v4, v2
 
     :goto_7
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->reportType_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1132,31 +1110,27 @@
 
     if-eqz p1, :cond_f
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_8
 
     :cond_f
-    move p1, v2
+    move v0, v2
 
     :goto_8
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->infectiousness_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->infectiousness_:I
 
     if-eqz v3, :cond_10
 
-    move v3, v1
+    move v4, v1
 
     goto :goto_9
 
     :cond_10
-    move v3, v2
+    move v4, v2
 
     :goto_9
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->infectiousness_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1166,16 +1140,14 @@
 
     if-eqz p1, :cond_11
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_a
 
     :cond_11
-    move p1, v2
+    move v0, v2
 
     :goto_a
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->calibrationConfidence_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->calibrationConfidence_:I
 
     if-eqz v3, :cond_12
@@ -1186,9 +1158,7 @@
     move v1, v2
 
     :goto_b
-    iget v2, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;->calibrationConfidence_:I
-
-    invoke-interface {p2, p1, v0, v1, v2}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v1, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1222,7 +1192,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow$Builder-IA;)V
 
     return-object p1
 
@@ -1246,8 +1216,6 @@
     invoke-direct {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAExposureWindow;-><init>()V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

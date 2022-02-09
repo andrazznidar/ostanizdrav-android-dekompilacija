@@ -34,7 +34,7 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
 
 .field public static final MINUTESATATTENUATIONFILTERS_FIELD_NUMBER:I = 0x1
 
@@ -44,7 +44,7 @@
 
 .field public static final NORMALIZEDTIMEPEREWTORISKLEVELMAPPING_FIELD_NUMBER:I = 0x4
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -56,15 +56,17 @@
 
 .field public static final TRANSMISSIONRISKLEVELMULTIPLIER_FIELD_NUMBER:I = 0x7
 
+.field public static final TRANSMISSIONRISKVALUEMAPPING_FIELD_NUMBER:I = 0x8
+
 .field public static final TRLENCODING_FIELD_NUMBER:I = 0x6
 
 .field public static final TRLFILTERS_FIELD_NUMBER:I = 0x2
 
 
 # instance fields
-.field public bitField0_:I
+.field private bitField0_:I
 
-.field public minutesAtAttenuationFilters_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private minutesAtAttenuationFilters_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -74,7 +76,7 @@
     .end annotation
 .end field
 
-.field public minutesAtAttenuationWeights_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private minutesAtAttenuationWeights_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -84,7 +86,7 @@
     .end annotation
 .end field
 
-.field public normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -94,7 +96,7 @@
     .end annotation
 .end field
 
-.field public normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -104,11 +106,21 @@
     .end annotation
 .end field
 
-.field public transmissionRiskLevelMultiplier_:D
+.field private transmissionRiskLevelMultiplier_:D
 
-.field public trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+.field private transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/protobuf/Internal$ProtobufList<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public trlFilters_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+
+.field private trlFilters_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -120,6 +132,548 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllMinutesAtAttenuationFilters(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllMinutesAtAttenuationWeights(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllNormalizedTimePerDayToRiskLevelMapping(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllNormalizedTimePerEWToRiskLevelMapping(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllTransmissionRiskValueMapping(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllTrlFilters(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearMinutesAtAttenuationFilters()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearMinutesAtAttenuationWeights()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearNormalizedTimePerDayToRiskLevelMapping()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearNormalizedTimePerEWToRiskLevelMapping()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearTransmissionRiskLevelMultiplier(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearTransmissionRiskLevelMultiplier()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearTransmissionRiskValueMapping()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearTrlEncoding()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearTrlFilters()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->mergeTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeMinutesAtAttenuationFilters(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeMinutesAtAttenuationWeights(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeNormalizedTimePerDayToRiskLevelMapping(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeNormalizedTimePerEWToRiskLevelMapping(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeTransmissionRiskValueMapping(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeTrlFilters(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTransmissionRiskLevelMultiplier(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTransmissionRiskLevelMultiplier(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -134,7 +688,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -169,421 +723,11 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    return-void
-.end method
+    invoke-static {}, Lcom/google/protobuf/GeneratedMessageLite;->emptyProtobufList()Lcom/google/protobuf/Internal$ProtobufList;
 
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
-    .locals 1
+    move-result-object v0
 
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1000(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1200(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1300(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1400(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1500(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1600(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllTrlFilters(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearTrlFilters()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeTrlFilters(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1900(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2000(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2200(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2300(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2400(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2500(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllMinutesAtAttenuationWeights(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2600(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearMinutesAtAttenuationWeights()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeMinutesAtAttenuationWeights(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2900(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3000(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3200(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3300(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3400(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllNormalizedTimePerEWToRiskLevelMapping(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3500(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearNormalizedTimePerEWToRiskLevelMapping()V
-
-    return-void
-.end method
-
-.method public static synthetic access$3600(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeNormalizedTimePerEWToRiskLevelMapping(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3900(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4000(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4200(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4300(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllNormalizedTimePerDayToRiskLevelMapping(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4400(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearNormalizedTimePerDayToRiskLevelMapping()V
-
-    return-void
-.end method
-
-.method public static synthetic access$4500(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeNormalizedTimePerDayToRiskLevelMapping(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4600(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->mergeTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4900(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearTrlEncoding()V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5000(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->setTransmissionRiskLevelMultiplier(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearTransmissionRiskLevelMultiplier()V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->addAllMinutesAtAttenuationFilters(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->clearMinutesAtAttenuationFilters()V
-
-    return-void
-.end method
-
-.method public static synthetic access$900(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->removeMinutesAtAttenuationFilters(I)V
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     return-void
 .end method
@@ -672,6 +816,27 @@
     return-void
 .end method
 
+.method private addAllTransmissionRiskValueMapping(Ljava/lang/Iterable;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
+
+    return-void
+.end method
+
 .method private addAllTrlFilters(Ljava/lang/Iterable;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -714,7 +879,7 @@
 .method private addMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureMinutesAtAttenuationFiltersIsMutable()V
 
@@ -723,11 +888,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter$Builder;)V
@@ -743,7 +903,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -751,20 +913,17 @@
 .method private addMinutesAtAttenuationFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureMinutesAtAttenuationFiltersIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
@@ -788,7 +947,7 @@
 .method private addMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureMinutesAtAttenuationWeightsIsMutable()V
 
@@ -797,11 +956,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
@@ -817,7 +971,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -825,20 +981,17 @@
 .method private addMinutesAtAttenuationWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureMinutesAtAttenuationWeightsIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationWeights_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
@@ -862,7 +1015,7 @@
 .method private addNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureNormalizedTimePerDayToRiskLevelMappingIsMutable()V
 
@@ -871,11 +1024,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
@@ -891,7 +1039,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -899,20 +1049,17 @@
 .method private addNormalizedTimePerDayToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureNormalizedTimePerDayToRiskLevelMappingIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
@@ -936,7 +1083,7 @@
 .method private addNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureNormalizedTimePerEWToRiskLevelMappingIsMutable()V
 
@@ -945,11 +1092,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
@@ -965,7 +1107,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -973,20 +1117,85 @@
 .method private addNormalizedTimePerEWToRiskLevelMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureNormalizedTimePerEWToRiskLevelMappingIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
+.end method
 
-    :cond_0
-    const/4 p1, 0x0
+.method private addTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+    .locals 1
 
-    throw p1
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private addTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+    .locals 1
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private addTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method private addTransmissionRiskValueMapping(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+    .locals 1
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    return-void
 .end method
 
 .method private addTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
@@ -1010,7 +1219,7 @@
 .method private addTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTrlFiltersIsMutable()V
 
@@ -1019,11 +1228,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
@@ -1039,7 +1243,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -1047,20 +1253,17 @@
 .method private addTrlFilters(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTrlFiltersIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private clearMinutesAtAttenuationFilters()V
@@ -1117,6 +1320,18 @@
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
+
+    return-void
+.end method
+
+.method private clearTransmissionRiskValueMapping()V
+    .locals 1
+
+    invoke-static {}, Lcom/google/protobuf/GeneratedMessageLite;->emptyProtobufList()Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     return-void
 .end method
@@ -1230,6 +1445,29 @@
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    :cond_0
+    return-void
+.end method
+
+.method private ensureTransmissionRiskValueMappingIsMutable()V
+    .locals 2
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v1, v1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v1, :cond_0
+
+    invoke-static {v0}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     :cond_0
     return-void
@@ -1600,6 +1838,18 @@
     return-void
 .end method
 
+.method private removeTransmissionRiskValueMapping(I)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    return-void
+.end method
+
 .method private removeTrlFilters(I)V
     .locals 1
 
@@ -1633,7 +1883,7 @@
 .method private setMinutesAtAttenuationFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureMinutesAtAttenuationFiltersIsMutable()V
 
@@ -1642,11 +1892,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight$Builder;)V
@@ -1670,7 +1915,7 @@
 .method private setMinutesAtAttenuationWeights(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureMinutesAtAttenuationWeightsIsMutable()V
 
@@ -1679,11 +1924,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
@@ -1707,7 +1947,7 @@
 .method private setNormalizedTimePerDayToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureNormalizedTimePerDayToRiskLevelMappingIsMutable()V
 
@@ -1716,11 +1956,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$Builder;)V
@@ -1744,7 +1979,7 @@
 .method private setNormalizedTimePerEWToRiskLevelMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureNormalizedTimePerEWToRiskLevelMappingIsMutable()V
 
@@ -1753,17 +1988,44 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setTransmissionRiskLevelMultiplier(D)V
     .locals 0
 
     iput-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
+
+    return-void
+.end method
+
+.method private setTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private setTransmissionRiskValueMapping(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;)V
+    .locals 1
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTransmissionRiskValueMappingIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -1785,16 +2047,11 @@
 .method private setTrlEncoding(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter$Builder;)V
@@ -1818,7 +2075,7 @@
 .method private setTrlFilters(ILde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->ensureTrlFiltersIsMutable()V
 
@@ -1827,11 +2084,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -1906,40 +2158,44 @@
 
     :cond_2
     :goto_1
-    if-nez v2, :cond_11
+    if-nez v2, :cond_13
 
     :try_start_1
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result p1
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_12
 
     const/16 v3, 0xa
 
-    if-eq p1, v3, :cond_e
+    if-eq p1, v3, :cond_10
 
     const/16 v3, 0x12
 
-    if-eq p1, v3, :cond_c
+    if-eq p1, v3, :cond_e
 
     const/16 v3, 0x1a
 
-    if-eq p1, v3, :cond_a
+    if-eq p1, v3, :cond_c
 
     const/16 v3, 0x22
 
-    if-eq p1, v3, :cond_8
+    if-eq p1, v3, :cond_a
 
     const/16 v3, 0x2a
 
-    if-eq p1, v3, :cond_6
+    if-eq p1, v3, :cond_8
 
     const/16 v3, 0x32
 
-    if-eq p1, v3, :cond_4
+    if-eq p1, v3, :cond_6
 
     const/16 v3, 0x39
+
+    if-eq p1, v3, :cond_5
+
+    const/16 v3, 0x42
 
     if-eq p1, v3, :cond_3
 
@@ -1952,6 +2208,42 @@
     goto/16 :goto_3
 
     :cond_3
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v3, p1
+
+    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v3, v3, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v3, :cond_4
+
+    invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    :cond_4
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;->parser()Lcom/google/protobuf/Parser;
+
+    move-result-object v3
+
+    invoke-virtual {p2, v3, p3}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v3
+
+    check-cast v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;
+
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v3}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_5
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readDouble()D
 
     move-result-wide v3
@@ -1960,12 +2252,10 @@
 
     goto :goto_1
 
-    :cond_4
+    :cond_6
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
 
-    if-eqz p1, :cond_5
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+    if-eqz p1, :cond_7
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -1975,7 +2265,7 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_7
     move-object p1, v0
 
     :goto_2
@@ -2005,16 +2295,16 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_8
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v3, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_7
+    iget-boolean v3, v3, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v3, :cond_9
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -2022,7 +2312,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_7
+    :cond_9
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;->parser()Lcom/google/protobuf/Parser;
@@ -2035,20 +2325,22 @@
 
     check-cast v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;
 
-    invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_8
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
-
     check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    invoke-virtual {p1, v3}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
-    if-nez p1, :cond_9
+    goto/16 :goto_1
 
+    :cond_a
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v3, p1
+
+    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v3, v3, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v3, :cond_b
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -2056,7 +2348,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_9
+    :cond_b
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerEWToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;->parser()Lcom/google/protobuf/Parser;
@@ -2069,20 +2361,22 @@
 
     check-cast v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping;
 
-    invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v3}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
-    :cond_a
+    :cond_c
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationWeights_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v3, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_b
+    iget-boolean v3, v3, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationWeights_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v3, :cond_d
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -2090,7 +2384,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationWeights_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_b
+    :cond_d
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationWeights_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;->parser()Lcom/google/protobuf/Parser;
@@ -2103,20 +2397,22 @@
 
     check-cast v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationWeight;
 
-    invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v3}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_e
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v3, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_d
+    iget-boolean v3, v3, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlFilters_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v3, :cond_f
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -2124,7 +2420,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_d
+    :cond_f
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;->parser()Lcom/google/protobuf/Parser;
@@ -2137,20 +2433,22 @@
 
     check-cast v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TrlFilter;
 
-    invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v3}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
-    :cond_e
+    :cond_10
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v3, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_f
+    iget-boolean v3, v3, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationFilters_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v3, :cond_11
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -2158,7 +2456,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_f
+    :cond_11
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->minutesAtAttenuationFilters_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;->parser()Lcom/google/protobuf/Parser;
@@ -2171,7 +2469,9 @@
 
     check-cast v3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$MinutesAtAttenuationFilter;
 
-    invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v3}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
@@ -2179,7 +2479,7 @@
 
     goto/16 :goto_1
 
-    :cond_10
+    :cond_12
     :goto_3
     move v2, v1
 
@@ -2222,7 +2522,7 @@
     :goto_4
     throw p1
 
-    :cond_11
+    :cond_13
     :pswitch_2
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
 
@@ -2301,34 +2601,30 @@
 
     cmpl-double p1, v3, v5
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_14
 
     move p1, v1
 
     goto :goto_5
 
-    :cond_12
+    :cond_14
     move p1, v2
 
     :goto_5
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
-
     iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
 
     cmpl-double v0, v7, v5
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
     move v5, v1
 
     goto :goto_6
 
-    :cond_13
+    :cond_15
     move v5, v2
 
     :goto_6
-    iget-wide v6, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
-
     move-object v0, p2
 
     move v1, p1
@@ -2337,7 +2633,7 @@
 
     move v4, v5
 
-    move-wide v5, v6
+    move-wide v5, v7
 
     invoke-interface/range {v0 .. v6}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
@@ -2345,9 +2641,19 @@
 
     iput-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
 
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    iget-object v0, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {p2, p1, v0}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitList(Lcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
     sget-object p1, Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;->INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;
 
-    if-ne p2, p1, :cond_14
+    if-ne p2, p1, :cond_16
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->bitField0_:I
 
@@ -2357,13 +2663,13 @@
 
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->bitField0_:I
 
-    :cond_14
+    :cond_16
     return-object p0
 
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters$Builder-IA;)V
 
     return-object p1
 
@@ -2398,6 +2704,12 @@
 
     iput-boolean v2, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    iput-boolean v2, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
     return-object v0
 
     :pswitch_6
@@ -2411,6 +2723,8 @@
     invoke-direct {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;-><init>()V
 
     return-object p1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2718,7 +3032,7 @@
 .end method
 
 .method public getSerializedSize()I
-    .locals 5
+    .locals 7
 
     iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
@@ -2861,18 +3175,84 @@
     goto :goto_3
 
     :cond_4
+    move v1, v0
+
     :goto_4
-    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v1, v3, :cond_5
+
+    const/4 v3, 0x5
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/google/protobuf/MessageLite;
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_4
+
+    :cond_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+
+    if-eqz v1, :cond_6
+
+    const/4 v1, 0x6
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTrlEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
+
+    move-result v1
+
+    add-int/2addr v2, v1
+
+    :cond_6
+    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
+
+    const-wide/16 v5, 0x0
+
+    cmpl-double v1, v3, v5
+
+    if-eqz v1, :cond_7
+
+    const/4 v1, 0x7
+
+    invoke-static {v1, v3, v4}, Lcom/google/protobuf/CodedOutputStream;->computeDoubleSize(ID)I
+
+    move-result v1
+
+    add-int/2addr v2, v1
+
+    :cond_7
+    :goto_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_5
+    if-ge v0, v1, :cond_8
 
-    const/4 v1, 0x5
+    const/16 v1, 0x8
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2888,43 +3268,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_5
-    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
-
-    if-eqz v0, :cond_6
-
-    const/4 v0, 0x6
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTrlEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
-
-    move-result v0
-
-    add-int/2addr v2, v0
-
-    :cond_6
-    iget-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
-
-    const-wide/16 v3, 0x0
-
-    cmpl-double v3, v0, v3
-
-    if-eqz v3, :cond_7
-
-    const/4 v3, 0x7
-
-    invoke-static {v3, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->computeDoubleSize(ID)I
-
-    move-result v0
-
-    add-int/2addr v2, v0
-
-    :cond_7
+    :cond_8
     iput v2, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
     return v2
@@ -2932,10 +3278,85 @@
 
 .method public getTransmissionRiskLevelMultiplier()D
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
 
     return-wide v0
+.end method
+
+.method public getTransmissionRiskValueMapping(I)Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;
+
+    return-object p1
+.end method
+
+.method public getTransmissionRiskValueMappingCount()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getTransmissionRiskValueMappingList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-object v0
+.end method
+
+.method public getTransmissionRiskValueMappingOrBuilder(I)Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMappingOrBuilder;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMappingOrBuilder;
+
+    return-object p1
+.end method
+
+.method public getTransmissionRiskValueMappingOrBuilderList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMappingOrBuilder;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-object v0
 .end method
 
 .method public getTrlEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
@@ -3045,7 +3466,7 @@
 .end method
 
 .method public writeTo(Lcom/google/protobuf/CodedOutputStream;)V
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -3166,18 +3587,72 @@
     goto :goto_3
 
     :cond_3
+    move v1, v0
+
     :goto_4
-    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_4
+
+    const/4 v2, 0x5
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/protobuf/MessageLite;
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_4
+
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+
+    if-eqz v1, :cond_5
+
+    const/4 v1, 0x6
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTrlEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
+
+    :cond_5
+    iget-wide v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
+
+    const-wide/16 v3, 0x0
+
+    cmpl-double v3, v1, v3
+
+    if-eqz v3, :cond_6
+
+    const/4 v3, 0x7
+
+    invoke-virtual {p1, v3, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeDouble(ID)V
+
+    :cond_6
+    :goto_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_4
+    if-ge v0, v1, :cond_7
 
-    const/4 v1, 0x5
+    const/16 v1, 0x8
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->normalizedTimePerDayToRiskLevelMapping_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskValueMapping_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -3189,34 +3664,8 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_4
-    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->trlEncoding_:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
-
-    if-eqz v0, :cond_5
-
-    const/4 v0, 0x6
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTrlEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
-
-    :cond_5
-    iget-wide v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->transmissionRiskLevelMultiplier_:D
-
-    const-wide/16 v2, 0x0
-
-    cmpl-double v2, v0, v2
-
-    if-eqz v2, :cond_6
-
-    const/4 v2, 0x7
-
-    invoke-virtual {p1, v2, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeDouble(ID)V
-
-    :cond_6
+    :cond_7
     return-void
 .end method

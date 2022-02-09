@@ -18,7 +18,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder;
+        Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder;,
+        Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
     }
 .end annotation
 
@@ -34,15 +35,19 @@
 
 
 # static fields
+.field public static final CHECKINPROTECTEDREPORTS_FIELD_NUMBER:I = 0x8
+
+.field public static final CHECKINS_FIELD_NUMBER:I = 0x6
+
 .field public static final CONSENTTOFEDERATION_FIELD_NUMBER:I = 0x5
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;
 
 .field public static final KEYS_FIELD_NUMBER:I = 0x1
 
 .field public static final ORIGIN_FIELD_NUMBER:I = 0x4
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -54,15 +59,37 @@
 
 .field public static final REQUESTPADDING_FIELD_NUMBER:I = 0x2
 
+.field public static final SUBMISSIONTYPE_FIELD_NUMBER:I = 0x7
+
 .field public static final VISITEDCOUNTRIES_FIELD_NUMBER:I = 0x3
 
 
 # instance fields
-.field public bitField0_:I
+.field private bitField0_:I
 
-.field public consentToFederation_:Z
+.field private checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/protobuf/Internal$ProtobufList<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public keys_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/protobuf/Internal$ProtobufList<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private consentToFederation_:Z
+
+.field private keys_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -72,11 +99,13 @@
     .end annotation
 .end field
 
-.field public origin_:Ljava/lang/String;
+.field private origin_:Ljava/lang/String;
 
-.field public requestPadding_:Lcom/google/protobuf/ByteString;
+.field private requestPadding_:Lcom/google/protobuf/ByteString;
 
-.field public visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private submissionType_:I
+
+.field private visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -88,6 +117,377 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addAllCheckInProtectedReports(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addAllCheckIns(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addAllKeys(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllVisitedCountries(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addAllVisitedCountries(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddVisitedCountries(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addVisitedCountries(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddVisitedCountriesBytes(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addVisitedCountriesBytes(Lcom/google/protobuf/ByteString;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearCheckInProtectedReports()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearCheckIns()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearConsentToFederation(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearConsentToFederation()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearKeys()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearOrigin(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearOrigin()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearRequestPadding(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearRequestPadding()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmissionType(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearSubmissionType()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearVisitedCountries(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearVisitedCountries()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->removeCheckInProtectedReports(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->removeCheckIns(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->removeKeys(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetConsentToFederation(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setConsentToFederation(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetKeys(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetOrigin(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setOrigin(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetOriginBytes(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setOriginBytes(Lcom/google/protobuf/ByteString;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRequestPadding(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setRequestPadding(Lcom/google/protobuf/ByteString;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmissionType(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setSubmissionType(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetVisitedCountries(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILjava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setVisitedCountries(ILjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -102,7 +502,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -127,181 +527,59 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->origin_:Ljava/lang/String;
 
+    invoke-static {}, Lcom/google/protobuf/GeneratedMessageLite;->emptyProtobufList()Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-static {}, Lcom/google/protobuf/GeneratedMessageLite;->emptyProtobufList()Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
     return-void
 .end method
 
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;
+.method private addAllCheckInProtectedReports(Ljava/lang/Iterable;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
+            ">;)V"
+        }
+    .end annotation
 
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
 
-    return-object v0
-.end method
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
 
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1000(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setRequestPadding(Lcom/google/protobuf/ByteString;)V
+    invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
     return-void
 .end method
 
-.method public static synthetic access$1100(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
-    .locals 0
+.method private addAllCheckIns(Ljava/lang/Iterable;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;",
+            ">;)V"
+        }
+    .end annotation
 
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearRequestPadding()V
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
 
-    return-void
-.end method
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
 
-.method public static synthetic access$1200(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILjava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setVisitedCountries(ILjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1300(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addVisitedCountries(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1400(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addAllVisitedCountries(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1500(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearVisitedCountries()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1600(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addVisitedCountriesBytes(Lcom/google/protobuf/ByteString;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1700(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setOrigin(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1800(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearOrigin()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1900(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lcom/google/protobuf/ByteString;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setOriginBytes(Lcom/google/protobuf/ByteString;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2000(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->setConsentToFederation(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2100(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearConsentToFederation()V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$700(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->addAllKeys(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->clearKeys()V
-
-    return-void
-.end method
-
-.method public static synthetic access$900(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->removeKeys(I)V
+    invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
     return-void
 .end method
@@ -347,6 +625,142 @@
     return-void
 .end method
 
+.method private addCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private addCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+    .locals 1
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private addCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method private addCheckInProtectedReports(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+    .locals 1
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method private addCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private addCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+    .locals 1
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private addCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method private addCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+    .locals 1
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
 .method private addKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
     .locals 1
 
@@ -368,7 +782,7 @@
 .method private addKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureKeysIsMutable()V
 
@@ -377,11 +791,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addKeys(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;)V
@@ -397,7 +806,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -405,45 +816,39 @@
 .method private addKeys(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureKeysIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addVisitedCountries(Ljava/lang/String;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureVisitedCountriesIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addVisitedCountriesBytes(Lcom/google/protobuf/ByteString;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureVisitedCountriesIsMutable()V
 
@@ -453,14 +858,35 @@
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
+.end method
 
-    :cond_0
-    const/4 p1, 0x0
+.method private clearCheckInProtectedReports()V
+    .locals 1
 
-    throw p1
+    invoke-static {}, Lcom/google/protobuf/GeneratedMessageLite;->emptyProtobufList()Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-void
+.end method
+
+.method private clearCheckIns()V
+    .locals 1
+
+    invoke-static {}, Lcom/google/protobuf/GeneratedMessageLite;->emptyProtobufList()Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-void
 .end method
 
 .method private clearConsentToFederation()V
@@ -535,6 +961,22 @@
     return-void
 .end method
 
+.method private clearSubmissionType()V
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    and-int/lit8 v0, v0, -0x9
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    return-void
+.end method
+
 .method private clearVisitedCountries()V
     .locals 1
 
@@ -544,6 +986,52 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
+    return-void
+.end method
+
+.method private ensureCheckInProtectedReportsIsMutable()V
+    .locals 2
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v1, v1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v1, :cond_0
+
+    invoke-static {v0}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    :cond_0
+    return-void
+.end method
+
+.method private ensureCheckInsIsMutable()V
+    .locals 2
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v1, v0
+
+    check-cast v1, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v1, v1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v1, :cond_0
+
+    invoke-static {v0}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    :cond_0
     return-void
 .end method
 
@@ -845,6 +1333,30 @@
     return-object v0
 .end method
 
+.method private removeCheckInProtectedReports(I)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private removeCheckIns(I)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    return-void
+.end method
+
 .method private removeKeys(I)V
     .locals 1
 
@@ -853,6 +1365,70 @@
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private setCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private setCheckInProtectedReports(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;)V
+    .locals 1
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInProtectedReportsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private setCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn$Builder;)V
+    .locals 1
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p2}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
+
+    move-result-object p2
+
+    check-cast p2, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private setCheckIns(ILde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;)V
+    .locals 1
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureCheckInsIsMutable()V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -892,7 +1468,7 @@
 .method private setKeys(ILde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureKeysIsMutable()V
 
@@ -901,17 +1477,12 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setOrigin(Ljava/lang/String;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
@@ -922,17 +1493,12 @@
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->origin_:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setOriginBytes(Lcom/google/protobuf/ByteString;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
@@ -947,17 +1513,12 @@
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->origin_:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setRequestPadding(Lcom/google/protobuf/ByteString;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
@@ -968,17 +1529,32 @@
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->requestPadding_:Lcom/google/protobuf/ByteString;
 
     return-void
+.end method
 
-    :cond_0
-    const/4 p1, 0x0
+.method private setSubmissionType(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;)V
+    .locals 1
 
-    throw p1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x8
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;->getNumber()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    return-void
 .end method
 
 .method private setVisitedCountries(ILjava/lang/String;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->ensureVisitedCountriesIsMutable()V
 
@@ -987,11 +1563,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -1064,7 +1635,7 @@
 
     :cond_2
     :goto_1
-    if-nez v1, :cond_b
+    if-nez v1, :cond_11
 
     :try_start_1
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readTag()I
@@ -1073,25 +1644,37 @@
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_10
 
     const/16 v2, 0xa
 
-    if-eq p1, v2, :cond_8
+    if-eq p1, v2, :cond_e
 
     const/16 v2, 0x12
 
-    if-eq p1, v2, :cond_7
+    if-eq p1, v2, :cond_d
 
     const/16 v2, 0x1a
 
-    if-eq p1, v2, :cond_5
+    if-eq p1, v2, :cond_b
 
     const/16 v2, 0x22
 
-    if-eq p1, v2, :cond_4
+    if-eq p1, v2, :cond_a
 
     const/16 v2, 0x28
+
+    if-eq p1, v2, :cond_9
+
+    const/16 v2, 0x32
+
+    if-eq p1, v2, :cond_7
+
+    const/16 v2, 0x38
+
+    if-eq p1, v2, :cond_5
+
+    const/16 v2, 0x42
 
     if-eq p1, v2, :cond_3
 
@@ -1101,9 +1684,109 @@
 
     if-nez p1, :cond_2
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_3
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v0, p1
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v0, :cond_4
+
+    invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    :cond_4
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;->parser()Lcom/google/protobuf/Parser;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0, p3}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;
+
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_5
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;->forNumber(I)Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+
+    move-result-object v0
+
+    if-nez v0, :cond_6
+
+    const/4 v0, 0x7
+
+    invoke-super {p0, v0, p1}, Lcom/google/protobuf/GeneratedMessageLite;->mergeVarintField(II)V
+
+    goto :goto_1
+
+    :cond_6
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x8
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    goto :goto_1
+
+    :cond_7
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-object v0, p1
+
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    if-nez v0, :cond_8
+
+    invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    :cond_8
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;->parser()Lcom/google/protobuf/Parser;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0, p3}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;
+
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    :cond_9
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
     or-int/lit8 p1, p1, 0x4
@@ -1116,9 +1799,9 @@
 
     iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->consentToFederation_:Z
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_4
+    :cond_a
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readString()Ljava/lang/String;
 
     move-result-object p1
@@ -1131,22 +1814,22 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->origin_:Ljava/lang/String;
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_5
+    :cond_b
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readString()Ljava/lang/String;
 
     move-result-object p1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v2, v0
 
-    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v2, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez v0, :cond_6
+    iget-boolean v2, v2, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v2, :cond_c
 
     invoke-static {v0}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -1154,14 +1837,16 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_6
+    :cond_c
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    goto :goto_1
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
-    :cond_7
+    goto/16 :goto_1
+
+    :cond_d
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
     or-int/2addr p1, v0
@@ -1174,18 +1859,18 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->requestPadding_:Lcom/google/protobuf/ByteString;
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    :cond_8
+    :cond_e
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_9
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v0, :cond_f
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -1193,7 +1878,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    :cond_9
+    :cond_f
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->keys_:Lcom/google/protobuf/Internal$ProtobufList;
 
     sget-object v0, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;
@@ -1208,7 +1893,9 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
@@ -1216,7 +1903,7 @@
 
     goto/16 :goto_1
 
-    :cond_a
+    :cond_10
     :goto_2
     move v1, v0
 
@@ -1259,7 +1946,7 @@
     :goto_3
     throw p1
 
-    :cond_b
+    :cond_11
     :pswitch_2
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;
 
@@ -1344,9 +2031,47 @@
 
     iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->consentToFederation_:Z
 
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    iget-object v0, p3, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {p2, p1, v0}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitList(Lcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->hasSubmissionType()Z
+
+    move-result p1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->hasSubmissionType()Z
+
+    move-result v1
+
+    iget v2, p3, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    invoke-interface {p2, p1, v0, v1, v2}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    iget-object v0, p3, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {p2, p1, v0}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitList(Lcom/google/protobuf/Internal$ProtobufList;Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
     sget-object p1, Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;->INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MergeFromVisitor;
 
-    if-ne p2, p1, :cond_c
+    if-ne p2, p1, :cond_12
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
@@ -1356,13 +2081,13 @@
 
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
-    :cond_c
+    :cond_12
     return-object p0
 
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$Builder-IA;)V
 
     return-object p1
 
@@ -1374,6 +2099,18 @@
     iput-boolean v1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    iput-boolean v1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    iput-boolean v1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
 
     check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
 
@@ -1404,6 +2141,164 @@
         :pswitch_2
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public getCheckInProtectedReports(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;
+
+    return-object p1
+.end method
+
+.method public getCheckInProtectedReportsCount()I
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getCheckInProtectedReportsList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-object v0
+.end method
+
+.method public getCheckInProtectedReportsOrBuilder(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReportOrBuilder;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReportOrBuilder;
+
+    return-object p1
+.end method
+
+.method public getCheckInProtectedReportsOrBuilderList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReportOrBuilder;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-object v0
+.end method
+
+.method public getCheckIns(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;
+
+    return-object p1
+.end method
+
+.method public getCheckInsCount()I
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getCheckInsList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-object v0
+.end method
+
+.method public getCheckInsOrBuilder(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInOrBuilder;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInOrBuilder;
+
+    return-object p1
+.end method
+
+.method public getCheckInsOrBuilderList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInOrBuilder;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    return-object v0
 .end method
 
 .method public getConsentToFederation()Z
@@ -1516,7 +2411,7 @@
 .end method
 
 .method public getSerializedSize()I
-    .locals 6
+    .locals 7
 
     iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
@@ -1582,95 +2477,193 @@
     :cond_2
     move v1, v0
 
+    move v5, v1
+
     :goto_1
-    iget-object v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v6, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    invoke-interface {v6}, Ljava/util/List;->size()I
 
-    move-result v5
+    move-result v6
 
-    if-ge v0, v5, :cond_3
+    if-ge v1, v6, :cond_3
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v6, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v6, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-static {v5}, Lcom/google/protobuf/CodedOutputStream;->computeStringSizeNoTag(Ljava/lang/String;)I
+    invoke-static {v6}, Lcom/google/protobuf/CodedOutputStream;->computeStringSizeNoTag(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v6
 
-    add-int/2addr v1, v5
+    add-int/2addr v5, v6
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
     :cond_3
-    add-int/2addr v2, v1
+    add-int/2addr v2, v5
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->getVisitedCountriesList()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v0
+    move-result v1
 
-    mul-int/2addr v0, v4
+    mul-int/2addr v1, v4
 
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
-    and-int/2addr v1, v3
+    and-int/2addr v2, v3
 
-    const/4 v2, 0x4
+    const/4 v4, 0x4
 
-    if-ne v1, v3, :cond_4
+    if-ne v2, v3, :cond_4
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->getOrigin()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v2, v1}, Lcom/google/protobuf/CodedOutputStream;->computeStringSize(ILjava/lang/String;)I
+    invoke-static {v4, v2}, Lcom/google/protobuf/CodedOutputStream;->computeStringSize(ILjava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    add-int/2addr v0, v1
+    add-int/2addr v1, v2
 
     :cond_4
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
 
-    and-int/2addr v1, v2
+    and-int/2addr v2, v4
 
-    if-ne v1, v2, :cond_5
+    if-ne v2, v4, :cond_5
 
-    const/4 v1, 0x5
+    const/4 v2, 0x5
 
-    iget-boolean v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->consentToFederation_:Z
+    iget-boolean v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->consentToFederation_:Z
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeBoolSize(IZ)I
+    invoke-static {v2, v3}, Lcom/google/protobuf/CodedOutputStream;->computeBoolSize(IZ)I
 
-    move-result v1
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    :cond_5
+    move v2, v0
+
+    :goto_2
+    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_6
+
+    const/4 v3, 0x6
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/google/protobuf/MessageLite;
+
+    invoke-static {v3, v4}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
+
+    move-result v3
+
+    add-int/2addr v1, v3
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_6
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    const/16 v3, 0x8
+
+    and-int/2addr v2, v3
+
+    if-ne v2, v3, :cond_7
+
+    const/4 v2, 0x7
+
+    iget v4, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    invoke-static {v2, v4}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    :cond_7
+    :goto_3
+    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_8
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/protobuf/MessageLite;
+
+    invoke-static {v3, v2}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_3
+
+    :cond_8
+    iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/UnknownFieldSetLite;->getSerializedSize()I
+
+    move-result v0
 
     add-int/2addr v0, v1
 
-    :cond_5
-    iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
+    iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
-    invoke-virtual {v1}, Lcom/google/protobuf/UnknownFieldSetLite;->getSerializedSize()I
+    return v0
+.end method
 
-    move-result v1
+.method public getSubmissionType()Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+    .locals 1
 
-    add-int/2addr v1, v0
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
 
-    iput v1, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;->forNumber(I)Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
 
-    return v1
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;->SUBMISSION_TYPE_PCR_TEST:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+
+    :cond_0
+    return-object v0
 .end method
 
 .method public getVisitedCountries(I)Ljava/lang/String;
@@ -1797,8 +2790,30 @@
     return v1
 .end method
 
+.method public hasSubmissionType()Z
+    .locals 2
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    const/16 v1, 0x8
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public writeTo(Lcom/google/protobuf/CodedOutputStream;)V
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1848,60 +2863,129 @@
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
     :cond_1
+    move v1, v0
+
     :goto_1
-    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v1, v3, :cond_2
+
+    const/4 v3, 0x3
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    invoke-virtual {p1, v3, v4}, Lcom/google/protobuf/CodedOutputStream;->writeString(ILjava/lang/String;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    and-int/2addr v1, v2
+
+    const/4 v3, 0x4
+
+    if-ne v1, v2, :cond_3
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->getOrigin()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v3, v1}, Lcom/google/protobuf/CodedOutputStream;->writeString(ILjava/lang/String;)V
+
+    :cond_3
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    and-int/2addr v1, v3
+
+    if-ne v1, v3, :cond_4
+
+    const/4 v1, 0x5
+
+    iget-boolean v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->consentToFederation_:Z
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
+
+    :cond_4
+    move v1, v0
+
+    :goto_2
+    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_5
+
+    const/4 v2, 0x6
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkIns_:Lcom/google/protobuf/Internal$ProtobufList;
+
+    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/protobuf/MessageLite;
+
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_5
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
+
+    const/16 v2, 0x8
+
+    and-int/2addr v1, v2
+
+    if-ne v1, v2, :cond_6
+
+    const/4 v1, 0x7
+
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->submissionType_:I
+
+    invoke-virtual {p1, v1, v3}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    :cond_6
+    :goto_3
+    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_2
+    if-ge v0, v1, :cond_7
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->checkInProtectedReports_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->visitedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v3
+    check-cast v1, Lcom/google/protobuf/MessageLite;
 
-    check-cast v3, Ljava/lang/String;
-
-    invoke-virtual {p1, v1, v3}, Lcom/google/protobuf/CodedOutputStream;->writeString(ILjava/lang/String;)V
+    invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_3
 
-    :cond_2
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
-
-    and-int/2addr v0, v2
-
-    const/4 v1, 0x4
-
-    if-ne v0, v2, :cond_3
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->getOrigin()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeString(ILjava/lang/String;)V
-
-    :cond_3
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->bitField0_:I
-
-    and-int/2addr v0, v1
-
-    if-ne v0, v1, :cond_4
-
-    const/4 v0, 0x5
-
-    iget-boolean v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload;->consentToFederation_:Z
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
-
-    :cond_4
+    :cond_7
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/protobuf/UnknownFieldSetLite;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSetLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V

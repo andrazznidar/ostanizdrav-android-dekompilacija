@@ -17,17 +17,6 @@
 .end annotation
 
 
-# instance fields
-.field public final publicKeyClazz:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class<",
-            "TPublicKeyProtoT;>;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
 .method public varargs constructor <init>(Ljava/lang/Class;Ljava/lang/Class;[Lcom/google/crypto/tink/KeyTypeManager$PrimitiveFactory;)V
     .locals 0
@@ -60,8 +49,6 @@
     .end annotation
 
     invoke-direct {p0, p1, p3}, Lcom/google/crypto/tink/KeyTypeManager;-><init>(Ljava/lang/Class;[Lcom/google/crypto/tink/KeyTypeManager$PrimitiveFactory;)V
-
-    iput-object p2, p0, Lcom/google/crypto/tink/PrivateKeyTypeManager;->publicKeyClazz:Ljava/lang/Class;
 
     return-void
 .end method

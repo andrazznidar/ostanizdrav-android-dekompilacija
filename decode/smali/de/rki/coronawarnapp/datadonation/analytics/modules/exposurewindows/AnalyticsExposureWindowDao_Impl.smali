@@ -75,6 +75,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/room/RoomDatabase;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "__db"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -129,6 +137,15 @@
 # virtual methods
 .method public final __fetchRelationshipAnalyticsScanInstanceEntityAsdeRkiCoronawarnappDatadonationAnalyticsModulesExposurewindowsAnalyticsScanInstanceEntity(Landroidx/collection/ArrayMap;)V
     .locals 20
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "_map"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -297,7 +314,7 @@
     move-result-object v3
 
     :try_start_0
-    invoke-static {v3, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
     :try_end_0
@@ -315,29 +332,29 @@
     :try_start_1
     const-string v8, "id"
 
-    invoke-static {v3, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v8}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
-    invoke-static {v3, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
     const-string v9, "minAttenuation"
 
-    invoke-static {v3, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v9}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
-    const-string v10, "typicalAttenuation"
+    const-string/jumbo v10, "typicalAttenuation"
 
-    invoke-static {v3, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v10}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
     const-string v11, "secondsSinceLastScan"
 
-    invoke-static {v3, v11}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v11}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
@@ -472,6 +489,17 @@
 
 .method public deleteExposureWindows(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "entities",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -503,6 +531,17 @@
 
 .method public deleteReported(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "entities",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -534,6 +573,17 @@
 
 .method public deleteReportedOlderThan(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "timestamp",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -562,6 +612,17 @@
 
 .method public deleteScanInstances(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "entities",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -593,6 +654,15 @@
 
 .method public getAllNew(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -630,6 +700,15 @@
 
 .method public getAllReported(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -665,6 +744,17 @@
 
 .method public getNew(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "sha256Hash",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -712,6 +802,17 @@
 
 .method public getReported(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "sha256Hash",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -732,8 +833,16 @@
 
     move-result-object v0
 
+    if-nez p1, :cond_0
+
+    invoke-virtual {v0, v1}, Landroidx/room/RoomSQLiteQuery;->bindNull(I)V
+
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {v0, v1, p1}, Landroidx/room/RoomSQLiteQuery;->bindString(ILjava/lang/String;)V
 
+    :goto_0
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     const/4 v1, 0x0
@@ -751,6 +860,17 @@
 
 .method public insert(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "wrappers",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -771,7 +891,7 @@
 
     invoke-direct {v1, p0, p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$14;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;Ljava/util/List;)V
 
-    invoke-static {v0, v1, p2}, Landroidx/navigation/ui/R$anim;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, v1, p2}, Landroidx/room/RoomDatabaseKt;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -780,6 +900,17 @@
 
 .method public insertExposureWindows(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "entities",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -812,6 +943,17 @@
 
 .method public insertReported(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "entities",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -844,6 +986,17 @@
 
 .method public insertScanInstances(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "entity",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -876,6 +1029,19 @@
 
 .method public moveToReported(Ljava/util/List;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10,
+            0x10
+        }
+        names = {
+            "entities",
+            "timestamp",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -897,7 +1063,7 @@
 
     invoke-direct {v1, p0, p1, p2, p3}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$15;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;Ljava/util/List;J)V
 
-    invoke-static {v0, v1, p4}, Landroidx/navigation/ui/R$anim;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, v1, p4}, Landroidx/room/RoomDatabaseKt;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -906,6 +1072,19 @@
 
 .method public rollback(Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10,
+            0x10
+        }
+        names = {
+            "wrappers",
+            "reported",
+            "continuation"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -929,7 +1108,7 @@
 
     invoke-direct {v1, p0, p1, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl$16;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;Ljava/util/List;Ljava/util/List;)V
 
-    invoke-static {v0, v1, p3}, Landroidx/navigation/ui/R$anim;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, v1, p3}, Landroidx/room/RoomDatabaseKt;->withTransaction(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

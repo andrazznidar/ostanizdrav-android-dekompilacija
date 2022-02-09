@@ -14,7 +14,7 @@
 
 .field public final informationEnfVersion:Landroid/widget/TextView;
 
-.field public final informationHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+.field public final informationHeader:Lcom/google/android/material/appbar/MaterialToolbar;
 
 .field public final informationHelp:Lde/rki/coronawarnapp/databinding/IncludeRowBinding;
 
@@ -32,8 +32,48 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Landroid/widget/ScrollView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Lde/rki/coronawarnapp/databinding/IncludeRowBinding;Landroid/widget/TextView;Landroid/widget/ScrollView;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "informationAbout",
+            "informationContact",
+            "informationContainer",
+            "informationDebuglog",
+            "informationEnfVersion",
+            "informationHeader",
+            "informationHelp",
+            "informationLegal",
+            "informationPrivacy",
+            "informationRelease",
+            "informationTechnical",
+            "informationTerms",
+            "informationVersion",
+            "scrollview"
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -61,7 +101,7 @@
 
     move-object v1, p9
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;->informationHeader:Lcom/google/android/material/appbar/MaterialToolbar;
 
     move-object v1, p10
 
@@ -96,12 +136,22 @@
 
 .method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/FragmentInformationBinding;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "view"
+        }
+    .end annotation
 
-    sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
+    sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v1, 0x7f0c0049
+    const v0, 0x7f0d006f
 
-    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+    const/4 v1, 0x0
+
+    invoke-static {v1, p0, v0}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 

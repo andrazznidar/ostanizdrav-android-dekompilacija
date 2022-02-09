@@ -17,10 +17,10 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.download.HourPackageSyncTool"
     f = "HourPackageSyncTool.kt"
     l = {
-        0x89,
-        0x96,
-        0xa2,
-        0xe5
+        0x8c,
+        0x99,
+        0xa8,
+        0xb0
     }
     m = "determineMissingHours$Corona_Warn_App_deviceRelease"
 .end annotation
@@ -47,6 +47,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool$determineMissingHours$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool$determineMissingHours$1;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/download/HourPackageSyncTool;
 

@@ -57,7 +57,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/KeyPackageSyncTool;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    invoke-static {v0}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$$ExternalSyntheticOutline1;->m(Lde/rki/coronawarnapp/util/TimeStamper;)Lorg/joda/time/Instant;
 
     move-result-object v1
 

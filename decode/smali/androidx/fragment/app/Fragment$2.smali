@@ -3,12 +3,12 @@
 .source "Fragment.java"
 
 # interfaces
-.implements Landroidx/lifecycle/LifecycleEventObserver;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/fragment/app/Fragment;->initLifecycle()V
+    value = Landroidx/fragment/app/Fragment;->startPostponedEnterTransition()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,21 +34,14 @@
 
 
 # virtual methods
-.method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .locals 0
+.method public run()V
+    .locals 2
 
-    sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
+    iget-object v0, p0, Landroidx/fragment/app/Fragment$2;->this$0:Landroidx/fragment/app/Fragment;
 
-    if-ne p2, p1, :cond_0
+    const/4 v1, 0x0
 
-    iget-object p1, p0, Landroidx/fragment/app/Fragment$2;->this$0:Landroidx/fragment/app/Fragment;
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/Fragment;->callStartTransitionListener(Z)V
 
-    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Landroid/view/View;->cancelPendingInputEvents()V
-
-    :cond_0
     return-void
 .end method

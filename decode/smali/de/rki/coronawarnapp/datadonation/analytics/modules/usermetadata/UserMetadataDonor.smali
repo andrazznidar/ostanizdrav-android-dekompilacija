@@ -107,7 +107,7 @@
 
     new-instance p2, Lde/rki/coronawarnapp/datadonation/analytics/modules/usermetadata/UserMetadataDonor$UserMetadataContribution;
 
-    const-string v0, "userMetadata"
+    const-string/jumbo v0, "userMetadata"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

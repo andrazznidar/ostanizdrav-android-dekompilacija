@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public activeStateChanged(Z)V
-    .locals 4
+    .locals 5
 
     iget-boolean v0, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
 
@@ -69,74 +69,107 @@
     :cond_0
     iput-boolean p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
 
-    iget-object p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
+    iget-object v0, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
 
-    iget p1, p1, Landroidx/lifecycle/LiveData;->mActiveCount:I
+    const/4 v1, 0x1
 
-    const/4 v0, 0x1
+    if-eqz p1, :cond_1
 
-    if-nez p1, :cond_1
-
-    move p1, v0
+    move p1, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    const/4 p1, -0x1
 
     :goto_0
-    iget-object v1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
+    iget v2, v0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
-    iget v2, v1, Landroidx/lifecycle/LiveData;->mActiveCount:I
+    add-int/2addr p1, v2
 
-    iget-boolean v3, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
+    iput p1, v0, Landroidx/lifecycle/LiveData;->mActiveCount:I
 
-    if-eqz v3, :cond_2
+    iget-boolean p1, v0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
+
+    if-eqz p1, :cond_2
+
+    goto :goto_5
+
+    :cond_2
+    iput-boolean v1, v0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
+
+    :goto_1
+    const/4 p1, 0x0
+
+    :try_start_0
+    iget v3, v0, Landroidx/lifecycle/LiveData;->mActiveCount:I
+
+    if-eq v2, v3, :cond_7
+
+    if-nez v2, :cond_3
+
+    if-lez v3, :cond_3
+
+    move v4, v1
+
+    goto :goto_2
+
+    :cond_3
+    move v4, p1
+
+    :goto_2
+    if-lez v2, :cond_4
+
+    if-nez v3, :cond_4
+
+    move v2, v1
+
+    goto :goto_3
+
+    :cond_4
+    move v2, p1
+
+    :goto_3
+    if-eqz v4, :cond_5
+
+    invoke-virtual {v0}, Landroidx/lifecycle/LiveData;->onActive()V
+
+    goto :goto_4
+
+    :cond_5
+    if-eqz v2, :cond_6
+
+    invoke-virtual {v0}, Landroidx/lifecycle/LiveData;->onInactive()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_6
+    :goto_4
+    move v2, v3
 
     goto :goto_1
 
-    :cond_2
-    const/4 v0, -0x1
+    :cond_7
+    iput-boolean p1, v0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
 
-    :goto_1
-    add-int/2addr v2, v0
-
-    iput v2, v1, Landroidx/lifecycle/LiveData;->mActiveCount:I
-
-    if-eqz p1, :cond_3
-
+    :goto_5
     iget-boolean p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
 
-    if-eqz p1, :cond_3
-
-    iget-object p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
-
-    invoke-virtual {p1}, Landroidx/lifecycle/LiveData;->onActive()V
-
-    :cond_3
-    iget-object p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
-
-    iget v0, p1, Landroidx/lifecycle/LiveData;->mActiveCount:I
-
-    if-nez v0, :cond_4
-
-    iget-boolean v0, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {p1}, Landroidx/lifecycle/LiveData;->onInactive()V
-
-    :cond_4
-    iget-boolean p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->mActive:Z
-
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_8
 
     iget-object p1, p0, Landroidx/lifecycle/LiveData$ObserverWrapper;->this$0:Landroidx/lifecycle/LiveData;
 
     invoke-virtual {p1, p0}, Landroidx/lifecycle/LiveData;->dispatchingValue(Landroidx/lifecycle/LiveData$ObserverWrapper;)V
 
-    :cond_5
+    :cond_8
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    iput-boolean p1, v0, Landroidx/lifecycle/LiveData;->mChangingActiveState:Z
+
+    throw v1
 .end method
 
 .method public detachObserver()V

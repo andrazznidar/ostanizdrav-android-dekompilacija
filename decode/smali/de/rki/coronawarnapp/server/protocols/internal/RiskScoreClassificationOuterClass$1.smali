@@ -1,4 +1,4 @@
-.class public synthetic Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$1;
+.class synthetic Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$1;
 .super Ljava/lang/Object;
 .source "RiskScoreClassificationOuterClass.java"
 

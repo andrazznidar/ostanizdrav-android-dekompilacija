@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/internal/bind/TypeAdapters$35$1;
+.class Lcom/google/gson/internal/bind/TypeAdapters$35$1;
 .super Lcom/google/gson/TypeAdapter;
 .source "TypeAdapters.java"
 
@@ -16,7 +16,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/TypeAdapter<",
-        "TT1;>;"
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
@@ -48,7 +49,8 @@
         value = {
             "(",
             "Lcom/google/gson/stream/JsonReader;",
-            ")TT1;"
+            ")",
+            "Ljava/lang/Object;"
         }
     .end annotation
 
@@ -83,7 +85,7 @@
 
     const-string v1, "Expected a "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -128,7 +130,8 @@
         value = {
             "(",
             "Lcom/google/gson/stream/JsonWriter;",
-            "TT1;)V"
+            "Ljava/lang/Object;",
+            ")V"
         }
     .end annotation
 

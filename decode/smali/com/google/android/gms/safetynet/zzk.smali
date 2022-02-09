@@ -1,12 +1,13 @@
 .class public final Lcom/google/android/gms/safetynet/zzk;
 .super Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-        "Lcom/google/android/gms/internal/safetynet/zzx;",
+        "Lcom/google/android/gms/internal/safetynet/zzaf;",
         "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
         ">;"
     }
@@ -24,10 +25,12 @@
 
 
 # virtual methods
-.method public final synthetic buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
+.method public final bridge synthetic buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
     .locals 6
 
-    new-instance p4, Lcom/google/android/gms/internal/safetynet/zzx;
+    check-cast p4, Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;
+
+    new-instance p4, Lcom/google/android/gms/internal/safetynet/zzaf;
 
     move-object v0, p4
 
@@ -41,7 +44,7 @@
 
     move-object v5, p6
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/safetynet/zzx;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/internal/safetynet/zzaf;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)V
 
     return-object p4
 .end method

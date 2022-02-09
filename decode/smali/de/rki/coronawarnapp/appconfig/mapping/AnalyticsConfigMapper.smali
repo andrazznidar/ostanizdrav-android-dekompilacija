@@ -26,11 +26,7 @@
 
 # virtual methods
 .method public map(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;)Ljava/lang/Object;
-    .locals 12
-
-    const-string v0, "rawConfig"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 11
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->hasPrivacyPreservingAnalyticsParameters()Z
 
@@ -58,15 +54,15 @@
 
     if-nez v0, :cond_0
 
-    const/4 p1, 0x0
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v0, v0, [Ljava/lang/Object;
 
     const-string v1, "Failed to parse AppConfig: Analytics parameters are missing, disabling analytics"
 
-    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance p1, Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper$AnalyticsConfigContainer;
 
@@ -111,75 +107,61 @@
 
     move-result-object v0
 
-    const-string v1, "this.privacyPreservingAnalyticsParameters"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersAndroid;->getCommon()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;
 
     move-result-object v0
-
-    new-instance v11, Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper$AnalyticsConfigContainer;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->getPrivacyPreservingAnalyticsParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersAndroid;
 
     move-result-object p1
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersAndroid;->getPpac()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpacParameters$PPDDPrivacyPreservingAccessControlParametersAndroid;
 
     move-result-object p1
 
-    new-instance v3, Lde/rki/coronawarnapp/appconfig/SafetyNetRequirementsContainer;
-
-    const-string v1, "it"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v2, Lde/rki/coronawarnapp/appconfig/SafetyNetRequirementsContainer;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpacParameters$PPDDPrivacyPreservingAccessControlParametersAndroid;->getRequireBasicIntegrity()Z
 
-    move-result v2
+    move-result v1
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpacParameters$PPDDPrivacyPreservingAccessControlParametersAndroid;->getRequireCTSProfileMatch()Z
 
-    move-result v4
+    move-result v3
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpacParameters$PPDDPrivacyPreservingAccessControlParametersAndroid;->getRequireEvaluationTypeBasic()Z
 
-    move-result v5
+    move-result v4
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpacParameters$PPDDPrivacyPreservingAccessControlParametersAndroid;->getRequireEvaluationTypeHardwareBacked()Z
 
     move-result p1
 
-    invoke-direct {v3, v2, v4, v5, p1}, Lde/rki/coronawarnapp/appconfig/SafetyNetRequirementsContainer;-><init>(ZZZZ)V
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v2, v1, v3, v4, p1}, Lde/rki/coronawarnapp/appconfig/SafetyNetRequirementsContainer;-><init>(ZZZZ)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->getProbabilityToSubmit()D
 
-    move-result-wide v4
+    move-result-wide v3
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->getHoursSinceTestResultToSubmitKeySubmissionMetadata()I
 
-    move-result v7
+    move-result v6
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->getHoursSinceTestRegistrationToSubmitTestResultMetadata()I
 
-    move-result v6
+    move-result v5
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersCommon;->getProbabilityToSubmitExposureWindows()D
 
-    move-result-wide v8
+    move-result-wide v7
 
-    const/4 v10, 0x1
+    new-instance p1, Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper$AnalyticsConfigContainer;
 
-    move-object v2, v11
+    const/4 v9, 0x1
 
-    invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper$AnalyticsConfigContainer;-><init>(Lde/rki/coronawarnapp/appconfig/SafetyNetRequirements;DIIDZ)V
+    move-object v1, p1
 
-    move-object p1, v11
+    invoke-direct/range {v1 .. v9}, Lde/rki/coronawarnapp/appconfig/mapping/AnalyticsConfigMapper$AnalyticsConfigContainer;-><init>(Lde/rki/coronawarnapp/appconfig/SafetyNetRequirements;DIIDZ)V
 
     :goto_0
     return-object p1

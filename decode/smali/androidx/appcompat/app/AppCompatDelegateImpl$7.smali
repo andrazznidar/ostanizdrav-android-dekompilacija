@@ -87,7 +87,9 @@
 
     check-cast p1, Landroid/view/View;
 
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1}, Landroid/view/View;->requestApplyInsets()V
 
     :cond_0
     return-void

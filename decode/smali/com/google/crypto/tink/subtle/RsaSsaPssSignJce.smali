@@ -140,7 +140,7 @@
 
     iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v4}, Lcom/google/android/material/R$style;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/crypto/tink/subtle/SubtleUtil;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -226,7 +226,7 @@
 
     iget-object v8, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v3, v4, v8}, Lcom/google/android/material/R$style;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+    invoke-static {v3, v4, v8}, Lcom/google/crypto/tink/subtle/SubtleUtil;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
 
     move-result-object v8
 
@@ -328,53 +328,51 @@
 
     invoke-virtual {v2, v3}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
 
+    move-result-object v4
+
+    check-cast v4, Ljavax/crypto/Cipher;
+
+    iget-object v5, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->privateKey:Ljava/security/interfaces/RSAPrivateCrtKey;
+
+    const/4 v6, 0x2
+
+    invoke-virtual {v4, v6, v5}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
+
+    invoke-virtual {v4, v1}, Ljavax/crypto/Cipher;->doFinal([B)[B
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
+
     move-result-object v2
 
     check-cast v2, Ljavax/crypto/Cipher;
 
-    iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->privateKey:Ljava/security/interfaces/RSAPrivateCrtKey;
-
-    const/4 v5, 0x2
-
-    invoke-virtual {v2, v5, v4}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
-
-    invoke-virtual {v2, v1}, Ljavax/crypto/Cipher;->doFinal([B)[B
-
-    move-result-object v2
-
-    sget-object v4, Lcom/google/crypto/tink/subtle/EngineFactory;->CIPHER:Lcom/google/crypto/tink/subtle/EngineFactory;
-
-    invoke-virtual {v4, v3}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljavax/crypto/Cipher;
-
-    iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->publicKey:Ljava/security/interfaces/RSAPublicKey;
+    iget-object v3, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->publicKey:Ljava/security/interfaces/RSAPublicKey;
 
     const/4 v5, 0x1
 
-    invoke-virtual {v3, v5, v4}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
+    invoke-virtual {v2, v5, v3}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
 
-    invoke-virtual {v3, v2}, Ljavax/crypto/Cipher;->doFinal([B)[B
+    invoke-virtual {v2, v4}, Ljavax/crypto/Cipher;->doFinal([B)[B
 
-    move-result-object v3
+    move-result-object v2
 
-    new-instance v4, Ljava/math/BigInteger;
+    new-instance v3, Ljava/math/BigInteger;
 
-    invoke-direct {v4, v5, v1}, Ljava/math/BigInteger;-><init>(I[B)V
+    invoke-direct {v3, v5, v1}, Ljava/math/BigInteger;-><init>(I[B)V
 
     new-instance v1, Ljava/math/BigInteger;
 
-    invoke-direct {v1, v5, v3}, Ljava/math/BigInteger;-><init>(I[B)V
+    invoke-direct {v1, v5, v2}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    invoke-virtual {v4, v1}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    return-object v2
+    return-object v4
 
     :cond_2
     new-instance v1, Ljava/lang/RuntimeException;

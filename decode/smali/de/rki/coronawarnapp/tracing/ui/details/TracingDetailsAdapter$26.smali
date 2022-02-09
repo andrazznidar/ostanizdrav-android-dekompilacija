@@ -21,25 +21,35 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Landroid/view/ViewGroup;",
-        "Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;",
+        "Lde/rki/coronawarnapp/tracing/ui/details/items/additionalinfos/FindDetailsInJournalBox;",
         ">;"
     }
 .end annotation
 
 
-# instance fields
-.field public final synthetic this$0:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter;
+# static fields
+.field public static final INSTANCE:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$26;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$26;->this$0:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter;
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$26;
 
-    const/4 p1, 0x1
+    invoke-direct {v0}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$26;-><init>()V
 
-    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+    sput-object v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$26;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$26;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
@@ -47,7 +57,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     check-cast p1, Landroid/view/ViewGroup;
 
@@ -55,17 +65,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/items/additionalinfos/FindDetailsInJournalBox;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$26;->this$0:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter;
+    const/4 v1, 0x0
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter;->onItemClickListener:Lkotlin/jvm/functions/Function1;
+    const/4 v2, 0x2
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x4
-
-    invoke-direct {v0, p1, v1, v2, v3}, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;-><init>(Landroid/view/ViewGroup;Lkotlin/jvm/functions/Function1;II)V
+    invoke-direct {v0, p1, v1, v2}, Lde/rki/coronawarnapp/tracing/ui/details/items/additionalinfos/FindDetailsInJournalBox;-><init>(Landroid/view/ViewGroup;II)V
 
     return-object v0
 .end method

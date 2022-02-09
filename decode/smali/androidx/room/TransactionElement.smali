@@ -44,11 +44,11 @@
 .method public constructor <init>(Lkotlinx/coroutines/Job;Lkotlin/coroutines/ContinuationInterceptor;)V
     .locals 1
 
-    const-string v0, "transactionThreadControlJob"
+    const-string/jumbo v0, "transactionThreadControlJob"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "transactionDispatcher"
+    const-string/jumbo v0, "transactionDispatcher"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -190,7 +190,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v2, v1, v2}, Lcom/google/zxing/client/android/R$id;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
+    invoke-static {v0, v2, v1, v2}, Lkotlinx/coroutines/Job$DefaultImpls;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     :cond_0
     return-void

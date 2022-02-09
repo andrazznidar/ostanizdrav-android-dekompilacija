@@ -36,11 +36,11 @@
 # static fields
 .field public static final APITOKEN_FIELD_NUMBER:I = 0x2
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
 
 .field public static final DEVICETOKEN_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -52,12 +52,68 @@
 
 
 # instance fields
-.field public apiToken_:Ljava/lang/String;
+.field private apiToken_:Ljava/lang/String;
 
-.field public deviceToken_:Ljava/lang/String;
+.field private deviceToken_:Ljava/lang/String;
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearApiToken(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->clearApiToken()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearDeviceToken(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->clearDeviceToken()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetApiToken(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setApiToken(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetApiTokenBytes(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Lcom/google/protobuf/ByteString;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setApiTokenBytes(Lcom/google/protobuf/ByteString;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetDeviceToken(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setDeviceToken(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetDeviceTokenBytes(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Lcom/google/protobuf/ByteString;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setDeviceTokenBytes(Lcom/google/protobuf/ByteString;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -72,7 +128,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -82,62 +138,6 @@
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->deviceToken_:Ljava/lang/String;
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->apiToken_:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setDeviceToken(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->clearDeviceToken()V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Lcom/google/protobuf/ByteString;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setDeviceTokenBytes(Lcom/google/protobuf/ByteString;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setApiToken(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->clearApiToken()V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;Lcom/google/protobuf/ByteString;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->setApiTokenBytes(Lcom/google/protobuf/ByteString;)V
 
     return-void
 .end method
@@ -429,22 +429,17 @@
 .method private setApiToken(Ljava/lang/String;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->apiToken_:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setApiTokenBytes(Lcom/google/protobuf/ByteString;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Lcom/google/protobuf/AbstractMessageLite;->checkByteStringIsUtf8(Lcom/google/protobuf/ByteString;)V
 
@@ -455,32 +450,22 @@
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->apiToken_:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setDeviceToken(Ljava/lang/String;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->deviceToken_:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setDeviceTokenBytes(Lcom/google/protobuf/ByteString;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Lcom/google/protobuf/AbstractMessageLite;->checkByteStringIsUtf8(Lcom/google/protobuf/ByteString;)V
 
@@ -491,11 +476,6 @@
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;->deviceToken_:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -728,7 +708,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder-IA;)V
 
     return-object p1
 

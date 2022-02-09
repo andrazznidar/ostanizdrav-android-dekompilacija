@@ -30,3 +30,37 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public bridge synthetic addShortcuts(Ljava/util/List;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "shortcuts"
+        }
+    .end annotation
+
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public bridge synthetic removeShortcuts(Ljava/util/List;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "shortcutIds"
+        }
+    .end annotation
+
+    const/4 p1, 0x0
+
+    return-object p1
+.end method

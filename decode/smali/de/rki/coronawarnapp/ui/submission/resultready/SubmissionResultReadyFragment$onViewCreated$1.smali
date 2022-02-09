@@ -59,11 +59,11 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f09008b
+    const v1, 0x7f0a00c0
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     goto :goto_0
 
@@ -74,13 +74,25 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;
 
-    new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
+    iget-object v0, p1, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->navArgs$delegate:Landroidx/navigation/NavArgsLazy;
 
-    const v1, 0x7f09008c
+    invoke-virtual {v0}, Landroidx/navigation/NavArgsLazy;->getValue()Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
+    move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    check-cast v0, Lde/rki/coronawarnapp/ui/presencetracing/attendee/checkins/consent/CheckInsConsentFragmentArgs;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/ui/presencetracing/attendee/checkins/consent/CheckInsConsentFragmentArgs;->testType:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
+
+    const-string/jumbo v1, "testType"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v1, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragmentDirections$ActionSubmissionResultReadyFragmentToSubmissionSymptomIntroductionFragment;
+
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragmentDirections$ActionSubmissionResultReadyFragmentToSubmissionSymptomIntroductionFragment;-><init>(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
+
+    invoke-static {p1, v1}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     :cond_1
     :goto_0

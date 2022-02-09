@@ -3,7 +3,7 @@
 .source "SubmissionTestResultPendingViewModel_Factory_Impl.java"
 
 # interfaces
-.implements Lde/rki/coronawarnapp/util/viewmodel/SimpleCWAViewModelFactory;
+.implements Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel$Factory;
 
 
 # instance fields
@@ -13,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,8 +31,18 @@
 
 
 # virtual methods
-.method public create()Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
-    .locals 4
+.method public create(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Z)Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "testType",
+            "initialUpdate"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory_Impl;->delegateFactory:Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;
 
@@ -36,14 +54,6 @@
 
     check-cast v1, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
-
     iget-object v0, v0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
@@ -52,9 +62,9 @@
 
     check-cast v0, Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    new-instance v3, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel;
+    new-instance v2, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel;
 
-    invoke-direct {v3, v1, v2, v0}, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;Lde/rki/coronawarnapp/submission/SubmissionRepository;)V
+    invoke-direct {v2, v1, v0, p1, p2}, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Z)V
 
-    return-object v3
+    return-object v2
 .end method

@@ -17,7 +17,8 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.modules.exposureriskmetadata.ExposureRiskMetadataDonor"
     f = "ExposureRiskMetadataDonor.kt"
     l = {
-        0x18
+        0x1a,
+        0x1b
     }
     m = "beginDonation"
 .end annotation
@@ -27,6 +28,8 @@
 .field public L$0:Ljava/lang/Object;
 
 .field public L$1:Ljava/lang/Object;
+
+.field public L$2:Ljava/lang/Object;
 
 .field public label:I
 
@@ -38,6 +41,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor$beginDonation$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor$beginDonation$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposureriskmetadata/ExposureRiskMetadataDonor;
 

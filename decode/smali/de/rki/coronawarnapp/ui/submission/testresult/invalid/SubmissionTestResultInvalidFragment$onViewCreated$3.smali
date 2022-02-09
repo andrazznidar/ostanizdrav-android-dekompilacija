@@ -20,14 +20,10 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Landroidx/navigation/NavDirections;",
+        "Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;",
         "Lkotlin/Unit;",
         ">;"
     }
-.end annotation
-
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionTestResultInvalidFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionTestResultInvalidFragment.kt\nde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment$onViewCreated$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,67:1\n1#2:68\n*E\n"
 .end annotation
 
 
@@ -51,24 +47,28 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
-    check-cast p1, Landroidx/navigation/NavDirections;
+    check-cast p1, Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;
 
-    if-eqz p1, :cond_0
+    const-string v0, "it"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment;
 
-    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
-    goto :goto_0
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBinding;
 
-    :cond_0
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/submission/testresult/invalid/SubmissionTestResultInvalidFragment;
+    move-result-object v0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->popBackStack(Landroidx/fragment/app/Fragment;)Z
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBinding;->submissionTestResultSection:Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
 
-    :goto_0
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;->coronaTest:Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
+
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/ui/view/TestResultSectionView;->setTestResultSection(Lde/rki/coronawarnapp/coronatest/type/CoronaTest;)V
+
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

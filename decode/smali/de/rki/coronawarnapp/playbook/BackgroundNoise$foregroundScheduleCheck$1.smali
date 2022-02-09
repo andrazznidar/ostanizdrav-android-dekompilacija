@@ -17,13 +17,16 @@
     c = "de.rki.coronawarnapp.playbook.BackgroundNoise"
     f = "BackgroundNoise.kt"
     l = {
-        0x23
+        0x10,
+        0x14
     }
     m = "foregroundScheduleCheck"
 .end annotation
 
 
 # instance fields
+.field public L$0:Ljava/lang/Object;
+
 .field public label:I
 
 .field public synthetic result:Ljava/lang/Object;
@@ -34,6 +37,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/playbook/BackgroundNoise;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/playbook/BackgroundNoise;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;->this$0:Lde/rki/coronawarnapp/playbook/BackgroundNoise;
 

@@ -31,8 +31,44 @@
 
 
 # virtual methods
+.method public getVirtualViewAt(FF)I
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    sget v1, Lcom/google/android/material/chip/Chip;->DEF_STYLE_RES:I
+
+    invoke-virtual {v0}, Lcom/google/android/material/chip/Chip;->hasCloseIcon()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    invoke-static {v0}, Lcom/google/android/material/chip/Chip;->access$200(Lcom/google/android/material/chip/Chip;)Landroid/graphics/RectF;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Landroid/graphics/RectF;->contains(FF)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
 .method public getVisibleVirtualViews(Ljava/util/List;)V
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,7 +88,9 @@
 
     iget-object v1, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
 
-    invoke-static {v1}, Lcom/google/android/material/chip/Chip;->access$100(Lcom/google/android/material/chip/Chip;)Z
+    sget v2, Lcom/google/android/material/chip/Chip;->DEF_STYLE_RES:I
+
+    invoke-virtual {v1}, Lcom/google/android/material/chip/Chip;->hasCloseIcon()Z
 
     move-result v1
 
@@ -60,28 +98,26 @@
 
     iget-object v1, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
 
-    iget-object v1, v1, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
+    iget-object v2, v1, Lcom/google/android/material/chip/Chip;->chipDrawable:Lcom/google/android/material/chip/ChipDrawable;
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-boolean v1, v1, Lcom/google/android/material/chip/ChipDrawable;->closeIconVisible:Z
+    iget-boolean v2, v2, Lcom/google/android/material/chip/ChipDrawable;->closeIconVisible:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    move v0, v2
+    move v0, v3
 
     :cond_0
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
-
-    iget-object v0, v0, Lcom/google/android/material/chip/Chip;->onCloseIconClickListener:Landroid/view/View$OnClickListener;
+    iget-object v0, v1, Lcom/google/android/material/chip/Chip;->onCloseIconClickListener:Landroid/view/View$OnClickListener;
 
     if-eqz v0, :cond_1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
@@ -136,6 +172,92 @@
     return p3
 .end method
 
+.method public onPopulateNodeForHost(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    invoke-virtual {v0}, Lcom/google/android/material/chip/Chip;->isCheckable()Z
+
+    move-result v0
+
+    iget-object v1, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {v1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
+
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->isClickable()Z
+
+    move-result v0
+
+    iget-object v1, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {v1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
+
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    invoke-virtual {v0}, Lcom/google/android/material/chip/Chip;->isCheckable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->isClickable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    const-string v1, "android.view.View"
+
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    goto :goto_2
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    invoke-virtual {v0}, Lcom/google/android/material/chip/Chip;->isCheckable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "android.widget.CompoundButton"
+
+    goto :goto_1
+
+    :cond_2
+    const-string v0, "android.widget.Button"
+
+    :goto_1
+    iget-object v1, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {v1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    :goto_2
+    iget-object v0, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    invoke-virtual {v0}, Landroid/widget/CheckBox;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    iget-object p1, p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
 .method public onPopulateNodeForVirtualView(ILandroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 6
 
@@ -172,7 +294,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1201b4
+    sget v3, Lcom/google/android/material/R$string;->mtrl_chip_close_icon_content_description:I
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -240,5 +362,22 @@
     invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
     :goto_1
+    return-void
+.end method
+
+.method public onVirtualViewKeyboardFocusChanged(IZ)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_0
+
+    iget-object p1, p0, Lcom/google/android/material/chip/Chip$ChipTouchHelper;->this$0:Lcom/google/android/material/chip/Chip;
+
+    iput-boolean p2, p1, Lcom/google/android/material/chip/Chip;->closeIconFocused:Z
+
+    invoke-virtual {p1}, Landroid/widget/CheckBox;->refreshDrawableState()V
+
+    :cond_0
     return-void
 .end method

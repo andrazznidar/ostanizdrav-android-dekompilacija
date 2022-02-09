@@ -6,17 +6,6 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/core/app/ActivityCompat;->recreate(Landroid/app/Activity;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
-.end annotation
-
-
 # instance fields
 .field public final synthetic val$activity:Landroid/app/Activity;
 
@@ -24,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010
+        }
+        names = {
+            "val$activity"
+        }
+    .end annotation
 
     iput-object p1, p0, Landroidx/core/app/ActivityCompat$2;->val$activity:Landroid/app/Activity;
 

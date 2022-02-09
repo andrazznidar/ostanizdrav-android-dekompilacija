@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public createKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -81,7 +81,13 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    array-length v1, p1
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v2, v1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     move-result-object p1
 
@@ -95,17 +101,15 @@
 
     iget-object p1, p0, Lcom/google/crypto/tink/daead/AesSivKeyManager$2;->this$0:Lcom/google/crypto/tink/daead/AesSivKeyManager;
 
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
-    iget-object v1, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+    iget-object p1, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
 
-    check-cast v1, Lcom/google/crypto/tink/proto/AesSivKey;
+    check-cast p1, Lcom/google/crypto/tink/proto/AesSivKey;
 
-    invoke-static {v1, p1}, Lcom/google/crypto/tink/proto/AesSivKey;->access$100(Lcom/google/crypto/tink/proto/AesSivKey;I)V
+    invoke-static {p1, v2}, Lcom/google/crypto/tink/proto/AesSivKey;->access$100(Lcom/google/crypto/tink/proto/AesSivKey;I)V
 
     invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
 
@@ -114,11 +118,6 @@
     check-cast p1, Lcom/google/crypto/tink/proto/AesSivKey;
 
     return-object p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
@@ -183,7 +182,7 @@
 
     const-string v1, "invalid key size: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

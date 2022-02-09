@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+    .locals 12
 
     check-cast p1, Lkotlin/jvm/functions/Function1;
 
@@ -70,17 +70,13 @@
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, L-$$LambdaGroup$ks$YmfJbA_HPWnjBXDaRkPR86r-aUQ;
+    new-instance v0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment$onViewCreated$9$1;
 
-    const/4 v1, 0x0
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment$onViewCreated$9$1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-direct {v0, v1, p1}, L-$$LambdaGroup$ks$YmfJbA_HPWnjBXDaRkPR86r-aUQ;-><init>(ILjava/lang/Object;)V
+    new-instance v1, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment$onViewCreated$9$2;
 
-    new-instance v3, L-$$LambdaGroup$ks$YmfJbA_HPWnjBXDaRkPR86r-aUQ;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v4, p1}, L-$$LambdaGroup$ks$YmfJbA_HPWnjBXDaRkPR86r-aUQ;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentFragment$onViewCreated$9$2;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     const-string p1, "onConsentGiven"
 
@@ -88,35 +84,39 @@
 
     const-string p1, "onConsentDeclined"
 
-    invoke-static {v3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
 
-    const v5, 0x7f1201eb
+    const v3, 0x7f1302db
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     sget-object v7, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    new-instance v8, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;
+    new-instance v8, Lde/rki/coronawarnapp/tracing/ui/TracingConsentDialog$show$dialog$1;
 
-    invoke-direct {v8, v1, v0}, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v8, v0}, Lde/rki/coronawarnapp/tracing/ui/TracingConsentDialog$show$dialog$1;-><init>(Lkotlin/jvm/functions/Function0;)V
 
-    new-instance v9, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;
+    new-instance v9, Lde/rki/coronawarnapp/tracing/ui/TracingConsentDialog$show$dialog$2;
 
-    invoke-direct {v9, v4, v3}, L-$$LambdaGroup$ks$PO4xyscX8MkzuHYmpUACb0GTxO8;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v9, v1}, Lde/rki/coronawarnapp/tracing/ui/TracingConsentDialog$show$dialog$2;-><init>(Lkotlin/jvm/functions/Function0;)V
 
-    const v3, 0x7f12023f
+    const v3, 0x7f13032f
 
-    const v4, 0x7f120235
+    const v4, 0x7f130325
 
-    const v5, 0x7f1201ed
+    const v5, 0x7f1302dd
+
+    const/4 v10, 0x0
+
+    const/16 v11, 0x100
 
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v9}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
+    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
 
     invoke-static {p1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
 

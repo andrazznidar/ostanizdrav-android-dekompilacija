@@ -19,17 +19,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;Z)V
+.method public constructor <init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(Z)V"
-        }
-    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment$onViewCreated$backCallback$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;
 
-    invoke-direct {p0, p2}, Landroidx/activity/OnBackPressedCallback;-><init>(Z)V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Landroidx/activity/OnBackPressedCallback;-><init>(Z)V
 
     return-void
 .end method
@@ -41,7 +38,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment$onViewCreated$backCallback$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;->access$getViewModel$p(Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;)Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsViewModel;
+    sget-object v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;->getViewModel()Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsViewModel;
 
     move-result-object v0
 

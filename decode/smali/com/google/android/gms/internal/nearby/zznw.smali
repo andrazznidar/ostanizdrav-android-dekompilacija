@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
     const/4 v0, 0x0
@@ -96,16 +96,10 @@
     throw v0
 .end method
 
-.method public iterator()Ljava/util/Iterator;
-    .locals 2
+.method public bridge synthetic iterator()Ljava/util/Iterator;
+    .locals 1
 
-    move-object v0, p0
-
-    check-cast v0, Lcom/google/android/gms/internal/nearby/zznz;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/nearby/zznz;->zzm(I)Lcom/google/android/gms/internal/nearby/zzoi;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->zza()Lcom/google/android/gms/internal/nearby/zzoi;
 
     move-result-object v0
 
@@ -186,23 +180,21 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_3
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Ljava/util/AbstractCollection;->size()I
 
-    move-result v1
+    move-result v0
 
-    array-length v2, p1
+    array-length v1, p1
 
-    if-ge v2, v1, :cond_1
+    if-ge v1, v0, :cond_1
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->zzb()[Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -212,7 +204,7 @@
 
     move-result-object p1
 
-    invoke-static {p1, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+    invoke-static {p1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -223,7 +215,7 @@
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->zzc()I
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->zzd()I
 
@@ -233,16 +225,18 @@
 
     move-result-object p1
 
-    invoke-static {v0, v1, v2, p1}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;
+    invoke-static {v1, v0, v2, p1}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 
     :cond_1
-    if-le v2, v1, :cond_2
+    if-le v1, v0, :cond_2
 
-    aput-object v0, p1, v1
+    const/4 v1, 0x0
+
+    aput-object v1, p1, v0
 
     :cond_2
     :goto_0
@@ -251,9 +245,15 @@
     invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/internal/nearby/zznw;->zzg([Ljava/lang/Object;I)I
 
     return-object p1
+.end method
 
-    :cond_3
-    throw v0
+.method public abstract zza()Lcom/google/android/gms/internal/nearby/zzoi;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/nearby/zzoi;"
+        }
+    .end annotation
 .end method
 
 .method public zzb()[Ljava/lang/Object;
@@ -280,6 +280,21 @@
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public zze()Lcom/google/android/gms/internal/nearby/zznz;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/nearby/zznz<",
+            "TE;>;"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
 
     throw v0
 .end method

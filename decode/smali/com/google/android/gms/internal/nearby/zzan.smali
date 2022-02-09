@@ -27,7 +27,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/api/internal/TaskUtil;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
 
     return-void
 .end method

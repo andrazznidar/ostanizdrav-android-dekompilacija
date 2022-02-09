@@ -53,7 +53,13 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaAnalyticsFragment;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->popBackStack(Landroidx/fragment/app/Fragment;)Z
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->completeOnboarding()V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

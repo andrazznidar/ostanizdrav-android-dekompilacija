@@ -3,8 +3,20 @@
 .source "SubmissionRepository.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/submission/SubmissionRepository$WhenMappings;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nSubmissionRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionRepository.kt\nde/rki/coronawarnapp/submission/SubmissionRepository\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,163:1\n47#2:164\n49#2:168\n47#2:169\n49#2:173\n50#3:165\n55#3:167\n50#3:170\n55#3:172\n106#4:166\n106#4:171\n*S KotlinDebug\n*F\n+ 1 SubmissionRepository.kt\nde/rki/coronawarnapp/submission/SubmissionRepository\n*L\n32#1:164\n32#1:168\n36#1:169\n36#1:173\n32#1:165\n32#1:167\n36#1:170\n36#1:172\n32#1:166\n36#1:171\n*E\n"
+.end annotation
+
+
 # instance fields
-.field public final analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
+.field public final coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
 
 .field public final currentSymptoms:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
     .annotation system Ldalvik/annotation/Signature;
@@ -16,47 +28,21 @@
     .end annotation
 .end field
 
-.field public final deadmanNotificationScheduler:Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
-
-.field public final deviceUIStateFlow:Lkotlinx/coroutines/flow/Flow;
+.field public final pcrTest:Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlinx/coroutines/flow/Flow<",
-            "Lde/rki/coronawarnapp/util/NetworkRequestWrapper<",
-            "Lde/rki/coronawarnapp/util/DeviceUIState;",
-            "Ljava/lang/Throwable;",
-            ">;>;"
-        }
-    .end annotation
-.end field
-
-.field public final deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlinx/coroutines/flow/MutableStateFlow<",
-            "Lde/rki/coronawarnapp/util/NetworkRequestWrapper<",
-            "Lde/rki/coronawarnapp/util/DeviceUIState;",
-            "Ljava/lang/Throwable;",
-            ">;>;"
-        }
-    .end annotation
-.end field
-
-.field public final hasGivenConsentToSubmission:Lkotlinx/coroutines/flow/Flow;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/lang/Boolean;",
+            "Lde/rki/coronawarnapp/coronatest/type/pcr/PCRCoronaTest;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final hasViewedTestResult:Lkotlinx/coroutines/flow/Flow;
+.field public final raTest:Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/lang/Boolean;",
+            "Lde/rki/coronawarnapp/coronatest/type/rapidantigen/RACoronaTest;",
             ">;"
         }
     .end annotation
@@ -64,328 +50,70 @@
 
 .field public final scope:Lkotlinx/coroutines/CoroutineScope;
 
-.field public final submissionService:Lde/rki/coronawarnapp/service/submission/SubmissionService;
-
 .field public final submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
 
 .field public final tekHistoryStorage:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;
 
-.field public final testResultFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlinx/coroutines/flow/MutableStateFlow<",
-            "Lde/rki/coronawarnapp/util/formatter/TestResult;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final testResultReceivedDateFlow:Lkotlinx/coroutines/flow/Flow;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/util/Date;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final testResultReceivedDateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlinx/coroutines/flow/MutableStateFlow<",
-            "Ljava/util/Date;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
-
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/submission/SubmissionSettings;Lde/rki/coronawarnapp/service/submission/SubmissionService;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;)V
+.method public constructor <init>(Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/submission/SubmissionSettings;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;)V
     .locals 1
-
-    const-string v0, "submissionSettings"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "submissionService"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "scope"
 
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "submissionSettings"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "tekHistoryStorage"
+
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "timeStamper"
+    const-string v0, "coronaTestRepository"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tekHistoryStorage"
-
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "deadmanNotificationScheduler"
-
-    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "analyticsKeySubmissionCollector"
-
-    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
+    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionService:Lde/rki/coronawarnapp/service/submission/SubmissionService;
+    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
+    iput-object p3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->tekHistoryStorage:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
+    iput-object p4, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->tekHistoryStorage:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;
+    iget-object p1, p4, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->coronaTests:Lkotlinx/coroutines/flow/Flow;
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deadmanNotificationScheduler:Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
+    new-instance p3, Lde/rki/coronawarnapp/submission/SubmissionRepository$special$$inlined$map$1;
 
-    iput-object p7, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
+    invoke-direct {p3, p1}, Lde/rki/coronawarnapp/submission/SubmissionRepository$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    new-instance p1, Ljava/util/Date;
+    iput-object p3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->pcrTest:Lkotlinx/coroutines/flow/Flow;
 
-    sget-object p2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    new-instance p3, Lde/rki/coronawarnapp/submission/SubmissionRepository$special$$inlined$map$2;
 
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/storage/LocalData;->initialTestResultReceivedTimestamp()Ljava/lang/Long;
+    invoke-direct {p3, p1}, Lde/rki/coronawarnapp/submission/SubmissionRepository$special$$inlined$map$2;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    move-result-object p2
+    iput-object p3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->raTest:Lkotlinx/coroutines/flow/Flow;
 
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide p2
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide p2
-
-    :goto_0
-    invoke-direct {p1, p2, p3}, Ljava/util/Date;-><init>(J)V
-
-    invoke-static {p1}, Lkotlinx/coroutines/flow/StateFlowKt;->MutableStateFlow(Ljava/lang/Object;)Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultReceivedDateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultReceivedDateFlow:Lkotlinx/coroutines/flow/Flow;
-
-    sget-object p1, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestIdle;->INSTANCE:Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestIdle;
-
-    invoke-static {p1}, Lkotlinx/coroutines/flow/StateFlowKt;->MutableStateFlow(Ljava/lang/Object;)Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlow:Lkotlinx/coroutines/flow/Flow;
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
-
-    iget-object p2, p1, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasGivenConsent:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->flow:Lkotlinx/coroutines/flow/Flow;
-
-    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->hasGivenConsentToSubmission:Lkotlinx/coroutines/flow/Flow;
-
-    iget-object p2, p1, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasViewedTestResult:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->flow:Lkotlinx/coroutines/flow/Flow;
-
-    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->hasViewedTestResult:Lkotlinx/coroutines/flow/Flow;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/submission/SubmissionSettings;->symptoms:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iget-object p1, p2, Lde/rki/coronawarnapp/submission/SubmissionSettings;->symptoms:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->currentSymptoms:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    const/4 p1, 0x0
-
-    invoke-static {p1}, Lkotlinx/coroutines/flow/StateFlowKt;->MutableStateFlow(Ljava/lang/Object;)Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final asyncRegisterDeviceViaGUID(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
+.method public final giveConsentToSubmission(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Lde/rki/coronawarnapp/util/formatter/TestResult;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
-
-    instance-of v0, p2, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;
-
-    iget v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->label:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->label:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;
-
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->result:Ljava/lang/Object;
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->label:I
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x1
-
-    if-eqz v2, :cond_3
-
-    if-eq v2, v4, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->L$0:Ljava/lang/Object;
-
-    check-cast p1, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    iget-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->L$0:Ljava/lang/Object;
-
-    check-cast p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    iget-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionService:Lde/rki/coronawarnapp/service/submission/SubmissionService;
-
-    iput-object p0, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->L$0:Ljava/lang/Object;
-
-    iput v4, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->label:I
-
-    invoke-virtual {p2, p1, v0}, Lde/rki/coronawarnapp/service/submission/SubmissionService;->asyncRegisterDeviceViaGUID(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_4
-
-    return-object v1
-
-    :cond_4
-    move-object p1, p0
-
-    :goto_1
-    check-cast p2, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;
-
-    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    iget-object v4, p2, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;->registrationToken:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken(Ljava/lang/String;)V
-
-    iget-object v2, p2, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;->testResult:Lde/rki/coronawarnapp/util/formatter/TestResult;
-
-    invoke-virtual {p1, v2}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->updateTestResult(Lde/rki/coronawarnapp/util/formatter/TestResult;)V
-
-    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    iget-object v4, p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
-
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
-
-    move-result-object v4
-
-    iget-wide v4, v4, Lorg/joda/time/Instant;->iMillis:J
-
-    invoke-virtual {v2, v4, v5}, Lde/rki/coronawarnapp/storage/LocalData;->devicePairingSuccessfulTimestamp(J)V
-
-    sget-object v2, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->Companion:Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;->getInstance()Lde/rki/coronawarnapp/playbook/BackgroundNoise;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
-
-    iput-object p2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->L$0:Ljava/lang/Object;
-
-    iput v3, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaGUID$1;->label:I
-
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->reportTestRegistered(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_5
-
-    return-object v1
-
-    :cond_5
-    move-object p1, p2
-
-    :goto_2
-    iget-object p1, p1, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;->testResult:Lde/rki/coronawarnapp/util/formatter/TestResult;
-
-    return-object p1
-.end method
-
-.method public final asyncRegisterDeviceViaTAN(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lkotlin/Unit;",
@@ -394,254 +122,135 @@
         }
     .end annotation
 
-    instance-of v0, p2, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    if-eqz v0, :cond_0
+    const-string v1, "SubmissionRepository"
 
-    move-object v0, p2
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    check-cast v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;
+    const/4 v1, 0x1
 
-    iget v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->label:I
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/high16 v2, -0x80000000
+    const/4 v2, 0x0
 
-    and-int v3, v1, v2
+    aput-object p1, v1, v2
 
-    if-eqz v3, :cond_0
+    const-string v2, "giveConsentToSubmission(type=%s)"
 
-    sub-int/2addr v1, v2
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iput v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->label:I
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
 
-    goto :goto_0
+    invoke-interface {v0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
+
+    new-instance v1, Lde/rki/coronawarnapp/submission/SubmissionRepository$giveConsentToSubmission$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, p1, v2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$giveConsentToSubmission$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v1, p2}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    if-ne p1, p2, :cond_0
+
+    return-object p1
 
     :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;
-
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->result:Ljava/lang/Object;
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->label:I
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x1
-
-    if-eqz v2, :cond_3
-
-    if-eq v2, v4, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->L$0:Ljava/lang/Object;
-
-    check-cast p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    iget-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->L$0:Ljava/lang/Object;
-
-    check-cast p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    iget-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionService:Lde/rki/coronawarnapp/service/submission/SubmissionService;
-
-    iput-object p0, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->L$0:Ljava/lang/Object;
-
-    iput v4, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->label:I
-
-    invoke-virtual {p2, p1, v0}, Lde/rki/coronawarnapp/service/submission/SubmissionService;->asyncRegisterDeviceViaTAN(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_4
-
-    return-object v1
-
-    :cond_4
-    move-object p1, p0
-
-    :goto_1
-    check-cast p2, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;
-
-    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    iget-object v4, p2, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;->registrationToken:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken(Ljava/lang/String;)V
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/service/submission/SubmissionService$RegistrationData;->testResult:Lde/rki/coronawarnapp/util/formatter/TestResult;
-
-    invoke-virtual {p1, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->updateTestResult(Lde/rki/coronawarnapp/util/formatter/TestResult;)V
-
-    sget-object p2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    iget-object v2, p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
-
-    move-result-object v2
-
-    iget-wide v4, v2, Lorg/joda/time/Instant;->iMillis:J
-
-    invoke-virtual {p2, v4, v5}, Lde/rki/coronawarnapp/storage/LocalData;->devicePairingSuccessfulTimestamp(J)V
-
-    sget-object p2, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->Companion:Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;
-
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;->getInstance()Lde/rki/coronawarnapp/playbook/BackgroundNoise;
-
-    iget-object p2, p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
-
-    iput-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->L$0:Ljava/lang/Object;
-
-    iput v3, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$asyncRegisterDeviceViaTAN$1;->label:I
-
-    invoke-virtual {p2, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->reportTestRegistered(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_5
-
-    return-object v1
-
-    :cond_5
-    :goto_2
-    iget-object p1, p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->getDisabled()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_6
-
-    goto :goto_3
-
-    :cond_6
-    iget-object p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->analyticsKeySubmissionStorage:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->registeredWithTeleTAN:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    sget-object p2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportRegisteredWithTeleTAN$1;->INSTANCE:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportRegisteredWithTeleTAN$1;
-
-    invoke-virtual {p1, p2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
-
-    :goto_3
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
-.method public final deriveUiState(Lde/rki/coronawarnapp/util/formatter/TestResult;)Lde/rki/coronawarnapp/util/DeviceUIState;
-    .locals 1
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->UNPAIRED:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    if-eqz p1, :cond_5
-
-    const/4 v0, 0x1
-
-    if-eq p1, v0, :cond_4
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_3
-
-    const/4 v0, 0x3
-
-    if-eq p1, v0, :cond_2
-
-    const/4 v0, 0x4
-
-    if-ne p1, v0, :cond_1
-
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_REDEEMED:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p1
-
-    :cond_2
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_ERROR:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    goto :goto_0
-
-    :cond_3
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_POSITIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    goto :goto_0
-
-    :cond_4
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NEGATIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    goto :goto_0
-
-    :cond_5
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NO_RESULT:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    :goto_0
-    return-object p1
-.end method
-
-.method public final fetchTestResult(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+.method public final refreshTest(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Lde/rki/coronawarnapp/util/DeviceUIState;",
+            "Lkotlin/Unit;",
             ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
 
-    instance-of v0, p2, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v1, "SubmissionRepository"
+
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    const-string v2, "refreshTest(type=%s)"
+
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
+
+    invoke-interface {v0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
+
+    new-instance v1, Lde/rki/coronawarnapp/submission/SubmissionRepository$refreshTest$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, p1, v2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$refreshTest$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v1, p2}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    if-ne p1, p2, :cond_0
+
+    return-object p1
+
+    :cond_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final registerTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    instance-of v0, p2, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;
 
     if-eqz v0, :cond_0
 
     move-object v0, p2
 
-    check-cast v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;
+    check-cast v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;
 
-    iget v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;->label:I
+    iget v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;->label:I
 
     const/high16 v2, -0x80000000
 
@@ -651,36 +260,35 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;->label:I
+    iput v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;
+    new-instance v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;
 
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;->result:Ljava/lang/Object;
+    iget-object p2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;->result:Ljava/lang/Object;
 
     sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;->label:I
+    iget v2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;->label:I
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v4, :cond_1
 
-    iget-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;->L$0:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;->L$0:Ljava/lang/Object;
 
-    check-cast p1, Lde/rki/coronawarnapp/submission/SubmissionRepository;
+    check-cast p1, Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;
 
-    :try_start_0
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Lde/rki/coronawarnapp/exception/NoRegistrationTokenSetException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -694,18 +302,35 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    :try_start_1
-    iget-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionService:Lde/rki/coronawarnapp/service/submission/SubmissionService;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    iput-object p0, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;->L$0:Ljava/lang/Object;
+    const-string v2, "SubmissionRepository"
 
-    iput v3, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$fetchTestResult$1;->label:I
+    invoke-virtual {p2, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/service/submission/SubmissionService;->playbook:Lde/rki/coronawarnapp/playbook/Playbook;
+    new-array v2, v4, [Ljava/lang/Object;
 
-    invoke-interface {p2, p1, v0}, Lde/rki/coronawarnapp/playbook/Playbook;->testResult(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    aput-object p1, v2, v3
+
+    const-string v5, "registerTest(request=%s)"
+
+    invoke-virtual {p2, v5, v2}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+    iput-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;->L$0:Ljava/lang/Object;
+
+    iput v4, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$registerTest$1;->label:I
+
+    new-instance v2, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$2;
+
+    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$2;-><init>(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$3;->INSTANCE:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository$registerTest$3;
+
+    invoke-virtual {p2, p1, v2, v5, v0}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->registerTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -714,318 +339,74 @@
     return-object v1
 
     :cond_3
-    move-object p1, p0
-
     :goto_1
-    check-cast p2, Lde/rki/coronawarnapp/util/formatter/TestResult;
+    check-cast p2, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
 
-    invoke-virtual {p1, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->updateTestResult(Lde/rki/coronawarnapp/util/formatter/TestResult;)V
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {p1, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deriveUiState(Lde/rki/coronawarnapp/util/formatter/TestResult;)Lde/rki/coronawarnapp/util/DeviceUIState;
+    const/4 v1, 0x2
 
-    move-result-object p1
-    :try_end_1
-    .catch Lde/rki/coronawarnapp/exception/NoRegistrationTokenSetException; {:try_start_1 .. :try_end_1} :catch_0
+    new-array v1, v1, [Ljava/lang/Object;
 
-    goto :goto_2
+    aput-object p1, v1, v3
 
-    :catch_0
-    sget-object p1, Lde/rki/coronawarnapp/util/DeviceUIState;->UNPAIRED:Lde/rki/coronawarnapp/util/DeviceUIState;
+    aput-object p2, v1, v4
 
-    :goto_2
-    return-object p1
+    const-string p1, "Registered test %s -> %s"
+
+    invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-object p2
 .end method
 
-.method public final giveConsentToSubmission()V
-    .locals 3
+.method public final removeTestFromDevice(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
+    .locals 9
 
-    const/4 v0, 0x0
+    const-string/jumbo v0, "type"
 
-    new-array v0, v0, [Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string v2, "giveConsentToSubmission()"
+    const-string v1, "SubmissionRepository"
 
-    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasGivenConsent:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    sget-object v1, Lde/rki/coronawarnapp/submission/SubmissionRepository$giveConsentToSubmission$1;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionRepository$giveConsentToSubmission$1;
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
-
-    return-void
-.end method
-
-.method public final refreshDeviceUIState(Z)V
-    .locals 8
-
-    sget-object v0, Lde/rki/coronawarnapp/util/DeviceUIState;->UNPAIRED:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/storage/LocalData;->submissionWasSuccessful()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    new-instance v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;
-
-    sget-object v1, Lde/rki/coronawarnapp/util/DeviceUIState;->SUBMITTED_FINAL:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;-><init>(Ljava/lang/Object;)V
-
-    invoke-interface {p1, v0}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken()Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    new-instance v1, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;-><init>(Ljava/lang/Object;)V
-
-    invoke-interface {p1, v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/storage/LocalData;->isAllowedToSubmitDiagnosisKeys()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    new-instance v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;
-
-    sget-object v1, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_POSITIVE:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;-><init>(Ljava/lang/Object;)V
-
-    invoke-interface {p1, v0}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_2
-    iget-object v2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    invoke-interface {v2}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
-
-    instance-of v3, v2, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;
-
-    if-eqz v3, :cond_3
-
-    check-cast v2, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;
-
-    iget-object v2, v2, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;->data:Ljava/lang/Object;
-
-    check-cast v2, Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    const-string v3, "it"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v3, Lde/rki/coronawarnapp/util/DeviceUIState;->PAIRED_NO_RESULT:Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    if-eq v2, v3, :cond_3
-
-    if-eq v2, v0, :cond_3
-
-    const/4 p1, 0x0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "refreshDeviceUIState: Change refresh, state "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, " doesn\'t require refresh"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-array v2, p1, [Ljava/lang/Object;
-
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v3, v0, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_3
-    if-eqz p1, :cond_4
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    sget-object v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestStarted;->INSTANCE:Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestStarted;
-
-    invoke-interface {p1, v0}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    new-instance v5, Lde/rki/coronawarnapp/submission/SubmissionRepository$refreshDeviceUIState$2;
-
-    const/4 p1, 0x0
-
-    invoke-direct {v5, p0, v1, p1}, Lde/rki/coronawarnapp/submission/SubmissionRepository$refreshDeviceUIState$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v6, 0x3
-
-    const/4 v7, 0x0
-
-    invoke-static/range {v2 .. v7}, Lcom/google/zxing/client/android/R$id;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
-
-    goto :goto_0
-
-    :cond_4
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    new-instance v0, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    invoke-interface {v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lde/rki/coronawarnapp/util/formatter/TestResult;
-
-    invoke-virtual {p0, v1}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deriveUiState(Lde/rki/coronawarnapp/util/formatter/TestResult;)Lde/rki/coronawarnapp/util/DeviceUIState;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestSuccessful;-><init>(Ljava/lang/Object;)V
-
-    invoke-interface {p1, v0}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method public final removeTestFromDevice()V
-    .locals 4
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasViewedTestResult:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    sget-object v1, L-$$LambdaGroup$ks$IgX801MRylQU4PJ7NFoLv4NkOp8;->INSTANCE$0:L-$$LambdaGroup$ks$IgX801MRylQU4PJ7NFoLv4NkOp8;
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasGivenConsent:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    sget-object v1, L-$$LambdaGroup$ks$IgX801MRylQU4PJ7NFoLv4NkOp8;->INSTANCE$1:L-$$LambdaGroup$ks$IgX801MRylQU4PJ7NFoLv4NkOp8;
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->analyticsKeySubmissionStorage:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "prefs"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->clearAndNotify(Landroid/content/SharedPreferences;)V
-
-    const/4 v0, 0x0
-
-    new-array v1, v0, [Ljava/lang/Object;
-
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v3, "revokeConsentToSubmission()"
-
-    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasGivenConsent:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    sget-object v2, Lde/rki/coronawarnapp/submission/SubmissionRepository$revokeConsentToSubmission$1;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionRepository$revokeConsentToSubmission$1;
-
-    invoke-virtual {v1, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
-
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    new-array v1, v1, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lde/rki/coronawarnapp/storage/LocalData;->registrationToken(Ljava/lang/String;)V
+    aput-object p1, v1, v2
 
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    const-string v2, "removeTestFromDevice(type=%s)"
 
-    const-wide/16 v2, 0x0
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v1, v2, v3}, Lde/rki/coronawarnapp/storage/LocalData;->devicePairingSuccessfulTimestamp(J)V
+    iget-object v3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
 
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    new-instance v6, Lde/rki/coronawarnapp/submission/SubmissionRepository$removeTestFromDevice$1;
 
-    invoke-virtual {v1, v2, v3}, Lde/rki/coronawarnapp/storage/LocalData;->initialPollingForTestResultTimeStamp(J)V
+    const/4 v0, 0x0
 
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    invoke-direct {v6, p0, p1, v0}, Lde/rki/coronawarnapp/submission/SubmissionRepository$removeTestFromDevice$1;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v1, v2, v3}, Lde/rki/coronawarnapp/storage/LocalData;->initialTestResultReceivedTimestamp(J)V
+    const/4 v4, 0x0
 
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    const/4 v5, 0x0
 
-    invoke-virtual {v1, v0}, Lde/rki/coronawarnapp/storage/LocalData;->isAllowedToSubmitDiagnosisKeys(Z)V
+    const/4 v7, 0x3
 
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    const/4 v8, 0x0
 
-    invoke-virtual {v1, v0}, Lde/rki/coronawarnapp/storage/LocalData;->isTestResultAvailableNotificationSent(Z)V
-
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {v1, v0}, Lde/rki/coronawarnapp/storage/LocalData;->numberOfSuccessfulSubmissions(I)V
+    invoke-static/range {v3 .. v8}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     return-void
 .end method
 
 .method public final reset(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1081,7 +462,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -1095,33 +476,37 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deviceUIStateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v2, Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestIdle;->INSTANCE:Lde/rki/coronawarnapp/util/NetworkRequestWrapper$RequestIdle;
+    const-string v2, "SubmissionRepository"
 
-    invoke-interface {p1, v2}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {p1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->tekHistoryStorage:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;
+    const/4 v2, 0x0
+
+    new-array v4, v2, [Ljava/lang/Object;
+
+    const-string v5, "reset()"
+
+    invoke-virtual {p1, v5, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->tekHistoryStorage:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;
 
     iput-object p0, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$reset$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$reset$1;->label:I
 
-    if-eqz p1, :cond_4
+    invoke-static {v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    new-array v0, v2, [Ljava/lang/Object;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const-string v2, "clear() - Clearing all stored temporary exposure keys."
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v2, v0}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v3, "clear() - Clearing all stored temporary exposure keys."
-
-    invoke-virtual {v2, v3, v0}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;->getDatabase()Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase;
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;->getDatabase()Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase;
 
     move-result-object p1
 
@@ -1147,158 +532,311 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->clearAndNotify(Landroid/content/SharedPreferences;)V
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/preferences/SharedPreferenceExtensionsKt;->clearAndNotify(Landroid/content/SharedPreferences;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_4
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
-.method public final setViewedTestResult()V
+.method public final revokeConsentToSubmission(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
 
-    const/4 v0, 0x0
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const-string v1, "SubmissionRepository"
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v2, "setViewedTestResult()"
-
-    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasViewedTestResult:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    sget-object v1, Lde/rki/coronawarnapp/submission/SubmissionRepository$setViewedTestResult$1;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionRepository$setViewedTestResult$1;
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
-
-    return-void
-.end method
-
-.method public final updateTestResult(Lde/rki/coronawarnapp/util/formatter/TestResult;)V
-    .locals 4
-
-    const-string v0, "testResult"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultFlow:Lkotlinx/coroutines/flow/MutableStateFlow;
-
-    invoke-interface {v0, p1}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/util/formatter/TestResult;->POSITIVE:Lde/rki/coronawarnapp/util/formatter/TestResult;
-
-    if-ne p1, v0, :cond_1
-
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/storage/LocalData;->isAllowedToSubmitDiagnosisKeys(Z)V
+    new-array v1, v1, [Ljava/lang/Object;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->getDisabled()Z
+    aput-object p1, v1, v2
 
-    move-result v1
+    const-string v2, "revokeConsentToSubmission(type=%s)"
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
+
+    invoke-interface {v0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
+
+    new-instance v1, Lde/rki/coronawarnapp/submission/SubmissionRepository$revokeConsentToSubmission$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, p1, v2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$revokeConsentToSubmission$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v1, p2}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    if-ne p1, p2, :cond_0
+
+    return-object p1
+
+    :cond_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final setViewedTestResult(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v1, "SubmissionRepository"
+
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    const-string v2, "setViewedTestResult(type=%s)"
+
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->scope:Lkotlinx/coroutines/CoroutineScope;
+
+    invoke-interface {v0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v0
+
+    new-instance v1, Lde/rki/coronawarnapp/submission/SubmissionRepository$setViewedTestResult$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, p1, v2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$setViewedTestResult$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v1, p2}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p2, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    if-ne p1, p2, :cond_0
+
+    return-object p1
+
+    :cond_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final testForType(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)Lkotlinx/coroutines/flow/Flow;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;",
+            ")",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;"
+        }
+    .end annotation
+
+    const-string/jumbo v0, "type"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    aget p1, v0, p1
+
+    const/4 v0, 0x1
+
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x2
+
+    if-ne p1, v0, :cond_0
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->raTest:Lkotlinx/coroutines/flow/Flow;
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;->analyticsKeySubmissionStorage:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionStorage;->testResultReceivedAt:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
-    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportPositiveTestResultReceived$1;
-
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector$reportPositiveTestResultReceived$1;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;)V
-
-    invoke-virtual {v1, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
-
-    :goto_0
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->deadmanNotificationScheduler:Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
-
-    iget-object v1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workManager:Landroidx/work/WorkManager;
-
-    const-string v2, "DeadmanNotificationPeriodicWork"
-
-    invoke-virtual {v1, v2}, Landroidx/work/WorkManager;->cancelUniqueWork(Ljava/lang/String;)Landroidx/work/Operation;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workManager:Landroidx/work/WorkManager;
-
-    const-string v1, "DeadmanNotificationOneTimeWork"
-
-    invoke-virtual {v0, v1}, Landroidx/work/WorkManager;->cancelUniqueWork(Ljava/lang/String;)Landroidx/work/Operation;
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v2, "DeadmanNotification Jobs Cancelled"
-
-    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    throw p1
 
     :cond_1
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->pcrTest:Lkotlinx/coroutines/flow/Flow;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->initialTestResultReceivedTimestamp()Ljava/lang/Long;
+    :goto_0
+    return-object p1
+.end method
 
-    move-result-object v0
+.method public final tryReplaceTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
 
-    if-nez v0, :cond_2
+    instance-of v0, p2, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    if-eqz v0, :cond_0
 
-    move-result-wide v0
+    move-object v0, p2
 
-    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    check-cast v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;
 
-    invoke-virtual {v2, v0, v1}, Lde/rki/coronawarnapp/storage/LocalData;->initialTestResultReceivedTimestamp(J)V
+    iget v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;->label:I
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultReceivedDateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
+    const/high16 v2, -0x80000000
 
-    new-instance v3, Ljava/util/Date;
+    and-int v3, v1, v2
 
-    invoke-direct {v3, v0, v1}, Ljava/util/Date;-><init>(J)V
+    if-eqz v3, :cond_0
 
-    invoke-interface {v2, v3}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
+    sub-int/2addr v1, v2
 
-    sget-object v0, Lde/rki/coronawarnapp/util/formatter/TestResult;->PENDING:Lde/rki/coronawarnapp/util/formatter/TestResult;
+    iput v1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;->label:I
 
-    if-ne p1, v0, :cond_3
+    goto :goto_0
 
-    sget-object p1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;
+    :cond_0
+    new-instance v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;
 
-    invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->startWorkScheduler()V
+    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lkotlin/coroutines/Continuation;)V
+
+    :goto_0
+    iget-object p2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;->result:Ljava/lang/Object;
+
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;->label:I
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    if-eqz v2, :cond_2
+
+    if-ne v2, v4, :cond_1
+
+    iget-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;->L$0:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;
+
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
     :cond_2
-    iget-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->testResultReceivedDateFlowInternal:Lkotlinx/coroutines/flow/MutableStateFlow;
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-instance v1, Ljava/util/Date;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    const-string v2, "SubmissionRepository"
 
-    move-result-wide v2
+    invoke-virtual {p2, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-direct {v1, v2, v3}, Ljava/util/Date;-><init>(J)V
+    new-array v2, v4, [Ljava/lang/Object;
 
-    invoke-interface {p1, v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
+    aput-object p1, v2, v3
+
+    const-string/jumbo v5, "tryReplaceTest(request=%s)"
+
+    invoke-virtual {p2, v5, v2}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository;->coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+    new-instance v2, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$coronaTest$1;
+
+    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$coronaTest$1;-><init>(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$coronaTest$2;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$coronaTest$2;
+
+    iput-object p1, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;->L$0:Ljava/lang/Object;
+
+    iput v4, v0, Lde/rki/coronawarnapp/submission/SubmissionRepository$tryReplaceTest$1;->label:I
+
+    invoke-virtual {p2, p1, v2, v5, v0}, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->registerTest(Lde/rki/coronawarnapp/coronatest/TestRegistrationRequest;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    if-ne p2, v1, :cond_3
+
+    return-object v1
 
     :cond_3
     :goto_1
-    return-void
+    check-cast p2, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    aput-object p1, v1, v3
+
+    aput-object p2, v1, v4
+
+    const-string p1, "Registered test %s -> %s"
+
+    invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-object p2
 .end method

@@ -21,10 +21,7 @@
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
         "Lkotlin/jvm/functions/Function4<",
         "Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;",
-        "Ljava/util/List<",
-        "+",
-        "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
-        ">;",
+        "Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;",
         "Ljava/lang/Boolean;",
         "Lkotlin/coroutines/Continuation<",
         "-",
@@ -54,6 +51,15 @@
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;",
+            ">;)V"
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -64,12 +70,12 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    check-cast p2, Ljava/util/List;
+    check-cast p2, Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;
 
     check-cast p3, Ljava/lang/Boolean;
 
@@ -79,71 +85,29 @@
 
     check-cast p4, Lkotlin/coroutines/Continuation;
 
-    const-string v0, "status"
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, p4}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    const-string v0, "riskLevelResults"
+    iput-object p1, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;->L$0:Ljava/lang/Object;
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-object p2, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;->L$1:Ljava/lang/Object;
 
-    const-string v0, "continuation"
+    iput-boolean p3, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;->Z$0:Z
 
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    invoke-interface {p4}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object p4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    move-result-object p1
 
-    invoke-static {p4}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->tryLatestResultsWithDefaults(Ljava/util/List;)Lde/rki/coronawarnapp/risk/DisplayableRiskResults;
-
-    move-result-object p2
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/risk/DisplayableRiskResults;->lastCalculated:Lde/rki/coronawarnapp/risk/RiskLevelResult;
-
-    if-eqz p3, :cond_1
-
-    invoke-interface {p2}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
-
-    move-result-object p3
-
-    sget-object p4, Lde/rki/coronawarnapp/risk/RiskState;->CALCULATION_FAILED:Lde/rki/coronawarnapp/risk/RiskState;
-
-    if-ne p3, p4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p3, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p3, 0x1
-
-    :goto_1
-    new-instance p4, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;
-
-    invoke-interface {p2}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
-
-    move-result-object v0
-
-    invoke-interface {p2}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getDaysWithEncounters()I
-
-    move-result p2
-
-    invoke-direct {p4, p1, v0, p3, p2}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;-><init>(Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;Lde/rki/coronawarnapp/risk/RiskState;ZI)V
-
-    return-object p4
+    return-object p1
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;->L$0:Ljava/lang/Object;
 
@@ -151,19 +115,15 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;->L$1:Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/List;
+    check-cast v0, Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;
 
     iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;->Z$0:Z
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->tryLatestResultsWithDefaults(Ljava/util/List;)Lde/rki/coronawarnapp/risk/DisplayableRiskResults;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/risk/DisplayableRiskResults;->lastCalculated:Lde/rki/coronawarnapp/risk/RiskLevelResult;
+    iget-object v0, v0, Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;->lastCalculated:Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v0}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
     move-result-object v1
 
@@ -185,11 +145,11 @@
     :goto_1
     new-instance v2, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;
 
-    invoke-interface {v0}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
     move-result-object v3
 
-    invoke-interface {v0}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getDaysWithEncounters()I
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getDaysWithEncounters()I
 
     move-result v0
 

@@ -1,10 +1,10 @@
 .class public Lcom/google/android/gms/common/api/internal/LifecycleCallback;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # direct methods
-.method public static getChimeraLifecycleFragmentImpl(Lcom/google/android/gms/common/api/internal/LifecycleActivity;)Lcom/google/android/gms/common/api/internal/LifecycleFragment;
+.method private static getChimeraLifecycleFragmentImpl(Lcom/google/android/gms/common/api/internal/LifecycleActivity;)Lcom/google/android/gms/common/api/internal/LifecycleFragment;
     .locals 1
     .annotation build Landroidx/annotation/Keep;
     .end annotation

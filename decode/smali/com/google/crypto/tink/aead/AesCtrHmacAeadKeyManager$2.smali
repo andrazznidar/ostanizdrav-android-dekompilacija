@@ -127,7 +127,7 @@
 
     iget-object p1, p0, Lcom/google/crypto/tink/aead/AesCtrHmacAeadKeyManager$2;->this$0:Lcom/google/crypto/tink/aead/AesCtrHmacAeadKeyManager;
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 p1, 0x0
 
@@ -146,11 +146,6 @@
     check-cast p1, Lcom/google/crypto/tink/proto/AesCtrHmacAeadKey;
 
     return-object p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;

@@ -73,68 +73,6 @@
     return-void
 .end method
 
-.method public static cancelAll(Landroid/content/Context;)V
-    .locals 2
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "context"
-        }
-    .end annotation
-
-    const-string v0, "jobscheduler"
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/job/JobScheduler;
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p0, v0}, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->getPendingJobs(Landroid/content/Context;Landroid/app/job/JobScheduler;)Ljava/util/List;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/app/job/JobInfo;
-
-    invoke-virtual {v1}, Landroid/app/job/JobInfo;->getId()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->cancelJobById(Landroid/app/job/JobScheduler;I)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
 .method public static cancelJobById(Landroid/app/job/JobScheduler;I)V
     .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
@@ -441,269 +379,6 @@
     return-object p0
 .end method
 
-.method public static reconcileJobs(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;)Z
-    .locals 7
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "context",
-            "workManager"
-        }
-    .end annotation
-
-    const-string v0, "jobscheduler"
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/job/JobScheduler;
-
-    invoke-static {p0, v0}, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->getPendingJobs(Landroid/content/Context;Landroid/app/job/JobScheduler;)Ljava/util/List;
-
-    move-result-object p0
-
-    iget-object v1, p1, Landroidx/work/impl/WorkManagerImpl;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v1}, Landroidx/work/impl/WorkDatabase;->systemIdInfoDao()Landroidx/work/impl/model/SystemIdInfoDao;
-
-    move-result-object v1
-
-    check-cast v1, Landroidx/work/impl/model/SystemIdInfoDao_Impl;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_8
-
-    const-string v3, "SELECT DISTINCT work_spec_id FROM SystemIdInfo"
-
-    const/4 v4, 0x0
-
-    invoke-static {v3, v4}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
-
-    move-result-object v3
-
-    iget-object v5, v1, Landroidx/work/impl/model/SystemIdInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-virtual {v5}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
-
-    iget-object v1, v1, Landroidx/work/impl/model/SystemIdInfoDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-static {v1, v3, v4, v2}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
-
-    move-result-object v1
-
-    :try_start_0
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
-
-    move-result v5
-
-    invoke-direct {v2, v5}, Ljava/util/ArrayList;-><init>(I)V
-
-    :goto_0
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    invoke-interface {v1, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    invoke-virtual {v3}, Landroidx/room/RoomSQLiteQuery;->release()V
-
-    if-eqz p0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    goto :goto_1
-
-    :cond_1
-    move v1, v4
-
-    :goto_1
-    new-instance v3, Ljava/util/HashSet;
-
-    invoke-direct {v3, v1}, Ljava/util/HashSet;-><init>(I)V
-
-    if-eqz p0, :cond_3
-
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_2
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/app/job/JobInfo;
-
-    invoke-static {v1}, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->getWorkSpecIdFromJobInfo(Landroid/app/job/JobInfo;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_2
-
-    invoke-virtual {v3, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v1}, Landroid/app/job/JobInfo;->getId()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->cancelJobById(Landroid/app/job/JobScheduler;I)V
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_4
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v3, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
-
-    move-result-object p0
-
-    sget-object v0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->TAG:Ljava/lang/String;
-
-    new-array v1, v4, [Ljava/lang/Throwable;
-
-    const-string v3, "Reconciling jobs"
-
-    invoke-virtual {p0, v0, v3, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-
-    const/4 v4, 0x1
-
-    :cond_5
-    if-eqz v4, :cond_7
-
-    iget-object p0, p1, Landroidx/work/impl/WorkManagerImpl;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
-
-    :try_start_1
-    invoke-virtual {p0}, Landroidx/work/impl/WorkDatabase;->workSpecDao()Landroidx/work/impl/model/WorkSpecDao;
-
-    move-result-object p1
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_3
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const-wide/16 v2, -0x1
-
-    move-object v5, p1
-
-    check-cast v5, Landroidx/work/impl/model/WorkSpecDao_Impl;
-
-    :try_start_2
-    invoke-virtual {v5, v1, v2, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->markWorkSpecScheduled(Ljava/lang/String;J)I
-
-    goto :goto_3
-
-    :cond_6
-    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
-
-    goto :goto_4
-
-    :catchall_0
-    move-exception p1
-
-    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
-
-    throw p1
-
-    :cond_7
-    :goto_4
-    return v4
-
-    :catchall_1
-    move-exception p0
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    invoke-virtual {v3}, Landroidx/room/RoomSQLiteQuery;->release()V
-
-    throw p0
-
-    :cond_8
-    throw v2
-.end method
-
 
 # virtual methods
 .method public cancel(Ljava/lang/String;)V
@@ -823,23 +498,20 @@
     move-result-object v6
 
     iget-object v7, v5, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v6, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v6, v7}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getWorkSpec(Ljava/lang/String;)Landroidx/work/impl/model/WorkSpec;
 
     move-result-object v6
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const-string v7, "Skipping scheduling "
 
     if-nez v6, :cond_0
 
-    :try_start_2
+    :try_start_1
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v6
@@ -917,12 +589,9 @@
     move-result-object v6
 
     iget-object v7, v5, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     check-cast v6, Landroidx/work/impl/model/SystemIdInfoDao_Impl;
 
-    :try_start_3
     invoke-virtual {v6, v7}, Landroidx/work/impl/model/SystemIdInfoDao_Impl;->getSystemIdInfo(Ljava/lang/String;)Landroidx/work/impl/model/SystemIdInfo;
 
     move-result-object v6
@@ -938,15 +607,15 @@
 
     iget-object v7, v7, Landroidx/work/impl/WorkManagerImpl;->mConfiguration:Landroidx/work/Configuration;
 
-    iget v7, v7, Landroidx/work/Configuration;->mMinJobSchedulerId:I
+    invoke-static {v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v8, p0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mWorkManager:Landroidx/work/impl/WorkManagerImpl;
+    iget-object v7, p0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mWorkManager:Landroidx/work/impl/WorkManagerImpl;
 
-    iget-object v8, v8, Landroidx/work/impl/WorkManagerImpl;->mConfiguration:Landroidx/work/Configuration;
+    iget-object v7, v7, Landroidx/work/impl/WorkManagerImpl;->mConfiguration:Landroidx/work/Configuration;
 
-    iget v8, v8, Landroidx/work/Configuration;->mMaxJobSchedulerId:I
+    iget v7, v7, Landroidx/work/Configuration;->mMaxJobSchedulerId:I
 
-    invoke-virtual {v1, v7, v8}, Landroidx/work/impl/utils/IdGenerator;->nextJobSchedulerIdWithRange(II)I
+    invoke-virtual {v1, v3, v7}, Landroidx/work/impl/utils/IdGenerator;->nextJobSchedulerIdWithRange(II)I
 
     move-result v7
 
@@ -966,12 +635,9 @@
     invoke-virtual {v8}, Landroidx/work/impl/WorkDatabase;->systemIdInfoDao()Landroidx/work/impl/model/SystemIdInfoDao;
 
     move-result-object v8
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     check-cast v8, Landroidx/work/impl/model/SystemIdInfoDao_Impl;
 
-    :try_start_4
     invoke-virtual {v8, v6}, Landroidx/work/impl/model/SystemIdInfoDao_Impl;->insertSystemIdInfo(Landroidx/work/impl/model/SystemIdInfo;)V
 
     :cond_3
@@ -1031,15 +697,15 @@
 
     iget-object v6, v6, Landroidx/work/impl/WorkManagerImpl;->mConfiguration:Landroidx/work/Configuration;
 
-    iget v6, v6, Landroidx/work/Configuration;->mMinJobSchedulerId:I
+    invoke-static {v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v7, p0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mWorkManager:Landroidx/work/impl/WorkManagerImpl;
+    iget-object v6, p0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mWorkManager:Landroidx/work/impl/WorkManagerImpl;
 
-    iget-object v7, v7, Landroidx/work/impl/WorkManagerImpl;->mConfiguration:Landroidx/work/Configuration;
+    iget-object v6, v6, Landroidx/work/impl/WorkManagerImpl;->mConfiguration:Landroidx/work/Configuration;
 
-    iget v7, v7, Landroidx/work/Configuration;->mMaxJobSchedulerId:I
+    iget v6, v6, Landroidx/work/Configuration;->mMaxJobSchedulerId:I
 
-    invoke-virtual {v1, v6, v7}, Landroidx/work/impl/utils/IdGenerator;->nextJobSchedulerIdWithRange(II)I
+    invoke-virtual {v1, v3, v6}, Landroidx/work/impl/utils/IdGenerator;->nextJobSchedulerIdWithRange(II)I
 
     move-result v6
 
@@ -1048,8 +714,8 @@
 
     :cond_6
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :goto_3
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
@@ -1088,7 +754,7 @@
 
     iget-object v0, v1, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mSystemJobInfoConverter:Landroidx/work/impl/background/systemjob/SystemJobInfoConverter;
 
-    if-eqz v0, :cond_10
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v3, v2, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
@@ -1098,25 +764,25 @@
 
     move-result v5
 
-    const/16 v6, 0x1a
+    const/4 v6, 0x3
 
-    const/16 v7, 0x18
+    const/16 v7, 0x1a
 
-    const/4 v8, 0x2
+    const/16 v8, 0x18
 
-    const/4 v9, 0x1
+    const/4 v9, 0x2
 
-    const/4 v10, 0x0
+    const/4 v10, 0x1
 
-    const/4 v11, 0x3
+    const/4 v11, 0x0
 
     if-eqz v5, :cond_5
 
-    if-eq v5, v9, :cond_4
+    if-eq v5, v10, :cond_4
 
-    if-eq v5, v8, :cond_3
+    if-eq v5, v9, :cond_3
 
-    if-eq v5, v11, :cond_1
+    if-eq v5, v6, :cond_1
 
     const/4 v12, 0x4
 
@@ -1127,16 +793,16 @@
     :cond_0
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v5, v6, :cond_2
+    if-lt v5, v7, :cond_2
 
     goto :goto_2
 
     :cond_1
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v5, v7, :cond_2
+    if-lt v5, v8, :cond_2
 
-    move v12, v11
+    move v12, v6
 
     goto :goto_2
 
@@ -1148,9 +814,9 @@
 
     sget-object v12, Landroidx/work/impl/background/systemjob/SystemJobInfoConverter;->TAG:Ljava/lang/String;
 
-    new-array v13, v9, [Ljava/lang/Object;
+    new-array v13, v10, [Ljava/lang/Object;
 
-    aput-object v4, v13, v10
+    aput-object v4, v13, v11
 
     const-string v4, "API version too low. Cannot convert network type value %s"
 
@@ -1158,25 +824,25 @@
 
     move-result-object v4
 
-    new-array v13, v10, [Ljava/lang/Throwable;
+    new-array v13, v11, [Ljava/lang/Throwable;
 
     invoke-virtual {v5, v12, v4, v13}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     goto :goto_1
 
     :cond_3
-    move v12, v8
+    move v12, v9
 
     goto :goto_2
 
     :cond_4
     :goto_1
-    move v12, v9
+    move v12, v10
 
     goto :goto_2
 
     :cond_5
-    move v12, v10
+    move v12, v11
 
     :goto_2
     new-instance v4, Landroid/os/PersistableBundle;
@@ -1235,12 +901,12 @@
 
     if-ne v4, v5, :cond_6
 
-    move v4, v10
+    move v4, v11
 
     goto :goto_3
 
     :cond_6
-    move v4, v9
+    move v4, v10
 
     :goto_3
     iget-wide v14, v2, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
@@ -1266,30 +932,28 @@
 
     sget v12, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v11, 0x1c
+    const/16 v6, 0x1c
 
-    if-gt v12, v11, :cond_8
+    if-gt v12, v6, :cond_8
 
     invoke-virtual {v0, v4, v5}, Landroid/app/job/JobInfo$Builder;->setMinimumLatency(J)Landroid/app/job/JobInfo$Builder;
 
     goto :goto_4
 
     :cond_8
-    cmp-long v11, v4, v14
+    cmp-long v6, v4, v14
 
-    if-lez v11, :cond_9
+    if-lez v6, :cond_9
 
     invoke-virtual {v0, v4, v5}, Landroid/app/job/JobInfo$Builder;->setMinimumLatency(J)Landroid/app/job/JobInfo$Builder;
 
     goto :goto_4
 
     :cond_9
-    invoke-virtual {v0, v9}, Landroid/app/job/JobInfo$Builder;->setImportantWhileForeground(Z)Landroid/app/job/JobInfo$Builder;
+    invoke-virtual {v0, v10}, Landroid/app/job/JobInfo$Builder;->setImportantWhileForeground(Z)Landroid/app/job/JobInfo$Builder;
 
     :goto_4
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v4, v7, :cond_c
+    if-lt v12, v8, :cond_c
 
     iget-object v4, v3, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
 
@@ -1299,12 +963,12 @@
 
     if-lez v4, :cond_a
 
-    move v4, v9
+    move v4, v10
 
     goto :goto_5
 
     :cond_a
-    move v4, v10
+    move v4, v11
 
     :goto_5
     if-eqz v4, :cond_c
@@ -1330,15 +994,15 @@
 
     check-cast v5, Landroidx/work/ContentUriTriggers$Trigger;
 
-    iget-boolean v7, v5, Landroidx/work/ContentUriTriggers$Trigger;->mTriggerForDescendants:Z
+    iget-boolean v6, v5, Landroidx/work/ContentUriTriggers$Trigger;->mTriggerForDescendants:Z
 
-    new-instance v11, Landroid/app/job/JobInfo$TriggerContentUri;
+    new-instance v8, Landroid/app/job/JobInfo$TriggerContentUri;
 
     iget-object v5, v5, Landroidx/work/ContentUriTriggers$Trigger;->mUri:Landroid/net/Uri;
 
-    invoke-direct {v11, v5, v7}, Landroid/app/job/JobInfo$TriggerContentUri;-><init>(Landroid/net/Uri;I)V
+    invoke-direct {v8, v5, v6}, Landroid/app/job/JobInfo$TriggerContentUri;-><init>(Landroid/net/Uri;I)V
 
-    invoke-virtual {v0, v11}, Landroid/app/job/JobInfo$Builder;->addTriggerContentUri(Landroid/app/job/JobInfo$TriggerContentUri;)Landroid/app/job/JobInfo$Builder;
+    invoke-virtual {v0, v8}, Landroid/app/job/JobInfo$Builder;->addTriggerContentUri(Landroid/app/job/JobInfo$TriggerContentUri;)Landroid/app/job/JobInfo$Builder;
 
     goto :goto_6
 
@@ -1352,11 +1016,11 @@
     invoke-virtual {v0, v4, v5}, Landroid/app/job/JobInfo$Builder;->setTriggerContentMaxDelay(J)Landroid/app/job/JobInfo$Builder;
 
     :cond_c
-    invoke-virtual {v0, v10}, Landroid/app/job/JobInfo$Builder;->setPersisted(Z)Landroid/app/job/JobInfo$Builder;
+    invoke-virtual {v0, v11}, Landroid/app/job/JobInfo$Builder;->setPersisted(Z)Landroid/app/job/JobInfo$Builder;
 
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v4, v6, :cond_d
+    if-lt v4, v7, :cond_d
 
     iget-boolean v4, v3, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
 
@@ -1377,17 +1041,17 @@
 
     sget-object v4, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->TAG:Ljava/lang/String;
 
-    new-array v5, v8, [Ljava/lang/Object;
+    new-array v5, v9, [Ljava/lang/Object;
 
     iget-object v6, v2, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
 
-    aput-object v6, v5, v10
+    aput-object v6, v5, v11
 
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    aput-object v6, v5, v9
+    aput-object v6, v5, v10
 
     const-string v6, "Scheduling work ID %s Job ID %s"
 
@@ -1395,7 +1059,7 @@
 
     move-result-object v5
 
-    new-array v6, v10, [Ljava/lang/Throwable;
+    new-array v6, v11, [Ljava/lang/Throwable;
 
     invoke-virtual {v3, v4, v5, v6}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
@@ -1418,9 +1082,9 @@
 
     sget-object v4, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->TAG:Ljava/lang/String;
 
-    new-array v5, v9, [Ljava/lang/Object;
+    new-array v5, v10, [Ljava/lang/Object;
 
-    aput-object v2, v5, v10
+    aput-object v2, v5, v11
 
     const-string v2, "Unable to schedule %s"
 
@@ -1428,9 +1092,9 @@
 
     move-result-object v2
 
-    new-array v5, v9, [Ljava/lang/Throwable;
+    new-array v5, v10, [Ljava/lang/Throwable;
 
-    aput-object v0, v5, v10
+    aput-object v0, v5, v11
 
     invoke-virtual {v3, v4, v2, v5}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
@@ -1457,7 +1121,7 @@
     goto :goto_8
 
     :cond_e
-    move v2, v10
+    move v2, v11
 
     :goto_8
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
@@ -1472,7 +1136,7 @@
 
     move-result-object v2
 
-    aput-object v2, v4, v10
+    aput-object v2, v4, v11
 
     iget-object v2, v1, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mWorkManager:Landroidx/work/impl/WorkManagerImpl;
 
@@ -1498,7 +1162,7 @@
 
     move-result-object v2
 
-    aput-object v2, v4, v9
+    aput-object v2, v4, v10
 
     iget-object v2, v1, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->mWorkManager:Landroidx/work/impl/WorkManagerImpl;
 
@@ -1512,7 +1176,7 @@
 
     iget v2, v2, Landroidx/work/Configuration;->mMaxSchedulerLimit:I
 
-    div-int/2addr v2, v8
+    div-int/2addr v2, v9
 
     goto :goto_9
 
@@ -1524,7 +1188,7 @@
 
     move-result-object v2
 
-    aput-object v2, v4, v8
+    aput-object v2, v4, v9
 
     const-string v2, "JobScheduler 100 job limit exceeded.  We count %d WorkManager jobs in JobScheduler; we have %d tracked jobs in our DB; our Configuration limit is %d."
 
@@ -1538,7 +1202,7 @@
 
     sget-object v4, Landroidx/work/impl/background/systemjob/SystemJobScheduler;->TAG:Ljava/lang/String;
 
-    new-array v5, v10, [Ljava/lang/Throwable;
+    new-array v5, v11, [Ljava/lang/Throwable;
 
     invoke-virtual {v3, v4, v2, v5}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
@@ -1547,9 +1211,4 @@
     invoke-direct {v3, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v3
-
-    :cond_10
-    const/4 v0, 0x0
-
-    throw v0
 .end method

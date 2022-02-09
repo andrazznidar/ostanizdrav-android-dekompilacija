@@ -122,7 +122,7 @@
     :cond_0
     new-instance p1, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "unknown hash"
+    const-string/jumbo v0, "unknown hash"
 
     invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 

@@ -35,15 +35,13 @@
 
 # virtual methods
 .method public onEditTextAttached(Lcom/google/android/material/textfield/TextInputLayout;)V
-    .locals 12
-
-    iget-object v0, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$4;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
+    .locals 11
 
     invoke-virtual {p1}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->access$000(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/EditText;)Landroid/widget/AutoCompleteTextView;
+    invoke-static {v0}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->access$000(Landroid/widget/EditText;)Landroid/widget/AutoCompleteTextView;
 
     move-result-object v0
 
@@ -78,131 +76,141 @@
     :goto_0
     iget-object v1, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$4;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
 
-    const/4 v2, 0x0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v1, :cond_6
+    invoke-virtual {v0}, Landroid/widget/EditText;->getKeyListener()Landroid/text/method/KeyListener;
 
-    invoke-virtual {v0}, Landroid/widget/AutoCompleteTextView;->getKeyListener()Landroid/text/method/KeyListener;
+    move-result-object v2
 
-    move-result-object v5
+    const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    if-eqz v2, :cond_2
 
-    if-eqz v5, :cond_2
-
-    goto/16 :goto_1
-
-    :cond_2
-    iget-object v5, v1, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
-
-    invoke-virtual {v5}, Lcom/google/android/material/textfield/TextInputLayout;->getBoxBackgroundMode()I
-
-    move-result v5
-
-    iget-object v7, v1, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
-
-    invoke-virtual {v7}, Lcom/google/android/material/textfield/TextInputLayout;->getBoxBackground()Lcom/google/android/material/shape/MaterialShapeDrawable;
-
-    move-result-object v7
-
-    const v8, 0x7f0400b9
-
-    invoke-static {v0, v8}, Lcom/google/android/material/R$style;->getColor(Landroid/view/View;I)I
-
-    move-result v8
-
-    new-array v9, v3, [[I
-
-    new-array v10, v4, [I
-
-    const v11, 0x10100a7
-
-    aput v11, v10, v6
-
-    aput-object v10, v9, v6
-
-    new-array v10, v6, [I
-
-    aput-object v10, v9, v4
-
-    const v10, 0x3dcccccd    # 0.1f
-
-    if-ne v5, v3, :cond_3
-
-    const v1, 0x7f0400c9
-
-    invoke-static {v0, v1}, Lcom/google/android/material/R$style;->getColor(Landroid/view/View;I)I
-
-    move-result v1
-
-    new-instance v5, Lcom/google/android/material/shape/MaterialShapeDrawable;
-
-    iget-object v11, v7, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
-
-    iget-object v11, v11, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shapeAppearanceModel:Lcom/google/android/material/shape/ShapeAppearanceModel;
-
-    invoke-direct {v5, v11}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
-
-    invoke-static {v8, v1, v10}, Lcom/google/android/material/R$style;->layer(IIF)I
-
-    move-result v8
-
-    new-array v10, v3, [I
-
-    aput v8, v10, v6
-
-    aput v6, v10, v4
-
-    new-instance v11, Landroid/content/res/ColorStateList;
-
-    invoke-direct {v11, v9, v10}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
-
-    invoke-virtual {v5, v11}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
-
-    invoke-virtual {v5, v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setTint(I)V
-
-    new-array v10, v3, [I
-
-    aput v8, v10, v6
-
-    aput v1, v10, v4
-
-    new-instance v1, Landroid/content/res/ColorStateList;
-
-    invoke-direct {v1, v9, v10}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
-
-    new-instance v8, Lcom/google/android/material/shape/MaterialShapeDrawable;
-
-    iget-object v9, v7, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
-
-    iget-object v9, v9, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shapeAppearanceModel:Lcom/google/android/material/shape/ShapeAppearanceModel;
-
-    invoke-direct {v8, v9}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
-
-    const/4 v9, -0x1
-
-    invoke-virtual {v8, v9}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setTint(I)V
-
-    new-instance v9, Landroid/graphics/drawable/RippleDrawable;
-
-    invoke-direct {v9, v1, v5, v8}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    new-array v1, v3, [Landroid/graphics/drawable/Drawable;
-
-    aput-object v9, v1, v6
-
-    aput-object v7, v1, v4
-
-    new-instance v3, Landroid/graphics/drawable/LayerDrawable;
-
-    invoke-direct {v3, v1}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
-
-    invoke-static {v0, v3}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    move v2, v4
 
     goto :goto_1
 
+    :cond_2
+    move v2, v5
+
+    :goto_1
+    if-eqz v2, :cond_3
+
+    goto/16 :goto_2
+
     :cond_3
-    if-ne v5, v4, :cond_4
+    iget-object v2, v1, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
+
+    invoke-virtual {v2}, Lcom/google/android/material/textfield/TextInputLayout;->getBoxBackgroundMode()I
+
+    move-result v2
+
+    iget-object v6, v1, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
+
+    invoke-virtual {v6}, Lcom/google/android/material/textfield/TextInputLayout;->getBoxBackground()Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    move-result-object v6
+
+    sget v7, Lcom/google/android/material/R$attr;->colorControlHighlight:I
+
+    invoke-static {v0, v7}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+
+    move-result v7
+
+    new-array v8, v3, [[I
+
+    new-array v9, v4, [I
+
+    const v10, 0x10100a7
+
+    aput v10, v9, v5
+
+    aput-object v9, v8, v5
+
+    new-array v9, v5, [I
+
+    aput-object v9, v8, v4
+
+    const v9, 0x3dcccccd    # 0.1f
+
+    if-ne v2, v3, :cond_4
+
+    sget v1, Lcom/google/android/material/R$attr;->colorSurface:I
+
+    invoke-static {v0, v1}, Ldagger/android/AndroidInjection;->getColor(Landroid/view/View;I)I
+
+    move-result v1
+
+    new-instance v2, Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    iget-object v10, v6, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    iget-object v10, v10, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shapeAppearanceModel:Lcom/google/android/material/shape/ShapeAppearanceModel;
+
+    invoke-direct {v2, v10}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
+
+    invoke-static {v7, v1, v9}, Ldagger/android/AndroidInjection;->layer(IIF)I
+
+    move-result v7
+
+    new-array v9, v3, [I
+
+    aput v7, v9, v5
+
+    aput v5, v9, v4
+
+    new-instance v10, Landroid/content/res/ColorStateList;
+
+    invoke-direct {v10, v8, v9}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+
+    invoke-virtual {v2, v10}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
+
+    invoke-virtual {v2, v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setTint(I)V
+
+    new-array v9, v3, [I
+
+    aput v7, v9, v5
+
+    aput v1, v9, v4
+
+    new-instance v1, Landroid/content/res/ColorStateList;
+
+    invoke-direct {v1, v8, v9}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+
+    new-instance v7, Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    iget-object v8, v6, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    iget-object v8, v8, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shapeAppearanceModel:Lcom/google/android/material/shape/ShapeAppearanceModel;
+
+    invoke-direct {v7, v8}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
+
+    const/4 v8, -0x1
+
+    invoke-virtual {v7, v8}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setTint(I)V
+
+    new-instance v8, Landroid/graphics/drawable/RippleDrawable;
+
+    invoke-direct {v8, v1, v2, v7}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    new-array v1, v3, [Landroid/graphics/drawable/Drawable;
+
+    aput-object v8, v1, v5
+
+    aput-object v6, v1, v4
+
+    new-instance v2, Landroid/graphics/drawable/LayerDrawable;
+
+    invoke-direct {v2, v1}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
+
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_2
+
+    :cond_4
+    if-ne v2, v4, :cond_5
 
     iget-object v1, v1, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -210,49 +218,51 @@
 
     move-result v1
 
-    invoke-static {v8, v1, v10}, Lcom/google/android/material/R$style;->layer(IIF)I
+    invoke-static {v7, v1, v9}, Ldagger/android/AndroidInjection;->layer(IIF)I
 
-    move-result v5
+    move-result v2
 
-    new-array v3, v3, [I
+    new-array v7, v3, [I
 
-    aput v5, v3, v6
+    aput v2, v7, v5
 
-    aput v1, v3, v4
+    aput v1, v7, v4
 
     new-instance v1, Landroid/content/res/ColorStateList;
 
-    invoke-direct {v1, v9, v3}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+    invoke-direct {v1, v8, v7}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
-    new-instance v3, Landroid/graphics/drawable/RippleDrawable;
+    new-instance v2, Landroid/graphics/drawable/RippleDrawable;
 
-    invoke-direct {v3, v1, v7, v7}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v2, v1, v6, v6}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    invoke-static {v0, v3}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
 
-    :cond_4
-    :goto_1
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_5
+    :goto_2
     iget-object v1, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$4;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
 
-    if-eqz v1, :cond_5
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v3, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$7;
+    new-instance v2, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$7;
 
-    invoke-direct {v3, v1, v0}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$7;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/AutoCompleteTextView;)V
+    invoke-direct {v2, v1, v0}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$7;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/AutoCompleteTextView;)V
 
-    invoke-virtual {v0, v3}, Landroid/widget/AutoCompleteTextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v0, v2}, Landroid/widget/AutoCompleteTextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    iget-object v3, v1, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->onFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
+    iget-object v2, v1, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->onFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
 
-    invoke-virtual {v0, v3}, Landroid/widget/AutoCompleteTextView;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+    invoke-virtual {v0, v2}, Landroid/widget/AutoCompleteTextView;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    new-instance v3, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$8;
+    new-instance v2, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$8;
 
-    invoke-direct {v3, v1}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$8;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;)V
+    invoke-direct {v2, v1}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$8;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;)V
 
-    invoke-virtual {v0, v3}, Landroid/widget/AutoCompleteTextView;->setOnDismissListener(Landroid/widget/AutoCompleteTextView$OnDismissListener;)V
+    invoke-virtual {v0, v2}, Landroid/widget/AutoCompleteTextView;->setOnDismissListener(Landroid/widget/AutoCompleteTextView$OnDismissListener;)V
 
-    invoke-virtual {v0, v6}, Landroid/widget/AutoCompleteTextView;->setThreshold(I)V
+    invoke-virtual {v0, v5}, Landroid/widget/AutoCompleteTextView;->setThreshold(I)V
 
     iget-object v1, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$4;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
 
@@ -268,8 +278,30 @@
 
     invoke-virtual {p1, v4}, Lcom/google/android/material/textfield/TextInputLayout;->setEndIconCheckable(Z)V
 
-    invoke-virtual {p1, v2}, Lcom/google/android/material/textfield/TextInputLayout;->setErrorIconDrawable(Landroid/graphics/drawable/Drawable;)V
+    const/4 v1, 0x0
 
+    invoke-virtual {p1, v1}, Lcom/google/android/material/textfield/TextInputLayout;->setErrorIconDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->getKeyListener()Landroid/text/method/KeyListener;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_6
+
+    move v5, v4
+
+    :cond_6
+    if-nez v5, :cond_7
+
+    iget-object v0, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$4;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
+
+    iget-object v0, v0, Lcom/google/android/material/textfield/EndIconDelegate;->endIconView:Lcom/google/android/material/internal/CheckableImageButton;
+
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->setImportantForAccessibility(I)V
+
+    :cond_7
     iget-object v0, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$4;->this$0:Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;
 
     iget-object v0, v0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->accessibilityDelegate:Lcom/google/android/material/textfield/TextInputLayout$AccessibilityDelegate;
@@ -279,10 +311,4 @@
     invoke-virtual {p1, v4}, Lcom/google/android/material/textfield/TextInputLayout;->setEndIconVisible(Z)V
 
     return-void
-
-    :cond_5
-    throw v2
-
-    :cond_6
-    throw v2
 .end method

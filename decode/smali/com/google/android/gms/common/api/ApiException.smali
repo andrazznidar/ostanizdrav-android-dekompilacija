@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/api/ApiException;
 .super Ljava/lang/Exception;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # instance fields
@@ -41,9 +41,9 @@
 
     move-result v2
 
-    add-int/lit8 v2, v2, 0xd
-
     new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0xd
 
     invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 

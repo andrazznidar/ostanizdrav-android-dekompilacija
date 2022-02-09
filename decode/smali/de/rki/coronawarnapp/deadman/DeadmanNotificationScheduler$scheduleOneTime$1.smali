@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.deadman.DeadmanNotificationScheduler"
     f = "DeadmanNotificationScheduler.kt"
     l = {
-        0x17
+        0x3e
     }
     m = "scheduleOneTime"
 .end annotation
@@ -36,6 +36,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler$scheduleOneTime$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler$scheduleOneTime$1;->this$0:Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
 

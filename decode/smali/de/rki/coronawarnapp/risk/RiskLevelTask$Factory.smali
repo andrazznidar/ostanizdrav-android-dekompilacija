@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Lde/rki/coronawarnapp/task/TaskFactory<",
         "Lde/rki/coronawarnapp/task/common/DefaultProgress;",
-        "Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;",
+        "Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;",
         ">;"
     }
 .end annotation
@@ -46,7 +46,7 @@
             "Lkotlin/jvm/functions/Function0<",
             "Lde/rki/coronawarnapp/task/Task<",
             "Lde/rki/coronawarnapp/task/common/DefaultProgress;",
-            "Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;",
             ">;>;"
         }
     .end annotation
@@ -67,7 +67,7 @@
         }
     .end annotation
 
-    const-string v0, "taskByDagger"
+    const-string/jumbo v0, "taskByDagger"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -126,7 +126,7 @@
             "Lkotlin/jvm/functions/Function0<",
             "Lde/rki/coronawarnapp/task/Task<",
             "Lde/rki/coronawarnapp/task/common/DefaultProgress;",
-            "Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;",
             ">;>;"
         }
     .end annotation

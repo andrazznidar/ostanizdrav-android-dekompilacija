@@ -34,9 +34,9 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -52,7 +52,7 @@
 
 
 # instance fields
-.field public revokedDayPackages_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private revokedDayPackages_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -62,7 +62,7 @@
     .end annotation
 .end field
 
-.field public revokedHourPackages_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private revokedHourPackages_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -74,6 +74,176 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addAllRevokedDayPackages(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addAllRevokedHourPackages(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->clearRevokedDayPackages()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->clearRevokedHourPackages()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->removeRevokedDayPackages(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->removeRevokedHourPackages(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -88,7 +258,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -104,158 +274,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->revokedHourPackages_:Lcom/google/protobuf/Internal$ProtobufList;
-
-    return-void
-.end method
-
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1000(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1100(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1200(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1300(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1400(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1500(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1600(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addAllRevokedHourPackages(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1700(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->clearRevokedHourPackages()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1800(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->removeRevokedHourPackages(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->setRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$700(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->addAllRevokedDayPackages(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->clearRevokedDayPackages()V
-
-    return-void
-.end method
-
-.method public static synthetic access$900(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->removeRevokedDayPackages(I)V
 
     return-void
 .end method
@@ -323,7 +341,7 @@
 .method private addRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->ensureRevokedDayPackagesIsMutable()V
 
@@ -332,11 +350,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata$Builder;)V
@@ -352,7 +365,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -360,20 +375,17 @@
 .method private addRevokedDayPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->ensureRevokedDayPackagesIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->revokedDayPackages_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
@@ -397,7 +409,7 @@
 .method private addRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->ensureRevokedHourPackagesIsMutable()V
 
@@ -406,11 +418,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
@@ -426,7 +433,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -434,20 +443,17 @@
 .method private addRevokedHourPackages(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->ensureRevokedHourPackagesIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->revokedHourPackages_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private clearRevokedDayPackages()V
@@ -817,7 +823,7 @@
 .method private setRevokedDayPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->ensureRevokedDayPackagesIsMutable()V
 
@@ -826,11 +832,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata$Builder;)V
@@ -854,7 +855,7 @@
 .method private setRevokedHourPackages(ILde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->ensureRevokedHourPackagesIsMutable()V
 
@@ -863,11 +864,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -970,13 +966,13 @@
     :cond_3
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->revokedHourPackages_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_4
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->revokedHourPackages_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v0, :cond_4
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -997,20 +993,22 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$HourPackageMetadata;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_5
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->revokedDayPackages_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_6
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;->revokedDayPackages_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v0, :cond_6
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -1031,7 +1029,9 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$DayPackageMetadata;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
@@ -1118,7 +1118,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder-IA;)V
 
     return-object p1
 

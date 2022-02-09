@@ -26,6 +26,18 @@
     return-void
 .end method
 
+.method public static registerIn(Landroid/app/Activity;)V
+    .locals 1
+
+    new-instance v0, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks;
+
+    invoke-direct {v0}, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks;-><init>()V
+
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V

@@ -46,14 +46,16 @@
 
     new-array v0, v0, [B
 
-    invoke-interface {p1, v0, p2}, Lcom/google/crypto/tink/prf/Prf;->compute([BI)[B
+    check-cast p1, Lcom/google/crypto/tink/subtle/PrfHmacJce;
+
+    invoke-virtual {p1, v0, p2}, Lcom/google/crypto/tink/subtle/PrfHmacJce;->compute([BI)[B
 
     return-void
 
     :cond_0
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
-    const-string p2, "tag size too small, need at least 10 bytes"
+    const-string/jumbo p2, "tag size too small, need at least 10 bytes"
 
     invoke-direct {p1, p2}, Ljava/security/InvalidAlgorithmParameterException;-><init>(Ljava/lang/String;)V
 
@@ -117,7 +119,7 @@
 
     move-result-object p2
 
-    invoke-static {p2, p1}, Lcom/google/android/material/R$style;->equal([B[B)Z
+    invoke-static {p2, p1}, Lcom/google/crypto/tink/subtle/Bytes;->equal([B[B)Z
 
     move-result p1
 

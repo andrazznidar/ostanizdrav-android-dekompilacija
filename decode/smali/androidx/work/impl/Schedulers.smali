@@ -22,46 +22,6 @@
     return-void
 .end method
 
-.method public static createBestAvailableBackgroundScheduler(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;)Landroidx/work/impl/Scheduler;
-    .locals 3
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "context",
-            "workManager"
-        }
-    .end annotation
-
-    new-instance v0, Landroidx/work/impl/background/systemjob/SystemJobScheduler;
-
-    invoke-direct {v0, p0, p1}, Landroidx/work/impl/background/systemjob/SystemJobScheduler;-><init>(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;)V
-
-    const-class p1, Landroidx/work/impl/background/systemjob/SystemJobService;
-
-    const/4 v1, 0x1
-
-    invoke-static {p0, p1, v1}, Landroidx/work/impl/utils/PackageManagerHelper;->setComponentEnabled(Landroid/content/Context;Ljava/lang/Class;Z)V
-
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
-
-    move-result-object p0
-
-    sget-object p1, Landroidx/work/impl/Schedulers;->TAG:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Throwable;
-
-    const-string v2, "Created SystemJobScheduler and enabled SystemJobService"
-
-    invoke-virtual {p0, p1, v2, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-
-    return-object v0
-.end method
-
 .method public static schedule(Landroidx/work/Configuration;Landroidx/work/impl/WorkDatabase;Ljava/util/List;)V
     .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
@@ -120,13 +80,10 @@
 
     :cond_1
     iget p0, p0, Landroidx/work/Configuration;->mMaxSchedulerLimit:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
     check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v0, p0}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getEligibleWorkForScheduling(I)Ljava/util/List;
 
     move-result-object p0
@@ -136,13 +93,12 @@
     invoke-virtual {v0, v1}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getAllEligibleWorkSpecsForScheduling(I)Ljava/util/List;
 
     move-result-object v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    check-cast p0, Ljava/util/ArrayList;
+    move-object v2, p0
 
-    :try_start_2
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+    check-cast v2, Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -152,7 +108,11 @@
 
     move-result-wide v2
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    move-object v4, p0
+
+    check-cast v4, Ljava/util/ArrayList;
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
@@ -177,10 +137,12 @@
 
     :cond_2
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    check-cast p0, Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 

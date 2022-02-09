@@ -13,9 +13,9 @@
 
     const-string v0, "k"
 
-    const-string v1, "x"
+    const-string/jumbo v1, "x"
 
-    const-string v2, "y"
+    const-string/jumbo v2, "y"
 
     filled-new-array {v0, v1, v2}, [Ljava/lang/String;
 
@@ -30,7 +30,7 @@
     return-void
 .end method
 
-.method public static parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;
+.method public static parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lokhttp3/ConnectionPool;
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -116,9 +116,9 @@
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_2
-    new-instance p0, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;
+    new-instance p0, Lokhttp3/ConnectionPool;
 
-    invoke-direct {p0, v0}, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;-><init>(Ljava/util/List;)V
+    invoke-direct {p0, v0}, Lokhttp3/ConnectionPool;-><init>(Ljava/util/List;)V
 
     return-object p0
 .end method
@@ -201,7 +201,7 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {p0, p1}, Lcom/airbnb/lottie/R$attr;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/parser/AnimatableValueParser;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v4
 
@@ -222,14 +222,14 @@
     goto :goto_0
 
     :cond_3
-    invoke-static {p0, p1}, Lcom/airbnb/lottie/R$attr;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/parser/AnimatableValueParser;->parseFloat(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     move-result-object v3
 
     goto :goto_0
 
     :cond_4
-    invoke-static {p0, p1}, Lcom/airbnb/lottie/parser/AnimatablePathValueParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;
+    invoke-static {p0, p1}, Lcom/airbnb/lottie/parser/AnimatablePathValueParser;->parse(Lcom/airbnb/lottie/parser/moshi/JsonReader;Lcom/airbnb/lottie/LottieComposition;)Lokhttp3/ConnectionPool;
 
     move-result-object v2
 

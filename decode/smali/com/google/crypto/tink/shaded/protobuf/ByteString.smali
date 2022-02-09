@@ -12,7 +12,6 @@
     value = {
         Lcom/google/crypto/tink/shaded/protobuf/ByteString$BoundedByteString;,
         Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;,
-        Lcom/google/crypto/tink/shaded/protobuf/ByteString$CodedBuilder;,
         Lcom/google/crypto/tink/shaded/protobuf/ByteString$LeafByteString;,
         Lcom/google/crypto/tink/shaded/protobuf/ByteString$AbstractByteIterator;,
         Lcom/google/crypto/tink/shaded/protobuf/ByteString$ArraysByteArrayCopier;,
@@ -116,7 +115,7 @@
 
     const-string v1, ", "
 
-    invoke-static {v0, p0, v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p0, v1, p1}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -131,7 +130,7 @@
 
     const-string v1, " >= "
 
-    invoke-static {v0, p1, v1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline12(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p1, v1, p2}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -146,7 +145,7 @@
 
     const-string v0, " < 0"
 
-    invoke-static {p2, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p0, v0}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -206,38 +205,6 @@
     move-result-object p0
 
     invoke-direct {v0, p0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;-><init>([B)V
-
-    return-object v0
-.end method
-
-.method public static newCodedBuilder(I)Lcom/google/crypto/tink/shaded/protobuf/ByteString$CodedBuilder;
-    .locals 2
-
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$CodedBuilder;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$CodedBuilder;-><init>(ILcom/google/crypto/tink/shaded/protobuf/ByteString$1;)V
-
-    return-object v0
-.end method
-
-.method public static wrap([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
-    .locals 1
-
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;
-
-    invoke-direct {v0, p0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;-><init>([B)V
-
-    return-object v0
-.end method
-
-.method public static wrap([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
-    .locals 1
-
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$BoundedByteString;
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$BoundedByteString;-><init>([BII)V
 
     return-object v0
 .end method
@@ -373,7 +340,7 @@
 
     if-gt v2, v4, :cond_0
 
-    invoke-static {p0}, Lcom/google/android/material/R$style;->escapeBytes(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/crypto/tink/shaded/protobuf/TextFormatEscaper;->escapeBytes(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -390,7 +357,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/google/android/material/R$style;->escapeBytes(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/google/crypto/tink/shaded/protobuf/TextFormatEscaper;->escapeBytes(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Ljava/lang/String;
 
     move-result-object v3
 

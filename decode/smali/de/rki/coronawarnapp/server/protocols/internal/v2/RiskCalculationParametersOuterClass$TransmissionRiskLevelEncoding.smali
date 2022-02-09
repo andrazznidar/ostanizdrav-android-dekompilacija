@@ -34,13 +34,13 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
 
 .field public static final INFECTIOUSNESSOFFSETHIGH_FIELD_NUMBER:I = 0x2
 
 .field public static final INFECTIOUSNESSOFFSETSTANDARD_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -60,20 +60,124 @@
 
 
 # instance fields
-.field public infectiousnessOffsetHigh_:I
+.field private infectiousnessOffsetHigh_:I
 
-.field public infectiousnessOffsetStandard_:I
+.field private infectiousnessOffsetStandard_:I
 
-.field public reportTypeOffsetConfirmedClinicalDiagnosis_:I
+.field private reportTypeOffsetConfirmedClinicalDiagnosis_:I
 
-.field public reportTypeOffsetConfirmedTest_:I
+.field private reportTypeOffsetConfirmedTest_:I
 
-.field public reportTypeOffsetRecursive_:I
+.field private reportTypeOffsetRecursive_:I
 
-.field public reportTypeOffsetSelfReport_:I
+.field private reportTypeOffsetSelfReport_:I
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearInfectiousnessOffsetHigh(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearInfectiousnessOffsetHigh()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearInfectiousnessOffsetStandard(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearInfectiousnessOffsetStandard()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeOffsetConfirmedClinicalDiagnosis(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetConfirmedClinicalDiagnosis()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeOffsetConfirmedTest(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetConfirmedTest()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeOffsetRecursive(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetRecursive()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeOffsetSelfReport(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetSelfReport()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetInfectiousnessOffsetHigh(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setInfectiousnessOffsetHigh(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetInfectiousnessOffsetStandard(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setInfectiousnessOffsetStandard(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeOffsetConfirmedClinicalDiagnosis(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetConfirmedClinicalDiagnosis(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeOffsetConfirmedTest(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetConfirmedTest(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeOffsetRecursive(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetRecursive(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeOffsetSelfReport(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetSelfReport(I)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -88,114 +192,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$10000(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearInfectiousnessOffsetHigh()V
-
-    return-void
-.end method
-
-.method public static synthetic access$10100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetRecursive(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$10200(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetRecursive()V
-
-    return-void
-.end method
-
-.method public static synthetic access$10300(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetSelfReport(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$10400(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetSelfReport()V
-
-    return-void
-.end method
-
-.method public static synthetic access$10500(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetConfirmedClinicalDiagnosis(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$10600(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetConfirmedClinicalDiagnosis()V
-
-    return-void
-.end method
-
-.method public static synthetic access$10700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setReportTypeOffsetConfirmedTest(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$10800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearReportTypeOffsetConfirmedTest()V
-
-    return-void
-.end method
-
-.method public static synthetic access$9600()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$9700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setInfectiousnessOffsetStandard(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$9800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->clearInfectiousnessOffsetStandard()V
-
-    return-void
-.end method
-
-.method public static synthetic access$9900(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->setInfectiousnessOffsetHigh(I)V
 
     return-void
 .end method
@@ -789,31 +789,27 @@
 
     if-eqz p1, :cond_b
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_4
 
     :cond_b
-    move p1, v1
+    move v0, v1
 
     :goto_4
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->infectiousnessOffsetStandard_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->infectiousnessOffsetStandard_:I
 
     if-eqz v3, :cond_c
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_5
 
     :cond_c
-    move v3, v1
+    move v4, v1
 
     :goto_5
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->infectiousnessOffsetStandard_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -823,31 +819,27 @@
 
     if-eqz p1, :cond_d
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_6
 
     :cond_d
-    move p1, v1
+    move v0, v1
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->infectiousnessOffsetHigh_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->infectiousnessOffsetHigh_:I
 
     if-eqz v3, :cond_e
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_7
 
     :cond_e
-    move v3, v1
+    move v4, v1
 
     :goto_7
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->infectiousnessOffsetHigh_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -857,31 +849,27 @@
 
     if-eqz p1, :cond_f
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_8
 
     :cond_f
-    move p1, v1
+    move v0, v1
 
     :goto_8
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetRecursive_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetRecursive_:I
 
     if-eqz v3, :cond_10
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_9
 
     :cond_10
-    move v3, v1
+    move v4, v1
 
     :goto_9
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetRecursive_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -891,31 +879,27 @@
 
     if-eqz p1, :cond_11
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_a
 
     :cond_11
-    move p1, v1
+    move v0, v1
 
     :goto_a
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetSelfReport_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetSelfReport_:I
 
     if-eqz v3, :cond_12
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_b
 
     :cond_12
-    move v3, v1
+    move v4, v1
 
     :goto_b
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetSelfReport_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -925,31 +909,27 @@
 
     if-eqz p1, :cond_13
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_c
 
     :cond_13
-    move p1, v1
+    move v0, v1
 
     :goto_c
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetConfirmedClinicalDiagnosis_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetConfirmedClinicalDiagnosis_:I
 
     if-eqz v3, :cond_14
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_d
 
     :cond_14
-    move v3, v1
+    move v4, v1
 
     :goto_d
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetConfirmedClinicalDiagnosis_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -959,26 +939,22 @@
 
     if-eqz p1, :cond_15
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_e
 
     :cond_15
-    move p1, v1
+    move v0, v1
 
     :goto_e
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetConfirmedTest_:I
+    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetConfirmedTest_:I
 
-    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetConfirmedTest_:I
-
-    if-eqz v3, :cond_16
+    if-eqz p3, :cond_16
 
     move v1, v2
 
     :cond_16
-    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;->reportTypeOffsetConfirmedTest_:I
-
-    invoke-interface {p2, p1, v0, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -989,7 +965,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding$Builder-IA;)V
 
     return-object p1
 

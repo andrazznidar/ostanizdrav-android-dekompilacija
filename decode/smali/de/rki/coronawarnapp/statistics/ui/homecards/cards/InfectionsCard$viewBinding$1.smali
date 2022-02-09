@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 3
+    .locals 5
 
     iget-object v0, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$viewBinding$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
 
@@ -58,7 +58,7 @@
 
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v2, 0x7f0900e0
+    const v2, 0x7f0a0169
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -66,11 +66,21 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    const/4 v2, 0x1
+    sget v2, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->$r8$clinit:I
 
-    invoke-static {v0, v1, v2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;
+    sget-object v2, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
+
+    const v2, 0x7f0d00b1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-static {v0, v2, v1, v4, v3}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
 
     move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;
 
     return-object v0
 .end method

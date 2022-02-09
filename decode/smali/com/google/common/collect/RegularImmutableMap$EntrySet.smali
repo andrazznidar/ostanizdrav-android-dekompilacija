@@ -148,9 +148,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/common/collect/UnmodifiableListIterator<",
-            "Ljava/util/Map$Entry<",
-            "TK;TV;>;>;"
+            "Lcom/google/common/collect/UnmodifiableListIterator;"
         }
     .end annotation
 
@@ -158,7 +156,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet;->createAsList()Lcom/google/common/collect/ImmutableList;
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->createAsList()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 

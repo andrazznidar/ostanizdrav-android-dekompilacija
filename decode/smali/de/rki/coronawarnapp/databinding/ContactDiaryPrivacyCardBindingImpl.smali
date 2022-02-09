@@ -43,13 +43,11 @@
 
     new-array v5, v3, [I
 
-    const v7, 0x7f0c008b
+    const v7, 0x7f0d00ce
 
     aput v7, v5, v6
 
     invoke-virtual {v0, v3, v2, v4, v5}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     filled-new-array {v1}, [Ljava/lang/String;
 
@@ -69,8 +67,6 @@
 
     invoke-virtual {v0, v8, v2, v4, v5}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
-
     filled-new-array {v1}, [Ljava/lang/String;
 
     move-result-object v2
@@ -88,8 +84,6 @@
     const/4 v8, 0x3
 
     invoke-virtual {v0, v8, v2, v4, v5}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     filled-new-array {v1}, [Ljava/lang/String;
 
@@ -115,55 +109,43 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090145
+    const v1, 0x7f0a0219
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09013f
+    const v1, 0x7f0a0213
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09013d
+    const v1, 0x7f0a0211
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09013e
+    const v1, 0x7f0a0212
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090144
+    const v1, 0x7f0a0218
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090142
+    const v1, 0x7f0a0216
 
     const/16 v2, 0xe
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090143
+    const v1, 0x7f0a0217
 
     const/16 v2, 0xf
 
@@ -174,6 +156,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 20
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     move-object/from16 v2, p0
 
@@ -385,7 +377,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const v0, 0x7f09015b
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
 
     move-object/from16 v1, p2
 
@@ -572,6 +564,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

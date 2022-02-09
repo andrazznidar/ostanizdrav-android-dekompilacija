@@ -42,27 +42,25 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     :try_start_0
-    const-string v0, "Attempting migration 2->3..."
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const/4 v1, 0x0
+    const-string v1, "Attempting migration 2->3..."
 
-    new-array v2, v1, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v3, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v3, v0, v2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v3}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v0, "CREATE TABLE IF NOT EXISTS `riskperdate` (`dateMillisSinceEpoch` INTEGER NOT NULL, `riskLevel` INTEGER NOT NULL, `minimumDistinctEncountersWithLowRisk` INTEGER NOT NULL, `minimumDistinctEncountersWithHighRisk` INTEGER NOT NULL, PRIMARY KEY(`dateMillisSinceEpoch`))"
+    const-string v1, "CREATE TABLE IF NOT EXISTS `riskperdate` (`dateMillisSinceEpoch` INTEGER NOT NULL, `riskLevel` INTEGER NOT NULL, `minimumDistinctEncountersWithLowRisk` INTEGER NOT NULL, `minimumDistinctEncountersWithHighRisk` INTEGER NOT NULL, PRIMARY KEY(`dateMillisSinceEpoch`))"
 
-    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     const-string p1, "Migration 2->3 successful."
 
-    new-array v0, v1, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -79,7 +77,7 @@
 
     const-string v3, "Migration 2->3 failed. Could not create new table riskperdate"
 
-    invoke-static {p1, v0, v3, v1, v2}, Lcom/google/zxing/client/android/R$id;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p1, v0, v3, v1, v2}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
 
     throw p1
 .end method

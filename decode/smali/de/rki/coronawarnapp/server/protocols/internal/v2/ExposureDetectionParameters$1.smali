@@ -1,4 +1,4 @@
-.class public synthetic Lde/rki/coronawarnapp/server/protocols/internal/v2/ExposureDetectionParameters$1;
+.class synthetic Lde/rki/coronawarnapp/server/protocols/internal/v2/ExposureDetectionParameters$1;
 .super Ljava/lang/Object;
 .source "ExposureDetectionParameters.java"
 

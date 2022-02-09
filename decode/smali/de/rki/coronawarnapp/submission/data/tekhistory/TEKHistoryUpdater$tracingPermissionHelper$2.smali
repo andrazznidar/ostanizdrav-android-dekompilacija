@@ -46,17 +46,17 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$tracingPermissionHelper$2;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater;->tracingPermissionHelperFactory:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;
+    iget-object v1, v0, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater;->tracingPermissionHelperFactory:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$tracingPermissionHelper$2$1;
+    new-instance v2, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$tracingPermissionHelper$2$1;
 
-    invoke-direct {v1, p0}, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$tracingPermissionHelper$2$1;-><init>(Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$tracingPermissionHelper$2;)V
+    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$tracingPermissionHelper$2$1;-><init>(Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater;)V
 
-    invoke-interface {v0, v1}, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;->create(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Callback;)Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
+    invoke-interface {v1, v2}, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;->create(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Callback;)Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
 
     move-result-object v0
 

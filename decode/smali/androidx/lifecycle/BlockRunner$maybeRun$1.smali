@@ -32,13 +32,9 @@
 
 
 # instance fields
-.field public L$0:Ljava/lang/Object;
-
-.field public L$1:Ljava/lang/Object;
+.field public synthetic L$0:Ljava/lang/Object;
 
 .field public label:I
-
-.field public p$:Lkotlinx/coroutines/CoroutineScope;
 
 .field public final synthetic this$0:Landroidx/lifecycle/BlockRunner;
 
@@ -74,7 +70,7 @@
 
     const-string v0, "completion"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Landroidx/lifecycle/BlockRunner$maybeRun$1;
 
@@ -82,9 +78,7 @@
 
     invoke-direct {v0, v1, p2}, Landroidx/lifecycle/BlockRunner$maybeRun$1;-><init>(Landroidx/lifecycle/BlockRunner;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
-
-    iput-object p1, v0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->p$:Lkotlinx/coroutines/CoroutineScope;
+    iput-object p1, v0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->L$0:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -96,7 +90,7 @@
 
     const-string v0, "completion"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Landroidx/lifecycle/BlockRunner$maybeRun$1;
 
@@ -104,9 +98,7 @@
 
     invoke-direct {v0, v1, p2}, Landroidx/lifecycle/BlockRunner$maybeRun$1;-><init>(Landroidx/lifecycle/BlockRunner;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
-
-    iput-object p1, v0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->p$:Lkotlinx/coroutines/CoroutineScope;
+    iput-object p1, v0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->L$0:Ljava/lang/Object;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -118,7 +110,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 4
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -130,15 +122,7 @@
 
     if-ne v1, v2, :cond_0
 
-    iget-object v0, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->L$1:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/lifecycle/LiveDataScopeImpl;
-
-    iget-object v0, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Lkotlinx/coroutines/CoroutineScope;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -152,9 +136,11 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->p$:Lkotlinx/coroutines/CoroutineScope;
+    iget-object p1, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->L$0:Ljava/lang/Object;
+
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
     new-instance v1, Landroidx/lifecycle/LiveDataScopeImpl;
 
@@ -164,21 +150,17 @@
 
     invoke-interface {p1}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
 
-    move-result-object v4
+    move-result-object p1
 
-    invoke-direct {v1, v3, v4}, Landroidx/lifecycle/LiveDataScopeImpl;-><init>(Landroidx/lifecycle/CoroutineLiveData;Lkotlin/coroutines/CoroutineContext;)V
+    invoke-direct {v1, v3, p1}, Landroidx/lifecycle/LiveDataScopeImpl;-><init>(Landroidx/lifecycle/CoroutineLiveData;Lkotlin/coroutines/CoroutineContext;)V
 
-    iget-object v3, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->this$0:Landroidx/lifecycle/BlockRunner;
+    iget-object p1, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->this$0:Landroidx/lifecycle/BlockRunner;
 
-    iget-object v3, v3, Landroidx/lifecycle/BlockRunner;->block:Lkotlin/jvm/functions/Function2;
-
-    iput-object p1, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->L$0:Ljava/lang/Object;
-
-    iput-object v1, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->L$1:Ljava/lang/Object;
+    iget-object p1, p1, Landroidx/lifecycle/BlockRunner;->block:Lkotlin/jvm/functions/Function2;
 
     iput v2, p0, Landroidx/lifecycle/BlockRunner$maybeRun$1;->label:I
 
-    invoke-interface {v3, v1, p0}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1, p0}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

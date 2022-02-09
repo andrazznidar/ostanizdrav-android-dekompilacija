@@ -41,7 +41,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$showRiskLevelLoweredDialog$riskLevelLoweredDialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->access$getVm$p(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
+    sget-object v1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->Companion:Lde/rki/coronawarnapp/ui/main/home/HomeFragment$Companion;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->getViewModel()Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
     move-result-object v0
 
@@ -49,9 +51,13 @@
 
     iput-boolean v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->isLoweredRiskLevelDialogBeingShown:Z
 
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    iget-object v0, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/storage/LocalData;->setUserToBeNotifiedOfLoweredRiskLevel(Z)V
+    iget-object v0, v0, Lde/rki/coronawarnapp/storage/TracingSettings;->isUserToBeNotifiedOfLoweredRiskLevel:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    sget-object v1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$userHasAcknowledgedTheLoweredRiskLevel$1;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$userHasAcknowledgedTheLoweredRiskLevel$1;
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -31,7 +31,7 @@
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 13
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -64,39 +64,37 @@
 
     move-result v1
 
-    const v2, 0xffff
-
-    and-int/2addr v2, v1
+    int-to-char v2, v1
 
     packed-switch v2, :pswitch_data_0
 
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v12
 
     goto :goto_0
 
     :pswitch_1
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v11
 
     goto :goto_0
 
     :pswitch_2
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v10
 
     goto :goto_0
 
     :pswitch_3
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v9
 
@@ -105,21 +103,21 @@
     :pswitch_4
     sget-object v2, Lcom/google/android/gms/nearby/exposurenotification/ScanInstance;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v1, v2}, Lcom/airbnb/lottie/R$attr;->createTypedList(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedList(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
     move-result-object v8
 
     goto :goto_0
 
     :pswitch_5
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readLong(Landroid/os/Parcel;I)J
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readLong(Landroid/os/Parcel;I)J
 
     move-result-wide v6
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
     new-instance p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;
 
@@ -128,8 +126,6 @@
     invoke-direct/range {v5 .. v12}, Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;-><init>(JLjava/util/List;IIILjava/lang/String;)V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactDiaryDayViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,62:1\n47#2:63\n49#2:67\n50#3:64\n55#3:66\n106#4:65\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n*L\n29#1:63\n29#1:67\n29#1:64\n29#1:66\n29#1:65\n*E\n"
+    value = "SMAP\nContactDiaryDayViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,62:1\n47#2:63\n49#2:67\n50#3:64\n55#3:66\n106#4:65\n*S KotlinDebug\n*F\n+ 1 ContactDiaryDayViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel\n*L\n29#1:63\n29#1:67\n29#1:64\n29#1:66\n29#1:65\n*E\n"
 .end annotation
 
 
@@ -27,10 +27,10 @@
     .end annotation
 .end field
 
-.field public final routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+.field public final routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde/rki/coronawarnapp/ui/SingleLiveEvent<",
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
             "Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayNavigationEvents;",
             ">;"
         }
@@ -76,17 +76,15 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel;->displayedDay:Lkotlinx/coroutines/flow/MutableStateFlow;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    new-instance p2, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;-><init>()V
+    invoke-direct {p2}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel;->routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iput-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel;->routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel;->displayedDay:Lkotlinx/coroutines/flow/MutableStateFlow;
+    new-instance p2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$special$$inlined$map$1;
 
-    new-instance p2, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$$special$$inlined$map$1;
-
-    invoke-direct {p2, p1}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {p2, p1}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
     const-wide/16 v1, 0x0
 

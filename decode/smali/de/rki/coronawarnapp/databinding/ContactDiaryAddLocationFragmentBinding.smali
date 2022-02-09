@@ -19,12 +19,44 @@
 
 .field public final locationSaveButton:Landroid/widget/Button;
 
+.field public final rootView:Landroid/widget/ScrollView;
+
 
 # direct methods
 .method public constructor <init>(Landroid/widget/ScrollView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lcom/google/android/material/textfield/TextInputEditText;Lcom/google/android/material/textfield/TextInputLayout;Lcom/google/android/material/textfield/TextInputEditText;Lcom/google/android/material/textfield/TextInputLayout;Lcom/google/android/material/textfield/TextInputEditText;Lcom/google/android/material/textfield/TextInputLayout;Landroid/widget/Button;Landroid/widget/TextView;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "rootView",
+            "locationCloseButton",
+            "locationDeleteButton",
+            "locationEmailInput",
+            "locationEmailInputLayout",
+            "locationNameInputEdit",
+            "locationNameInputLayout",
+            "locationPhoneInput",
+            "locationPhoneInputLayout",
+            "locationSaveButton",
+            "locationTitle"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryAddLocationFragmentBinding;->rootView:Landroid/widget/ScrollView;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryAddLocationFragmentBinding;->locationCloseButton:Landroid/widget/ImageView;
 
@@ -43,10 +75,18 @@
 
 .method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/ContactDiaryAddLocationFragmentBinding;
     .locals 14
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "rootView"
+        }
+    .end annotation
 
-    const v0, 0x7f09025b
+    const v0, 0x7f0a03fe
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -56,9 +96,9 @@
 
     if-eqz v4, :cond_0
 
-    const v0, 0x7f09025c
+    const v0, 0x7f0a03ff
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -68,9 +108,9 @@
 
     if-eqz v5, :cond_0
 
-    const v0, 0x7f09025d
+    const v0, 0x7f0a0400
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -80,9 +120,9 @@
 
     if-eqz v6, :cond_0
 
-    const v0, 0x7f09025e
+    const v0, 0x7f0a0401
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -92,9 +132,9 @@
 
     if-eqz v7, :cond_0
 
-    const v0, 0x7f09025f
+    const v0, 0x7f0a0403
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -104,9 +144,9 @@
 
     if-eqz v8, :cond_0
 
-    const v0, 0x7f090260
+    const v0, 0x7f0a0404
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -116,9 +156,9 @@
 
     if-eqz v9, :cond_0
 
-    const v0, 0x7f090261
+    const v0, 0x7f0a0405
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -128,9 +168,9 @@
 
     if-eqz v10, :cond_0
 
-    const v0, 0x7f090262
+    const v0, 0x7f0a0406
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -140,9 +180,9 @@
 
     if-eqz v11, :cond_0
 
-    const v0, 0x7f090263
+    const v0, 0x7f0a0407
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -152,9 +192,9 @@
 
     if-eqz v12, :cond_0
 
-    const v0, 0x7f090264
+    const v0, 0x7f0a0408
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -196,4 +236,14 @@
     invoke-direct {v0, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+
+# virtual methods
+.method public getRoot()Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/ContactDiaryAddLocationFragmentBinding;->rootView:Landroid/widget/ScrollView;
+
+    return-object v0
 .end method

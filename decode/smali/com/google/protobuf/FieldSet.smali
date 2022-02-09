@@ -20,6 +20,10 @@
 .end annotation
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # instance fields
 .field public final fields:Lcom/google/protobuf/SmallSortedMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -39,15 +43,13 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lcom/google/protobuf/FieldSet;
 
-    invoke-static {v0}, Lcom/google/protobuf/SmallSortedMap;->newFieldMap(I)Lcom/google/protobuf/SmallSortedMap;
+    const/4 v1, 0x1
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/protobuf/SmallSortedMap;->makeImmutable()V
+    invoke-direct {v0, v1}, Lcom/google/protobuf/FieldSet;-><init>(Z)V
 
     return-void
 .end method
@@ -61,6 +63,8 @@
 
     iput-boolean v0, p0, Lcom/google/protobuf/FieldSet;->hasLazyField:Z
 
+    sget v0, Lcom/google/protobuf/SmallSortedMap;->$r8$clinit:I
+
     new-instance v0, Lcom/google/protobuf/SmallSortedMap$1;
 
     const/16 v1, 0x10
@@ -69,6 +73,40 @@
 
     iput-object v0, p0, Lcom/google/protobuf/FieldSet;->fields:Lcom/google/protobuf/SmallSortedMap;
 
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lcom/google/protobuf/FieldSet;->hasLazyField:Z
+
+    sget v0, Lcom/google/protobuf/SmallSortedMap;->$r8$clinit:I
+
+    new-instance v0, Lcom/google/protobuf/SmallSortedMap$1;
+
+    invoke-direct {v0, p1}, Lcom/google/protobuf/SmallSortedMap$1;-><init>(I)V
+
+    iput-object v0, p0, Lcom/google/protobuf/FieldSet;->fields:Lcom/google/protobuf/SmallSortedMap;
+
+    iget-boolean p1, p0, Lcom/google/protobuf/FieldSet;->isImmutable:Z
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Lcom/google/protobuf/SmallSortedMap$1;->makeImmutable()V
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lcom/google/protobuf/FieldSet;->isImmutable:Z
+
+    :goto_0
     return-void
 .end method
 
@@ -125,7 +163,7 @@
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_1
     check-cast p2, Ljava/lang/Integer;
@@ -142,25 +180,25 @@
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_2
     check-cast p2, Ljava/lang/Long;
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
-    invoke-static {}, Lcom/google/protobuf/CodedOutputStream;->computeSFixed64SizeNoTag()I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :pswitch_3
     check-cast p2, Ljava/lang/Integer;
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {}, Lcom/google/protobuf/CodedOutputStream;->computeSFixed32SizeNoTag()I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
     :pswitch_4
     instance-of p0, p2, Lcom/google/protobuf/Internal$EnumLite;
@@ -177,7 +215,7 @@
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_1
     check-cast p2, Ljava/lang/Integer;
@@ -190,7 +228,7 @@
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_5
     check-cast p2, Ljava/lang/Integer;
@@ -203,7 +241,7 @@
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_6
     instance-of p0, p2, Lcom/google/protobuf/ByteString;
@@ -216,52 +254,95 @@
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_2
     check-cast p2, [B
 
-    invoke-static {p2}, Lcom/google/protobuf/CodedOutputStream;->computeByteArraySizeNoTag([B)I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
+    array-length p0, p2
+
+    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :pswitch_7
     instance-of p0, p2, Lcom/google/protobuf/LazyField;
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_5
 
     check-cast p2, Lcom/google/protobuf/LazyField;
 
-    invoke-static {p2}, Lcom/google/protobuf/CodedOutputStream;->computeLazyFieldSizeNoTag(Lcom/google/protobuf/LazyFieldLite;)I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    move-result v0
+    iget-object p0, p2, Lcom/google/protobuf/LazyFieldLite;->memoizedBytes:Lcom/google/protobuf/ByteString;
 
-    goto/16 :goto_2
+    if-eqz p0, :cond_3
+
+    iget-object p0, p2, Lcom/google/protobuf/LazyFieldLite;->memoizedBytes:Lcom/google/protobuf/ByteString;
+
+    invoke-virtual {p0}, Lcom/google/protobuf/ByteString;->size()I
+
+    move-result p0
+
+    goto :goto_0
 
     :cond_3
-    check-cast p2, Lcom/google/protobuf/MessageLite;
+    iget-object p0, p2, Lcom/google/protobuf/LazyFieldLite;->value:Lcom/google/protobuf/MessageLite;
 
-    invoke-static {p2}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSizeNoTag(Lcom/google/protobuf/MessageLite;)I
+    if-eqz p0, :cond_4
+
+    iget-object p0, p2, Lcom/google/protobuf/LazyFieldLite;->value:Lcom/google/protobuf/MessageLite;
+
+    invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
+
+    move-result p0
+
+    goto :goto_0
+
+    :cond_4
+    const/4 p0, 0x0
+
+    :goto_0
+    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result v0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
+
+    :cond_5
+    check-cast p2, Lcom/google/protobuf/MessageLite;
+
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
+    invoke-interface {p2}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
+
+    move-result p0
+
+    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
+
+    move-result v0
+
+    goto/16 :goto_3
 
     :pswitch_8
     check-cast p2, Lcom/google/protobuf/MessageLite;
 
-    invoke-static {p2}, Lcom/google/protobuf/CodedOutputStream;->computeGroupSizeNoTag(Lcom/google/protobuf/MessageLite;)I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
+    invoke-interface {p2}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
 
     move-result v0
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_9
     instance-of p0, p2, Lcom/google/protobuf/ByteString;
 
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_6
 
     check-cast p2, Lcom/google/protobuf/ByteString;
 
@@ -269,43 +350,43 @@
 
     move-result v0
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_4
+    :cond_6
     check-cast p2, Ljava/lang/String;
 
     invoke-static {p2}, Lcom/google/protobuf/CodedOutputStream;->computeStringSizeNoTag(Ljava/lang/String;)I
 
     move-result v0
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_a
     check-cast p2, Ljava/lang/Boolean;
 
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {}, Lcom/google/protobuf/CodedOutputStream;->computeBoolSizeNoTag()I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_b
     check-cast p2, Ljava/lang/Integer;
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {}, Lcom/google/protobuf/CodedOutputStream;->computeFixed32SizeNoTag()I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    goto :goto_0
+    goto :goto_1
 
     :pswitch_c
     check-cast p2, Ljava/lang/Long;
 
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
-    invoke-static {}, Lcom/google/protobuf/CodedOutputStream;->computeFixed64SizeNoTag()I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    goto :goto_1
+    goto :goto_2
 
     :pswitch_d
     check-cast p2, Ljava/lang/Integer;
@@ -318,7 +399,7 @@
 
     move-result v0
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_e
     check-cast p2, Ljava/lang/Long;
@@ -331,7 +412,7 @@
 
     move-result v0
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_f
     check-cast p2, Ljava/lang/Long;
@@ -344,34 +425,36 @@
 
     move-result v0
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_10
     check-cast p2, Ljava/lang/Float;
 
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
-    invoke-static {}, Lcom/google/protobuf/CodedOutputStream;->computeFloatSizeNoTag()I
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    :goto_0
+    :goto_1
     move v0, v1
 
-    goto :goto_2
+    goto :goto_3
 
     :pswitch_11
     check-cast p2, Ljava/lang/Double;
 
     invoke-virtual {p2}, Ljava/lang/Double;->doubleValue()D
 
-    invoke-static {}, Lcom/google/protobuf/CodedOutputStream;->computeDoubleSizeNoTag()I
-
-    :goto_1
-    move v0, v2
+    sget-object p0, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     :goto_2
+    move v0, v2
+
+    :goto_3
     add-int/2addr p1, v0
 
     return p1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -396,38 +479,10 @@
     .end packed-switch
 .end method
 
-.method public static readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    if-eqz p2, :cond_0
-
-    sget-object p2, Lcom/google/protobuf/WireFormat$Utf8Validation;->STRICT:Lcom/google/protobuf/WireFormat$Utf8Validation;
-
-    invoke-static {p0, p1, p2}, Lcom/google/protobuf/WireFormat;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Lcom/google/protobuf/WireFormat$Utf8Validation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    sget-object p2, Lcom/google/protobuf/WireFormat$Utf8Validation;->LOOSE:Lcom/google/protobuf/WireFormat$Utf8Validation;
-
-    invoke-static {p0, p1, p2}, Lcom/google/protobuf/WireFormat;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Lcom/google/protobuf/WireFormat$Utf8Validation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public static verifyType(Lcom/google/protobuf/WireFormat$FieldType;Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
 
-    if-eqz p1, :cond_3
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object p0, p0, Lcom/google/protobuf/WireFormat$FieldType;->javaType:Lcom/google/protobuf/WireFormat$JavaType;
 
@@ -435,9 +490,7 @@
 
     move-result p0
 
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     packed-switch p0, :pswitch_data_0
 
@@ -446,75 +499,73 @@
     :pswitch_0
     instance-of p0, p1, Lcom/google/protobuf/MessageLite;
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
 
     instance-of p0, p1, Lcom/google/protobuf/LazyField;
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
     goto :goto_0
 
     :pswitch_1
     instance-of p0, p1, Ljava/lang/Integer;
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
 
     instance-of p0, p1, Lcom/google/protobuf/Internal$EnumLite;
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
     goto :goto_0
 
     :pswitch_2
     instance-of p0, p1, Lcom/google/protobuf/ByteString;
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
 
     instance-of p0, p1, [B
 
-    if-eqz p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_1
 
     :cond_0
-    move v0, v1
-
-    :cond_1
     :goto_0
-    move v1, v0
+    const/4 p0, 0x1
+
+    move v0, p0
 
     goto :goto_1
 
     :pswitch_3
-    instance-of v1, p1, Ljava/lang/String;
+    instance-of v0, p1, Ljava/lang/String;
 
     goto :goto_1
 
     :pswitch_4
-    instance-of v1, p1, Ljava/lang/Boolean;
+    instance-of v0, p1, Ljava/lang/Boolean;
 
     goto :goto_1
 
     :pswitch_5
-    instance-of v1, p1, Ljava/lang/Double;
+    instance-of v0, p1, Ljava/lang/Double;
 
     goto :goto_1
 
     :pswitch_6
-    instance-of v1, p1, Ljava/lang/Float;
+    instance-of v0, p1, Ljava/lang/Float;
 
     goto :goto_1
 
     :pswitch_7
-    instance-of v1, p1, Ljava/lang/Long;
+    instance-of v0, p1, Ljava/lang/Long;
 
     goto :goto_1
 
     :pswitch_8
-    instance-of v1, p1, Ljava/lang/Integer;
+    instance-of v0, p1, Ljava/lang/Integer;
 
+    :cond_1
     :goto_1
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     return-void
 
@@ -527,10 +578,7 @@
 
     throw p0
 
-    :cond_3
-    const/4 p0, 0x0
-
-    throw p0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

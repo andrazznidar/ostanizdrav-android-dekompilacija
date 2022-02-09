@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAutoSubmission.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AutoSubmission.kt\nde/rki/coronawarnapp/submission/auto/AutoSubmission\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 PeriodicWorkRequest.kt\nandroidx/work/PeriodicWorkRequestKt\n+ 4 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 5 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 6 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,142:1\n1711#2,3:143\n33#3:146\n47#4:147\n49#4:151\n50#5:148\n55#5:150\n106#6:149\n*E\n*S KotlinDebug\n*F\n+ 1 AutoSubmission.kt\nde/rki/coronawarnapp/submission/auto/AutoSubmission\n*L\n32#1,3:143\n81#1:146\n36#1:147\n36#1:151\n36#1:148\n36#1:150\n36#1:149\n*E\n"
+    value = "SMAP\nAutoSubmission.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AutoSubmission.kt\nde/rki/coronawarnapp/submission/auto/AutoSubmission\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 PeriodicWorkRequest.kt\nandroidx/work/PeriodicWorkRequestKt\n*L\n1#1,142:1\n47#2:143\n49#2:147\n50#3:144\n55#3:146\n106#4:145\n1741#5,3:148\n33#6:151\n*S KotlinDebug\n*F\n+ 1 AutoSubmission.kt\nde/rki/coronawarnapp/submission/auto/AutoSubmission\n*L\n36#1:143\n36#1:147\n36#1:144\n36#1:146\n36#1:145\n32#1:148,3\n81#1:151\n*E\n"
 .end annotation
 
 
@@ -39,19 +39,19 @@
 .method public constructor <init>(Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/submission/SubmissionSettings;Landroidx/work/WorkManager;Lde/rki/coronawarnapp/task/TaskController;)V
     .locals 1
 
-    const-string v0, "timeStamper"
+    const-string/jumbo v0, "timeStamper"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "submissionSettings"
+    const-string/jumbo v0, "submissionSettings"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "workManager"
+    const-string/jumbo v0, "workManager"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "taskController"
+    const-string/jumbo v0, "taskController"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -67,9 +67,9 @@
 
     iget-object p1, p4, Lde/rki/coronawarnapp/task/TaskController;->tasks:Lkotlinx/coroutines/flow/Flow;
 
-    new-instance p2, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$$special$$inlined$map$1;
+    new-instance p2, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$special$$inlined$map$1;
 
-    invoke-direct {p2, p1, p0}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;)V
+    invoke-direct {p2, p1, p0}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;)V
 
     iput-object p2, p0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->isSubmissionRunning:Lkotlinx/coroutines/flow/Flow;
 
@@ -85,9 +85,9 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->lastSubmissionUserActivityUTC:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v2, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$enableAutoSubmission$$inlined$apply$lambda$1;
+    new-instance v2, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$enableAutoSubmission$1$1;
 
-    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$enableAutoSubmission$$inlined$apply$lambda$1;-><init>(Lorg/joda/time/Instant;)V
+    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$enableAutoSubmission$1$1;-><init>(Lorg/joda/time/Instant;)V
 
     invoke-virtual {v1, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
@@ -97,11 +97,11 @@
 
     invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
-    const-string p1, "AutoSubmission"
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v0, "AutoSubmission"
 
-    move-result-object p1
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v0, 0x0
 
@@ -109,7 +109,7 @@
 
     const-string v1, "scheduleWorker(): Creating periodic worker request for submission."
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
@@ -121,35 +121,33 @@
 
     invoke-direct {v0, v1, v2, v3, p1}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
 
-    iget-object p1, v0, Landroidx/work/WorkRequest$Builder;->mTags:Ljava/util/Set;
+    iget-object v1, v0, Landroidx/work/WorkRequest$Builder;->mTags:Ljava/util/Set;
 
-    const-string v1, "AutoSubmissionWorker"
+    const-string v2, "AutoSubmissionWorker"
 
-    invoke-interface {p1, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    sget-object p1, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    sget-object v1, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
 
     const-wide/16 v3, 0x8
 
-    invoke-virtual {v0, p1, v3, v4, v2}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v0, v1, v3, v4, p1}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     new-instance p1, Landroidx/work/Constraints$Builder;
 
     invoke-direct {p1}, Landroidx/work/Constraints$Builder;-><init>()V
 
-    sget-object v2, Landroidx/work/NetworkType;->CONNECTED:Landroidx/work/NetworkType;
+    sget-object v1, Landroidx/work/NetworkType;->CONNECTED:Landroidx/work/NetworkType;
 
-    iput-object v2, p1, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
+    iput-object v1, p1, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
 
-    new-instance v2, Landroidx/work/Constraints;
+    new-instance v1, Landroidx/work/Constraints;
 
-    invoke-direct {v2, p1}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
+    invoke-direct {v1, p1}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
 
     iget-object p1, v0, Landroidx/work/WorkRequest$Builder;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
-    iput-object v2, p1, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
+    iput-object v1, p1, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
     invoke-virtual {v0}, Landroidx/work/WorkRequest$Builder;->build()Landroidx/work/WorkRequest;
 
@@ -163,9 +161,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->workManager:Landroidx/work/WorkManager;
 
-    sget-object v2, Landroidx/work/ExistingPeriodicWorkPolicy;->KEEP:Landroidx/work/ExistingPeriodicWorkPolicy;
+    sget-object v1, Landroidx/work/ExistingPeriodicWorkPolicy;->KEEP:Landroidx/work/ExistingPeriodicWorkPolicy;
 
-    invoke-virtual {v0, v1, v2, p1}, Landroidx/work/WorkManager;->enqueueUniquePeriodicWork(Ljava/lang/String;Landroidx/work/ExistingPeriodicWorkPolicy;Landroidx/work/PeriodicWorkRequest;)Landroidx/work/Operation;
+    invoke-virtual {v0, v2, v1, p1}, Landroidx/work/WorkManager;->enqueueUniquePeriodicWork(Ljava/lang/String;Landroidx/work/ExistingPeriodicWorkPolicy;Landroidx/work/PeriodicWorkRequest;)Landroidx/work/Operation;
 
     return-void
 .end method
@@ -231,7 +229,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -245,17 +243,17 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object p1
+    invoke-virtual {p1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v2, v5, [Ljava/lang/Object;
 
     const-string v6, "runSubmissionNow()"
 
-    invoke-virtual {p1, v6, v2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v6, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->taskController:Lde/rki/coronawarnapp/task/TaskController;
 
@@ -287,7 +285,7 @@
 
     iput v3, v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$runSubmissionNow$1;->label:I
 
-    invoke-static {p1, v2, v0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0}, Lde/rki/coronawarnapp/task/TaskControllerExtensionsKt;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -307,22 +305,22 @@
 
     if-eqz v1, :cond_4
 
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object p1
+    invoke-virtual {p1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v0, v5, [Ljava/lang/Object;
 
     const-string v1, "Blocking submission was successful."
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_4
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v1
+    invoke-virtual {v1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     invoke-interface {p1}, Lde/rki/coronawarnapp/task/TaskState;->getError()Ljava/lang/Throwable;
 
@@ -332,7 +330,7 @@
 
     const-string v3, "Blocking submission was not successful, enabling auto submission."
 
-    invoke-virtual {v1, p1, v3, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, p1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->SUBMIT_ASAP:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
@@ -347,17 +345,17 @@
 .method public final updateLastSubmissionUserActivity()V
     .locals 3
 
-    const-string v0, "AutoSubmission"
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v1, "AutoSubmission"
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v2, "updateLastSubmissionUserActivity()"
+    const-string/jumbo v2, "updateLastSubmissionUserActivity()"
 
     invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
@@ -377,29 +375,25 @@
 .method public final updateMode(Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;)V
     .locals 5
 
-    const-string v0, "newMode"
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "AutoSubmission"
 
-    const-string v0, "AutoSubmission"
-
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "updateMode(mode="
+    const-string/jumbo v3, "updateMode(mode="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/16 v3, 0x29
+    const-string v3, ")"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -409,7 +403,7 @@
 
     new-array v4, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v4}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v4}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
@@ -430,10 +424,6 @@
     :cond_0
     sget-object p1, Lorg/joda/time/Instant;->EPOCH:Lorg/joda/time/Instant;
 
-    const-string v0, "Instant.EPOCH"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->enableAutoSubmission(Lorg/joda/time/Instant;)V
 
     goto :goto_0
@@ -441,44 +431,30 @@
     :cond_1
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    new-instance p1, Lorg/joda/time/Instant;
+
+    invoke-direct {p1}, Lorg/joda/time/Instant;-><init>()V
 
     invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->enableAutoSubmission(Lorg/joda/time/Instant;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object p1
-
-    new-array v0, v3, [Ljava/lang/Object;
+    new-array p1, v3, [Ljava/lang/Object;
 
     const-string v1, "disableAutoSubmission()"
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->workManager:Landroidx/work/WorkManager;
 
-    check-cast p1, Landroidx/work/impl/WorkManagerImpl;
+    const-string v0, "AutoSubmissionWorker"
 
-    if-eqz p1, :cond_3
-
-    new-instance v0, Landroidx/work/impl/utils/CancelWorkRunnable$2;
-
-    const-string v1, "AutoSubmissionWorker"
-
-    invoke-direct {v0, p1, v1}, Landroidx/work/impl/utils/CancelWorkRunnable$2;-><init>(Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;)V
-
-    iget-object p1, p1, Landroidx/work/impl/WorkManagerImpl;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
-
-    check-cast p1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
-
-    iget-object p1, p1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mBackgroundExecutor:Landroidx/work/impl/utils/SerialExecutor;
-
-    invoke-virtual {p1, v0}, Landroidx/work/impl/utils/SerialExecutor;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {p1, v0}, Landroidx/work/WorkManager;->cancelAllWorkByTag(Ljava/lang/String;)Landroidx/work/Operation;
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->submissionSettings:Lde/rki/coronawarnapp/submission/SubmissionSettings;
 
@@ -490,7 +466,7 @@
 
     iget-object v0, p1, Lde/rki/coronawarnapp/submission/SubmissionSettings;->lastSubmissionUserActivityUTC:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    sget-object v1, L-$$LambdaGroup$ks$d3mc540JBhvGE0H4AIUNhl1a4Oo;->INSTANCE$0:L-$$LambdaGroup$ks$d3mc540JBhvGE0H4AIUNhl1a4Oo;
+    sget-object v1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$disableAutoSubmission$1$2;->INSTANCE:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$disableAutoSubmission$1$2;
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
@@ -502,15 +478,10 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/submission/SubmissionSettings;->autoSubmissionAttemptsLast:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    sget-object v0, L-$$LambdaGroup$ks$d3mc540JBhvGE0H4AIUNhl1a4Oo;->INSTANCE$1:L-$$LambdaGroup$ks$d3mc540JBhvGE0H4AIUNhl1a4Oo;
+    sget-object v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$disableAutoSubmission$1$4;->INSTANCE:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$disableAutoSubmission$1$4;
 
     invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
     :goto_0
     return-void
-
-    :cond_3
-    const/4 p1, 0x0
-
-    throw p1
 .end method

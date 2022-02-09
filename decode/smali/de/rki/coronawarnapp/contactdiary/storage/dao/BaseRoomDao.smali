@@ -11,9 +11,7 @@
         "U:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
-        "TT;TU;>;"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
@@ -33,6 +31,21 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
+.method public abstract delete(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+TT;>;",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lkotlin/Unit;",

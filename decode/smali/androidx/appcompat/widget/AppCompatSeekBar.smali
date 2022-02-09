@@ -11,7 +11,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    const v0, 0x7f0402d6
+    sget v0, Landroidx/appcompat/R$attr;->seekBarStyle:I
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/SeekBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -37,7 +37,7 @@
 .method public drawableStateChanged()V
     .locals 3
 
-    invoke-super {p0}, Landroid/widget/SeekBar;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/AbsSeekBar;->drawableStateChanged()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper:Landroidx/appcompat/widget/AppCompatSeekBarHelper;
 
@@ -74,7 +74,7 @@
 .method public jumpDrawablesToCurrentState()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/SeekBar;->jumpDrawablesToCurrentState()V
+    invoke-super {p0}, Landroid/widget/AbsSeekBar;->jumpDrawablesToCurrentState()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper:Landroidx/appcompat/widget/AppCompatSeekBarHelper;
 
@@ -94,7 +94,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-super {p0, p1}, Landroid/widget/SeekBar;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/AbsSeekBar;->onDraw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper:Landroidx/appcompat/widget/AppCompatSeekBarHelper;
 

@@ -21,8 +21,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder<",
         "Lcom/google/crypto/tink/proto/KeyTemplate;",
         "Lcom/google/crypto/tink/proto/KeyTemplate$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 

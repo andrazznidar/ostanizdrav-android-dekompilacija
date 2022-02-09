@@ -142,7 +142,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v6}, Lcom/google/android/material/R$style;->integer2Bytes(Ljava/math/BigInteger;I)[B
+    invoke-static {v1, v6}, Lcom/google/crypto/tink/subtle/SubtleUtil;->integer2Bytes(Ljava/math/BigInteger;I)[B
 
     move-result-object v1
 
@@ -160,7 +160,7 @@
 
     iget-object v4, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->sigHash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v4}, Lcom/google/android/material/R$style;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/crypto/tink/subtle/SubtleUtil;->toDigestAlgo(Lcom/google/crypto/tink/subtle/Enums$HashType;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -279,7 +279,7 @@
     :cond_1
     iget-object v2, v0, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->mgf1Hash:Lcom/google/crypto/tink/subtle/Enums$HashType;
 
-    invoke-static {v1, v11, v2}, Lcom/google/android/material/R$style;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
+    invoke-static {v1, v11, v2}, Lcom/google/crypto/tink/subtle/SubtleUtil;->mgf1([BILcom/google/crypto/tink/subtle/Enums$HashType;)[B
 
     move-result-object v2
 
@@ -404,7 +404,7 @@
 
     move-result-object v2
 
-    invoke-static {v2, v1}, Lcom/google/android/material/R$style;->equal([B[B)Z
+    invoke-static {v2, v1}, Lcom/google/crypto/tink/subtle/Bytes;->equal([B[B)Z
 
     move-result v1
 
@@ -443,7 +443,7 @@
     :cond_a
     new-instance v1, Ljava/security/GeneralSecurityException;
 
-    const-string v2, "signature out of range"
+    const-string/jumbo v2, "signature out of range"
 
     invoke-direct {v1, v2}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 

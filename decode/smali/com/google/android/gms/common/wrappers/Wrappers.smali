@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/wrappers/Wrappers;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # static fields
@@ -58,16 +58,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
 
-    :goto_0
+    :cond_0
     new-instance v1, Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 
     invoke-direct {v1, p0}, Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;-><init>(Landroid/content/Context;)V

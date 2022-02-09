@@ -40,6 +40,20 @@
 
 .method public static addFontWeightStyle(Ljava/lang/Object;Ljava/lang/String;IZ)Z
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "family",
+            "name",
+            "weight",
+            "style"
+        }
+    .end annotation
 
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->init()V
 
@@ -228,6 +242,20 @@
 # virtual methods
 .method public createFromFontFamilyFilesResourceEntry(Landroid/content/Context;Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;Landroid/content/res/Resources;I)Landroid/graphics/Typeface;
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "entry",
+            "resources",
+            "style"
+        }
+    .end annotation
 
     invoke-static {}, Landroidx/core/graphics/TypefaceCompatApi21Impl;->init()V
 
@@ -259,7 +287,7 @@
 
     aget-object v4, p2, v2
 
-    invoke-static {p1}, Landroidx/core/app/AppOpsManagerCompat;->getTempFile(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p1}, Landroidx/core/graphics/TypefaceCompatUtil;->getTempFile(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v5
 
@@ -271,7 +299,7 @@
     :try_start_1
     iget v6, v4, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mResourceId:I
 
-    invoke-static {v5, p3, v6}, Landroidx/core/app/AppOpsManagerCompat;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
+    invoke-static {v5, p3, v6}, Landroidx/core/graphics/TypefaceCompatUtil;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
 
     move-result v6
     :try_end_1
@@ -395,6 +423,20 @@
 
 .method public createFromFontInfo(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroidx/core/provider/FontsContractCompat$FontInfo;I)Landroid/graphics/Typeface;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "cancellationSignal",
+            "fonts",
+            "style"
+        }
+    .end annotation
 
     array-length v0, p3
 
@@ -529,7 +571,7 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :try_start_5
-    invoke-super {p0, p1, p3}, Landroidx/core/graphics/TypefaceCompatBaseImpl;->createFromInputStream(Landroid/content/Context;Ljava/io/InputStream;)Landroid/graphics/Typeface;
+    invoke-virtual {p0, p1, p3}, Landroidx/core/graphics/TypefaceCompatBaseImpl;->createFromInputStream(Landroid/content/Context;Ljava/io/InputStream;)Landroid/graphics/Typeface;
 
     move-result-object p1
     :try_end_5

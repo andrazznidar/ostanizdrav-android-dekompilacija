@@ -11,7 +11,8 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/google/gson/internal/ObjectConstructor<",
-        "TT;>;"
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
@@ -31,7 +32,8 @@
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT;"
+            "()",
+            "Ljava/lang/Object;"
         }
     .end annotation
 

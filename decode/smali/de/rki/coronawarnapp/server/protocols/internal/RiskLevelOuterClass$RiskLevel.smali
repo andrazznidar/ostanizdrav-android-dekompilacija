@@ -27,7 +27,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+.field private static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
 .field public static final enum RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
@@ -67,7 +67,7 @@
 
 .field public static final enum UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-.field public static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
+.field private static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$EnumLiteMap<",
@@ -79,12 +79,12 @@
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 13
+    .locals 16
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
@@ -96,141 +96,135 @@
 
     sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_LOWEST"
+    const-string v3, "RISK_LEVEL_LOWEST"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOWEST:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOWEST:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v3, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_LOW"
+    const-string v5, "RISK_LEVEL_LOW"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOW:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v3, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOW:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v5, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_LOW_MEDIUM"
+    const-string v7, "RISK_LEVEL_LOW_MEDIUM"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5, v5}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v8}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOW_MEDIUM:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v5, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOW_MEDIUM:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v7, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_MEDIUM"
+    const-string v9, "RISK_LEVEL_MEDIUM"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v1, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v7, v9, v10, v10}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_MEDIUM:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v7, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_MEDIUM:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v9, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_MEDIUM_HIGH"
+    const-string v11, "RISK_LEVEL_MEDIUM_HIGH"
 
-    const/4 v7, 0x5
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v1, v7, v7}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v9, v11, v12, v12}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_MEDIUM_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v9, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_MEDIUM_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v11, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_HIGH"
+    const-string v13, "RISK_LEVEL_HIGH"
 
-    const/4 v8, 0x6
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v1, v8, v8}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v11, v13, v14, v14}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v11, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v13, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_VERY_HIGH"
+    const-string v15, "RISK_LEVEL_VERY_HIGH"
 
-    const/4 v9, 0x7
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v1, v9, v9}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v13, v15, v14, v14}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_VERY_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v13, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_VERY_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v15, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "RISK_LEVEL_HIGHEST"
+    const-string v14, "RISK_LEVEL_HIGHEST"
 
-    const/16 v10, 0x8
+    const/16 v12, 0x8
 
-    invoke-direct {v0, v1, v10, v10}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v15, v14, v12, v12}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_HIGHEST:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v15, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_HIGHEST:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-instance v14, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const-string v1, "UNRECOGNIZED"
+    const-string v12, "UNRECOGNIZED"
 
-    const/16 v11, 0x9
+    const/16 v10, 0x9
 
-    const/4 v12, -0x1
+    const/4 v8, -0x1
 
-    invoke-direct {v0, v1, v11, v12}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v14, v12, v10, v8}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v14, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    const/16 v1, 0xa
+    const/16 v8, 0xa
 
-    new-array v1, v1, [Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    new-array v8, v8, [Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
-    sget-object v12, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v0, v8, v2
 
-    aput-object v12, v1, v2
+    aput-object v1, v8, v4
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOWEST:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v3, v8, v6
 
-    aput-object v2, v1, v3
+    const/4 v0, 0x3
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOW:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v5, v8, v0
 
-    aput-object v2, v1, v4
+    const/4 v0, 0x4
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_LOW_MEDIUM:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v7, v8, v0
 
-    aput-object v2, v1, v5
+    const/4 v0, 0x5
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_MEDIUM:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v9, v8, v0
 
-    aput-object v2, v1, v6
+    const/4 v0, 0x6
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_MEDIUM_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v11, v8, v0
 
-    aput-object v2, v1, v7
+    const/4 v0, 0x7
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v13, v8, v0
 
-    aput-object v2, v1, v8
+    const/16 v0, 0x8
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_VERY_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    aput-object v15, v8, v0
 
-    aput-object v2, v1, v9
+    aput-object v14, v8, v10
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_HIGHEST:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
-    aput-object v2, v1, v10
-
-    aput-object v0, v1, v11
-
-    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
+    sput-object v8, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel$1;
 
@@ -241,7 +235,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -72,8 +72,6 @@
 
     const/4 p2, 0x1
 
-    iget-object v1, p0, Lcom/google/crypto/tink/subtle/AesCmac;->keySpec:Ljavax/crypto/SecretKey;
-
     invoke-virtual {p1, p2, v1}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
 
     new-array p2, v0, [B
@@ -82,13 +80,13 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/material/R$style;->dbl([B)[B
+    invoke-static {p1}, Lcom/google/crypto/tink/subtle/AesUtil;->dbl([B)[B
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey1:[B
 
-    invoke-static {p1}, Lcom/google/android/material/R$style;->dbl([B)[B
+    invoke-static {p1}, Lcom/google/crypto/tink/subtle/AesUtil;->dbl([B)[B
 
     move-result-object p1
 
@@ -99,7 +97,7 @@
     :cond_0
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
-    const-string p2, "tag size too large, max is 16 bytes"
+    const-string/jumbo p2, "tag size too large, max is 16 bytes"
 
     invoke-direct {p1, p2}, Ljava/security/InvalidAlgorithmParameterException;-><init>(Ljava/lang/String;)V
 
@@ -108,7 +106,7 @@
     :cond_1
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
-    const-string p2, "tag size too small, min is 10 bytes"
+    const-string/jumbo p2, "tag size too small, min is 10 bytes"
 
     invoke-direct {p1, p2}, Ljava/security/InvalidAlgorithmParameterException;-><init>(Ljava/lang/String;)V
 
@@ -192,7 +190,7 @@
 
     iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey1:[B
 
-    invoke-static {p1, v2, v4, v5, v3}, Lcom/google/android/material/R$style;->xor([BI[BII)[B
+    invoke-static {p1, v2, v4, v5, v3}, Lcom/google/crypto/tink/subtle/Bytes;->xor([BI[BII)[B
 
     move-result-object v2
 
@@ -209,13 +207,13 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/android/material/R$style;->cmacPad([B)[B
+    invoke-static {v2}, Lcom/google/crypto/tink/subtle/AesUtil;->cmacPad([B)[B
 
     move-result-object v2
 
     iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesCmac;->subKey2:[B
 
-    invoke-static {v2, v4}, Lcom/google/android/material/R$style;->xor([B[B)[B
+    invoke-static {v2, v4}, Lcom/google/crypto/tink/subtle/Bytes;->xor([B[B)[B
 
     move-result-object v2
 
@@ -231,7 +229,7 @@
 
     mul-int/lit8 v7, v6, 0x10
 
-    invoke-static {v4, v5, p1, v7, v3}, Lcom/google/android/material/R$style;->xor([BI[BII)[B
+    invoke-static {v4, v5, p1, v7, v3}, Lcom/google/crypto/tink/subtle/Bytes;->xor([BI[BII)[B
 
     move-result-object v4
 
@@ -244,7 +242,7 @@
     goto :goto_2
 
     :cond_2
-    invoke-static {v2, v4}, Lcom/google/android/material/R$style;->xor([B[B)[B
+    invoke-static {v2, v4}, Lcom/google/crypto/tink/subtle/Bytes;->xor([B[B)[B
 
     move-result-object p1
 
@@ -286,7 +284,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lcom/google/android/material/R$style;->equal([B[B)Z
+    invoke-static {p1, p2}, Lcom/google/crypto/tink/subtle/Bytes;->equal([B[B)Z
 
     move-result p1
 

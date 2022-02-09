@@ -23,7 +23,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "taskController"
+    const-string/jumbo v0, "taskController"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final check$Corona_Warn_App_deviceRelease(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -70,216 +70,252 @@
         }
     .end annotation
 
-    instance-of v0, p2, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;
+    move-object/from16 v0, p0
 
-    if-eqz v0, :cond_0
+    move-object/from16 v1, p1
 
-    move-object v0, p2
+    move-object/from16 v2, p2
 
-    check-cast v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;
-
-    iget v1, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
+    instance-of v3, v2, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;
 
     if-eqz v3, :cond_0
 
-    sub-int/2addr v1, v2
+    move-object v3, v2
 
-    iput v1, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
+    check-cast v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;
+
+    iget v4, v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
+
+    const/high16 v5, -0x80000000
+
+    and-int v6, v4, v5
+
+    if-eqz v6, :cond_0
+
+    sub-int/2addr v4, v5
+
+    iput v4, v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;
+    new-instance v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;
 
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;-><init>(Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v0, v2}, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;-><init>(Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p2, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->result:Ljava/lang/Object;
+    iget-object v2, v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->result:Ljava/lang/Object;
 
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v4, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v2, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
+    iget v5, v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
 
-    const/4 v3, 0x1
+    const/4 v6, 0x1
 
-    if-eqz v2, :cond_2
+    if-eqz v5, :cond_2
 
-    if-ne v2, v3, :cond_1
+    if-ne v5, v6, :cond_1
 
-    iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->L$0:Ljava/lang/Object;
+    iget-object v1, v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->L$0:Ljava/lang/Object;
 
-    check-cast p1, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
+    check-cast v1, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string v2, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->riskLevelSettings:Lde/rki/coronawarnapp/risk/RiskLevelSettings;
+    iget-object v2, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->riskLevelSettings:Lde/rki/coronawarnapp/risk/RiskLevelSettings;
 
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/risk/RiskLevelSettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object p2
-
-    const-string v2, "risklevel.config.identifier.last"
-
-    const/4 v4, 0x0
-
-    invoke-interface {p2, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    const/4 v5, 0x0
-
-    const-string v6, "ConfigChangeDetector"
-
-    if-nez p2, :cond_3
-
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object p1
-
-    new-array p2, v5, [Ljava/lang/Object;
-
-    const-string v0, "Config changed, but no previous identifier is available."
-
-    invoke-virtual {p1, v0, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p1
-
-    :cond_3
-    iget-object p2, p0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->riskLevelSettings:Lde/rki/coronawarnapp/risk/RiskLevelSettings;
-
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/risk/RiskLevelSettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object p2
-
-    invoke-interface {p2, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    xor-int/2addr v2, v3
-
-    if-eqz v2, :cond_5
-
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/risk/RiskLevelSettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    const-string v5, "risklevel.config.identifier.last"
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v7, 0x0
 
-    const-string v6, "New config id ("
+    invoke-interface {v2, v5, v7}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v8, 0x0
 
-    const-string p1, ") differs from last one ("
+    const-string v9, "ConfigChangeDetector"
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v2, :cond_3
 
-    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const-string p1, "), resetting."
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-array v2, v8, [Ljava/lang/Object;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v3, "Config changed, but no previous identifier is available."
 
-    move-result-object p1
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    new-array p2, v5, [Ljava/lang/Object;
-
-    invoke-virtual {v2, p1, p2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->riskLevelStorage:Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
-
-    iput-object p0, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->L$0:Ljava/lang/Object;
-
-    iput v3, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
-
-    invoke-interface {p1, v0}, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;->clear(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_4
+    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v1
 
-    :cond_4
-    move-object p1, p0
+    :cond_3
+    iget-object v2, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->riskLevelSettings:Lde/rki/coronawarnapp/risk/RiskLevelSettings;
 
-    :goto_1
-    iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->taskController:Lde/rki/coronawarnapp/task/TaskController;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/risk/RiskLevelSettings;->getPrefs()Landroid/content/SharedPreferences;
 
-    new-instance p2, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
+    move-result-object v2
 
-    const-class v0, Lde/rki/coronawarnapp/risk/RiskLevelTask;
+    invoke-interface {v2, v5, v7}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_5
+
+    sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v5, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "New config id ("
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ") differs from last one ("
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "), resetting."
+
+    invoke-static {v7, v2, v1}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    new-array v2, v8, [Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    invoke-virtual {v5, v1, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->riskLevelStorage:Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;
+
+    iput-object v0, v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->L$0:Ljava/lang/Object;
+
+    iput v6, v3, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$check$1;->label:I
+
+    invoke-interface {v1, v3}, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;->clearResults(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-ne v1, v4, :cond_4
+
+    return-object v4
+
+    :cond_4
+    move-object v1, v0
+
+    :goto_1
+    iget-object v2, v1, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->taskController:Lde/rki/coronawarnapp/task/TaskController;
+
+    new-instance v10, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
+
+    const-class v3, Lde/rki/coronawarnapp/risk/RiskLevelTask;
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v4
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x16
 
     const/4 v5, 0x0
 
-    const/16 v6, 0x16
+    const/4 v6, 0x0
 
-    const-string v4, "ConfigChangeDetector"
+    const/4 v8, 0x0
 
-    move-object v0, p2
+    const/16 v9, 0x16
 
-    invoke-direct/range {v0 .. v6}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    const-string v7, "ConfigChangeDetector"
 
-    invoke-virtual {p1, p2}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
+    move-object v3, v10
+
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+
+    invoke-virtual {v2, v10}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;->taskController:Lde/rki/coronawarnapp/task/TaskController;
+
+    new-instance v2, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
+
+    const-class v3, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingWarningTask;
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v12
+
+    const-string v15, "ConfigChangeDetector"
+
+    move-object v11, v2
+
+    invoke-direct/range {v11 .. v17}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+
+    invoke-virtual {v1, v2}, Lde/rki/coronawarnapp/task/TaskController;->submit(Lde/rki/coronawarnapp/task/TaskRequest;)V
 
     goto :goto_2
 
     :cond_5
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object p1
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const-string v0, "Config identifier ("
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v1, ") didn\'t change, NOOP."
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0, p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string v4, "Config identifier ("
 
-    move-result-object p2
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v0, v5, [Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p2, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v2, ") didn\'t change, NOOP."
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v3, v8, [Ljava/lang/Object;
+
+    invoke-virtual {v1, v2, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_2
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    return-object p1
+    return-object v1
 .end method

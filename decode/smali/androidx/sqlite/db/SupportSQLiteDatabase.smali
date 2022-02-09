@@ -10,7 +10,7 @@
 .method public abstract beginTransaction()V
 .end method
 
-.method public abstract compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
+.method public abstract compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 .end method
 
 .method public abstract endTransaction()V

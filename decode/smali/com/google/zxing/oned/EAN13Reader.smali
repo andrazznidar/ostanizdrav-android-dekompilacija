@@ -162,7 +162,11 @@
 
     sget-object v4, Lcom/google/zxing/oned/UPCEANReader;->MIDDLE_PATTERN:[I
 
-    invoke-static {p1, p2, v2, v4}, Lcom/google/zxing/oned/UPCEANReader;->findGuardPattern(Lcom/google/zxing/common/BitArray;IZ[I)[I
+    array-length v5, v4
+
+    new-array v5, v5, [I
+
+    invoke-static {p1, p2, v2, v4, v5}, Lcom/google/zxing/oned/UPCEANReader;->findGuardPattern(Lcom/google/zxing/common/BitArray;IZ[I[I)[I
 
     move-result-object p2
 

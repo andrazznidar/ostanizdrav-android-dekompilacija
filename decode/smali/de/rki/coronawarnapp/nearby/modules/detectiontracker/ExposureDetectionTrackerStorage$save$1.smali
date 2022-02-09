@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.nearby.modules.detectiontracker.ExposureDetectionTrackerStorage"
     f = "ExposureDetectionTrackerStorage.kt"
     l = {
-        0x66
+        0x4e
     }
     m = "save"
 .end annotation
@@ -40,6 +40,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;
 

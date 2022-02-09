@@ -14,11 +14,36 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u0000 \u00062\u00020\u00012\u00020\u00022\u00020\u0003:\u0001\u0006B\u0007\u00a2\u0006\u0004\u0008\u0004\u0010\u0005\u00a8\u0006\u0007"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;",
+        "Landroidx/appcompat/app/AppCompatActivity;",
+        "Landroidx/lifecycle/LifecycleObserver;",
+        "Ldagger/android/HasAndroidInjector;",
+        "<init>",
+        "()V",
+        "Companion",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # static fields
 .field public static final Companion:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$Companion;
-
-.field public static final TAG:Ljava/lang/String;
 
 
 # instance fields
@@ -32,7 +57,11 @@
     .end annotation
 .end field
 
+.field public onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
+
 .field public settings:Lde/rki/coronawarnapp/main/CWASettings;
+
+.field public timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
 
 # direct methods
@@ -46,20 +75,6 @@
     invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->Companion:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$Companion;
-
-    const-class v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    check-cast v0, Lkotlin/jvm/internal/ClassReference;
-
-    invoke-virtual {v0}, Lkotlin/jvm/internal/ClassReference;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->TAG:Ljava/lang/String;
 
     return-void
 .end method
@@ -102,55 +117,33 @@
 .end method
 
 .method public final completeOnboarding()V
-    .locals 5
+    .locals 4
 
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
 
-    const-string v1, "editor"
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline3(Lde/rki/coronawarnapp/storage/LocalData;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    if-eqz v0, :cond_2
 
-    move-result-object v0
+    iget-object v0, v0, Lde/rki/coronawarnapp/storage/OnboardingSettings;->onboardingCompletedTimestamp:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
+    new-instance v2, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;
 
-    move-result-object v2
+    invoke-direct {v2, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;-><init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;)V
 
-    const v3, 0x7f120263
+    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->settings:Lde/rki/coronawarnapp/main/CWASettings;
 
-    move-result-object v2
+    const-string v2, "settings"
 
-    const/4 v3, 0x1
+    if-eqz v0, :cond_1
 
-    invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    iget-object v0, v0, Lde/rki/coronawarnapp/main/CWASettings;->lastChangelogVersion:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    sget-object v3, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$2;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$2;
 
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-static {v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline3(Lde/rki/coronawarnapp/storage/LocalData;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const v4, 0x7f120264
-
-    invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-virtual {v0, v3}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->settings:Lde/rki/coronawarnapp/main/CWASettings;
 
@@ -158,34 +151,42 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/main/CWASettings;->lastChangelogVersion:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    sget-object v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;
+    sget-object v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$3;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$3;
 
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->update(Lkotlin/jvm/functions/Function1;)V
 
-    const-string v0, "context"
+    sget-object v0, Lde/rki/coronawarnapp/ui/main/MainActivity;->Companion:Lde/rki/coronawarnapp/ui/main/MainActivity;
 
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    new-instance v0, Landroid/content/Intent;
+    move-result-object v0
 
-    const-class v1, Lde/rki/coronawarnapp/ui/main/MainActivity;
+    const-string v1, "intent"
 
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-static {p0, v0}, Lde/rki/coronawarnapp/ui/main/MainActivity;->start(Landroid/content/Context;Landroid/content/Intent;)V
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
 
     :cond_0
-    const-string v0, "settings"
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_1
+    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_2
+    const-string v0, "onboardingSettings"
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
-
-    throw v0
+    throw v1
 .end method
 
 .method public onActivityResult(IILandroid/content/Intent;)V
@@ -197,56 +198,65 @@
 
     move-result-object v0
 
-    const-string v1, "supportFragmentManager"
+    const-string/jumbo v1, "supportFragmentManager"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mPrimaryNav:Landroidx/fragment/app/Fragment;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->getFragments()Ljava/util/List;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {v0}, Lkotlin/collections/ArraysKt___ArraysKt;->first(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/fragment/app/Fragment;
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;
 
-    :goto_0
-    if-eqz v0, :cond_1
+    move-result-object v0
 
-    invoke-virtual {v0, p1, p2, p3}, Landroidx/fragment/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
+    if-nez v0, :cond_1
+
+    goto :goto_0
 
     :cond_1
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->getFragments()Ljava/util/List;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Landroidx/fragment/app/Fragment;
+
+    :goto_0
+    if-nez v1, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v1, p1, p2, p3}, Landroidx/fragment/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
+
+    :goto_1
     return-void
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 1
+    .locals 0
 
-    sget-object v0, Lde/rki/coronawarnapp/util/di/AppInjector;->INSTANCE:Lde/rki/coronawarnapp/util/di/AppInjector;
+    invoke-static {p0}, Lde/rki/coronawarnapp/util/di/AppInjector;->setup(Landroid/app/Activity;)V
 
-    invoke-virtual {v0, p0}, Lde/rki/coronawarnapp/util/di/AppInjector;->setup(Landroid/app/Activity;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-super {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
-
-    const p1, 0x7f0c001d
+    const p1, 0x7f0d001d
 
     invoke-virtual {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->setContentView(I)V
 

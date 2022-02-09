@@ -177,13 +177,7 @@
 
     move v4, v1
 
-    goto :goto_2
-
-    :cond_1
-    :goto_1
-    move v4, v2
-
-    goto :goto_2
+    goto :goto_1
 
     :catch_0
     move-exception v4
@@ -202,9 +196,10 @@
 
     invoke-virtual {v5, v6, v4, v7}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    goto :goto_1
+    :cond_1
+    move v4, v2
 
-    :goto_2
+    :goto_1
     iget-object v5, p0, Landroidx/work/impl/constraints/trackers/NetworkStateTracker;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v5}, Landroid/net/ConnectivityManager;->isActiveNetworkMetered()Z
@@ -219,12 +214,12 @@
 
     if-nez v0, :cond_2
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_2
     move v1, v2
 
-    :goto_3
+    :goto_2
     new-instance v0, Landroidx/work/impl/constraints/NetworkState;
 
     invoke-direct {v0, v3, v4, v5, v1}, Landroidx/work/impl/constraints/NetworkState;-><init>(ZZZZ)V

@@ -229,6 +229,18 @@
     .end annotation
 .end method
 
+.method public abstract getTestResults()Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryCoronaTestEntity;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract locationVisitsForDate(Lorg/joda/time/LocalDate;)Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -271,11 +283,16 @@
     .end annotation
 .end method
 
-.method public abstract updateLocationVisit(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public abstract updateLocationVisit(JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
+            "(J",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
             "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;",
+            "+",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;",
+            ">;",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lkotlin/Unit;",
@@ -299,11 +316,34 @@
     .end annotation
 .end method
 
-.method public abstract updatePersonEncounter(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public abstract updatePersonEncounter(JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;",
+            "+",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;",
+            ">;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
+.method public abstract updateTests(Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "+",
+            "Lde/rki/coronawarnapp/coronatest/type/CoronaTest;",
+            ">;",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lkotlin/Unit;",

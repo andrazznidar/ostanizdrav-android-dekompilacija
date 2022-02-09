@@ -18,80 +18,46 @@
 
 
 # virtual methods
-.method public clearAllTables()V
-    .locals 4
+.method public analyticsExposureWindowDao()Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao;
+    .locals 1
 
-    const-string v0, "VACUUM"
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;->_analyticsExposureWindowDao:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao;
 
-    const-string v1, "PRAGMA wal_checkpoint(FULL)"
+    if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;->_analyticsExposureWindowDao:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao;
 
-    iget-object v2, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
+    return-object v0
 
-    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
-
-    move-result-object v2
+    :cond_0
+    monitor-enter p0
 
     :try_start_0
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;->_analyticsExposureWindowDao:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao;
 
-    const-string v3, "DELETE FROM `AnalyticsExposureWindowEntity`"
+    if-nez v0, :cond_1
 
-    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;
 
-    const-string v3, "DELETE FROM `AnalyticsScanInstanceEntity`"
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
 
-    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;->_analyticsExposureWindowDao:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao;
 
-    const-string v3, "DELETE FROM `AnalyticsReportedExposureWindowEntity`"
+    :cond_1
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;->_analyticsExposureWindowDao:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao;
 
-    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    monitor-exit p0
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
-
-    invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-interface {v2, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    :cond_0
-    return-void
-
-    :catchall_0
-    move-exception v3
-
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
-
-    invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-interface {v2, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    :cond_1
-    throw v3
+    throw v0
 .end method
 
 .method public createInvalidationTracker()Landroidx/room/InvalidationTracker;
@@ -126,6 +92,14 @@
 
 .method public createOpenHelper(Landroidx/room/DatabaseConfiguration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "configuration"
+        }
+    .end annotation
 
     new-instance v0, Landroidx/room/RoomOpenHelper;
 

@@ -59,7 +59,7 @@
 .end method
 
 .method public putAll(Ljava/util/Map;)Landroidx/work/Data$Builder;
-    .locals 4
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -93,7 +93,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_f
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -128,174 +128,294 @@
 
     const-class v3, Ljava/lang/Boolean;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, Ljava/lang/Byte;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, Ljava/lang/Integer;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, Ljava/lang/Long;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, Ljava/lang/Float;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, Ljava/lang/Double;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, Ljava/lang/String;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, [Ljava/lang/Boolean;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, [Ljava/lang/Byte;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, [Ljava/lang/Integer;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, [Ljava/lang/Long;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, [Ljava/lang/Float;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, [Ljava/lang/Double;
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_e
 
     const-class v3, [Ljava/lang/String;
 
     if-ne v2, v3, :cond_1
 
-    goto/16 :goto_1
+    goto/16 :goto_7
 
     :cond_1
     const-class v3, [Z
 
-    if-ne v2, v3, :cond_2
-
-    iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
-
-    check-cast v0, [Z
-
-    invoke-static {v0}, Landroidx/work/Data;->convertPrimitiveBooleanArray([Z)[Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_2
-    const-class v3, [B
+    const/4 v4, 0x0
 
     if-ne v2, v3, :cond_3
 
     iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
 
-    check-cast v0, [B
+    check-cast v0, [Z
 
-    invoke-static {v0}, Landroidx/work/Data;->convertPrimitiveByteArray([B)[Ljava/lang/Byte;
+    sget-object v3, Landroidx/work/Data;->TAG:Ljava/lang/String;
 
-    move-result-object v0
+    array-length v3, v0
 
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Boolean;
+
+    :goto_1
+    array-length v5, v0
+
+    if-ge v4, v5, :cond_2
+
+    aget-boolean v5, v0, v4
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_3
-    const-class v3, [I
-
-    if-ne v2, v3, :cond_4
-
-    iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
-
-    check-cast v0, [I
-
-    invoke-static {v0}, Landroidx/work/Data;->convertPrimitiveIntArray([I)[Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    :cond_4
-    const-class v3, [J
+    const-class v3, [B
 
     if-ne v2, v3, :cond_5
 
     iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
 
-    check-cast v0, [J
+    check-cast v0, [B
 
-    invoke-static {v0}, Landroidx/work/Data;->convertPrimitiveLongArray([J)[Ljava/lang/Long;
+    sget-object v3, Landroidx/work/Data;->TAG:Ljava/lang/String;
 
-    move-result-object v0
+    array-length v3, v0
 
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Byte;
+
+    :goto_2
+    array-length v5, v0
+
+    if-ge v4, v5, :cond_4
+
+    aget-byte v5, v0, v4
+
+    invoke-static {v5}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto/16 :goto_0
 
     :cond_5
-    const-class v3, [F
-
-    if-ne v2, v3, :cond_6
-
-    iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
-
-    check-cast v0, [F
-
-    invoke-static {v0}, Landroidx/work/Data;->convertPrimitiveFloatArray([F)[Ljava/lang/Float;
-
-    move-result-object v0
-
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    :cond_6
-    const-class v3, [D
+    const-class v3, [I
 
     if-ne v2, v3, :cond_7
 
     iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
 
-    check-cast v0, [D
+    check-cast v0, [I
 
-    invoke-static {v0}, Landroidx/work/Data;->convertPrimitiveDoubleArray([D)[Ljava/lang/Double;
+    sget-object v3, Landroidx/work/Data;->TAG:Ljava/lang/String;
 
-    move-result-object v0
+    array-length v3, v0
 
-    invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Integer;
+
+    :goto_3
+    array-length v5, v0
+
+    if-ge v4, v5, :cond_6
+
+    aget v5, v0, v4
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_3
+
+    :cond_6
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto/16 :goto_0
 
     :cond_7
+    const-class v3, [J
+
+    if-ne v2, v3, :cond_9
+
+    iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
+
+    check-cast v0, [J
+
+    sget-object v3, Landroidx/work/Data;->TAG:Ljava/lang/String;
+
+    array-length v3, v0
+
+    new-array v3, v3, [Ljava/lang/Long;
+
+    :goto_4
+    array-length v5, v0
+
+    if-ge v4, v5, :cond_8
+
+    aget-wide v5, v0, v4
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_4
+
+    :cond_8
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    :cond_9
+    const-class v3, [F
+
+    if-ne v2, v3, :cond_b
+
+    iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
+
+    check-cast v0, [F
+
+    sget-object v3, Landroidx/work/Data;->TAG:Ljava/lang/String;
+
+    array-length v3, v0
+
+    new-array v3, v3, [Ljava/lang/Float;
+
+    :goto_5
+    array-length v5, v0
+
+    if-ge v4, v5, :cond_a
+
+    aget v5, v0, v4
+
+    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_5
+
+    :cond_a
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    :cond_b
+    const-class v3, [D
+
+    if-ne v2, v3, :cond_d
+
+    iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
+
+    check-cast v0, [D
+
+    sget-object v3, Landroidx/work/Data;->TAG:Ljava/lang/String;
+
+    array-length v3, v0
+
+    new-array v3, v3, [Ljava/lang/Double;
+
+    :goto_6
+    array-length v5, v0
+
+    if-ge v4, v5, :cond_c
+
+    aget-wide v5, v0, v4
+
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_6
+
+    :cond_c
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    :cond_d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v3, 0x0
-
-    aput-object v1, v0, v3
+    aput-object v1, v0, v4
 
     const/4 v1, 0x1
 
@@ -311,14 +431,14 @@
 
     throw p1
 
-    :cond_8
-    :goto_1
+    :cond_e
+    :goto_7
     iget-object v2, p0, Landroidx/work/Data$Builder;->mValues:Ljava/util/Map;
 
     invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_f
     return-object p0
 .end method

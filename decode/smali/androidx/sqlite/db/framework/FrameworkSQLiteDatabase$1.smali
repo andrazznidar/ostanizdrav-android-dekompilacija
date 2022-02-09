@@ -18,16 +18,12 @@
 
 
 # instance fields
-.field public final synthetic this$0:Landroidx/sqlite/db/framework/FrameworkSQLiteDatabase;
-
 .field public final synthetic val$supportQuery:Landroidx/sqlite/db/SupportSQLiteQuery;
 
 
 # direct methods
 .method public constructor <init>(Landroidx/sqlite/db/framework/FrameworkSQLiteDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;)V
     .locals 0
-
-    iput-object p1, p0, Landroidx/sqlite/db/framework/FrameworkSQLiteDatabase$1;->this$0:Landroidx/sqlite/db/framework/FrameworkSQLiteDatabase;
 
     iput-object p2, p0, Landroidx/sqlite/db/framework/FrameworkSQLiteDatabase$1;->val$supportQuery:Landroidx/sqlite/db/SupportSQLiteQuery;
 

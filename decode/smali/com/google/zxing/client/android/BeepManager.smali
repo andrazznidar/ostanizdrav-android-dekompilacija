@@ -8,8 +8,6 @@
 
 .field public final context:Landroid/content/Context;
 
-.field public vibrateEnabled:Z
-
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
@@ -20,10 +18,6 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/zxing/client/android/BeepManager;->beepEnabled:Z
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/zxing/client/android/BeepManager;->vibrateEnabled:Z
 
     const/4 v0, 0x3
 
@@ -70,7 +64,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110001
+    sget v1, Lcom/google/zxing/client/android/R$raw;->zxing_beep:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
 

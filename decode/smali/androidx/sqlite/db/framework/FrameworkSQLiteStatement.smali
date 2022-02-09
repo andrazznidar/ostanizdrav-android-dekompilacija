@@ -2,9 +2,6 @@
 .super Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;
 .source "FrameworkSQLiteStatement.java"
 
-# interfaces
-.implements Landroidx/sqlite/db/SupportSQLiteStatement;
-
 
 # instance fields
 .field public final mDelegate:Landroid/database/sqlite/SQLiteStatement;

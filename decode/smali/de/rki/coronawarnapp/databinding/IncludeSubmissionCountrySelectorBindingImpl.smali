@@ -47,7 +47,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c00b4
+    const v4, 0x7f0d010a
 
     aput v4, v2, v5
 
@@ -59,7 +59,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090476
+    const v1, 0x7f0a06ef
 
     const/4 v2, 0x3
 
@@ -70,6 +70,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -140,7 +150,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -193,37 +203,35 @@
 
     invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    const v3, 0x7f060070
+    const v5, 0x7f06007c
 
-    const v5, 0x7f060071
+    const v6, 0x7f060057
 
-    invoke-static {v1, v2, v3, v5}, Lcom/google/zxing/client/android/R$id;->formatColor(Landroid/content/Context;ZII)I
+    invoke-static {v1, v3, v5, v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatColor(Landroid/content/Context;ZII)I
 
     move-result v1
 
-    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v3, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "context"
+    const-string v5, "context"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v2
 
-    move-result v3
+    const v4, 0x7f060085
 
-    const v4, 0x7f060078
+    const v5, 0x7f060036
 
-    const v5, 0x7f060033
-
-    invoke-static {v2, v3, v4, v5}, Lcom/google/zxing/client/android/R$id;->formatColor(Landroid/content/Context;ZII)I
+    invoke-static {v3, v2, v4, v5}, Lcom/google/android/gms/internal/nearby/zzfc;->formatColor(Landroid/content/Context;ZII)I
 
     move-result v2
 
@@ -364,6 +372,14 @@
 
 .method public setActive(Ljava/lang/Boolean;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Active"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -388,7 +404,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 
@@ -403,8 +419,43 @@
     throw p1
 .end method
 
+.method public setCountries(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Countries"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/ui/submission/SubmissionCountry;",
+            ">;)V"
+        }
+    .end annotation
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;->mCountries:Ljava/util/List;
+
+    return-void
+.end method
+
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

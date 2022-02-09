@@ -1,9 +1,9 @@
 .class public final Lcom/google/android/gms/tasks/zzh;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.2.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.1"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/zzr;
+.implements Lcom/google/android/gms/tasks/zzq;
 
 
 # annotations
@@ -13,7 +13,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/zzr<",
+        "Lcom/google/android/gms/tasks/zzq<",
         "TTResult;>;"
     }
 .end annotation
@@ -24,11 +24,11 @@
 
 .field public final zzb:Ljava/lang/Object;
 
-.field public zzc:Lcom/google/android/gms/tasks/zzd;
+.field public zzc:Lcom/google/android/gms/tasks/zzf;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/zzd;)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/zzf;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
     iput-object p1, p0, Lcom/google/android/gms/tasks/zzh;->zza:Ljava/util/concurrent/Executor;
 
-    iput-object p2, p0, Lcom/google/android/gms/tasks/zzh;->zzc:Lcom/google/android/gms/tasks/zzd;
+    iput-object p2, p0, Lcom/google/android/gms/tasks/zzh;->zzc:Lcom/google/android/gms/tasks/zzf;
 
     return-void
 .end method
@@ -58,9 +58,9 @@
         }
     .end annotation
 
-    check-cast p1, Lcom/google/android/gms/tasks/zzu;
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->isCanceled()Z
 
-    iget-boolean p1, p1, Lcom/google/android/gms/tasks/zzu;->zzd:Z
+    move-result p1
 
     if-eqz p1, :cond_1
 
@@ -69,7 +69,7 @@
     monitor-enter p1
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/tasks/zzh;->zzc:Lcom/google/android/gms/tasks/zzd;
+    iget-object v0, p0, Lcom/google/android/gms/tasks/zzh;->zzc:Lcom/google/android/gms/tasks/zzf;
 
     if-nez v0, :cond_0
 
@@ -90,7 +90,7 @@
 
     invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -103,6 +103,5 @@
     throw v0
 
     :cond_1
-    :goto_0
     return-void
 .end method

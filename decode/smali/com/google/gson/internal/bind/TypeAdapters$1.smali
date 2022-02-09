@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/internal/bind/TypeAdapters$1;
+.class Lcom/google/gson/internal/bind/TypeAdapters$1;
 .super Lcom/google/gson/TypeAdapter;
 .source "TypeAdapters.java"
 
@@ -33,40 +33,25 @@
 
 
 # virtual methods
-.method public read()Ljava/lang/Class;
+.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "Attempted to deserialize a java.lang.Class. Forgot to register a type adapter?"
+
+    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "Attempted to deserialize a java.lang.Class. Forgot to register a type adapter?"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    invoke-virtual {p0}, Lcom/google/gson/internal/bind/TypeAdapters$1;->read()Ljava/lang/Class;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -75,34 +60,21 @@
 
     check-cast p2, Ljava/lang/Class;
 
-    invoke-virtual {p0, p2}, Lcom/google/gson/internal/bind/TypeAdapters$1;->write(Ljava/lang/Class;)V
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
 
-    return-void
-.end method
+    const-string v0, "Attempted to serialize java.lang.Class: "
 
-.method public write(Ljava/lang/Class;)V
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    move-result-object v0
 
-    const-string v1, "Attempted to serialize java.lang.Class: "
+    const-string v1, ". Forgot to register a type adapter?"
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2, v0, v1}, Landroidx/navigation/NavType$EnumType$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p2
 
-    const-string v2, ". Forgot to register a type adapter?"
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    throw p1
 .end method

@@ -30,14 +30,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRiskLevelTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,242:1\n1711#2,3:243\n*E\n*S KotlinDebug\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n*L\n220#1,3:243\n*E\n"
+    value = "SMAP\nRiskLevelTask.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,240:1\n1741#2,3:241\n*S KotlinDebug\n*F\n+ 1 RiskLevelTask.kt\nde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1\n*L\n218#1:241,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.risk.RiskLevelTask$Config$preconditions$1"
     f = "RiskLevelTask.kt"
     l = {
-        0xdc
+        0xda
     }
     m = "invokeSuspend"
 .end annotation
@@ -52,6 +52,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;
 
@@ -64,14 +74,10 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     check-cast p1, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;
 
@@ -101,7 +107,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -115,7 +121,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask$Config;
 
@@ -127,7 +133,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$Config$preconditions$1;->label:I
 
-    invoke-static {p1, p0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -200,14 +206,6 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
     if-eqz v0, :cond_5
 
     :goto_2

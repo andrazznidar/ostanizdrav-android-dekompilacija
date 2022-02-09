@@ -51,7 +51,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -59,31 +59,29 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 1>"
+    const-string v0, "$noName_1"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p3, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$onBindData$1;->this$0:Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;
 
-    iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v0, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    new-instance v0, L-$$LambdaGroup$js$lh3kEPlTVdJ13vCwlbm_f6bCAWE;
+    new-instance v1, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$onBindData$1$$ExternalSyntheticLambda0;
 
-    const/4 v1, 0x0
+    invoke-direct {v1, p3, p2}, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;)V
 
-    invoke-direct {v0, v1, p0, p2}, L-$$LambdaGroup$js$lh3kEPlTVdJ13vCwlbm_f6bCAWE;-><init>(ILjava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {p3, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBinding;->tracingDetailsSurveyCardButton:Landroid/widget/Button;
 
-    new-instance p3, L-$$LambdaGroup$js$lh3kEPlTVdJ13vCwlbm_f6bCAWE;
+    iget-object p3, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$onBindData$1;->this$0:Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;
 
-    const/4 v0, 0x1
+    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter$$ExternalSyntheticLambda0;
 
-    invoke-direct {p3, v0, p0, p2}, L-$$LambdaGroup$js$lh3kEPlTVdJ13vCwlbm_f6bCAWE;-><init>(ILjava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p3, p2}, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;)V
 
-    invoke-virtual {p1, p3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p1, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

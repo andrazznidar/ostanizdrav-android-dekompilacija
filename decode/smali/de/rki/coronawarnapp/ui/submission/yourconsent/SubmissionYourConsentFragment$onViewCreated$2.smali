@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
     check-cast p1, Ljava/util/List;
 
@@ -60,7 +60,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragment;)Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/submission/yourconsent/SubmissionYourConsentFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;
 
     move-result-object v0
 

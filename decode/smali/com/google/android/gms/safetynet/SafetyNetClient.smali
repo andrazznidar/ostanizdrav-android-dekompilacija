@@ -1,5 +1,6 @@
 .class public Lcom/google/android/gms/safetynet/SafetyNetClient;
 .super Lcom/google/android/gms/common/api/GoogleApi;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
 
 
 # annotations
@@ -21,10 +22,6 @@
     new-instance v1, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
 
     invoke-direct {v1}, Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;-><init>()V
-
-    const-string v2, "StatusExceptionMapper must not be null."
-
-    invoke-static {v1, v2}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 

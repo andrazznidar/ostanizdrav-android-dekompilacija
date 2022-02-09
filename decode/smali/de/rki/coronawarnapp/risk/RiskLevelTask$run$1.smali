@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelTask"
     f = "RiskLevelTask.kt"
     l = {
-        0x3b,
-        0x3d,
-        0x43
+        0x3c,
+        0x3e,
+        0x44
     }
     m = "run"
 .end annotation
@@ -42,6 +42,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskLevelTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask$run$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$run$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask;
 

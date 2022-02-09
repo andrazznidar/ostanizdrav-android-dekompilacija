@@ -10,7 +10,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lde/rki/coronawarnapp/appconfig/mapping/RevokedKeyPackage$Day;,
-        Lde/rki/coronawarnapp/appconfig/mapping/RevokedKeyPackage$Hour;
+        Lde/rki/coronawarnapp/appconfig/mapping/RevokedKeyPackage$Hour;,
+        Lde/rki/coronawarnapp/appconfig/mapping/RevokedKeyPackage$TraceWarning;
     }
 .end annotation
 

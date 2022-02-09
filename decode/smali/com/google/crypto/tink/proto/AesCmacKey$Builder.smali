@@ -21,8 +21,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder<",
         "Lcom/google/crypto/tink/proto/AesCmacKey;",
         "Lcom/google/crypto/tink/proto/AesCmacKey$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 

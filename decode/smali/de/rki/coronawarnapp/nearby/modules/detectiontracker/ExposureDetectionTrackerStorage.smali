@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExposureDetectionTrackerStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,72:1\n109#2,8:73\n118#2,2:95\n109#2,8:97\n118#2,2:109\n21#3,14:81\n39#3,4:105\n*E\n*S KotlinDebug\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n*L\n44#1,8:73\n44#1,2:95\n58#1,8:97\n58#1,2:109\n46#1,14:81\n65#1,4:105\n*E\n"
+    value = "SMAP\nExposureDetectionTrackerStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,72:1\n109#2,8:73\n118#2,2:95\n109#2,8:97\n118#2,2:109\n21#3,14:81\n39#3,4:105\n*S KotlinDebug\n*F\n+ 1 ExposureDetectionTrackerStorage.kt\nde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage\n*L\n44#1:73,8\n44#1:95,2\n58#1:97,8\n58#1:109,2\n46#1:81,14\n65#1:105,4\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 
     invoke-direct {p1, p2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$gson$2;-><init>(Lcom/google/gson/Gson;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -64,37 +64,37 @@
 
     invoke-static {p1, p2}, Lkotlinx/coroutines/sync/MutexKt;->Mutex$default(ZI)Lkotlinx/coroutines/sync/Mutex;
 
-    move-result-object v0
+    move-result-object p2
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->mutex:Lkotlinx/coroutines/sync/Mutex;
+    iput-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->mutex:Lkotlinx/coroutines/sync/Mutex;
 
-    new-instance v0, L-$$LambdaGroup$ks$DNLXQpu9yjaZhys-qCj1Rm272JY;
+    new-instance p2, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$storageDir$2;
 
-    invoke-direct {v0, p1, p0}, L-$$LambdaGroup$ks$DNLXQpu9yjaZhys-qCj1Rm272JY;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$storageDir$2;-><init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;)V
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
-    move-result-object v0
+    move-result-object p2
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->storageDir$delegate:Lkotlin/Lazy;
+    iput-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->storageDir$delegate:Lkotlin/Lazy;
 
-    new-instance v0, L-$$LambdaGroup$ks$DNLXQpu9yjaZhys-qCj1Rm272JY;
+    new-instance p2, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$storageFile$2;
 
-    invoke-direct {v0, p2, p0}, L-$$LambdaGroup$ks$DNLXQpu9yjaZhys-qCj1Rm272JY;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$storageFile$2;-><init>(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;)V
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p2
 
     iput-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->storageFile$delegate:Lkotlin/Lazy;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object p2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array p1, p1, [Ljava/lang/Object;
 
     const-string v0, "init()"
 
-    invoke-virtual {p2, v0, p1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, v0, p1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -180,7 +180,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -194,7 +194,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->mutex:Lkotlinx/coroutines/sync/Mutex;
 
@@ -243,15 +243,15 @@
 
     if-nez v6, :cond_4
 
-    const-string v2, "fromJson(): File doesn\'t exist %s"
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v6, v4, [Ljava/lang/Object;
+    const-string v6, "fromJson(): File doesn\'t exist %s"
 
-    aput-object v5, v6, p1
+    new-array v7, v4, [Ljava/lang/Object;
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v5, v7, p1
 
-    invoke-virtual {v5, v2, v6}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v6, v7}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v2, v3
 
@@ -290,9 +290,9 @@
 
     :goto_2
     :try_start_1
-    new-instance v6, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$$special$$inlined$fromJson$1;
+    new-instance v6, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$load$lambda-1$$inlined$fromJson$1;
 
-    invoke-direct {v6}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$$special$$inlined$fromJson$1;-><init>()V
+    invoke-direct {v6}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$load$lambda-1$$inlined$fromJson$1;-><init>()V
 
     iget-object v6, v6, Lcom/google/gson/reflect/TypeToken;->type:Ljava/lang/reflect/Type;
 
@@ -302,44 +302,42 @@
 
     if-eqz v2, :cond_6
 
-    const-string v6, "Json read from %s"
+    sget-object v6, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v7, "Json read from %s"
+
+    new-array v8, v4, [Ljava/lang/Object;
+
+    aput-object v5, v8, p1
+
+    invoke-virtual {v6, v7, v8}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    :cond_6
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v6, "Tried to parse json from file that exists, but was empty: %s"
 
     new-array v7, v4, [Ljava/lang/Object;
 
     aput-object v5, v7, p1
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v5, v6, v7}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_3
-
-    :cond_6
-    const-string v2, "Tried to parse json from file that exists, but was empty: %s"
-
-    new-array v6, v4, [Ljava/lang/Object;
-
-    aput-object v5, v6, p1
-
-    sget-object v7, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v7, v2, v6}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v6, v7}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    move-result v2
+    move-result v6
 
-    if-eqz v2, :cond_7
+    if-eqz v6, :cond_7
 
-    const-string v2, "Deleted empty json file: %s"
+    const-string v6, "Deleted empty json file: %s"
 
-    new-array v6, v4, [Ljava/lang/Object;
+    new-array v7, v4, [Ljava/lang/Object;
 
-    aput-object v5, v6, p1
+    aput-object v5, v7, p1
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v5, v2, v6}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v6, v7}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -348,44 +346,54 @@
 
     :goto_3
     :try_start_2
-    invoke-static {v9, v3}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v9, v3}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     :goto_4
     check-cast v2, Ljava/util/Map;
 
-    if-eqz v2, :cond_a
+    if-nez v2, :cond_8
 
+    move-object v2, v3
+
+    goto :goto_6
+
+    :cond_8
     invoke-interface {v2}, Ljava/util/Map;->size()I
 
     move-result v5
 
-    if-ltz v5, :cond_8
+    if-ltz v5, :cond_9
 
     move v5, v4
 
     goto :goto_5
 
-    :cond_8
+    :cond_9
     move v5, p1
 
     :goto_5
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_a
 
-    const-string v5, "Loaded detection data: %s"
+    sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v6, "Loaded detection data: %s"
 
     new-array v4, v4, [Ljava/lang/Object;
 
     aput-object v2, v4, p1
 
-    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v6, v5, v4}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v5, v6, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iput-object v2, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->lastCalcuationData:Ljava/util/Map;
 
-    goto :goto_6
+    :goto_6
+    if-nez v2, :cond_c
 
-    :cond_9
+    sget-object v2, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
+
+    goto :goto_7
+
+    :cond_a
     const-string v2, "Failed requirement."
 
     new-instance v4, Ljava/lang/IllegalArgumentException;
@@ -397,14 +405,9 @@
     invoke-direct {v4, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v4
-
-    :cond_a
-    sget-object v2, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    goto :goto_6
 
     :catchall_0
     move-exception v2
@@ -418,7 +421,7 @@
     move-exception v4
 
     :try_start_4
-    invoke-static {v9, v2}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v9, v2}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v4
     :try_end_4
@@ -428,19 +431,19 @@
     :catchall_2
     move-exception p1
 
-    goto :goto_7
+    goto :goto_8
 
     :catch_0
     move-exception v2
 
     :try_start_5
-    const-string v4, "Failed to load tracked detections."
+    sget-object v4, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v5, p1, [Ljava/lang/Object;
+    const-string v5, "Failed to load tracked detections."
 
-    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v6, p1, [Ljava/lang/Object;
 
-    invoke-virtual {v6, v2, v4, v5}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v4, v2, v5, v6}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->getStorageFile()Ljava/io/File;
 
@@ -456,21 +459,20 @@
 
     new-array p1, p1, [Ljava/lang/Object;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v2, v0, p1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v4, v0, p1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_b
     sget-object v2, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    :goto_6
+    :cond_c
+    :goto_7
     invoke-interface {v1, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     return-object v2
 
-    :goto_7
+    :goto_8
     invoke-interface {v1, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p1
@@ -527,13 +529,13 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->label:I
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v4, :cond_1
+    if-ne v2, v3, :cond_1
 
     iget-object p1, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->L$2:Ljava/lang/Object;
 
@@ -547,7 +549,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object p2, p1
 
@@ -565,7 +567,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->mutex:Lkotlinx/coroutines/sync/Mutex;
 
@@ -575,9 +577,9 @@
 
     iput-object p2, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->L$2:Ljava/lang/Object;
 
-    iput v4, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->label:I
+    iput v3, v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$save$1;->label:I
 
-    invoke-interface {p2, v3, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p2, v4, v0}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -600,26 +602,26 @@
 
     if-eqz v1, :cond_4
 
-    const-string p1, "Data didn\'t change, skipping save."
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v0, v2, [Ljava/lang/Object;
+    const-string v0, "Data didn\'t change, skipping save."
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v1, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v1, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v0, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_4
 
     :cond_4
-    const-string v1, "Storing detection data: %s"
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const-string v5, "Storing detection data: %s"
 
-    aput-object p1, v4, v2
+    new-array v3, v3, [Ljava/lang/Object;
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object p1, v3, v2
 
-    invoke-virtual {v5, v1, v4}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
@@ -632,15 +634,15 @@
 
     check-cast v1, Lcom/google/gson/Gson;
 
-    const-string v4, "gson"
+    const-string v3, "gson"
 
-    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage;->getStorageFile()Ljava/io/File;
 
     move-result-object v0
 
-    sget-object v4, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+    sget-object v3, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     const/16 v5, 0x2000
 
@@ -650,25 +652,25 @@
 
     new-instance v0, Ljava/io/OutputStreamWriter;
 
-    invoke-direct {v0, v6, v4}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
+    invoke-direct {v0, v6, v3}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    instance-of v4, v0, Ljava/io/BufferedWriter;
+    instance-of v3, v0, Ljava/io/BufferedWriter;
 
-    if-eqz v4, :cond_5
+    if-eqz v3, :cond_5
 
     check-cast v0, Ljava/io/BufferedWriter;
 
     goto :goto_2
 
     :cond_5
-    new-instance v4, Ljava/io/BufferedWriter;
+    new-instance v3, Ljava/io/BufferedWriter;
 
-    invoke-direct {v4, v0, v5}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
+    invoke-direct {v3, v0, v5}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    move-object v0, v4
+    move-object v0, v3
 
     :goto_2
     if-eqz p1, :cond_6
@@ -676,9 +678,9 @@
     :try_start_2
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, p1, v4, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V
+    invoke-virtual {v1, p1, v3, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V
 
     goto :goto_3
 
@@ -693,7 +695,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    invoke-static {v0, v3}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, v4}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -712,7 +714,7 @@
     move-exception v1
 
     :try_start_5
-    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
     :try_end_5
@@ -723,31 +725,31 @@
     move-exception p1
 
     :try_start_6
-    const-string v0, "Failed to save tracked detections."
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v1, v2, [Ljava/lang/Object;
+    const-string v1, "Failed to save tracked detections."
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v2, p1, v0, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v1, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;)V
+    invoke-static {p1, v0, v4, v4}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_4
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    invoke-interface {p2, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     return-object p1
 
     :catchall_2
     move-exception p1
 
-    invoke-interface {p2, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
+    invoke-interface {p2, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p1
 .end method

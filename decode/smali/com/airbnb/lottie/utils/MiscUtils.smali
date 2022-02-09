@@ -42,20 +42,6 @@
     return-object v0
 .end method
 
-.method public static clamp(DDD)D
-    .locals 0
-
-    invoke-static {p4, p5, p0, p1}, Ljava/lang/Math;->min(DD)D
-
-    move-result-wide p0
-
-    invoke-static {p2, p3, p0, p1}, Ljava/lang/Math;->max(DD)D
-
-    move-result-wide p0
-
-    return-wide p0
-.end method
-
 .method public static clamp(FFF)F
     .locals 0
 
@@ -81,28 +67,6 @@
 
     move-result p0
 
-    return p0
-.end method
-
-.method public static contains(FFF)Z
-    .locals 0
-
-    cmpl-float p1, p0, p1
-
-    if-ltz p1, :cond_0
-
-    cmpg-float p0, p0, p2
-
-    if-gtz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
     return p0
 .end method
 
@@ -146,27 +110,9 @@
 .method public static lerp(FFF)F
     .locals 0
 
-    invoke-static {p1, p0, p2, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline0(FFFF)F
+    invoke-static {p1, p0, p2, p0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;->m(FFFF)F
 
     move-result p0
-
-    return p0
-.end method
-
-.method public static lerp(IIF)I
-    .locals 1
-
-    int-to-float v0, p0
-
-    sub-int/2addr p1, p0
-
-    int-to-float p0, p1
-
-    mul-float/2addr p2, p0
-
-    add-float/2addr p2, v0
-
-    float-to-int p0, p2
 
     return p0
 .end method

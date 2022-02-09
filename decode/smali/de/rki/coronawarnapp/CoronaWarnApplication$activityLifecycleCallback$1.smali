@@ -27,22 +27,17 @@
 
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/CoronaWarnApplication;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
+    .locals 1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;
+    new-instance v0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;
 
-    invoke-direct {p1, p0}, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;-><init>(Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;-><init>(Lde/rki/coronawarnapp/CoronaWarnApplication;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {v0}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -96,8 +91,11 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->errorReceiver:Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {p0}, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->getLocalBM()Landroidx/localbroadcastmanager/content/LocalBroadcastManager;
 
     move-result-object v1
@@ -108,10 +106,20 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->errorReceiver:Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;
 
-    :cond_0
+    :goto_0
     iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/CoronaWarnApplication;->access$disableAppLauncherPreviewAndScreenshots(Lde/rki/coronawarnapp/CoronaWarnApplication;Landroid/app/Activity;)V
+    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    const/16 v0, 0x2000
+
+    invoke-virtual {p1, v0}, Landroid/view/Window;->addFlags(I)V
 
     return-void
 .end method
@@ -125,8 +133,11 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->errorReceiver:Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {p0}, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->getLocalBM()Landroidx/localbroadcastmanager/content/LocalBroadcastManager;
 
     move-result-object v1
@@ -137,7 +148,7 @@
 
     iput-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->errorReceiver:Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;
 
-    :cond_0
+    :goto_0
     new-instance v0, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;
 
     invoke-direct {v0, p1}, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;-><init>(Landroid/app/Activity;)V
@@ -186,7 +197,7 @@
 
     const/4 v5, 0x0
 
-    :goto_0
+    :goto_1
     invoke-virtual {v2}, Landroid/content/IntentFilter;->countActions()I
 
     move-result v7
@@ -220,7 +231,7 @@
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
     monitor-exit v3
@@ -231,7 +242,17 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/CoronaWarnApplication;->access$enableAppLauncherPreviewAndScreenshots(Lde/rki/coronawarnapp/CoronaWarnApplication;Landroid/app/Activity;)V
+    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    const/16 v0, 0x2000
+
+    invoke-virtual {p1, v0}, Landroid/view/Window;->clearFlags(I)V
 
     return-void
 
@@ -261,7 +282,7 @@
 .end method
 
 .method public onActivityStarted(Landroid/app/Activity;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "activity"
 
@@ -269,13 +290,23 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/CoronaWarnApplication;->access$enableAppLauncherPreviewAndScreenshots(Lde/rki/coronawarnapp/CoronaWarnApplication;Landroid/app/Activity;)V
+    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    const/16 v0, 0x2000
+
+    invoke-virtual {p1, v0}, Landroid/view/Window;->clearFlags(I)V
 
     return-void
 .end method
 
 .method public onActivityStopped(Landroid/app/Activity;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "activity"
 
@@ -283,7 +314,17 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/CoronaWarnApplication;->access$disableAppLauncherPreviewAndScreenshots(Lde/rki/coronawarnapp/CoronaWarnApplication;Landroid/app/Activity;)V
+    sget-object v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->instance:Lde/rki/coronawarnapp/CoronaWarnApplication;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    const/16 v0, 0x2000
+
+    invoke-virtual {p1, v0}, Landroid/view/Window;->addFlags(I)V
 
     return-void
 .end method

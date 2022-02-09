@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static final DEF_STYLE_RES:I
+
+
 # instance fields
 .field public checkedId:I
 
@@ -35,18 +39,28 @@
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    sget v0, Lcom/google/android/material/R$style;->Widget_MaterialComponents_ChipGroup:I
+
+    sput v0, Lcom/google/android/material/chip/ChipGroup;->DEF_STYLE_RES:I
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 7
 
-    const v0, 0x7f1302be
+    sget v3, Lcom/google/android/material/R$attr;->chipGroupStyle:I
 
-    const v1, 0x7f040092
+    sget v4, Lcom/google/android/material/chip/ChipGroup;->DEF_STYLE_RES:I
 
-    invoke-static {p1, p2, v1, v0}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    invoke-static {p1, p2, v3, v4}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {p0, p1, p2, v1}, Lcom/google/android/material/internal/FlowLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, v3}, Lcom/google/android/material/internal/FlowLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     new-instance p1, Lcom/google/android/material/chip/ChipGroup$CheckedStateTracker;
 
@@ -66,73 +80,71 @@
 
     iput p1, p0, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
 
-    const/4 v0, 0x0
+    const/4 v6, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/material/chip/ChipGroup;->protectFromCheckedChange:Z
+    iput-boolean v6, p0, Lcom/google/android/material/chip/ChipGroup;->protectFromCheckedChange:Z
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v3, Lcom/google/android/material/R$styleable;->ChipGroup:[I
+    sget-object v2, Lcom/google/android/material/R$styleable;->ChipGroup:[I
 
-    new-array v6, v0, [I
+    new-array v5, v6, [I
 
-    const v5, 0x7f1302be
+    move-object v1, p2
 
-    const v4, 0x7f040092
-
-    move-object v2, p2
-
-    invoke-static/range {v1 .. v6}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+    invoke-static/range {v0 .. v5}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
 
     move-result-object p2
 
-    const/4 v1, 0x1
+    sget v0, Lcom/google/android/material/R$styleable;->ChipGroup_chipSpacing:I
+
+    invoke-virtual {p2, v0, v6}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
+
+    move-result v0
+
+    sget v1, Lcom/google/android/material/R$styleable;->ChipGroup_chipSpacingHorizontal:I
 
     invoke-virtual {p2, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x2
+    invoke-virtual {p0, v1}, Lcom/google/android/material/chip/ChipGroup;->setChipSpacingHorizontal(I)V
 
-    invoke-virtual {p2, v3, v2}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
+    sget v1, Lcom/google/android/material/R$styleable;->ChipGroup_chipSpacingVertical:I
 
-    move-result v3
+    invoke-virtual {p2, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
-    invoke-virtual {p0, v3}, Lcom/google/android/material/chip/ChipGroup;->setChipSpacingHorizontal(I)V
+    move-result v0
 
-    const/4 v3, 0x3
+    invoke-virtual {p0, v0}, Lcom/google/android/material/chip/ChipGroup;->setChipSpacingVertical(I)V
 
-    invoke-virtual {p2, v3, v2}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
+    sget v0, Lcom/google/android/material/R$styleable;->ChipGroup_singleLine:I
 
-    move-result v2
+    invoke-virtual {p2, v0, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    invoke-virtual {p0, v2}, Lcom/google/android/material/chip/ChipGroup;->setChipSpacingVertical(I)V
+    move-result v0
 
-    const/4 v2, 0x5
+    invoke-virtual {p0, v0}, Lcom/google/android/material/chip/ChipGroup;->setSingleLine(Z)V
 
-    invoke-virtual {p2, v2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v0, Lcom/google/android/material/R$styleable;->ChipGroup_singleSelection:I
 
-    move-result v2
+    invoke-virtual {p2, v0, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    invoke-virtual {p0, v2}, Lcom/google/android/material/chip/ChipGroup;->setSingleLine(Z)V
+    move-result v0
 
-    const/4 v2, 0x6
+    invoke-virtual {p0, v0}, Lcom/google/android/material/chip/ChipGroup;->setSingleSelection(Z)V
 
-    invoke-virtual {p2, v2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget v0, Lcom/google/android/material/R$styleable;->ChipGroup_selectionRequired:I
 
-    move-result v2
+    invoke-virtual {p2, v0, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    invoke-virtual {p0, v2}, Lcom/google/android/material/chip/ChipGroup;->setSingleSelection(Z)V
+    move-result v0
 
-    const/4 v2, 0x4
+    invoke-virtual {p0, v0}, Lcom/google/android/material/chip/ChipGroup;->setSelectionRequired(Z)V
 
-    invoke-virtual {p2, v2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lcom/google/android/material/chip/ChipGroup;->setSelectionRequired(Z)V
+    sget v0, Lcom/google/android/material/R$styleable;->ChipGroup_checkedChip:I
 
     invoke-virtual {p2, v0, p1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -149,7 +161,11 @@
 
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
-    invoke-static {p0, v1}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+    const/4 p1, 0x1
+
+    sget-object p2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     return-void
 .end method
@@ -256,6 +272,41 @@
 
     :cond_1
     invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+    return-void
+.end method
+
+.method public check(I)V
+    .locals 3
+
+    iget v0, p0, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
+
+    if-ne p1, v0, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_1
+
+    iget-boolean v2, p0, Lcom/google/android/material/chip/ChipGroup;->singleSelection:Z
+
+    if-eqz v2, :cond_1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v0, v2}, Lcom/google/android/material/chip/ChipGroup;->setCheckedStateForView(IZ)V
+
+    :cond_1
+    if-eq p1, v1, :cond_2
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/material/chip/ChipGroup;->setCheckedStateForView(IZ)V
+
+    :cond_2
+    invoke-direct {p0, p1}, Lcom/google/android/material/chip/ChipGroup;->setCheckedId(I)V
 
     return-void
 .end method
@@ -432,7 +483,7 @@
 .method public onFinishInflate()V
     .locals 2
 
-    invoke-super {p0}, Landroid/view/ViewGroup;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
     iget v0, p0, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
 
@@ -455,7 +506,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     iget-boolean v0, p0, Lcom/google/android/material/internal/FlowLayout;->singleLine:Z
 

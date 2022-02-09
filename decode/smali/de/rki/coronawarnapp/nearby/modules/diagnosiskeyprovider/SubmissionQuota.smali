@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionQuota.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,100:1\n109#2,11:101\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n*L\n38#1,11:101\n*E\n"
+    value = "SMAP\nSubmissionQuota.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n*L\n1#1,100:1\n109#2,11:101\n*S KotlinDebug\n*F\n+ 1 SubmissionQuota.kt\nde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota\n*L\n38#1:101,11\n*E\n"
 .end annotation
 
 
@@ -25,7 +25,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "timeStamper"
+    const-string/jumbo v0, "timeStamper"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -51,103 +51,114 @@
 
 # virtual methods
 .method public final attemptQuotaReset()V
-    .locals 12
+    .locals 14
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->getCurrentQuota()I
 
     move-result v0
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->getLastQuotaReset()Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->enfData:Lde/rki/coronawarnapp/nearby/ENFClientLocalData;
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/nearby/ENFClientLocalData;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
+    const-string v2, "enfclient.quota.lastreset"
 
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    const-wide/16 v3, 0x0
 
-    move-result-object v2
+    invoke-interface {v1, v2, v3, v4}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->getLastQuotaReset()Lorg/joda/time/Instant;
+    move-result-wide v5
 
-    move-result-object v3
+    new-instance v1, Lorg/joda/time/Instant;
 
-    sget-object v4, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+    invoke-direct {v1, v5, v6}, Lorg/joda/time/Instant;-><init>(J)V
 
-    invoke-virtual {v3, v4}, Lorg/joda/time/base/AbstractInstant;->toDateTime(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
+    iget-object v5, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    move-result-object v3
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v3}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
+    new-instance v5, Lorg/joda/time/Instant;
 
-    move-result-object v4
+    invoke-direct {v5}, Lorg/joda/time/Instant;-><init>()V
 
-    invoke-virtual {v3}, Lorg/joda/time/base/AbstractInstant;->getZone()Lorg/joda/time/DateTimeZone;
+    iget-object v6, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->enfData:Lde/rki/coronawarnapp/nearby/ENFClientLocalData;
 
-    move-result-object v3
+    invoke-virtual {v6}, Lde/rki/coronawarnapp/nearby/ENFClientLocalData;->getPrefs()Landroid/content/SharedPreferences;
 
-    invoke-virtual {v4, v3}, Lorg/joda/time/LocalDate;->toDateTimeAtStartOfDay(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
+    move-result-object v6
 
-    move-result-object v3
+    invoke-interface {v6, v2, v3, v4}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    const-wide/16 v4, 0x1
+    move-result-wide v6
 
-    invoke-static {v4, v5}, Lorg/joda/time/Duration;->standardDays(J)Lorg/joda/time/Duration;
+    sget-object v8, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
 
-    move-result-object v4
+    sget-object v9, Lorg/joda/time/chrono/ISOChronology;->INSTANCE_UTC:Lorg/joda/time/chrono/ISOChronology;
 
-    invoke-interface {v4}, Lorg/joda/time/ReadableDuration;->getMillis()J
+    invoke-static {v9}, Lorg/joda/time/DateTimeUtils;->getChronology(Lorg/joda/time/Chronology;)Lorg/joda/time/Chronology;
 
-    move-result-wide v4
+    move-result-object v9
 
-    const-wide/16 v6, 0x0
+    invoke-virtual {v9, v8}, Lorg/joda/time/Chronology;->withZone(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/Chronology;
 
-    cmp-long v6, v4, v6
+    move-result-object v8
+
+    new-instance v9, Lorg/joda/time/DateTime;
+
+    invoke-direct {v9, v6, v7, v8}, Lorg/joda/time/DateTime;-><init>(JLorg/joda/time/Chronology;)V
+
+    invoke-virtual {v9}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
+
+    move-result-object v6
+
+    invoke-virtual {v9}, Lorg/joda/time/base/AbstractInstant;->getZone()Lorg/joda/time/DateTimeZone;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Lorg/joda/time/LocalDate;->toDateTimeAtStartOfDay(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
+
+    move-result-object v6
+
+    const-wide/16 v7, 0x1
+
+    invoke-static {v7, v8}, Lorg/joda/time/Duration;->standardDays(J)Lorg/joda/time/Duration;
+
+    move-result-object v7
+
+    iget-wide v11, v7, Lorg/joda/time/base/BaseDuration;->iMillis:J
+
+    cmp-long v3, v11, v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v8, v6, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
+
+    iget-wide v9, v6, Lorg/joda/time/base/BaseDateTime;->iMillis:J
+
+    const/4 v13, 0x1
+
+    invoke-virtual/range {v8 .. v13}, Lorg/joda/time/Chronology;->add(JJI)J
+
+    move-result-wide v3
+
+    invoke-virtual {v6, v3, v4}, Lorg/joda/time/DateTime;->withMillis(J)Lorg/joda/time/DateTime;
+
+    move-result-object v6
+
+    :cond_0
+    invoke-virtual {v5, v6}, Lorg/joda/time/base/AbstractInstant;->isAfter(Lorg/joda/time/ReadableInstant;)Z
+
+    move-result v3
+
+    const/4 v4, 0x1
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x1
+    const/4 v8, 0x2
 
-    if-eqz v6, :cond_2
-
-    iget-object v9, v3, Lorg/joda/time/base/BaseDateTime;->iChronology:Lorg/joda/time/Chronology;
-
-    iget-wide v10, v3, Lorg/joda/time/base/BaseDateTime;->iMillis:J
-
-    check-cast v9, Lorg/joda/time/chrono/BaseChronology;
-
-    if-eqz v9, :cond_1
-
-    if-eqz v6, :cond_0
-
-    invoke-static {v4, v5, v8}, Lcom/google/zxing/client/android/R$id;->safeMultiply(JI)J
-
-    move-result-wide v4
-
-    invoke-static {v10, v11, v4, v5}, Lcom/google/zxing/client/android/R$id;->safeAdd(JJ)J
-
-    move-result-wide v10
-
-    :cond_0
-    invoke-virtual {v3, v10, v11}, Lorg/joda/time/DateTime;->withMillis(J)Lorg/joda/time/DateTime;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    :cond_1
-    throw v7
-
-    :cond_2
-    :goto_0
-    invoke-virtual {v2, v3}, Lorg/joda/time/base/AbstractInstant;->isAfter(Lorg/joda/time/ReadableInstant;)Z
-
-    move-result v4
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x2
-
-    if-eqz v4, :cond_4
+    if-eqz v3, :cond_1
 
     const/4 v3, 0x6
 
@@ -155,35 +166,31 @@
 
     iget-object v3, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->enfData:Lde/rki/coronawarnapp/nearby/ENFClientLocalData;
 
-    if-eqz v3, :cond_3
-
-    const-string v4, "value"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v3}, Lde/rki/coronawarnapp/nearby/ENFClientLocalData;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v3
 
-    const-string v4, "prefs"
+    const-string v6, "prefs"
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v3
 
-    const-string v4, "editor"
+    const-string v6, "editor"
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-wide v9, v2, Lorg/joda/time/Instant;->iMillis:J
+    iget-wide v9, v5, Lorg/joda/time/Instant;->iMillis:J
 
-    const-string v4, "enfclient.quota.lastreset"
-
-    invoke-interface {v3, v4, v9, v10}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v3, v2, v9, v10}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     const/4 v3, 0x4
 
@@ -193,9 +200,9 @@
 
     move-result-object v0
 
-    aput-object v0, v3, v5
+    aput-object v0, v3, v7
 
-    aput-object v1, v3, v8
+    aput-object v1, v3, v4
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->getCurrentQuota()I
 
@@ -205,42 +212,37 @@
 
     move-result-object v0
 
-    aput-object v0, v3, v6
+    aput-object v0, v3, v8
 
     const/4 v0, 0x3
 
-    aput-object v2, v3, v0
+    aput-object v5, v3, v0
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v0, "Quota reset: oldQuota=%d, lastReset=%s -> newQuota=%d, thisReset=%s"
 
-    const-string v1, "Quota reset: oldQuota=%d, lastReset=%s -> newQuota=%d, thisReset=%s"
+    invoke-virtual {v2, v0, v3}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v0, v1, v3}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    goto :goto_0
 
-    goto :goto_1
+    :cond_1
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    :cond_3
-    throw v7
+    new-array v1, v8, [Ljava/lang/Object;
 
-    :cond_4
-    new-array v0, v6, [Ljava/lang/Object;
+    aput-object v5, v1, v7
 
-    aput-object v2, v0, v5
-
-    aput-object v3, v0, v8
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v6, v1, v4
 
     const-string v2, "No new quota available (now=%s, availableAt=%s)"
 
-    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :goto_1
+    :goto_0
     return-void
 .end method
 
 .method public final consumeQuota(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 8
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -304,7 +306,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -318,7 +320,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->mutex:Lkotlinx/coroutines/sync/Mutex;
 
@@ -357,15 +359,17 @@
 
     if-ge p2, p1, :cond_4
 
-    const-string p2, "Not enough quota: want=%d, have=%d"
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v6, "Not enough quota: want=%d, have=%d"
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    new-instance v6, Ljava/lang/Integer;
+    new-instance v7, Ljava/lang/Integer;
 
-    invoke-direct {v6, p1}, Ljava/lang/Integer;-><init>(I)V
+    invoke-direct {v7, p1}, Ljava/lang/Integer;-><init>(I)V
 
-    aput-object v6, v5, v2
+    aput-object v7, v5, v2
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->getCurrentQuota()I
 
@@ -377,9 +381,7 @@
 
     aput-object v0, v5, v4
 
-    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {p1, p2, v5}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, v6, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
     :try_end_0
@@ -401,15 +403,17 @@
 
     sub-int/2addr v6, p1
 
-    const-string p1, "Consuming quota: old=%d, new=%d"
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v7, "Consuming quota: old=%d, new=%d"
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    new-instance v7, Ljava/lang/Integer;
+    new-instance v8, Ljava/lang/Integer;
 
-    invoke-direct {v7, p2}, Ljava/lang/Integer;-><init>(I)V
+    invoke-direct {v8, p2}, Ljava/lang/Integer;-><init>(I)V
 
-    aput-object v7, v5, v2
+    aput-object v8, v5, v2
 
     new-instance p2, Ljava/lang/Integer;
 
@@ -417,9 +421,7 @@
 
     aput-object p2, v5, v4
 
-    sget-object p2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {p2, p1, v5}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v7, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v0, v6}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->setCurrentQuota(I)V
 
@@ -459,34 +461,6 @@
     return v0
 .end method
 
-.method public final getLastQuotaReset()Lorg/joda/time/Instant;
-    .locals 4
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/SubmissionQuota;->enfData:Lde/rki/coronawarnapp/nearby/ENFClientLocalData;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/nearby/ENFClientLocalData;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-wide/16 v1, 0x0
-
-    const-string v3, "enfclient.quota.lastreset"
-
-    invoke-interface {v0, v3, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    new-instance v2, Lorg/joda/time/Instant;
-
-    invoke-direct {v2, v0, v1}, Lorg/joda/time/Instant;-><init>(J)V
-
-    const-string v0, "Instant.ofEpochMilli(pre\u2026EY_QUOTA_LAST_RESET, 0L))"
-
-    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v2
-.end method
-
 .method public final setCurrentQuota(I)V
     .locals 2
 
@@ -506,7 +480,7 @@
 
     const-string v1, "editor"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v1, "enfclient.quota.current"
 

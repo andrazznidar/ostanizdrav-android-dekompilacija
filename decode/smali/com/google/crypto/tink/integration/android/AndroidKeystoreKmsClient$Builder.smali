@@ -17,8 +17,6 @@
 # instance fields
 .field public keyStore:Ljava/security/KeyStore;
 
-.field public keyUri:Ljava/lang/String;
-
 
 # direct methods
 .method public constructor <init>()V
@@ -27,8 +25,6 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$Builder;->keyUri:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$Builder;->keyStore:Ljava/security/KeyStore;
 

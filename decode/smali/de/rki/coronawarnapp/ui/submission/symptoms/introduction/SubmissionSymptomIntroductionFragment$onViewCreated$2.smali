@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 2
 
     check-cast p1, Lkotlin/Unit;
 
@@ -67,49 +67,39 @@
 
     new-instance v0, Lde/rki/coronawarnapp/ui/submission/symptoms/introduction/SubmissionSymptomIntroductionFragment$onViewCreated$2$1;
 
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/submission/symptoms/introduction/SubmissionSymptomIntroductionFragment$onViewCreated$2$1;-><init>(Lde/rki/coronawarnapp/ui/submission/symptoms/introduction/SubmissionSymptomIntroductionFragment$onViewCreated$2;)V
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/symptoms/introduction/SubmissionSymptomIntroductionFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/ui/submission/symptoms/introduction/SubmissionSymptomIntroductionFragment;
+
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/submission/symptoms/introduction/SubmissionSymptomIntroductionFragment$onViewCreated$2$1;-><init>(Lde/rki/coronawarnapp/ui/submission/symptoms/introduction/SubmissionSymptomIntroductionFragment;)V
 
     const-string v1, "onUserDidCancel"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Landroidx/appcompat/app/AlertDialog$Builder;
+    new-instance v1, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    invoke-direct {v1, p1}, Landroidx/appcompat/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;-><init>(Landroid/content/Context;)V
 
-    const p1, 0x7f120390
+    const p1, 0x7f13054b
 
-    invoke-virtual {v1, p1}, Landroidx/appcompat/app/AlertDialog$Builder;->setTitle(I)Landroidx/appcompat/app/AlertDialog$Builder;
+    invoke-virtual {v1, p1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setTitle(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    const p1, 0x7f12038d
+    const p1, 0x7f130548
 
-    invoke-virtual {v1, p1}, Landroidx/appcompat/app/AlertDialog$Builder;->setMessage(I)Landroidx/appcompat/app/AlertDialog$Builder;
+    invoke-virtual {v1, p1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setMessage(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/submission/SubmissionCancelDialog$show$$inlined$apply$lambda$1;
+    new-instance p1, Lde/rki/coronawarnapp/ui/submission/SubmissionCancelDialog$$ExternalSyntheticLambda0;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/ui/submission/SubmissionCancelDialog$show$$inlined$apply$lambda$1;-><init>(Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/ui/submission/SubmissionCancelDialog$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function0;)V
 
-    const v0, 0x7f12038f
+    const v0, 0x7f13054a
 
-    invoke-virtual {v1, v0, p1}, Landroidx/appcompat/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroidx/appcompat/app/AlertDialog$Builder;
+    invoke-virtual {v1, v0, p1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    sget-object p1, Lde/rki/coronawarnapp/ui/submission/SubmissionCancelDialog$show$1$2;->INSTANCE:Lde/rki/coronawarnapp/ui/submission/SubmissionCancelDialog$show$1$2;
+    sget-object p1, Lde/rki/coronawarnapp/bugreporting/ui/ErrorDialogKt$$ExternalSyntheticLambda1;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/ui/ErrorDialogKt$$ExternalSyntheticLambda1;
 
-    iget-object v0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
+    const v0, 0x7f130549
 
-    iget-object v2, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mContext:Landroid/content/Context;
-
-    const v3, 0x7f12038e
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    iput-object v2, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
-
-    iget-object v0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
-
-    iput-object p1, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
+    invoke-virtual {v1, v0, p1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
     invoke-virtual {v1}, Landroidx/appcompat/app/AlertDialog$Builder;->show()Landroidx/appcompat/app/AlertDialog;
 

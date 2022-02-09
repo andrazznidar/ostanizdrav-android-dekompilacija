@@ -18,6 +18,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Progress$Started;,
+        Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Progress$Finished;,
         Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Progress$ApiSubmissionStarted;,
         Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Progress$ApiSubmissionFinished;,
         Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Progress$KeyFilesDownloadStarted;,
@@ -26,9 +28,13 @@
 .end annotation
 
 
+# instance fields
+.field public final primaryMessage:Lde/rki/coronawarnapp/util/ui/LazyString;
+
+
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,13 +46,11 @@
 
     move-result-object p1
 
-    const-string v0, "this::class.java.simpleName"
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toLazyString(Ljava/lang/String;)Lde/rki/coronawarnapp/util/ui/LazyString;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p1
 
-    const-string v0, "$this$toLazyString"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Progress;->primaryMessage:Lde/rki/coronawarnapp/util/ui/LazyString;
 
     return-void
 .end method

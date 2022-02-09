@@ -14,8 +14,6 @@
 
 .field public final captionTranslationYPx:F
 
-.field public captionViewsAdded:I
-
 .field public final context:Landroid/content/Context;
 
 .field public errorEnabled:Z
@@ -67,7 +65,7 @@
 
     move-result-object p1
 
-    const v0, 0x7f0700a7
+    sget v0, Lcom/google/android/material/R$dimen;->design_textinput_caption_translate_y:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -174,12 +172,6 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    iget p1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionViewsAdded:I
-
-    add-int/2addr p1, v0
-
-    iput p1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionViewsAdded:I
-
     goto :goto_2
 
     :cond_3
@@ -206,7 +198,7 @@
 .end method
 
 .method public adjustIndicatorPadding()V
-    .locals 4
+    .locals 9
 
     iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
@@ -232,29 +224,59 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
+    iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->textInputView:Lcom/google/android/material/textfield/TextInputLayout;
 
-    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->textInputView:Lcom/google/android/material/textfield/TextInputLayout;
+    invoke-virtual {v0}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
 
-    invoke-virtual {v2}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
+    move-result-object v0
 
-    move-result-object v2
+    iget-object v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
 
-    invoke-static {v2}, Landroidx/core/view/ViewCompat;->getPaddingStart(Landroid/view/View;)I
+    invoke-static {v2}, Lcom/google/android/material/resources/MaterialResources;->isFontScaleAtLeast1_3(Landroid/content/Context;)Z
 
     move-result v2
 
-    iget-object v3, p0, Lcom/google/android/material/textfield/IndicatorViewController;->textInputView:Lcom/google/android/material/textfield/TextInputLayout;
+    iget-object v3, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v3}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
+    sget v4, Lcom/google/android/material/R$dimen;->material_helper_text_font_1_3_padding_horizontal:I
 
-    move-result-object v3
+    sget-object v5, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v3}, Landroid/view/View;->getPaddingEnd()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingStart()I
 
-    move-result v3
+    move-result v5
 
-    invoke-virtual {v0, v2, v1, v3, v1}, Landroid/view/View;->setPaddingRelative(IIII)V
+    invoke-virtual {p0, v2, v4, v5}, Lcom/google/android/material/textfield/IndicatorViewController;->getIndicatorPadding(ZII)I
+
+    move-result v5
+
+    sget v6, Lcom/google/android/material/R$dimen;->material_helper_text_font_1_3_padding_top:I
+
+    iget-object v7, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
+
+    invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v7
+
+    sget v8, Lcom/google/android/material/R$dimen;->material_helper_text_default_padding_top:I
+
+    invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v7
+
+    invoke-virtual {p0, v2, v6, v7}, Lcom/google/android/material/textfield/IndicatorViewController;->getIndicatorPadding(ZII)I
+
+    move-result v6
+
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingEnd()I
+
+    move-result v0
+
+    invoke-virtual {p0, v2, v4, v0}, Lcom/google/android/material/textfield/IndicatorViewController;->getIndicatorPadding(ZII)I
+
+    move-result v0
+
+    invoke-virtual {v3, v5, v6, v0, v1}, Landroid/view/View;->setPaddingRelative(IIII)V
 
     :cond_1
     return-void
@@ -455,6 +477,25 @@
     return v0
 .end method
 
+.method public final getIndicatorPadding(ZII)I
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->context:Landroid/content/Context;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p3
+
+    :cond_0
+    return p3
+.end method
+
 .method public hideError()V
     .locals 4
 
@@ -511,7 +552,7 @@
 .end method
 
 .method public removeIndicator(Landroid/widget/TextView;I)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
@@ -520,11 +561,11 @@
     return-void
 
     :cond_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     if-eqz p2, :cond_2
 
-    if-ne p2, v0, :cond_1
+    if-ne p2, v1, :cond_1
 
     goto :goto_0
 
@@ -535,53 +576,38 @@
 
     :cond_2
     :goto_0
-    move p2, v0
+    move p2, v1
 
     :goto_1
-    const/16 v1, 0x8
-
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_3
 
     iget-object p2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionArea:Landroid/widget/FrameLayout;
 
-    if-eqz p2, :cond_4
-
-    iget v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionViewsAdded:I
-
-    sub-int/2addr v2, v0
-
-    iput v2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionViewsAdded:I
-
-    if-nez v2, :cond_3
-
-    invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    :cond_3
-    iget-object p2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->captionArea:Landroid/widget/FrameLayout;
+    if-eqz p2, :cond_3
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
     goto :goto_2
 
-    :cond_4
-    iget-object p2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
-
-    invoke-virtual {p2, p1}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
+    :cond_3
+    invoke-virtual {v0, p1}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
 
     :goto_2
     iget p1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorsAdded:I
 
-    sub-int/2addr p1, v0
+    sub-int/2addr p1, v1
 
     iput p1, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorsAdded:I
 
     iget-object p2, p0, Lcom/google/android/material/textfield/IndicatorViewController;->indicatorArea:Landroid/widget/LinearLayout;
 
-    if-nez p1, :cond_5
+    if-nez p1, :cond_4
 
-    invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    const/16 p1, 0x8
 
-    :cond_5
+    invoke-virtual {p2, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    :cond_4
     return-void
 .end method
 
@@ -590,7 +616,9 @@
 
     iget-object v0, p0, Lcom/google/android/material/textfield/IndicatorViewController;->textInputView:Lcom/google/android/material/textfield/TextInputLayout;
 
-    invoke-static {v0}, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0}, Landroid/view/View;->isLaidOut()Z
 
     move-result v0
 
@@ -688,7 +716,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/google/android/material/textfield/IndicatorViewController;->createCaptionAnimators(Ljava/util/List;ZLandroid/widget/TextView;III)V
 
-    invoke-static {v12, v13}, Lcom/google/android/material/R$style;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {v12, v13}, Lcom/google/android/material/animation/AnimatorSetCompat;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/textfield/IndicatorViewController;->getCaptionViewFromDisplayState(I)Landroid/widget/TextView;
 

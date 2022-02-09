@@ -39,8 +39,6 @@
 
 .field public mButtonNeutralText:Ljava/lang/CharSequence;
 
-.field public mButtonPanelLayoutHint:I
-
 .field public mButtonPanelSideLayout:I
 
 .field public mButtonPositive:Landroid/widget/Button;
@@ -122,8 +120,6 @@
 
     iput v1, p0, Landroidx/appcompat/app/AlertController;->mCheckedItem:I
 
-    iput v0, p0, Landroidx/appcompat/app/AlertController;->mButtonPanelLayoutHint:I
-
     new-instance v1, Landroidx/appcompat/app/AlertController$1;
 
     invoke-direct {v1, p0}, Landroidx/appcompat/app/AlertController$1;-><init>(Landroidx/appcompat/app/AlertController;)V
@@ -144,21 +140,23 @@
 
     sget-object p3, Landroidx/appcompat/R$styleable;->AlertDialog:[I
 
-    const/4 v1, 0x0
+    sget v1, Landroidx/appcompat/R$attr;->alertDialogStyle:I
 
-    const v2, 0x7f040027
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v1, p3, v2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v2, p3, v1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_android_layout:I
+
+    invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p3
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mAlertDialogLayout:I
 
-    const/4 p3, 0x2
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_buttonPanelSideLayout:I
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -166,7 +164,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mButtonPanelSideLayout:I
 
-    const/4 p3, 0x4
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_listLayout:I
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -174,7 +172,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mListLayout:I
 
-    const/4 p3, 0x5
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_multiChoiceItemLayout:I
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -182,7 +180,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mMultiChoiceItemLayout:I
 
-    const/4 p3, 0x7
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_singleChoiceItemLayout:I
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -190,7 +188,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mSingleChoiceItemLayout:I
 
-    const/4 p3, 0x3
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_listItemLayout:I
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -198,7 +196,7 @@
 
     iput p3, p0, Landroidx/appcompat/app/AlertController;->mListItemLayout:I
 
-    const/4 p3, 0x6
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_showTitle:I
 
     const/4 v1, 0x1
 
@@ -208,7 +206,9 @@
 
     iput-boolean p3, p0, Landroidx/appcompat/app/AlertController;->mShowTitle:Z
 
-    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    sget p3, Landroidx/appcompat/R$styleable;->AlertDialog_buttonIconDimen:I
+
+    invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result p3
 
@@ -466,42 +466,5 @@
     iput-object p4, p0, Landroidx/appcompat/app/AlertController;->mButtonNeutralIcon:Landroid/graphics/drawable/Drawable;
 
     :goto_1
-    return-void
-.end method
-
-.method public setIcon(I)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroidx/appcompat/app/AlertController;->mIcon:Landroid/graphics/drawable/Drawable;
-
-    iput p1, p0, Landroidx/appcompat/app/AlertController;->mIconId:I
-
-    iget-object v0, p0, Landroidx/appcompat/app/AlertController;->mIconView:Landroid/widget/ImageView;
-
-    if-eqz v0, :cond_1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x0
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    iget-object p1, p0, Landroidx/appcompat/app/AlertController;->mIconView:Landroid/widget/ImageView;
-
-    iget v0, p0, Landroidx/appcompat/app/AlertController;->mIconId:I
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_0
-
-    :cond_0
-    const/16 p1, 0x8
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method

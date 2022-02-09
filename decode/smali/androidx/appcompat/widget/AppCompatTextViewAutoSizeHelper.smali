@@ -16,10 +16,16 @@
 # static fields
 .field public static final TEMP_RECTF:Landroid/graphics/RectF;
 
-.field public static sTextViewFieldByNameCache:Ljava/util/concurrent/ConcurrentHashMap;
+.field public static sTextViewFieldByNameCache:Lj$/util/concurrent/ConcurrentHashMap;
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "BanConcurrentHashMap"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/concurrent/ConcurrentHashMap<",
+            "Lj$/util/concurrent/ConcurrentHashMap<",
             "Ljava/lang/String;",
             "Ljava/lang/reflect/Field;",
             ">;"
@@ -27,10 +33,16 @@
     .end annotation
 .end field
 
-.field public static sTextViewMethodByNameCache:Ljava/util/concurrent/ConcurrentHashMap;
+.field public static sTextViewMethodByNameCache:Lj$/util/concurrent/ConcurrentHashMap;
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "BanConcurrentHashMap"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/concurrent/ConcurrentHashMap<",
+            "Lj$/util/concurrent/ConcurrentHashMap<",
             "Ljava/lang/String;",
             "Ljava/lang/reflect/Method;",
             ">;"
@@ -73,17 +85,17 @@
 
     sput-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->TEMP_RECTF:Landroid/graphics/RectF;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    sput-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache:Ljava/util/concurrent/ConcurrentHashMap;
+    sput-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache:Lj$/util/concurrent/ConcurrentHashMap;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    sput-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewFieldByNameCache:Ljava/util/concurrent/ConcurrentHashMap;
+    sput-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewFieldByNameCache:Lj$/util/concurrent/ConcurrentHashMap;
 
     return-void
 .end method
@@ -150,9 +162,9 @@
     .locals 3
 
     :try_start_0
-    sget-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache:Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -176,9 +188,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    sget-object v1, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache:Ljava/util/concurrent/ConcurrentHashMap;
+    sget-object v1, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->sTextViewMethodByNameCache:Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v1, p0, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p0, v0}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -289,7 +301,7 @@
 
 # virtual methods
 .method public autoSizeText()V
-    .locals 6
+    .locals 5
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->supportsAutoSizeText()Z
 
@@ -413,25 +425,17 @@
     monitor-enter v4
 
     :try_start_0
-    sget-object v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->TEMP_RECTF:Landroid/graphics/RectF;
-
-    invoke-virtual {v5}, Landroid/graphics/RectF;->setEmpty()V
-
-    sget-object v5, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->TEMP_RECTF:Landroid/graphics/RectF;
+    invoke-virtual {v4}, Landroid/graphics/RectF;->setEmpty()V
 
     int-to-float v0, v0
 
-    iput v0, v5, Landroid/graphics/RectF;->right:F
+    iput v0, v4, Landroid/graphics/RectF;->right:F
 
-    sget-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->TEMP_RECTF:Landroid/graphics/RectF;
+    int-to-float v0, v3
 
-    int-to-float v3, v3
+    iput v0, v4, Landroid/graphics/RectF;->bottom:F
 
-    iput v3, v0, Landroid/graphics/RectF;->bottom:F
-
-    sget-object v0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->TEMP_RECTF:Landroid/graphics/RectF;
-
-    invoke-virtual {p0, v0}, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->findLargestTextSizeWhichFits(Landroid/graphics/RectF;)I
+    invoke-virtual {p0, v4}, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->findLargestTextSizeWhichFits(Landroid/graphics/RectF;)I
 
     move-result v0
 
@@ -1068,43 +1072,41 @@
 .end method
 
 .method public final setupAutoSizeUniformPresetSizesConfiguration()Z
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextSizesInPx:[I
 
-    array-length v0, v0
+    array-length v1, v0
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-lez v0, :cond_0
+    if-lez v1, :cond_0
 
-    move v3, v2
+    move v4, v3
 
     goto :goto_0
 
     :cond_0
-    move v3, v1
+    move v4, v2
 
     :goto_0
-    iput-boolean v3, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mHasPresetAutoSizeValues:Z
+    iput-boolean v4, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mHasPresetAutoSizeValues:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    iput v2, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextType:I
+    iput v3, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextType:I
 
-    iget-object v3, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeTextSizesInPx:[I
+    aget v2, v0, v2
 
-    aget v1, v3, v1
+    int-to-float v2, v2
 
-    int-to-float v1, v1
+    iput v2, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeMinTextSizeInPx:F
 
-    iput v1, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeMinTextSizeInPx:F
+    sub-int/2addr v1, v3
 
-    sub-int/2addr v0, v2
-
-    aget v0, v3, v0
+    aget v0, v0, v1
 
     int-to-float v0, v0
 
@@ -1115,9 +1117,7 @@
     iput v0, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mAutoSizeStepGranularityInPx:F
 
     :cond_1
-    iget-boolean v0, p0, Landroidx/appcompat/widget/AppCompatTextViewAutoSizeHelper;->mHasPresetAutoSizeValues:Z
-
-    return v0
+    return v4
 .end method
 
 .method public final supportsAutoSizeText()Z

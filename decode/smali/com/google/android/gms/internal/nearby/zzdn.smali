@@ -43,7 +43,17 @@
 
     move-result-wide v0
 
-    invoke-interface {p0, p1, v0, v1}, Lcom/google/android/gms/internal/nearby/zzdo;->zzb(Lcom/google/android/gms/common/api/Status;J)V
+    move-object p2, p0
+
+    check-cast p2, Lcom/google/android/gms/internal/nearby/zzah;
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p4
+
+    iget-object p2, p2, Lcom/google/android/gms/internal/nearby/zzah;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-static {p1, p4, p2}, Lcom/google/android/gms/common/api/internal/TaskUtil;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
 
     return p3
 

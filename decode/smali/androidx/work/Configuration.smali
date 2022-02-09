@@ -13,10 +13,6 @@
 
 
 # instance fields
-.field public final mDefaultProcessName:Ljava/lang/String;
-
-.field public final mExceptionHandler:Landroidx/work/InitializationExceptionHandler;
-
 .field public final mExecutor:Ljava/util/concurrent/Executor;
 
 .field public final mInputMergerFactory:Landroidx/work/InputMergerFactory;
@@ -26,8 +22,6 @@
 .field public final mMaxJobSchedulerId:I
 
 .field public final mMaxSchedulerLimit:I
-
-.field public final mMinJobSchedulerId:I
 
 .field public final mRunnableScheduler:Landroidx/work/impl/DefaultRunnableScheduler;
 
@@ -66,9 +60,11 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Landroidx/work/WorkerFactory;->getDefaultWorkerFactory()Landroidx/work/WorkerFactory;
+    sget-object v0, Landroidx/work/WorkerFactory;->TAG:Ljava/lang/String;
 
-    move-result-object v0
+    new-instance v0, Landroidx/work/WorkerFactory$1;
+
+    invoke-direct {v0}, Landroidx/work/WorkerFactory$1;-><init>()V
 
     iput-object v0, p0, Landroidx/work/Configuration;->mWorkerFactory:Landroidx/work/WorkerFactory;
 
@@ -90,27 +86,17 @@
 
     iput-object v0, p0, Landroidx/work/Configuration;->mRunnableScheduler:Landroidx/work/impl/DefaultRunnableScheduler;
 
-    iget v0, p1, Landroidx/work/Configuration$Builder;->mLoggingLevel:I
+    iget p1, p1, Landroidx/work/Configuration$Builder;->mLoggingLevel:I
 
-    iput v0, p0, Landroidx/work/Configuration;->mLoggingLevel:I
+    iput p1, p0, Landroidx/work/Configuration;->mLoggingLevel:I
 
-    iget v0, p1, Landroidx/work/Configuration$Builder;->mMinJobSchedulerId:I
+    const p1, 0x7fffffff
 
-    iput v0, p0, Landroidx/work/Configuration;->mMinJobSchedulerId:I
+    iput p1, p0, Landroidx/work/Configuration;->mMaxJobSchedulerId:I
 
-    iget v0, p1, Landroidx/work/Configuration$Builder;->mMaxJobSchedulerId:I
-
-    iput v0, p0, Landroidx/work/Configuration;->mMaxJobSchedulerId:I
-
-    iget p1, p1, Landroidx/work/Configuration$Builder;->mMaxSchedulerLimit:I
+    const/16 p1, 0x14
 
     iput p1, p0, Landroidx/work/Configuration;->mMaxSchedulerLimit:I
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Landroidx/work/Configuration;->mExceptionHandler:Landroidx/work/InitializationExceptionHandler;
-
-    iput-object p1, p0, Landroidx/work/Configuration;->mDefaultProcessName:Ljava/lang/String;
 
     return-void
 .end method

@@ -40,6 +40,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
 
@@ -66,10 +76,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
@@ -79,14 +85,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;
 
@@ -121,7 +125,7 @@
     if-ne v1, v2, :cond_0
 
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -131,7 +135,12 @@
     :catchall_0
     move-exception p1
 
-    goto :goto_3
+    goto :goto_4
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_2
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -143,7 +152,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
@@ -165,11 +174,11 @@
 
     :cond_2
     :goto_0
-    new-array p1, v4, [Ljava/lang/Object;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v0, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v3, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v3, v0}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
 
@@ -188,27 +197,23 @@
 
     invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_3
 
-    :catch_0
-    move-exception p1
-
+    :goto_2
     :try_start_2
-    const-string v0, "greenlightSubmission() failed."
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v1, v4, [Ljava/lang/Object;
+    const-string v1, "greenlightSubmission() failed."
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v2, p1, v0, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v1, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     new-array p1, v4, [Ljava/lang/Object;
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v0, v3, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, p1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
 
@@ -222,17 +227,17 @@
 
     goto :goto_1
 
-    :goto_2
+    :goto_3
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
-    :goto_3
-    new-array v0, v4, [Ljava/lang/Object;
+    :goto_4
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v1, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v3, v0}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, v1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
 

@@ -34,7 +34,7 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;
 
 .field public static final MAXEXCLUSIVE_FIELD_NUMBER:I = 0x4
 
@@ -44,7 +44,7 @@
 
 .field public static final MIN_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -56,16 +56,88 @@
 
 
 # instance fields
-.field public maxExclusive_:Z
+.field private maxExclusive_:Z
 
-.field public max_:D
+.field private max_:D
 
-.field public minExclusive_:Z
+.field private minExclusive_:Z
 
-.field public min_:D
+.field private min_:D
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearMax(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMax()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMaxExclusive(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMaxExclusive()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMin(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMin()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMinExclusive(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMinExclusive()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMax(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMax(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMaxExclusive(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMaxExclusive(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMin(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMin(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMinExclusive(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMinExclusive(Z)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -80,82 +152,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5300()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$5400(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMin(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5500(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMin()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5600(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMinExclusive(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5700(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMinExclusive()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5800(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMax(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5900(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMax()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6000(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->setMaxExclusive(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6100(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->clearMaxExclusive()V
 
     return-void
 .end method
@@ -683,11 +683,11 @@
 
     check-cast p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->min_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->min_:D
 
     const-wide/16 v10, 0x0
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_9
 
@@ -699,11 +699,9 @@
     move v4, v1
 
     :goto_4
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->min_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->min_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->min_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_a
 
@@ -715,8 +713,6 @@
     move v7, v1
 
     :goto_5
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->min_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -749,33 +745,27 @@
     move p1, v1
 
     :goto_6
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->max_:D
-
     iget-wide v5, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->max_:D
 
     cmpl-double v0, v5, v10
 
     if-eqz v0, :cond_c
 
-    move v5, v2
+    move v7, v2
 
     goto :goto_7
 
     :cond_c
-    move v5, v1
+    move v7, v1
 
     :goto_7
-    iget-wide v6, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;->max_:D
-
     move-object v0, p2
 
     move v1, p1
 
     move-wide v2, v3
 
-    move v4, v5
-
-    move-wide v5, v6
+    move v4, v7
 
     invoke-interface/range {v0 .. v6}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
@@ -798,7 +788,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range$Builder-IA;)V
 
     return-object p1
 
@@ -816,8 +806,6 @@
     invoke-direct {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$Range;-><init>()V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

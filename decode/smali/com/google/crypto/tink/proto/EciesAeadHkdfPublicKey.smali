@@ -18,18 +18,17 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;",
         "Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;
 
 .field public static final PARAMS_FIELD_NUMBER:I = 0x2
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -47,13 +46,13 @@
 
 
 # instance fields
-.field public params_:Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;
+.field private params_:Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;
 
-.field public version_:I
+.field private version_:I
 
-.field public x_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+.field private x_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-.field public y_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+.field private y_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
 
 # direct methods
@@ -73,7 +72,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -238,7 +237,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;->params_:Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;
 
@@ -694,7 +693,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;->params_:Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;
 
@@ -728,7 +727,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;->x_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -746,7 +745,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;->y_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -848,7 +847,7 @@
 
     const/4 p3, 0x0
 
-    const-string v0, "version_"
+    const-string/jumbo v0, "version_"
 
     aput-object v0, p1, p3
 
@@ -858,13 +857,13 @@
 
     const/4 p2, 0x2
 
-    const-string p3, "x_"
+    const-string/jumbo p3, "x_"
 
     aput-object p3, p1, p2
 
     const/4 p2, 0x3
 
-    const-string p3, "y_"
+    const-string/jumbo p3, "y_"
 
     aput-object p3, p1, p2
 
@@ -891,8 +890,6 @@
     invoke-direct {p1}, Lcom/google/crypto/tink/proto/EciesAeadHkdfPublicKey;-><init>()V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

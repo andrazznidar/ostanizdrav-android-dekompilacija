@@ -10,8 +10,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -23,33 +21,39 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0904ab
+    const v1, 0x7f0a071e
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904aa
+    const v1, 0x7f0a034d
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904a9
+    const v1, 0x7f0a071d
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0903fc
+    const v1, 0x7f0a071c
 
     const/4 v2, 0x4
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a0156
+
+    const/4 v2, 0x5
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a0663
+
+    const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -57,11 +61,21 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 11
+    .locals 13
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x7
 
     const/4 v2, 0x0
 
@@ -69,37 +83,53 @@
 
     move-result-object v0
 
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
     move-object v7, v1
 
-    check-cast v7, Landroid/widget/Button;
-
-    const/4 v1, 0x3
-
-    aget-object v1, v0, v1
-
-    move-object v8, v1
-
-    check-cast v8, Landroid/widget/TextView;
+    check-cast v7, Landroidx/constraintlayout/widget/Barrier;
 
     const/4 v1, 0x2
 
     aget-object v1, v0, v1
 
+    move-object v8, v1
+
+    check-cast v8, Landroidx/constraintlayout/widget/Barrier;
+
+    const/4 v1, 0x6
+
+    aget-object v1, v0, v1
+
     move-object v9, v1
 
-    check-cast v9, Landroid/widget/ProgressBar;
+    check-cast v9, Landroid/widget/Button;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x4
 
     aget-object v1, v0, v1
 
     move-object v10, v1
 
     check-cast v10, Landroid/widget/TextView;
+
+    const/4 v1, 0x3
+
+    aget-object v1, v0, v1
+
+    move-object v11, v1
+
+    check-cast v11, Lcom/google/android/material/progressindicator/CircularProgressIndicator;
+
+    const/4 v1, 0x1
+
+    aget-object v1, v0, v1
+
+    move-object v12, v1
+
+    check-cast v12, Landroid/widget/TextView;
 
     const/4 v6, 0x0
 
@@ -109,7 +139,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v10}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/Button;Landroid/widget/TextView;Landroid/widget/ProgressBar;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/widget/Barrier;Landroid/widget/Button;Landroid/widget/TextView;Lcom/google/android/material/progressindicator/CircularProgressIndicator;Landroid/widget/TextView;)V
 
     const-wide/16 v3, -0x1
 
@@ -121,11 +151,9 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

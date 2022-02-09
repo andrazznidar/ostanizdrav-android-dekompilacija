@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Map;
+.implements Lj$/util/Map;
 
 
 # annotations
@@ -17,7 +18,8 @@
         "Landroidx/collection/SimpleArrayMap<",
         "TK;TV;>;",
         "Ljava/util/Map<",
-        "TK;TV;>;"
+        "TK;TV;>;",
+        "Lj$/util/Map;"
     }
 .end annotation
 
@@ -116,6 +118,36 @@
 
 
 # virtual methods
+.method public synthetic compute(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$compute(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic computeIfAbsent(Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic computeIfPresent(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public entrySet()Ljava/util/Set;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -145,6 +177,14 @@
     iget-object v0, v0, Landroidx/collection/MapCollections;->mEntrySet:Landroidx/collection/MapCollections$EntrySet;
 
     return-object v0
+.end method
+
+.method public synthetic forEach(Lj$/util/function/BiConsumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+
+    return-void
 .end method
 
 .method public final getCollection()Landroidx/collection/MapCollections;
@@ -203,6 +243,16 @@
     return-object v0
 .end method
 
+.method public synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public putAll(Ljava/util/Map;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -257,6 +307,14 @@
     goto :goto_0
 
     :cond_0
+    return-void
+.end method
+
+.method public synthetic replaceAll(Lj$/util/function/BiFunction;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$replaceAll(Ljava/util/Map;Lj$/util/function/BiFunction;)V
+
     return-void
 .end method
 

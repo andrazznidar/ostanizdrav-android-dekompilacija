@@ -21,14 +21,13 @@
         "Lcom/google/protobuf/GeneratedMessageLite$Builder<",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;",
         "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$1;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList$Builder-IA;)V
     .locals 0
 
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeySignatureList$TEKSignatureList;

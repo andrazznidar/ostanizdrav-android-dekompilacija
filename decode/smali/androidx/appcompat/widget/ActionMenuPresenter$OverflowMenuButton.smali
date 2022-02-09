@@ -27,11 +27,11 @@
 
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
 
-    const/4 v0, 0x0
+    sget v0, Landroidx/appcompat/R$attr;->actionOverflowButtonStyle:I
 
-    const v1, 0x7f04001e
+    const/4 v1, 0x0
 
-    invoke-direct {p0, p2, v0, v1}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p2, v1, v0}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     const/4 p2, 0x1
 
@@ -49,7 +49,7 @@
 
     move-result-object p2
 
-    invoke-static {p0, p2}, Landroidx/appcompat/R$string;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, p2}, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     new-instance p2, Landroidx/appcompat/widget/ActionMenuPresenter$OverflowMenuButton$1;
 
@@ -81,7 +81,7 @@
 .method public performClick()Z
     .locals 2
 
-    invoke-super {p0}, Landroid/widget/ImageView;->performClick()Z
+    invoke-super {p0}, Landroid/view/View;->performClick()Z
 
     move-result v0
 

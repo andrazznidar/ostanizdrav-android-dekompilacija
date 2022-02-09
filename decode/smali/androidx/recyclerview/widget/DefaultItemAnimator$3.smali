@@ -6,6 +6,17 @@
 .implements Ljava/lang/Runnable;
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroidx/recyclerview/widget/DefaultItemAnimator;->runPendingAnimations()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
 # instance fields
 .field public final synthetic this$0:Landroidx/recyclerview/widget/DefaultItemAnimator;
 
@@ -41,7 +52,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -51,7 +62,7 @@
 
     iget-object v2, p0, Landroidx/recyclerview/widget/DefaultItemAnimator$3;->this$0:Landroidx/recyclerview/widget/DefaultItemAnimator;
 
-    if-eqz v2, :cond_0
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v3, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -88,11 +99,6 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_1
     iget-object v0, p0, Landroidx/recyclerview/widget/DefaultItemAnimator$3;->val$additions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V

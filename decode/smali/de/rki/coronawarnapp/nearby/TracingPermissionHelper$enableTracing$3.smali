@@ -42,15 +42,15 @@
 
     check-cast p1, Lcom/google/android/gms/common/api/Status;
 
-    const-string v0, "status"
+    const-string/jumbo v0, "status"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "TracingPermissionHelper"
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v1, "TracingPermissionHelper"
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v1, 0x0
 
@@ -58,7 +58,7 @@
 
     const-string v2, "Permission is required, starting user resolution."
 
-    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$enableTracing$3$permissionRequestTrigger$1;
 

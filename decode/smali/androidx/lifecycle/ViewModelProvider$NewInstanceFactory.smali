@@ -17,6 +17,10 @@
 .end annotation
 
 
+# static fields
+.field public static sInstance:Landroidx/lifecycle/ViewModelProvider$NewInstanceFactory;
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -59,7 +63,7 @@
 
     new-instance v2, Ljava/lang/RuntimeException;
 
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0, p1}, Landroidx/lifecycle/AbstractSavedStateViewModelFactory$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -72,7 +76,7 @@
 
     new-instance v2, Ljava/lang/RuntimeException;
 
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0, p1}, Landroidx/lifecycle/AbstractSavedStateViewModelFactory$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -60,13 +60,13 @@
 
     iget-object v0, p0, Lcom/google/android/material/appbar/HeaderBehavior$FlingRunnable;->layout:Landroid/view/View;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/google/android/material/appbar/HeaderBehavior$FlingRunnable;->this$0:Lcom/google/android/material/appbar/HeaderBehavior;
 
     iget-object v0, v0, Lcom/google/android/material/appbar/HeaderBehavior;->scroller:Landroid/widget/OverScroller;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/widget/OverScroller;->computeScrollOffset()Z
 
@@ -103,7 +103,7 @@
 
     check-cast v0, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
 
-    if-eqz v0, :cond_1
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast v2, Lcom/google/android/material/appbar/AppBarLayout;
 
@@ -111,7 +111,7 @@
 
     iget-boolean v3, v2, Lcom/google/android/material/appbar/AppBarLayout;->liftOnScroll:Z
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->findFirstScrollingChild(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)Landroid/view/View;
 
@@ -123,14 +123,7 @@
 
     invoke-virtual {v2, v0}, Lcom/google/android/material/appbar/AppBarLayout;->setLiftedState(Z)Z
 
-    goto :goto_0
-
     :cond_1
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_2
     :goto_0
     return-void
 .end method

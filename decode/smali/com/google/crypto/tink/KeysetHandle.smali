@@ -184,7 +184,7 @@
 
 # virtual methods
 .method public getPrimitive(Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 2
+    .locals 14
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -210,52 +210,539 @@
         }
     .end annotation
 
-    invoke-static {p0, p1}, Lcom/google/crypto/tink/Registry;->getPrimitives(Lcom/google/crypto/tink/KeysetHandle;Ljava/lang/Class;)Lcom/google/crypto/tink/PrimitiveSet;
+    sget-object v0, Lcom/google/crypto/tink/Registry;->logger:Ljava/util/logging/Logger;
 
-    move-result-object p1
+    sget-object v0, Lcom/google/crypto/tink/proto/KeyStatusType;->ENABLED:Lcom/google/crypto/tink/proto/KeyStatusType;
 
-    sget-object v0, Lcom/google/crypto/tink/Registry;->primitiveWrapperMap:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v1, p0, Lcom/google/crypto/tink/KeysetHandle;->keyset:Lcom/google/crypto/tink/proto/Keyset;
 
-    iget-object v1, p1, Lcom/google/crypto/tink/PrimitiveSet;->primitiveClass:Ljava/lang/Class;
+    sget v2, Lcom/google/crypto/tink/Util;->$r8$clinit:I
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/google/crypto/tink/proto/Keyset;->getPrimaryKeyId()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Lcom/google/crypto/tink/proto/Keyset;->getKeyList()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    move v7, v3
+
+    move v5, v4
+
+    move v6, v5
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_7
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lcom/google/crypto/tink/proto/Keyset$Key;
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    move-result-object v9
+
+    if-eq v9, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->hasKeyData()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_6
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getOutputPrefixType()Lcom/google/crypto/tink/proto/OutputPrefixType;
+
+    move-result-object v9
+
+    sget-object v10, Lcom/google/crypto/tink/proto/OutputPrefixType;->UNKNOWN_PREFIX:Lcom/google/crypto/tink/proto/OutputPrefixType;
+
+    if-eq v9, v10, :cond_5
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    move-result-object v9
+
+    sget-object v10, Lcom/google/crypto/tink/proto/KeyStatusType;->UNKNOWN_STATUS:Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    if-eq v9, v10, :cond_4
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v9
+
+    if-ne v9, v2, :cond_2
+
+    if-nez v6, :cond_1
+
+    move v6, v3
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p1, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "keyset contains multiple primary keys"
+
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    :goto_1
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyData()Lcom/google/crypto/tink/proto/KeyData;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/KeyData;->getKeyMaterialType()Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+
+    move-result-object v8
+
+    sget-object v9, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->ASYMMETRIC_PUBLIC:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+
+    if-eq v8, v9, :cond_3
+
+    move v7, v4
+
+    :cond_3
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    new-instance p1, Ljava/security/GeneralSecurityException;
+
+    new-array v0, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    const-string v1, "key %d has unknown status"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/crypto/tink/PrimitiveWrapper;
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-    if-eqz v0, :cond_0
+    throw p1
 
-    invoke-interface {v0, p1}, Lcom/google/crypto/tink/PrimitiveWrapper;->wrap(Lcom/google/crypto/tink/PrimitiveSet;)Ljava/lang/Object;
+    :cond_5
+    new-instance p1, Ljava/security/GeneralSecurityException;
+
+    new-array v0, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    const-string v1, "key %d has unknown prefix"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_6
+    new-instance p1, Ljava/security/GeneralSecurityException;
+
+    new-array v0, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v8}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    const-string v1, "key %d has no key data"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_7
+    if-eqz v5, :cond_15
+
+    if-nez v6, :cond_9
+
+    if-eqz v7, :cond_8
+
+    goto :goto_2
+
+    :cond_8
+    new-instance p1, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "keyset doesn\'t contain a valid primary key"
+
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_9
+    :goto_2
+    new-instance v1, Lcom/google/crypto/tink/PrimitiveSet;
+
+    invoke-direct {v1, p1}, Lcom/google/crypto/tink/PrimitiveSet;-><init>(Ljava/lang/Class;)V
+
+    iget-object v2, p0, Lcom/google/crypto/tink/KeysetHandle;->keyset:Lcom/google/crypto/tink/proto/Keyset;
+
+    invoke-virtual {v2}, Lcom/google/crypto/tink/proto/Keyset;->getKeyList()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_a
+    :goto_3
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_13
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/crypto/tink/proto/Keyset$Key;
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    move-result-object v6
+
+    if-ne v6, v0, :cond_a
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyData()Lcom/google/crypto/tink/proto/KeyData;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/google/crypto/tink/proto/KeyData;->getTypeUrl()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyData()Lcom/google/crypto/tink/proto/KeyData;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/google/crypto/tink/proto/KeyData;->getValue()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    move-result-object v7
+
+    invoke-static {v6, v7, p1}, Lcom/google/crypto/tink/Registry;->getPrimitiveInternal(Ljava/lang/String;Lcom/google/crypto/tink/shaded/protobuf/ByteString;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    move-result-object v6
+
+    if-ne v6, v0, :cond_12
+
+    new-instance v6, Lcom/google/crypto/tink/PrimitiveSet$Entry;
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getOutputPrefixType()Lcom/google/crypto/tink/proto/OutputPrefixType;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v7
+
+    const/4 v8, 0x5
+
+    if-eq v7, v3, :cond_e
+
+    const/4 v10, 0x2
+
+    if-eq v7, v10, :cond_d
+
+    const/4 v10, 0x3
+
+    if-eq v7, v10, :cond_c
+
+    const/4 v10, 0x4
+
+    if-ne v7, v10, :cond_b
+
+    goto :goto_4
+
+    :cond_b
+    new-instance p1, Ljava/security/GeneralSecurityException;
+
+    const-string/jumbo v0, "unknown output prefix type"
+
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_c
+    sget-object v7, Lcom/google/crypto/tink/CryptoFormat;->RAW_PREFIX:[B
+
+    goto :goto_5
+
+    :cond_d
+    :goto_4
+    invoke-static {v8}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+
+    move-result-object v7
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v7
+
+    goto :goto_5
+
+    :cond_e
+    invoke-static {v8}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+
+    move-result-object v7
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v7
+
+    :goto_5
+    move-object v10, v7
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    move-result-object v11
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getOutputPrefixType()Lcom/google/crypto/tink/proto/OutputPrefixType;
+
+    move-result-object v12
+
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v13
+
+    move-object v8, v6
+
+    invoke-direct/range {v8 .. v13}, Lcom/google/crypto/tink/PrimitiveSet$Entry;-><init>(Ljava/lang/Object;[BLcom/google/crypto/tink/proto/KeyStatusType;Lcom/google/crypto/tink/proto/OutputPrefixType;I)V
+
+    new-instance v7, Ljava/util/ArrayList;
+
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    new-instance v8, Ljava/lang/String;
+
+    invoke-virtual {v6}, Lcom/google/crypto/tink/PrimitiveSet$Entry;->getIdentifier()[B
+
+    move-result-object v9
+
+    sget-object v10, Lcom/google/crypto/tink/PrimitiveSet;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-direct {v8, v9, v10}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+
+    iget-object v9, v1, Lcom/google/crypto/tink/PrimitiveSet;->primitives:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v7}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v7
+
+    invoke-interface {v9, v8, v7}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/util/List;
+
+    if-eqz v7, :cond_f
+
+    new-instance v9, Ljava/util/ArrayList;
+
+    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {v9, v7}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    invoke-virtual {v9, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v7, v1, Lcom/google/crypto/tink/PrimitiveSet;->primitives:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v9}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v9
+
+    invoke-interface {v7, v8, v9}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_f
+    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
+
+    move-result v5
+
+    iget-object v7, p0, Lcom/google/crypto/tink/KeysetHandle;->keyset:Lcom/google/crypto/tink/proto/Keyset;
+
+    invoke-virtual {v7}, Lcom/google/crypto/tink/proto/Keyset;->getPrimaryKeyId()I
+
+    move-result v7
+
+    if-ne v5, v7, :cond_a
+
+    iget-object v5, v6, Lcom/google/crypto/tink/PrimitiveSet$Entry;->status:Lcom/google/crypto/tink/proto/KeyStatusType;
+
+    if-ne v5, v0, :cond_11
+
+    invoke-virtual {v6}, Lcom/google/crypto/tink/PrimitiveSet$Entry;->getIdentifier()[B
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Lcom/google/crypto/tink/PrimitiveSet;->getPrimitive([B)Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
+
+    move-result v5
+
+    if-nez v5, :cond_10
+
+    iput-object v6, v1, Lcom/google/crypto/tink/PrimitiveSet;->primary:Lcom/google/crypto/tink/PrimitiveSet$Entry;
+
+    goto/16 :goto_3
+
+    :cond_10
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v0, "the primary entry cannot be set to an entry which is not held by this primitive set"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_11
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v0, "the primary entry has to be ENABLED"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_12
+    new-instance p1, Ljava/security/GeneralSecurityException;
+
+    const-string v0, "only ENABLED key is allowed"
+
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_13
+    sget-object p1, Lcom/google/crypto/tink/Registry;->primitiveWrapperMap:Ljava/util/concurrent/ConcurrentMap;
+
+    iget-object v0, v1, Lcom/google/crypto/tink/PrimitiveSet;->primitiveClass:Ljava/lang/Class;
+
+    check-cast p1, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {p1, v0}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/crypto/tink/PrimitiveWrapper;
+
+    if-eqz p1, :cond_14
+
+    invoke-interface {p1, v1}, Lcom/google/crypto/tink/PrimitiveWrapper;->wrap(Lcom/google/crypto/tink/PrimitiveSet;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 
-    :cond_0
-    new-instance v0, Ljava/security/GeneralSecurityException;
+    :cond_14
+    new-instance p1, Ljava/security/GeneralSecurityException;
 
-    const-string v1, "No wrapper found for "
+    const-string v0, "No wrapper found for "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object p1, p1, Lcom/google/crypto/tink/PrimitiveSet;->primitiveClass:Ljava/lang/Class;
+    iget-object v1, v1, Lcom/google/crypto/tink/PrimitiveSet;->primitiveClass:Ljava/lang/Class;
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-static {v1, v0}, Landroidx/appcompat/view/SupportMenuInflater$InflatedOnMenuItemClickListener$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    throw p1
 
-    move-result-object p1
+    :cond_15
+    new-instance p1, Ljava/security/GeneralSecurityException;
 
-    invoke-direct {v0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+    const-string v0, "keyset must contain at least one ENABLED key"
 
-    throw v0
+    invoke-direct {p1, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public toString()Ljava/lang/String;

@@ -14,10 +14,6 @@
 .end annotation
 
 
-# instance fields
-.field public mBundle:Landroid/os/Bundle;
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0

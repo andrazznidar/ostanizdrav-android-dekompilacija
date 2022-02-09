@@ -45,6 +45,15 @@
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;",
+            ">;)V"
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -69,10 +78,6 @@
         }
     .end annotation
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;
 
     invoke-direct {v0, p2}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;-><init>(Lkotlin/coroutines/Continuation;)V
@@ -82,64 +87,48 @@
     return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
-
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;
 
-    const/4 p2, 0x1
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    new-array p2, p2, [Ljava/lang/Object;
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;
 
-    const/4 v0, 0x0
+    invoke-direct {v0, p2}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    aput-object p1, p2, v0
-
-    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v0, "TracingDetailsState FLOW emission: %s"
-
-    invoke-virtual {p1, v0, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    iput-object p1, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;->L$0:Ljava/lang/Object;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;
 
-    const/4 v0, 0x1
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
-    aput-object p1, v0, v1
+    const/4 v2, 0x0
 
-    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object p1, v1, v2
 
-    const-string v1, "TracingDetailsState FLOW emission: %s"
+    const-string p1, "TracingDetailsState FLOW emission: %s"
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -275,13 +275,11 @@
 
     move-result-object v1
 
-    sget-object v4, Landroidx/work/impl/workers/ConstraintTrackingWorker;->TAG:Ljava/lang/String;
-
-    const-string v5, "Constraints were unmet, Retrying."
+    const-string v4, "Constraints were unmet, Retrying."
 
     new-array v3, v3, [Ljava/lang/Throwable;
 
-    invoke-virtual {v1, v4, v5, v3}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v6, v4, v3}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     invoke-virtual {v0}, Landroidx/work/impl/workers/ConstraintTrackingWorker;->setFutureRetry()V
 

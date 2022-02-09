@@ -6,7 +6,7 @@
 # instance fields
 .field public cropRect:Landroid/graphics/Rect;
 
-.field public data:Lcom/journeyapps/barcodescanner/RawImageData;
+.field public data:Lcom/google/zxing/common/BitSource;
 
 .field public imageFormat:I
 
@@ -14,24 +14,18 @@
 
 .field public rotation:I
 
-.field public scalingFactor:I
-
 
 # direct methods
 .method public constructor <init>([BIIII)V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    new-instance v0, Lcom/google/zxing/common/BitSource;
 
-    iput v0, p0, Lcom/journeyapps/barcodescanner/SourceData;->scalingFactor:I
+    invoke-direct {v0, p1, p2, p3}, Lcom/google/zxing/common/BitSource;-><init>([BII)V
 
-    new-instance v0, Lcom/journeyapps/barcodescanner/RawImageData;
-
-    invoke-direct {v0, p1, p2, p3}, Lcom/journeyapps/barcodescanner/RawImageData;-><init>([BII)V
-
-    iput-object v0, p0, Lcom/journeyapps/barcodescanner/SourceData;->data:Lcom/journeyapps/barcodescanner/RawImageData;
+    iput-object v0, p0, Lcom/journeyapps/barcodescanner/SourceData;->data:Lcom/google/zxing/common/BitSource;
 
     iput p5, p0, Lcom/journeyapps/barcodescanner/SourceData;->rotation:I
 
@@ -48,31 +42,21 @@
     :cond_0
     new-instance p4, Ljava/lang/IllegalArgumentException;
 
-    new-instance p5, Ljava/lang/StringBuilder;
+    const-string p5, "Image data does not match the resolution. "
 
-    invoke-direct {p5}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v0, "x"
 
-    const-string v0, "Image data does not match the resolution. "
+    const-string v1, " > "
 
-    invoke-virtual {p5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p5, p2, v0, p3, v1}, Landroidx/recyclerview/widget/GridLayoutManager$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p5, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p2, "x"
-
-    invoke-virtual {p5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p5, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p2, " > "
-
-    invoke-virtual {p5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p2
 
     array-length p1, p1
 
-    invoke-virtual {p5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

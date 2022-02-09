@@ -1,10 +1,13 @@
 .class public Lcom/google/android/gms/common/wrappers/PackageManagerWrapper;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # instance fields
 .field public final zza:Landroid/content/Context;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 
 # direct methods

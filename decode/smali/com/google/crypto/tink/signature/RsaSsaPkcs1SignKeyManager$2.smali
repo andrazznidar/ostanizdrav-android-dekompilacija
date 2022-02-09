@@ -129,9 +129,7 @@
 
     iget-object v3, p0, Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager$2;->this$0:Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager;
 
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_1
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -139,9 +137,9 @@
 
     check-cast v3, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v3, v5}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;->access$100(Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;I)V
+    invoke-static {v3, v4}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;->access$100(Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;I)V
 
     invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -203,7 +201,7 @@
 
     iget-object v2, p0, Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager$2;->this$0:Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager;
 
-    if-eqz v2, :cond_0
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -211,7 +209,7 @@
 
     check-cast v2, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PrivateKey;
 
-    invoke-static {v2, v5}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PrivateKey;->access$100(Lcom/google/crypto/tink/proto/RsaSsaPkcs1PrivateKey;I)V
+    invoke-static {v2, v4}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PrivateKey;->access$100(Lcom/google/crypto/tink/proto/RsaSsaPkcs1PrivateKey;I)V
 
     invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -348,12 +346,6 @@
     check-cast p1, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PrivateKey;
 
     return-object p1
-
-    :cond_0
-    throw v4
-
-    :cond_1
-    throw v4
 .end method
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
@@ -407,7 +399,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->validateRsaSsaPkcs1Params(Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;)V
+    invoke-static {v0}, Lcom/google/crypto/tink/signature/SigUtil;->validateRsaSsaPkcs1Params(Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;)V
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;->getModulusSizeInBits()I
 

@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 10
 
     new-instance v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
@@ -47,57 +47,51 @@
 
     sput-object v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->UNKNOWN_ENCODING:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    new-instance v1, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    const-string v1, "IEEE_P1363"
+    const-string v3, "IEEE_P1363"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->IEEE_P1363:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    sput-object v1, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->IEEE_P1363:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    new-instance v3, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    const-string v1, "DER"
+    const-string v5, "DER"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->DER:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    sput-object v3, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->DER:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    new-instance v5, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    const-string v1, "UNRECOGNIZED"
+    const-string v7, "UNRECOGNIZED"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    const/4 v6, -0x1
+    const/4 v9, -0x1
 
-    invoke-direct {v0, v1, v5, v6}, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v9}, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->UNRECOGNIZED:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    sput-object v5, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->UNRECOGNIZED:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    const/4 v1, 0x4
+    const/4 v7, 0x4
 
-    new-array v1, v1, [Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    new-array v7, v7, [Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
-    sget-object v6, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->UNKNOWN_ENCODING:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    aput-object v0, v7, v2
 
-    aput-object v6, v1, v2
+    aput-object v1, v7, v4
 
-    sget-object v2, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->IEEE_P1363:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    aput-object v3, v7, v6
 
-    aput-object v2, v1, v3
+    aput-object v5, v7, v8
 
-    sget-object v2, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->DER:Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
-
-    aput-object v2, v1, v4
-
-    aput-object v0, v1, v5
-
-    sput-object v1, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->$VALUES:[Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
+    sput-object v7, Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;->$VALUES:[Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;
 
     return-void
 .end method

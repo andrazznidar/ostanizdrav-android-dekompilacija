@@ -26,7 +26,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 3
 
     const/4 v0, 0x1
@@ -51,9 +51,9 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 8
+    .locals 9
 
-    const v0, 0x7f040084
+    sget v0, Landroidx/cardview/R$attr;->cardViewStyle:I
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -63,35 +63,33 @@
 
     iput-object v1, p0, Landroidx/cardview/widget/CardView;->mContentPadding:Landroid/graphics/Rect;
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v1, p0, Landroidx/cardview/widget/CardView;->mShadowBounds:Landroid/graphics/Rect;
+    iput-object v2, p0, Landroidx/cardview/widget/CardView;->mShadowBounds:Landroid/graphics/Rect;
 
-    new-instance v1, Landroidx/cardview/widget/CardView$1;
+    new-instance v2, Landroidx/cardview/widget/CardView$1;
 
-    invoke-direct {v1, p0}, Landroidx/cardview/widget/CardView$1;-><init>(Landroidx/cardview/widget/CardView;)V
+    invoke-direct {v2, p0}, Landroidx/cardview/widget/CardView$1;-><init>(Landroidx/cardview/widget/CardView;)V
 
-    iput-object v1, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
+    iput-object v2, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
 
-    sget-object v1, Landroidx/cardview/R$styleable;->CardView:[I
+    sget-object v3, Landroidx/cardview/R$styleable;->CardView:[I
 
-    const v2, 0x7f1300ee
+    sget v4, Landroidx/cardview/R$style;->CardView:I
 
-    invoke-virtual {p1, p2, v1, v0, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v3, v0, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    const/4 p2, 0x2
+    sget p2, Landroidx/cardview/R$styleable;->CardView_cardBackgroundColor:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v0
 
-    const/4 v1, 0x3
-
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     if-eqz v0, :cond_0
 
@@ -104,25 +102,29 @@
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p2
 
-    sget-object v3, Landroidx/cardview/widget/CardView;->COLOR_BACKGROUND_ATTR:[I
+    sget-object v0, Landroidx/cardview/widget/CardView;->COLOR_BACKGROUND_ATTR:[I
 
-    invoke-virtual {v0, v3}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
+    invoke-virtual {p2, v0}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {p2, v3, v3}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v3
+    move-result v0
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
-    new-array v0, v1, [F
+    const/4 p2, 0x3
 
-    invoke-static {v3, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
+    new-array p2, p2, [F
 
-    aget p2, v0, p2
+    invoke-static {v0, p2}, Landroid/graphics/Color;->colorToHSV(I[F)V
+
+    const/4 v0, 0x2
+
+    aget p2, p2, v0
 
     const/high16 v0, 0x3f000000    # 0.5f
 
@@ -134,7 +136,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f060036
+    sget v0, Landroidx/cardview/R$color;->cardview_light_background:I
 
     invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -147,7 +149,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f060035
+    sget v0, Landroidx/cardview/R$color;->cardview_dark_background:I
 
     invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -159,136 +161,124 @@
     move-result-object p2
 
     :goto_1
-    const/4 v0, 0x0
+    sget v0, Landroidx/cardview/R$styleable;->CardView_cardCornerRadius:I
 
-    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    const/4 v4, 0x0
 
-    move-result v1
-
-    const/4 v3, 0x4
-
-    invoke-virtual {p1, v3, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result v3
-
-    const/4 v4, 0x5
-
-    invoke-virtual {p1, v4, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {p1, v0, v4}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v0
 
-    const/4 v4, 0x7
+    sget v5, Landroidx/cardview/R$styleable;->CardView_cardElevation:I
 
-    invoke-virtual {p1, v4, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p1, v5, v4}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    move-result v4
+    move-result v5
 
-    iput-boolean v4, p0, Landroidx/cardview/widget/CardView;->mCompatPadding:Z
+    sget v6, Landroidx/cardview/R$styleable;->CardView_cardMaxElevation:I
 
-    const/4 v4, 0x6
-
-    const/4 v5, 0x1
-
-    invoke-virtual {p1, v4, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p1, v6, v4}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v4
 
-    iput-boolean v4, p0, Landroidx/cardview/widget/CardView;->mPreventCornerOverlap:Z
+    sget v6, Landroidx/cardview/R$styleable;->CardView_cardUseCompatPadding:I
 
-    const/16 v4, 0x8
+    invoke-virtual {p1, v6, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    invoke-virtual {p1, v4, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    move-result v6
 
-    move-result v4
+    iput-boolean v6, p0, Landroidx/cardview/widget/CardView;->mCompatPadding:Z
 
-    iget-object v6, p0, Landroidx/cardview/widget/CardView;->mContentPadding:Landroid/graphics/Rect;
+    sget v6, Landroidx/cardview/R$styleable;->CardView_cardPreventCornerOverlap:I
 
-    const/16 v7, 0xa
+    const/4 v7, 0x1
 
-    invoke-virtual {p1, v7, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {p1, v6, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result v7
+    move-result v6
 
-    iput v7, v6, Landroid/graphics/Rect;->left:I
+    iput-boolean v6, p0, Landroidx/cardview/widget/CardView;->mPreventCornerOverlap:Z
 
-    iget-object v6, p0, Landroidx/cardview/widget/CardView;->mContentPadding:Landroid/graphics/Rect;
+    sget v6, Landroidx/cardview/R$styleable;->CardView_contentPadding:I
 
-    const/16 v7, 0xc
+    invoke-virtual {p1, v6, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    invoke-virtual {p1, v7, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    move-result v6
 
-    move-result v7
+    sget v8, Landroidx/cardview/R$styleable;->CardView_contentPaddingLeft:I
 
-    iput v7, v6, Landroid/graphics/Rect;->top:I
+    invoke-virtual {p1, v8, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    iget-object v6, p0, Landroidx/cardview/widget/CardView;->mContentPadding:Landroid/graphics/Rect;
+    move-result v8
 
-    const/16 v7, 0xb
+    iput v8, v1, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {p1, v7, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    sget v8, Landroidx/cardview/R$styleable;->CardView_contentPaddingTop:I
 
-    move-result v7
+    invoke-virtual {p1, v8, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    iput v7, v6, Landroid/graphics/Rect;->right:I
+    move-result v8
 
-    iget-object v6, p0, Landroidx/cardview/widget/CardView;->mContentPadding:Landroid/graphics/Rect;
+    iput v8, v1, Landroid/graphics/Rect;->top:I
 
-    const/16 v7, 0x9
+    sget v8, Landroidx/cardview/R$styleable;->CardView_contentPaddingRight:I
 
-    invoke-virtual {p1, v7, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {p1, v8, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v8
 
-    iput v4, v6, Landroid/graphics/Rect;->bottom:I
+    iput v8, v1, Landroid/graphics/Rect;->right:I
 
-    cmpl-float v4, v3, v0
+    sget v8, Landroidx/cardview/R$styleable;->CardView_contentPaddingBottom:I
 
-    if-lez v4, :cond_2
+    invoke-virtual {p1, v8, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move v0, v3
+    move-result v6
+
+    iput v6, v1, Landroid/graphics/Rect;->bottom:I
+
+    cmpl-float v1, v5, v4
+
+    if-lez v1, :cond_2
+
+    move v4, v5
 
     :cond_2
-    invoke-virtual {p1, v2, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    sget v1, Landroidx/cardview/R$styleable;->CardView_android_minWidth:I
 
-    move-result v4
+    invoke-virtual {p1, v1, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    iput v4, p0, Landroidx/cardview/widget/CardView;->mUserSetMinWidth:I
+    move-result v1
 
-    invoke-virtual {p1, v5, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    iput v1, p0, Landroidx/cardview/widget/CardView;->mUserSetMinWidth:I
 
-    move-result v2
+    sget v1, Landroidx/cardview/R$styleable;->CardView_android_minHeight:I
 
-    iput v2, p0, Landroidx/cardview/widget/CardView;->mUserSetMinHeight:I
+    invoke-virtual {p1, v1, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v1
+
+    iput v1, p0, Landroidx/cardview/widget/CardView;->mUserSetMinHeight:I
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     sget-object p1, Landroidx/cardview/widget/CardView;->IMPL:Landroidx/cardview/widget/CardViewImpl;
 
-    iget-object v2, p0, Landroidx/cardview/widget/CardView;->mCardViewDelegate:Landroidx/cardview/widget/CardViewDelegate;
-
     check-cast p1, Landroidx/cardview/widget/CardViewApi21Impl;
 
-    new-instance v4, Landroidx/cardview/widget/RoundRectDrawable;
+    new-instance v1, Landroidx/cardview/widget/RoundRectDrawable;
 
-    invoke-direct {v4, p2, v1}, Landroidx/cardview/widget/RoundRectDrawable;-><init>(Landroid/content/res/ColorStateList;F)V
+    invoke-direct {v1, p2, v0}, Landroidx/cardview/widget/RoundRectDrawable;-><init>(Landroid/content/res/ColorStateList;F)V
 
-    move-object p2, v2
+    iput-object v1, v2, Landroidx/cardview/widget/CardView$1;->mCardBackground:Landroid/graphics/drawable/Drawable;
 
-    check-cast p2, Landroidx/cardview/widget/CardView$1;
+    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    iput-object v4, p2, Landroidx/cardview/widget/CardView$1;->mCardBackground:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v7}, Landroid/view/View;->setClipToOutline(Z)V
 
-    iget-object v1, p2, Landroidx/cardview/widget/CardView$1;->this$0:Landroidx/cardview/widget/CardView;
+    invoke-virtual {p0, v5}, Landroid/view/View;->setElevation(F)V
 
-    invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p2, p2, Landroidx/cardview/widget/CardView$1;->this$0:Landroidx/cardview/widget/CardView;
-
-    invoke-virtual {p2, v5}, Landroid/view/View;->setClipToOutline(Z)V
-
-    invoke-virtual {p2, v3}, Landroid/view/View;->setElevation(F)V
-
-    invoke-virtual {p1, v2, v0}, Landroidx/cardview/widget/CardViewApi21Impl;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
+    invoke-virtual {p1, v2, v4}, Landroidx/cardview/widget/CardViewApi21Impl;->setMaxElevation(Landroidx/cardview/widget/CardViewDelegate;F)V
 
     return-void
 .end method
@@ -296,7 +286,7 @@
 .method public static synthetic access$001(Landroidx/cardview/widget/CardView;IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->setPadding(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
 .end method
@@ -510,7 +500,7 @@
 
     iput p1, p0, Landroidx/cardview/widget/CardView;->mUserSetMinHeight:I
 
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setMinimumHeight(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setMinimumHeight(I)V
 
     return-void
 .end method
@@ -520,7 +510,7 @@
 
     iput p1, p0, Landroidx/cardview/widget/CardView;->mUserSetMinWidth:I
 
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setMinimumWidth(I)V
 
     return-void
 .end method

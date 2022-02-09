@@ -64,7 +64,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$createFlowPreference"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -82,13 +82,10 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    :goto_0
+    :cond_0
     return-object p1
 .end method

@@ -56,26 +56,24 @@
 
     if-eqz p3, :cond_0
 
-    const p2, 0x7f0c0118
+    const p2, 0x7f0d0196
 
     :cond_0
-    const-string p3, "parent"
-
-    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-direct {p0, p2, p1}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsAdapter$DetailsItemVH;-><init>(ILandroid/view/ViewGroup;)V
 
     new-instance p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$viewBinding$1;
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$viewBinding$1;-><init>(Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox;->viewBinding:Lkotlin/Lazy;
 
-    sget-object p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$onBindData$1;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$onBindData$1;
+    new-instance p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$onBindData$1;
+
+    invoke-direct {p1, p0}, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$onBindData$1;-><init>(Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox;->onBindData:Lkotlin/jvm/functions/Function3;
 

@@ -116,7 +116,7 @@
 
     const/4 v4, 0x1
 
-    invoke-static {v0, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline1(IIII)I
+    invoke-static {v0, v2, v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
 
     move-result v0
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractProtobufList;->ensureIsMutable()V
 
-    if-eqz p1, :cond_4
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     instance-of v0, p1, Lcom/google/protobuf/FloatArrayList;
 
@@ -256,11 +256,6 @@
     new-instance p1, Ljava/lang/OutOfMemoryError;
 
     invoke-direct {p1}, Ljava/lang/OutOfMemoryError;-><init>()V
-
-    throw p1
-
-    :cond_4
-    const/4 p1, 0x0
 
     throw p1
 .end method
@@ -407,7 +402,7 @@
 
     const-string v1, ", Size:"
 
-    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, p1, v1}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 

@@ -39,8 +39,6 @@
 
 .field public menu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-.field public qwertyMode:Z
-
 .field public refreshDecorView:Z
 
 .field public refreshMenuContent:Z

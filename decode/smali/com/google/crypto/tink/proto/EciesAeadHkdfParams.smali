@@ -18,14 +18,13 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;",
         "Lcom/google/crypto/tink/proto/EciesAeadHkdfParams$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;
 
 .field public static final DEM_PARAMS_FIELD_NUMBER:I = 0x2
 
@@ -33,7 +32,7 @@
 
 .field public static final KEM_PARAMS_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -45,11 +44,11 @@
 
 
 # instance fields
-.field public demParams_:Lcom/google/crypto/tink/proto/EciesAeadDemParams;
+.field private demParams_:Lcom/google/crypto/tink/proto/EciesAeadDemParams;
 
-.field public ecPointFormat_:I
+.field private ecPointFormat_:I
 
-.field public kemParams_:Lcom/google/crypto/tink/proto/EciesHkdfKemParams;
+.field private kemParams_:Lcom/google/crypto/tink/proto/EciesHkdfKemParams;
 
 
 # direct methods
@@ -69,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -206,7 +205,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->demParams_:Lcom/google/crypto/tink/proto/EciesAeadDemParams;
 
@@ -258,7 +257,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->kemParams_:Lcom/google/crypto/tink/proto/EciesHkdfKemParams;
 
@@ -714,7 +713,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->demParams_:Lcom/google/crypto/tink/proto/EciesAeadDemParams;
 
@@ -768,7 +767,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/EciesAeadHkdfParams;->kemParams_:Lcom/google/crypto/tink/proto/EciesHkdfKemParams;
 

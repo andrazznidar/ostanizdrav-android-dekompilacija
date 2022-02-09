@@ -42,7 +42,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/NotificationHelper;",
+            "Lde/rki/coronawarnapp/notification/GeneralNotifications;",
             ">;"
         }
     .end annotation
@@ -52,6 +52,19 @@
 # direct methods
 .method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "contextProvider",
+            "foregroundStateProvider",
+            "notificationHelperProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,7 +75,7 @@
             "Lde/rki/coronawarnapp/util/device/ForegroundState;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/NotificationHelper;",
+            "Lde/rki/coronawarnapp/notification/GeneralNotifications;",
             ">;)V"
         }
     .end annotation
@@ -105,11 +118,11 @@
 
     move-result-object v2
 
-    check-cast v2, Lde/rki/coronawarnapp/notification/NotificationHelper;
+    check-cast v2, Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
     new-instance v3, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;
 
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Lde/rki/coronawarnapp/notification/NotificationHelper;)V
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Lde/rki/coronawarnapp/notification/GeneralNotifications;)V
 
     return-object v3
 .end method

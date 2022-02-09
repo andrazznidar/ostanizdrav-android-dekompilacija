@@ -38,7 +38,7 @@
 
 .field public static final DAYSSINCEMOSTRECENTDATEATRISKLEVELATTESTREGISTRATION_FIELD_NUMBER:I = 0x9
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;
 
 .field public static final HOURSSINCEHIGHRISKWARNINGATTESTREGISTRATION_FIELD_NUMBER:I = 0xa
 
@@ -48,7 +48,7 @@
 
 .field public static final LASTSUBMISSIONFLOWSCREEN_FIELD_NUMBER:I = 0x6
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -58,11 +58,19 @@
     .end annotation
 .end field
 
+.field public static final PTDAYSSINCEMOSTRECENTDATEATRISKLEVELATTESTREGISTRATION_FIELD_NUMBER:I = 0xd
+
+.field public static final PTHOURSSINCEHIGHRISKWARNINGATTESTREGISTRATION_FIELD_NUMBER:I = 0xe
+
 .field public static final SUBMITTEDAFTERCANCEL_FIELD_NUMBER:I = 0x3
+
+.field public static final SUBMITTEDAFTERRAPIDANTIGENTEST_FIELD_NUMBER:I = 0xc
 
 .field public static final SUBMITTEDAFTERSYMPTOMFLOW_FIELD_NUMBER:I = 0x4
 
 .field public static final SUBMITTEDINBACKGROUND_FIELD_NUMBER:I = 0x2
+
+.field public static final SUBMITTEDWITHCHECKINS_FIELD_NUMBER:I = 0xf
 
 .field public static final SUBMITTEDWITHTELETAN_FIELD_NUMBER:I = 0xb
 
@@ -70,30 +78,302 @@
 
 
 # instance fields
-.field public advancedConsentGiven_:Z
+.field private advancedConsentGiven_:Z
 
-.field public daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+.field private daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
-.field public hoursSinceHighRiskWarningAtTestRegistration_:I
+.field private hoursSinceHighRiskWarningAtTestRegistration_:I
 
-.field public hoursSinceTestRegistration_:I
+.field private hoursSinceTestRegistration_:I
 
-.field public hoursSinceTestResult_:I
+.field private hoursSinceTestResult_:I
 
-.field public lastSubmissionFlowScreen_:I
+.field private lastSubmissionFlowScreen_:I
 
-.field public submittedAfterCancel_:Z
+.field private ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
-.field public submittedAfterSymptomFlow_:Z
+.field private ptHoursSinceHighRiskWarningAtTestRegistration_:I
 
-.field public submittedInBackground_:Z
+.field private submittedAfterCancel_:Z
 
-.field public submittedWithTeleTAN_:Z
+.field private submittedAfterRapidAntigenTest_:Z
 
-.field public submitted_:Z
+.field private submittedAfterSymptomFlow_:Z
+
+.field private submittedInBackground_:Z
+
+.field private submittedWithCheckIns_:I
+
+.field private submittedWithTeleTAN_:Z
+
+.field private submitted_:Z
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearAdvancedConsentGiven(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearAdvancedConsentGiven()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearHoursSinceHighRiskWarningAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearHoursSinceTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearHoursSinceTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearHoursSinceTestResult(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearHoursSinceTestResult()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearLastSubmissionFlowScreen(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearLastSubmissionFlowScreen()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearPtHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearPtHoursSinceHighRiskWarningAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmitted(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmitted()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmittedAfterCancel(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedAfterCancel()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmittedAfterRapidAntigenTest(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedAfterRapidAntigenTest()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmittedAfterSymptomFlow(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedAfterSymptomFlow()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmittedInBackground(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedInBackground()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmittedWithCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedWithCheckIns()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSubmittedWithTeleTAN(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedWithTeleTAN()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAdvancedConsentGiven(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setAdvancedConsentGiven(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setHoursSinceHighRiskWarningAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHoursSinceTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setHoursSinceTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHoursSinceTestResult(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setHoursSinceTestResult(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetLastSubmissionFlowScreen(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPALastSubmissionFlowScreen;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setLastSubmissionFlowScreen(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPALastSubmissionFlowScreen;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetLastSubmissionFlowScreenValue(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setLastSubmissionFlowScreenValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPtHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setPtHoursSinceHighRiskWarningAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmitted(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmitted(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmittedAfterCancel(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedAfterCancel(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmittedAfterRapidAntigenTest(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedAfterRapidAntigenTest(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmittedAfterSymptomFlow(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedAfterSymptomFlow(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmittedInBackground(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedInBackground(Z)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmittedWithCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedWithCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmittedWithCheckInsValue(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedWithCheckInsValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSubmittedWithTeleTAN(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedWithTeleTAN(Z)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -108,202 +388,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$13100()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$13200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmitted(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$13300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmitted()V
-
-    return-void
-.end method
-
-.method public static synthetic access$13400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedInBackground(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$13500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedInBackground()V
-
-    return-void
-.end method
-
-.method public static synthetic access$13600(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedAfterCancel(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$13700(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedAfterCancel()V
-
-    return-void
-.end method
-
-.method public static synthetic access$13800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedAfterSymptomFlow(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$13900(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedAfterSymptomFlow()V
-
-    return-void
-.end method
-
-.method public static synthetic access$14000(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setAdvancedConsentGiven(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$14100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearAdvancedConsentGiven()V
-
-    return-void
-.end method
-
-.method public static synthetic access$14200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setLastSubmissionFlowScreenValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$14300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPALastSubmissionFlowScreen;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setLastSubmissionFlowScreen(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPALastSubmissionFlowScreen;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$14400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearLastSubmissionFlowScreen()V
-
-    return-void
-.end method
-
-.method public static synthetic access$14500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setHoursSinceTestResult(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$14600(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearHoursSinceTestResult()V
-
-    return-void
-.end method
-
-.method public static synthetic access$14700(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setHoursSinceTestRegistration(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$14800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearHoursSinceTestRegistration()V
-
-    return-void
-.end method
-
-.method public static synthetic access$14900(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$15000(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
-
-    return-void
-.end method
-
-.method public static synthetic access$15100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setHoursSinceHighRiskWarningAtTestRegistration(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$15200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearHoursSinceHighRiskWarningAtTestRegistration()V
-
-    return-void
-.end method
-
-.method public static synthetic access$15300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->setSubmittedWithTeleTAN(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic access$15400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->clearSubmittedWithTeleTAN()V
 
     return-void
 .end method
@@ -368,6 +456,26 @@
     return-void
 .end method
 
+.method private clearPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    return-void
+.end method
+
+.method private clearPtHoursSinceHighRiskWarningAtTestRegistration()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    return-void
+.end method
+
 .method private clearSubmitted()V
     .locals 1
 
@@ -388,6 +496,16 @@
     return-void
 .end method
 
+.method private clearSubmittedAfterRapidAntigenTest()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    return-void
+.end method
+
 .method private clearSubmittedAfterSymptomFlow()V
     .locals 1
 
@@ -404,6 +522,16 @@
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedInBackground_:Z
+
+    return-void
+.end method
+
+.method private clearSubmittedWithCheckIns()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
 
     return-void
 .end method
@@ -713,7 +841,7 @@
 .method private setLastSubmissionFlowScreen(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPALastSubmissionFlowScreen;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPALastSubmissionFlowScreen;->getNumber()I
 
@@ -722,17 +850,28 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setLastSubmissionFlowScreenValue(I)V
     .locals 0
 
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
+
+    return-void
+.end method
+
+.method private setPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
+    .locals 0
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    return-void
+.end method
+
+.method private setPtHoursSinceHighRiskWarningAtTestRegistration(I)V
+    .locals 0
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
 
     return-void
 .end method
@@ -753,6 +892,14 @@
     return-void
 .end method
 
+.method private setSubmittedAfterRapidAntigenTest(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    return-void
+.end method
+
 .method private setSubmittedAfterSymptomFlow(Z)V
     .locals 0
 
@@ -765,6 +912,28 @@
     .locals 0
 
     iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedInBackground_:Z
+
+    return-void
+.end method
+
+.method private setSubmittedWithCheckIns(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;->getNumber()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    return-void
+.end method
+
+.method private setSubmittedWithCheckInsValue(I)V
+    .locals 0
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
 
     return-void
 .end method
@@ -862,14 +1031,14 @@
 
     move-result p1
 
-    goto :goto_3
+    goto/16 :goto_3
 
     :sswitch_0
-    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
 
     move-result p1
 
-    iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithTeleTAN_:Z
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
 
     goto :goto_1
 
@@ -878,7 +1047,7 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
 
     goto :goto_1
 
@@ -887,25 +1056,25 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
     goto :goto_1
 
     :sswitch_3
-    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestRegistration_:I
+    iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
 
     goto :goto_1
 
     :sswitch_4
-    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestResult_:I
+    iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithTeleTAN_:Z
 
     goto :goto_1
 
@@ -914,11 +1083,47 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
 
     goto :goto_1
 
     :sswitch_6
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    goto :goto_1
+
+    :sswitch_7
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestRegistration_:I
+
+    goto :goto_1
+
+    :sswitch_8
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestResult_:I
+
+    goto :goto_1
+
+    :sswitch_9
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
+
+    goto :goto_1
+
+    :sswitch_a
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
     move-result p1
@@ -927,7 +1132,7 @@
 
     goto :goto_1
 
-    :sswitch_7
+    :sswitch_b
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
     move-result p1
@@ -936,7 +1141,7 @@
 
     goto :goto_1
 
-    :sswitch_8
+    :sswitch_c
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
     move-result p1
@@ -945,7 +1150,7 @@
 
     goto :goto_1
 
-    :sswitch_9
+    :sswitch_d
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
     move-result p1
@@ -954,7 +1159,7 @@
 
     goto :goto_1
 
-    :sswitch_a
+    :sswitch_e
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
     move-result p1
@@ -968,7 +1173,7 @@
     goto :goto_1
 
     :goto_2
-    :sswitch_b
+    :sswitch_f
     move v1, v2
 
     goto :goto_1
@@ -1080,31 +1285,27 @@
 
     if-eqz p1, :cond_4
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_5
 
     :cond_4
-    move p1, v1
+    move v0, v1
 
     :goto_5
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
 
     if-eqz v3, :cond_5
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_6
 
     :cond_5
-    move v3, v1
+    move v4, v1
 
     :goto_6
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1114,31 +1315,27 @@
 
     if-eqz p1, :cond_6
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_7
 
     :cond_6
-    move p1, v1
+    move v0, v1
 
     :goto_7
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestResult_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestResult_:I
 
     if-eqz v3, :cond_7
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_8
 
     :cond_7
-    move v3, v1
+    move v4, v1
 
     :goto_8
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestResult_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1148,31 +1345,27 @@
 
     if-eqz p1, :cond_8
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_9
 
     :cond_8
-    move p1, v1
+    move v0, v1
 
     :goto_9
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestRegistration_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestRegistration_:I
 
     if-eqz v3, :cond_9
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_a
 
     :cond_9
-    move v3, v1
+    move v4, v1
 
     :goto_a
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceTestRegistration_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1182,31 +1375,27 @@
 
     if-eqz p1, :cond_a
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_b
 
     :cond_a
-    move p1, v1
+    move v0, v1
 
     :goto_b
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
     if-eqz v3, :cond_b
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_c
 
     :cond_b
-    move v3, v1
+    move v4, v1
 
     :goto_c
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1216,26 +1405,27 @@
 
     if-eqz p1, :cond_c
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_d
 
     :cond_c
-    move p1, v1
+    move v0, v1
 
     :goto_d
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
 
     if-eqz v3, :cond_d
 
-    move v1, v2
+    move v4, v2
+
+    goto :goto_e
 
     :cond_d
-    iget v2, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
+    move v4, v1
 
-    invoke-interface {p2, p1, v0, v1, v2}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    :goto_e
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1243,20 +1433,115 @@
 
     iget-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithTeleTAN_:Z
 
-    iget-boolean p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithTeleTAN_:Z
+    iget-boolean v0, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithTeleTAN_:Z
 
-    invoke-interface {p2, p1, p1, p3, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitBoolean(ZZZZ)Z
+    invoke-interface {p2, p1, p1, v0, v0}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitBoolean(ZZZZ)Z
 
     move-result p1
 
     iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithTeleTAN_:Z
+
+    iget-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    iget-boolean v0, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    invoke-interface {p2, p1, p1, v0, v0}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitBoolean(ZZZZ)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz p1, :cond_e
+
+    move v0, v2
+
+    goto :goto_f
+
+    :cond_e
+    move v0, v1
+
+    :goto_f
+    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz v3, :cond_f
+
+    move v4, v2
+
+    goto :goto_10
+
+    :cond_f
+    move v4, v1
+
+    :goto_10
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz p1, :cond_10
+
+    move v0, v2
+
+    goto :goto_11
+
+    :cond_10
+    move v0, v1
+
+    :goto_11
+    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz v3, :cond_11
+
+    move v4, v2
+
+    goto :goto_12
+
+    :cond_11
+    move v4, v1
+
+    :goto_12
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    if-eqz p1, :cond_12
+
+    move v0, v2
+
+    goto :goto_13
+
+    :cond_12
+    move v0, v1
+
+    :goto_13
+    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    if-eqz p3, :cond_13
+
+    move v1, v2
+
+    :cond_13
+    invoke-interface {p2, v0, p1, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
 
     return-object p0
 
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata$Builder-IA;)V
 
     return-object p1
 
@@ -1275,6 +1560,8 @@
 
     return-object p1
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_6
@@ -1289,18 +1576,22 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_b
-        0x8 -> :sswitch_a
-        0x10 -> :sswitch_9
-        0x18 -> :sswitch_8
-        0x20 -> :sswitch_7
-        0x28 -> :sswitch_6
-        0x30 -> :sswitch_5
-        0x38 -> :sswitch_4
-        0x40 -> :sswitch_3
-        0x48 -> :sswitch_2
-        0x50 -> :sswitch_1
-        0x58 -> :sswitch_0
+        0x0 -> :sswitch_f
+        0x8 -> :sswitch_e
+        0x10 -> :sswitch_d
+        0x18 -> :sswitch_c
+        0x20 -> :sswitch_b
+        0x28 -> :sswitch_a
+        0x30 -> :sswitch_9
+        0x38 -> :sswitch_8
+        0x40 -> :sswitch_7
+        0x48 -> :sswitch_6
+        0x50 -> :sswitch_5
+        0x58 -> :sswitch_4
+        0x60 -> :sswitch_3
+        0x68 -> :sswitch_2
+        0x70 -> :sswitch_1
+        0x78 -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -1365,6 +1656,22 @@
     .locals 1
 
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->lastSubmissionFlowScreen_:I
+
+    return v0
+.end method
+
+.method public getPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    return v0
+.end method
+
+.method public getPtHoursSinceHighRiskWarningAtTestRegistration()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
 
     return v0
 .end method
@@ -1534,6 +1841,66 @@
     add-int/2addr v0, v1
 
     :cond_b
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    if-eqz v1, :cond_c
+
+    const/16 v2, 0xc
+
+    invoke-static {v2, v1}, Lcom/google/protobuf/CodedOutputStream;->computeBoolSize(IZ)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_c
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz v1, :cond_d
+
+    const/16 v2, 0xd
+
+    invoke-static {v2, v1}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_d
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz v1, :cond_e
+
+    const/16 v2, 0xe
+
+    invoke-static {v2, v1}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_e
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;->TSB_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;->getNumber()I
+
+    move-result v2
+
+    if-eq v1, v2, :cond_f
+
+    const/16 v1, 0xf
+
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_f
     iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
     return v0
@@ -1555,6 +1922,14 @@
     return v0
 .end method
 
+.method public getSubmittedAfterRapidAntigenTest()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    return v0
+.end method
+
 .method public getSubmittedAfterSymptomFlow()Z
     .locals 1
 
@@ -1567,6 +1942,31 @@
     .locals 1
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedInBackground_:Z
+
+    return v0
+.end method
+
+.method public getSubmittedWithCheckIns()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;->forNumber(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public getSubmittedWithCheckInsValue()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
 
     return v0
 .end method
@@ -1694,5 +2094,49 @@
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
     :cond_a
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedAfterRapidAntigenTest_:Z
+
+    if-eqz v0, :cond_b
+
+    const/16 v1, 0xc
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
+
+    :cond_b
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz v0, :cond_c
+
+    const/16 v1, 0xd
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    :cond_c
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz v0, :cond_d
+
+    const/16 v1, 0xe
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    :cond_d
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;->TSB_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;->getNumber()I
+
+    move-result v1
+
+    if-eq v0, v1, :cond_e
+
+    const/16 v0, 0xf
+
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAKeySubmissionMetadata;->submittedWithCheckIns_:I
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    :cond_e
     return-void
 .end method

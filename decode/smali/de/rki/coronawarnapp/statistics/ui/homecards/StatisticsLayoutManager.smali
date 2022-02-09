@@ -3,6 +3,43 @@
 .source "StatisticsLayoutManager.kt"
 
 
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0005\u0018\u00002\u00020\u0001B#\u0008\u0016\u0012\u0008\u0010\u0003\u001a\u0004\u0018\u00010\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u00a2\u0006\u0004\u0008\u0008\u0010\tB-\u0008\u0016\u0012\u0008\u0010\u0003\u001a\u0004\u0018\u00010\u0002\u0012\u0008\u0010\u000b\u001a\u0004\u0018\u00010\n\u0012\u0006\u0010\u000c\u001a\u00020\u0004\u0012\u0006\u0010\r\u001a\u00020\u0004\u00a2\u0006\u0004\u0008\u0008\u0010\u000e\u00a8\u0006\u000f"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;",
+        "Landroidx/recyclerview/widget/LinearLayoutManager;",
+        "Landroid/content/Context;",
+        "context",
+        "",
+        "orientation",
+        "",
+        "reverseLayout",
+        "<init>",
+        "(Landroid/content/Context;IZ)V",
+        "Landroid/util/AttributeSet;",
+        "attrs",
+        "defStyleAttr",
+        "defStyleRes",
+        "(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
+
 # direct methods
 .method public constructor <init>(Landroid/content/Context;IZ)V
     .locals 0
@@ -31,10 +68,6 @@
 
     invoke-direct {v0, v1, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
-    const-string v1, "super.generateDefaultLayoutParams()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p0, v0}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;->spanLayoutSize(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     move-result-object v0
@@ -57,10 +90,6 @@
 
     invoke-direct {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const-string p1, "super.generateLayoutParams(c, attrs)"
-
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p0, v0}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;->spanLayoutSize(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     move-result-object p1
@@ -78,10 +107,6 @@
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     move-result-object p1
-
-    const-string v0, "super.generateLayoutParams(lp)"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;->spanLayoutSize(Landroidx/recyclerview/widget/RecyclerView$LayoutParams;)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 

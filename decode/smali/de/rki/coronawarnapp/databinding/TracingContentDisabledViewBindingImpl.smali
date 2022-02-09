@@ -10,8 +10,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -23,15 +21,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901d7
+    const v1, 0x7f0a0354
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0900c0
+    const v1, 0x7f0a012d
 
     const/4 v2, 0x6
 
@@ -42,6 +38,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 13
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -67,7 +73,7 @@
 
     move-object v8, v1
 
-    check-cast v8, Landroidx/appcompat/widget/AppCompatImageView;
+    check-cast v8, Landroid/widget/ImageView;
 
     const/4 v1, 0x4
 
@@ -109,13 +115,13 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/Button;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;)V
+    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;)V
 
     const-wide/16 v3, -0x1
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;->mDirtyFlags:J
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->detailsIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->detailsIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
@@ -129,8 +135,6 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->riskCardRowSavedRisk:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
@@ -141,7 +145,7 @@
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -194,7 +198,7 @@
 
     move-result-object v5
 
-    const-string v6, "c"
+    const-string v6, "context"
 
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -212,7 +216,7 @@
 
     if-ne v6, v7, :cond_0
 
-    const v6, 0x7f120287
+    const v6, 0x7f1303e3
 
     goto :goto_0
 
@@ -224,29 +228,29 @@
     throw v0
 
     :cond_1
-    const v6, 0x7f12028c
+    const v6, 0x7f1303e8
 
     goto :goto_0
 
     :cond_2
-    const v6, 0x7f12028d
+    const v6, 0x7f1303e9
 
     :goto_0
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string v7, "c.getString(\n           \u2026e\n            }\n        )"
+    const-string v7, "context.getString(\n     \u2026e\n            }\n        )"
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v7, 0x7f120291
+    const v7, 0x7f1303ed
 
     invoke-virtual {v5, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v7, "c.getString(R.string.ris\u2026possible_body_saved_risk)"
+    const-string v7, "context.getString(R.stri\u2026possible_body_saved_risk)"
 
     invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -256,7 +260,7 @@
 
     const-string v6, "java.lang.String.format(this, *args)"
 
-    invoke-static {v7, v3, v5, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline27([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v3, v5, v6}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -266,7 +270,7 @@
 
     move-result-object v6
 
-    const-string v7, "c"
+    const-string v7, "context"
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -274,7 +278,7 @@
 
     if-eqz v7, :cond_3
 
-    const v8, 0x7f120281
+    const v8, 0x7f1303dd
 
     new-array v9, v3, [Ljava/lang/Object;
 
@@ -288,20 +292,20 @@
 
     move-result-object v2
 
-    const-string v6, "c.getString(\n           \u2026eDetectionTime)\n        )"
+    const-string/jumbo v6, "{\n        context.getStr\u2026tionTime)\n        )\n    }"
 
     invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_1
 
     :cond_3
-    const v2, 0x7f12027d
+    const v2, 0x7f1303d9
 
     invoke-virtual {v6, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v6, "c.getString(R.string.ris\u2026ard_body_not_yet_fetched)"
+    const-string/jumbo v6, "{\n        context.getStr\u2026dy_not_yet_fetched)\n    }"
 
     invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -338,13 +342,13 @@
     :goto_3
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->detailsIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->detailsIcon:Landroid/widget/ImageView;
 
-    invoke-static {v0, v5}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v5}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->enableTracingAction:Landroid/widget/Button;
 
-    invoke-static {v0, v3}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v3}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->riskCardRowSavedRisk:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
 
@@ -436,6 +440,14 @@
 
 .method public setState(Lde/rki/coronawarnapp/tracing/states/TracingDisabled;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "State"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBinding;->mState:Lde/rki/coronawarnapp/tracing/states/TracingDisabled;
 
@@ -454,11 +466,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2a
+    const/16 p1, 0x29
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

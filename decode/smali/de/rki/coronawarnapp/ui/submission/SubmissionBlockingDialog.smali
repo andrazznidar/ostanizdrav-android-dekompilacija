@@ -11,11 +11,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,7 +21,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog$dialog$2;-><init>(Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -51,23 +47,19 @@
 .end method
 
 .method public final setState(Z)V
-    .locals 2
-
-    const-string v0, "dialog"
+    .locals 1
 
     if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog;->getDialog()Landroidx/appcompat/app/AlertDialog;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
 
-    invoke-virtual {v1}, Landroid/app/Dialog;->isShowing()Z
+    move-result v0
 
-    move-result v1
-
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog;->getDialog()Landroidx/appcompat/app/AlertDialog;
 
@@ -83,8 +75,6 @@
     invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog;->getDialog()Landroidx/appcompat/app/AlertDialog;
 
     move-result-object p1
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Landroid/app/Dialog;->isShowing()Z
 

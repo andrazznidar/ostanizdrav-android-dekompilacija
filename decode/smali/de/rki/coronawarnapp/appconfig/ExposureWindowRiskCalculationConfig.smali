@@ -73,5 +73,13 @@
     .end annotation
 .end method
 
-.method public abstract getTransmissionRiskLevelMultiplier()D
+.method public abstract getTransmissionRiskValueMapping()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskValueMapping;",
+            ">;"
+        }
+    .end annotation
 .end method

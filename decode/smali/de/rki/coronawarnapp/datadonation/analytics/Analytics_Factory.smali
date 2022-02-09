@@ -69,6 +69,16 @@
     .end annotation
 .end field
 
+.field public final onboardingSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/storage/OnboardingSettings;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final settingsProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -91,8 +101,31 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "dataDonationAnalyticsServerProvider",
+            "appConfigProvider",
+            "deviceAttestationProvider",
+            "donorModulesProvider",
+            "settingsProvider",
+            "loggerProvider",
+            "timeStamperProvider",
+            "onboardingSettingsProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,6 +150,9 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/util/TimeStamper;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/storage/OnboardingSettings;",
             ">;)V"
         }
     .end annotation
@@ -137,13 +173,15 @@
 
     iput-object p7, p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;->timeStamperProvider:Ljavax/inject/Provider;
 
+    iput-object p8, p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 9
+    .locals 10
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;->dataDonationAnalyticsServerProvider:Ljavax/inject/Provider;
 
@@ -215,11 +253,21 @@
 
     check-cast v8, Lde/rki/coronawarnapp/util/TimeStamper;
 
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics_Factory;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v9, v0
+
+    check-cast v9, Lde/rki/coronawarnapp/storage/OnboardingSettings;
+
     new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v8}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsServer;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation;Ljava/util/Set;Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;Lde/rki/coronawarnapp/datadonation/analytics/storage/LastAnalyticsSubmissionLogger;Lde/rki/coronawarnapp/util/TimeStamper;)V
+    invoke-direct/range {v1 .. v9}, Lde/rki/coronawarnapp/datadonation/analytics/Analytics;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsServer;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation;Ljava/util/Set;Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;Lde/rki/coronawarnapp/datadonation/analytics/storage/LastAnalyticsSubmissionLogger;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/storage/OnboardingSettings;)V
 
     return-object v0
 .end method

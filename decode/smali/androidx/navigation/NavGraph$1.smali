@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Iterator;
+.implements Lj$/util/Iterator;
 
 
 # annotations
@@ -21,7 +22,8 @@
         "Ljava/lang/Object;",
         "Ljava/util/Iterator<",
         "Landroidx/navigation/NavDestination;",
-        ">;"
+        ">;",
+        "Lj$/util/Iterator;"
     }
 .end annotation
 
@@ -55,6 +57,14 @@
 
 
 # virtual methods
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public hasNext()Z
     .locals 3
 
@@ -166,11 +176,9 @@
     iput-boolean v5, v0, Landroidx/collection/SparseArrayCompat;->mGarbage:Z
 
     :cond_0
-    iget v0, p0, Landroidx/navigation/NavGraph$1;->mIndex:I
+    sub-int/2addr v1, v5
 
-    sub-int/2addr v0, v5
-
-    iput v0, p0, Landroidx/navigation/NavGraph$1;->mIndex:I
+    iput v1, p0, Landroidx/navigation/NavGraph$1;->mIndex:I
 
     const/4 v0, 0x0
 

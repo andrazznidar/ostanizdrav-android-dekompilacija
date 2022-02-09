@@ -51,31 +51,29 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;->context:Landroid/content/Context;
 
-    new-instance p3, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;
+    new-instance v2, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;
 
-    invoke-direct {p3, p0, p2, v0}, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;-><init>(Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lde/rki/coronawarnapp/nearby/ENFClient;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v2, p2, p0, v0}, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;-><init>(Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lkotlin/coroutines/Continuation;)V
 
     new-instance p2, Lkotlinx/coroutines/flow/SafeFlow;
 
-    invoke-direct {p2, p3}, Lkotlinx/coroutines/flow/SafeFlow;-><init>(Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {p2, v2}, Lkotlinx/coroutines/flow/SafeFlow;-><init>(Lkotlin/jvm/functions/Function2;)V
 
     invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
-    move-result-object p3
+    move-result-object v0
 
     const-wide/16 v2, 0x0
 
-    invoke-static {p2, p3, v2, v3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {p2, v0, v2, v3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
     move-result-object p2
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;->currentENFVersion:Landroidx/lifecycle/LiveData;
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;->context:Landroid/content/Context;
+    const p2, 0x7f130227
 
-    const p3, 0x7f120156
-
-    invoke-virtual {p2, p3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p3, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -89,13 +87,13 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "1.14.3"
+    const-string v5, "2.12.2"
 
     aput-object v5, v0, v4
 
     const-string v4, "java.lang.String.format(this, *args)"
 
-    invoke-static {v0, p3, p2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline27([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p3, p2, v4}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 

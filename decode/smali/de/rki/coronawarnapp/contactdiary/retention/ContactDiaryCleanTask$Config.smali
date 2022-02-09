@@ -37,10 +37,6 @@
 
     move-result-object v0
 
-    const-string v1, "Duration.standardMinutes(9)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryCleanTask$Config;->executionTimeout:Lorg/joda/time/Duration;
 
     sget-object v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;->SKIP_IF_SIBLING_RUNNING:Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;
@@ -95,6 +91,8 @@
             ">;>;"
         }
     .end annotation
+
+    invoke-static {p0}, Lde/rki/coronawarnapp/task/TaskFactory$Config$DefaultImpls;->getPreconditions(Lde/rki/coronawarnapp/task/TaskFactory$Config;)Ljava/util/List;
 
     sget-object v0, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
 

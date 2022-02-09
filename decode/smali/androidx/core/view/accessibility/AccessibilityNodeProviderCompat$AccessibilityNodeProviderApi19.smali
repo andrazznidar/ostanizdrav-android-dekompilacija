@@ -17,6 +17,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "compat"
+        }
+    .end annotation
 
     invoke-direct {p0, p1}, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16;-><init>(Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;)V
 
@@ -27,6 +35,14 @@
 # virtual methods
 .method public findFocus(I)Landroid/view/accessibility/AccessibilityNodeInfo;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "focus"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16;->mCompat:Landroidx/core/view/accessibility/AccessibilityNodeProviderCompat;
 

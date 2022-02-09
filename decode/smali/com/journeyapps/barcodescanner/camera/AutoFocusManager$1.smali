@@ -35,21 +35,23 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
-    .locals 2
+    .locals 1
 
     iget p1, p1, Landroid/os/Message;->what:I
 
     iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/AutoFocusManager$1;->this$0:Lcom/journeyapps/barcodescanner/camera/AutoFocusManager;
 
-    iget v1, v0, Lcom/journeyapps/barcodescanner/camera/AutoFocusManager;->MESSAGE_FOCUS:I
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne p1, v1, :cond_0
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Lcom/journeyapps/barcodescanner/camera/AutoFocusManager;->focus()V
+    if-ne p1, v0, :cond_0
 
-    const/4 p1, 0x1
+    iget-object p1, p0, Lcom/journeyapps/barcodescanner/camera/AutoFocusManager$1;->this$0:Lcom/journeyapps/barcodescanner/camera/AutoFocusManager;
 
-    return p1
+    invoke-virtual {p1}, Lcom/journeyapps/barcodescanner/camera/AutoFocusManager;->focus()V
+
+    return v0
 
     :cond_0
     const/4 p1, 0x0

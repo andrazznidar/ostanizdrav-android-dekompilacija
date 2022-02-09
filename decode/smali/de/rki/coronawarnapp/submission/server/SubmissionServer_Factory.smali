@@ -18,6 +18,26 @@
 
 
 # instance fields
+.field public final appConfigProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/appconfig/AppConfigProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final paddingToolProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/PaddingTool;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final submissionApiProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -30,13 +50,32 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "submissionApiProvider",
+            "appConfigProvider",
+            "paddingToolProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/submission/server/SubmissionApiV1;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/appconfig/AppConfigProvider;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/PaddingTool;",
             ">;)V"
         }
     .end annotation
@@ -45,13 +84,17 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;->submissionApiProvider:Ljavax/inject/Provider;
 
+    iput-object p2, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;->appConfigProvider:Ljavax/inject/Provider;
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;->paddingToolProvider:Ljavax/inject/Provider;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;->submissionApiProvider:Ljavax/inject/Provider;
 
@@ -59,9 +102,25 @@
 
     move-result-object v0
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/server/SubmissionServer;
+    iget-object v1, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;->appConfigProvider:Ljavax/inject/Provider;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/submission/server/SubmissionServer;-><init>(Ldagger/Lazy;)V
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    return-object v1
+    move-result-object v1
+
+    check-cast v1, Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/submission/server/SubmissionServer_Factory;->paddingToolProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lde/rki/coronawarnapp/util/PaddingTool;
+
+    new-instance v3, Lde/rki/coronawarnapp/submission/server/SubmissionServer;
+
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/submission/server/SubmissionServer;-><init>(Ldagger/Lazy;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/util/PaddingTool;)V
+
+    return-object v3
 .end method

@@ -58,13 +58,13 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     check-cast p1, Landroid/content/SharedPreferences;
 
     check-cast p2, Ljava/lang/String;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$createFlowPreference"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -78,26 +78,31 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     sget-object p2, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
-
-    const-string v1, "prefString"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p2, p1}, Lokio/ByteString$Companion;->decodeBase64(Ljava/lang/String;)Lokio/ByteString;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_1
 
+    goto :goto_0
+
+    :cond_1
     invoke-virtual {p1}, Lokio/ByteString;->toByteArray()[B
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_2
 
+    goto :goto_0
+
+    :cond_2
     :try_start_0
     invoke-static {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata;->parseFrom([B)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata;
 
@@ -106,6 +111,6 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    :cond_0
+    :goto_0
     return-object v0
 .end method

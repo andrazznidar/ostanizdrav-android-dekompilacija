@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;
 
@@ -51,7 +51,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -59,7 +59,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 1>"
+    const-string v0, "$noName_1"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -71,21 +71,17 @@
 
     iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    new-instance v0, L-$$LambdaGroup$js$gpq9ZEW-4VRPi-rNjb8Kh4tYRd4;
+    new-instance v0, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda3;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, p2}, L-$$LambdaGroup$js$gpq9ZEW-4VRPi-rNjb8Kh4tYRd4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda3;-><init>(Lde/rki/coronawarnapp/tracing/ui/homecards/IncreasedRiskCard$Item;)V
 
     invoke-virtual {p3, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBinding;->updateAction:Landroid/widget/Button;
 
-    new-instance p3, L-$$LambdaGroup$js$gpq9ZEW-4VRPi-rNjb8Kh4tYRd4;
+    new-instance p3, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda0;
 
-    const/4 v0, 0x1
-
-    invoke-direct {p3, v0, p2}, L-$$LambdaGroup$js$gpq9ZEW-4VRPi-rNjb8Kh4tYRd4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p3, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/tracing/ui/homecards/IncreasedRiskCard$Item;)V
 
     invoke-virtual {p1, p3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

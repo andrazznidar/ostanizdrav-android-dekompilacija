@@ -57,30 +57,21 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;)Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBinding;
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBinding;
 
     move-result-object v0
 
-    move-object v1, v0
-
-    check-cast v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;
-
-    if-eqz v1, :cond_0
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBinding;->setUiState(Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;)V
 
     iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBinding;->submissionTestResultSection:Lde/rki/coronawarnapp/ui/view/TestResultSectionView;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;->deviceUiState:Lde/rki/coronawarnapp/util/NetworkRequestWrapper;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;->coronaTest:Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/testresult/TestResultUIState;->testResultReceivedDate:Ljava/util/Date;
-
-    invoke-virtual {v0, v1, p1}, Lde/rki/coronawarnapp/ui/view/TestResultSectionView;->setTestResultSection(Lde/rki/coronawarnapp/util/NetworkRequestWrapper;Ljava/util/Date;)V
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/ui/view/TestResultSectionView;->setTestResultSection(Lde/rki/coronawarnapp/coronatest/type/CoronaTest;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method

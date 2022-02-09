@@ -10,8 +10,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -23,23 +21,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09036b
+    const v1, 0x7f0a05ca
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09036c
+    const v1, 0x7f0a05cc
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09036a
+    const v1, 0x7f0a05c9
 
     const/4 v2, 0x4
 
@@ -50,6 +44,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -113,15 +117,13 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBinding;->riskDetailsInformationBody:Landroid/widget/TextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -172,55 +174,13 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v2, v5, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsIncreasedRiskBox$Item;->lastEncounteredAt:Lorg/joda/time/Instant;
+    const v2, 0x7f130419
 
-    const-string v3, "$this$toLocalDate"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v3, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
-
-    invoke-virtual {v2, v3}, Lorg/joda/time/base/AbstractInstant;->toDateTime(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
-
-    move-result-object v2
-
-    const-string v3, "this.toDateTime(DateTimeZone.UTC).toLocalDate()"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v3, "dd.MM.yyyy"
-
-    invoke-static {v3}, Lorg/joda/time/format/DateTimeFormat;->forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Lorg/joda/time/format/DateTimeFormatter;->print(Lorg/joda/time/ReadablePartial;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v3, 0x7f1202b9
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    aput-object v2, v4, v5
-
-    invoke-virtual {v1, v3, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v1, "context.resources.getStr\u2026ncreased_risk_date, date)"
+    const-string v1, "context.getString(R.stri\u2026body_increased_risk_date)"
 
     invoke-static {v4, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -229,7 +189,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBinding;->riskDetailsInformationBody:Landroid/widget/TextView;
 
-    invoke-static {v0, v4}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v4}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_1
     return-void
@@ -313,6 +273,14 @@
 
 .method public setInfo(Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsIncreasedRiskBox$Item;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Info"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsIncreasedViewBinding;->mInfo:Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsIncreasedRiskBox$Item;
 
@@ -331,11 +299,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1c
+    const/16 p1, 0x1b
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

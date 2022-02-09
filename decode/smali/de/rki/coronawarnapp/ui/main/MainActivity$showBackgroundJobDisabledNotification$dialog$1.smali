@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 4
+    .locals 10
 
     new-instance v0, Landroid/content/Intent;
 
@@ -69,24 +69,29 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/MainActivity$showBackgroundJobDisabledNotification$dialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/MainActivity;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/main/MainActivity;->access$getVm$p(Lde/rki/coronawarnapp/ui/main/MainActivity;)Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/main/MainActivity;->getViewModel()Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;
 
-    move-result-object v0
+    move-result-object v3
 
-    if-eqz v0, :cond_0
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel$onUserOpenedBackgroundPriorityOptions$1;
+    new-instance v7, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel$onUserOpenedBackgroundPriorityOptions$1;
 
-    invoke-direct {v1, v0, v2}, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel$onUserOpenedBackgroundPriorityOptions$1;-><init>(Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v7, v3, v2}, Lde/rki/coronawarnapp/ui/main/MainActivityViewModel$onUserOpenedBackgroundPriorityOptions$1;-><init>(Lde/rki/coronawarnapp/ui/main/MainActivityViewModel;Lkotlin/coroutines/Continuation;)V
 
-    const/4 v3, 0x1
+    const/4 v4, 0x0
 
-    invoke-static {v0, v2, v1, v3, v2}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v8, 0x7
+
+    const/4 v9, 0x0
+
+    invoke-static/range {v3 .. v9}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineExceptionHandler;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
-
-    :cond_0
-    throw v2
 .end method

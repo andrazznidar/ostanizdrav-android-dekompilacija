@@ -42,16 +42,31 @@
 .method public abstract getLastSubmissionFlowScreenValue()I
 .end method
 
+.method public abstract getPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()I
+.end method
+
+.method public abstract getPtHoursSinceHighRiskWarningAtTestRegistration()I
+.end method
+
 .method public abstract getSubmitted()Z
 .end method
 
 .method public abstract getSubmittedAfterCancel()Z
 .end method
 
+.method public abstract getSubmittedAfterRapidAntigenTest()Z
+.end method
+
 .method public abstract getSubmittedAfterSymptomFlow()Z
 .end method
 
 .method public abstract getSubmittedInBackground()Z
+.end method
+
+.method public abstract getSubmittedWithCheckIns()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/TriStateBooleanOuterClass$TriStateBoolean;
+.end method
+
+.method public abstract getSubmittedWithCheckInsValue()I
 .end method
 
 .method public abstract getSubmittedWithTeleTAN()Z

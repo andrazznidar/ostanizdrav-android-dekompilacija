@@ -17,7 +17,8 @@
     c = "de.rki.coronawarnapp.bugreporting.debuglog.DebugLogger"
     f = "DebugLogger.kt"
     l = {
-        0xc0
+        0xec,
+        0x88
     }
     m = "start"
 .end annotation
@@ -25,6 +26,14 @@
 
 # instance fields
 .field public L$0:Ljava/lang/Object;
+
+.field public L$1:Ljava/lang/Object;
+
+.field public L$2:Ljava/lang/Object;
+
+.field public L$3:Ljava/lang/Object;
+
+.field public L$4:Ljava/lang/Object;
 
 .field public label:I
 
@@ -36,6 +45,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger$start$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger$start$1;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
 

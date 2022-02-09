@@ -12,15 +12,3 @@
     accessFlags = 0x9
     name = "SnackbarRecord"
 .end annotation
-
-
-# instance fields
-.field public final callback:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference<",
-            "Lcom/google/android/material/snackbar/SnackbarManager$Callback;",
-            ">;"
-        }
-    .end annotation
-.end field

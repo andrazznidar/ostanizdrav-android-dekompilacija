@@ -13,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel_Factory;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,25 +52,25 @@
 
     check-cast v2, Lde/rki/coronawarnapp/util/DataReset;
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel_Factory;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
+    iget-object v3, v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel_Factory;->shortcutsHelperProvider:Ljavax/inject/Provider;
 
     invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
+    check-cast v3, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel_Factory;->shortcutsHelperProvider:Ljavax/inject/Provider;
+    iget-object v0, v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel_Factory;->enfClientProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
+    check-cast v0, Lde/rki/coronawarnapp/nearby/ENFClient;
 
     new-instance v4, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
-    invoke-direct {v4, v1, v2, v3, v0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/DataReset;Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;)V
+    invoke-direct {v4, v1, v2, v3, v0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/DataReset;Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;Lde/rki/coronawarnapp/nearby/ENFClient;)V
 
     return-object v4
 .end method

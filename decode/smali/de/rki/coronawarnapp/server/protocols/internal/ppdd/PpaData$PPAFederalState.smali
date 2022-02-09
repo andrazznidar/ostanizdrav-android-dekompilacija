@@ -27,7 +27,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+.field private static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
 .field public static final enum FEDERAL_STATE_BB:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
@@ -99,7 +99,7 @@
 
 .field public static final enum UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-.field public static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
+.field private static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$EnumLiteMap<",
@@ -111,12 +111,12 @@
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 16
+    .locals 21
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
@@ -128,263 +128,263 @@
 
     sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_BW"
+    const-string v3, "FEDERAL_STATE_BW"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_BY"
+    const-string v5, "FEDERAL_STATE_BY"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BY:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BY:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v5, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_BE"
+    const-string v7, "FEDERAL_STATE_BE"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v8}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v5, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_BB"
+    const-string v9, "FEDERAL_STATE_BB"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v1, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v7, v9, v10, v10}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BB:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BB:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_HB"
+    const-string v11, "FEDERAL_STATE_HB"
 
-    const/4 v7, 0x5
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v1, v7, v7}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v9, v11, v12, v12}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HB:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HB:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v11, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_HH"
+    const-string v13, "FEDERAL_STATE_HH"
 
-    const/4 v8, 0x6
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v1, v8, v8}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v11, v13, v14, v14}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v11, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v13, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_HE"
+    const-string v15, "FEDERAL_STATE_HE"
 
-    const/4 v9, 0x7
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v1, v9, v9}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v13, v15, v14, v14}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v13, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v15, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_MV"
+    const-string v14, "FEDERAL_STATE_MV"
 
-    const/16 v10, 0x8
+    const/16 v12, 0x8
 
-    invoke-direct {v0, v1, v10, v10}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v15, v14, v12, v12}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_MV:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v15, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_MV:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v14, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_NI"
+    const-string v12, "FEDERAL_STATE_NI"
 
-    const/16 v11, 0x9
+    const/16 v10, 0x9
 
-    invoke-direct {v0, v1, v11, v11}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v14, v12, v10, v10}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_NI:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v14, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_NI:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v12, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_NRW"
+    const-string v10, "FEDERAL_STATE_NRW"
 
-    const/16 v12, 0xa
+    const/16 v8, 0xa
 
-    invoke-direct {v0, v1, v12, v12}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v12, v10, v8, v8}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_NRW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v12, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_NRW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v10, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_RP"
+    const-string v8, "FEDERAL_STATE_RP"
 
-    const/16 v13, 0xb
+    const/16 v6, 0xb
 
-    invoke-direct {v0, v1, v13, v13}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v10, v8, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_RP:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v10, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_RP:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v8, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_SL"
+    const-string v6, "FEDERAL_STATE_SL"
 
-    const/16 v14, 0xc
+    const/16 v4, 0xc
 
-    invoke-direct {v0, v1, v14, v14}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v8, v6, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SL:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v8, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SL:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v6, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_SN"
+    const-string v4, "FEDERAL_STATE_SN"
 
-    const/16 v15, 0xd
+    const/16 v2, 0xd
 
-    invoke-direct {v0, v1, v15, v15}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v6, v4, v2, v2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v6, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-instance v4, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_ST"
+    const-string v2, "FEDERAL_STATE_ST"
 
-    const/16 v15, 0xe
+    move-object/from16 v16, v6
 
-    invoke-direct {v0, v1, v15, v15}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    const/16 v6, 0xe
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_ST:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    invoke-direct {v4, v2, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v4, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_ST:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const-string v1, "FEDERAL_STATE_SH"
+    new-instance v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const/16 v15, 0xf
+    const-string v6, "FEDERAL_STATE_SH"
 
-    invoke-direct {v0, v1, v15, v15}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    move-object/from16 v17, v4
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    const/16 v4, 0xf
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    invoke-direct {v2, v6, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    const-string v1, "FEDERAL_STATE_TH"
+    sput-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const/16 v15, 0x10
+    new-instance v6, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    invoke-direct {v0, v1, v15, v15}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    const-string v4, "FEDERAL_STATE_TH"
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_TH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    move-object/from16 v18, v2
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    const/16 v2, 0x10
 
-    const-string v1, "UNRECOGNIZED"
+    invoke-direct {v6, v4, v2, v2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    const/16 v15, 0x11
+    sput-object v6, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_TH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    const/4 v14, -0x1
+    new-instance v4, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    invoke-direct {v0, v1, v15, v14}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
+    const-string v2, "UNRECOGNIZED"
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    move-object/from16 v19, v6
 
-    const/16 v1, 0x12
+    const/16 v6, 0x11
 
-    new-array v1, v1, [Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    move-object/from16 v20, v8
 
-    sget-object v14, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    const/4 v8, -0x1
 
-    aput-object v14, v1, v2
+    invoke-direct {v4, v2, v6, v8}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;-><init>(Ljava/lang/String;II)V
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v4, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    aput-object v2, v1, v3
+    const/16 v2, 0x12
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BY:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    new-array v2, v2, [Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
-    aput-object v2, v1, v4
+    const/4 v8, 0x0
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v0, v2, v8
 
-    aput-object v2, v1, v5
+    const/4 v0, 0x1
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_BB:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v1, v2, v0
 
-    aput-object v2, v1, v6
+    const/4 v0, 0x2
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HB:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v3, v2, v0
 
-    aput-object v2, v1, v7
+    const/4 v0, 0x3
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v5, v2, v0
 
-    aput-object v2, v1, v8
+    const/4 v0, 0x4
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_HE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v7, v2, v0
 
-    aput-object v2, v1, v9
+    const/4 v0, 0x5
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_MV:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v9, v2, v0
 
-    aput-object v2, v1, v10
+    const/4 v0, 0x6
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_NI:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v11, v2, v0
 
-    aput-object v2, v1, v11
+    const/4 v0, 0x7
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_NRW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v13, v2, v0
 
-    aput-object v2, v1, v12
+    const/16 v0, 0x8
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_RP:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v15, v2, v0
 
-    aput-object v2, v1, v13
+    const/16 v0, 0x9
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SL:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v14, v2, v0
 
-    const/16 v3, 0xc
+    const/16 v0, 0xa
 
-    aput-object v2, v1, v3
+    aput-object v12, v2, v0
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    const/16 v0, 0xb
 
-    const/16 v3, 0xd
+    aput-object v10, v2, v0
 
-    aput-object v2, v1, v3
+    const/16 v0, 0xc
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_ST:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v20, v2, v0
 
-    const/16 v3, 0xe
+    const/16 v0, 0xd
 
-    aput-object v2, v1, v3
+    aput-object v16, v2, v0
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_SH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    const/16 v0, 0xe
 
-    const/16 v3, 0xf
+    aput-object v17, v2, v0
 
-    aput-object v2, v1, v3
+    const/16 v0, 0xf
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->FEDERAL_STATE_TH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    aput-object v18, v2, v0
 
-    const/16 v3, 0x10
+    const/16 v0, 0x10
 
-    aput-object v2, v1, v3
+    aput-object v19, v2, v0
 
-    aput-object v0, v1, v15
+    aput-object v4, v2, v6
 
-    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
+    sput-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState;
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState$1;
 
@@ -395,7 +395,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

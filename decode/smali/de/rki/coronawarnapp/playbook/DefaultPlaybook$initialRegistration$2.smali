@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->initialRegistration(Ljava/lang/String;Lde/rki/coronawarnapp/verification/server/VerificationKeyType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->initialRegistration(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -33,16 +33,14 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook$initialRegistration$2"
     f = "DefaultPlaybook.kt"
     l = {
-        0x27
+        0x24
     }
     m = "invokeSuspend"
 .end annotation
 
 
 # instance fields
-.field public final synthetic $key:Ljava/lang/String;
-
-.field public final synthetic $keyType:Lde/rki/coronawarnapp/verification/server/VerificationKeyType;
+.field public final synthetic $request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
 .field public label:I
 
@@ -50,42 +48,45 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Ljava/lang/String;Lde/rki/coronawarnapp/verification/server/VerificationKeyType;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
+            "Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$key:Ljava/lang/String;
-
-    iput-object p3, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$keyType:Lde/rki/coronawarnapp/verification/server/VerificationKeyType;
+    iput-object p2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
     const/4 p1, 0x1
 
-    invoke-direct {p0, p1, p4}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p3}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     check-cast p1, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$key:Ljava/lang/String;
+    iget-object v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$keyType:Lde/rki/coronawarnapp/verification/server/VerificationKeyType;
-
-    invoke-direct {v0, v1, v2, v3, p1}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;-><init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Ljava/lang/String;Lde/rki/coronawarnapp/verification/server/VerificationKeyType;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, p1}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;-><init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -97,7 +98,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    .locals 5
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -109,7 +110,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -123,29 +124,27 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->verificationServer:Lde/rki/coronawarnapp/verification/server/VerificationServer;
+    iget-object p1, p1, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->verificationServer:Lde/rki/coronawarnapp/coronatest/server/VerificationServer;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$key:Ljava/lang/String;
-
-    iget-object v3, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$keyType:Lde/rki/coronawarnapp/verification/server/VerificationKeyType;
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->$request:Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;
 
     iput v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$2;->label:I
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_3
+    sget-object v2, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
-    sget-object v4, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
+    new-instance v3, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2;
 
-    new-instance v5, Lde/rki/coronawarnapp/verification/server/VerificationServer$retrieveRegistrationToken$2;
+    const/4 v4, 0x0
 
-    invoke-direct {v5, p1, v3, v1, v2}, Lde/rki/coronawarnapp/verification/server/VerificationServer$retrieveRegistrationToken$2;-><init>(Lde/rki/coronawarnapp/verification/server/VerificationServer;Lde/rki/coronawarnapp/verification/server/VerificationKeyType;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v1, p1, v4}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2;-><init>(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lde/rki/coronawarnapp/coronatest/server/VerificationServer;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v4, v5, p0}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v2, v3, p0}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -156,7 +155,4 @@
     :cond_2
     :goto_0
     return-object p1
-
-    :cond_3
-    throw v2
 .end method

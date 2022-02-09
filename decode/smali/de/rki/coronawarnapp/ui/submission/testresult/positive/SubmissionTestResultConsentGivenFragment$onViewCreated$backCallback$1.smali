@@ -19,17 +19,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;Z)V
+.method public constructor <init>(Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(Z)V"
-        }
-    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment$onViewCreated$backCallback$1;->this$0:Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;
 
-    invoke-direct {p0, p2}, Landroidx/activity/OnBackPressedCallback;-><init>(Z)V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Landroidx/activity/OnBackPressedCallback;-><init>(Z)V
 
     return-void
 .end method
@@ -37,11 +34,13 @@
 
 # virtual methods
 .method public handleOnBackPressed()V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment$onViewCreated$backCallback$1;->this$0:Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;->access$getViewModel$p(Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;)Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel;
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenFragment;->getViewModel()Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel;
 
     move-result-object v0
 

@@ -18,7 +18,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCalendarView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CalendarView.kt\nde/rki/coronawarnapp/ui/calendar/CalendarView$onItemClickListener$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,196:1\n1517#2:197\n1588#2,3:198\n1711#2,3:201\n1#3:204\n*E\n*S KotlinDebug\n*F\n+ 1 CalendarView.kt\nde/rki/coronawarnapp/ui/calendar/CalendarView$onItemClickListener$1\n*L\n81#1:197\n81#1,3:198\n83#1,3:201\n*E\n"
+    value = "SMAP\nCalendarView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CalendarView.kt\nde/rki/coronawarnapp/ui/calendar/CalendarView$onItemClickListener$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,196:1\n1547#2:197\n1618#2,3:198\n1741#2,3:201\n1#3:204\n*S KotlinDebug\n*F\n+ 1 CalendarView.kt\nde/rki/coronawarnapp/ui/calendar/CalendarView$onItemClickListener$1\n*L\n81#1:197\n81#1:198,3\n83#1:201,3\n*E\n"
 .end annotation
 
 
@@ -58,7 +58,7 @@
 
     const/16 v2, 0xa
 
-    invoke-static {v0, v2}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
 
@@ -159,18 +159,21 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarView;->listener:Lkotlin/jvm/functions/Function1;
 
-    if-eqz p1, :cond_7
+    if-nez p1, :cond_4
 
+    goto :goto_5
+
+    :cond_4
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_4
+    :cond_5
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -182,28 +185,27 @@
 
     iget-boolean v2, v2, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->isSelected:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     move-object v1, v4
 
     :goto_3
     check-cast v1, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;
 
-    if-eqz v1, :cond_6
+    if-nez v1, :cond_7
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->date:Lorg/joda/time/LocalDate;
-
-    :cond_6
-    invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkotlin/Unit;
+    goto :goto_4
 
     :cond_7
+    iget-object v4, v1, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->date:Lorg/joda/time/LocalDate;
+
+    :goto_4
+    invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :goto_5
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

@@ -23,11 +23,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
 
-    const v0, 0x7f04031f
+    sget v0, Landroidx/preference/R$attr;->switchPreferenceStyle:I
 
     const v1, 0x101036d
 
-    invoke-static {p1, v0, v1}, Landroidx/core/app/AppOpsManagerCompat;->getAttr(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Landroidx/core/content/res/TypedArrayUtils;->getAttr(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -47,17 +47,19 @@
 
     move-result-object p1
 
-    const/4 p2, 0x7
+    sget p2, Landroidx/preference/R$styleable;->SwitchPreference_summaryOn:I
 
-    invoke-static {p1, p2, v1}, Landroidx/core/app/AppOpsManagerCompat;->getString(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    sget v0, Landroidx/preference/R$styleable;->SwitchPreference_android_summaryOn:I
+
+    invoke-static {p1, p2, v0}, Landroidx/core/content/res/TypedArrayUtils;->getString(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Landroidx/preference/TwoStatePreference;->mSummaryOn:Ljava/lang/CharSequence;
 
-    const/4 p2, 0x6
+    sget p2, Landroidx/preference/R$styleable;->SwitchPreference_summaryOff:I
 
-    const/4 v0, 0x1
+    sget v0, Landroidx/preference/R$styleable;->SwitchPreference_android_summaryOff:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -72,9 +74,9 @@
     :cond_0
     iput-object p2, p0, Landroidx/preference/TwoStatePreference;->mSummaryOff:Ljava/lang/CharSequence;
 
-    const/16 p2, 0x9
+    sget p2, Landroidx/preference/R$styleable;->SwitchPreference_switchTextOn:I
 
-    const/4 v0, 0x3
+    sget v0, Landroidx/preference/R$styleable;->SwitchPreference_android_switchTextOn:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -89,9 +91,9 @@
     :cond_1
     iput-object p2, p0, Landroidx/preference/SwitchPreference;->mSwitchOn:Ljava/lang/CharSequence;
 
-    const/16 p2, 0x8
+    sget p2, Landroidx/preference/R$styleable;->SwitchPreference_switchTextOff:I
 
-    const/4 v0, 0x4
+    sget v0, Landroidx/preference/R$styleable;->SwitchPreference_android_switchTextOff:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -106,9 +108,9 @@
     :cond_2
     iput-object p2, p0, Landroidx/preference/SwitchPreference;->mSwitchOff:Ljava/lang/CharSequence;
 
-    const/4 p2, 0x5
+    sget p2, Landroidx/preference/R$styleable;->SwitchPreference_disableDependentsState:I
 
-    const/4 v0, 0x2
+    sget v0, Landroidx/preference/R$styleable;->SwitchPreference_android_disableDependentsState:I
 
     invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 

@@ -289,7 +289,7 @@
     :cond_3
     iget-object p1, p1, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->mCurrentState:Ljava/lang/Object;
 
-    invoke-interface {p0, p1}, Landroidx/work/impl/constraints/ConstraintListener;->onConstraintChanged(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/controllers/ConstraintController;->onConstraintChanged(Ljava/lang/Object;)V
 
     :cond_4
     monitor-exit v0
@@ -427,11 +427,9 @@
     goto :goto_0
 
     :cond_3
-    iget-object p2, p1, Landroidx/work/impl/constraints/WorkConstraintsTracker;->mCallback:Landroidx/work/impl/constraints/WorkConstraintsCallback;
-
-    if-eqz p2, :cond_4
-
     iget-object p1, p1, Landroidx/work/impl/constraints/WorkConstraintsTracker;->mCallback:Landroidx/work/impl/constraints/WorkConstraintsCallback;
+
+    if-eqz p1, :cond_4
 
     invoke-interface {p1, v1}, Landroidx/work/impl/constraints/WorkConstraintsCallback;->onAllConstraintsMet(Ljava/util/List;)V
 
@@ -460,11 +458,9 @@
     monitor-enter v0
 
     :try_start_1
-    iget-object v1, p1, Landroidx/work/impl/constraints/WorkConstraintsTracker;->mCallback:Landroidx/work/impl/constraints/WorkConstraintsCallback;
-
-    if-eqz v1, :cond_6
-
     iget-object p1, p1, Landroidx/work/impl/constraints/WorkConstraintsTracker;->mCallback:Landroidx/work/impl/constraints/WorkConstraintsCallback;
+
+    if-eqz p1, :cond_6
 
     invoke-interface {p1, p2}, Landroidx/work/impl/constraints/WorkConstraintsCallback;->onAllConstraintsNotMet(Ljava/util/List;)V
 

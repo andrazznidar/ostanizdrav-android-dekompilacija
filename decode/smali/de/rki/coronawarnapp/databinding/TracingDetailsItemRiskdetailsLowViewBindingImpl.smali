@@ -10,8 +10,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -23,17 +21,21 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09036b
+    const v1, 0x7f0a05ca
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09036c
+    const v1, 0x7f0a05cc
 
     const/4 v2, 0x3
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a05cb
+
+    const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -41,11 +43,21 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 10
+    .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
     const/4 v2, 0x0
 
@@ -69,13 +81,21 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x4
 
     aget-object v1, v0, v1
 
     move-object v9, v1
 
     check-cast v9, Landroid/widget/TextView;
+
+    const/4 v1, 0x3
+
+    aget-object v1, v0, v1
+
+    move-object v10, v1
+
+    check-cast v10, Landroid/widget/TextView;
 
     const/4 v6, 0x0
 
@@ -85,7 +105,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v10}, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v3, -0x1
 
@@ -97,15 +117,13 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBinding;->riskDetailsInformationBody:Landroid/widget/TextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -156,16 +174,16 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v2, v5, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedKeyCount:I
+    iget v2, v5, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedRiskCount:I
 
     if-lez v2, :cond_0
 
-    const v2, 0x7f1202bb
+    const v2, 0x7f13041b
 
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f1202ba
+    const v2, 0x7f13041a
 
     :goto_0
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -181,7 +199,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBinding;->riskDetailsInformationBody:Landroid/widget/TextView;
 
-    invoke-static {v0, v4}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v4}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_2
     return-void
@@ -265,6 +283,14 @@
 
 .method public setInfo(Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Info"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemRiskdetailsLowViewBinding;->mInfo:Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;
 
@@ -283,11 +309,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1c
+    const/16 p1, 0x1b
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

@@ -34,7 +34,7 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
 
 .field public static final HIGH_FIELD_NUMBER:I = 0x3
 
@@ -42,7 +42,7 @@
 
 .field public static final MID_FIELD_NUMBER:I = 0x2
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -54,14 +54,70 @@
 
 
 # instance fields
-.field public high_:D
+.field private high_:D
 
-.field public low_:D
+.field private low_:D
 
-.field public mid_:D
+.field private mid_:D
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearHigh(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->clearHigh()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearLow(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->clearLow()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMid(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->clearMid()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHigh(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->setHigh(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetLow(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->setLow(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMid(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->setMid(D)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -76,66 +132,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2000()Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$2100(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->setLow(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2200(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->clearLow()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2300(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->setMid(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2400(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->clearMid()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2500(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->setHigh(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2600(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->clearHigh()V
 
     return-void
 .end method
@@ -449,7 +449,7 @@
 
 # virtual methods
 .method public final dynamicMethod(Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 12
+    .locals 10
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
@@ -634,13 +634,13 @@
 
     check-cast p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;
 
-    iget-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
 
-    const-wide/16 v10, 0x0
+    const-wide/16 p1, 0x0
 
-    cmpl-double p1, p1, v10
+    cmpl-double v3, v5, p1
 
-    if-eqz p1, :cond_8
+    if-eqz v3, :cond_8
 
     move v4, v2
 
@@ -650,13 +650,11 @@
     move v4, v1
 
     :goto_4
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
 
-    iget-wide p1, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
+    cmpl-double v3, v8, p1
 
-    cmpl-double p1, p1, v10
-
-    if-eqz p1, :cond_9
+    if-eqz v3, :cond_9
 
     move v7, v2
 
@@ -666,21 +664,19 @@
     move v7, v1
 
     :goto_5
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
-
     move-object v3, v0
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
-    move-result-wide p1
+    move-result-wide v3
 
-    iput-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
+    iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->low_:D
 
-    iget-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
 
-    cmpl-double p1, p1, v10
+    cmpl-double v3, v5, p1
 
-    if-eqz p1, :cond_a
+    if-eqz v3, :cond_a
 
     move v4, v2
 
@@ -690,13 +686,11 @@
     move v4, v1
 
     :goto_6
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
 
-    iget-wide p1, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
+    cmpl-double v3, v8, p1
 
-    cmpl-double p1, p1, v10
-
-    if-eqz p1, :cond_b
+    if-eqz v3, :cond_b
 
     move v7, v2
 
@@ -706,53 +700,49 @@
     move v7, v1
 
     :goto_7
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
-
     move-object v3, v0
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
-    move-result-wide p1
+    move-result-wide v3
 
-    iput-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
+    iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->mid_:D
 
-    iget-wide p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->high_:D
+    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->high_:D
 
-    cmpl-double p1, p1, v10
+    cmpl-double v5, v3, p1
 
-    if-eqz p1, :cond_c
+    if-eqz v5, :cond_c
 
-    move p1, v2
+    move v5, v2
 
     goto :goto_8
 
     :cond_c
-    move p1, v1
+    move v5, v1
 
     :goto_8
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->high_:D
+    iget-wide v6, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->high_:D
 
-    iget-wide v5, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->high_:D
+    cmpl-double p1, v6, p1
 
-    cmpl-double p2, v5, v10
+    if-eqz p1, :cond_d
 
-    if-eqz p2, :cond_d
-
-    move p2, v2
+    move p1, v2
 
     goto :goto_9
 
     :cond_d
-    move p2, v1
+    move p1, v1
 
     :goto_9
-    iget-wide v5, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;->high_:D
-
-    move v1, p1
+    move v1, v5
 
     move-wide v2, v3
 
-    move v4, p2
+    move v4, p1
+
+    move-wide v5, v6
 
     invoke-interface/range {v0 .. v6}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
@@ -765,7 +755,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights$Builder-IA;)V
 
     return-object p1
 
@@ -783,6 +773,8 @@
     invoke-direct {p1}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Weights;-><init>()V
 
     return-object p1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

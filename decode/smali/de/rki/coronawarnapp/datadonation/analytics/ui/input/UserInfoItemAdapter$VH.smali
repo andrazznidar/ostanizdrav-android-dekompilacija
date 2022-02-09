@@ -22,19 +22,15 @@
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 3
 
-    const-string v0, "parent"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v0, 0x7f0c001e
+    const v0, 0x7f0d001e
 
     invoke-direct {p0, v0, p1}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;-><init>(ILandroid/view/ViewGroup;)V
 
     iget-object p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v0, 0x7f090240
+    const v0, 0x7f0a03cf
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p1, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
@@ -42,9 +38,9 @@
 
     if-eqz v1, :cond_0
 
-    const v0, 0x7f09033e
+    const v0, 0x7f0a0570
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p1, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v2
 
@@ -57,10 +53,6 @@
     check-cast p1, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p1, v1, v2}, Lde/rki/coronawarnapp/databinding/AnalyticsPpaUserinfoInputAdapterItemBinding;-><init>(Landroid/widget/FrameLayout;Landroid/widget/TextView;Landroid/widget/RadioButton;)V
-
-    const-string p1, "AnalyticsPpaUserinfoInpu\u2026temBinding.bind(itemView)"
-
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/ui/input/UserInfoItemAdapter$VH;->viewBinding:Lde/rki/coronawarnapp/databinding/AnalyticsPpaUserinfoInputAdapterItemBinding;
 

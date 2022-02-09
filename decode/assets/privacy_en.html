@@ -35,8 +35,11 @@
     -   with the MJU: dpo.mju@gov.si.
 </p>
 <p>In the event of confirmed SARS-CoV-2 coronavirus infection, and if you enable exposure logging, you warn also users of other mobile App in Member States of European Union (which are integrated into the daily exchange system via a central server (EU Federation Gateway Service – EFGS) managed by the European Commission). In this case, the participating European Union Member States, represented by the designated national authorities or official bodies determine together the purpose and means of processing of personal data through the federation gateway and are therefore joint controllers. National Joint Controllers and their privacy policies are available at
-    https://ec.europa.eu/health/sites/health/files/ehealth/docs/gateway_jointcontrollers_en.pdf.
+    <a href = »https://ec.europa.eu/health/sites/health/files/ehealth/docs/gateway_jointcontrollers_en.pdf«>
+        Gateway joint controllers</a>.
+
 </p>
+<p> If you wish, you can download the EU digital COVID certificate, issued through the zVem portal and other competent institutions, to your phone in the #StayHealth application. To do this, scan the corresponding QR code of the EU digital COVID certificate and thus enable the storage and display of such a certificate on the phone. </p>
 <h2>
 
     2. Is using the App voluntary?
@@ -64,11 +67,13 @@
     <br>
 
     If you decide to use the App, you must press the &quot;Enable exposure logging&quot; button, when you log in the App for the first time. Without your consent, the App cannot access the functionality of exposure logging on your smartphone. <br> <br>
-
+    EU digital COVID certificate is stored in the application and is not forwarded to the central server or. European server. The said certificate contains personal data, which are not processed by the application, nor by the MPA and the NIJZ. The issuance and verification of the EU digital COVID certificate takes place independently and separately from the mobile application and on another legal basis. The mobile app is just a means of storing the certificate instead of in physical or any other form. However, in the process of verifying its authenticity, only the validity and authenticity of the certificate are verified, and the issuer of the certificate is verified. In this procedure, personal data on the certificate are not exchanged, as the authentication application performs the verification by verifying the public signature key belonging to the certificate issuers and entered by the competent authorities in the verification application at European level.
+    <br>
+    You can remove the EU digital COVID certificate from the #StayHealth mobile application at any time. <br>
     You can disable the functionality of exposure logging at any time in the App, which means that the application cannot work at that time.  <br>
 
     <br>
-
+    However, special consent is required for data processing performed for the purpose of informing other users of the application that you are infected with SARS-CoV-2. <br> <br>
     Special consent is required for processing of data carried out for the purpose of informing other users of the App that you are infected with SARS-CoV-2.
 
 </p>
@@ -79,15 +84,14 @@
 
 </h2>
 
-<p>
+The basis for the processing of pseudonymous personal data is the Temporary Measures for Mitigation and Elimination of Consequences Act COVID-19, which was published in the Official Gazette of the Republic of Slovenia, no. 152/20 (and supplemented by the Intervention Measures Act for Mitigating the Consequences of the Second Wave of the COVID-19 Epidemic (Official Gazette of the Republic of Slovenia, No. 175/20)), which stipulates that the installation and use of the application is voluntary.
+<br>
+That Interim Mitigation and Elimination Measures Act COVID-19 sets out the purposes of setting up and operating the application, its design details and its interoperability with the central system provided by the European Commission (Articles 46 to 54).
+<br>
 
-    In principle, the NIJZ and MJU will process your data only on the basis of your consent granted pursuant to Article 6(a) of the General Data Protection Regulation (GDPR), in conjunction with Article 9, second paragraph, of the Personal Data Protection Act, through your agreement with the functionality &quot;Enable exposure logging&quot;. <br>
+<br>
 
-    <br>
-
-    You can withdraw your consent at any time. More information about the cancellation can be found in Section 11. <br>
-
-    <br>
+You can stop using the application at any time, you can read more about this in Chapter 5. <br>
 
     The application does not log your exposure if you:
 
@@ -111,10 +115,19 @@ The transmission of the confirmed SARS-CoV-2 infection to the infected code serv
 
 <h2>
 
-    5. Withdrawal of consent
+    5. To stop using the application
 
 </h2>
+<br>
+<p>
 
+
+    You can stop using the app at any time, with effect from now on. However, this does not affect the legality of processing before you stop using the application.
+
+    <br>
+
+    You can stop using the exposure recording functionality by transmitting random transmission codes by disabling the functionality with the toggle switch in the application or deleting the application. If you choose to reuse the exposure logging functionality, you can re-enable the functionality with the toggle button or reinstall the application. NIJZ and MJU do not have access to random transmission codes that have been transmitted via bluetooth to another user, but the application is prepared in such a way that they are deleted after 14 days.
+</p>
 <p>
 
     You have the right to withdraw any consent you granted the NIJZ and MJU in the App at any time with effect for the future. Please note that this will not affect the lawfulness of the processing before the withdrawal. <br><br>
@@ -151,7 +164,7 @@ The transmission of the confirmed SARS-CoV-2 infection to the infected code serv
 
     <br>
 
-    <li>An individual with confirmed infection with SARS-CoV-2 is contacted over the phone by the NIJZ which provides them with the confirmation code (“teleTAN”). This allows the individual to confirm that they are infected within one hour through the App. After confirmation, the verification key is converted into proof by using the registration token, which then provides information on the daily keys to the infected key server. Daily keys of the users diagnosed with SARS-CoV-2 infection are stored in the infected key server for 14 days, then they are automatically deleted. Once a day the App retrieves from the infected key server information on the infected keys and calculates the data in such a way that it complies and encrypts the individual daily key and compares is with the transmitting code of its encounters (i.e. the users of the App that were in detectable vicinity of Bluetooth area of the user’s phone). Only when a match is established, can the App open a set of metadata and assesses the risk of infection.</li>
+    <li> Upon receiving an SMS message about a confirmed SARS-CoV-2 infection, the individual also receives a confirmation code ("teleTAN"), with which the individual can confirm that he is infected within three hours via the application. After confirmation, the confirmation code is changed into a proof through the use of a registration token, which then transmits the data on daily keys to the server of infected keys. The daily keys of users with a confirmed infection are stored on the infected key server for 14 days, then automatically deleted, up to six times a day the application retrieves data on infected keys from the infected key server, recalculates this data in a way with the transmission code of the contacts (ie the users of the application who were in the Bluetooth detection area of the user's phone), only when a match is found can the application open the metadata set and assess the risk of infection. </li>
 
 </ul>
 
@@ -198,7 +211,9 @@ The transmission of the confirmed SARS-CoV-2 infection to the infected code serv
         Notifying other users of your infection.
 
     </li>
-
+  <li>  Each time the mobile application exchanges data with the back-end system, access data is monitored. This is necessary so that the application can retrieve the correct data or transfer the data from the phone to the server. Access data is processed to maintain and protect the technical data operation of the application and the back-end system. You will not be identified as an application user from this information, nor will a user profile be created.
+    The IP number assigned by your operator from which your mobile device accesses the back-end system is stored according to the rules for storing access logs. This data is stored on the back-end system server for up to 6 months and in a backup for up to 12 months, after which it is deleted. Further processing of the IP number is not possible without a court order. It is not possible to identify an individual by the data controller on the basis of these records.
+  </li>
 </ul>
 
 <p>
@@ -347,7 +362,7 @@ The transmission of the confirmed SARS-CoV-2 infection to the infected code serv
 
 <p>
 
-    If you enable the exposure logging feature, then once a day, while the App runs in the background (or when you tap on “Update”), it will retrieve from the infected keys server a list of transmit codes from users who have tested positive and shared their own transmit codes. The retrieval is carried out in a way that the App calls the server which then provides the codes as an automated response. The App shares these transmit codes with your smartphone’s exposure logging functionality, which then compares them with the transmit codes stored in your smartphone’s exposure log. If your smartphone’s exposure logging functionality detects a match, it transfers the contact data (date, duration, signal strength) to the App, but not the transmit codes of the encounter in question.
+    If you enable the exposure logging feature, then up to six times a day, while the App runs in the background (or when you tap on “Update”), it will retrieve from the infected keys server a list of transmit codes from users who have tested positive and shared their own transmit codes. The retrieval is carried out in a way that the App calls the server which then provides the codes as an automated response. The App shares these transmit codes with your smartphone’s exposure logging functionality, which then compares them with the transmit codes stored in your smartphone’s exposure log. If your smartphone’s exposure logging functionality detects a match, it transfers the contact data (date, duration, signal strength) to the App, but not the transmit codes of the encounter in question.
 
 </p>
 
@@ -363,11 +378,7 @@ The transmission of the confirmed SARS-CoV-2 infection to the infected code serv
 
 </p>
 
-<p>
 
-    The legal basis for the processing of your access data, contact data and data on random daily keys of individuals that wishes to share their information of infection is the consent which you gave when enabling the exposure logging feature.
-
-</p>
 
 <h3>
 
@@ -389,7 +400,7 @@ The transmission of the confirmed SARS-CoV-2 infection to the infected code serv
 
 </p>
 
-<h3>c. Using the App only for information purposes</h3>
+<h3>d. Using the App only for information purposes</h3>
 
 
 
@@ -399,7 +410,7 @@ The transmission of the confirmed SARS-CoV-2 infection to the infected code serv
 
 </p>
 
-<h3>d. Contact journal</h3>
+<h3>e. Contact journal</h3>
 <p>Within the App, a contact journal is established, in which you can enter certain people, that you have met and also certain places where you were located in the past 14 days. Its use is in your domain as app user and is intended, as a digital accessory, for constructive cooperation with the epidemiological profession in the case of confirmed infection with SARS-CoV-2, when you are asked by the NIJZ for help in establishing the epidemiological chain of contacts. <br/>
 
 The data you enter in the contact journal is stored locally on your mobile phone and is only accessible to you. NIJZ and MJU, as well as any other body of public sector, cannot access to this data. Contact journal is neither related to your contact nor to other features of the App. Data in contact journal can be added, deleted and exported in a text file. If you do not delete date from the contact journal, data will be deleted automatically after 16 days. <br/>
@@ -407,6 +418,37 @@ The data you enter in the contact journal is stored locally on your mobile phone
 When using the contact journal you should be aware that you are responsible for the data you enter into it. For this reason, we kindly ask you to consider the privacy of others when entering someone’s date in contact journal. You should not share the date to unauthorized persons, we also advise against their transfer via questionable or unverified means of communications. Contact journal is intended for the transmission of relevant data to the NIJZ, which will in any specific case inform you which data would be helpful to it and through which communications channel it should be transferred to NIJZ.
 
 </p>
+    <h3> e. Read the QR code on the location (QR code) <h3>
+        <p> On-site QR code reading functionality is integrated into the existing daily key exchange process. The responsible person at the location prepares a QR code and publishes it in a visible place that you can scan. ID code scanned or the read QR code is saved in the application. </p>
+        <p> In accordance with the content of the functionality, it is intended for organizers of events and activities of two types, namely: 1. meetings, social events or. smaller meetings; 2. contrary to the previous point, for activities that do not have a specific duration, such as restaurants, hairdressers and the like. <p/>
+        <p> In case of confirmed SARS-CoV-2 infection, the user enters the TAN code into the application as before. With the new functionality, in addition to the daily keys, it also sends the ID codes of the venues to the back-end server, from where other users regularly download them and compare them with the recorded entries on the mobile device. If they match and the time spent by the participant at the venue overlaps long enough with the presence of an infected individual, the participant receives an alert in the #StayHealth app, much like daily key exposure alerts are issued. If the presence overlaps for less than 10 minutes, users receive a low-risk exposure alert (orange tile). If the user's presence overlaps with the presence of an infected person for 10 minutes or more, users will receive a high-risk exposure warning (red plate).
+        </p>
+        <h3> f. Retention of EU DIGITAL COVID CERTIFICATE </h3>
+        <p> If you wish, you can download the EU digital COVID certificate issued by the zVem portal and other competent institutions to your phone in the #StayHealth application. To do this, scan the corresponding QR code of the EU digital COVID certificate and thus enable the storage and display of such a certificate on the phone. </p>
+        The EU digital COVID certificate is governed by Regulation (EU) 2021/953 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 14 June 2021 on a framework for issuing, verifying and recognizing interoperable vaccination, test and disease certificates in relation to COVID-19. COVID EU certificate) to facilitate free movement during the COVID-19 pandemic (Official Journal of the EU, No. L 211/1 of 15.6.2021).
+        </p>
+
+        <h3> g. ANALYTICS </h3>
+        <p> In order to monitor the effectiveness of the application in informing users about SARS-CoV-2 exposure, t is enabled. i. analytics. In other words, the analyst enables the monitoring of certain data for statistical purposes, as a basis for determining the usefulness of the use or. efficiency of the mobile application #StayHealthy. The following data will be processed with this type of functionality, with which you must additionally agree: </p>
+        <ul> The person who entered the TAN code sends:
+            <li> Information if it has warned others about potential exposure. </li>
+            <li> Information on whether she canceled the steps to alert others. </li>
+            <li> Information on whether she provided details of the onset of symptoms. </li>
+            <li> Information about the notification she received about warning others. </li>
+        </ul>
+        <ul> An app user who was in contact with a person who was later confirmed to be infected with SARS-CoV-2:
+            <li> Changes in alert history from the previous day. </li>
+            <li> Information about the risk that was displayed during the data transfer. </li>
+            <li> Information on the basis for calculating the risk of infection according to the exposure. </li>
+            <li> Information on how many days have passed since the last increased risk notification. </li>
+
+            <ul> Both send:
+                <li> Mobile phone operating system information. </li>
+                <li> And optional age and region information. </li>
+            </ul>
+            <p> The NIJZ will collect data into statistics and analyze them to assess the effectiveness of the #OstaniZdrav mobile application. </p>
+
+
 <h2>9.  What permissions and features does the App require? </h2>
 
 <p>
@@ -555,8 +597,9 @@ When using the contact journal you should be aware that you are responsible for 
     For the purpose of operation of the mobile application and other mobile applications of the Member States of the European Union, randomly assigned daily keys are stored on the European central server and transmitted by the server from the Republic of Slovenia..
 
 </p>
-
-<h2>13. Your other rights under the Personal Data Protection Act and General Data Protection Regulation</h2>
+   <p>         Enabling the functionality to notify other users of the app can lead to communication between apps no matter where you are - for example, a holiday abroad, a business trip. Otherwise, data generated during the use of the application is processed on servers in the Republic of Slovenia and the European central server provided by the European Commission for the purpose of connecting back-end systems of EU Member States, and are subject to strict rules of the General Data Protection Regulation.
+   </p>
+            <h2>13. Your other rights under the Personal Data Protection Act and General Data Protection Regulation</h2>
 
 <p>
 
@@ -592,8 +635,11 @@ When using the contact journal you should be aware that you are responsible for 
 
     <li>Information on the right to lodge a complaint with the supervisory authority: You can submit your complaint to the Information Commissioner, Dunajska cesta 22, 1000 Ljubljana, e-mail address: gp.ip@ip-rs.si, website: www.ip-rs.si. </li>
 
+    <li> This also applies to the European Commission, which provides the European Central Server and the competent national authorities or official bodies of the Member States that have acceded to the cross-border exchange of data, provided that the exposure can be recorded. Any claims relating to the exercise of the rights of individuals in accordance with the General Data Protection Regulation relating to another Member State or the European Commission may be forwarded directly to the controller in the Republic of Slovenia; however, you can also contact the Member State's controller or the European Commission (contact details of the Commission's Data Protection Officer - so-called DPO: data-protection-officer@ec.europa.eu). <br>
+        Because in the case of EU retention of the digital COVID certificate, the MPA and the NIJZ do not process the personal data of the above-mentioned rights in relation to this functionality cannot be exercised.
+    </li>
 </ul>
-<h2>14. Statistics</h2>
+            <h2>14. Statistics</h2>
 <p>For the purpose of statistics, data on the number of issued teleTAN codes and the number of used teleTAN codes are periodically published from the verification server. The data is retrieved from the stored condensed values on the verification server. The data are published on the gov.si website, and the entire statistics on the OPSI portal. Data on the number of downloads of the application from Google play and Apple store are also published on the gov.si website, and the entire statistics on the OPSI portal.</p>
 
 <p>

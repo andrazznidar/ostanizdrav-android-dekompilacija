@@ -27,7 +27,7 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+.field private static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
 .field public static final enum RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
@@ -47,7 +47,7 @@
 
 .field public static final enum UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-.field public static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
+.field private static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$EnumLiteMap<",
@@ -59,12 +59,12 @@
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 12
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
@@ -76,71 +76,63 @@
 
     sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_UNKNOWN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    new-instance v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    const-string v1, "RISK_LEVEL_NONE"
+    const-string v3, "RISK_LEVEL_NONE"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_NONE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_NONE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    new-instance v3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    const-string v1, "RISK_LEVEL_LOW"
+    const-string v5, "RISK_LEVEL_LOW"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_LOW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    sput-object v3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_LOW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    new-instance v5, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    const-string v1, "RISK_LEVEL_HIGH"
+    const-string v7, "RISK_LEVEL_HIGH"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v8}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    sput-object v5, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    new-instance v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    const-string v1, "UNRECOGNIZED"
+    const-string v9, "UNRECOGNIZED"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    const/4 v7, -0x1
+    const/4 v11, -0x1
 
-    invoke-direct {v0, v1, v6, v7}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v7, v9, v10, v11}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    sput-object v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    const/4 v1, 0x5
+    const/4 v9, 0x5
 
-    new-array v1, v1, [Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    new-array v9, v9, [Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
-    sget-object v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_UNKNOWN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    aput-object v0, v9, v2
 
-    aput-object v7, v1, v2
+    aput-object v1, v9, v4
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_NONE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    aput-object v3, v9, v6
 
-    aput-object v2, v1, v3
+    aput-object v5, v9, v8
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_LOW:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    aput-object v7, v9, v10
 
-    aput-object v2, v1, v4
-
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->RISK_LEVEL_HIGH:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
-
-    aput-object v2, v1, v5
-
-    aput-object v0, v1, v6
-
-    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    sput-object v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel$1;
 
@@ -151,7 +143,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

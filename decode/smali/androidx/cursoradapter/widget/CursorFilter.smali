@@ -51,9 +51,7 @@
 
     check-cast v0, Landroidx/appcompat/widget/SuggestionsAdapter;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_4
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-nez p1, :cond_0
 
@@ -67,31 +65,33 @@
     move-result-object p1
 
     :goto_0
-    iget-object v2, v0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView:Landroidx/appcompat/widget/SearchView;
+    iget-object v1, v0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView:Landroidx/appcompat/widget/SearchView;
 
-    invoke-virtual {v2}, Landroid/view/ViewGroup;->getVisibility()I
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getVisibility()I
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_2
+    const/4 v2, 0x0
 
-    iget-object v2, v0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView:Landroidx/appcompat/widget/SearchView;
+    if-nez v1, :cond_2
 
-    invoke-virtual {v2}, Landroid/view/ViewGroup;->getWindowVisibility()I
+    iget-object v1, v0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchView:Landroidx/appcompat/widget/SearchView;
 
-    move-result v2
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getWindowVisibility()I
 
-    if-eqz v2, :cond_1
+    move-result v1
+
+    if-eqz v1, :cond_1
 
     goto :goto_1
 
     :cond_1
     :try_start_0
-    iget-object v2, v0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
+    iget-object v1, v0, Landroidx/appcompat/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
     const/16 v3, 0x32
 
-    invoke-virtual {v0, v2, p1, v3}, Landroidx/appcompat/widget/SuggestionsAdapter;->getSearchManagerSuggestions(Landroid/app/SearchableInfo;Ljava/lang/String;I)Landroid/database/Cursor;
+    invoke-virtual {v0, v1, p1, v3}, Landroidx/appcompat/widget/SuggestionsAdapter;->getSearchManagerSuggestions(Landroid/app/SearchableInfo;Ljava/lang/String;I)Landroid/database/Cursor;
 
     move-result-object p1
 
@@ -108,13 +108,13 @@
 
     const-string v0, "SuggestionsAdapter"
 
-    const-string v2, "Search suggestions query threw an exception."
+    const-string v1, "Search suggestions query threw an exception."
 
-    invoke-static {v0, v2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_2
     :goto_1
-    move-object p1, v1
+    move-object p1, v2
 
     :goto_2
     new-instance v0, Landroid/widget/Filter$FilterResults;
@@ -138,13 +138,10 @@
 
     iput p1, v0, Landroid/widget/Filter$FilterResults;->count:I
 
-    iput-object v1, v0, Landroid/widget/Filter$FilterResults;->values:Ljava/lang/Object;
+    iput-object v2, v0, Landroid/widget/Filter$FilterResults;->values:Ljava/lang/Object;
 
     :goto_3
     return-object v0
-
-    :cond_4
-    throw v1
 .end method
 
 .method public publishResults(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterResults;)V

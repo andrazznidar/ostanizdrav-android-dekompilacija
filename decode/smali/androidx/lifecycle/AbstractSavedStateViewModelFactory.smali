@@ -14,6 +14,16 @@
 # direct methods
 .method public constructor <init>(Landroidx/savedstate/SavedStateRegistryOwner;Landroid/os/Bundle;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "owner",
+            "defaultArgs"
+        }
+    .end annotation
 
     invoke-direct {p0}, Landroidx/lifecycle/ViewModelProvider$KeyedFactory;-><init>()V
 
@@ -38,6 +48,15 @@
 # virtual methods
 .method public final create(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "modelClass"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -72,6 +91,17 @@
 
 .method public final create(Ljava/lang/String;Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "key",
+            "modelClass"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -89,41 +119,25 @@
 
     iget-object v2, p0, Landroidx/lifecycle/AbstractSavedStateViewModelFactory;->mDefaultArgs:Landroid/os/Bundle;
 
-    invoke-virtual {v0, p1}, Landroidx/savedstate/SavedStateRegistry;->consumeRestoredStateForKey(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-static {v0, v1, p1, v2}, Landroidx/lifecycle/SavedStateHandleController;->create(Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/Lifecycle;Ljava/lang/String;Landroid/os/Bundle;)Landroidx/lifecycle/SavedStateHandleController;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-static {v3, v2}, Landroidx/lifecycle/SavedStateHandle;->createHandle(Landroid/os/Bundle;Landroid/os/Bundle;)Landroidx/lifecycle/SavedStateHandle;
+    iget-object v1, v0, Landroidx/lifecycle/SavedStateHandleController;->mHandle:Landroidx/lifecycle/SavedStateHandle;
 
-    move-result-object v2
+    move-object v2, p0
 
-    new-instance v3, Landroidx/lifecycle/SavedStateHandleController;
+    check-cast v2, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;
 
-    invoke-direct {v3, p1, v2}, Landroidx/lifecycle/SavedStateHandleController;-><init>(Ljava/lang/String;Landroidx/lifecycle/SavedStateHandle;)V
+    const-string v3, "key"
 
-    invoke-virtual {v3, v0, v1}, Landroidx/lifecycle/SavedStateHandleController;->attachToLifecycle(Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/Lifecycle;)V
-
-    invoke-static {v0, v1}, Landroidx/lifecycle/SavedStateHandleController;->tryToAddRecreator(Landroidx/savedstate/SavedStateRegistry;Landroidx/lifecycle/Lifecycle;)V
-
-    iget-object v0, v3, Landroidx/lifecycle/SavedStateHandleController;->mHandle:Landroidx/lifecycle/SavedStateHandle;
-
-    move-object v1, p0
-
-    check-cast v1, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;
-
-    const-string v2, "key"
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p1, "modelClass"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p1, "handle"
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p1, v1, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;->creators:Ljava/util/Map;
+    iget-object p1, v2, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;->creators:Ljava/util/Map;
 
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -136,17 +150,17 @@
     :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
     const/4 v4, 0x0
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    move-object v5, v2
+    move-object v5, v3
 
     check-cast v5, Ljava/util/Map$Entry;
 
@@ -165,73 +179,66 @@
     goto :goto_0
 
     :cond_1
-    move-object v2, v4
+    move-object v3, v4
 
     :goto_0
-    check-cast v2, Ljava/util/Map$Entry;
+    check-cast v3, Ljava/util/Map$Entry;
 
-    if-eqz v2, :cond_9
+    if-nez v3, :cond_2
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-object p1, v4
+
+    goto :goto_1
+
+    :cond_2
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactory;
 
-    if-eqz p1, :cond_9
+    :goto_1
+    if-eqz p1, :cond_8
 
-    iget-object p2, v1, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;->assistAction:Lkotlin/jvm/functions/Function2;
+    iget-object p2, v2, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelFactoryProvider;->assistAction:Lkotlin/jvm/functions/Function2;
 
-    if-eqz p2, :cond_2
+    if-nez p2, :cond_3
 
-    invoke-interface {p2, p1, v0}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_2
+
+    :cond_3
+    invoke-interface {p2, p1, v1}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
-    check-cast p2, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
+    move-object v4, p2
 
-    goto :goto_1
+    check-cast v4, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
 
-    :cond_2
-    move-object p2, v4
-
-    :goto_1
-    instance-of v1, p2, Landroidx/lifecycle/ViewModel;
-
-    if-nez v1, :cond_3
-
-    move-object p2, v4
-
-    :cond_3
-    if-nez p2, :cond_7
+    :goto_2
+    if-nez v4, :cond_6
 
     instance-of p2, p1, Lde/rki/coronawarnapp/util/viewmodel/SavedStateCWAViewModelFactory;
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_4
 
     move-object p2, p1
 
     check-cast p2, Lde/rki/coronawarnapp/util/viewmodel/SavedStateCWAViewModelFactory;
 
-    invoke-interface {p2, v0}, Lde/rki/coronawarnapp/util/viewmodel/SavedStateCWAViewModelFactory;->create(Landroidx/lifecycle/SavedStateHandle;)Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
+    invoke-interface {p2, v1}, Lde/rki/coronawarnapp/util/viewmodel/SavedStateCWAViewModelFactory;->create(Landroidx/lifecycle/SavedStateHandle;)Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
 
     move-result-object p2
 
-    instance-of v0, p2, Landroidx/lifecycle/ViewModel;
-
-    if-nez v0, :cond_4
-
-    goto :goto_2
-
-    :cond_4
+    :goto_3
     move-object v4, p2
 
-    goto :goto_2
+    goto :goto_4
 
-    :cond_5
+    :cond_4
     instance-of p2, p1, Lde/rki/coronawarnapp/util/viewmodel/SimpleCWAViewModelFactory;
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_5
 
     move-object p2, p1
 
@@ -241,16 +248,9 @@
 
     move-result-object p2
 
-    instance-of v0, p2, Landroidx/lifecycle/ViewModel;
-
-    if-nez v0, :cond_4
-
-    :goto_2
-    move-object p2, v4
-
     goto :goto_3
 
-    :cond_6
+    :cond_5
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -271,17 +271,17 @@
 
     throw p2
 
-    :cond_7
-    :goto_3
-    if-eqz p2, :cond_8
+    :cond_6
+    :goto_4
+    if-eqz v4, :cond_7
 
     const-string p1, "androidx.lifecycle.savedstate.vm.tag"
 
-    invoke-virtual {p2, p1, v3}, Landroidx/lifecycle/ViewModel;->setTagIfAbsent(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, p1, v0}, Landroidx/lifecycle/ViewModel;->setTagIfAbsent(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p2
+    return-object v4
 
-    :cond_8
+    :cond_7
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -302,12 +302,12 @@
 
     throw p2
 
-    :cond_9
+    :cond_8
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Unknown ViewModel factory: "
 
-    invoke-static {v0, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline16(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {v0, p2}, Landroidx/lifecycle/AbstractSavedStateViewModelFactory$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -318,6 +318,14 @@
 
 .method public onRequery(Landroidx/lifecycle/ViewModel;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "viewModel"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/lifecycle/AbstractSavedStateViewModelFactory;->mSavedStateRegistry:Landroidx/savedstate/SavedStateRegistry;
 

@@ -43,7 +43,7 @@
 
 
 # virtual methods
-.method public bind(Landroidx/sqlite/db/SupportSQLiteStatement;Ljava/lang/Object;)V
+.method public bind(Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;Ljava/lang/Object;)V
     .locals 16
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -68,119 +68,149 @@
 
     if-nez v2, :cond_0
 
-    invoke-interface {v1, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v3}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v1, v3, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v4, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v4, v3, v2}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
-    invoke-static {v2}, Landroidx/navigation/ui/R$anim;->stateToInt(Landroidx/work/WorkInfo$State;)I
+    invoke-static {v2}, Landroidx/work/impl/model/WorkTypeConverters;->stateToInt(Landroidx/work/WorkInfo$State;)I
 
     move-result v2
 
     int-to-long v4, v2
 
-    const/4 v2, 0x2
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v2, v4, v5}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    const/4 v6, 0x2
 
-    iget-object v4, v0, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
+    invoke-virtual {v2, v6, v4, v5}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
-    const/4 v5, 0x3
+    iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
 
-    if-nez v4, :cond_1
+    const/4 v4, 0x3
 
-    invoke-interface {v1, v5}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    if-nez v2, :cond_1
+
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v4}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
     :cond_1
-    invoke-interface {v1, v5, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v5, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v5, v4, v2}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_1
-    iget-object v4, v0, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
+    iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
 
-    const/4 v6, 0x4
+    const/4 v5, 0x4
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
-    invoke-interface {v1, v6}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v5}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_2
 
     :cond_2
-    invoke-interface {v1, v6, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v7, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v7, v5, v2}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_2
-    iget-object v4, v0, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
+    iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
 
-    invoke-static {v4}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
+    invoke-static {v2}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
-    move-result-object v4
+    move-result-object v2
 
     const/4 v7, 0x5
 
-    if-nez v4, :cond_3
+    if-nez v2, :cond_3
 
-    invoke-interface {v1, v7}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v7}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_3
 
     :cond_3
-    invoke-interface {v1, v7, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindBlob(I[B)V
+    iget-object v8, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v8, v7, v2}, Landroid/database/sqlite/SQLiteProgram;->bindBlob(I[B)V
 
     :goto_3
-    iget-object v4, v0, Landroidx/work/impl/model/WorkSpec;->output:Landroidx/work/Data;
+    iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->output:Landroidx/work/Data;
 
-    invoke-static {v4}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
+    invoke-static {v2}, Landroidx/work/Data;->toByteArrayInternal(Landroidx/work/Data;)[B
 
-    move-result-object v4
+    move-result-object v2
 
     const/4 v7, 0x6
 
-    if-nez v4, :cond_4
+    if-nez v2, :cond_4
 
-    invoke-interface {v1, v7}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v7}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_4
 
     :cond_4
-    invoke-interface {v1, v7, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindBlob(I[B)V
+    iget-object v8, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v8, v7, v2}, Landroid/database/sqlite/SQLiteProgram;->bindBlob(I[B)V
 
     :goto_4
-    const/4 v4, 0x7
+    const/4 v2, 0x7
 
     iget-wide v7, v0, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
 
-    invoke-interface {v1, v4, v7, v8}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v9, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    const/16 v4, 0x8
+    invoke-virtual {v9, v2, v7, v8}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    const/16 v2, 0x8
 
     iget-wide v7, v0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
 
-    invoke-interface {v1, v4, v7, v8}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v9, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    const/16 v4, 0x9
+    invoke-virtual {v9, v2, v7, v8}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    const/16 v2, 0x9
 
     iget-wide v7, v0, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
 
-    invoke-interface {v1, v4, v7, v8}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v9, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    const/16 v4, 0xa
+    invoke-virtual {v9, v2, v7, v8}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    const/16 v2, 0xa
 
     iget v7, v0, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
 
     int-to-long v7, v7
 
-    invoke-interface {v1, v4, v7, v8}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v9, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    iget-object v4, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+    invoke-virtual {v9, v2, v7, v8}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    iget-object v2, v0, Landroidx/work/impl/model/WorkSpec;->backoffPolicy:Landroidx/work/BackoffPolicy;
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v7
 
@@ -192,7 +222,7 @@
 
     if-ne v7, v3, :cond_5
 
-    move v4, v3
+    move v2, v3
 
     goto :goto_5
 
@@ -205,7 +235,7 @@
 
     invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -218,50 +248,62 @@
     throw v0
 
     :cond_6
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     :goto_5
     const/16 v7, 0xb
 
-    int-to-long v11, v4
+    int-to-long v11, v2
 
-    invoke-interface {v1, v7, v11, v12}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    const/16 v4, 0xc
+    invoke-virtual {v2, v7, v11, v12}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    const/16 v2, 0xc
 
     iget-wide v11, v0, Landroidx/work/impl/model/WorkSpec;->backoffDelayDuration:J
 
-    invoke-interface {v1, v4, v11, v12}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v7, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    const/16 v4, 0xd
+    invoke-virtual {v7, v2, v11, v12}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    const/16 v2, 0xd
 
     iget-wide v11, v0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
 
-    invoke-interface {v1, v4, v11, v12}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v7, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    const/16 v4, 0xe
+    invoke-virtual {v7, v2, v11, v12}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    const/16 v2, 0xe
 
     iget-wide v11, v0, Landroidx/work/impl/model/WorkSpec;->minimumRetentionDuration:J
 
-    invoke-interface {v1, v4, v11, v12}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v7, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    const/16 v4, 0xf
+    invoke-virtual {v7, v2, v11, v12}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    const/16 v2, 0xf
 
     iget-wide v11, v0, Landroidx/work/impl/model/WorkSpec;->scheduleRequestedAt:J
 
-    invoke-interface {v1, v4, v11, v12}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v7, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    iget-boolean v4, v0, Landroidx/work/impl/model/WorkSpec;->runInForeground:Z
+    invoke-virtual {v7, v2, v11, v12}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    iget-boolean v2, v0, Landroidx/work/impl/model/WorkSpec;->runInForeground:Z
 
     const/16 v7, 0x10
 
-    int-to-long v11, v4
+    int-to-long v11, v2
 
-    invoke-interface {v1, v7, v11, v12}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v2, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v7, v11, v12}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     iget-object v0, v0, Landroidx/work/impl/model/WorkSpec;->constraints:Landroidx/work/Constraints;
 
-    const/16 v4, 0x16
+    const/16 v2, 0x16
 
     const/16 v7, 0x15
 
@@ -285,11 +327,11 @@
 
     if-eq v15, v3, :cond_a
 
-    if-eq v15, v2, :cond_9
+    if-eq v15, v6, :cond_9
 
-    if-eq v15, v5, :cond_8
+    if-eq v15, v4, :cond_8
 
-    if-ne v15, v6, :cond_7
+    if-ne v15, v5, :cond_7
 
     goto :goto_7
 
@@ -315,60 +357,74 @@
     throw v0
 
     :cond_8
-    move v3, v5
+    move v3, v4
 
     goto :goto_6
 
     :cond_9
-    move v3, v2
+    move v3, v6
 
     :cond_a
     :goto_6
-    move v6, v3
+    move v5, v3
 
     goto :goto_7
 
     :cond_b
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     :goto_7
-    int-to-long v2, v6
+    int-to-long v3, v5
 
-    invoke-interface {v1, v14, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v5, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    iget-boolean v2, v0, Landroidx/work/Constraints;->mRequiresCharging:Z
+    invoke-virtual {v5, v14, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
-    int-to-long v2, v2
+    iget-boolean v3, v0, Landroidx/work/Constraints;->mRequiresCharging:Z
 
-    invoke-interface {v1, v13, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    int-to-long v3, v3
 
-    iget-boolean v2, v0, Landroidx/work/Constraints;->mRequiresDeviceIdle:Z
+    iget-object v5, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    int-to-long v2, v2
+    invoke-virtual {v5, v13, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
-    invoke-interface {v1, v12, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-boolean v3, v0, Landroidx/work/Constraints;->mRequiresDeviceIdle:Z
 
-    iget-boolean v2, v0, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
+    int-to-long v3, v3
 
-    int-to-long v2, v2
+    iget-object v5, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v11, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    invoke-virtual {v5, v12, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
-    iget-boolean v2, v0, Landroidx/work/Constraints;->mRequiresStorageNotLow:Z
+    iget-boolean v3, v0, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
 
-    int-to-long v2, v2
+    int-to-long v3, v3
 
-    invoke-interface {v1, v7, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-object v5, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    iget-wide v2, v0, Landroidx/work/Constraints;->mTriggerContentUpdateDelay:J
+    invoke-virtual {v5, v11, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
-    invoke-interface {v1, v4, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    iget-boolean v3, v0, Landroidx/work/Constraints;->mRequiresStorageNotLow:Z
+
+    int-to-long v3, v3
+
+    iget-object v5, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v5, v7, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
+
+    iget-wide v3, v0, Landroidx/work/Constraints;->mTriggerContentUpdateDelay:J
+
+    iget-object v5, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v5, v2, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     iget-wide v2, v0, Landroidx/work/Constraints;->mTriggerMaxContentDelay:J
 
-    const/16 v4, 0x17
+    iget-object v4, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v4, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    const/16 v5, 0x17
+
+    invoke-virtual {v4, v5, v2, v3}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     iget-object v0, v0, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
 
@@ -514,16 +570,20 @@
     :goto_c
     if-nez v3, :cond_f
 
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
     const/16 v2, 0x18
 
-    invoke-interface {v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_11
 
     :cond_f
     const/16 v2, 0x18
 
-    invoke-interface {v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindBlob(I[B)V
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v0, v2, v3}, Landroid/database/sqlite/SQLiteProgram;->bindBlob(I[B)V
 
     goto :goto_11
 
@@ -569,25 +629,41 @@
     throw v1
 
     :cond_11
-    invoke-interface {v1, v14}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v13}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    invoke-virtual {v0, v14}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
-    invoke-interface {v1, v12}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v11}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    invoke-virtual {v0, v13}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
-    invoke-interface {v1, v7}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    invoke-virtual {v0, v12}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
-    const/16 v0, 0x17
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v0}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    invoke-virtual {v0, v11}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
-    const/16 v2, 0x18
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    invoke-virtual {v0, v7}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
+
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
+
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    const/16 v2, 0x17
+
+    invoke-virtual {v0, v2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
+
+    iget-object v0, v1, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    const/16 v1, 0x18
+
+    invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     :goto_11
     return-void

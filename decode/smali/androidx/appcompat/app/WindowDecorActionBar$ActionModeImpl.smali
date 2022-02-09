@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public finish()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0:Landroidx/appcompat/app/WindowDecorActionBar;
 
@@ -78,25 +78,13 @@
     return-void
 
     :cond_0
-    iget-boolean v1, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenByApp:Z
+    iget-boolean v1, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
-    iget-boolean v0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem:Z
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
+    xor-int/lit8 v1, v1, 0x1
 
     if-nez v1, :cond_1
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    move v2, v3
-
-    :cond_2
-    if-nez v2, :cond_3
-
-    iget-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0:Landroidx/appcompat/app/WindowDecorActionBar;
 
     iput-object p0, v0, Landroidx/appcompat/app/WindowDecorActionBar;->mDeferredDestroyActionMode:Landroidx/appcompat/view/ActionMode;
 
@@ -106,7 +94,7 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_1
     iget-object v0, p0, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->mCallback:Landroidx/appcompat/view/ActionMode$Callback;
 
     invoke-interface {v0, p0}, Landroidx/appcompat/view/ActionMode$Callback;->onDestroyActionMode(Landroidx/appcompat/view/ActionMode;)V
@@ -118,7 +106,7 @@
 
     iget-object v1, p0, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0:Landroidx/appcompat/app/WindowDecorActionBar;
 
-    invoke-virtual {v1, v3}, Landroidx/appcompat/app/WindowDecorActionBar;->animateToMode(Z)V
+    invoke-virtual {v1, v2}, Landroidx/appcompat/app/WindowDecorActionBar;->animateToMode(Z)V
 
     iget-object v1, p0, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0:Landroidx/appcompat/app/WindowDecorActionBar;
 
@@ -126,11 +114,11 @@
 
     iget-object v2, v1, Landroidx/appcompat/widget/ActionBarContextView;->mClose:Landroid/view/View;
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_2
 
     invoke-virtual {v1}, Landroidx/appcompat/widget/ActionBarContextView;->killMode()V
 
-    :cond_4
+    :cond_2
     iget-object v1, p0, Landroidx/appcompat/app/WindowDecorActionBar$ActionModeImpl;->this$0:Landroidx/appcompat/app/WindowDecorActionBar;
 
     iget-object v1, v1, Landroidx/appcompat/app/WindowDecorActionBar;->mDecorToolbar:Landroidx/appcompat/widget/DecorToolbar;

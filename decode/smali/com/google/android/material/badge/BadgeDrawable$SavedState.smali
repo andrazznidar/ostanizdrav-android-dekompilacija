@@ -30,6 +30,10 @@
 
 
 # instance fields
+.field public additionalHorizontalOffset:I
+
+.field public additionalVerticalOffset:I
+
 .field public alpha:I
 
 .field public backgroundColor:I
@@ -45,6 +49,8 @@
 .field public contentDescriptionQuantityStrings:I
 
 .field public horizontalOffset:I
+
+.field public isVisible:Z
 
 .field public maxCharacterCount:I
 
@@ -67,7 +73,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 6
+    .locals 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -79,89 +85,109 @@
 
     iput v0, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->number:I
 
-    sget-object v0, Lcom/google/android/material/R$styleable;->TextAppearance:[I
+    sget v0, Lcom/google/android/material/R$style;->TextAppearance_MaterialComponents_Badge:I
 
-    const v1, 0x7f1301ae
+    sget-object v1, Lcom/google/android/material/R$styleable;->TextAppearance:[I
 
-    invoke-virtual {p1, v1, v0}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
+    sget v2, Lcom/google/android/material/R$styleable;->TextAppearance_android_textSize:I
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    const/4 v3, 0x3
+    sget v2, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColor:I
 
-    invoke-static {p1, v0, v3}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, v1, v2}, Lcom/google/android/material/resources/MaterialResources;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    move-result-object v3
+    move-result-object v2
 
-    const/4 v4, 0x4
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColorHint:I
 
-    invoke-static {p1, v0, v4}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, v1, v4}, Lcom/google/android/material/resources/MaterialResources;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    const/4 v4, 0x5
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_textColorLink:I
 
-    invoke-static {p1, v0, v4}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, v1, v4}, Lcom/google/android/material/resources/MaterialResources;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    const/4 v4, 0x2
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_textStyle:I
 
-    invoke-virtual {v0, v4, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    const/4 v5, 0x0
 
-    const/4 v4, 0x1
+    invoke-virtual {v1, v4, v5}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    invoke-virtual {v0, v4, v4}, Landroid/content/res/TypedArray;->getInt(II)I
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_typeface:I
 
-    const/16 v4, 0xc
+    const/4 v6, 0x1
 
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v1, v4, v6}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v5
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_fontFamily:I
 
-    if-eqz v5, :cond_0
+    sget v7, Lcom/google/android/material/R$styleable;->TextAppearance_android_fontFamily:I
+
+    invoke-virtual {v1, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/16 v4, 0xa
+    move v4, v7
 
     :goto_0
-    invoke-virtual {v0, v4, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v1, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    const/16 v4, 0xe
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_textAllCaps:I
 
-    invoke-virtual {v0, v4, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v1, v4, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    const/4 v1, 0x6
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowColor:I
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, v1, v4}, Lcom/google/android/material/resources/MaterialResources;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    const/4 v1, 0x7
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowDx:I
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v1, v4, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    const/16 v1, 0x8
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowDy:I
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v1, v4, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    const/16 v1, 0x9
+    sget v4, Lcom/google/android/material/R$styleable;->TextAppearance_android_shadowRadius:I
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v1, v4, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
+
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+
+    sget-object v1, Lcom/google/android/material/R$styleable;->MaterialTextAppearance:[I
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+
+    move-result-object v0
+
+    sget v1, Lcom/google/android/material/R$styleable;->MaterialTextAppearance_android_letterSpacing:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-virtual {v3}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+    invoke-virtual {v2}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->badgeTextColor:I
 
-    const v0, 0x7f1201b3
+    sget v0, Lcom/google/android/material/R$string;->mtrl_badge_numberless_content_description:I
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -169,13 +195,15 @@
 
     iput-object p1, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->contentDescriptionNumberless:Ljava/lang/CharSequence;
 
-    const/high16 p1, 0x7f100000
+    sget p1, Lcom/google/android/material/R$plurals;->mtrl_badge_content_description:I
 
     iput p1, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->contentDescriptionQuantityStrings:I
 
-    const p1, 0x7f1201b5
+    sget p1, Lcom/google/android/material/R$string;->mtrl_exceed_max_badge_number_content_description:I
 
     iput p1, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->contentDescriptionExceedsMaxBadgeNumberRes:I
+
+    iput-boolean v6, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->isVisible:Z
 
     return-void
 .end method
@@ -249,9 +277,37 @@
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->verticalOffset:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->additionalHorizontalOffset:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->additionalVerticalOffset:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
     move-result p1
 
-    iput p1, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->verticalOffset:I
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    iput-boolean p1, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->isVisible:Z
 
     return-void
 .end method
@@ -310,6 +366,18 @@
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
     iget p2, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->verticalOffset:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->additionalHorizontalOffset:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->additionalVerticalOffset:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-boolean p2, p0, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->isVisible:Z
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 

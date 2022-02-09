@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/trace_location_gradient_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator_layout" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.material.appbar.CollapsingToolbarLayout android:id="@id/collapsing_toolbar_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="true" app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <ImageView android:id="@id/expandedImage" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no" app:layout_collapseMode="parallax" app:srcCompat="@drawable/certificate_complete_gradient" />
+                <ImageView android:id="@id/europa_image" android:layout_width="fill_parent" android:layout_height="250.0dip" android:importantForAccessibility="no" android:layout_marginStart="50.0dip" app:layout_collapseMode="parallax" app:srcCompat="@drawable/ic_eu_stars_blue" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_collapseMode="parallax">
+                    <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:gravity="center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="90.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="8.0dip" android:text="@string/vaccination_certificate_subtitle" android:layout_marginHorizontal="24.0dip" />
+                    <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="8.0dip" android:text="@string/test_certificate_name" android:layout_marginHorizontal="24.0dip" />
+                </LinearLayout>
+                <com.google.android.material.appbar.MaterialToolbar android:theme="@style/Theme.MaterialComponents" android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:layout_scrollFlags="scroll|enterAlways" app:menu="@menu/menu_covid_certificate_detail" app:navigationIcon="@drawable/ic_back" app:popupTheme="@style/Theme.MaterialComponents.DayNight">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_text_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <ImageView android:layout_width="fill_parent" android:layout_height="42.0dip" android:importantForAccessibility="no" android:layout_marginEnd="32.0dip" app:srcCompat="@drawable/ic_cwa_logo_white" />
+                    </LinearLayout>
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.core.widget.NestedScrollView android:id="@id/scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="16.0dip" android:layout_marginVertical="16.0dip">
+                <include android:id="@id/qr_code_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="6.0dip" android:layout_marginHorizontal="24.0dip" layout="@layout/include_certificate_qrcode_card" />
+                <LinearLayout android:orientation="vertical" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:layout_marginHorizontal="24.0dip" style="@style/Card.GreenCertificate">
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/covid_certificate_attribute_name" style="@style/body1Medium" />
+                    <TextView android:id="@id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/covid_certificate_attribute_icao_name" style="@style/body1Medium" />
+                    <TextView android:id="@id/icaoname" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/covid_certificate_attribute_date_of_birth" style="@style/body1Medium" />
+                    <TextView android:id="@id/date_of_birth" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/covid_certificate_attribute_disease_type" style="@style/body1Medium" />
+                    <TextView android:id="@id/disease_type" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/test_certificate_attribute_test_type" style="@style/body1Medium" />
+                    <TextView android:id="@id/test_type" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:id="@id/test_name_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/test_certificate_attribute_test_name" style="@style/body1Medium" />
+                    <TextView android:id="@id/test_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:id="@id/test_manufacturer_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/test_certificate_attribute_test_manufacturer" style="@style/body1Medium" />
+                    <TextView android:id="@id/test_manufacturer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/test_certificate_attribute_test_date" style="@style/body1Medium" />
+                    <TextView android:id="@id/test_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/test_certificate_attribute_test_result" style="@style/body1Medium" />
+                    <TextView android:id="@id/test_result" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:id="@id/test_center_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/test_certificate_attribute_test_center" style="@style/body1Medium" />
+                    <TextView android:id="@id/test_center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/test_certificate_attribute_state_of_testing" style="@style/body1Medium" />
+                    <TextView android:id="@id/certificate_country" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/covid_certificate_attribute_certificate_issuer" style="@style/body1Medium" />
+                    <TextView android:id="@id/certificate_issuer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/covid_certificate_attribute_certificate_id" style="@style/body1Medium" />
+                    <TextView android:id="@id/certificate_id" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" style="@style/body1" />
+                </LinearLayout>
+                <include android:id="@id/expiration_notice" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="24.0dip" android:layout_marginHorizontal="24.0dip" layout="@layout/include_expiration_notice_card" />
+                <de.rki.coronawarnapp.covidcertificate.common.certificate.TravelNoticeView android:id="@id/travel_notice" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <de.rki.coronawarnapp.ui.view.ProgressLoadingButton android:id="@id/start_validation_check" android:layout_width="fill_parent" android:layout_height="wrap_content" app:buttonText="@string/start_validation_rule_check_button" app:isLoading="false" app:loadingText="@string/start_validation_rule_check_loading_text" style="@style/buttonPrimary" />
+</LinearLayout>

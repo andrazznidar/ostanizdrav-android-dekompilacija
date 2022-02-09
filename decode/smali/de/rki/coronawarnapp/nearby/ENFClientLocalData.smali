@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nENFClientLocalData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ENFClientLocalData.kt\nde/rki/coronawarnapp/nearby/ENFClientLocalData\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,36:1\n43#2,8:37\n43#2,8:45\n*E\n*S KotlinDebug\n*F\n+ 1 ENFClientLocalData.kt\nde/rki/coronawarnapp/nearby/ENFClientLocalData\n*L\n21#1,8:37\n27#1,8:45\n*E\n"
+    value = "SMAP\nENFClientLocalData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ENFClientLocalData.kt\nde/rki/coronawarnapp/nearby/ENFClientLocalData\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,36:1\n43#2,8:37\n43#2,8:45\n*S KotlinDebug\n*F\n+ 1 ENFClientLocalData.kt\nde/rki/coronawarnapp/nearby/ENFClientLocalData\n*L\n21#1:37,8\n27#1:45,8\n*E\n"
 .end annotation
 
 
@@ -31,7 +31,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/nearby/ENFClientLocalData$prefs$2;-><init>(Lde/rki/coronawarnapp/nearby/ENFClientLocalData;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

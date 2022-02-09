@@ -1,4 +1,4 @@
-.class public Landroidx/navigation/NavController$1;
+.class Landroidx/navigation/NavController$1;
 .super Ljava/lang/Object;
 .source "NavController.java"
 
@@ -41,7 +41,7 @@
 
     iget-object v0, p1, Landroidx/navigation/NavController;->mGraph:Landroidx/navigation/NavGraph;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     iget-object p1, p1, Landroidx/navigation/NavController;->mBackStack:Ljava/util/Deque;
 
@@ -54,7 +54,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -62,39 +62,18 @@
 
     check-cast v0, Landroidx/navigation/NavBackStackEntry;
 
-    if-eqz v0, :cond_4
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroidx/navigation/NavBackStackEntry$1;->$SwitchMap$androidx$lifecycle$Lifecycle$Event:[I
 
     invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_3
+    aget v1, v1, v2
 
-    const/4 v2, 0x1
+    packed-switch v1, :pswitch_data_0
 
-    if-eq v1, v2, :cond_2
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_1
-
-    const/4 v2, 0x3
-
-    if-eq v1, v2, :cond_2
-
-    const/4 v2, 0x4
-
-    if-eq v1, v2, :cond_3
-
-    const/4 v2, 0x5
-
-    if-ne v1, v2, :cond_0
-
-    sget-object v1, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
-
-    goto :goto_1
-
-    :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -115,17 +94,22 @@
 
     throw p1
 
-    :cond_1
+    :pswitch_0
+    sget-object v1, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
+
+    goto :goto_1
+
+    :pswitch_1
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->RESUMED:Landroidx/lifecycle/Lifecycle$State;
 
     goto :goto_1
 
-    :cond_2
+    :pswitch_2
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->STARTED:Landroidx/lifecycle/Lifecycle$State;
 
     goto :goto_1
 
-    :cond_3
+    :pswitch_3
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->CREATED:Landroidx/lifecycle/Lifecycle$State;
 
     :goto_1
@@ -135,11 +119,18 @@
 
     goto :goto_0
 
-    :cond_4
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_5
+    :cond_0
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

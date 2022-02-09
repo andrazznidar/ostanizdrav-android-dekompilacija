@@ -40,7 +40,7 @@
 
     check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    sget v0, Lcom/google/android/gms/internal/nearby/zzaw;->zza:I
+    sget-object v0, Lcom/google/android/gms/internal/nearby/zzaw;->zzb:Lcom/google/android/gms/common/api/Api;
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
 

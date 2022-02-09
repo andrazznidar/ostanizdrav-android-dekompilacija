@@ -226,9 +226,7 @@
 
     move-result v9
 
-    xor-int/2addr v9, v8
-
-    if-eqz v9, :cond_0
+    if-eq v9, v8, :cond_0
 
     add-int/lit8 v7, v7, 0x1
 
@@ -668,15 +666,13 @@
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v5
+    move-result v7
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v7, v6
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->charAt(I)C
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v3
-
-    sget-object v5, Lcom/google/zxing/oned/CodaBarReader;->STARTEND_ENCODING:[C
 
     invoke-static {v5, v3}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
 
@@ -833,8 +829,6 @@
     sget-object v1, Lcom/google/zxing/NotFoundException;->INSTANCE:Lcom/google/zxing/NotFoundException;
 
     throw v1
-
-    nop
 
     :array_0
     .array-data 4

@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
     check-cast p1, Ljava/lang/Boolean;
 
@@ -59,23 +59,25 @@
 
     move-result p1
 
+    const-string v0, "SurveyConsentBlockingProgressDialogFragment"
+
     if-eqz p1, :cond_0
 
     new-instance p1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;
 
     invoke-direct {p1}, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;-><init>()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;
 
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;
+    invoke-virtual {v1}, Landroidx/fragment/app/Fragment;->getChildFragmentManager()Landroidx/fragment/app/FragmentManager;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->Companion:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->Companion:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment$Companion;
 
-    sget-object v1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->TAG:Ljava/lang/String;
+    sget-object v2, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->Companion:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment$Companion;
 
-    invoke-virtual {p1, v0, v1}, Landroidx/fragment/app/DialogFragment;->show(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;)V
+    invoke-virtual {p1, v1, v0}, Landroidx/fragment/app/DialogFragment;->show(Landroidx/fragment/app/FragmentManager;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -86,23 +88,25 @@
 
     move-result-object p1
 
-    sget-object v0, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->Companion:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;
+    sget-object v1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->Companion:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment$Companion;
 
-    sget-object v0, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->TAG:Ljava/lang/String;
+    sget-object v1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment;->Companion:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentBlockingProgressDialogFragment$Companion;
 
     invoke-virtual {p1, v0}, Landroidx/fragment/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_1
 
+    goto :goto_0
+
+    :cond_1
     check-cast p1, Landroidx/fragment/app/DialogFragment;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0, v0}, Landroidx/fragment/app/DialogFragment;->dismissInternal(ZZ)V
 
-    :cond_1
     :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

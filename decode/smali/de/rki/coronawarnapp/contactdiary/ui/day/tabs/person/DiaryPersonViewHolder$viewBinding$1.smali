@@ -54,9 +54,9 @@
 
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v2, 0x7f0900f1
+    const v2, 0x7f0a01b2
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -66,9 +66,9 @@
 
     if-eqz v6, :cond_0
 
-    const v2, 0x7f090190
+    const v2, 0x7f0a02cb
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -78,9 +78,9 @@
 
     if-eqz v7, :cond_0
 
-    const v2, 0x7f090191
+    const v2, 0x7f0a02cc
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -90,9 +90,9 @@
 
     if-eqz v8, :cond_0
 
-    const v2, 0x7f090193
+    const v2, 0x7f0a02ce
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -102,9 +102,9 @@
 
     if-eqz v9, :cond_0
 
-    const v2, 0x7f09019f
+    const v2, 0x7f0a02f0
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -114,9 +114,9 @@
 
     if-eqz v10, :cond_0
 
-    const v2, 0x7f0901a0
+    const v2, 0x7f0a02f1
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -126,9 +126,9 @@
 
     if-eqz v11, :cond_0
 
-    const v2, 0x7f0901a1
+    const v2, 0x7f0a02f2
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -142,9 +142,9 @@
 
     check-cast v13, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
 
-    const v2, 0x7f090295
+    const v2, 0x7f0a043c
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -154,9 +154,9 @@
 
     if-eqz v14, :cond_0
 
-    const v2, 0x7f090296
+    const v2, 0x7f0a043d
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
@@ -166,9 +166,9 @@
 
     if-eqz v15, :cond_0
 
-    const v2, 0x7f090297
+    const v2, 0x7f0a043e
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 

@@ -2,9 +2,6 @@
 .super Lde/rki/coronawarnapp/contactdiary/util/AbstractAdapter;
 .source "ContactDiaryPersonListAdapter.kt"
 
-# interfaces
-.implements Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;
-
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -44,7 +41,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
+    invoke-static {p0}, Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter$DefaultImpls;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
 
     move-result-object v0
 
@@ -52,7 +49,9 @@
 
     move-result-object p2
 
-    invoke-virtual {p1, p2, p3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/DiaryPersonViewHolder;->bind(Ljava/lang/Object;Ljava/util/List;)V
+    check-cast p2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/person/DiaryPersonListItem;
+
+    invoke-static {p1, p2, p3}, Lde/rki/coronawarnapp/util/lists/BindableVH$DefaultImpls;->bind(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;)V
 
     return-void
 .end method

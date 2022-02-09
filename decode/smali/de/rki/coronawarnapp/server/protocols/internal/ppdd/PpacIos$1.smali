@@ -1,4 +1,4 @@
-.class public synthetic Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$1;
+.class synthetic Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$1;
 .super Ljava/lang/Object;
 .source "PpacIos.java"
 

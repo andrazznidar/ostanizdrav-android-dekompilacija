@@ -38,55 +38,53 @@
 
     new-instance v0, Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;
 
-    sget-object v1, Lcom/google/crypto/tink/KeyTemplate$OutputPrefixType;->TINK:Lcom/google/crypto/tink/KeyTemplate$OutputPrefixType;
-
     invoke-static {}, Lcom/google/crypto/tink/proto/AesSivKeyFormat;->newBuilder()Lcom/google/crypto/tink/proto/AesSivKeyFormat$Builder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
+    invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
-    iget-object v3, v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    check-cast v3, Lcom/google/crypto/tink/proto/AesSivKeyFormat;
-
-    const/16 v4, 0x40
-
-    invoke-static {v3, v4}, Lcom/google/crypto/tink/proto/AesSivKeyFormat;->access$100(Lcom/google/crypto/tink/proto/AesSivKeyFormat;I)V
-
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    move-result-object v2
+    iget-object v2, v1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
 
     check-cast v2, Lcom/google/crypto/tink/proto/AesSivKeyFormat;
 
-    new-instance v3, Lcom/google/crypto/tink/daead/AesSivKeyManager;
+    const/16 v3, 0x40
 
-    invoke-direct {v3}, Lcom/google/crypto/tink/daead/AesSivKeyManager;-><init>()V
+    invoke-static {v2, v3}, Lcom/google/crypto/tink/proto/AesSivKeyFormat;->access$100(Lcom/google/crypto/tink/proto/AesSivKeyFormat;I)V
 
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/AbstractMessageLite;->toByteArray()[B
+    invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "type.googleapis.com/google.crypto.tink.AesSivKey"
+    check-cast v1, Lcom/google/crypto/tink/proto/AesSivKeyFormat;
 
-    invoke-static {v3, v2, v1}, Lcom/google/crypto/tink/KeyTemplate;->create(Ljava/lang/String;[BLcom/google/crypto/tink/KeyTemplate$OutputPrefixType;)Lcom/google/crypto/tink/KeyTemplate;
+    new-instance v2, Lcom/google/crypto/tink/daead/AesSivKeyManager;
+
+    invoke-direct {v2}, Lcom/google/crypto/tink/daead/AesSivKeyManager;-><init>()V
+
+    invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/AbstractMessageLite;->toByteArray()[B
+
+    move-result-object v1
+
+    const-string/jumbo v2, "type.googleapis.com/google.crypto.tink.AesSivKey"
+
+    const/4 v3, 0x1
+
+    invoke-static {v2, v1, v3}, Lcom/google/crypto/tink/KeyTemplate;->create(Ljava/lang/String;[BI)Lcom/google/crypto/tink/KeyTemplate;
 
     move-result-object v1
 
     const-string v2, "AES256_SIV"
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-direct {v0, v2, v3, v1}, Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;-><init>(Ljava/lang/String;ILcom/google/crypto/tink/KeyTemplate;)V
+    invoke-direct {v0, v2, v4, v1}, Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;-><init>(Ljava/lang/String;ILcom/google/crypto/tink/KeyTemplate;)V
 
     sput-object v0, Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;->AES256_SIV:Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;
 
-    const/4 v1, 0x1
+    new-array v1, v3, [Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;
 
-    new-array v1, v1, [Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;
-
-    aput-object v0, v1, v3
+    aput-object v0, v1, v4
 
     sput-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;->$VALUES:[Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;
 

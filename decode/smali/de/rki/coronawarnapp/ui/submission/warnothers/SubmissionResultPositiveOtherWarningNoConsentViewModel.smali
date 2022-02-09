@@ -16,6 +16,8 @@
 
 .field public final autoSubmission:Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
 
+.field public final checkInRepository:Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;
+
 .field public final countryList:Landroidx/lifecycle/LiveData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -71,10 +73,10 @@
     .end annotation
 .end field
 
-.field public final showTracingConsentDialog:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+.field public final showTracingConsentDialog:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde/rki/coronawarnapp/ui/SingleLiveEvent<",
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
             "Lkotlin/jvm/functions/Function1<",
             "Ljava/lang/Boolean;",
             "Lkotlin/Unit;",
@@ -87,9 +89,11 @@
 
 .field public final tekHistoryUpdater:Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater;
 
+.field public final testType:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
+
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$Factory;Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryUpdater$Factory;Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
     .locals 2
 
     const-string v0, "dispatcherProvider"
@@ -104,7 +108,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tekHistoryUpdaterFactory"
+    const-string/jumbo v0, "tekHistoryUpdaterFactory"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -112,13 +116,21 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "submissionRepository"
+    const-string/jumbo v0, "submissionRepository"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "analyticsKeySubmissionCollector"
+    const-string v0, "checkInRepository"
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "analyticsKeySubmissionCollector"
+
+    invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "testType"
+
+    invoke-static {p9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -132,7 +144,25 @@
 
     iput-object p6, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    iput-object p7, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
+    iput-object p7, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->checkInRepository:Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;
+
+    iput-object p8, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->analyticsKeySubmissionCollector:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
+
+    iput-object p9, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->testType:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
+
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const/4 p3, 0x1
+
+    new-array p3, p3, [Ljava/lang/Object;
+
+    const/4 p6, 0x0
+
+    aput-object p9, p3, p6
+
+    const-string p6, "init() coronaTestType=%s"
+
+    invoke-virtual {p2, p6, p3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance p2, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
@@ -172,11 +202,11 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->countryList:Landroidx/lifecycle/LiveData;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;-><init>()V
+    invoke-direct {p1}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->showTracingConsentDialog:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel;->showTracingConsentDialog:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     new-instance p1, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel$tekHistoryUpdater$1;
 

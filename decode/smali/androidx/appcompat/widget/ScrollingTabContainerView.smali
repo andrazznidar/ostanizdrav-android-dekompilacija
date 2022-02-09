@@ -15,17 +15,9 @@
 
 
 # instance fields
-.field public mAllowCollapse:Z
-
 .field public mContentHeight:I
 
-.field public mMaxTabWidth:I
-
 .field public mSelectedTabIndex:I
-
-.field public mStackedTabMaxWidth:I
-
-.field public mTabSelector:Ljava/lang/Runnable;
 
 
 # direct methods
@@ -42,24 +34,17 @@
 
 # virtual methods
 .method public onAttachedToWindow()V
-    .locals 1
+    .locals 0
 
-    invoke-super {p0}, Landroid/widget/HorizontalScrollView;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, v0}, Landroid/widget/HorizontalScrollView;->post(Ljava/lang/Runnable;)Z
-
-    :cond_0
     return-void
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 5
 
-    invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getContext()Landroid/content/Context;
 
@@ -67,17 +52,17 @@
 
     sget-object v0, Landroidx/appcompat/R$styleable;->ActionBar:[I
 
-    const/4 v1, 0x0
+    sget v1, Landroidx/appcompat/R$attr;->actionBarStyle:I
 
-    const v2, 0x7f040006
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    invoke-virtual {p1, v1, v0, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v2, v0, v1, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    const/16 v1, 0xd
+    sget v1, Landroidx/appcompat/R$styleable;->ActionBar_height:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
@@ -91,7 +76,7 @@
 
     move-result-object v3
 
-    const/high16 v4, 0x7f050000
+    sget v4, Landroidx/appcompat/R$bool;->abc_action_bar_embed_tabs:I
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -99,7 +84,7 @@
 
     if-nez v3, :cond_0
 
-    const v3, 0x7f070009
+    sget v3, Landroidx/appcompat/R$dimen;->abc_action_bar_stacked_max_height:I
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -118,29 +103,18 @@
 
     move-result-object p1
 
-    const v0, 0x7f07000a
+    sget v0, Landroidx/appcompat/R$dimen;->abc_action_bar_stacked_tab_max_width:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result p1
-
-    iput p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mStackedTabMaxWidth:I
 
     return-void
 .end method
 
 .method public onDetachedFromWindow()V
-    .locals 1
+    .locals 0
 
-    invoke-super {p0}, Landroid/widget/HorizontalScrollView;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, v0}, Landroid/widget/HorizontalScrollView;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    :cond_0
     return-void
 .end method
 
@@ -206,8 +180,6 @@
 
 .method public setAllowCollapse(Z)V
     .locals 0
-
-    iput-boolean p1, p0, Landroidx/appcompat/widget/ScrollingTabContainerView;->mAllowCollapse:Z
 
     return-void
 .end method

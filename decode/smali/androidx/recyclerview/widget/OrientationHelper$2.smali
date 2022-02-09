@@ -1,4 +1,4 @@
-.class public final Landroidx/recyclerview/widget/OrientationHelper$2;
+.class public Landroidx/recyclerview/widget/OrientationHelper$2;
 .super Landroidx/recyclerview/widget/OrientationHelper;
 .source "OrientationHelper.java"
 

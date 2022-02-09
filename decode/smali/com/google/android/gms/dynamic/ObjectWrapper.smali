@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/dynamic/ObjectWrapper;
 .super Lcom/google/android/gms/dynamic/IObjectWrapper$Stub;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # annotations
@@ -70,9 +70,7 @@
     return-object p0
 
     :cond_0
-    invoke-interface {p0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
-
-    move-result-object p0
+    check-cast p0, Lcom/google/android/gms/internal/common/zzb;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -82,16 +80,16 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    array-length v1, v0
 
-    array-length v2, v0
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
     move v4, v3
 
     :goto_0
-    if-ge v3, v2, :cond_2
+    if-ge v3, v1, :cond_2
 
     aget-object v5, v0, v3
 
@@ -103,7 +101,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    move-object v1, v5
+    move-object v2, v5
 
     :cond_1
     add-int/lit8 v3, v3, 0x1
@@ -111,22 +109,24 @@
     goto :goto_0
 
     :cond_2
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-ne v4, v2, :cond_4
+    if-ne v4, v1, :cond_4
 
-    invoke-static {v1}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "null reference"
 
-    invoke-virtual {v1}, Ljava/lang/reflect/Field;->isAccessible()Z
+    invoke-static {v2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-virtual {v2}, Ljava/lang/reflect/Field;->isAccessible()Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v2, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     :try_start_0
-    invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
     :try_end_0
@@ -173,17 +173,9 @@
 
     const/16 v1, 0x40
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Unexpected number of IObjectWrapper declared fields: "
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Unexpected number of IObjectWrapper declared fields: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 

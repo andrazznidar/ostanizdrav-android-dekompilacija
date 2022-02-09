@@ -1,4 +1,4 @@
-.class public final Landroidx/fragment/app/FragmentTransition$2;
+.class public Landroidx/fragment/app/FragmentTransition$2;
 .super Ljava/lang/Object;
 .source "FragmentTransition.java"
 

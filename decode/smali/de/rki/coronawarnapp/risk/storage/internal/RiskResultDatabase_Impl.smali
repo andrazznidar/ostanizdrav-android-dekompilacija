@@ -20,130 +20,132 @@
     return-void
 .end method
 
-.method public static synthetic access$000(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;)Ljava/util/List;
-    .locals 0
-
-    iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;)Ljava/util/List;
-    .locals 0
-
-    iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public clearAllTables()V
-    .locals 6
+.method public aggregatedRiskPerDate()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
+    .locals 1
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_aggregatedRiskPerDateResultDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
 
-    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_aggregatedRiskPerDateResultDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    const-string v2, "VACUUM"
-
-    const-string v3, "PRAGMA foreign_keys = TRUE"
-
-    const-string v4, "PRAGMA wal_checkpoint(FULL)"
-
-    if-nez v1, :cond_0
-
-    :try_start_0
-    const-string v5, "PRAGMA foreign_keys = FALSE"
-
-    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    return-object v0
 
     :cond_0
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    monitor-enter p0
 
-    if-eqz v1, :cond_1
+    :try_start_0
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_aggregatedRiskPerDateResultDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
 
-    const-string v5, "PRAGMA defer_foreign_keys = TRUE"
+    if-nez v0, :cond_1
 
-    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    new-instance v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseAggregatedRiskPerDateResultDao_Impl;
+
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseAggregatedRiskPerDateResultDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_aggregatedRiskPerDateResultDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
 
     :cond_1
-    const-string v5, "DELETE FROM `riskresults`"
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_aggregatedRiskPerDateResultDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
 
-    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    monitor-exit p0
 
-    const-string v5, "DELETE FROM `exposurewindows`"
+    return-object v0
 
-    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :catchall_0
+    move-exception v0
 
-    const-string v5, "DELETE FROM `scaninstances`"
-
-    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    const-string v5, "DELETE FROM `riskperdate`"
-
-    invoke-interface {v0, v5}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+    throw v0
+.end method
 
-    if-nez v1, :cond_2
+.method public clearAllTables()V
+    .locals 4
 
-    invoke-interface {v0, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    const-string v0, "VACUUM"
 
-    :cond_2
-    invoke-interface {v0, v4}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
+    const-string v1, "PRAGMA wal_checkpoint(FULL)"
+
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
+
+    iget-object v2, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
+
+    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
+
+    move-result-object v2
+
+    :try_start_0
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    const-string v3, "PRAGMA defer_foreign_keys = TRUE"
+
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v3, "DELETE FROM `riskresults`"
+
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v3, "DELETE FROM `exposurewindows`"
+
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v3, "DELETE FROM `scaninstances`"
+
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    const-string v3, "DELETE FROM `riskperdate`"
+
+    invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v1
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
+    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_0
 
-    invoke-interface {v0, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-interface {v2, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    :cond_3
+    :cond_0
     return-void
 
     :catchall_0
-    move-exception v5
+    move-exception v3
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    if-nez v1, :cond_4
-
-    invoke-interface {v0, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    :cond_4
-    invoke-interface {v0, v4}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v1
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
+    invoke-interface {v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->inTransaction()Z
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_1
 
-    invoke-interface {v0, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-interface {v2, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    :cond_5
-    throw v5
+    :cond_1
+    throw v3
 .end method
 
 .method public createInvalidationTracker()Landroidx/room/InvalidationTracker;
@@ -180,6 +182,14 @@
 
 .method public createOpenHelper(Landroidx/room/DatabaseConfiguration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "configuration"
+        }
+    .end annotation
 
     new-instance v0, Landroidx/room/RoomOpenHelper;
 
@@ -223,4 +233,88 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public exposureWindows()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+
+    return-object v0
+
+    :cond_0
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl;
+
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+
+    :cond_1
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public riskResults()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_riskResultsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_riskResultsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+
+    return-object v0
+
+    :cond_0
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_riskResultsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl;
+
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseRiskResultsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_riskResultsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+
+    :cond_1
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_riskResultsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

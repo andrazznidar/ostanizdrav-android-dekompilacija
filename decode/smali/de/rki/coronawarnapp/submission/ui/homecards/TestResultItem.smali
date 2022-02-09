@@ -4,3 +4,12 @@
 
 # interfaces
 .implements Lde/rki/coronawarnapp/ui/main/home/items/HomeItem;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/submission/ui/homecards/TestResultItem$RA;,
+        Lde/rki/coronawarnapp/submission/ui/homecards/TestResultItem$PCR;
+    }
+.end annotation

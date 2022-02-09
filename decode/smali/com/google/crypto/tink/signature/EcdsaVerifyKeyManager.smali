@@ -43,7 +43,7 @@
 .method public getKeyType()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.EcdsaPublicKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.EcdsaPublicKey"
 
     return-object v0
 .end method
@@ -115,7 +115,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/material/R$style;->validateEcdsaParams(Lcom/google/crypto/tink/proto/EcdsaParams;)V
+    invoke-static {p1}, Lcom/google/crypto/tink/signature/SigUtil;->validateEcdsaParams(Lcom/google/crypto/tink/proto/EcdsaParams;)V
 
     return-void
 .end method

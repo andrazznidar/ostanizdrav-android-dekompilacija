@@ -3,6 +3,17 @@
 .source "ContactDiaryExtensions.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt;->setClickLabel(Landroid/view/View;Ljava/lang/String;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+
 # instance fields
 .field public final synthetic $label:Ljava/lang/String;
 
@@ -23,7 +34,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .locals 2
 
-    const-string v0, "v"
+    const-string/jumbo v0, "v"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -25,13 +25,15 @@
 
 # virtual methods
 .method public onHidden(Lcom/google/android/material/floatingactionbutton/FloatingActionButton;)V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$5;->this$0:Lcom/google/android/material/bottomappbar/BottomAppBar;
 
     iget v1, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$5;->val$targetMode:I
 
-    invoke-static {v0, v1}, Lcom/google/android/material/bottomappbar/BottomAppBar;->access$1600(Lcom/google/android/material/bottomappbar/BottomAppBar;I)F
+    sget v2, Lcom/google/android/material/bottomappbar/BottomAppBar;->DEF_STYLE_RES:I
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/bottomappbar/BottomAppBar;->getFabTranslationX(I)F
 
     move-result v0
 

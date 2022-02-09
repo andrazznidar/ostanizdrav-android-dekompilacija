@@ -11,7 +11,7 @@
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;)V
     .locals 1
 
-    const-string v0, "surveySettings"
+    const-string/jumbo v0, "surveySettings"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -29,9 +29,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/storage/OTPRepository;->surveySettings:Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_3
+    const/4 v1, 0x0
 
     :try_start_0
     invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;->getPreferences()Landroid/content/SharedPreferences;
@@ -108,20 +108,17 @@
     :catchall_0
     move-exception v0
 
-    const/4 v2, 0x0
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v3, v3, [Ljava/lang/Object;
 
     const-string v4, "failed to parse OTP from preferences"
 
-    invoke-virtual {v3, v0, v4, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v4, v3}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_2
     :goto_0
     return-object v1
-
-    :cond_3
-    throw v1
 .end method

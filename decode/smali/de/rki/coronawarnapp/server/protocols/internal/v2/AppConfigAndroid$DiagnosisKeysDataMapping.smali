@@ -37,11 +37,11 @@
 # static fields
 .field public static final DAYSSINCEONSETTOINFECTIOUSNESS_FIELD_NUMBER:I = 0x1
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
 
 .field public static final INFECTIOUSNESSWHENDAYSSINCEONSETMISSING_FIELD_NUMBER:I = 0x2
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -55,9 +55,9 @@
 
 
 # instance fields
-.field public bitField0_:I
+.field private bitField0_:I
 
-.field public daysSinceOnsetToInfectiousness_:Lcom/google/protobuf/MapFieldLite;
+.field private daysSinceOnsetToInfectiousness_:Lcom/google/protobuf/MapFieldLite;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/MapFieldLite<",
@@ -68,12 +68,71 @@
     .end annotation
 .end field
 
-.field public infectiousnessWhenDaysSinceOnsetMissing_:I
+.field private infectiousnessWhenDaysSinceOnsetMissing_:I
 
-.field public reportTypeWhenMissing_:I
+.field private reportTypeWhenMissing_:I
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearInfectiousnessWhenDaysSinceOnsetMissing(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->clearInfectiousnessWhenDaysSinceOnsetMissing()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeWhenMissing(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->clearReportTypeWhenMissing()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mgetMutableDaysSinceOnsetToInfectiousnessMap(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;)Ljava/util/Map;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getMutableDaysSinceOnsetToInfectiousnessMap()Ljava/util/Map;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static bridge synthetic -$$Nest$msetInfectiousnessWhenDaysSinceOnsetMissing(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->setInfectiousnessWhenDaysSinceOnsetMissing(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeWhenMissing(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->setReportTypeWhenMissing(I)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -88,7 +147,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -96,56 +155,6 @@
     sget-object v0, Lcom/google/protobuf/MapFieldLite;->EMPTY_MAP_FIELD:Lcom/google/protobuf/MapFieldLite;
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->daysSinceOnsetToInfectiousness_:Lcom/google/protobuf/MapFieldLite;
-
-    return-void
-.end method
-
-.method public static synthetic access$4300()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$4400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;)Ljava/util/Map;
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getMutableDaysSinceOnsetToInfectiousnessMap()Ljava/util/Map;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic access$4500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->setInfectiousnessWhenDaysSinceOnsetMissing(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->clearInfectiousnessWhenDaysSinceOnsetMissing()V
-
-    return-void
-.end method
-
-.method public static synthetic access$4700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->setReportTypeWhenMissing(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->clearReportTypeWhenMissing()V
 
     return-void
 .end method
@@ -644,11 +653,9 @@
     :cond_5
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->daysSinceOnsetToInfectiousness_:Lcom/google/protobuf/MapFieldLite;
 
-    iget-boolean p1, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
+    iget-boolean v0, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
 
-    if-nez p1, :cond_6
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->daysSinceOnsetToInfectiousness_:Lcom/google/protobuf/MapFieldLite;
+    if-nez v0, :cond_6
 
     invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->mutableCopy()Lcom/google/protobuf/MapFieldLite;
 
@@ -739,31 +746,27 @@
 
     if-eqz p1, :cond_9
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_4
 
     :cond_9
-    move p1, v2
+    move v0, v2
 
     :goto_4
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->infectiousnessWhenDaysSinceOnsetMissing_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->infectiousnessWhenDaysSinceOnsetMissing_:I
 
     if-eqz v3, :cond_a
 
-    move v3, v1
+    move v4, v1
 
     goto :goto_5
 
     :cond_a
-    move v3, v2
+    move v4, v2
 
     :goto_5
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->infectiousnessWhenDaysSinceOnsetMissing_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -773,16 +776,14 @@
 
     if-eqz p1, :cond_b
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_6
 
     :cond_b
-    move p1, v2
+    move v0, v2
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->reportTypeWhenMissing_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->reportTypeWhenMissing_:I
 
     if-eqz v3, :cond_c
@@ -793,9 +794,7 @@
     move v1, v2
 
     :goto_7
-    iget v2, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->reportTypeWhenMissing_:I
-
-    invoke-interface {p2, p1, v0, v1, v2}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v1, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -819,7 +818,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping$Builder-IA;)V
 
     return-object p1
 

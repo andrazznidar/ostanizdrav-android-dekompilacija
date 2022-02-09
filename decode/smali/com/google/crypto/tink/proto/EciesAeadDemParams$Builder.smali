@@ -21,8 +21,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder<",
         "Lcom/google/crypto/tink/proto/EciesAeadDemParams;",
         "Lcom/google/crypto/tink/proto/EciesAeadDemParams$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 

@@ -3,8 +3,36 @@
 .source "ContactDiaryRetentionWorker.kt"
 
 
-# static fields
-.field public static final TAG:Ljava/lang/String;
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u00002\u00020\u0001B%\u0008\u0007\u0012\u0008\u0008\u0001\u0010\u0003\u001a\u00020\u0002\u0012\u0008\u0008\u0001\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u00a2\u0006\u0004\u0008\u0008\u0010\t\u00a8\u0006\n"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;",
+        "Landroidx/work/CoroutineWorker;",
+        "Landroid/content/Context;",
+        "context",
+        "Landroidx/work/WorkerParameters;",
+        "workerParams",
+        "Lde/rki/coronawarnapp/task/TaskController;",
+        "taskController",
+        "<init>",
+        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Lde/rki/coronawarnapp/task/TaskController;)V",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
 
 
 # instance fields
@@ -12,24 +40,6 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
-
-    const-class v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "ContactDiaryRetentionWorker::class.java.simpleName"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;->TAG:Ljava/lang/String;
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lde/rki/coronawarnapp/task/TaskController;)V
     .locals 1
 
@@ -37,11 +47,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "workerParams"
+    const-string/jumbo v0, "workerParams"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "taskController"
+    const-string/jumbo v0, "taskController"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -101,22 +111,22 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->label:I
 
-    const-string v3, "Result.failure()"
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const-string v5, "ContactDiaryRetentionWorker"
 
     if-eqz v2, :cond_2
 
-    if-ne v2, v4, :cond_1
+    if-ne v2, v3, :cond_1
 
     iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->L$0:Ljava/lang/Object;
 
     check-cast v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;
 
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -132,15 +142,13 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    sget-object p1, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object p1
-
-    new-array v2, v5, [Ljava/lang/Object;
+    new-array v2, v4, [Ljava/lang/Object;
 
     const-string v6, "Background job started. No backoff criteria"
 
@@ -173,9 +181,9 @@
 
     iput-object p0, v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->L$0:Ljava/lang/Object;
 
-    iput v4, v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->label:I
+    iput v3, v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->label:I
 
-    invoke-static {p1, v2, v0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0}, Lde/rki/coronawarnapp/task/TaskControllerExtensionsKt;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -192,22 +200,40 @@
     invoke-interface {p1}, Lde/rki/coronawarnapp/task/TaskState;->getError()Ljava/lang/Throwable;
 
     move-result-object p1
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    if-eqz p1, :cond_4
+    if-nez p1, :cond_4
 
-    sget-object v1, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object v1
+    new-array v0, v4, [Ljava/lang/Object;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v1, "Background job completed"
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance p1, Landroidx/work/ListenableWorker$Result$Success;
+
+    invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Success;-><init>()V
+
+    return-object p1
+
+    :cond_4
+    :try_start_2
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     iget-object v0, v0, Landroidx/work/ListenableWorker;->mWorkerParams:Landroidx/work/WorkerParameters;
 
     iget-object v0, v0, Landroidx/work/WorkerParameters;->mId:Ljava/util/UUID;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -219,59 +245,30 @@
 
     move-result-object v0
 
-    new-array v2, v5, [Ljava/lang/Object;
+    new-array v2, v4, [Ljava/lang/Object;
 
     invoke-virtual {v1, p1, v0, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance p1, Landroidx/work/ListenableWorker$Result$Failure;
 
     invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Failure;-><init>()V
-
-    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    return-object p1
-
-    :cond_4
-    sget-object p1, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;->TAG:Ljava/lang/String;
-
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object p1
-
-    new-array v0, v5, [Ljava/lang/Object;
-
-    const-string v1, "Background job completed"
-
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    new-instance p1, Landroidx/work/ListenableWorker$Result$Success;
-
-    invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Success;-><init>()V
-
-    const-string v0, "Result.success()"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     return-object p1
 
     :catch_0
     move-exception p1
 
-    sget-object v0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;->TAG:Ljava/lang/String;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v0
+    invoke-virtual {v0, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     invoke-virtual {v0, p1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/Throwable;)V
 
     new-instance p1, Landroidx/work/ListenableWorker$Result$Failure;
 
     invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Failure;-><init>()V
-
-    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method

@@ -47,9 +47,13 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 0
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents;
+
+    instance-of p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingAnalytics;
+
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingNotificationsFragment;
 
@@ -57,22 +61,12 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
-
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->completeOnboarding()V
 
+    :cond_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.ui.onboarding.OnboardingActivity"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

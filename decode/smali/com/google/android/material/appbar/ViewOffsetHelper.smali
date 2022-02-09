@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field public horizontalOffsetEnabled:Z
-
 .field public layoutLeft:I
 
 .field public layoutTop:I
@@ -14,22 +12,14 @@
 
 .field public offsetTop:I
 
-.field public verticalOffsetEnabled:Z
-
 .field public final view:Landroid/view/View;
 
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/material/appbar/ViewOffsetHelper;->verticalOffsetEnabled:Z
-
-    iput-boolean v0, p0, Lcom/google/android/material/appbar/ViewOffsetHelper;->horizontalOffsetEnabled:Z
 
     iput-object p1, p0, Lcom/google/android/material/appbar/ViewOffsetHelper;->view:Landroid/view/View;
 
@@ -55,7 +45,9 @@
 
     sub-int/2addr v1, v2
 
-    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->offsetTopAndBottom(Landroid/view/View;I)V
+    sget-object v2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     iget-object v0, p0, Lcom/google/android/material/appbar/ViewOffsetHelper;->view:Landroid/view/View;
 
@@ -74,4 +66,25 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->offsetLeftAndRight(I)V
 
     return-void
+.end method
+
+.method public setTopAndBottomOffset(I)Z
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/material/appbar/ViewOffsetHelper;->offsetTop:I
+
+    if-eq v0, p1, :cond_0
+
+    iput p1, p0, Lcom/google/android/material/appbar/ViewOffsetHelper;->offsetTop:I
+
+    invoke-virtual {p0}, Lcom/google/android/material/appbar/ViewOffsetHelper;->applyOffsets()V
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

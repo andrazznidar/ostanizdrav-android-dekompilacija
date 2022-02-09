@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.submission.task.SubmissionTask"
     f = "SubmissionTask.kt"
     l = {
-        0xbf
+        0xdd
     }
     m = "getSupportedCountries"
 .end annotation
@@ -34,6 +34,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/submission/task/SubmissionTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/submission/task/SubmissionTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/submission/task/SubmissionTask$getSupportedCountries$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$getSupportedCountries$1;->this$0:Lde/rki/coronawarnapp/submission/task/SubmissionTask;
 
@@ -58,6 +68,8 @@
     iput p1, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$getSupportedCountries$1;->label:I
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$getSupportedCountries$1;->this$0:Lde/rki/coronawarnapp/submission/task/SubmissionTask;
+
+    sget-object v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask;->USER_INACTIVITY_TIMEOUT:Lorg/joda/time/Duration;
 
     invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/submission/task/SubmissionTask;->getSupportedCountries(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 

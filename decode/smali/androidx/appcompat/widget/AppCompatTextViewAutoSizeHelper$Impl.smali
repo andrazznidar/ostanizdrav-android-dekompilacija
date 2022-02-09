@@ -25,7 +25,12 @@
 
 
 # virtual methods
-.method public abstract computeAndSetTextDirection(Landroid/text/StaticLayout$Builder;Landroid/widget/TextView;)V
+.method public computeAndSetTextDirection(Landroid/text/StaticLayout$Builder;Landroid/widget/TextView;)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
 .method public isHorizontallyScrollable(Landroid/widget/TextView;)Z

@@ -38,11 +38,11 @@
     .end annotation
 .end field
 
-.field public final verificationKeysProvider:Ljavax/inject/Provider;
+.field public final signatureValidationProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/security/VerificationKeys;",
+            "Lde/rki/coronawarnapp/util/security/SignatureValidation;",
             ">;"
         }
     .end annotation
@@ -52,6 +52,19 @@
 # direct methods
 .method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "apiProvider",
+            "signatureValidationProvider",
+            "cacheProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,7 +72,7 @@
             "Lde/rki/coronawarnapp/statistics/source/StatisticsApiV1;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/security/VerificationKeys;",
+            "Lde/rki/coronawarnapp/util/security/SignatureValidation;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lokhttp3/Cache;",
@@ -71,7 +84,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;->apiProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;->verificationKeysProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;->signatureValidationProvider:Ljavax/inject/Provider;
 
     iput-object p3, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;->cacheProvider:Ljavax/inject/Provider;
 
@@ -89,13 +102,13 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;->verificationKeysProvider:Ljavax/inject/Provider;
+    iget-object v1, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;->signatureValidationProvider:Ljavax/inject/Provider;
 
     invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/util/security/VerificationKeys;
+    check-cast v1, Lde/rki/coronawarnapp/util/security/SignatureValidation;
 
     iget-object v2, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsServer_Factory;->cacheProvider:Ljavax/inject/Provider;
 
@@ -107,7 +120,7 @@
 
     new-instance v3, Lde/rki/coronawarnapp/statistics/source/StatisticsServer;
 
-    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/statistics/source/StatisticsServer;-><init>(Ldagger/Lazy;Lde/rki/coronawarnapp/util/security/VerificationKeys;Lokhttp3/Cache;)V
+    invoke-direct {v3, v0, v1, v2}, Lde/rki/coronawarnapp/statistics/source/StatisticsServer;-><init>(Ldagger/Lazy;Lde/rki/coronawarnapp/util/security/SignatureValidation;Lokhttp3/Cache;)V
 
     return-object v3
 .end method

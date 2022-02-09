@@ -4,31 +4,31 @@
 
 
 # instance fields
-.field public final cacheValidity:Lorg/joda/time/Duration;
+.field private final cacheValidity:Lorg/joda/time/Duration;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "cacheValidity"
     .end annotation
 .end field
 
-.field public final etag:Ljava/lang/String;
+.field private final etag:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "etag"
     .end annotation
 .end field
 
-.field public final localOffset:Lorg/joda/time/Duration;
+.field private final localOffset:Lorg/joda/time/Duration;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "localOffset"
     .end annotation
 .end field
 
-.field public final rawData:[B
+.field private final rawData:[B
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "rawData"
     .end annotation
 .end field
 
-.field public final serverTime:Lorg/joda/time/Instant;
+.field private final serverTime:Lorg/joda/time/Instant;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "serverTime"
     .end annotation
@@ -37,27 +37,7 @@
 
 # direct methods
 .method public constructor <init>([BLjava/lang/String;Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lorg/joda/time/Duration;)V
-    .locals 1
-
-    const-string v0, "rawData"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "etag"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "serverTime"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "localOffset"
-
-    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "cacheValidity"
-
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -88,32 +68,32 @@
     :cond_0
     const-class v1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     :goto_0
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    xor-int/2addr v1, v0
-
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2
+    if-nez v1, :cond_2
 
     return v2
 
     :cond_2
-    if-eqz p1, :cond_6
+    const-string v1, "null cannot be cast to non-null type de.rki.coronawarnapp.appconfig.internal.InternalConfigData"
+
+    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;
 
@@ -138,9 +118,7 @@
 
     move-result v1
 
-    xor-int/2addr v1, v0
-
-    if-eqz v1, :cond_4
+    if-nez v1, :cond_4
 
     return v2
 
@@ -153,27 +131,56 @@
 
     move-result p1
 
-    xor-int/2addr p1, v0
-
-    if-eqz p1, :cond_5
+    if-nez p1, :cond_5
 
     return v2
 
     :cond_5
     return v0
+.end method
 
-    :cond_6
-    new-instance p1, Ljava/lang/NullPointerException;
+.method public final getCacheValidity()Lorg/joda/time/Duration;
+    .locals 1
 
-    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.appconfig.internal.InternalConfigData"
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->cacheValidity:Lorg/joda/time/Duration;
 
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    throw p1
+.method public final getEtag()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->etag:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getLocalOffset()Lorg/joda/time/Duration;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->localOffset:Lorg/joda/time/Duration;
+
+    return-object v0
+.end method
+
+.method public final getRawData()[B
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->rawData:[B
+
+    return-object v0
+.end method
+
+.method public final getServerTime()Lorg/joda/time/Instant;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->serverTime:Lorg/joda/time/Instant;
+
+    return-object v0
 .end method
 
 .method public hashCode()I
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->rawData:[B
 
@@ -185,73 +192,63 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->serverTime:Lorg/joda/time/Instant;
 
-    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+    const/16 v2, 0x1f
+
+    invoke-static {v1, v0, v2}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData$$ExternalSyntheticOutline0;->m(Lorg/joda/time/Instant;II)I
+
+    move-result v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->localOffset:Lorg/joda/time/Duration;
+
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractDuration;->hashCode()I
 
     move-result v1
 
     add-int/2addr v1, v0
 
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->localOffset:Lorg/joda/time/Duration;
-
-    invoke-virtual {v0}, Lorg/joda/time/base/AbstractDuration;->hashCode()I
-
-    move-result v0
-
-    add-int/2addr v0, v1
-
-    return v0
+    return v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 8
 
-    const-string v0, "InternalConfigData(rawData="
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->rawData:[B
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->rawData:[B
-
-    invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", etag="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->etag:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->serverTime:Lorg/joda/time/Instant;
 
-    const-string v1, ", serverTime="
+    iget-object v3, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->localOffset:Lorg/joda/time/Duration;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->cacheValidity:Lorg/joda/time/Duration;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->serverTime:Lorg/joda/time/Instant;
+    const-string v5, "InternalConfigData(rawData="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v6, ", etag="
+
+    const-string v7, ", serverTime="
+
+    invoke-static {v5, v0, v6, v1, v7}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ", localOffset="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->localOffset:Lorg/joda/time/Duration;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ", cacheValidity="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->cacheValidity:Lorg/joda/time/Duration;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ")"
 

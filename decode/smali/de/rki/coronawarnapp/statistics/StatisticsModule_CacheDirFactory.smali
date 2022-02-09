@@ -34,6 +34,17 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/statistics/StatisticsModule;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "module",
+            "contextProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,7 +79,7 @@
 
     check-cast v1, Landroid/content/Context;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "context"
 
@@ -80,16 +91,9 @@
 
     move-result-object v1
 
-    const-string v2, "statistics"
+    const-string/jumbo v2, "statistics"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
-
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

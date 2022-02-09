@@ -1,4 +1,4 @@
-.class public final Landroidx/recyclerview/widget/LinearLayoutManager$SavedState$1;
+.class public Landroidx/recyclerview/widget/LinearLayoutManager$SavedState$1;
 .super Ljava/lang/Object;
 .source "LinearLayoutManager.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 

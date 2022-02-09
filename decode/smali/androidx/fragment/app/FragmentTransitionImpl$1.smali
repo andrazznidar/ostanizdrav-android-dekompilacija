@@ -6,6 +6,17 @@
 .implements Ljava/lang/Runnable;
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroidx/fragment/app/FragmentTransitionImpl;->setNameOverridesReordered(Landroid/view/View;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/Map;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
 # instance fields
 .field public final synthetic val$inNames:Ljava/util/ArrayList;
 
@@ -40,7 +51,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -65,7 +76,9 @@
 
     check-cast v2, Ljava/lang/String;
 
-    invoke-static {v1, v2}, Landroidx/core/view/ViewCompat;->setTransitionName(Landroid/view/View;Ljava/lang/String;)V
+    sget-object v3, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setTransitionName(Ljava/lang/String;)V
 
     iget-object v1, p0, Landroidx/fragment/app/FragmentTransitionImpl$1;->val$sharedElementsOut:Ljava/util/ArrayList;
 

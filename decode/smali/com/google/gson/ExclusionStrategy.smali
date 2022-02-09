@@ -14,5 +14,5 @@
     .end annotation
 .end method
 
-.method public abstract shouldSkipField(Lcom/google/gson/FieldAttributes;)Z
+.method public abstract shouldSkipField(Lokhttp3/ConnectionPool;)Z
 .end method

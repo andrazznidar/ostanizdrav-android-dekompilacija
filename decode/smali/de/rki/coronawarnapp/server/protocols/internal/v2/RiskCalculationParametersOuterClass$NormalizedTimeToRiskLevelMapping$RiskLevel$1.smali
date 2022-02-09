@@ -1,4 +1,4 @@
-.class public Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel$1;
+.class Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel$1;
 .super Ljava/lang/Object;
 .source "RiskCalculationParametersOuterClass.java"
 

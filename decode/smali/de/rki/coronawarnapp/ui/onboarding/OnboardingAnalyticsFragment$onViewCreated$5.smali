@@ -53,34 +53,37 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;)Lde/rki/coronawarnapp/databinding/FragmentOnboardingPpaBinding;
+    sget-object v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentOnboardingPpaBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingPpaBinding;->districtRowBody:Landroid/widget/TextView;
 
-    const-string v1, "binding.districtRowBody"
+    if-nez p1, :cond_0
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
-
-    if-eqz p1, :cond_0
+    const/4 p1, 0x0
 
     goto :goto_0
 
     :cond_0
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->getDistrictName()Ljava/lang/String;
+
+    move-result-object p1
+
+    :goto_0
+    if-nez p1, :cond_1
+
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingAnalyticsFragment;
 
-    const v1, 0x7f120035
+    const v1, 0x7f130052
 
     invoke-virtual {p1, v1}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_0
+    :cond_1
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

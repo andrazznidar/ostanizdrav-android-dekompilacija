@@ -1,20 +1,24 @@
 .class public final Lcom/google/android/gms/common/api/internal/zabi;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic zaa:Lcom/google/android/gms/common/api/internal/zabg;
+.field public final synthetic zaa:I
+
+.field public final synthetic zab:Lcom/google/android/gms/common/api/internal/zabl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zabg;)V
+.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zabl;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabi;->zaa:Lcom/google/android/gms/common/api/internal/zabg;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/internal/zabi;->zab:Lcom/google/android/gms/common/api/internal/zabl;
+
+    iput p2, p0, Lcom/google/android/gms/common/api/internal/zabi;->zaa:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,29 +28,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabi;->zaa:Lcom/google/android/gms/common/api/internal/zabg;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/zabi;->zab:Lcom/google/android/gms/common/api/internal/zabl;
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/zabg;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
+    iget v1, p0, Lcom/google/android/gms/common/api/internal/zabi;->zaa:I
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zac:Lcom/google/android/gms/common/api/Api$Client;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, " disconnecting because it was signed out."
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/Api$Client;->disconnect(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/internal/zabl;->zaC(I)V
 
     return-void
 .end method

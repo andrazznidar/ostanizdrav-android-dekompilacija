@@ -15,8 +15,6 @@
 
 .field public handler:Landroid/os/Handler;
 
-.field public lightSensor:Landroid/hardware/Sensor;
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/journeyapps/barcodescanner/camera/CameraManager;Lcom/journeyapps/barcodescanner/camera/CameraSettings;)V
@@ -41,16 +39,6 @@
 
 
 # virtual methods
-.method public synthetic lambda$setTorch$0$AmbientLightManager(Z)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->cameraManager:Lcom/journeyapps/barcodescanner/camera/CameraManager;
-
-    invoke-virtual {v0, p1}, Lcom/journeyapps/barcodescanner/camera/CameraManager;->setTorch(Z)V
-
-    return-void
-.end method
-
 .method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .locals 0
 
@@ -80,9 +68,9 @@
 
     iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->handler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/google/zxing/client/android/-$$Lambda$AmbientLightManager$5xS8FZhu7IJPDhDfZRf69EY2SWs;
+    new-instance v1, Lcom/google/zxing/client/android/AmbientLightManager$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/zxing/client/android/-$$Lambda$AmbientLightManager$5xS8FZhu7IJPDhDfZRf69EY2SWs;-><init>(Lcom/google/zxing/client/android/AmbientLightManager;Z)V
+    invoke-direct {v1, p0, p1}, Lcom/google/zxing/client/android/AmbientLightManager$$ExternalSyntheticLambda0;-><init>(Lcom/google/zxing/client/android/AmbientLightManager;Z)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -97,9 +85,9 @@
 
     iget-object p1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->handler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/google/zxing/client/android/-$$Lambda$AmbientLightManager$5xS8FZhu7IJPDhDfZRf69EY2SWs;
+    new-instance v1, Lcom/google/zxing/client/android/AmbientLightManager$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/zxing/client/android/-$$Lambda$AmbientLightManager$5xS8FZhu7IJPDhDfZRf69EY2SWs;-><init>(Lcom/google/zxing/client/android/AmbientLightManager;Z)V
+    invoke-direct {v1, p0, v0}, Lcom/google/zxing/client/android/AmbientLightManager$$ExternalSyntheticLambda0;-><init>(Lcom/google/zxing/client/android/AmbientLightManager;Z)V
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

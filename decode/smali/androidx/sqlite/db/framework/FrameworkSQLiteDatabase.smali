@@ -7,8 +7,6 @@
 
 
 # static fields
-.field public static final CONFLICT_VALUES:[Ljava/lang/String;
-
 .field public static final EMPTY_STRING_ARRAY:[Ljava/lang/String;
 
 
@@ -18,25 +16,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
-
-    const-string v0, ""
-
-    const-string v1, " OR ROLLBACK "
-
-    const-string v2, " OR ABORT "
-
-    const-string v3, " OR FAIL "
-
-    const-string v4, " OR IGNORE "
-
-    const-string v5, " OR REPLACE "
-
-    filled-new-array/range {v0 .. v5}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Landroidx/sqlite/db/framework/FrameworkSQLiteDatabase;->CONFLICT_VALUES:[Ljava/lang/String;
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -84,7 +64,7 @@
     return-void
 .end method
 
-.method public compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
+.method public compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
     .locals 2
 
     new-instance v0, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;

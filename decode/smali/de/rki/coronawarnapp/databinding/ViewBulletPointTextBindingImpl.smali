@@ -10,8 +10,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -23,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900c4
+    const v1, 0x7f0a013d
 
     const/4 v2, 0x2
 
@@ -34,6 +32,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -85,11 +93,9 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -128,7 +134,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;->bulletPointContent:Landroid/widget/TextView;
 
-    invoke-static {v0, v4}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v4}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_0
     return-void
@@ -212,6 +218,14 @@
 
 .method public setItemText(Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "ItemText"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/ViewBulletPointTextBinding;->mItemText:Ljava/lang/String;
 
@@ -230,11 +244,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1f
+    const/16 p1, 0x1e
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

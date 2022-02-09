@@ -18,8 +18,6 @@
 
 .field public final mergePaths:Lcom/airbnb/lottie/model/content/MergePaths;
 
-.field public final name:Ljava/lang/String;
-
 .field public final path:Landroid/graphics/Path;
 
 .field public final pathContents:Ljava/util/List;
@@ -64,10 +62,6 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/airbnb/lottie/animation/content/MergePathsContent;->pathContents:Ljava/util/List;
-
-    iget-object v0, p1, Lcom/airbnb/lottie/model/content/MergePaths;->name:Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/airbnb/lottie/animation/content/MergePathsContent;->name:Ljava/lang/String;
 
     iput-object p1, p0, Lcom/airbnb/lottie/animation/content/MergePathsContent;->mergePaths:Lcom/airbnb/lottie/model/content/MergePaths;
 
@@ -132,14 +126,6 @@
 
     :cond_1
     return-void
-.end method
-
-.method public getName()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/airbnb/lottie/animation/content/MergePathsContent;->name:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method public getPath()Landroid/graphics/Path;

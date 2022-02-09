@@ -48,21 +48,41 @@
     .end annotation
 .end field
 
-.field public final playbookProvider:Ljavax/inject/Provider;
+.field public final checkInsRepositoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/playbook/Playbook;",
+            "Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
+.field public final checkInsTransformerProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;",
+            "Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsTransformer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final coronaTestRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final playbookProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/playbook/Playbook;",
             ">;"
         }
     .end annotation
@@ -102,7 +122,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;",
+            "Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;",
             ">;"
         }
     .end annotation
@@ -120,8 +140,39 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "playbookProvider",
+            "appConfigProvider",
+            "tekHistoryCalculationsProvider",
+            "tekHistoryStorageProvider",
+            "submissionSettingsProvider",
+            "autoSubmissionProvider",
+            "timeStamperProvider",
+            "testResultAvailableNotificationServiceProvider",
+            "checkInsRepositoryProvider",
+            "checkInsTransformerProvider",
+            "analyticsKeySubmissionCollectorProvider",
+            "coronaTestRepositoryProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -147,13 +198,19 @@
             "Lde/rki/coronawarnapp/util/TimeStamper;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;",
+            "Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;",
+            "Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsTransformer;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;",
             ">;)V"
         }
     .end annotation
@@ -174,11 +231,15 @@
 
     iput-object p7, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iput-object p8, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
+    iput-object p8, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->testResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
 
-    iput-object p9, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->testResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
+    iput-object p9, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->checkInsRepositoryProvider:Ljavax/inject/Provider;
 
-    iput-object p10, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+    iput-object p10, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->checkInsTransformerProvider:Ljavax/inject/Provider;
+
+    iput-object p11, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+
+    iput-object p12, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -186,7 +247,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 12
+    .locals 14
 
     iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->playbookProvider:Ljavax/inject/Provider;
 
@@ -258,7 +319,7 @@
 
     check-cast v8, Lde/rki/coronawarnapp/util/TimeStamper;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->testResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -266,9 +327,9 @@
 
     move-object v9, v0
 
-    check-cast v9, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
+    check-cast v9, Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->testResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->checkInsRepositoryProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -276,9 +337,9 @@
 
     move-object v10, v0
 
-    check-cast v10, Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;
+    check-cast v10, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->checkInsTransformerProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -286,13 +347,33 @@
 
     move-object v11, v0
 
-    check-cast v11, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
+    check-cast v11, Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsTransformer;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v12, v0
+
+    check-cast v12, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask_Factory;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v13, v0
+
+    check-cast v13, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
 
     new-instance v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/submission/task/SubmissionTask;-><init>(Lde/rki/coronawarnapp/playbook/Playbook;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/submission/task/ExposureKeyHistoryCalculations;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;Lde/rki/coronawarnapp/submission/SubmissionSettings;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;)V
+    invoke-direct/range {v1 .. v13}, Lde/rki/coronawarnapp/submission/task/SubmissionTask;-><init>(Lde/rki/coronawarnapp/playbook/Playbook;Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/submission/task/ExposureKeyHistoryCalculations;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;Lde/rki/coronawarnapp/submission/SubmissionSettings;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;Lde/rki/coronawarnapp/presencetracing/checkins/CheckInsTransformer;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;)V
 
     return-object v0
 .end method

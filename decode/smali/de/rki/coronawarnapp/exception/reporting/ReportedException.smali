@@ -32,9 +32,7 @@
 
     if-eqz p4, :cond_0
 
-    sget-object p1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->REPORTED_EXCEPTION_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-    iget p1, p1, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->code:I
+    const/16 p1, 0x2329
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -57,8 +55,6 @@
     move-object p3, v0
 
     :cond_2
-    and-int/lit8 p4, p5, 0x8
-
     invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/exception/reporting/ReportedException;->code:Ljava/lang/Integer;

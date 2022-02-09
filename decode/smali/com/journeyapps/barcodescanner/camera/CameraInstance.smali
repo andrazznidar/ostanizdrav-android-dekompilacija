@@ -3,10 +3,6 @@
 .source "CameraInstance.java"
 
 
-# static fields
-.field public static final TAG:Ljava/lang/String; = "CameraInstance"
-
-
 # instance fields
 .field public cameraClosed:Z
 
@@ -79,7 +75,7 @@
 
     iput-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->closer:Ljava/lang/Runnable;
 
-    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
+    invoke-static {}, Lcom/journeyapps/barcodescanner/Util;->validateMainThread()V
 
     sget-object v0, Lcom/journeyapps/barcodescanner/camera/CameraThread;->instance:Lcom/journeyapps/barcodescanner/camera/CameraThread;
 
@@ -122,7 +118,7 @@
 
     if-eqz p0, :cond_0
 
-    const v0, 0x7f09056f
+    sget v0, Lcom/google/zxing/client/android/R$id;->zxing_camera_error:I
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -131,44 +127,5 @@
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_0
-    return-void
-.end method
-
-
-# virtual methods
-.method public synthetic lambda$requestPreview$3$CameraInstance(Lcom/journeyapps/barcodescanner/camera/PreviewCallback;)V
-    .locals 2
-
-    iget-boolean v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->open:Z
-
-    if-nez v0, :cond_0
-
-    sget-object p1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->TAG:Ljava/lang/String;
-
-    const-string v0, "Camera is closed, not requesting preview"
-
-    invoke-static {p1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->cameraThread:Lcom/journeyapps/barcodescanner/camera/CameraThread;
-
-    new-instance v1, Lcom/journeyapps/barcodescanner/camera/-$$Lambda$CameraInstance$bQiXjxep2gi5y59Y2Mz6oBBza-g;
-
-    invoke-direct {v1, p0, p1}, Lcom/journeyapps/barcodescanner/camera/-$$Lambda$CameraInstance$bQiXjxep2gi5y59Y2Mz6oBBza-g;-><init>(Lcom/journeyapps/barcodescanner/camera/CameraInstance;Lcom/journeyapps/barcodescanner/camera/PreviewCallback;)V
-
-    invoke-virtual {v0, v1}, Lcom/journeyapps/barcodescanner/camera/CameraThread;->enqueue(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public synthetic lambda$setTorch$0$CameraInstance(Z)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->cameraManager:Lcom/journeyapps/barcodescanner/camera/CameraManager;
-
-    invoke-virtual {v0, p1}, Lcom/journeyapps/barcodescanner/camera/CameraManager;->setTorch(Z)V
-
     return-void
 .end method

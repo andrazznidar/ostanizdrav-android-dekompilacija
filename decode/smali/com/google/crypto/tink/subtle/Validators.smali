@@ -3,12 +3,6 @@
 .source "Validators.java"
 
 
-# static fields
-.field public static final GCP_KMS_CRYPTO_KEY_PATTERN:Ljava/util/regex/Pattern;
-
-.field public static final GCP_KMS_CRYPTO_KEY_VERSION_PATTERN:Ljava/util/regex/Pattern;
-
-
 # direct methods
 .method public static constructor <clinit>()V
     .locals 8
@@ -43,10 +37,6 @@
 
     invoke-static {v1, v5}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
-    move-result-object v1
-
-    sput-object v1, Lcom/google/crypto/tink/subtle/Validators;->GCP_KMS_CRYPTO_KEY_PATTERN:Ljava/util/regex/Pattern;
-
     const/4 v1, 0x5
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -68,10 +58,6 @@
     move-result-object v0
 
     invoke-static {v0, v5}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/crypto/tink/subtle/Validators;->GCP_KMS_CRYPTO_KEY_VERSION_PATTERN:Ljava/util/regex/Pattern;
 
     return-void
 .end method
@@ -281,7 +267,7 @@
 
     const-string v1, "Unsupported hash: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

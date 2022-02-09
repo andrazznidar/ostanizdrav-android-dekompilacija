@@ -6,12 +6,20 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroid/widget/LinearLayout;
-
 
 # direct methods
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -77,11 +85,9 @@
 
     check-cast p1, Landroid/widget/LinearLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;->mboundView0:Landroid/widget/LinearLayout;
-
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -138,7 +144,7 @@
 
     if-eqz v10, :cond_0
 
-    invoke-static {v6}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v12
 
@@ -156,24 +162,20 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v1, 0x1
-
     if-eqz v7, :cond_1
 
-    const-string v2, ""
+    const-string v1, ""
 
-    invoke-static {v7, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    xor-int/2addr v2, v1
+    if-nez v1, :cond_1
 
-    if-eqz v2, :cond_1
-
-    move v11, v1
+    const/4 v11, 0x1
 
     :cond_1
-    invoke-static {v11}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
+    invoke-static {v11}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibility(Z)I
 
     move-result v11
 
@@ -182,7 +184,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderBody:Landroid/widget/TextView;
 
-    invoke-static {v0, v7}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v7}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderBody:Landroid/widget/TextView;
 
@@ -193,7 +195,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderHeadline:Landroid/widget/TextView;
 
-    invoke-static {v0, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v6}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderHeadline:Landroid/widget/TextView;
 
@@ -211,7 +213,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->informationDetailsHeaderIllustration:Landroid/widget/ImageView;
 
-    invoke-static {v0, v4}, Lcom/google/zxing/client/android/R$id;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_6
     return-void
@@ -295,6 +297,14 @@
 
 .method public setBody(Ljava/lang/CharSequence;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Body"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->mBody:Ljava/lang/CharSequence;
 
@@ -317,7 +327,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 
@@ -334,6 +344,14 @@
 
 .method public setHeadline(Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Headline"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->mHeadline:Ljava/lang/String;
 
@@ -352,11 +370,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x14
+    const/16 p1, 0x13
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 
@@ -373,6 +391,14 @@
 
 .method public setIllustration(Landroid/graphics/drawable/Drawable;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Illustration"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->mIllustration:Landroid/graphics/drawable/Drawable;
 
@@ -391,11 +417,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1a
+    const/16 p1, 0x19
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 
@@ -412,6 +438,14 @@
 
 .method public setIllustrationDescription(Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "IllustrationDescription"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;->mIllustrationDescription:Ljava/lang/String;
 
@@ -430,11 +464,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x1b
+    const/16 p1, 0x1a
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

@@ -16,7 +16,7 @@
     c = "de.rki.coronawarnapp.nearby.ENFClient$isPerformingExposureDetection$$inlined$map$2$2"
     f = "ENFClient.kt"
     l = {
-        0x88
+        0x89
     }
     m = "emit"
 .end annotation

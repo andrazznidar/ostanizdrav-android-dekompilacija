@@ -14,6 +14,8 @@
 # instance fields
 .field public keysetManager:Lcom/google/crypto/tink/KeysetManager;
 
+.field public final masterKey:Lcom/google/crypto/tink/Aead;
+
 
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$1;)V
@@ -26,6 +28,10 @@
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget-object p2, p1, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKey:Lcom/google/crypto/tink/Aead;
+
+    iput-object p2, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager;->masterKey:Lcom/google/crypto/tink/Aead;
 
     iget-object p1, p1, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->keysetManager:Lcom/google/crypto/tink/KeysetManager;
 

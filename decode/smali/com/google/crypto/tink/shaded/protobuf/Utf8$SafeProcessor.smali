@@ -60,7 +60,7 @@
 
     aget-byte v4, p1, p2
 
-    invoke-static {v4}, Lcom/google/android/material/R$style;->access$400(B)Z
+    invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$400(B)Z
 
     move-result v5
 
@@ -92,7 +92,7 @@
 
     aget-byte p2, p1, p2
 
-    invoke-static {p2}, Lcom/google/android/material/R$style;->access$400(B)Z
+    invoke-static {p2}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$400(B)Z
 
     move-result v4
 
@@ -109,7 +109,7 @@
 
     aget-byte p2, p1, v3
 
-    invoke-static {p2}, Lcom/google/android/material/R$style;->access$400(B)Z
+    invoke-static {p2}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$400(B)Z
 
     move-result v5
 
@@ -139,7 +139,7 @@
     goto :goto_2
 
     :cond_4
-    invoke-static {p2}, Lcom/google/android/material/R$style;->access$600(B)Z
+    invoke-static {p2}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$600(B)Z
 
     move-result v4
 
@@ -153,7 +153,7 @@
 
     add-int/lit8 v5, v8, 0x1
 
-    invoke-static {p2, v3, p3, v8}, Lcom/google/android/material/R$style;->access$700(BB[CI)V
+    invoke-static {p2, v3, p3, v8}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$700(BB[CI)V
 
     move p2, v4
 
@@ -169,7 +169,7 @@
     throw p1
 
     :cond_6
-    invoke-static {p2}, Lcom/google/android/material/R$style;->access$800(B)Z
+    invoke-static {p2}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$800(B)Z
 
     move-result v4
 
@@ -189,7 +189,7 @@
 
     add-int/lit8 v6, v8, 0x1
 
-    invoke-static {p2, v3, v4, p3, v8}, Lcom/google/android/material/R$style;->access$900(BBB[CI)V
+    invoke-static {p2, v3, v4, p3, v8}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$900(BBB[CI)V
 
     move p2, v5
 
@@ -233,7 +233,7 @@
 
     move-object v7, p3
 
-    invoke-static/range {v3 .. v8}, Lcom/google/android/material/R$style;->access$1000(BBBB[CI)V
+    invoke-static/range {v3 .. v8}, Lcom/google/crypto/tink/shaded/protobuf/Utf8$DecodeUtil;->access$1000(BBBB[CI)V
 
     add-int/2addr v10, v2
 

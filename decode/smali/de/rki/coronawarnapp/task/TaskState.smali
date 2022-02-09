@@ -3,14 +3,6 @@
 .source "TaskState.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/task/TaskState$ExecutionState;
-    }
-.end annotation
-
-
 # virtual methods
 .method public abstract getError()Ljava/lang/Throwable;
 .end method
@@ -40,9 +32,6 @@
 .end method
 
 .method public abstract isActive()Z
-.end method
-
-.method public abstract isFailed()Z
 .end method
 
 .method public abstract isFinished()Z

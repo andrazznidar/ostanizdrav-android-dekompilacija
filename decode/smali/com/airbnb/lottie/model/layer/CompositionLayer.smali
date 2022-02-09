@@ -159,7 +159,7 @@
 
     const-string v6, "Unknown layer type "
 
-    invoke-static {v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -252,9 +252,9 @@
 
     invoke-interface {v8, v4, v6}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    iget-object v4, v5, Lcom/airbnb/lottie/model/layer/Layer;->matteType:Lcom/airbnb/lottie/model/layer/Layer$MatteType;
+    iget v4, v5, Lcom/airbnb/lottie/model/layer/Layer;->matteType:I
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v4}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
 
     move-result v4
 
@@ -374,7 +374,7 @@
 .end method
 
 .method public drawLayer(Landroid/graphics/Canvas;Landroid/graphics/Matrix;I)V
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lcom/airbnb/lottie/model/layer/CompositionLayer;->newClipRect:Landroid/graphics/RectF;
 
@@ -434,7 +434,13 @@
 
     iget-object v4, p0, Lcom/airbnb/lottie/model/layer/CompositionLayer;->layerPaint:Landroid/graphics/Paint;
 
-    invoke-static {p1, v3, v4}, Lcom/airbnb/lottie/utils/Utils;->saveLayerCompat(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    sget-object v5, Lcom/airbnb/lottie/utils/Utils;->threadLocalPathMeasure:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->saveLayer(Landroid/graphics/RectF;Landroid/graphics/Paint;)I
+
+    const-string v3, "Utils#saveLayer"
+
+    invoke-static {v3}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
 
     goto :goto_1
 

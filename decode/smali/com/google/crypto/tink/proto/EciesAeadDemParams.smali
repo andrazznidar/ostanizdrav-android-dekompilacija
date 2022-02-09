@@ -18,8 +18,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/EciesAeadDemParams;",
         "Lcom/google/crypto/tink/proto/EciesAeadDemParams$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
@@ -27,9 +26,9 @@
 # static fields
 .field public static final AEAD_DEM_FIELD_NUMBER:I = 0x2
 
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/EciesAeadDemParams;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/EciesAeadDemParams;
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -41,7 +40,7 @@
 
 
 # instance fields
-.field public aeadDem_:Lcom/google/crypto/tink/proto/KeyTemplate;
+.field private aeadDem_:Lcom/google/crypto/tink/proto/KeyTemplate;
 
 
 # direct methods
@@ -61,7 +60,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -130,7 +129,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/EciesAeadDemParams;->aeadDem_:Lcom/google/crypto/tink/proto/KeyTemplate;
 
@@ -586,7 +585,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/EciesAeadDemParams;->aeadDem_:Lcom/google/crypto/tink/proto/KeyTemplate;
 

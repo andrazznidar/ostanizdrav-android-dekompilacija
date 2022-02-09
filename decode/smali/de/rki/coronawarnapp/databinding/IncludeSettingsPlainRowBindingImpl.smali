@@ -12,8 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -45,7 +43,7 @@
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c008f
+    const v4, 0x7f0d00d6
 
     aput v4, v2, v5
 
@@ -57,23 +55,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0903d0
+    const v1, 0x7f0a0639
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901cf
+    const v1, 0x7f0a0348
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901cc
+    const v1, 0x7f0a0345
 
     const/4 v2, 0x6
 
@@ -84,6 +78,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 12
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -170,8 +174,6 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
@@ -184,7 +186,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -227,7 +229,7 @@
 
     move-result v4
 
-    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibility(Z)I
+    invoke-static {v4}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibility(Z)I
 
     move-result v4
 
@@ -257,14 +259,14 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->settingsPlainRowHeaderBody:Landroid/widget/TextView;
 
-    invoke-static {v1, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v1, v6}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_2
     if-eqz v0, :cond_3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->settingsPlainRowHeaderSubtitle:Landroid/widget/TextView;
 
-    invoke-static {v0, v6}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v6}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_3
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBinding;->divider:Lde/rki/coronawarnapp/databinding/IncludeDividerBinding;
@@ -370,6 +372,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

@@ -13,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,7 +56,7 @@
 
     check-cast v4, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->timeStamperProvider:Ljavax/inject/Provider;
+    iget-object v1, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->enfClientProvider:Ljavax/inject/Provider;
 
     invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -56,9 +64,9 @@
 
     move-object v5, v1
 
-    check-cast v5, Lde/rki/coronawarnapp/util/TimeStamper;
+    check-cast v5, Lde/rki/coronawarnapp/nearby/ENFClient;
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->fileSharingProvider:Ljavax/inject/Provider;
+    iget-object v1, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->bugReportingSettingsProvider:Ljavax/inject/Provider;
 
     invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -66,9 +74,9 @@
 
     move-object v6, v1
 
-    check-cast v6, Lde/rki/coronawarnapp/util/sharing/FileSharing;
+    check-cast v6, Lde/rki/coronawarnapp/bugreporting/BugReportingSettings;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->enfClientProvider:Ljavax/inject/Provider;
+    iget-object v0, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->logSnapshotterProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
@@ -76,13 +84,13 @@
 
     move-object v7, v0
 
-    check-cast v7, Lde/rki/coronawarnapp/nearby/ENFClient;
+    check-cast v7, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter;
 
     new-instance v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v7}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/util/sharing/FileSharing;Lde/rki/coronawarnapp/nearby/ENFClient;)V
+    invoke-direct/range {v2 .. v7}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/bugreporting/BugReportingSettings;Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter;)V
 
     return-object v0
 .end method

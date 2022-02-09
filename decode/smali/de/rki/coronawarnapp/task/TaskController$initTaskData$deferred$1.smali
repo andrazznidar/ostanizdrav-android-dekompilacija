@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/task/TaskController;->initTaskData(Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
@@ -43,7 +34,16 @@
 # instance fields
 .field public final synthetic $newRequest:Lde/rki/coronawarnapp/task/TaskRequest;
 
-.field public final synthetic $task:Lkotlin/jvm/internal/Ref$ObjectRef;
+.field public final synthetic $task:Lde/rki/coronawarnapp/task/Task;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lde/rki/coronawarnapp/task/Task<",
+            "Lde/rki/coronawarnapp/task/Task$Progress;",
+            "Lde/rki/coronawarnapp/task/Task$Result;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final synthetic $taskConfig:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
@@ -51,12 +51,29 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/task/TaskFactory$Config;Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/task/TaskFactory$Config;Lde/rki/coronawarnapp/task/Task;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/task/TaskFactory$Config;",
+            "Lde/rki/coronawarnapp/task/Task<",
+            "+",
+            "Lde/rki/coronawarnapp/task/Task$Progress;",
+            "+",
+            "Lde/rki/coronawarnapp/task/Task$Result;",
+            ">;",
+            "Lde/rki/coronawarnapp/task/TaskRequest;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$taskConfig:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$task:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object p2, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$task:Lde/rki/coronawarnapp/task/Task;
 
     iput-object p3, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$newRequest:Lde/rki/coronawarnapp/task/TaskRequest;
 
@@ -83,41 +100,35 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$taskConfig:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$task:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$task:Lde/rki/coronawarnapp/task/Task;
 
     iget-object v2, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$newRequest:Lde/rki/coronawarnapp/task/TaskRequest;
 
-    invoke-direct {p1, v0, v1, v2, p2}, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;-><init>(Lde/rki/coronawarnapp/task/TaskFactory$Config;Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, v1, v2, p2}, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;-><init>(Lde/rki/coronawarnapp/task/TaskFactory$Config;Lde/rki/coronawarnapp/task/Task;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$taskConfig:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$task:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$task:Lde/rki/coronawarnapp/task/Task;
 
     iget-object v2, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$newRequest:Lde/rki/coronawarnapp/task/TaskRequest;
 
-    invoke-direct {p1, v0, v1, v2, p2}, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;-><init>(Lde/rki/coronawarnapp/task/TaskFactory$Config;Lkotlin/jvm/internal/Ref$ObjectRef;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, v1, v2, p2}, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;-><init>(Lde/rki/coronawarnapp/task/TaskFactory$Config;Lde/rki/coronawarnapp/task/Task;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)V
 
     sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -129,7 +140,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 7
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -141,7 +152,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -155,7 +166,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$taskConfig:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
@@ -167,13 +178,17 @@
 
     new-instance p1, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1$1;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$task:Lde/rki/coronawarnapp/task/Task;
 
-    invoke-direct {p1, p0, v1}, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1$1;-><init>(Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;Lkotlin/coroutines/Continuation;)V
+    iget-object v5, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->$newRequest:Lde/rki/coronawarnapp/task/TaskRequest;
+
+    const/4 v6, 0x0
+
+    invoke-direct {p1, v1, v5, v6}, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1$1;-><init>(Lde/rki/coronawarnapp/task/Task;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)V
 
     iput v2, p0, Lde/rki/coronawarnapp/task/TaskController$initTaskData$deferred$1;->label:I
 
-    invoke-static {v3, v4, p1, p0}, Lcom/google/zxing/client/android/R$id;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v3, v4, p1, p0}, Lkotlinx/coroutines/TimeoutKt;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

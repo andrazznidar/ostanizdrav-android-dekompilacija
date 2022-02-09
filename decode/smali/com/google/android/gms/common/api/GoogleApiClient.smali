@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/GoogleApiClient;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -16,6 +16,18 @@
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 

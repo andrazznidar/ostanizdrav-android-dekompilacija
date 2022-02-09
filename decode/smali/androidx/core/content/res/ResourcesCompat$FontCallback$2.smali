@@ -26,6 +26,16 @@
 # direct methods
 .method public constructor <init>(Landroidx/core/content/res/ResourcesCompat$FontCallback;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x1010
+        }
+        names = {
+            "this$0",
+            "val$reason"
+        }
+    .end annotation
 
     iput-object p1, p0, Landroidx/core/content/res/ResourcesCompat$FontCallback$2;->this$0:Landroidx/core/content/res/ResourcesCompat$FontCallback;
 

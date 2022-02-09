@@ -8,12 +8,10 @@
 
 .field public mLastWidthSize:I
 
-.field public mMinimumHeight:I
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 9
+    .locals 8
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -21,41 +19,37 @@
 
     iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->mLastWidthSize:I
 
-    const/4 v0, 0x0
+    sget-object v3, Landroidx/appcompat/R$styleable;->ButtonBarLayout:[I
 
-    iput v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->mMinimumHeight:I
+    invoke-virtual {p1, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    sget-object v1, Landroidx/appcompat/R$styleable;->ButtonBarLayout:[I
+    move-result-object v0
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v1
-
-    sget-object v4, Landroidx/appcompat/R$styleable;->ButtonBarLayout:[I
+    const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    move-object v1, p0
 
-    move-object v2, p0
+    move-object v2, p1
 
-    move-object v3, p1
+    move-object v4, p2
 
-    move-object v5, p2
+    move-object v5, v0
 
-    move-object v6, v1
+    invoke-static/range {v1 .. v7}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
-    invoke-static/range {v2 .. v8}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    sget p1, Landroidx/appcompat/R$styleable;->ButtonBarLayout_allowStacking:I
 
-    const/4 p1, 0x1
+    const/4 p2, 0x1
 
-    invoke-virtual {v1, v0, p1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, p1, p2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p1
 
     iput-boolean p1, p0, Landroidx/appcompat/widget/ButtonBarLayout;->mAllowStacking:Z
 
-    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
@@ -67,7 +61,7 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v0, 0x5
+    const v0, 0x800005
 
     goto :goto_0
 
@@ -77,7 +71,7 @@
     :goto_0
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    const v0, 0x7f09040b
+    sget v0, Landroidx/appcompat/R$id;->spacer:I
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -126,13 +120,13 @@
 .method public getMinimumHeight()I
     .locals 2
 
-    iget v0, p0, Landroidx/appcompat/widget/ButtonBarLayout;->mMinimumHeight:I
+    invoke-super {p0}, Landroid/view/View;->getMinimumHeight()I
 
-    invoke-super {p0}, Landroid/widget/LinearLayout;->getMinimumHeight()I
+    move-result v0
 
-    move-result v1
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -393,7 +387,9 @@
 
     :cond_8
     :goto_2
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
+    sget-object p1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ButtonBarLayout;->getMinimumHeight()I
 
     move-result p1
 

@@ -1,4 +1,4 @@
-.class public final Landroidx/databinding/ViewDataBinding$6;
+.class public Landroidx/databinding/ViewDataBinding$6;
 .super Ljava/lang/Object;
 .source "ViewDataBinding.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -36,7 +36,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f09015b
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

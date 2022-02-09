@@ -6,14 +6,6 @@
 .implements Lcom/airbnb/lottie/model/content/ContentModel;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/airbnb/lottie/model/content/PolystarShape$Type;
-    }
-.end annotation
-
-
 # instance fields
 .field public final hidden:Z
 
@@ -42,17 +34,17 @@
 
 .field public final rotation:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
-.field public final type:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+.field public final type:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/PolystarShape$Type;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
+.method public constructor <init>(Ljava/lang/String;ILcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/airbnb/lottie/model/content/PolystarShape$Type;",
+            "Ljava/lang/Object;",
             "Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;",
             "Lcom/airbnb/lottie/model/animatable/AnimatableValue<",
             "Landroid/graphics/PointF;",
@@ -71,7 +63,7 @@
 
     iput-object p1, p0, Lcom/airbnb/lottie/model/content/PolystarShape;->name:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/airbnb/lottie/model/content/PolystarShape;->type:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
+    iput p2, p0, Lcom/airbnb/lottie/model/content/PolystarShape;->type:I
 
     iput-object p3, p0, Lcom/airbnb/lottie/model/content/PolystarShape;->points:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 

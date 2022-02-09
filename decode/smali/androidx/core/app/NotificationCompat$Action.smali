@@ -33,6 +33,18 @@
 # direct methods
 .method public constructor <init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
     .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "icon",
+            "title",
+            "intent"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

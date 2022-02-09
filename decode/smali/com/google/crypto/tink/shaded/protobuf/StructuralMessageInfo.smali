@@ -15,12 +15,12 @@
     return-object v0
 .end method
 
-.method public getSyntax()Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;
+.method public getSyntax$enumunboxing$()I
     .locals 1
 
     const/4 v0, 0x0
 
-    return-object v0
+    return v0
 .end method
 
 .method public isMessageSetWireFormat()Z

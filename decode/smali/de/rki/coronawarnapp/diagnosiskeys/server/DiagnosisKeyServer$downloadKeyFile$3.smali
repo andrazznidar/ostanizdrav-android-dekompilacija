@@ -25,8 +25,8 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.server.DiagnosisKeyServer$downloadKeyFile$3"
     f = "DiagnosisKeyServer.kt"
     l = {
-        0x4d,
-        0x52,
+        0x4a,
+        0x50,
         0x58
     }
     m = "invokeSuspend"
@@ -41,6 +41,19 @@
 .field public final synthetic $locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
 .field public final synthetic $precondition:Lkotlin/jvm/functions/Function2;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function2<",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/DownloadInfo;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/lang/Boolean;",
+            ">;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final synthetic $saveTo:Ljava/io/File;
 
@@ -54,18 +67,42 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Ljava/io/File;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Ljava/io/File;Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;",
+            "Lorg/joda/time/LocalDate;",
+            "Lorg/joda/time/LocalTime;",
+            "Ljava/io/File;",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;",
+            "Lkotlin/jvm/functions/Function2<",
+            "-",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/DownloadInfo;",
+            "-",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/lang/Boolean;",
+            ">;+",
+            "Ljava/lang/Object;",
+            ">;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;",
+            ">;)V"
+        }
+    .end annotation
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
+    iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
+    iput-object p2, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
+    iput-object p3, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
+    iput-object p4, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
+    iput-object p5, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
     iput-object p6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$precondition:Lkotlin/jvm/functions/Function2;
 
@@ -92,21 +129,17 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
+    iget-object v1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
+    iget-object v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
+    iget-object v3, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
+    iget-object v4, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
+    iget-object v5, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
     iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$precondition:Lkotlin/jvm/functions/Function2;
 
@@ -114,13 +147,15 @@
 
     move-object v7, p2
 
-    invoke-direct/range {v0 .. v7}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Ljava/io/File;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
+    invoke-direct/range {v0 .. v7}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Ljava/io/File;Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -140,7 +175,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 10
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -152,11 +187,13 @@
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x1
+    const-string v5, "DiagnosisKeyServer"
+
+    const/4 v6, 0x1
 
     if-eqz v1, :cond_3
 
-    if-eq v1, v5, :cond_2
+    if-eq v1, v6, :cond_2
 
     if-eq v1, v3, :cond_1
 
@@ -170,7 +207,7 @@
 
     check-cast v1, Lretrofit2/Response;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_4
 
@@ -184,95 +221,87 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
     :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    sget-object p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    move-result-object p1
+    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v1, 0x4
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    aput-object v6, v1, v4
+    aput-object v7, v1, v4
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
 
-    aput-object v6, v1, v5
+    aput-object v7, v1, v6
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
 
-    aput-object v6, v1, v3
+    aput-object v7, v1, v3
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    aput-object v6, v1, v2
+    aput-object v7, v1, v2
 
-    const-string v6, "Starting download: location=%s, day=%s, hour=%s -> %s."
+    const-string v7, "Starting download: location=%s, day=%s, hour=%s -> %s."
 
-    invoke-virtual {p1, v6, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v7, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
+    iget-object v1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    move-result p1
+    move-result v1
 
-    if-eqz p1, :cond_4
+    if-eqz v1, :cond_4
 
-    sget-object p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->TAG:Ljava/lang/String;
+    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    new-array v1, v6, [Ljava/lang/Object;
 
-    move-result-object p1
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    new-array v1, v5, [Ljava/lang/Object;
+    aput-object v7, v1, v4
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
+    const-string v7, "File existed, overwriting: %s"
 
-    aput-object v6, v1, v4
+    invoke-virtual {p1, v7, v1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v6, "File existed, overwriting: %s"
+    iget-object v1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    invoke-virtual {p1, v6, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
+    move-result v1
 
-    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+    if-eqz v1, :cond_4
 
-    move-result p1
+    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    if-eqz p1, :cond_4
+    new-array v1, v6, [Ljava/lang/Object;
 
-    sget-object p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->TAG:Ljava/lang/String;
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    aput-object v7, v1, v4
 
-    move-result-object p1
+    const-string v7, "%s exists, but can\'t be deleted."
 
-    new-array v1, v5, [Ljava/lang/Object;
-
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$saveTo:Ljava/io/File;
-
-    aput-object v6, v1, v4
-
-    const-string v6, "%s exists, but can\'t be deleted."
-
-    invoke-virtual {p1, v6, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v7, v1}, Ltimber/log/Timber$Forest;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_4
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
@@ -283,39 +312,41 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->access$getKeyApi$p(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
+    invoke-static {p1}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->access$getKeyApi(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
 
     move-result-object p1
 
     iget-object v3, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iget-object v3, v3, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->identifier:Ljava/lang/String;
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->getIdentifier()Ljava/lang/String;
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
+    move-result-object v3
 
-    sget-object v7, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
 
-    invoke-virtual {v6, v7}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    sget-object v8, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    move-result-object v6
+    invoke-virtual {v7, v8}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
-    invoke-static {v6, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v7
+
+    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$hour:Lorg/joda/time/LocalTime;
 
-    sget-object v7, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->HOUR_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
+    sget-object v8, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->HOUR_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    invoke-virtual {v1, v7}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v1, v8}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v7, "hour.toString(HOUR_FORMATTER)"
+    const-string v8, "hour.toString(HOUR_FORMATTER)"
 
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput v5, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->label:I
+    iput v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->label:I
 
-    invoke-interface {p1, v3, v6, v1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;->downloadKeyFileForHour(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p1, v3, v7, v1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;->downloadKeyFileForHour(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -335,27 +366,29 @@
     :cond_6
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->access$getKeyApi$p(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
+    invoke-static {p1}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->access$getKeyApi(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
 
     move-result-object p1
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
+    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$locationCode:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iget-object v6, v6, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->identifier:Ljava/lang/String;
-
-    iget-object v7, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
-
-    sget-object v8, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
-
-    invoke-virtual {v7, v8}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    invoke-virtual {v7}, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->getIdentifier()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v8, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->$day:Lorg/joda/time/LocalDate;
+
+    sget-object v9, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
+
+    invoke-virtual {v8, v9}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput v3, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$downloadKeyFile$3;->label:I
 
-    invoke-interface {p1, v6, v7, p0}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;->downloadKeyFileForDay(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p1, v7, v8, p0}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;->downloadKeyFileForDay(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -376,9 +409,9 @@
 
     iget-object v3, v3, Lokhttp3/Response;->headers:Lokhttp3/Headers;
 
-    const-string v6, "response.headers()"
+    const-string v7, "response.headers()"
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p1, v3}, Lde/rki/coronawarnapp/diagnosiskeys/server/DownloadInfo;-><init>(Lokhttp3/Headers;)V
 
@@ -412,17 +445,17 @@
 
     if-nez p1, :cond_9
 
-    sget-object p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    move-result-object p1
+    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v1, v4, [Ljava/lang/Object;
 
     const-string v2, "Precondition is not met, aborting."
 
-    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v0
 
@@ -455,46 +488,32 @@
     const/16 v1, 0x2000
 
     :try_start_1
-    invoke-static {p1, v2, v1}, Lcom/google/zxing/client/android/R$id;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
-
-    move-result-wide v6
-
-    new-instance v1, Ljava/lang/Long;
-
-    invoke-direct {v1, v6, v7}, Ljava/lang/Long;-><init>(J)V
+    invoke-static {p1, v2, v1}, Lkotlin/io/ByteStreamsKt;->copyTo(Ljava/io/InputStream;Ljava/io/OutputStream;I)J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     :try_start_2
-    invoke-static {p1, v3}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    invoke-virtual {v1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v6
-
-    new-instance p1, Ljava/lang/Long;
-
-    invoke-direct {p1, v6, v7}, Ljava/lang/Long;-><init>(J)V
+    invoke-static {p1, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    invoke-static {v2, v3}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v2, v1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    sget-object p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->DAY_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-    move-result-object p1
+    invoke-virtual {p1, v5}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v1, v5, [Ljava/lang/Object;
+    new-array v1, v6, [Ljava/lang/Object;
 
     aput-object v0, v1, v4
 
     const-string v2, "Key file download successful: %s"
 
-    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v0
 
@@ -510,7 +529,7 @@
     move-exception v1
 
     :try_start_4
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {p1, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
     :try_end_4
@@ -527,7 +546,7 @@
     :catchall_3
     move-exception v0
 
-    invoke-static {v2, p1}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v2, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v0
 

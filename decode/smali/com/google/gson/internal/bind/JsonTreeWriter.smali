@@ -348,35 +348,37 @@
 .end method
 
 .method public final put(Lcom/google/gson/JsonElement;)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x0
+    instance-of v0, p1, Lcom/google/gson/JsonNull;
 
-    instance-of v1, p1, Lcom/google/gson/JsonNull;
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    iget-boolean v0, p0, Lcom/google/gson/stream/JsonWriter;->serializeNulls:Z
 
-    iget-boolean v1, p0, Lcom/google/gson/stream/JsonWriter;->serializeNulls:Z
-
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->peek()Lcom/google/gson/JsonElement;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/google/gson/JsonObject;
+    check-cast v0, Lcom/google/gson/JsonObject;
 
-    iget-object v2, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
-    invoke-virtual {v1, v2, p1}, Lcom/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/google/gson/JsonElement;)V
+    iget-object v0, v0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
+
+    invoke-virtual {v0, v1, p1}, Lcom/google/gson/internal/LinkedTreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
-    iput-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
     goto :goto_0
 

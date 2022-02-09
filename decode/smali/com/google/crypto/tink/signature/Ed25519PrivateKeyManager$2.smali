@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public createKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Ljava/lang/Object;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -89,9 +89,7 @@
 
     iget-object v2, p0, Lcom/google/crypto/tink/signature/Ed25519PrivateKeyManager$2;->this$0:Lcom/google/crypto/tink/signature/Ed25519PrivateKeyManager;
 
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_1
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -99,9 +97,9 @@
 
     check-cast v2, Lcom/google/crypto/tink/proto/Ed25519PublicKey;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-static {v2, v4}, Lcom/google/crypto/tink/proto/Ed25519PublicKey;->access$100(Lcom/google/crypto/tink/proto/Ed25519PublicKey;I)V
+    invoke-static {v2, v3}, Lcom/google/crypto/tink/proto/Ed25519PublicKey;->access$100(Lcom/google/crypto/tink/proto/Ed25519PublicKey;I)V
 
     array-length v2, v0
 
@@ -133,7 +131,7 @@
 
     iget-object v2, p0, Lcom/google/crypto/tink/signature/Ed25519PrivateKeyManager$2;->this$0:Lcom/google/crypto/tink/signature/Ed25519PrivateKeyManager;
 
-    if-eqz v2, :cond_0
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -141,7 +139,7 @@
 
     check-cast v2, Lcom/google/crypto/tink/proto/Ed25519PrivateKey;
 
-    invoke-static {v2, v4}, Lcom/google/crypto/tink/proto/Ed25519PrivateKey;->access$100(Lcom/google/crypto/tink/proto/Ed25519PrivateKey;I)V
+    invoke-static {v2, v3}, Lcom/google/crypto/tink/proto/Ed25519PrivateKey;->access$100(Lcom/google/crypto/tink/proto/Ed25519PrivateKey;I)V
 
     array-length v2, p1
 
@@ -176,12 +174,6 @@
     check-cast p1, Lcom/google/crypto/tink/proto/Ed25519PrivateKey;
 
     return-object p1
-
-    :cond_0
-    throw v3
-
-    :cond_1
-    throw v3
 .end method
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
@@ -212,7 +204,7 @@
     return-object p1
 .end method
 
-.method public validateKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
+.method public bridge synthetic validateKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {

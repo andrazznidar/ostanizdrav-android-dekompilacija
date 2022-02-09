@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout android:background="?selectableItemBackground" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <RadioButton android:id="@id/radiobutton" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_marginStart="16.0dip" android:buttonTint="@color/radiobutton_accented" android:buttonTintMode="src_atop" style="@style/Widget.AppCompat.CompoundButton.RadioButton" />
+    <RadioButton android:id="@id/radiobutton" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:layout_marginStart="16.0dip" style="@style/Widget.AppCompat.CompoundButton.RadioButton" />
     <TextView android:layout_gravity="center_vertical" android:id="@id/label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="64.0dip" android:layout_marginEnd="16.0dip" style="@style/body1" />
 </FrameLayout>

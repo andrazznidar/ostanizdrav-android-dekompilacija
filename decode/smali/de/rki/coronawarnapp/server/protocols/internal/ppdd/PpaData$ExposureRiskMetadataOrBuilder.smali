@@ -27,6 +27,21 @@
 .method public abstract getMostRecentDateAtRiskLevel()J
 .end method
 
+.method public abstract getPtDateChangedComparedToPreviousSubmission()Z
+.end method
+
+.method public abstract getPtMostRecentDateAtRiskLevel()J
+.end method
+
+.method public abstract getPtRiskLevel()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+.end method
+
+.method public abstract getPtRiskLevelChangedComparedToPreviousSubmission()Z
+.end method
+
+.method public abstract getPtRiskLevelValue()I
+.end method
+
 .method public abstract getRiskLevel()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 .end method
 

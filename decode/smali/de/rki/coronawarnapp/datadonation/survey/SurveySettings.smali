@@ -33,7 +33,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/datadonation/survey/SurveySettings$preferences$2;-><init>(Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

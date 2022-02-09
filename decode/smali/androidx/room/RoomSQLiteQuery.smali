@@ -84,32 +84,28 @@
 .end method
 
 .method public static acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
-    .locals 4
+    .locals 3
 
     sget-object v0, Landroidx/room/RoomSQLiteQuery;->sQueryPool:Ljava/util/TreeMap;
 
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Landroidx/room/RoomSQLiteQuery;->sQueryPool:Ljava/util/TreeMap;
-
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/util/TreeMap;->ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    invoke-virtual {v0, v1}, Ljava/util/TreeMap;->ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    sget-object v2, Landroidx/room/RoomSQLiteQuery;->sQueryPool:Ljava/util/TreeMap;
-
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/util/TreeMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/TreeMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -153,38 +149,6 @@
 
 
 # virtual methods
-.method public bindBlob(I[B)V
-    .locals 2
-
-    iget-object v0, p0, Landroidx/room/RoomSQLiteQuery;->mBindingTypes:[I
-
-    const/4 v1, 0x5
-
-    aput v1, v0, p1
-
-    iget-object v0, p0, Landroidx/room/RoomSQLiteQuery;->mBlobBindings:[[B
-
-    aput-object p2, v0, p1
-
-    return-void
-.end method
-
-.method public bindDouble(ID)V
-    .locals 2
-
-    iget-object v0, p0, Landroidx/room/RoomSQLiteQuery;->mBindingTypes:[I
-
-    const/4 v1, 0x3
-
-    aput v1, v0, p1
-
-    iget-object v0, p0, Landroidx/room/RoomSQLiteQuery;->mDoubleBindings:[D
-
-    aput-wide p2, v0, p1
-
-    return-void
-.end method
-
 .method public bindLong(IJ)V
     .locals 2
 
@@ -270,7 +234,13 @@
 
     aget-object v2, v2, v1
 
-    invoke-interface {p1, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindBlob(I[B)V
+    move-object v3, p1
+
+    check-cast v3, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;
+
+    iget-object v3, v3, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v3, v1, v2}, Landroid/database/sqlite/SQLiteProgram;->bindBlob(I[B)V
 
     goto :goto_1
 
@@ -279,7 +249,13 @@
 
     aget-object v2, v2, v1
 
-    invoke-interface {p1, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    move-object v3, p1
+
+    check-cast v3, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;
+
+    iget-object v3, v3, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v3, v1, v2}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     goto :goto_1
 
@@ -288,7 +264,13 @@
 
     aget-wide v3, v2, v1
 
-    invoke-interface {p1, v1, v3, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindDouble(ID)V
+    move-object v2, p1
+
+    check-cast v2, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;
+
+    iget-object v2, v2, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v1, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindDouble(ID)V
 
     goto :goto_1
 
@@ -297,12 +279,24 @@
 
     aget-wide v3, v2, v1
 
-    invoke-interface {p1, v1, v3, v4}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    move-object v2, p1
+
+    check-cast v2, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;
+
+    iget-object v2, v2, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v1, v3, v4}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     goto :goto_1
 
     :cond_4
-    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    move-object v2, p1
+
+    check-cast v2, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;
+
+    iget-object v2, v2, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
@@ -317,14 +311,6 @@
     .locals 0
 
     return-void
-.end method
-
-.method public getArgCount()I
-    .locals 1
-
-    iget v0, p0, Landroidx/room/RoomSQLiteQuery;->mArgCount:I
-
-    return v0
 .end method
 
 .method public getSql()Ljava/lang/String;
@@ -343,19 +329,15 @@
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Landroidx/room/RoomSQLiteQuery;->sQueryPool:Ljava/util/TreeMap;
+    iget v1, p0, Landroidx/room/RoomSQLiteQuery;->mCapacity:I
 
-    iget v2, p0, Landroidx/room/RoomSQLiteQuery;->mCapacity:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v0, v1, p0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, p0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v1, Landroidx/room/RoomSQLiteQuery;->sQueryPool:Ljava/util/TreeMap;
-
-    invoke-virtual {v1}, Ljava/util/TreeMap;->size()I
+    invoke-virtual {v0}, Ljava/util/TreeMap;->size()I
 
     move-result v1
 
@@ -363,17 +345,13 @@
 
     if-le v1, v2, :cond_0
 
-    sget-object v1, Landroidx/room/RoomSQLiteQuery;->sQueryPool:Ljava/util/TreeMap;
-
-    invoke-virtual {v1}, Ljava/util/TreeMap;->size()I
+    invoke-virtual {v0}, Ljava/util/TreeMap;->size()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0xa
 
-    sget-object v2, Landroidx/room/RoomSQLiteQuery;->sQueryPool:Ljava/util/TreeMap;
-
-    invoke-virtual {v2}, Ljava/util/TreeMap;->descendingKeySet()Ljava/util/NavigableSet;
+    invoke-virtual {v0}, Ljava/util/TreeMap;->descendingKeySet()Ljava/util/NavigableSet;
 
     move-result-object v2
 

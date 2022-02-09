@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTracingDetailsFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingDetailsFragmentViewModel.kt\nde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,136:1\n47#2:137\n49#2:141\n50#3:138\n55#3:140\n106#4:139\n*E\n*S KotlinDebug\n*F\n+ 1 TracingDetailsFragmentViewModel.kt\nde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel\n*L\n54#1:137\n54#1:141\n54#1:138\n54#1:140\n54#1:139\n*E\n"
+    value = "SMAP\nTracingDetailsFragmentViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingDetailsFragmentViewModel.kt\nde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,134:1\n47#2:135\n49#2:139\n50#3:136\n55#3:138\n106#4:137\n*S KotlinDebug\n*F\n+ 1 TracingDetailsFragmentViewModel.kt\nde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel\n*L\n53#1:135\n53#1:139\n53#1:136\n53#1:138\n53#1:137\n*E\n"
 .end annotation
 
 
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tracingStatus"
+    const-string/jumbo v0, "tracingStatus"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -78,19 +78,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tracingDetailsItemProvider"
+    const-string/jumbo v0, "tracingDetailsItemProvider"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tracingStateProviderFactory"
+    const-string/jumbo v0, "tracingStateProviderFactory"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tracingRepository"
+    const-string/jumbo v0, "tracingRepository"
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "surveys"
+    const-string/jumbo v0, "surveys"
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -108,7 +108,7 @@
 
     invoke-direct {p7, p6}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$tracingStateProvider$2;-><init>(Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$Factory;)V
 
-    invoke-static {p7}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p7}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p6
 
@@ -124,9 +124,9 @@
 
     iget-object p6, p6, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider;->state:Lkotlinx/coroutines/flow/Flow;
 
-    new-instance p7, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$$special$$inlined$map$1;
+    new-instance p7, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$special$$inlined$map$1;
 
-    invoke-direct {p7, p6}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {p7, p6}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
     iput-object p7, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel;->tracingCardItems:Lkotlinx/coroutines/flow/Flow;
 
@@ -140,7 +140,7 @@
 
     invoke-direct {p8, p7, p5, p6}, Lkotlinx/coroutines/flow/FlowKt__ZipKt$combine$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
 
-    invoke-static {p8}, Lkotlinx/coroutines/flow/FlowKt__DistinctKt;->distinctUntilChanged(Lkotlinx/coroutines/flow/Flow;)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p8}, Lkotlinx/coroutines/flow/FlowKt;->distinctUntilChanged(Lkotlinx/coroutines/flow/Flow;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p5
 
@@ -158,7 +158,7 @@
 
     iget-object p2, p2, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus;->generalStatus:Lkotlinx/coroutines/flow/Flow;
 
-    invoke-interface {p4}, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;->getLatestAndLastSuccessful()Lkotlinx/coroutines/flow/Flow;
+    invoke-interface {p4}, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;->getLatestAndLastSuccessfulCombinedEwPtRiskLevelResult()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p4
 
@@ -168,7 +168,7 @@
 
     invoke-direct {p5, v0}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p2, p4, p3, p5}, Lcom/google/zxing/client/android/R$id;->combine(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function4;)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p2, p4, p3, p5}, Lkotlinx/coroutines/flow/FlowKt;->combine(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function4;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p2
 
@@ -178,7 +178,7 @@
 
     new-instance p4, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;
 
-    invoke-direct {p4, p2, p3}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {p4, p3, p2}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlin/jvm/functions/Function2;Lkotlinx/coroutines/flow/Flow;)V
 
     new-instance p2, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$buttonStates$3;
 

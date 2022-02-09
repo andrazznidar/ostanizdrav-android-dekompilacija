@@ -17,10 +17,15 @@
     c = "de.rki.coronawarnapp.submission.task.SubmissionTask"
     f = "SubmissionTask.kt"
     l = {
-        0x7e,
-        0x91,
-        0x97,
-        0x9d
+        0x81,
+        0x89,
+        0x98,
+        0x9b,
+        0xa3,
+        0xac,
+        0xb5,
+        0xbb,
+        0xc3
     }
     m = "performSubmission"
 .end annotation
@@ -35,6 +40,12 @@
 
 .field public L$2:Ljava/lang/Object;
 
+.field public L$3:Ljava/lang/Object;
+
+.field public L$4:Ljava/lang/Object;
+
+.field public L$5:Ljava/lang/Object;
+
 .field public label:I
 
 .field public synthetic result:Ljava/lang/Object;
@@ -45,6 +56,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/submission/task/SubmissionTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/submission/task/SubmissionTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/submission/task/SubmissionTask$performSubmission$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$performSubmission$1;->this$0:Lde/rki/coronawarnapp/submission/task/SubmissionTask;
 
@@ -69,6 +90,8 @@
     iput p1, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$performSubmission$1;->label:I
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$performSubmission$1;->this$0:Lde/rki/coronawarnapp/submission/task/SubmissionTask;
+
+    sget-object v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask;->USER_INACTIVITY_TIMEOUT:Lorg/joda/time/Duration;
 
     invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/submission/task/SubmissionTask;->performSubmission(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 

@@ -44,7 +44,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 11
+    .locals 16
 
     new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
@@ -56,111 +56,99 @@
 
     sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->IS_INITIALIZED:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-instance v1, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const-string v1, "VISIT"
+    const-string v3, "VISIT"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->VISIT:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v1, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->VISIT:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-instance v3, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const-string v1, "MERGE_FROM_STREAM"
+    const-string v5, "MERGE_FROM_STREAM"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->MERGE_FROM_STREAM:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v3, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->MERGE_FROM_STREAM:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-instance v5, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const-string v1, "MAKE_IMMUTABLE"
+    const-string v7, "MAKE_IMMUTABLE"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->MAKE_IMMUTABLE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v5, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->MAKE_IMMUTABLE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-instance v7, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const-string v1, "NEW_MUTABLE_INSTANCE"
+    const-string v9, "NEW_MUTABLE_INSTANCE"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v1, v6}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->NEW_MUTABLE_INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v7, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->NEW_MUTABLE_INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-instance v9, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const-string v1, "NEW_BUILDER"
+    const-string v11, "NEW_BUILDER"
 
-    const/4 v7, 0x5
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v1, v7}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->NEW_BUILDER:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v9, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->NEW_BUILDER:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-instance v11, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const-string v1, "GET_DEFAULT_INSTANCE"
+    const-string v13, "GET_DEFAULT_INSTANCE"
 
-    const/4 v8, 0x6
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v1, v8}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v11, v13, v14}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->GET_DEFAULT_INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v11, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->GET_DEFAULT_INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-instance v13, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const-string v1, "GET_PARSER"
+    const-string v15, "GET_PARSER"
 
-    const/4 v9, 0x7
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v1, v9}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v13, v15, v14}, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->GET_PARSER:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v13, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->GET_PARSER:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    const/16 v1, 0x8
+    const/16 v15, 0x8
 
-    new-array v1, v1, [Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    new-array v15, v15, [Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
-    sget-object v10, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->IS_INITIALIZED:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    aput-object v0, v15, v2
 
-    aput-object v10, v1, v2
+    aput-object v1, v15, v4
 
-    sget-object v2, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->VISIT:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    aput-object v3, v15, v6
 
-    aput-object v2, v1, v3
+    aput-object v5, v15, v8
 
-    sget-object v2, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->MERGE_FROM_STREAM:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    aput-object v7, v15, v10
 
-    aput-object v2, v1, v4
+    aput-object v9, v15, v12
 
-    sget-object v2, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->MAKE_IMMUTABLE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    const/4 v0, 0x6
 
-    aput-object v2, v1, v5
+    aput-object v11, v15, v0
 
-    sget-object v2, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->NEW_MUTABLE_INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    aput-object v13, v15, v14
 
-    aput-object v2, v1, v6
-
-    sget-object v2, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->NEW_BUILDER:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
-
-    aput-object v2, v1, v7
-
-    sget-object v2, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->GET_DEFAULT_INSTANCE:Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
-
-    aput-object v2, v1, v8
-
-    aput-object v0, v1, v9
-
-    sput-object v1, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->$VALUES:[Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
+    sput-object v15, Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;->$VALUES:[Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;
 
     return-void
 .end method

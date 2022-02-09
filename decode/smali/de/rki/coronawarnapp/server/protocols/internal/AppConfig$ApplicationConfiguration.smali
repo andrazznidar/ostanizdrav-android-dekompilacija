@@ -44,7 +44,7 @@
 
 .field public static final ATTENUATIONDURATION_FIELD_NUMBER:I = 0x4
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
 .field public static final EXPOSURECONFIG_FIELD_NUMBER:I = 0x3
 
@@ -54,7 +54,7 @@
 
 .field public static final MINRISKSCORE_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -70,29 +70,29 @@
 
 
 # instance fields
-.field public androidExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;
+.field private androidExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;
 
-.field public androidKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;
+.field private androidKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;
 
-.field public appFeatures_:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
+.field private appFeatures_:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
 
-.field public appVersion_:Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;
+.field private appVersion_:Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;
 
-.field public attenuationDuration_:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;
+.field private attenuationDuration_:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;
 
-.field public bitField0_:I
+.field private bitField0_:I
 
-.field public exposureConfig_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;
+.field private exposureConfig_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;
 
-.field public iosExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;
+.field private iosExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;
 
-.field public iosKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
+.field private iosKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
 
-.field public minRiskScore_:I
+.field private minRiskScore_:I
 
-.field public riskScoreClasses_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;
+.field private riskScoreClasses_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;
 
-.field public supportedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private supportedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -104,6 +104,366 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->addAllSupportedCountries(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->addSupportedCountries(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddSupportedCountriesBytes(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lcom/google/protobuf/ByteString;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->addSupportedCountriesBytes(Lcom/google/protobuf/ByteString;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAndroidExposureDetectionParameters()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAndroidKeyDownloadParameters()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAppFeatures()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAppVersion()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAttenuationDuration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearExposureConfig()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearIosExposureDetectionParameters()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearIosKeyDownloadParameters()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMinRiskScore(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearMinRiskScore()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearRiskScoreClasses()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearSupportedCountries()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMinRiskScore(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setMinRiskScore(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;ILjava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setSupportedCountries(ILjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -118,7 +478,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -128,358 +488,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->supportedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
-
-    return-void
-.end method
-
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setMinRiskScore(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearExposureConfig()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAttenuationDuration()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAppVersion()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearMinRiskScore()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAppFeatures()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;ILjava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setSupportedCountries(ILjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->addSupportedCountries(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->addAllSupportedCountries(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearSupportedCountries()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lcom/google/protobuf/ByteString;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->addSupportedCountriesBytes(Lcom/google/protobuf/ByteString;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearIosKeyDownloadParameters()V
-
-    return-void
-.end method
-
-.method public static synthetic access$3200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAndroidKeyDownloadParameters()V
-
-    return-void
-.end method
-
-.method public static synthetic access$3600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearIosExposureDetectionParameters()V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearAndroidExposureDetectionParameters()V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->clearRiskScoreClasses()V
-
-    return-void
-.end method
-
-.method public static synthetic access$700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->setExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->mergeExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
 
     return-void
 .end method
@@ -507,26 +515,23 @@
 .method private addSupportedCountries(Ljava/lang/String;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->ensureSupportedCountriesIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->supportedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addSupportedCountriesBytes(Lcom/google/protobuf/ByteString;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Lcom/google/protobuf/AbstractMessageLite;->checkByteStringIsUtf8(Lcom/google/protobuf/ByteString;)V
 
@@ -538,14 +543,11 @@
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private clearAndroidExposureDetectionParameters()V
@@ -1330,16 +1332,11 @@
 .method private setAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->androidExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid$Builder;)V
@@ -1359,16 +1356,11 @@
 .method private setAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->androidKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;)V
@@ -1388,16 +1380,11 @@
 .method private setAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->appFeatures_:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration$Builder;)V
@@ -1417,16 +1404,11 @@
 .method private setAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->appVersion_:Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration$Builder;)V
@@ -1446,16 +1428,11 @@
 .method private setAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->attenuationDuration_:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder;)V
@@ -1475,16 +1452,11 @@
 .method private setExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->exposureConfig_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS$Builder;)V
@@ -1504,16 +1476,11 @@
 .method private setIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->iosExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;)V
@@ -1533,16 +1500,11 @@
 .method private setIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->iosKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setMinRiskScore(I)V
@@ -1570,22 +1532,17 @@
 .method private setRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->riskScoreClasses_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setSupportedCountries(ILjava/lang/String;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->ensureSupportedCountriesIsMutable()V
 
@@ -1594,17 +1551,12 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
 # virtual methods
 .method public final dynamicMethod(Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 5
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
@@ -1693,8 +1645,6 @@
 
     if-eqz p1, :cond_3
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->androidExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;
-
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     move-result-object p1
@@ -1737,8 +1687,6 @@
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->iosExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;
 
     if-eqz p1, :cond_4
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->iosExposureDetectionParameters_:Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -1783,8 +1731,6 @@
 
     if-eqz p1, :cond_5
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->androidKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;
-
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     move-result-object p1
@@ -1827,8 +1773,6 @@
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->iosKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
 
     if-eqz p1, :cond_6
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->iosKeyDownloadParameters_:Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -1875,13 +1819,13 @@
 
     iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->supportedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v4, v3
 
-    iget-boolean v3, v3, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v4, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez v3, :cond_7
+    iget-boolean v4, v4, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->supportedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v4, :cond_7
 
     invoke-static {v3}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -1892,7 +1836,9 @@
     :cond_7
     iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->supportedCountries_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v3, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v3, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v3, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
 
@@ -1900,8 +1846,6 @@
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->appFeatures_:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
 
     if-eqz p1, :cond_8
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->appFeatures_:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -1946,8 +1890,6 @@
 
     if-eqz p1, :cond_9
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->appVersion_:Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;
-
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     move-result-object p1
@@ -1990,8 +1932,6 @@
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->attenuationDuration_:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;
 
     if-eqz p1, :cond_a
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->attenuationDuration_:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -2036,8 +1976,6 @@
 
     if-eqz p1, :cond_b
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->exposureConfig_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;
-
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     move-result-object p1
@@ -2080,8 +2018,6 @@
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->riskScoreClasses_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;
 
     if-eqz p1, :cond_c
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->riskScoreClasses_:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;
 
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -2197,16 +2133,14 @@
 
     if-eqz p1, :cond_e
 
-    move p1, v0
+    move v2, v0
 
     goto :goto_e
 
     :cond_e
-    move p1, v1
+    move v2, v1
 
     :goto_e
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->minRiskScore_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->minRiskScore_:I
 
     if-eqz v3, :cond_f
@@ -2217,9 +2151,7 @@
     move v0, v1
 
     :goto_f
-    iget v1, p3, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->minRiskScore_:I
-
-    invoke-interface {p2, p1, v2, v0, v1}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v2, p1, v0, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -2361,7 +2293,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;
 
-    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$1;)V
+    invoke-direct {p1, v2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder-IA;)V
 
     return-object p1
 
@@ -2385,8 +2317,6 @@
     invoke-direct {p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;-><init>()V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

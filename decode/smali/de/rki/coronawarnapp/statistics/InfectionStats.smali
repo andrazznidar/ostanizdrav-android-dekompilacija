@@ -1,11 +1,11 @@
 .class public final Lde/rki/coronawarnapp/statistics/InfectionStats;
-.super Lde/rki/coronawarnapp/statistics/StatsItem;
+.super Lde/rki/coronawarnapp/statistics/GlobalStatsItem;
 .source "StatsItem.kt"
 
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStatsItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatsItem.kt\nde/rki/coronawarnapp/statistics/InfectionStats\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,118:1\n586#2,12:119\n586#2,12:131\n586#2,12:143\n629#2,11:155\n629#2,11:166\n629#2,11:177\n*E\n*S KotlinDebug\n*F\n+ 1 StatsItem.kt\nde/rki/coronawarnapp/statistics/InfectionStats\n*L\n37#1,12:119\n40#1,12:131\n43#1,12:143\n47#1,11:155\n50#1,11:166\n53#1,11:177\n*E\n"
+    value = "SMAP\nStatsItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatsItem.kt\nde/rki/coronawarnapp/statistics/InfectionStats\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,287:1\n616#2,12:288\n616#2,12:300\n616#2,12:312\n659#2,11:324\n659#2,11:335\n659#2,11:346\n*S KotlinDebug\n*F\n+ 1 StatsItem.kt\nde/rki/coronawarnapp/statistics/InfectionStats\n*L\n86#1:288,12\n89#1:300,12\n92#1:312,12\n96#1:324,11\n99#1:335,11\n102#1:346,11\n*E\n"
 .end annotation
 
 
@@ -36,19 +36,11 @@
         }
     .end annotation
 
-    const-string v0, "updatedAt"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "keyFigures"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/statistics/StatsItem$Type;->INFECTION:Lde/rki/coronawarnapp/statistics/StatsItem$Type;
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1}, Lde/rki/coronawarnapp/statistics/StatsItem;-><init>(Lde/rki/coronawarnapp/statistics/StatsItem$Type;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {p0, v0, v1}, Lde/rki/coronawarnapp/statistics/GlobalStatsItem;-><init>(ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
 
@@ -60,48 +52,53 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/statistics/InfectionStats;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/statistics/InfectionStats;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/statistics/InfectionStats;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
+    iget-object v3, p1, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_3
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_3
+    return v0
 .end method
 
 .method public final getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
@@ -368,42 +365,29 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
+    iget-object v1, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
 
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :cond_1
-    add-int/2addr v0, v1
+    add-int/2addr v1, v0
 
-    return v0
+    return v1
 .end method
 
 .method public requireValidity()V
-    .locals 11
+    .locals 10
 
     iget-object v0, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
 
@@ -559,72 +543,70 @@
     move-object v6, v1
 
     :cond_a
-    const-string v4, "InfectionStats is missing secondary value"
-
     if-eqz v6, :cond_11
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
+    iget-object v4, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
 
-    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v4
 
-    move-object v7, v1
+    move-object v6, v1
 
-    move v6, v3
+    move v5, v3
 
     :cond_b
     :goto_7
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v7
 
-    if-eqz v8, :cond_e
+    if-eqz v7, :cond_e
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    move-object v8, v7
+
+    check-cast v8, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    invoke-virtual {v8}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getRank()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank;
 
     move-result-object v8
 
-    move-object v9, v8
+    sget-object v9, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank;->TERTIARY:Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank;
 
-    check-cast v9, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+    if-ne v8, v9, :cond_c
 
-    invoke-virtual {v9}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getRank()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank;
-
-    move-result-object v9
-
-    sget-object v10, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank;->TERTIARY:Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank;
-
-    if-ne v9, v10, :cond_c
-
-    move v9, v2
+    move v8, v2
 
     goto :goto_8
 
     :cond_c
-    move v9, v3
+    move v8, v3
 
     :goto_8
-    if-eqz v9, :cond_b
+    if-eqz v8, :cond_b
 
-    if-eqz v6, :cond_d
+    if-eqz v5, :cond_d
 
     goto :goto_9
 
     :cond_d
-    move v6, v2
+    move v5, v2
 
-    move-object v7, v8
+    move-object v6, v7
 
     goto :goto_7
 
     :cond_e
-    if-nez v6, :cond_f
+    if-nez v5, :cond_f
 
     goto :goto_9
 
     :cond_f
-    move-object v1, v7
+    move-object v1, v6
 
     :goto_9
     if-eqz v1, :cond_10
@@ -632,11 +614,13 @@
     return-void
 
     :cond_10
-    new-array v1, v3, [Ljava/lang/Object;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v4, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v3, "InfectionStats is missing tertiary value"
+
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -645,11 +629,13 @@
     throw v1
 
     :cond_11
-    new-array v1, v3, [Ljava/lang/Object;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v2, v4, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v3, "InfectionStats is missing secondary value"
+
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -658,13 +644,13 @@
     throw v1
 
     :cond_12
-    new-array v1, v3, [Ljava/lang/Object;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v3, [Ljava/lang/Object;
 
     const-string v3, "InfectionStats is missing primary value"
 
-    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -687,31 +673,33 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
-    const-string v0, "InfectionStats(updatedAt="
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", keyFigures="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->updatedAt:Lorg/joda/time/Instant;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/statistics/InfectionStats;->keyFigures:Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "InfectionStats(updatedAt="
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", keyFigures="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

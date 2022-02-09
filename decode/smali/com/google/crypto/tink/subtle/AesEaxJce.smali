@@ -121,11 +121,9 @@
 
     check-cast p1, Ljavax/crypto/Cipher;
 
-    const/4 p2, 0x1
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lcom/google/crypto/tink/subtle/AesEaxJce;->keySpec:Ljavax/crypto/spec/SecretKeySpec;
-
-    invoke-virtual {p1, p2, v1}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
+    invoke-virtual {p1, v1, p2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
 
     new-array p2, v0, [B
 
@@ -429,7 +427,7 @@
     :cond_2
     new-instance p1, Ljavax/crypto/AEADBadTagException;
 
-    const-string p2, "tag mismatch"
+    const-string/jumbo p2, "tag mismatch"
 
     invoke-direct {p1, p2}, Ljavax/crypto/AEADBadTagException;-><init>(Ljava/lang/String;)V
 

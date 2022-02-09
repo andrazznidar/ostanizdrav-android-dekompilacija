@@ -37,7 +37,7 @@
 .end method
 
 .method public static retryWithBackOff$default(Lde/rki/coronawarnapp/util/RetryMechanism;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;I)Ljava/lang/Object;
-    .locals 29
+    .locals 28
 
     and-int/lit8 v0, p5, 0x1
 
@@ -45,7 +45,7 @@
 
     if-eqz v0, :cond_0
 
-    const-wide/16 v3, 0x3a98
+    const-wide/16 v3, 0x1b58
 
     const-wide/16 v7, 0xbb8
 
@@ -98,47 +98,45 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "action"
-
-    move-object/from16 v4, p4
-
-    invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    const-wide/16 v7, 0x0
+    const-wide/16 v6, 0x0
 
-    const-wide/16 v9, 0x0
+    const-wide/16 v8, 0x0
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    const/16 v12, 0xf
+    const/16 v11, 0xf
 
-    move-object v5, v0
+    move-object v4, v0
 
-    invoke-direct/range {v5 .. v12}, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;-><init>(IJJLjava/lang/Exception;I)V
+    invoke-direct/range {v4 .. v11}, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;-><init>(IJJLjava/lang/Exception;I)V
 
-    move-object v13, v0
+    move-object v12, v0
 
     :goto_2
-    const/4 v5, 0x1
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v0, v5, [Ljava/lang/Object;
+    const/4 v4, 0x1
+
+    new-array v5, v4, [Ljava/lang/Object;
 
     const/4 v6, 0x0
 
-    aput-object v13, v0, v6
+    aput-object v12, v5, v6
 
-    sget-object v7, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v7, "Executing attempt: %s"
 
-    const-string v8, "Executing attempt: %s"
-
-    invoke-virtual {v7, v8, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v7, v5}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_0
-    invoke-interface/range {p4 .. p4}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
+    move-object/from16 v0, p4
+
+    check-cast v0, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory$create$1;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptedPreferencesFactory$create$1;->invoke()Ljava/lang/Object;
 
     move-result-object v0
     :try_end_0
@@ -149,82 +147,78 @@
     :catch_0
     move-exception v0
 
-    move-object v7, v0
+    move-object/from16 v18, v0
 
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
-    const-wide/16 v15, 0x0
+    const-wide/16 v14, 0x0
 
-    const-wide/16 v17, 0x0
+    const-wide/16 v16, 0x0
 
-    const/16 v20, 0x7
+    const/16 v19, 0x7
 
-    move-object/from16 v19, v7
-
-    invoke-static/range {v13 .. v20}, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->copy$default(Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;IJJLjava/lang/Exception;I)Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;
+    invoke-static/range {v12 .. v19}, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->copy$default(Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;IJJLjava/lang/Exception;I)Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;
 
     move-result-object v0
 
-    invoke-interface {v1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lde/rki/coronawarnapp/util/RetryMechanism$retryWithBackOff$2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    sget-object v5, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    check-cast v7, Ljava/lang/Boolean;
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v5
 
-    move-result v7
+    if-eqz v5, :cond_4
 
-    if-eqz v7, :cond_4
+    invoke-virtual {v2, v0}, Lde/rki/coronawarnapp/util/RetryMechanism$createDelayCalculator$1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v2, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v5
 
-    move-result-object v7
+    check-cast v5, Ljava/lang/Long;
 
-    check-cast v7, Ljava/lang/Long;
+    if-eqz v5, :cond_3
 
-    if-eqz v7, :cond_3
-
-    invoke-interface {v3, v7}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v5}, Lde/rki/coronawarnapp/util/RetryMechanism$retryWithBackOff$1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v6, v0, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->count:I
 
-    add-int/lit8 v22, v6, 0x1
+    add-int/lit8 v21, v6, 0x1
 
-    invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
+    iget-wide v6, v0, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->totalDelay:J
 
-    move-result-wide v25
+    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
 
-    iget-wide v5, v0, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->totalDelay:J
+    move-result-wide v8
 
-    invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
+    add-long v22, v8, v6
 
-    move-result-wide v7
+    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
 
-    add-long v23, v7, v5
+    move-result-wide v24
 
-    const/16 v27, 0x0
+    const/16 v26, 0x0
 
-    const/16 v28, 0x8
+    const/16 v27, 0x8
 
-    move-object/from16 v21, v0
+    move-object/from16 v20, v0
 
-    invoke-static/range {v21 .. v28}, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->copy$default(Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;IJJLjava/lang/Exception;I)Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;
+    invoke-static/range {v20 .. v27}, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->copy$default(Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;IJJLjava/lang/Exception;I)Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;
 
-    move-result-object v13
+    move-result-object v12
 
     goto :goto_2
 
     :cond_3
-    new-array v1, v5, [Ljava/lang/Object;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object v0, v1, v6
+    new-array v2, v4, [Ljava/lang/Object;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v0, v2, v6
 
     const-string v3, "Retrycondition exceeded: %s"
 
-    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, v0, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->exception:Ljava/lang/Exception;
 

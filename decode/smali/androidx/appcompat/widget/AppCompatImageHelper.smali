@@ -33,7 +33,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {v0}, Landroidx/appcompat/widget/DrawableUtils;->fixDrawable(Landroid/graphics/drawable/Drawable;)V
+    sget-object v1, Landroidx/appcompat/widget/DrawableUtils;->CHECKED_STATE_SET:[I
 
     :cond_0
     if-eqz v0, :cond_1
@@ -63,11 +63,11 @@
 
     move-result-object v0
 
-    sget-object v1, Landroidx/appcompat/R$styleable;->AppCompatImageView:[I
+    sget-object v3, Landroidx/appcompat/R$styleable;->AppCompatImageView:[I
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v0, p1, v1, p2, v2}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
+    invoke-static {v0, p1, v3, p2, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object v0
 
@@ -76,8 +76,6 @@
     invoke-virtual {v1}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
 
     move-result-object v2
-
-    sget-object v3, Landroidx/appcompat/R$styleable;->AppCompatImageView:[I
 
     iget-object v5, v0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
@@ -100,7 +98,7 @@
 
     if-nez p1, :cond_0
 
-    const/4 v1, 0x1
+    sget v1, Landroidx/appcompat/R$styleable;->AppCompatImageView_srcCompat:I
 
     invoke-virtual {v0, v1, p2}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
 
@@ -127,10 +125,10 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    invoke-static {p1}, Landroidx/appcompat/widget/DrawableUtils;->fixDrawable(Landroid/graphics/drawable/Drawable;)V
+    sget-object p1, Landroidx/appcompat/widget/DrawableUtils;->CHECKED_STATE_SET:[I
 
     :cond_1
-    const/4 p1, 0x2
+    sget p1, Landroidx/appcompat/R$styleable;->AppCompatImageView_tint:I
 
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
@@ -155,7 +153,7 @@
 
     :cond_2
     :goto_0
-    const/4 p1, 0x3
+    sget p1, Landroidx/appcompat/R$styleable;->AppCompatImageView_tintMode:I
 
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
@@ -211,7 +209,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-static {p1}, Landroidx/appcompat/widget/DrawableUtils;->fixDrawable(Landroid/graphics/drawable/Drawable;)V
+    sget-object v0, Landroidx/appcompat/widget/DrawableUtils;->CHECKED_STATE_SET:[I
 
     :cond_0
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatImageHelper;->mView:Landroid/widget/ImageView;

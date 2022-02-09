@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 3
 
     check-cast p1, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;
 
@@ -70,7 +70,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -78,15 +78,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 1>"
+    const-string v0, "$noName_1"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p3, p1, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;->title:Landroid/widget/TextView;
-
-    const-string v0, "title"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/release/NewReleaseInfoItem;->getTitle()Ljava/lang/String;
 
@@ -96,13 +92,13 @@
 
     instance-of p3, p2, Lde/rki/coronawarnapp/release/NewReleaseInfoItemLinked;
 
-    const-string v0, "body"
-
     if-eqz p3, :cond_0
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;->body:Landroid/widget/TextView;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string p3, "body"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/release/NewReleaseInfoItem;->getBody()Ljava/lang/String;
 
@@ -114,14 +110,44 @@
 
     iget-object p2, p2, Lde/rki/coronawarnapp/release/NewReleaseInfoItemLinked;->linkTarget:Ljava/lang/String;
 
-    invoke-static {p1, p3, v0, p2}, Lde/rki/coronawarnapp/util/ViewsKt;->setUrl(Landroid/widget/TextView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    const-string v1, "<this>"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "content"
+
+    invoke-static {p3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "label"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "url"
+
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p3}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toLazyString(Ljava/lang/String;)Lde/rki/coronawarnapp/util/ui/LazyString;
+
+    move-result-object p3
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [LTextViewUrlSet;
+
+    new-instance v2, LTextViewUrlSet;
+
+    invoke-direct {v2, v0, p2}, LTextViewUrlSet;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 p2, 0x0
+
+    aput-object v2, v1, p2
+
+    invoke-static {p1, p3, v1}, LTextViewUrlExtensionsKt;->setTextWithUrls(Landroid/widget/TextView;Lde/rki/coronawarnapp/util/ui/LazyString;[LTextViewUrlSet;)V
 
     goto :goto_0
 
     :cond_0
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;->body:Landroid/widget/TextView;
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/release/NewReleaseInfoItem;->getBody()Ljava/lang/String;
 

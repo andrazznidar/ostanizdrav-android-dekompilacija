@@ -52,6 +52,15 @@
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;",
+            ">;)V"
+        }
+    .end annotation
 
     const/4 v0, 0x3
 
@@ -62,7 +71,7 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/RiskStateItem;
@@ -71,23 +80,25 @@
 
     check-cast p3, Lkotlin/coroutines/Continuation;
 
-    const-string v0, "tracingItem"
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, p3}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    const-string v0, "details"
+    iput-object p1, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;->L$0:Ljava/lang/Object;
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-object p2, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;->L$1:Ljava/lang/Object;
 
-    const-string v0, "continuation"
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    invoke-interface {p3}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
+    iget-object p1, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;->L$0:Ljava/lang/Object;
 
-    sget-object p3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/RiskStateItem;
 
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    iget-object p2, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;->L$1:Ljava/lang/Object;
+
+    check-cast p2, Ljava/util/List;
 
     new-instance p3, Ljava/util/ArrayList;
 
@@ -103,7 +114,7 @@
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$detailsItems$1;->L$0:Ljava/lang/Object;
 

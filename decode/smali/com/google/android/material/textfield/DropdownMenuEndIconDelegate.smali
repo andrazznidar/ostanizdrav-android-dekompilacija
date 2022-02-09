@@ -88,35 +88,48 @@
     return-void
 .end method
 
-.method public static access$000(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/EditText;)Landroid/widget/AutoCompleteTextView;
-    .locals 0
+.method public static access$000(Landroid/widget/EditText;)Landroid/widget/AutoCompleteTextView;
+    .locals 1
 
-    if-eqz p0, :cond_1
+    instance-of v0, p0, Landroid/widget/AutoCompleteTextView;
 
-    instance-of p0, p1, Landroid/widget/AutoCompleteTextView;
+    if-eqz v0, :cond_0
 
-    if-eqz p0, :cond_0
+    check-cast p0, Landroid/widget/AutoCompleteTextView;
 
-    check-cast p1, Landroid/widget/AutoCompleteTextView;
-
-    return-object p1
+    return-object p0
 
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
-    const-string p1, "EditText needs to be an AutoCompleteTextView if an Exposed Dropdown Menu is being used."
+    const-string v0, "EditText needs to be an AutoCompleteTextView if an Exposed Dropdown Menu is being used."
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    const/4 p0, 0x0
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
-.method public static access$100(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Z)V
+.method public static access$200(Landroid/widget/EditText;)Z
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/widget/EditText;->getKeyListener()Landroid/text/method/KeyListener;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method
+
+.method public static access$300(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Z)V
     .locals 1
 
     iget-boolean v0, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->isEndIconChecked:Z
@@ -137,10 +150,10 @@
     return-void
 .end method
 
-.method public static access$400(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/AutoCompleteTextView;)V
+.method public static access$500(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;Landroid/widget/AutoCompleteTextView;)V
     .locals 2
 
-    if-eqz p0, :cond_5
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-nez p1, :cond_0
 
@@ -199,17 +212,12 @@
 
     :goto_0
     return-void
-
-    :cond_5
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 
 # virtual methods
 .method public final getPopUpMaterialShapeDrawable(FFFI)Lcom/google/android/material/shape/MaterialShapeDrawable;
-    .locals 2
+    .locals 4
 
     new-instance v0, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
@@ -245,40 +253,81 @@
 
     iget-object p2, p0, Lcom/google/android/material/textfield/EndIconDelegate;->context:Landroid/content/Context;
 
-    invoke-static {p2, p3}, Lcom/google/android/material/shape/MaterialShapeDrawable;->createWithElevationOverlay(Landroid/content/Context;F)Lcom/google/android/material/shape/MaterialShapeDrawable;
+    sget-object v0, Lcom/google/android/material/shape/MaterialShapeDrawable;->clearPaint:Landroid/graphics/Paint;
+
+    sget v0, Lcom/google/android/material/R$attr;->colorSurface:I
+
+    const-class v1, Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    const-string v1, "MaterialShapeDrawable"
+
+    invoke-static {p2, v0, v1}, Lcom/google/android/material/resources/MaterialAttributes;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+
+    move-result v0
+
+    new-instance v1, Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+    invoke-direct {v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
+
+    iget-object v2, v1, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    new-instance v3, Lcom/google/android/material/elevation/ElevationOverlayProvider;
+
+    invoke-direct {v3, p2}, Lcom/google/android/material/elevation/ElevationOverlayProvider;-><init>(Landroid/content/Context;)V
+
+    iput-object v3, v2, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->elevationOverlayProvider:Lcom/google/android/material/elevation/ElevationOverlayProvider;
+
+    invoke-virtual {v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->updateZ()V
+
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object p2
 
-    iget-object p3, p2, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+    invoke-virtual {v1, p2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    iput-object p1, p3, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shapeAppearanceModel:Lcom/google/android/material/shape/ShapeAppearanceModel;
+    iget-object p2, v1, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
 
-    invoke-virtual {p2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->invalidateSelf()V
+    iget v0, p2, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->elevation:F
 
-    iget-object p1, p2, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+    cmpl-float v0, v0, p3
 
-    iget-object p3, p1, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->padding:Landroid/graphics/Rect;
+    if-eqz v0, :cond_0
 
-    if-nez p3, :cond_0
+    iput p3, p2, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->elevation:F
 
-    new-instance p3, Landroid/graphics/Rect;
-
-    invoke-direct {p3}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p3, p1, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->padding:Landroid/graphics/Rect;
+    invoke-virtual {v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->updateZ()V
 
     :cond_0
-    iget-object p1, p2, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+    iget-object p2, v1, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    iput-object p1, p2, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->shapeAppearanceModel:Lcom/google/android/material/shape/ShapeAppearanceModel;
+
+    invoke-virtual {v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->invalidateSelf()V
+
+    iget-object p1, v1, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
+
+    iget-object p2, p1, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->padding:Landroid/graphics/Rect;
+
+    if-nez p2, :cond_1
+
+    new-instance p2, Landroid/graphics/Rect;
+
+    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p2, p1, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->padding:Landroid/graphics/Rect;
+
+    :cond_1
+    iget-object p1, v1, Lcom/google/android/material/shape/MaterialShapeDrawable;->drawableState:Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;
 
     iget-object p1, p1, Lcom/google/android/material/shape/MaterialShapeDrawable$MaterialShapeDrawableState;->padding:Landroid/graphics/Rect;
 
-    const/4 p3, 0x0
+    const/4 p2, 0x0
 
-    invoke-virtual {p1, p3, p4, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {p1, p2, p4, p2, p4}, Landroid/graphics/Rect;->set(IIII)V
 
-    invoke-virtual {p2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->invalidateSelf()V
+    invoke-virtual {v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->invalidateSelf()V
 
-    return-object p2
+    return-object v1
 .end method
 
 .method public initialize()V
@@ -290,7 +339,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070165
+    sget v1, Lcom/google/android/material/R$dimen;->mtrl_shape_corner_size_small_component:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -304,7 +353,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07013b
+    sget v2, Lcom/google/android/material/R$dimen;->mtrl_exposed_dropdown_menu_popup_elevation:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -318,7 +367,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f07013d
+    sget v3, Lcom/google/android/material/R$dimen;->mtrl_exposed_dropdown_menu_popup_vertical_padding:I
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -360,7 +409,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
 
-    const v0, 0x7f08015b
+    sget v0, Lcom/google/android/material/R$drawable;->mtrl_dropdown_arrow:I
 
     iget-object v1, p0, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -378,7 +427,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120126
+    sget v2, Lcom/google/android/material/R$string;->exposed_dropdown_menu_content_description:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -422,55 +471,49 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    const/16 v2, 0x43
+    const/16 v3, 0x43
 
-    int-to-long v2, v2
+    int-to-long v3, v3
 
-    invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {v1, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v2, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$10;
+    new-instance v3, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$10;
 
-    invoke-direct {v2, p0}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$10;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;)V
+    invoke-direct {v3, p0}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$10;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;)V
 
-    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     iput-object v1, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->fadeInAnim:Landroid/animation/ValueAnimator;
 
     const/16 v1, 0x32
 
-    new-array v2, v0, [F
+    new-array v0, v0, [F
 
-    fill-array-data v2, :array_1
+    fill-array-data v0, :array_1
 
-    invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v3, Lcom/google/android/material/animation/AnimationUtils;->LINEAR_INTERPOLATOR:Landroid/animation/TimeInterpolator;
+    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    int-to-long v1, v1
 
-    int-to-long v3, v1
-
-    invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$10;
 
     invoke-direct {v1, p0}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$10;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;)V
 
-    invoke-virtual {v2, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    iput-object v2, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->fadeOutAnim:Landroid/animation/ValueAnimator;
+    iput-object v0, p0, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;->fadeOutAnim:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$9;
 
     invoke-direct {v1, p0}, Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate$9;-><init>(Lcom/google/android/material/textfield/DropdownMenuEndIconDelegate;)V
 
-    invoke-virtual {v2, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    iget-object v1, p0, Lcom/google/android/material/textfield/EndIconDelegate;->endIconView:Lcom/google/android/material/internal/CheckableImageButton;
-
-    invoke-static {v1, v0}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     iget-object v0, p0, Lcom/google/android/material/textfield/EndIconDelegate;->context:Landroid/content/Context;
 
@@ -552,13 +595,5 @@
     const/4 v0, 0x1
 
     :goto_1
-    return v0
-.end method
-
-.method public shouldTintIconOnError()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
     return v0
 .end method

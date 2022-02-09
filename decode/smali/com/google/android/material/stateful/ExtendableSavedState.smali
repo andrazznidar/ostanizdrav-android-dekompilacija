@@ -87,6 +87,20 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroid/os/Parcelable;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Landroidx/customview/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
+
+    new-instance p1, Landroidx/collection/SimpleArrayMap;
+
+    invoke-direct {p1}, Landroidx/collection/SimpleArrayMap;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/material/stateful/ExtendableSavedState;->extendableStates:Landroidx/collection/SimpleArrayMap;
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public toString()Ljava/lang/String;
@@ -94,7 +108,7 @@
 
     const-string v0, "ExtendableSavedState{"
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -116,7 +130,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

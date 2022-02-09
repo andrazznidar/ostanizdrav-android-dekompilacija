@@ -30,13 +30,13 @@
 # static fields
 .field public static final CATALOGUE_NAME_FIELD_NUMBER:I = 0x5
 
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/KeyTypeEntry;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/KeyTypeEntry;
 
 .field public static final KEY_MANAGER_VERSION_FIELD_NUMBER:I = 0x3
 
 .field public static final NEW_KEY_ALLOWED_FIELD_NUMBER:I = 0x4
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -52,15 +52,15 @@
 
 
 # instance fields
-.field public catalogueName_:Ljava/lang/String;
+.field private catalogueName_:Ljava/lang/String;
 
-.field public keyManagerVersion_:I
+.field private keyManagerVersion_:I
 
-.field public newKeyAllowed_:Z
+.field private newKeyAllowed_:Z
 
-.field public primitiveName_:Ljava/lang/String;
+.field private primitiveName_:Ljava/lang/String;
 
-.field public typeUrl_:Ljava/lang/String;
+.field private typeUrl_:Ljava/lang/String;
 
 
 # direct methods
@@ -80,7 +80,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -699,7 +699,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/KeyTypeEntry;->catalogueName_:Ljava/lang/String;
 
@@ -771,7 +771,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/KeyTypeEntry;->primitiveName_:Ljava/lang/String;
 
@@ -811,7 +811,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/KeyTypeEntry;->typeUrl_:Ljava/lang/String;
 
@@ -939,7 +939,7 @@
 
     aput-object v0, p1, p3
 
-    const-string p3, "typeUrl_"
+    const-string/jumbo p3, "typeUrl_"
 
     aput-object p3, p1, p2
 
@@ -984,6 +984,8 @@
     invoke-direct {p1}, Lcom/google/crypto/tink/proto/KeyTypeEntry;-><init>()V
 
     return-object p1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

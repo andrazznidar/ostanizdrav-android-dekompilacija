@@ -15,8 +15,6 @@
 
 
 # instance fields
-.field public mFullSpan:Z
-
 .field public mSpan:Landroidx/recyclerview/widget/StaggeredGridLayoutManager$Span;
 
 

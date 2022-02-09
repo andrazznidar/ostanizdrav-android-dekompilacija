@@ -31,7 +31,7 @@
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 14
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -70,18 +70,16 @@
 
     move-result v1
 
-    const v2, 0xffff
-
-    and-int/2addr v2, v1
+    int-to-char v2, v1
 
     packed-switch v2, :pswitch_data_0
 
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->createIntArray(Landroid/os/Parcel;I)[I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createIntArray(Landroid/os/Parcel;I)[I
 
     move-result-object v1
 
@@ -90,7 +88,7 @@
     goto :goto_0
 
     :pswitch_1
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -99,7 +97,7 @@
     goto :goto_0
 
     :pswitch_2
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->createIntArray(Landroid/os/Parcel;I)[I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createIntArray(Landroid/os/Parcel;I)[I
 
     move-result-object v1
 
@@ -108,7 +106,7 @@
     goto :goto_0
 
     :pswitch_3
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -117,7 +115,7 @@
     goto :goto_0
 
     :pswitch_4
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->createIntArray(Landroid/os/Parcel;I)[I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createIntArray(Landroid/os/Parcel;I)[I
 
     move-result-object v1
 
@@ -126,7 +124,7 @@
     goto :goto_0
 
     :pswitch_5
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -135,7 +133,7 @@
     goto :goto_0
 
     :pswitch_6
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->createIntArray(Landroid/os/Parcel;I)[I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createIntArray(Landroid/os/Parcel;I)[I
 
     move-result-object v1
 
@@ -144,7 +142,7 @@
     goto :goto_0
 
     :pswitch_7
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -153,7 +151,7 @@
     goto :goto_0
 
     :pswitch_8
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->createIntArray(Landroid/os/Parcel;I)[I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createIntArray(Landroid/os/Parcel;I)[I
 
     move-result-object v1
 
@@ -162,7 +160,7 @@
     goto :goto_0
 
     :pswitch_9
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -171,7 +169,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
     new-instance p1, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;
 
@@ -180,8 +178,6 @@
     invoke-direct/range {v3 .. v13}, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;-><init>(I[II[II[II[II[I)V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

@@ -8,12 +8,46 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSettingsResetFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsResetFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsResetFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,73:1\n11#2,9:74\n16#3,11:83\n*E\n*S KotlinDebug\n*F\n+ 1 SettingsResetFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsResetFragment\n*L\n28#1,9:74\n29#1,11:83\n*E\n"
+    value = "SMAP\nSettingsResetFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsResetFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsResetFragment\n+ 2 CWAViewModelExtensions.kt\nde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt\n+ 3 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,74:1\n10#2,10:75\n18#3,11:85\n*S KotlinDebug\n*F\n+ 1 SettingsResetFragment.kt\nde/rki/coronawarnapp/ui/settings/SettingsResetFragment\n*L\n28#1:75,10\n29#1:85,11\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u00012\u00020\u0002B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0005"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;",
+        "Landroidx/fragment/app/Fragment;",
+        "Lde/rki/coronawarnapp/util/di/AutoInject;",
+        "<init>",
+        "()V",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
 .end annotation
 
 
 # static fields
 .field public static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -40,7 +74,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/reflect/KProperty1;
 
     move-result-object v1
 
@@ -54,7 +88,7 @@
 .method public constructor <init>()V
     .locals 4
 
-    const v0, 0x7f0c0060
+    const v0, 0x7f0d008b
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
@@ -74,147 +108,29 @@
 
     new-instance v3, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt$cwaViewModels$2;
 
-    invoke-direct {v3, p0, v0}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt$cwaViewModels$2;-><init>(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {v3, v0, p0}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModelExtensionsKt$cwaViewModels$2;-><init>(Lkotlin/jvm/functions/Function0;Landroidx/fragment/app/Fragment;)V
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v2, v0, v1, v3}, Lcom/google/zxing/client/android/R$id;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p0, v2, v0, v1, v3}, Lde/rki/coronawarnapp/util/viewmodel/ViewModelLazyKeyedKt;->createViewModelLazyKeyed(Landroidx/fragment/app/Fragment;Lkotlin/reflect/KClass;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;->vm$delegate:Lkotlin/Lazy;
 
-    sget-object v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$special$$inlined$viewBindingLazy$1;->INSTANCE:Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$special$$inlined$viewBindingLazy$1;
+    new-instance v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$special$$inlined$viewBinding$1;
 
-    sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
+    invoke-direct {v0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$special$$inlined$viewBinding$1;-><init>()V
 
-    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;
+
+    invoke-static {p0, v0, v1}, Lkotlin/sequences/SequencesKt__SequencesJVMKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;->binding$delegate:Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     return-void
-.end method
-
-.method public static final access$confirmReset(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
-    .locals 11
-
-    new-instance v10, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
-
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
-
-    move-result-object v1
-
-    const-string v0, "requireActivity()"
-
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v0, 0x7f1202f0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    sget-object v6, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    new-instance v7, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$confirmReset$resetDialog$1;
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;->getVm()Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
-
-    move-result-object p0
-
-    invoke-direct {v7, p0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$confirmReset$resetDialog$1;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;)V
-
-    const v2, 0x7f1202f2
-
-    const v3, 0x7f1202ef
-
-    const v4, 0x7f1202f1
-
-    const/4 v8, 0x0
-
-    const/16 v9, 0x80
-
-    move-object v0, v10
-
-    invoke-direct/range {v0 .. v9}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
-
-    invoke-static {v10}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
-
-    move-result-object p0
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p0, v0}, Landroidx/appcompat/app/AlertDialog;->getButton(I)Landroid/widget/Button;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    const-string v1, "context"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "$this$getColorCompat"
-
-    invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v1, 0x7f060079
-
-    invoke-static {p0, v1}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
-
-    move-result p0
-
-    invoke-virtual {v0, p0}, Landroid/widget/Button;->setTextColor(I)V
-
-    return-void
-.end method
-
-.method public static final synthetic access$getVm$p(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
-    .locals 0
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;->getVm()Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static final access$navigateToOnboarding(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
-    .locals 4
-
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_1
-
-    sget-object v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->Companion:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$Companion;
-
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-string v3, "requireContext()"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2, v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$Companion;->start(Landroid/content/Context;Lde/rki/coronawarnapp/util/AppShortcuts;)V
-
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    throw v0
 .end method
 
 
@@ -262,9 +178,9 @@
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
-    .locals 2
+    .locals 1
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -286,19 +202,17 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBinding;->settingsResetButtonDelete:Landroid/widget/Button;
 
-    new-instance v1, L-$$LambdaGroup$js$rdYSAgsRw6eN_88WkFwRsWA8Hkw;
+    new-instance v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, v0, p0}, L-$$LambdaGroup$js$rdYSAgsRw6eN_88WkFwRsWA8Hkw;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
 
-    invoke-virtual {p2, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p2, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p2, p1, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBinding;->settingsResetButtonCancel:Landroid/widget/Button;
 
-    new-instance v0, L-$$LambdaGroup$js$rdYSAgsRw6eN_88WkFwRsWA8Hkw;
+    new-instance v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda0;
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1, p0}, L-$$LambdaGroup$js$rdYSAgsRw6eN_88WkFwRsWA8Hkw;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
 
     invoke-virtual {p2, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -308,11 +222,9 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, L-$$LambdaGroup$js$rdYSAgsRw6eN_88WkFwRsWA8Hkw;
+    new-instance p2, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda1;
 
-    const/4 v0, 0x2
-
-    invoke-direct {p2, v0, p0}, L-$$LambdaGroup$js$rdYSAgsRw6eN_88WkFwRsWA8Hkw;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -320,13 +232,13 @@
 
     move-result-object p1
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->clickEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->clickEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     new-instance p2, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$onViewCreated$2;
 
     invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$onViewCreated$2;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment;)V
 
-    invoke-static {p1, p0, p2}, Lcom/google/zxing/client/android/R$id;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
+    invoke-static {p1, p0, p2}, Lde/rki/coronawarnapp/util/ui/LiveDataExtensionsKt;->observe2(Landroidx/lifecycle/LiveData;Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method

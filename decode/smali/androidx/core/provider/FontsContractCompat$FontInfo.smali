@@ -3,17 +3,6 @@
 .source "FontsContractCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroidx/core/provider/FontsContractCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "FontInfo"
-.end annotation
-
-
 # instance fields
 .field public final mItalic:Z
 
@@ -29,10 +18,29 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;IIZI)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "uri",
+            "ttcIndex",
+            "weight",
+            "italic",
+            "resultCode"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mUri:Landroid/net/Uri;
 
@@ -45,9 +53,4 @@
     iput p5, p0, Landroidx/core/provider/FontsContractCompat$FontInfo;->mResultCode:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method

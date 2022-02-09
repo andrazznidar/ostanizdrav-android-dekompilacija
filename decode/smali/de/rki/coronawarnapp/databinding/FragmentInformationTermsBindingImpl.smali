@@ -6,13 +6,9 @@
 # static fields
 .field public static final sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-.field public static final sViewsWithIds:Landroid/util/SparseIntArray;
-
 
 # instance fields
 .field public mDirtyFlags:J
-
-.field public final mboundView1:Landroid/widget/ScrollView;
 
 
 # direct methods
@@ -37,21 +33,19 @@
 
     new-array v3, v2, [I
 
-    const/4 v4, 0x2
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x2
 
-    aput v4, v3, v5
+    aput v5, v3, v4
 
-    new-array v4, v2, [I
+    new-array v5, v2, [I
 
-    const v6, 0x7f0c0090
+    const v6, 0x7f0d00d8
 
-    aput v6, v4, v5
+    aput v6, v5, v4
 
-    invoke-virtual {v0, v5, v1, v3, v4}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
+    invoke-virtual {v0, v4, v1, v3, v5}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
     const-string v1, "include_information_details"
 
@@ -61,35 +55,41 @@
 
     new-array v3, v2, [I
 
-    const/4 v4, 0x3
+    const/4 v5, 0x3
 
-    aput v4, v3, v5
+    aput v5, v3, v4
 
-    new-array v4, v2, [I
+    new-array v5, v2, [I
 
-    const v6, 0x7f0c0091
+    const v6, 0x7f0d00d9
 
-    aput v6, v4, v5
+    aput v6, v5, v4
 
-    invoke-virtual {v0, v2, v1, v3, v4}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+    invoke-virtual {v0, v2, v1, v3, v5}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 9
+    .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    sget-object v1, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const/4 v2, 0x0
 
-    invoke-static {p1, p2, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
+    invoke-static {p1, p2, v1, v0, v2}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -97,45 +97,43 @@
 
     aget-object v1, v0, v1
 
-    move-object v6, v1
+    move-object v7, v1
 
-    check-cast v6, Landroid/widget/LinearLayout;
+    check-cast v7, Landroid/widget/LinearLayout;
 
     const/4 v1, 0x2
 
     aget-object v1, v0, v1
 
-    move-object v7, v1
+    move-object v8, v1
 
-    check-cast v7, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    check-cast v8, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     const/4 v1, 0x3
 
     aget-object v1, v0, v1
 
-    move-object v8, v1
+    move-object v9, v1
 
-    check-cast v8, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
+    check-cast v9, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    move-object v2, p0
+    move-object v3, p0
 
-    move-object v3, p1
+    move-object v4, p1
 
-    move-object v4, p2
+    move-object v5, p2
 
-    invoke-direct/range {v2 .. v8}, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/LinearLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;)V
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/LinearLayout;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;)V
 
-    const-wide/16 v1, -0x1
+    const-wide/16 v3, -0x1
 
-    iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;->mDirtyFlags:J
+    iput-wide v3, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;->mDirtyFlags:J
 
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBinding;->informationTermsContainer:Landroid/widget/LinearLayout;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {p1, v2}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBinding;->informationTermsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
@@ -157,11 +155,9 @@
 
     check-cast p1, Landroid/widget/ScrollView;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBindingImpl;->mboundView1:Landroid/widget/ScrollView;
+    invoke-virtual {p1, v2}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
-
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -200,17 +196,17 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f08009f
+    const v2, 0x7f0800d0
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBinding;->informationTermsHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f120154
+    const v2, 0x7f130225
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline37(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentInformationTermsBinding;->informationTermsHeaderDetails:Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBinding;
 
@@ -226,13 +222,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f120152
+    const v3, 0x7f130223
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/google/zxing/client/android/R$id;->parseHtmlFromAssets(Landroid/content/Context;Ljava/lang/String;)Landroid/text/Spanned;
+    invoke-static {v1, v2}, Lcom/google/android/gms/internal/nearby/zzfc;->parseHtmlFromAssets(Landroid/content/Context;Ljava/lang/String;)Landroid/text/Spanned;
 
     move-result-object v1
 
@@ -246,7 +242,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120151
+    const v2, 0x7f130222
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -262,7 +258,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800e3
+    const v2, 0x7f080138
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -278,7 +274,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120153
+    const v2, 0x7f130224
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -409,6 +405,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

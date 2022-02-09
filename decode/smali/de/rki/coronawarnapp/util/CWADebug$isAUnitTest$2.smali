@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lde/rki/coronawarnapp/util/CWADebug;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lde/rki/coronawarnapp/util/CWADebug;-><clinit>()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -59,7 +59,7 @@
     .locals 1
 
     :try_start_0
-    const-string v0, "testhelpers.IsAUnitTest"
+    const-string/jumbo v0, "testhelpers.IsAUnitTest"
 
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
     :try_end_0

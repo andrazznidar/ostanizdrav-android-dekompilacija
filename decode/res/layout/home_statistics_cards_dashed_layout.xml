@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/card_container" android:background="@drawable/dashed_box" android:focusable="true" android:layout_width="@dimen/statistics_card_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginBottom="@dimen/spacing_tiny" android:foreground="?selectableItemBackground" android:minHeight="@dimen/statistics_card_height" android:layout_marginVertical="@dimen/spacing_tiny" app:cardCornerRadius="@dimen/radius_card" app:cardElevation="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

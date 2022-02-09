@@ -59,18 +59,18 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f09006f
+    const v1, 0x7f0a008b
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     goto :goto_0
 
     :cond_0
     instance-of p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingTracing;
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTestFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTestFragment;
 
@@ -78,7 +78,9 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.ui.onboarding.OnboardingActivity"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
@@ -86,18 +88,7 @@
 
     invoke-virtual {p1}, Landroidx/activity/OnBackPressedDispatcher;->onBackPressed()V
 
-    goto :goto_0
-
     :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.ui.onboarding.OnboardingActivity"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
     :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="new_release_body">
-        <item>You can use the app to voluntarily note the information about people they’ve met and places they’ve visited. This is important information for tracing the chain of infection. However, it is difficult to recall that information over a time period of two weeks so the contact journal serves as a useful memory aid.</item>
-        <item>You can now add an entry to your contact journal directly, without having to open the app first. To do so, tap and hold the icon for the #OstaniZdrav App for approximately 2 seconds, until a menu appears, and then tap “Add Journal Entry for Today”.</item>
-        <item>If the app indicates that you have an increased risk, you can now see whether the risk status is displayed based on one or more exposures with an increased risk or one or more exposures with a low risk.</item>
-        <item>See daily figures for TAN input.</item>
+        <item>Add your EU digital COVID certificates to the application. In this way, you will be able to prove that you meet the PCT conditions using the application.</item>
+        <item>You can now add digital COVID certificates of family members in the app.</item>
+        <item>You can now verify the validity of certificates for a selected country before you travel.</item>
+        <item>\#OstaniZdrav offers you to check-in at events. Event organizers and store owners can generate a QR code with the app. Visitors can then scan this QR code upon arrival and save a check-in in the app. The application can also create an entry in contact journal on request. If someone who attends this event is later diagnosed with SARS-CoV-2, others who were present at the event at the same time may be alerted.</item>
+        <item>For quick access to the QR code scanner, it has been added to the toolbar. With it, you can scan a QR code at an event or a COVID certificate. It also allows you to import QR codes from a file or photo.</item>
     </string-array>
     <string-array name="new_release_linkified_labels">
+        <item></item>
         <item></item>
         <item></item>
         <item></item>
@@ -17,40 +19,42 @@
         <item></item>
         <item></item>
         <item></item>
+        <item></item>
     </string-array>
     <string-array name="new_release_title">
-        <item>Contact Journal</item>
-        <item>Direct Access to Contact Journal</item>
-        <item>More Details about Your Risk Status</item>
-        <item>Statistics</item>
+        <item>EU digital COVID certificates</item>
+        <item>Family Certificates</item>
+        <item>EU Certificate Validation</item>
+        <item>Check-in at events</item>
+        <item>QR code Scanner</item>
     </string-array>
     <string-array name="submission_done_further_info_bullet_points">
-        <item>The duration of isolation is judged by your doctor.</item>
-        <item>In case of an exacerbation of the disease, consult your chosen personal or emergency physician over the phone. In an emergency, call 112. Tell them that you have been confirmed to be infected with SARS-CoV-2.</item>
-        <item></item>
+        <item>The duration of isolation is at the discretion of your treating physician.</item>
+        <item>In case of worsening of the disease, consult your chosen personal or on-duty doctor by phone. In an emergency, call 112. Inform them that you have been diagnosed with SARS-CoV-2.</item>
+        <item>Exposure logging has stopped because you have been diagnosed with SARS-CoV-2 infection. When the isolation is finished, press the Reactivate button and the exposure log will be activated.</item>
         <item></item>
     </string-array>
     <string-array name="submission_intro_bullet_points">
-        <item>If you have a confirmed SARS-CoV-2 infection, you can inform others by entering the TAN code. You received the TAN code via SMS.</item>
+        <item>If you have been diagnosed with SARS-CoV-2 infection, you can inform others by entering the TAN code. You received the TAN code via SMS.</item>
         <item>If you have not yet received the TAN code or it has expired, you can obtain it via the online form in the next step.</item>
         <item></item>
         <item></item>
     </string-array>
     <string-array name="submission_symptom_symptom_bullets">
-        <item>General weakness and exhaustion</item>
-        <item>Runny nose</item>
+        <item>Feeling unwell</item>
+        <item>Cold signs</item>
         <item>Cough</item>
-        <item>Increased temperature or fever</item>
+        <item>Fever</item>
         <item>Shortness of breath</item>
         <item>Headache</item>
-        <item>Aching limbs</item>
-        <item>Loss of sense of smell/taste</item>
+        <item>Muscle pains</item>
+        <item>Loss of smell ortaste</item>
         <item>Sore throat</item>
     </string-array>
     <string-array name="test_result_card_negative_further_info_bullet_points">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Still feeling unwell? If you feel very poorly and/or your symptoms have worsened, please contact your general practitioner.</item>
+        <item>Remain at home until you feel well again. If you were to get infected with coronavirus (SARS-CoV-2) whilst weakened from another infection, this could lead to a serious illness.</item>
+        <item>Do not go to work if you feel unwell to ensure you do not put other people at risk.</item>
+        <item>If your symptoms worsen, you might need another SARS-CoV-2 test.</item>
     </string-array>
 </resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/headline" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_tiny" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginRight="@dimen/spacing_tiny" android:text="@string/validation_rules_result_valid_result_title" android:layout_marginHorizontal="@dimen/spacing_tiny" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/headline6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

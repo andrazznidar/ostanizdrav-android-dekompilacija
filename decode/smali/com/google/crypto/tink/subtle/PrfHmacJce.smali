@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/security/Key;)V
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -62,91 +62,74 @@
 
     array-length p2, p2
 
-    const/16 v0, 0x10
+    const/16 v1, 0x10
 
-    if-lt p2, v0, :cond_7
+    if-lt p2, v1, :cond_3
 
     const/4 p2, -0x1
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
-    move-result v0
+    move-result v1
 
-    const v1, -0x6ca99674
+    sparse-switch v1, :sswitch_data_0
 
-    const/4 v2, 0x2
+    goto :goto_0
 
-    const/4 v3, 0x1
+    :sswitch_0
+    const-string v1, "HMACSHA512"
 
-    if-eq v0, v1, :cond_2
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const v1, 0x176240ee
+    move-result v1
 
-    if-eq v0, v1, :cond_1
-
-    const v1, 0x17624bb1
-
-    if-eq v0, v1, :cond_0
+    if-nez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "HMACSHA512"
+    const/4 p2, 0x2
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    goto :goto_0
 
-    move-result v0
+    :sswitch_1
+    const-string v1, "HMACSHA256"
 
-    if-eqz v0, :cond_3
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move p2, v2
+    move-result v1
+
+    if-nez v1, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const-string v0, "HMACSHA256"
+    const/4 p2, 0x1
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    goto :goto_0
 
-    move-result v0
+    :sswitch_2
+    const-string v1, "HMACSHA1"
 
-    if-eqz v0, :cond_3
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move p2, v3
+    move-result v1
+
+    if-nez v1, :cond_2
 
     goto :goto_0
 
     :cond_2
-    const-string v0, "HMACSHA1"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
     const/4 p2, 0x0
 
-    :cond_3
     :goto_0
-    if-eqz p2, :cond_6
+    packed-switch p2, :pswitch_data_0
 
-    if-eq p2, v3, :cond_5
-
-    if-ne p2, v2, :cond_4
-
-    const/16 p1, 0x40
-
-    iput p1, p0, Lcom/google/crypto/tink/subtle/PrfHmacJce;->maxOutputLength:I
-
-    goto :goto_1
-
-    :cond_4
     new-instance p2, Ljava/security/NoSuchAlgorithmException;
 
-    const-string v0, "unknown Hmac algorithm: "
+    const-string/jumbo v0, "unknown Hmac algorithm: "
 
-    invoke-static {v0, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -154,26 +137,31 @@
 
     throw p2
 
-    :cond_5
+    :pswitch_0
+    const/16 p1, 0x40
+
+    iput p1, p0, Lcom/google/crypto/tink/subtle/PrfHmacJce;->maxOutputLength:I
+
+    goto :goto_1
+
+    :pswitch_1
     const/16 p1, 0x20
 
     iput p1, p0, Lcom/google/crypto/tink/subtle/PrfHmacJce;->maxOutputLength:I
 
     goto :goto_1
 
-    :cond_6
+    :pswitch_2
     const/16 p1, 0x14
 
     iput p1, p0, Lcom/google/crypto/tink/subtle/PrfHmacJce;->maxOutputLength:I
 
     :goto_1
-    iget-object p1, p0, Lcom/google/crypto/tink/subtle/PrfHmacJce;->localMac:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {p1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     return-void
 
-    :cond_7
+    :cond_3
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
     const-string p2, "key size too small, need at least 16 bytes"
@@ -181,6 +169,20 @@
     invoke-direct {p1, p2}, Ljava/security/InvalidAlgorithmParameterException;-><init>(Ljava/lang/String;)V
 
     throw p1
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x6ca99674 -> :sswitch_2
+        0x176240ee -> :sswitch_1
+        0x17624bb1 -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
@@ -239,7 +241,7 @@
     :cond_0
     new-instance p1, Ljava/security/InvalidAlgorithmParameterException;
 
-    const-string p2, "tag size too big"
+    const-string/jumbo p2, "tag size too big"
 
     invoke-direct {p1, p2}, Ljava/security/InvalidAlgorithmParameterException;-><init>(Ljava/lang/String;)V
 

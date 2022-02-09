@@ -26,6 +26,50 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "bulletpointFour",
+            "bulletpointOne",
+            "bulletpointThree",
+            "bulletpointTwo",
+            "contactDiaryPrivacyCard",
+            "contactDiaryPrivacyCardFirstSectionBodyContainerOne",
+            "contactDiaryPrivacyCardFirstSectionBodyContainerTwo",
+            "contactDiaryPrivacyCardFirstSectionBodyOne",
+            "contactDiaryPrivacyCardFirstSectionBodyTwo",
+            "contactDiaryPrivacyCardFirstSectionTitle",
+            "contactDiaryPrivacyCardSecondSectionBodyContainerOne",
+            "contactDiaryPrivacyCardSecondSectionBodyContainerTwo",
+            "contactDiaryPrivacyCardSecondSectionBodyOne",
+            "contactDiaryPrivacyCardSecondSectionBodyTwo",
+            "contactDiaryPrivacyCardSecondSectionTitle",
+            "contactDiaryPrivacyCardTitle"
+        }
+    .end annotation
 
     move-object v0, p0
 

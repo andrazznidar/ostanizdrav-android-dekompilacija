@@ -1,4 +1,4 @@
-.class public Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState$1;
+.class Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAFederalState$1;
 .super Ljava/lang/Object;
 .source "PpaData.java"
 

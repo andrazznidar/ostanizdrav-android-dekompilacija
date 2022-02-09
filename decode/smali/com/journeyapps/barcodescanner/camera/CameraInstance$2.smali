@@ -52,54 +52,48 @@
 
     iget-object v1, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$2;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
 
-    iget-object v1, v1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->readyHandler:Landroid/os/Handler;
+    iget-object v2, v1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->readyHandler:Landroid/os/Handler;
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    iget-object v1, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$2;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
+    sget v3, Lcom/google/zxing/client/android/R$id;->zxing_prewiew_size_ready:I
 
-    iget-object v1, v1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->readyHandler:Landroid/os/Handler;
+    iget-object v1, v1, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->cameraManager:Lcom/journeyapps/barcodescanner/camera/CameraManager;
 
-    const v2, 0x7f090575
-
-    iget-object v3, p0, Lcom/journeyapps/barcodescanner/camera/CameraInstance$2;->this$0:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
-
-    iget-object v3, v3, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->cameraManager:Lcom/journeyapps/barcodescanner/camera/CameraManager;
-
-    iget-object v4, v3, Lcom/journeyapps/barcodescanner/camera/CameraManager;->previewSize:Lcom/journeyapps/barcodescanner/Size;
+    iget-object v4, v1, Lcom/journeyapps/barcodescanner/camera/CameraManager;->previewSize:Lcom/journeyapps/barcodescanner/Size;
 
     if-nez v4, :cond_0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v3}, Lcom/journeyapps/barcodescanner/camera/CameraManager;->isCameraRotated()Z
+    invoke-virtual {v1}, Lcom/journeyapps/barcodescanner/camera/CameraManager;->isCameraRotated()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    iget-object v3, v3, Lcom/journeyapps/barcodescanner/camera/CameraManager;->previewSize:Lcom/journeyapps/barcodescanner/Size;
+    iget-object v1, v1, Lcom/journeyapps/barcodescanner/camera/CameraManager;->previewSize:Lcom/journeyapps/barcodescanner/Size;
 
     new-instance v4, Lcom/journeyapps/barcodescanner/Size;
 
-    iget v5, v3, Lcom/journeyapps/barcodescanner/Size;->height:I
+    iget v5, v1, Lcom/journeyapps/barcodescanner/Size;->height:I
 
-    iget v3, v3, Lcom/journeyapps/barcodescanner/Size;->width:I
+    iget v1, v1, Lcom/journeyapps/barcodescanner/Size;->width:I
 
-    invoke-direct {v4, v5, v3}, Lcom/journeyapps/barcodescanner/Size;-><init>(II)V
+    invoke-direct {v4, v5, v1}, Lcom/journeyapps/barcodescanner/Size;-><init>(II)V
 
-    move-object v3, v4
+    move-object v1, v4
 
     goto :goto_0
 
     :cond_1
-    iget-object v3, v3, Lcom/journeyapps/barcodescanner/camera/CameraManager;->previewSize:Lcom/journeyapps/barcodescanner/Size;
+    iget-object v1, v1, Lcom/journeyapps/barcodescanner/camera/CameraManager;->previewSize:Lcom/journeyapps/barcodescanner/Size;
 
     :goto_0
-    invoke-virtual {v1, v2, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v2, v3, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 

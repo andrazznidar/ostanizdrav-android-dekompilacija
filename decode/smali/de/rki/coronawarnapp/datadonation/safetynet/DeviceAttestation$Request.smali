@@ -15,5 +15,11 @@
 
 
 # virtual methods
+.method public abstract getCheckDeviceTime()Z
+.end method
+
+.method public abstract getConfigData()Lde/rki/coronawarnapp/appconfig/ConfigData;
+.end method
+
 .method public abstract getScenarioPayload()[B
 .end method

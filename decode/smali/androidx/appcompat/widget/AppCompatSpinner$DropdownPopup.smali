@@ -51,21 +51,11 @@
 
     invoke-virtual {p0, p2}, Landroidx/appcompat/widget/ListPopupWindow;->setModal(Z)V
 
-    iput v0, p0, Landroidx/appcompat/widget/ListPopupWindow;->mPromptPosition:I
-
     new-instance p2, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;
 
     invoke-direct {p2, p0, p1}, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup$1;-><init>(Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;Landroidx/appcompat/widget/AppCompatSpinner;)V
 
     iput-object p2, p0, Landroidx/appcompat/widget/ListPopupWindow;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
-
-    return-void
-.end method
-
-.method public static synthetic access$001(Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;)V
-    .locals 0
-
-    invoke-super {p0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
 
     return-void
 .end method
@@ -313,7 +303,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    invoke-super {p0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ListPopupWindow;->show()V
 
     iget-object v1, p0, Landroidx/appcompat/widget/ListPopupWindow;->mDropDownList:Landroidx/appcompat/widget/DropDownListView;
 

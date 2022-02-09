@@ -19,26 +19,16 @@
 
 # virtual methods
 .method public fitSystemWindows(Landroid/graphics/Rect;)Z
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/appcompat/widget/FitWindowsFrameLayout;->mListener:Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;
 
     if-eqz v0, :cond_0
 
-    check-cast v0, Landroidx/appcompat/app/AppCompatDelegateImpl$4;
-
-    iget-object v0, v0, Landroidx/appcompat/app/AppCompatDelegateImpl$4;->this$0:Landroidx/appcompat/app/AppCompatDelegateImpl;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1, p1}, Landroidx/appcompat/app/AppCompatDelegateImpl;->updateStatusGuard(Landroidx/core/view/WindowInsetsCompat;Landroid/graphics/Rect;)I
-
-    move-result v0
-
-    iput v0, p1, Landroid/graphics/Rect;->top:I
+    invoke-interface {v0, p1}, Landroidx/appcompat/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;->onFitSystemWindows(Landroid/graphics/Rect;)V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->fitSystemWindows(Landroid/graphics/Rect;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->fitSystemWindows(Landroid/graphics/Rect;)Z
 
     move-result p1
 

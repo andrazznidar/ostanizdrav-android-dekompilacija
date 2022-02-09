@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Iterator;
+.implements Lj$/util/Iterator;
 
 
 # instance fields
@@ -16,17 +17,15 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/protobuf/ByteString;)V
-    .locals 0
+    .locals 1
 
     iput-object p1, p0, Lcom/google/protobuf/ByteString$1;->this$0:Lcom/google/protobuf/ByteString;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    iput p1, p0, Lcom/google/protobuf/ByteString$1;->position:I
-
-    iget-object p1, p0, Lcom/google/protobuf/ByteString$1;->this$0:Lcom/google/protobuf/ByteString;
+    iput v0, p0, Lcom/google/protobuf/ByteString$1;->position:I
 
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->size()I
 
@@ -39,6 +38,14 @@
 
 
 # virtual methods
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public hasNext()Z
     .locals 2
 

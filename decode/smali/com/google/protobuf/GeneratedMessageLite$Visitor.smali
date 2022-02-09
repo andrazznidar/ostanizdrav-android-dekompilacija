@@ -44,6 +44,9 @@
     .end annotation
 .end method
 
+.method public abstract visitFloat(ZFZF)F
+.end method
+
 .method public abstract visitInt(ZIZI)I
 .end method
 

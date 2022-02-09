@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Landroid/view/ViewGroup;",
-        "Lde/rki/coronawarnapp/submission/ui/homecards/TestUnregisteredCard;",
+        "Lde/rki/coronawarnapp/submission/ui/homecards/PcrTestPendingCard;",
         ">;"
     }
 .end annotation
@@ -65,9 +65,9 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/submission/ui/homecards/TestUnregisteredCard;
+    new-instance v0, Lde/rki/coronawarnapp/submission/ui/homecards/PcrTestPendingCard;
 
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/submission/ui/homecards/TestUnregisteredCard;-><init>(Landroid/view/ViewGroup;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/submission/ui/homecards/PcrTestPendingCard;-><init>(Landroid/view/ViewGroup;)V
 
     return-object v0
 .end method

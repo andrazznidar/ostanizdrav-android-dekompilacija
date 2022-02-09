@@ -22,11 +22,11 @@
 
 # direct methods
 .method public constructor <init>(Landroid/widget/LinearLayout;Z)V
-    .locals 2
+    .locals 5
 
     invoke-direct {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    const v0, 0x7f0902ac
+    sget v0, Lcom/google/android/material/R$id;->month_title:I
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -36,13 +36,25 @@
 
     iput-object v0, p0, Lcom/google/android/material/datepicker/MonthsPagerAdapter$ViewHolder;->monthTitle:Landroid/widget/TextView;
 
-    const/4 v1, 0x1
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
 
-    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->setAccessibilityHeading(Landroid/view/View;Z)V
+    new-instance v1, Landroidx/core/view/ViewCompat$5;
 
-    const v0, 0x7f0902a7
+    sget v2, Landroidx/core/R$id;->tag_accessibility_heading:I
 
-    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+    const-class v3, Ljava/lang/Boolean;
+
+    const/16 v4, 0x1c
+
+    invoke-direct {v1, v2, v3, v4}, Landroidx/core/view/ViewCompat$5;-><init>(ILjava/lang/Class;I)V
+
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v0, v2}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;->set(Landroid/view/View;Ljava/lang/Object;)V
+
+    sget v1, Lcom/google/android/material/R$id;->month_grid:I
+
+    invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
@@ -52,11 +64,9 @@
 
     if-nez p2, :cond_0
 
-    iget-object p1, p0, Lcom/google/android/material/datepicker/MonthsPagerAdapter$ViewHolder;->monthTitle:Landroid/widget/TextView;
+    const/16 p1, 0x8
 
-    const/16 p2, 0x8
-
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setVisibility(I)V
 
     :cond_0
     return-void

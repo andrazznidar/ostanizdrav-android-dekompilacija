@@ -282,9 +282,9 @@
     move-result-object v0
 
     :try_start_0
-    const-string v1, "work_spec_id"
+    const-string/jumbo v1, "work_spec_id"
 
-    invoke-static {v0, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
     :try_end_0
@@ -525,9 +525,9 @@
     move-result-object v0
 
     :try_start_0
-    const-string v1, "work_spec_id"
+    const-string/jumbo v1, "work_spec_id"
 
-    invoke-static {v0, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
     :try_end_0
@@ -592,7 +592,7 @@
 .end method
 
 .method public delete(Ljava/lang/String;)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10
@@ -608,7 +608,7 @@
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfDelete:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
@@ -616,12 +616,16 @@
 
     if-nez p1, :cond_0
 
-    invoke-interface {v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object p1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0, v1, p1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v2, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v1, p1}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
@@ -629,7 +633,7 @@
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -643,7 +647,7 @@
 
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfDelete:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object v1, p1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v1, p1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, v1, :cond_1
 
@@ -665,7 +669,7 @@
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfDelete:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+    invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;)V
 
     throw p1
 .end method
@@ -723,85 +727,85 @@
     :try_start_0
     const-string v0, "required_network_type"
 
-    invoke-static {v5, v0}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
     const-string v6, "requires_charging"
 
-    invoke-static {v5, v6}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "requires_device_idle"
 
-    invoke-static {v5, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "requires_battery_not_low"
 
-    invoke-static {v5, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
     const-string v9, "requires_storage_not_low"
 
-    invoke-static {v5, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
-    const-string v10, "trigger_content_update_delay"
+    const-string/jumbo v10, "trigger_content_update_delay"
 
-    invoke-static {v5, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v10}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
-    const-string v11, "trigger_max_content_delay"
+    const-string/jumbo v11, "trigger_max_content_delay"
 
-    invoke-static {v5, v11}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v11}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
     const-string v12, "content_uri_triggers"
 
-    invoke-static {v5, v12}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v12}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
     const-string v13, "id"
 
-    invoke-static {v5, v13}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v13}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
-    const-string v14, "state"
+    const-string/jumbo v14, "state"
 
-    invoke-static {v5, v14}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v14}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
-    const-string v15, "worker_class_name"
+    const-string/jumbo v15, "worker_class_name"
 
-    invoke-static {v5, v15}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v15}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
 
     const-string v2, "input_merger_class_name"
 
-    invoke-static {v5, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
     const-string v4, "input"
 
-    invoke-static {v5, v4}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v4}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
 
     const-string v1, "output"
 
-    invoke-static {v5, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
     :try_end_0
@@ -812,7 +816,7 @@
     :try_start_1
     const-string v3, "initial_delay"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -820,7 +824,7 @@
 
     const-string v3, "interval_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -828,7 +832,7 @@
 
     const-string v3, "flex_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -836,7 +840,7 @@
 
     const-string v3, "run_attempt_count"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -844,7 +848,7 @@
 
     const-string v3, "backoff_policy"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -852,7 +856,7 @@
 
     const-string v3, "backoff_delay_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -860,7 +864,7 @@
 
     const-string v3, "period_start_time"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -868,7 +872,7 @@
 
     const-string v3, "minimum_retention_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -876,7 +880,7 @@
 
     const-string v3, "schedule_requested_at"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -884,7 +888,7 @@
 
     const-string v3, "run_in_foreground"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -929,7 +933,7 @@
 
     move/from16 v31, v0
 
-    invoke-static/range {v30 .. v30}, Landroidx/navigation/ui/R$anim;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static/range {v30 .. v30}, Landroidx/work/impl/model/WorkTypeConverters;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -1019,7 +1023,7 @@
 
     move-result-object v6
 
-    invoke-static {v6}, Landroidx/navigation/ui/R$anim;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v6}, Landroidx/work/impl/model/WorkTypeConverters;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v6
 
@@ -1033,7 +1037,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v1
 
@@ -1117,7 +1121,7 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/navigation/ui/R$anim;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v0
 
@@ -1379,85 +1383,85 @@
     :try_start_0
     const-string v0, "required_network_type"
 
-    invoke-static {v5, v0}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
     const-string v6, "requires_charging"
 
-    invoke-static {v5, v6}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "requires_device_idle"
 
-    invoke-static {v5, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "requires_battery_not_low"
 
-    invoke-static {v5, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
     const-string v9, "requires_storage_not_low"
 
-    invoke-static {v5, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
-    const-string v10, "trigger_content_update_delay"
+    const-string/jumbo v10, "trigger_content_update_delay"
 
-    invoke-static {v5, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v10}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
-    const-string v11, "trigger_max_content_delay"
+    const-string/jumbo v11, "trigger_max_content_delay"
 
-    invoke-static {v5, v11}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v11}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
     const-string v12, "content_uri_triggers"
 
-    invoke-static {v5, v12}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v12}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
     const-string v13, "id"
 
-    invoke-static {v5, v13}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v13}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
-    const-string v14, "state"
+    const-string/jumbo v14, "state"
 
-    invoke-static {v5, v14}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v14}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
-    const-string v15, "worker_class_name"
+    const-string/jumbo v15, "worker_class_name"
 
-    invoke-static {v5, v15}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v15}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
 
     const-string v2, "input_merger_class_name"
 
-    invoke-static {v5, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
     const-string v4, "input"
 
-    invoke-static {v5, v4}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v4}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
 
     const-string v1, "output"
 
-    invoke-static {v5, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
     :try_end_0
@@ -1468,7 +1472,7 @@
     :try_start_1
     const-string v3, "initial_delay"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1476,7 +1480,7 @@
 
     const-string v3, "interval_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1484,7 +1488,7 @@
 
     const-string v3, "flex_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1492,7 +1496,7 @@
 
     const-string v3, "run_attempt_count"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1500,7 +1504,7 @@
 
     const-string v3, "backoff_policy"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1508,7 +1512,7 @@
 
     const-string v3, "backoff_delay_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1516,7 +1520,7 @@
 
     const-string v3, "period_start_time"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1524,7 +1528,7 @@
 
     const-string v3, "minimum_retention_duration"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1532,7 +1536,7 @@
 
     const-string v3, "schedule_requested_at"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1540,7 +1544,7 @@
 
     const-string v3, "run_in_foreground"
 
-    invoke-static {v5, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v5, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -1585,7 +1589,7 @@
 
     move/from16 v31, v0
 
-    invoke-static/range {v30 .. v30}, Landroidx/navigation/ui/R$anim;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static/range {v30 .. v30}, Landroidx/work/impl/model/WorkTypeConverters;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -1675,7 +1679,7 @@
 
     move-result-object v6
 
-    invoke-static {v6}, Landroidx/navigation/ui/R$anim;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v6}, Landroidx/work/impl/model/WorkTypeConverters;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v6
 
@@ -1689,7 +1693,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v1
 
@@ -1773,7 +1777,7 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/navigation/ui/R$anim;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v0
 
@@ -1944,85 +1948,85 @@
     :try_start_0
     const-string v0, "required_network_type"
 
-    invoke-static {v4, v0}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
     const-string v5, "requires_charging"
 
-    invoke-static {v4, v5}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
     const-string v6, "requires_device_idle"
 
-    invoke-static {v4, v6}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "requires_battery_not_low"
 
-    invoke-static {v4, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "requires_storage_not_low"
 
-    invoke-static {v4, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
-    const-string v9, "trigger_content_update_delay"
+    const-string/jumbo v9, "trigger_content_update_delay"
 
-    invoke-static {v4, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
-    const-string v10, "trigger_max_content_delay"
+    const-string/jumbo v10, "trigger_max_content_delay"
 
-    invoke-static {v4, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v10}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
     const-string v11, "content_uri_triggers"
 
-    invoke-static {v4, v11}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v11}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
     const-string v12, "id"
 
-    invoke-static {v4, v12}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v12}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
-    const-string v13, "state"
+    const-string/jumbo v13, "state"
 
-    invoke-static {v4, v13}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v13}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
-    const-string v14, "worker_class_name"
+    const-string/jumbo v14, "worker_class_name"
 
-    invoke-static {v4, v14}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v14}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
     const-string v15, "input_merger_class_name"
 
-    invoke-static {v4, v15}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v15}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
 
     const-string v2, "input"
 
-    invoke-static {v4, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
     const-string v1, "output"
 
-    invoke-static {v4, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
     :try_end_0
@@ -2033,7 +2037,7 @@
     :try_start_1
     const-string v3, "initial_delay"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2041,7 +2045,7 @@
 
     const-string v3, "interval_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2049,7 +2053,7 @@
 
     const-string v3, "flex_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2057,7 +2061,7 @@
 
     const-string v3, "run_attempt_count"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2065,7 +2069,7 @@
 
     const-string v3, "backoff_policy"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2073,7 +2077,7 @@
 
     const-string v3, "backoff_delay_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2081,7 +2085,7 @@
 
     const-string v3, "period_start_time"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2089,7 +2093,7 @@
 
     const-string v3, "minimum_retention_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2097,7 +2101,7 @@
 
     const-string v3, "schedule_requested_at"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2105,7 +2109,7 @@
 
     const-string v3, "run_in_foreground"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2150,7 +2154,7 @@
 
     move/from16 v31, v0
 
-    invoke-static/range {v30 .. v30}, Landroidx/navigation/ui/R$anim;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static/range {v30 .. v30}, Landroidx/work/impl/model/WorkTypeConverters;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -2242,7 +2246,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Landroidx/navigation/ui/R$anim;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v5}, Landroidx/work/impl/model/WorkTypeConverters;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v5
 
@@ -2256,7 +2260,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v1
 
@@ -2340,7 +2344,7 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/navigation/ui/R$anim;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v0
 
@@ -2511,85 +2515,85 @@
     :try_start_0
     const-string v0, "required_network_type"
 
-    invoke-static {v4, v0}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
     const-string v5, "requires_charging"
 
-    invoke-static {v4, v5}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
     const-string v6, "requires_device_idle"
 
-    invoke-static {v4, v6}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "requires_battery_not_low"
 
-    invoke-static {v4, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "requires_storage_not_low"
 
-    invoke-static {v4, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
-    const-string v9, "trigger_content_update_delay"
+    const-string/jumbo v9, "trigger_content_update_delay"
 
-    invoke-static {v4, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
-    const-string v10, "trigger_max_content_delay"
+    const-string/jumbo v10, "trigger_max_content_delay"
 
-    invoke-static {v4, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v10}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
     const-string v11, "content_uri_triggers"
 
-    invoke-static {v4, v11}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v11}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
     const-string v12, "id"
 
-    invoke-static {v4, v12}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v12}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
-    const-string v13, "state"
+    const-string/jumbo v13, "state"
 
-    invoke-static {v4, v13}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v13}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
-    const-string v14, "worker_class_name"
+    const-string/jumbo v14, "worker_class_name"
 
-    invoke-static {v4, v14}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v14}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
     const-string v15, "input_merger_class_name"
 
-    invoke-static {v4, v15}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v15}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
 
     const-string v2, "input"
 
-    invoke-static {v4, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
     const-string v1, "output"
 
-    invoke-static {v4, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
     :try_end_0
@@ -2600,7 +2604,7 @@
     :try_start_1
     const-string v3, "initial_delay"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2608,7 +2612,7 @@
 
     const-string v3, "interval_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2616,7 +2620,7 @@
 
     const-string v3, "flex_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2624,7 +2628,7 @@
 
     const-string v3, "run_attempt_count"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2632,7 +2636,7 @@
 
     const-string v3, "backoff_policy"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2640,7 +2644,7 @@
 
     const-string v3, "backoff_delay_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2648,7 +2652,7 @@
 
     const-string v3, "period_start_time"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2656,7 +2660,7 @@
 
     const-string v3, "minimum_retention_duration"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2664,7 +2668,7 @@
 
     const-string v3, "schedule_requested_at"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2672,7 +2676,7 @@
 
     const-string v3, "run_in_foreground"
 
-    invoke-static {v4, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v4, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
@@ -2717,7 +2721,7 @@
 
     move/from16 v31, v0
 
-    invoke-static/range {v30 .. v30}, Landroidx/navigation/ui/R$anim;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static/range {v30 .. v30}, Landroidx/work/impl/model/WorkTypeConverters;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -2809,7 +2813,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Landroidx/navigation/ui/R$anim;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v5}, Landroidx/work/impl/model/WorkTypeConverters;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v5
 
@@ -2823,7 +2827,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v1
 
@@ -2907,7 +2911,7 @@
 
     move/from16 v20, v0
 
-    invoke-static/range {v19 .. v19}, Landroidx/navigation/ui/R$anim;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static/range {v19 .. v19}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v0
 
@@ -3096,7 +3100,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v2
     :try_end_0
@@ -3363,85 +3367,85 @@
     :try_start_0
     const-string v0, "required_network_type"
 
-    invoke-static {v6, v0}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
     const-string v7, "requires_charging"
 
-    invoke-static {v6, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "requires_device_idle"
 
-    invoke-static {v6, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
     const-string v9, "requires_battery_not_low"
 
-    invoke-static {v6, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
     const-string v10, "requires_storage_not_low"
 
-    invoke-static {v6, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v10}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
-    const-string v11, "trigger_content_update_delay"
+    const-string/jumbo v11, "trigger_content_update_delay"
 
-    invoke-static {v6, v11}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v11}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
-    const-string v12, "trigger_max_content_delay"
+    const-string/jumbo v12, "trigger_max_content_delay"
 
-    invoke-static {v6, v12}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v12}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
     const-string v13, "content_uri_triggers"
 
-    invoke-static {v6, v13}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v13}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
     const-string v14, "id"
 
-    invoke-static {v6, v14}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v14}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
-    const-string v15, "state"
+    const-string/jumbo v15, "state"
 
-    invoke-static {v6, v15}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v15}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
 
-    const-string v3, "worker_class_name"
+    const-string/jumbo v3, "worker_class_name"
 
-    invoke-static {v6, v3}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
     const-string v4, "input_merger_class_name"
 
-    invoke-static {v6, v4}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v4}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
 
     const-string v5, "input"
 
-    invoke-static {v6, v5}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v5}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
     const-string v1, "output"
 
-    invoke-static {v6, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
     :try_end_0
@@ -3452,7 +3456,7 @@
     :try_start_1
     const-string v2, "initial_delay"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3460,7 +3464,7 @@
 
     const-string v2, "interval_duration"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3468,7 +3472,7 @@
 
     const-string v2, "flex_duration"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3476,7 +3480,7 @@
 
     const-string v2, "run_attempt_count"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3484,7 +3488,7 @@
 
     const-string v2, "backoff_policy"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3492,7 +3496,7 @@
 
     const-string v2, "backoff_delay_duration"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3500,7 +3504,7 @@
 
     const-string v2, "period_start_time"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3508,7 +3512,7 @@
 
     const-string v2, "minimum_retention_duration"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3516,7 +3520,7 @@
 
     const-string v2, "schedule_requested_at"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3524,7 +3528,7 @@
 
     const-string v2, "run_in_foreground"
 
-    invoke-static {v6, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v6, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3552,7 +3556,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroidx/navigation/ui/R$anim;->intToNetworkType(I)Landroidx/work/NetworkType;
+    invoke-static {v0}, Landroidx/work/impl/model/WorkTypeConverters;->intToNetworkType(I)Landroidx/work/NetworkType;
 
     move-result-object v0
 
@@ -3638,7 +3642,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroidx/navigation/ui/R$anim;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
+    invoke-static {v0}, Landroidx/work/impl/model/WorkTypeConverters;->byteArrayToContentUriTriggers([B)Landroidx/work/ContentUriTriggers;
 
     move-result-object v0
 
@@ -3652,7 +3656,7 @@
 
     move-result v3
 
-    invoke-static {v3}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v3}, Landroidx/work/impl/model/WorkTypeConverters;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v3
 
@@ -3722,7 +3726,7 @@
 
     move-result v1
 
-    invoke-static {v1}, Landroidx/navigation/ui/R$anim;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
+    invoke-static {v1}, Landroidx/work/impl/model/WorkTypeConverters;->intToBackoffPolicy(I)Landroidx/work/BackoffPolicy;
 
     move-result-object v1
 
@@ -3871,13 +3875,13 @@
     :try_start_0
     const-string v1, "id"
 
-    invoke-static {p1, v1}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
 
-    const-string v2, "state"
+    const-string/jumbo v2, "state"
 
-    invoke-static {p1, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {p1, v2}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
@@ -3910,7 +3914,7 @@
 
     move-result v5
 
-    invoke-static {v5}, Landroidx/navigation/ui/R$anim;->intToState(I)Landroidx/work/WorkInfo$State;
+    invoke-static {v5}, Landroidx/work/impl/model/WorkTypeConverters;->intToState(I)Landroidx/work/WorkInfo$State;
 
     move-result-object v5
 
@@ -3956,7 +3960,7 @@
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfIncrementWorkSpecRunAttemptCount:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
@@ -3964,12 +3968,16 @@
 
     if-nez p1, :cond_0
 
-    invoke-interface {v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object p1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0, v1, p1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v2, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v1, p1}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
@@ -3977,7 +3985,7 @@
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     move-result p1
 
@@ -3993,7 +4001,7 @@
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfIncrementWorkSpecRunAttemptCount:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object v2, v1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v2, v1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, v2, :cond_1
 
@@ -4015,13 +4023,13 @@
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfIncrementWorkSpecRunAttemptCount:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+    invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;)V
 
     throw p1
 .end method
 
 .method public markWorkSpecScheduled(Ljava/lang/String;J)I
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10,
@@ -4039,24 +4047,30 @@
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfMarkWorkSpecScheduled:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    iget-object v1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v0, v1, p2, p3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2, p2, p3}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     const/4 p2, 0x2
 
     if-nez p1, :cond_0
 
-    invoke-interface {v0, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object p1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p1, p2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0, p2, p1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object p3, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p3, p2, p1}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
@@ -4066,7 +4080,7 @@
     const/4 p1, 0x0
 
     :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     move-result p2
 
@@ -4082,7 +4096,7 @@
 
     iget-object p3, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfMarkWorkSpecScheduled:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object v1, p3, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v1, p3, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, v1, :cond_1
 
@@ -4102,7 +4116,7 @@
 
     iget-object p3, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfMarkWorkSpecScheduled:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object v1, p3, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v1, p3, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, v1, :cond_2
 
@@ -4131,7 +4145,7 @@
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfResetWorkSpecRunAttemptCount:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
@@ -4139,12 +4153,16 @@
 
     if-nez p1, :cond_0
 
-    invoke-interface {v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object p1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p1, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0, v1, p1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v2, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v1, p1}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
@@ -4152,7 +4170,7 @@
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     move-result p1
 
@@ -4168,7 +4186,7 @@
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfResetWorkSpecRunAttemptCount:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object v2, v1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v2, v1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, v2, :cond_1
 
@@ -4190,13 +4208,13 @@
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfResetWorkSpecRunAttemptCount:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+    invoke-virtual {v1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;)V
 
     throw p1
 .end method
 
 .method public setOutput(Ljava/lang/String;Landroidx/work/Data;)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10,
@@ -4214,7 +4232,7 @@
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfSetOutput:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
@@ -4226,24 +4244,32 @@
 
     if-nez p2, :cond_0
 
-    invoke-interface {v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object p2, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p2, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0, v1, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindBlob(I[B)V
+    iget-object v2, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v2, v1, p2}, Landroid/database/sqlite/SQLiteProgram;->bindBlob(I[B)V
 
     :goto_0
     const/4 p2, 0x2
 
     if-nez p1, :cond_1
 
-    invoke-interface {v0, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object p1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p1, p2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
     :cond_1
-    invoke-interface {v0, p2, p1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v1, p2, p1}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_1
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
@@ -4251,7 +4277,7 @@
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -4265,7 +4291,7 @@
 
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfSetOutput:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object p2, p1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object p2, p1, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, p2, :cond_2
 
@@ -4287,13 +4313,13 @@
 
     iget-object p2, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfSetOutput:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {p2, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+    invoke-virtual {p2, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;)V
 
     throw p1
 .end method
 
 .method public setPeriodStartTime(Ljava/lang/String;J)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10,
@@ -4311,24 +4337,30 @@
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfSetPeriodStartTime:Landroidx/room/SharedSQLiteStatement;
 
-    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    iget-object v1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v0, v1, p2, p3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2, p2, p3}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     const/4 p2, 0x2
 
     if-nez p1, :cond_0
 
-    invoke-interface {v0, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object p1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p1, p2}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0, p2, p1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object p3, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {p3, p2, p1}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_0
     iget-object p1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
@@ -4338,7 +4370,7 @@
     const/4 p1, 0x0
 
     :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     iget-object p2, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
@@ -4352,7 +4384,7 @@
 
     iget-object p2, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfSetPeriodStartTime:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object p3, p2, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object p3, p2, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, p3, :cond_1
 
@@ -4372,7 +4404,7 @@
 
     iget-object p3, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__preparedStmtOfSetPeriodStartTime:Landroidx/room/SharedSQLiteStatement;
 
-    iget-object v1, p3, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v1, p3, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne v0, v1, :cond_2
 
@@ -4385,7 +4417,7 @@
 .end method
 
 .method public varargs setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10,
@@ -4431,29 +4463,21 @@
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
-
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
-
-    iget-object v1, v1, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
-
-    invoke-interface {v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v1, v0}, Landroidx/room/RoomDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
-    invoke-static {p1}, Landroidx/navigation/ui/R$anim;->stateToInt(Landroidx/work/WorkInfo$State;)I
+    invoke-static {p1}, Landroidx/work/impl/model/WorkTypeConverters;->stateToInt(Landroidx/work/WorkInfo$State;)I
 
     move-result p1
 
     int-to-long v1, p1
 
-    const/4 p1, 0x1
+    iget-object p1, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
 
-    invoke-interface {v0, p1, v1, v2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+    const/4 v3, 0x1
+
+    invoke-virtual {p1, v3, v1, v2}, Landroid/database/sqlite/SQLiteProgram;->bindLong(IJ)V
 
     array-length p1, p2
 
@@ -4468,12 +4492,16 @@
 
     if-nez v3, :cond_0
 
-    invoke-interface {v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
+    iget-object v3, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v3, v1}, Landroid/database/sqlite/SQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
     :cond_0
-    invoke-interface {v0, v1, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindString(ILjava/lang/String;)V
+    iget-object v4, v0, Landroidx/sqlite/db/framework/FrameworkSQLiteProgram;->mDelegate:Landroid/database/sqlite/SQLiteProgram;
+
+    invoke-virtual {v4, v1, v3}, Landroid/database/sqlite/SQLiteProgram;->bindString(ILjava/lang/String;)V
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
@@ -4488,7 +4516,7 @@
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v0}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     move-result p1
 

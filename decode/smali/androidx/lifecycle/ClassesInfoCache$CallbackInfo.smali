@@ -135,7 +135,7 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_3
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -146,7 +146,7 @@
     sub-int/2addr v0, v1
 
     :goto_0
-    if-ltz v0, :cond_4
+    if-ltz v0, :cond_3
 
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -154,7 +154,7 @@
 
     check-cast v2, Landroidx/lifecycle/ClassesInfoCache$MethodReference;
 
-    if-eqz v2, :cond_3
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_0
     iget v3, v2, Landroidx/lifecycle/ClassesInfoCache$MethodReference;->mCallType:I
@@ -235,10 +235,5 @@
     throw p1
 
     :cond_3
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_4
     return-void
 .end method

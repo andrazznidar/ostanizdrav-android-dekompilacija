@@ -1,4 +1,4 @@
-.class public final Landroidx/fragment/app/FragmentAnim$3;
+.class public Landroidx/fragment/app/FragmentAnim$3;
 .super Landroid/animation/AnimatorListenerAdapter;
 .source "FragmentAnim.java"
 
@@ -47,25 +47,23 @@
 
     iget-object p1, p0, Landroidx/fragment/app/FragmentAnim$3;->val$fragment:Landroidx/fragment/app/Fragment;
 
-    iget-object p1, p1, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+    iget-object v0, p1, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    if-nez p1, :cond_0
+    if-nez v0, :cond_0
 
-    move-object p1, v0
+    move-object v0, v1
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p1, Landroidx/fragment/app/Fragment$AnimationInfo;->mAnimator:Landroid/animation/Animator;
+    iget-object v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mAnimator:Landroid/animation/Animator;
 
     :goto_0
-    iget-object v1, p0, Landroidx/fragment/app/FragmentAnim$3;->val$fragment:Landroidx/fragment/app/Fragment;
+    invoke-virtual {p1, v1}, Landroidx/fragment/app/Fragment;->setAnimator(Landroid/animation/Animator;)V
 
-    invoke-virtual {v1, v0}, Landroidx/fragment/app/Fragment;->setAnimator(Landroid/animation/Animator;)V
-
-    if-eqz p1, :cond_1
+    if-eqz v0, :cond_1
 
     iget-object p1, p0, Landroidx/fragment/app/FragmentAnim$3;->val$container:Landroid/view/ViewGroup;
 

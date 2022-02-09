@@ -42,8 +42,6 @@
 
 .field public mBaseInnerInsets:Landroidx/core/view/WindowInsetsCompat;
 
-.field public final mBaseInnerInsetsRect:Landroid/graphics/Rect;
-
 .field public mContent:Landroidx/appcompat/widget/ContentFrameLayout;
 
 .field public final mContentInsets:Landroid/graphics/Rect;
@@ -64,17 +62,11 @@
 
 .field public mInnerInsets:Landroidx/core/view/WindowInsetsCompat;
 
-.field public final mInnerInsetsRect:Landroid/graphics/Rect;
-
 .field public final mLastBaseContentInsets:Landroid/graphics/Rect;
 
 .field public mLastBaseInnerInsets:Landroidx/core/view/WindowInsetsCompat;
 
-.field public final mLastBaseInnerInsetsRect:Landroid/graphics/Rect;
-
 .field public mLastInnerInsets:Landroidx/core/view/WindowInsetsCompat;
-
-.field public final mLastInnerInsetsRect:Landroid/graphics/Rect;
 
 .field public mLastSystemUiVisibility:I
 
@@ -93,25 +85,27 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_0
+    sget v1, Landroidx/appcompat/R$attr;->actionBarSize:I
+
+    const/4 v2, 0x0
+
+    aput v1, v0, v2
+
+    const/4 v1, 0x1
+
+    const v2, 0x1010059
+
+    aput v2, v0, v1
 
     sput-object v0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->ATTRS:[I
 
     return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x7f040004
-        0x1010059
-    .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -145,25 +139,17 @@
 
     invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsetsRect:Landroid/graphics/Rect;
+    new-instance p2, Landroid/graphics/Rect;
+
+    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
 
     new-instance p2, Landroid/graphics/Rect;
 
     invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseInnerInsetsRect:Landroid/graphics/Rect;
-
     new-instance p2, Landroid/graphics/Rect;
 
     invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mInnerInsetsRect:Landroid/graphics/Rect;
-
-    new-instance p2, Landroid/graphics/Rect;
-
-    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p2, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastInnerInsetsRect:Landroid/graphics/Rect;
 
     sget-object p2, Landroidx/core/view/WindowInsetsCompat;->CONSUMED:Landroidx/core/view/WindowInsetsCompat;
 
@@ -317,7 +303,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
@@ -392,7 +378,7 @@
 .method public fitSystemWindows(Landroid/graphics/Rect;)Z
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->fitSystemWindows(Landroid/graphics/Rect;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->fitSystemWindows(Landroid/graphics/Rect;)Z
 
     move-result p1
 
@@ -662,55 +648,55 @@
 .end method
 
 .method public onApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .locals 8
+    .locals 7
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    new-instance v0, Landroidx/core/view/WindowInsetsCompat;
+    invoke-static {p1, p0}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsetsCompat(Landroid/view/WindowInsets;Landroid/view/View;)Landroidx/core/view/WindowInsetsCompat;
 
-    if-eqz p1, :cond_3
+    move-result-object p1
 
-    invoke-direct {v0, p1}, Landroidx/core/view/WindowInsetsCompat;-><init>(Landroid/view/WindowInsets;)V
+    new-instance v2, Landroid/graphics/Rect;
 
-    new-instance v3, Landroid/graphics/Rect;
+    invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
 
-    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
+    move-result v0
 
-    move-result p1
-
-    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetTop()I
+    invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetTop()I
 
     move-result v1
 
-    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetRight()I
+    invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetRight()I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetBottom()I
+    invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetBottom()I
 
     move-result v4
 
-    invoke-direct {v3, p1, v1, v2, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v2, v0, v1, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop:Landroidx/appcompat/widget/ActionBarContainer;
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop:Landroidx/appcompat/widget/ActionBarContainer;
+
+    const/4 v3, 0x1
 
     const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    const/4 v6, 0x1
 
-    const/4 v7, 0x1
+    move-object v0, p0
 
-    move-object v1, p0
+    invoke-virtual/range {v0 .. v6}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->applyInsets(Landroid/view/View;Landroid/graphics/Rect;ZZZZ)Z
 
-    invoke-virtual/range {v1 .. v7}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->applyInsets(Landroid/view/View;Landroid/graphics/Rect;ZZZZ)Z
-
-    move-result p1
+    move-result v0
 
     iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseContentInsets:Landroid/graphics/Rect;
 
-    invoke-static {p0, v0, v1}, Landroidx/core/view/ViewCompat;->computeSystemWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;Landroid/graphics/Rect;)Landroidx/core/view/WindowInsetsCompat;
+    sget-object v2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-static {p0, p1, v1}, Landroidx/core/view/ViewCompat$Api21Impl;->computeSystemWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;Landroid/graphics/Rect;)Landroidx/core/view/WindowInsetsCompat;
 
     iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseContentInsets:Landroid/graphics/Rect;
 
@@ -722,7 +708,7 @@
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
-    iget-object v5, v0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+    iget-object v5, p1, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
 
     invoke-virtual {v5, v2, v3, v4, v1}, Landroidx/core/view/WindowInsetsCompat$Impl;->inset(IIII)Landroidx/core/view/WindowInsetsCompat;
 
@@ -740,11 +726,11 @@
 
     if-nez v1, :cond_0
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsets:Landroidx/core/view/WindowInsetsCompat;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseInnerInsets:Landroidx/core/view/WindowInsetsCompat;
 
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseInnerInsets:Landroidx/core/view/WindowInsetsCompat;
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseInnerInsets:Landroidx/core/view/WindowInsetsCompat;
 
-    move p1, v2
+    move v0, v2
 
     :cond_0
     iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseContentInsets:Landroid/graphics/Rect;
@@ -757,16 +743,16 @@
 
     if-nez v1, :cond_1
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseContentInsets:Landroid/graphics/Rect;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mLastBaseContentInsets:Landroid/graphics/Rect;
 
     iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mBaseContentInsets:Landroid/graphics/Rect;
 
-    invoke-virtual {p1, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
     :cond_1
-    move v2, p1
+    move v2, v0
 
     :goto_0
     if-eqz v2, :cond_2
@@ -774,15 +760,13 @@
     invoke-virtual {p0}, Landroid/view/ViewGroup;->requestLayout()V
 
     :cond_2
-    iget-object p1, v0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+    iget-object p1, p1, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
 
     invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat$Impl;->consumeDisplayCutout()Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object p1
 
-    iget-object p1, p1, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
-
-    invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat$Impl;->consumeSystemWindowInsets()Landroidx/core/view/WindowInsetsCompat;
+    invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat;->consumeSystemWindowInsets()Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object p1
 
@@ -797,17 +781,12 @@
     move-result-object p1
 
     return-object p1
-
-    :cond_3
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -815,7 +794,9 @@
 
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->init(Landroid/content/Context;)V
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+    sget-object p1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V
 
     return-void
 .end method
@@ -974,7 +955,9 @@
 
     move-result v3
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getWindowSystemUiVisibility(Landroid/view/View;)I
+    sget-object v4, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
 
     move-result v4
 
@@ -1077,9 +1060,7 @@
     goto :goto_3
 
     :cond_4
-    iget-object v4, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mInnerInsets:Landroidx/core/view/WindowInsetsCompat;
-
-    invoke-virtual {v4}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
+    invoke-virtual {v6}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
 
     move-result v4
 
@@ -1113,9 +1094,20 @@
 
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v6, 0x1d
+    const/16 v6, 0x1e
 
     if-lt v5, v6, :cond_5
+
+    new-instance v5, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;
+
+    invoke-direct {v5, v4}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;-><init>(Landroidx/core/view/WindowInsetsCompat;)V
+
+    goto :goto_2
+
+    :cond_5
+    const/16 v6, 0x1d
+
+    if-lt v5, v6, :cond_6
 
     new-instance v5, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;
 
@@ -1123,7 +1115,7 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     new-instance v5, Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;
 
     invoke-direct {v5, v4}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;-><init>(Landroidx/core/view/WindowInsetsCompat;)V
@@ -1162,7 +1154,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_6
+    if-nez v2, :cond_7
 
     iget-object v2, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mInnerInsets:Landroidx/core/view/WindowInsetsCompat;
 
@@ -1170,27 +1162,9 @@
 
     iget-object v4, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mContent:Landroidx/appcompat/widget/ContentFrameLayout;
 
-    invoke-virtual {v2}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsets()Landroid/view/WindowInsets;
+    invoke-static {v4, v2}, Landroidx/core/view/ViewCompat;->dispatchApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
 
-    move-result-object v2
-
-    if-eqz v2, :cond_6
-
-    invoke-virtual {v4, v2}, Landroid/view/View;->dispatchApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Landroid/view/WindowInsets;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_6
-
-    new-instance v4, Landroidx/core/view/WindowInsetsCompat;
-
-    invoke-direct {v4, v2}, Landroidx/core/view/WindowInsetsCompat;-><init>(Landroid/view/WindowInsets;)V
-
-    :cond_6
+    :cond_7
     iget-object v6, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mContent:Landroidx/appcompat/widget/ContentFrameLayout;
 
     const/4 v8, 0x0
@@ -1594,21 +1568,11 @@
     :goto_0
     iget-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
-    if-eqz p1, :cond_3
-
-    check-cast p1, Landroidx/appcompat/app/WindowDecorActionBar;
-
     if-eqz p1, :cond_2
 
-    goto :goto_1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_3
-    :goto_1
     return-void
 .end method
 
@@ -1625,8 +1589,10 @@
 
 .method public onWindowSystemUiVisibilityChanged(I)V
     .locals 7
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowSystemUiVisibilityChanged(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->onWindowSystemUiVisibilityChanged(I)V
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->pullChildren()V
 
@@ -1697,17 +1663,15 @@
 
     :cond_3
     :goto_2
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroidx/appcompat/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
+    check-cast v4, Landroidx/appcompat/app/WindowDecorActionBar;
 
-    check-cast p1, Landroidx/appcompat/app/WindowDecorActionBar;
+    iget-boolean p1, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
-    iget-boolean v1, p1, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem:Z
+    if-eqz p1, :cond_4
 
-    if-eqz v1, :cond_4
+    iput-boolean v2, v4, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem:Z
 
-    iput-boolean v2, p1, Landroidx/appcompat/app/WindowDecorActionBar;->mHiddenBySystem:Z
-
-    invoke-virtual {p1, v3}, Landroidx/appcompat/app/WindowDecorActionBar;->updateVisibility(Z)V
+    invoke-virtual {v4, v3}, Landroidx/appcompat/app/WindowDecorActionBar;->updateVisibility(Z)V
 
     :cond_4
     :goto_3
@@ -1719,7 +1683,9 @@
 
     if-eqz p1, :cond_5
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+    sget-object p1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V
 
     :cond_5
     return-void
@@ -1728,7 +1694,7 @@
 .method public onWindowVisibilityChanged(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowVisibilityChanged(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->onWindowVisibilityChanged(I)V
 
     iput p1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mWindowVisibility:I
 
@@ -1751,7 +1717,7 @@
 
     if-nez v0, :cond_2
 
-    const v0, 0x7f090032
+    sget v0, Landroidx/appcompat/R$id;->action_bar_activity_content:I
 
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1761,7 +1727,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mContent:Landroidx/appcompat/widget/ContentFrameLayout;
 
-    const v0, 0x7f090033
+    sget v0, Landroidx/appcompat/R$id;->action_bar_container:I
 
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1771,7 +1737,7 @@
 
     iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->mActionBarTop:Landroidx/appcompat/widget/ActionBarContainer;
 
-    const v0, 0x7f090031
+    sget v0, Landroidx/appcompat/R$id;->action_bar:I
 
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1806,7 +1772,7 @@
 
     const-string v2, "Can\'t make a decor toolbar out of "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1890,7 +1856,9 @@
 
     invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->onWindowSystemUiVisibilityChanged(I)V
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+    sget-object p1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->requestApplyInsets()V
 
     :cond_0
     return-void

@@ -16,7 +16,8 @@
         Landroidx/fragment/app/Fragment$AnimationInfo;,
         Landroidx/fragment/app/Fragment$OnStartEnterTransitionListener;,
         Landroidx/fragment/app/Fragment$InstantiationException;,
-        Landroidx/fragment/app/Fragment$SavedState;
+        Landroidx/fragment/app/Fragment$SavedState;,
+        Landroidx/fragment/app/Fragment$OnPreAttachedListener;
     }
 .end annotation
 
@@ -34,7 +35,7 @@
 
 .field public mBackStackNesting:I
 
-.field public mCalled:Z
+.field private mCalled:Z
 
 .field public mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
 
@@ -42,7 +43,7 @@
 
 .field public mContainerId:I
 
-.field public mContentLayoutId:I
+.field private mContentLayoutId:I
 
 .field public mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
 
@@ -75,9 +76,7 @@
 
 .field public mIsCreated:Z
 
-.field public mIsNewlyAdded:Z
-
-.field public mIsPrimaryNavigationFragment:Ljava/lang/Boolean;
+.field private mIsPrimaryNavigationFragment:Ljava/lang/Boolean;
 
 .field public mLayoutInflater:Landroid/view/LayoutInflater;
 
@@ -86,6 +85,18 @@
 .field public mMaxState:Landroidx/lifecycle/Lifecycle$State;
 
 .field public mMenuVisible:Z
+
+.field private final mNextLocalRequestCode:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field private final mOnPreAttachedListeners:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Landroidx/fragment/app/Fragment$OnPreAttachedListener;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public mParentFragment:Landroidx/fragment/app/Fragment;
 
@@ -108,6 +119,8 @@
 .field public mSavedStateRegistryController:Landroidx/savedstate/SavedStateRegistryController;
 
 .field public mSavedUserVisibleHint:Ljava/lang/Boolean;
+
+.field public mSavedViewRegistryState:Landroid/os/Bundle;
 
 .field public mSavedViewState:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
@@ -149,7 +162,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Ljava/lang/Object;
@@ -214,6 +227,18 @@
 
     iput-object v0, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwnerLiveData:Landroidx/lifecycle/MutableLiveData;
 
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+
+    iput-object v0, p0, Landroidx/fragment/app/Fragment;->mNextLocalRequestCode:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Landroidx/fragment/app/Fragment;->mOnPreAttachedListeners:Ljava/util/ArrayList;
+
     invoke-direct {p0}, Landroidx/fragment/app/Fragment;->initLifecycle()V
 
     return-void
@@ -248,8 +273,49 @@
     return-object v0
 .end method
 
-.method private initLifecycle()V
+.method private getMinimumMaxLifecycleState()I
     .locals 2
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mMaxState:Landroidx/lifecycle/Lifecycle$State;
+
+    sget-object v1, Landroidx/lifecycle/Lifecycle$State;->INITIALIZED:Landroidx/lifecycle/Lifecycle$State;
+
+    if-eq v0, v1, :cond_1
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mParentFragment:Landroidx/fragment/app/Fragment;
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mParentFragment:Landroidx/fragment/app/Fragment;
+
+    invoke-direct {v1}, Landroidx/fragment/app/Fragment;->getMinimumMaxLifecycleState()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    return v0
+
+    :cond_1
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private initLifecycle()V
+    .locals 1
 
     new-instance v0, Landroidx/lifecycle/LifecycleRegistry;
 
@@ -263,13 +329,9 @@
 
     iput-object v0, p0, Landroidx/fragment/app/Fragment;->mSavedStateRegistryController:Landroidx/savedstate/SavedStateRegistryController;
 
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+    const/4 v0, 0x0
 
-    new-instance v1, Landroidx/fragment/app/Fragment$2;
-
-    invoke-direct {v1, p0}, Landroidx/fragment/app/Fragment$2;-><init>(Landroidx/fragment/app/Fragment;)V
-
-    invoke-virtual {v0, v1}, Landroidx/lifecycle/LifecycleRegistry;->addObserver(Landroidx/lifecycle/LifecycleObserver;)V
+    iput-object v0, p0, Landroidx/fragment/app/Fragment;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
 
     return-void
 .end method
@@ -351,7 +413,7 @@
 
     const-string v0, ": calling Fragment constructor caused an exception"
 
-    invoke-static {v1, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v0}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -366,7 +428,7 @@
 
     const-string v0, ": could not find Fragment constructor"
 
-    invoke-static {v1, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v0}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -379,7 +441,7 @@
 
     new-instance p2, Landroidx/fragment/app/Fragment$InstantiationException;
 
-    invoke-static {v1, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v0}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -392,7 +454,7 @@
 
     new-instance p2, Landroidx/fragment/app/Fragment$InstantiationException;
 
-    invoke-static {v1, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v0}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -401,9 +463,207 @@
     throw p2
 .end method
 
+.method private prepareCallInternal(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/arch/core/util/Function;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<I:",
+            "Ljava/lang/Object;",
+            "O:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroidx/activity/result/contract/ActivityResultContract<",
+            "TI;TO;>;",
+            "Landroidx/arch/core/util/Function<",
+            "Ljava/lang/Void;",
+            "Landroidx/activity/result/ActivityResultRegistry;",
+            ">;",
+            "Landroidx/activity/result/ActivityResultCallback<",
+            "TO;>;)",
+            "Landroidx/activity/result/ActivityResultLauncher<",
+            "TI;>;"
+        }
+    .end annotation
+
+    iget v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    const/4 v1, 0x1
+
+    if-gt v0, v1, :cond_0
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    new-instance v1, Landroidx/fragment/app/Fragment$8;
+
+    move-object v2, v1
+
+    move-object v3, p0
+
+    move-object v4, p2
+
+    move-object v5, v0
+
+    move-object v6, p1
+
+    move-object v7, p3
+
+    invoke-direct/range {v2 .. v7}, Landroidx/fragment/app/Fragment$8;-><init>(Landroidx/fragment/app/Fragment;Landroidx/arch/core/util/Function;Ljava/util/concurrent/atomic/AtomicReference;Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)V
+
+    invoke-direct {p0, v1}, Landroidx/fragment/app/Fragment;->registerOnPreAttachListener(Landroidx/fragment/app/Fragment$OnPreAttachedListener;)V
+
+    new-instance p2, Landroidx/fragment/app/Fragment$9;
+
+    invoke-direct {p2, p0, v0, p1}, Landroidx/fragment/app/Fragment$9;-><init>(Landroidx/fragment/app/Fragment;Ljava/util/concurrent/atomic/AtomicReference;Landroidx/activity/result/contract/ActivityResultContract;)V
+
+    return-object p2
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Fragment "
+
+    const-string p3, " is attempting to registerForActivityResult after being created. Fragments must call registerForActivityResult() before they are created (i.e. initialization, onAttach(), or onCreate())."
+
+    invoke-static {p2, p0, p3}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method private registerOnPreAttachListener(Landroidx/fragment/app/Fragment$OnPreAttachedListener;)V
+    .locals 1
+
+    iget v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    if-ltz v0, :cond_0
+
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment$OnPreAttachedListener;->onPreAttached()V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mOnPreAttachedListeners:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_0
+    return-void
+.end method
+
+.method private restoreViewState()V
+    .locals 4
+
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "moveto RESTORE_VIEW_STATE: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "FragmentManager"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_4
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mSavedFragmentState:Landroid/os/Bundle;
+
+    iget-object v3, p0, Landroidx/fragment/app/Fragment;->mSavedViewState:Landroid/util/SparseArray;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
+
+    iput-object v1, p0, Landroidx/fragment/app/Fragment;->mSavedViewState:Landroid/util/SparseArray;
+
+    :cond_1
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    iget-object v3, p0, Landroidx/fragment/app/Fragment;->mSavedViewRegistryState:Landroid/os/Bundle;
+
+    iget-object v0, v0, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mSavedStateRegistryController:Landroidx/savedstate/SavedStateRegistryController;
+
+    invoke-virtual {v0, v3}, Landroidx/savedstate/SavedStateRegistryController;->performRestore(Landroid/os/Bundle;)V
+
+    iput-object v1, p0, Landroidx/fragment/app/Fragment;->mSavedViewRegistryState:Landroid/os/Bundle;
+
+    :cond_2
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0, v2}, Landroidx/fragment/app/Fragment;->onViewStateRestored(Landroid/os/Bundle;)V
+
+    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    sget-object v2, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v0, v2}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    goto :goto_0
+
+    :cond_3
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onViewStateRestored()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_4
+    :goto_0
+    iput-object v1, p0, Landroidx/fragment/app/Fragment;->mSavedFragmentState:Landroid/os/Bundle;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public callStartTransitionListener()V
+.method public callStartTransitionListener(Z)V
     .locals 3
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
@@ -430,26 +690,74 @@
 
     check-cast v1, Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;
 
-    iget v0, v1, Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->mNumPostponed:I
+    iget p1, v1, Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->mNumPostponed:I
 
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 p1, p1, -0x1
 
-    iput v0, v1, Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->mNumPostponed:I
+    iput p1, v1, Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->mNumPostponed:I
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    iget-object v0, v1, Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->mRecord:Landroidx/fragment/app/BackStackRecord;
+    iget-object p1, v1, Landroidx/fragment/app/FragmentManager$StartEnterTransitionListener;->mRecord:Landroidx/fragment/app/BackStackRecord;
 
-    iget-object v0, v0, Landroidx/fragment/app/BackStackRecord;->mManager:Landroidx/fragment/app/FragmentManager;
+    iget-object p1, p1, Landroidx/fragment/app/BackStackRecord;->mManager:Landroidx/fragment/app/FragmentManager;
 
-    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->scheduleCommit()V
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentManager;->scheduleCommit()V
+
+    goto :goto_1
 
     :cond_2
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_4
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    if-eqz v1, :cond_4
+
+    invoke-static {v0, v1}, Landroidx/fragment/app/SpecialEffectsController;->getOrCreateController(Landroid/view/ViewGroup;Landroidx/fragment/app/FragmentManager;)Landroidx/fragment/app/SpecialEffectsController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/fragment/app/SpecialEffectsController;->markPostponedState()V
+
+    if-eqz p1, :cond_3
+
+    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    iget-object p1, p1, Landroidx/fragment/app/FragmentHostCallback;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Landroidx/fragment/app/Fragment$3;
+
+    invoke-direct {v1, p0, v0}, Landroidx/fragment/app/Fragment$3;-><init>(Landroidx/fragment/app/Fragment;Landroidx/fragment/app/SpecialEffectsController;)V
+
+    invoke-virtual {p1, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v0}, Landroidx/fragment/app/SpecialEffectsController;->executePendingOperations()V
+
+    :cond_4
     :goto_1
     return-void
+.end method
+
+.method public createFragmentContainer()Landroidx/fragment/app/FragmentContainer;
+    .locals 1
+
+    new-instance v0, Landroidx/fragment/app/Fragment$4;
+
+    invoke-direct {v0, p0}, Landroidx/fragment/app/Fragment$4;-><init>(Landroidx/fragment/app/Fragment;)V
+
+    return-object v0
 .end method
 
 .method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
@@ -691,11 +999,26 @@
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     :cond_5
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mSavedViewRegistryState:Landroid/os/Bundle;
+
+    if-eqz v0, :cond_6
+
+    invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    const-string v0, "mSavedViewRegistryState="
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mSavedViewRegistryState:Landroid/os/Bundle;
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
+
+    :cond_6
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getTargetFragment()Landroidx/fragment/app/Fragment;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -713,29 +1036,98 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    :cond_6
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getNextAnim()I
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
+    :cond_7
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mNextAnim="
+    const-string v0, "mPopDirection="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getNextAnim()I
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getPopDirection()Z
+
+    move-result v0
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getEnterAnim()I
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    const-string v0, "getEnterAnim="
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getEnterAnim()I
 
     move-result v0
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    :cond_7
+    :cond_8
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getExitAnim()I
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    const-string v0, "getExitAnim="
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getExitAnim()I
+
+    move-result v0
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
+
+    :cond_9
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getPopEnterAnim()I
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    const-string v0, "getPopEnterAnim="
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getPopEnterAnim()I
+
+    move-result v0
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
+
+    :cond_a
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getPopExitAnim()I
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    const-string v0, "getPopExitAnim="
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getPopExitAnim()I
+
+    move-result v0
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
+
+    :cond_b
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mContainer:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_c
 
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -747,10 +1139,10 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    :cond_8
+    :cond_c
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_d
 
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -762,12 +1154,12 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    :cond_9
+    :cond_d
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getAnimatingAway()Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_e
 
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -781,24 +1173,12 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    const-string v0, "mStateAfterAnimating="
-
-    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getStateAfterAnimating()I
-
-    move-result v0
-
-    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
-
-    :cond_a
+    :cond_e
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_f
 
     invoke-static {p0}, Landroidx/loader/app/LoaderManager;->getInstance(Landroidx/lifecycle/LifecycleOwner;)Landroidx/loader/app/LoaderManager;
 
@@ -806,7 +1186,7 @@
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroidx/loader/app/LoaderManager;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    :cond_b
+    :cond_f
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -835,7 +1215,7 @@
 
     const-string v1, "  "
 
-    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -852,6 +1232,38 @@
     move-result p1
 
     return p1
+.end method
+
+.method public generateActivityResultKey()Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "fragment_"
+
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "_rq#"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mNextLocalRequestCode:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public final getActivity()Landroidx/fragment/app/FragmentActivity;
@@ -973,7 +1385,7 @@
 
     const-string v2, " has not been attached yet."
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1005,36 +1417,103 @@
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_3
 
-    new-instance v0, Landroidx/lifecycle/SavedStateViewModelFactory;
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
+    :goto_0
+    instance-of v2, v1, Landroid/content/ContextWrapper;
+
+    if-eqz v2, :cond_1
+
+    instance-of v2, v1, Landroid/app/Application;
+
+    if-eqz v2, :cond_0
+
+    move-object v0, v1
+
+    check-cast v0, Landroid/app/Application;
+
+    goto :goto_1
+
+    :cond_0
+    check-cast v1, Landroid/content/ContextWrapper;
+
+    invoke-virtual {v1}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
 
     move-result-object v1
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    if-nez v0, :cond_2
+
+    const/4 v1, 0x3
+
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "Could not find Application instance from Context "
+
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, ", you will not be able to use AndroidViewModel with the default ViewModelProvider.Factory"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "FragmentManager"
+
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    new-instance v1, Landroidx/lifecycle/SavedStateViewModelFactory;
 
     invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v2
 
-    invoke-direct {v0, v1, p0, v2}, Landroidx/lifecycle/SavedStateViewModelFactory;-><init>(Landroid/app/Application;Landroidx/savedstate/SavedStateRegistryOwner;Landroid/os/Bundle;)V
+    invoke-direct {v1, v0, p0, v2}, Landroidx/lifecycle/SavedStateViewModelFactory;-><init>(Landroid/app/Application;Landroidx/savedstate/SavedStateRegistryOwner;Landroid/os/Bundle;)V
 
-    iput-object v0, p0, Landroidx/fragment/app/Fragment;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
+    iput-object v1, p0, Landroidx/fragment/app/Fragment;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
 
-    :cond_0
+    :cond_3
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mDefaultFactory:Landroidx/lifecycle/ViewModelProvider$Factory;
 
     return-object v0
 
-    :cond_1
+    :cond_4
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Can\'t access ViewModels from detached fragment"
@@ -1042,6 +1521,23 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public getEnterAnim()I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    iget v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mEnterAnim:I
+
+    return v0
 .end method
 
 .method public getEnterTransition()Ljava/lang/Object;
@@ -1068,8 +1564,29 @@
 
     if-nez v0, :cond_0
 
-    :cond_0
     return-void
+
+    :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public getExitAnim()I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    iget v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mExitAnim:I
+
+    return v0
 .end method
 
 .method public getExitTransition()Ljava/lang/Object;
@@ -1096,7 +1613,11 @@
 
     if-nez v0, :cond_0
 
+    return-void
+
     :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     return-void
 .end method
 
@@ -1122,9 +1643,9 @@
     goto :goto_0
 
     :cond_0
-    check-cast v0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentHostCallback;->onGetHost()Ljava/lang/Object;
 
-    iget-object v0, v0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+    move-result-object v0
 
     :goto_0
     return-object v0
@@ -1164,17 +1685,7 @@
 
     if-eqz p1, :cond_0
 
-    check-cast p1, Landroidx/fragment/app/FragmentActivity$HostCallbacks;
-
-    iget-object v0, p1, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    iget-object p1, p1, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
-
-    invoke-virtual {v0, p1}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentHostCallback;->onGetLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object p1
 
@@ -1216,23 +1727,6 @@
     return-object v0
 .end method
 
-.method public getNextAnim()I
-    .locals 1
-
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_0
-    iget v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mNextAnim:I
-
-    return v0
-.end method
-
 .method public final getParentFragment()Landroidx/fragment/app/Fragment;
     .locals 1
 
@@ -1257,13 +1751,64 @@
 
     const-string v2, " not associated with a fragment manager."
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public getPopDirection()Z
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    iget-boolean v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mIsPop:Z
+
+    return v0
+.end method
+
+.method public getPopEnterAnim()I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    iget v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mPopEnterAnim:I
+
+    return v0
+.end method
+
+.method public getPopExitAnim()I
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    iget v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mPopExitAnim:I
+
+    return v0
 .end method
 
 .method public getReenterTransition()Ljava/lang/Object;
@@ -1308,6 +1853,8 @@
 
 .method public final getRetainInstance()Z
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mRetainInstance:Z
 
@@ -1393,23 +1940,6 @@
     return-object v0
 .end method
 
-.method public getStateAfterAnimating()I
-    .locals 1
-
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_0
-    iget v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mStateAfterAnimating:I
-
-    return v0
-.end method
-
 .method public final getString(I)Ljava/lang/String;
     .locals 1
 
@@ -1448,6 +1978,8 @@
 
 .method public final getTargetFragment()Landroidx/fragment/app/Fragment;
     .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mTarget:Landroidx/fragment/app/Fragment;
 
@@ -1478,6 +2010,8 @@
 
 .method public final getTargetRequestCode()I
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget v0, p0, Landroidx/fragment/app/Fragment;->mTargetRequestCode:I
 
@@ -1556,7 +2090,17 @@
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->getMinimumMaxLifecycleState()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
     iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
 
@@ -1586,6 +2130,15 @@
     return-object v1
 
     :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Calling getViewModelStore() before a Fragment reaches onCreate() when using setMaxLifecycle(INITIALIZED) is not supported"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Can\'t access ViewModels from detached fragment"
@@ -1710,23 +2263,6 @@
     return v0
 .end method
 
-.method public isHideReplaced()Z
-    .locals 1
-
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_0
-    iget-boolean v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mIsHideReplaced:Z
-
-    return v0
-.end method
-
 .method public final isInBackStack()Z
     .locals 1
 
@@ -1758,38 +2294,47 @@
 
     iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mMenuVisible:Z
 
-    const/4 v1, 0x1
-
     if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mParentFragment:Landroidx/fragment/app/Fragment;
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mParentFragment:Landroidx/fragment/app/Fragment;
 
-    if-nez v0, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->isMenuVisible()Z
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->isParentMenuVisible(Landroidx/fragment/app/Fragment;)Z
 
     move-result v0
 
-    :goto_0
     if-eqz v0, :cond_1
 
-    goto :goto_1
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    :cond_2
-    :goto_1
-    return v1
+    :goto_0
+    return v0
+.end method
+
+.method public isPostponed()Z
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    iget-boolean v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mEnterTransitionPostponed:Z
+
+    return v0
 .end method
 
 .method public final isRemoving()Z
@@ -1838,7 +2383,7 @@
 
     iget v0, p0, Landroidx/fragment/app/Fragment;->mState:I
 
-    const/4 v1, 0x4
+    const/4 v1, 0x7
 
     if-lt v0, v1, :cond_0
 
@@ -1918,6 +2463,8 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 p1, 0x1
 
@@ -1927,8 +2474,55 @@
 .end method
 
 .method public onActivityResult(IILandroid/content/Intent;)V
-    .locals 0
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Fragment "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, " received the following in onActivityResult(): requestCode: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, " resultCode: "
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, " data: "
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string p2, "FragmentManager"
+
+    invoke-static {p2, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     return-void
 .end method
 
@@ -1977,6 +2571,8 @@
 
 .method public onAttachFragment(Landroidx/fragment/app/Fragment;)V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     return-void
 .end method
@@ -2027,9 +2623,9 @@
     :cond_0
     iget-object p1, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
 
-    iget p1, p1, Landroidx/fragment/app/FragmentManager;->mCurState:I
+    iget v1, p1, Landroidx/fragment/app/FragmentManager;->mCurState:I
 
-    if-lt p1, v0, :cond_1
+    if-lt v1, v0, :cond_1
 
     goto :goto_0
 
@@ -2038,8 +2634,6 @@
 
     :goto_0
     if-nez v0, :cond_2
-
-    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
 
     invoke-virtual {p1}, Landroidx/fragment/app/FragmentManager;->dispatchCreate()V
 
@@ -2257,6 +2851,8 @@
 
 .method public onRequestPermissionsResult(I[Ljava/lang/String;[I)V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     return-void
 .end method
@@ -2313,42 +2909,235 @@
     return-void
 .end method
 
-.method public performCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)Z
+.method public performActivityCreated(Landroid/os/Bundle;)V
     .locals 2
 
-    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mHidden:Z
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->noteStateNotSaved()V
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
+
+    iget-boolean p1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz p1, :cond_0
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->restoreViewState()V
+
+    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    iput-boolean v0, p1, Landroidx/fragment/app/FragmentManager;->mStateSaved:Z
+
+    iput-boolean v0, p1, Landroidx/fragment/app/FragmentManager;->mStopped:Z
+
+    iget-object v1, p1, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
+
+    iput-boolean v0, v1, Landroidx/fragment/app/FragmentManagerViewModel;->mIsStateSaved:Z
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V
+
+    return-void
+
+    :cond_0
+    new-instance p1, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v0, "Fragment "
+
+    const-string v1, " did not call through to super.onActivityCreated()"
+
+    invoke-static {v0, p0, v1}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public performAttach()V
+    .locals 4
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mOnPreAttachedListeners:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/fragment/app/Fragment$OnPreAttachedListener;
+
+    invoke-virtual {v1}, Landroidx/fragment/app/Fragment$OnPreAttachedListener;->onPreAttached()V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mOnPreAttachedListeners:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->createFragmentContainer()Landroidx/fragment/app/FragmentContainer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2, p0}, Landroidx/fragment/app/FragmentManager;->attachController(Landroidx/fragment/app/FragmentHostCallback;Landroidx/fragment/app/FragmentContainer;Landroidx/fragment/app/Fragment;)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    iget-object v1, v1, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p0, v1}, Landroidx/fragment/app/Fragment;->onAttach(Landroid/content/Context;)V
+
+    iget-boolean v1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    iget-object v2, v1, Landroidx/fragment/app/FragmentManager;->mOnAttachListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/fragment/app/FragmentOnAttachListener;
+
+    invoke-interface {v3, v1, p0}, Landroidx/fragment/app/FragmentOnAttachListener;->onAttachFragment(Landroidx/fragment/app/FragmentManager;Landroidx/fragment/app/Fragment;)V
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    iput-boolean v0, v1, Landroidx/fragment/app/FragmentManager;->mStateSaved:Z
+
+    iput-boolean v0, v1, Landroidx/fragment/app/FragmentManager;->mStopped:Z
+
+    iget-object v2, v1, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
+
+    iput-boolean v0, v2, Landroidx/fragment/app/FragmentManagerViewModel;->mIsStateSaved:Z
+
+    invoke-virtual {v1, v0}, Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V
+
+    return-void
+
+    :cond_2
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onAttach()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public performCreate(Landroid/os/Bundle;)V
+    .locals 3
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->noteStateNotSaved()V
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_1
+    iput-boolean v1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
 
-    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mHasMenu:Z
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
 
-    if-eqz v0, :cond_0
+    new-instance v2, Landroidx/fragment/app/Fragment$5;
 
-    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mMenuVisible:Z
+    invoke-direct {v2, p0}, Landroidx/fragment/app/Fragment$5;-><init>(Landroidx/fragment/app/Fragment;)V
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v1, v2}, Landroidx/lifecycle/LifecycleRegistry;->addObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mSavedStateRegistryController:Landroidx/savedstate/SavedStateRegistryController;
 
-    invoke-virtual {p0, p1, p2}, Landroidx/fragment/app/Fragment;->onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
+    invoke-virtual {v1, p1}, Landroidx/savedstate/SavedStateRegistryController;->performRestore(Landroid/os/Bundle;)V
+
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/Fragment;->onCreate(Landroid/os/Bundle;)V
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mIsCreated:Z
+
+    iget-boolean p1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    return-void
 
     :cond_0
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+    new-instance p1, Landroidx/fragment/app/SuperNotCalledException;
 
-    invoke-virtual {v0, p1, p2}, Landroidx/fragment/app/FragmentManager;->dispatchCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)Z
+    const-string v0, "Fragment "
 
-    move-result p1
+    const-string v1, " did not call through to super.onCreate()"
 
-    or-int/2addr v1, p1
+    invoke-static {v0, p0, v1}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_1
-    return v1
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 .method public performCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
 
@@ -2360,7 +3149,11 @@
 
     new-instance v1, Landroidx/fragment/app/FragmentViewLifecycleOwner;
 
-    invoke-direct {v1}, Landroidx/fragment/app/FragmentViewLifecycleOwner;-><init>()V
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewModelStore()Landroidx/lifecycle/ViewModelStore;
+
+    move-result-object v2
+
+    invoke-direct {v1, p0, v2}, Landroidx/fragment/app/FragmentViewLifecycleOwner;-><init>(Landroidx/fragment/app/Fragment;Landroidx/lifecycle/ViewModelStore;)V
 
     iput-object v1, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
 
@@ -2370,21 +3163,36 @@
 
     iput-object p1, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     iget-object p1, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
 
-    iget-object p2, p1, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->initialize()V
 
-    if-nez p2, :cond_0
+    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
 
-    new-instance p2, Landroidx/lifecycle/LifecycleRegistry;
+    iget-object p2, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
 
-    invoke-direct {p2, p1}, Landroidx/lifecycle/LifecycleRegistry;-><init>(Landroidx/lifecycle/LifecycleOwner;)V
+    sget p3, Landroidx/lifecycle/runtime/R$id;->view_tree_lifecycle_owner:I
 
-    iput-object p2, p1, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+    invoke-virtual {p1, p3, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    :cond_0
+    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    iget-object p2, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    sget p3, Landroidx/lifecycle/viewmodel/R$id;->view_tree_view_model_store_owner:I
+
+    invoke-virtual {p1, p3, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    iget-object p1, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    iget-object p2, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    sget p3, Landroidx/savedstate/R$id;->view_tree_saved_state_registry_owner:I
+
+    invoke-virtual {p1, p3, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
     iget-object p1, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwnerLiveData:Landroidx/lifecycle/MutableLiveData;
 
     iget-object p2, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
@@ -2393,20 +3201,20 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     iget-object p1, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
 
     iget-object p1, p1, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     const/4 v0, 0x0
 
     :goto_0
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     const/4 p1, 0x0
 
@@ -2415,7 +3223,7 @@
     :goto_1
     return-void
 
-    :cond_3
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Called getViewLifecycleOwner() but onCreateView() returned null"
@@ -2423,6 +3231,217 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public performDestroy()V
+    .locals 3
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v0, v1}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mIsCreated:Z
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->onDestroy()V
+
+    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onDestroy()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public performDestroyView()V
+    .locals 5
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->initialize()V
+
+    iget-object v0, v0, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    iget-object v0, v0, Landroidx/lifecycle/LifecycleRegistry;->mState:Landroidx/lifecycle/Lifecycle$State;
+
+    sget-object v3, Landroidx/lifecycle/Lifecycle$State;->CREATED:Landroidx/lifecycle/Lifecycle$State;
+
+    invoke-virtual {v0, v3}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    sget-object v3, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v0, v3}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    :cond_1
+    iput v1, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    iput-boolean v2, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->onDestroyView()V
+
+    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v0, :cond_3
+
+    invoke-static {p0}, Landroidx/loader/app/LoaderManager;->getInstance(Landroidx/lifecycle/LifecycleOwner;)Landroidx/loader/app/LoaderManager;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/loader/app/LoaderManagerImpl;
+
+    iget-object v0, v0, Landroidx/loader/app/LoaderManagerImpl;->mLoaderViewModel:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
+
+    iget-object v1, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
+
+    invoke-virtual {v1}, Landroidx/collection/SparseArrayCompat;->size()I
+
+    move-result v1
+
+    move v3, v2
+
+    :goto_1
+    if-ge v3, v1, :cond_2
+
+    iget-object v4, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
+
+    invoke-virtual {v4, v3}, Landroidx/collection/SparseArrayCompat;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroidx/loader/app/LoaderManagerImpl$LoaderInfo;
+
+    invoke-static {v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    iput-boolean v2, p0, Landroidx/fragment/app/Fragment;->mPerformedCreateView:Z
+
+    return-void
+
+    :cond_3
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onDestroyView()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public performDetach()V
+    .locals 3
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->onDetach()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroidx/fragment/app/Fragment;->mLayoutInflater:Landroid/view/LayoutInflater;
+
+    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    iget-boolean v1, v0, Landroidx/fragment/app/FragmentManager;->mDestroyed:Z
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->dispatchDestroy()V
+
+    new-instance v0, Landroidx/fragment/app/FragmentManagerImpl;
+
+    invoke-direct {v0}, Landroidx/fragment/app/FragmentManagerImpl;-><init>()V
+
+    iput-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    :cond_0
+    return-void
+
+    :cond_1
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onDetach()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public performGetLayoutInflater(Landroid/os/Bundle;)Landroid/view/LayoutInflater;
@@ -2447,6 +3466,64 @@
     invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->dispatchLowMemory()V
 
     return-void
+.end method
+
+.method public performPause()V
+    .locals 3
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    const/4 v1, 0x5
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_PAUSE:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    :cond_0
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    sget-object v1, Landroidx/lifecycle/Lifecycle$Event;->ON_PAUSE:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v0, v1}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    const/4 v0, 0x6
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->onPause()V
+
+    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v0, :cond_1
+
+    return-void
+
+    :cond_1
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onPause()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public performPrepareOptionsMenu(Landroid/view/Menu;)Z
@@ -2481,6 +3558,274 @@
 
     :cond_1
     return v1
+.end method
+
+.method public performPrimaryNavigationFragmentChanged()V
+    .locals 2
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0, p0}, Landroidx/fragment/app/FragmentManager;->isPrimaryNavigation(Landroidx/fragment/app/Fragment;)Z
+
+    move-result v0
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mIsPrimaryNavigationFragment:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eq v1, v0, :cond_1
+
+    :cond_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    iput-object v1, p0, Landroidx/fragment/app/Fragment;->mIsPrimaryNavigationFragment:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->onPrimaryNavigationFragmentChanged(Z)V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->updateOnBackPressedCallbackEnabled()V
+
+    iget-object v1, v0, Landroidx/fragment/app/FragmentManager;->mPrimaryNav:Landroidx/fragment/app/Fragment;
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->dispatchParentPrimaryNavigationFragmentChanged(Landroidx/fragment/app/Fragment;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public performResume()V
+    .locals 5
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->noteStateNotSaved()V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z
+
+    const/4 v0, 0x7
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->onResume()V
+
+    iget-boolean v2, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    sget-object v3, Landroidx/lifecycle/Lifecycle$Event;->ON_RESUME:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v2, v3}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    iget-object v2, v2, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    const-string v4, "handleLifecycleEvent"
+
+    invoke-virtual {v2, v4}, Landroidx/lifecycle/LifecycleRegistry;->enforceMainThreadIfNeeded(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Landroidx/lifecycle/Lifecycle$Event;->getTargetState()Landroidx/lifecycle/Lifecycle$State;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroidx/lifecycle/LifecycleRegistry;->moveToState(Landroidx/lifecycle/Lifecycle$State;)V
+
+    :cond_0
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    iput-boolean v1, v2, Landroidx/fragment/app/FragmentManager;->mStateSaved:Z
+
+    iput-boolean v1, v2, Landroidx/fragment/app/FragmentManager;->mStopped:Z
+
+    iget-object v3, v2, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
+
+    iput-boolean v1, v3, Landroidx/fragment/app/FragmentManagerViewModel;->mIsStateSaved:Z
+
+    invoke-virtual {v2, v0}, Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V
+
+    return-void
+
+    :cond_1
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onResume()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public performStart()V
+    .locals 5
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentManager;->noteStateNotSaved()V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->execPendingActions(Z)Z
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->onStart()V
+
+    iget-boolean v2, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    sget-object v3, Landroidx/lifecycle/Lifecycle$Event;->ON_START:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v2, v3}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    iget-object v2, v2, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    const-string v4, "handleLifecycleEvent"
+
+    invoke-virtual {v2, v4}, Landroidx/lifecycle/LifecycleRegistry;->enforceMainThreadIfNeeded(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Landroidx/lifecycle/Lifecycle$Event;->getTargetState()Landroidx/lifecycle/Lifecycle$State;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroidx/lifecycle/LifecycleRegistry;->moveToState(Landroidx/lifecycle/Lifecycle$State;)V
+
+    :cond_0
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    iput-boolean v1, v2, Landroidx/fragment/app/FragmentManager;->mStateSaved:Z
+
+    iput-boolean v1, v2, Landroidx/fragment/app/FragmentManager;->mStopped:Z
+
+    iget-object v3, v2, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
+
+    iput-boolean v1, v3, Landroidx/fragment/app/FragmentManagerViewModel;->mIsStateSaved:Z
+
+    invoke-virtual {v2, v0}, Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V
+
+    return-void
+
+    :cond_1
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onStart()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public performStop()V
+    .locals 3
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mChildFragmentManager:Landroidx/fragment/app/FragmentManager;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Landroidx/fragment/app/FragmentManager;->mStopped:Z
+
+    iget-object v2, v0, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
+
+    iput-boolean v1, v2, Landroidx/fragment/app/FragmentManagerViewModel;->mIsStateSaved:Z
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/FragmentManager;->dispatchStateChange(I)V
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mViewLifecycleOwner:Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    sget-object v2, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v0, v2}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    :cond_0
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    sget-object v2, Landroidx/lifecycle/Lifecycle$Event;->ON_STOP:Landroidx/lifecycle/Lifecycle$Event;
+
+    invoke-virtual {v0, v2}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+
+    iput v1, p0, Landroidx/fragment/app/Fragment;->mState:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->onStop()V
+
+    iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    if-eqz v0, :cond_1
+
+    return-void
+
+    :cond_1
+    new-instance v0, Landroidx/fragment/app/SuperNotCalledException;
+
+    const-string v1, "Fragment "
+
+    const-string v2, " did not call through to super.onStop()"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroidx/fragment/app/SuperNotCalledException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public postponeEnterTransition()V
@@ -2543,6 +3888,65 @@
     return-void
 .end method
 
+.method public final registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<I:",
+            "Ljava/lang/Object;",
+            "O:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroidx/activity/result/contract/ActivityResultContract<",
+            "TI;TO;>;",
+            "Landroidx/activity/result/ActivityResultCallback<",
+            "TO;>;)",
+            "Landroidx/activity/result/ActivityResultLauncher<",
+            "TI;>;"
+        }
+    .end annotation
+
+    new-instance v0, Landroidx/fragment/app/Fragment$6;
+
+    invoke-direct {v0, p0}, Landroidx/fragment/app/Fragment$6;-><init>(Landroidx/fragment/app/Fragment;)V
+
+    invoke-direct {p0, p1, v0, p2}, Landroidx/fragment/app/Fragment;->prepareCallInternal(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/arch/core/util/Function;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final registerForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/activity/result/ActivityResultRegistry;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<I:",
+            "Ljava/lang/Object;",
+            "O:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroidx/activity/result/contract/ActivityResultContract<",
+            "TI;TO;>;",
+            "Landroidx/activity/result/ActivityResultRegistry;",
+            "Landroidx/activity/result/ActivityResultCallback<",
+            "TO;>;)",
+            "Landroidx/activity/result/ActivityResultLauncher<",
+            "TI;>;"
+        }
+    .end annotation
+
+    new-instance v0, Landroidx/fragment/app/Fragment$7;
+
+    invoke-direct {v0, p0, p2}, Landroidx/fragment/app/Fragment$7;-><init>(Landroidx/fragment/app/Fragment;Landroidx/activity/result/ActivityResultRegistry;)V
+
+    invoke-direct {p0, p1, v0, p3}, Landroidx/fragment/app/Fragment;->prepareCallInternal(Landroidx/activity/result/contract/ActivityResultContract;Landroidx/arch/core/util/Function;Landroidx/activity/result/ActivityResultCallback;)Landroidx/activity/result/ActivityResultLauncher;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public registerForContextMenu(Landroid/view/View;)V
     .locals 0
 
@@ -2552,79 +3956,56 @@
 .end method
 
 .method public final requestPermissions([Ljava/lang/String;I)V
-    .locals 4
+    .locals 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    if-eqz v0, :cond_2
-
-    check-cast v0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;
-
-    iget-object v0, v0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
-
     if-eqz v0, :cond_1
 
-    const/4 v1, -0x1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getParentFragmentManager()Landroidx/fragment/app/FragmentManager;
 
-    if-ne p2, v1, :cond_0
+    move-result-object v0
 
-    invoke-static {v0, p1, p2}, Landroidx/core/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+    iget-object v1, v0, Landroidx/fragment/app/FragmentManager;->mRequestPermissions:Landroidx/activity/result/ActivityResultLauncher;
+
+    if-eqz v1, :cond_0
+
+    new-instance v1, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-direct {v1, v2, p2}, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;-><init>(Ljava/lang/String;I)V
+
+    iget-object p2, v0, Landroidx/fragment/app/FragmentManager;->mLaunchedFragments:Ljava/util/ArrayDeque;
+
+    invoke-virtual {p2, v1}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
+
+    iget-object p2, v0, Landroidx/fragment/app/FragmentManager;->mRequestPermissions:Landroidx/activity/result/ActivityResultLauncher;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, p1, v0}, Landroidx/activity/result/ActivityResultLauncher;->launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p2}, Landroidx/fragment/app/FragmentActivity;->checkForValidRequestCode(I)V
+    iget-object p1, v0, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    :try_start_0
-    iput-boolean v2, v0, Landroidx/fragment/app/FragmentActivity;->mRequestedPermissionsFromFragment:Z
-
-    invoke-virtual {v0, p0}, Landroidx/fragment/app/FragmentActivity;->allocateRequestIndex(Landroidx/fragment/app/Fragment;)I
-
-    move-result v3
-
-    add-int/2addr v3, v2
-
-    shl-int/lit8 v2, v3, 0x10
-
-    const v3, 0xffff
-
-    and-int/2addr p2, v3
-
-    add-int/2addr v2, p2
-
-    invoke-static {v0, p1, v2}, Landroidx/core/app/ActivityCompat;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iput-boolean v1, v0, Landroidx/fragment/app/FragmentActivity;->mRequestedPermissionsFromFragment:Z
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_0
     return-void
 
-    :catchall_0
-    move-exception p1
-
-    iput-boolean v1, v0, Landroidx/fragment/app/FragmentActivity;->mRequestedPermissionsFromFragment:Z
-
-    throw p1
-
     :cond_1
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Fragment "
 
     const-string v0, " not attached to Activity"
 
-    invoke-static {p2, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p0, v0}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2651,7 +4032,7 @@
 
     const-string v2, " not attached to an activity."
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2678,7 +4059,7 @@
 
     const-string v2, " does not have any arguments."
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2705,7 +4086,7 @@
 
     const-string v2, " not attached to a context."
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2744,7 +4125,7 @@
 
     const-string v2, " not attached to a host."
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2774,7 +4155,7 @@
 
     const-string v2, " is not attached to any Fragment or host"
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2833,7 +4214,7 @@
 
     const-string v2, " did not return a View from onCreateView() or this was called before onCreateView()."
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2886,6 +4267,51 @@
     return-void
 .end method
 
+.method public setAnimations(IIII)V
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    if-nez p1, :cond_0
+
+    if-nez p2, :cond_0
+
+    if-nez p3, :cond_0
+
+    if-nez p4, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object v0
+
+    iput p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mEnterAnim:I
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object p1
+
+    iput p2, p1, Landroidx/fragment/app/Fragment$AnimationInfo;->mExitAnim:I
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object p1
+
+    iput p3, p1, Landroidx/fragment/app/Fragment$AnimationInfo;->mPopEnterAnim:I
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object p1
+
+    iput p4, p1, Landroidx/fragment/app/Fragment$AnimationInfo;->mPopExitAnim:I
+
+    return-void
+.end method
+
 .method public setAnimator(Landroid/animation/Animator;)V
     .locals 1
 
@@ -2934,6 +4360,10 @@
 
     invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
 
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     return-void
 .end method
 
@@ -2954,6 +4384,10 @@
 
     invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
 
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     return-void
 .end method
 
@@ -2965,6 +4399,18 @@
     move-result-object v0
 
     iput-object p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mExitTransition:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public setFocusedView(Landroid/view/View;)V
+    .locals 1
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object v0
+
+    iput-object p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mFocusedView:Landroid/view/View;
 
     return-void
 .end method
@@ -2992,11 +4438,7 @@
 
     iget-object p1, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    check-cast p1, Landroidx/fragment/app/FragmentActivity$HostCallbacks;
-
-    iget-object p1, p1, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
-
-    invoke-virtual {p1}, Landroidx/fragment/app/FragmentActivity;->supportInvalidateOptionsMenu()V
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentHostCallback;->onSupportInvalidateOptionsMenu()V
 
     :cond_0
     return-void
@@ -3074,34 +4516,9 @@
 
     iget-object p1, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    check-cast p1, Landroidx/fragment/app/FragmentActivity$HostCallbacks;
-
-    iget-object p1, p1, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
-
-    invoke-virtual {p1}, Landroidx/fragment/app/FragmentActivity;->supportInvalidateOptionsMenu()V
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentHostCallback;->onSupportInvalidateOptionsMenu()V
 
     :cond_0
-    return-void
-.end method
-
-.method public setNextAnim(I)V
-    .locals 1
-
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
-
-    if-nez v0, :cond_0
-
-    if-nez p1, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
-
-    move-result-object v0
-
-    iput p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mNextAnim:I
-
     return-void
 .end method
 
@@ -3133,16 +4550,16 @@
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
 
-    iget-object v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mStartEnterTransitionListener:Landroidx/fragment/app/Fragment$OnStartEnterTransitionListener;
+    iget-object v1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mStartEnterTransitionListener:Landroidx/fragment/app/Fragment$OnStartEnterTransitionListener;
 
-    if-ne p1, v0, :cond_0
+    if-ne p1, v1, :cond_0
 
     return-void
 
     :cond_0
     if-eqz p1, :cond_2
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
     goto :goto_0
 
@@ -3169,8 +4586,6 @@
 
     :cond_2
     :goto_0
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
-
     iget-boolean v1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mEnterTransitionPostponed:Z
 
     if-eqz v1, :cond_3
@@ -3192,6 +4607,37 @@
     return-void
 .end method
 
+.method public setPopDirection(Z)V
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object v0
+
+    iput-boolean p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mIsPop:Z
+
+    return-void
+.end method
+
+.method public setPostOnViewCreatedAlpha(F)V
+    .locals 1
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object v0
+
+    iput p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mPostOnViewCreatedAlpha:F
+
+    return-void
+.end method
+
 .method public setReenterTransition(Ljava/lang/Object;)V
     .locals 1
 
@@ -3206,6 +4652,8 @@
 
 .method public setRetainInstance(Z)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iput-boolean p1, p0, Landroidx/fragment/app/Fragment;->mRetainInstance:Z
 
@@ -3215,12 +4663,16 @@
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {v0, p0}, Landroidx/fragment/app/FragmentManager;->addRetainedFragment(Landroidx/fragment/app/Fragment;)V
+    iget-object p1, v0, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
+
+    invoke-virtual {p1, p0}, Landroidx/fragment/app/FragmentManagerViewModel;->addRetainedFragment(Landroidx/fragment/app/Fragment;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0, p0}, Landroidx/fragment/app/FragmentManager;->removeRetainedFragment(Landroidx/fragment/app/Fragment;)V
+    iget-object p1, v0, Landroidx/fragment/app/FragmentManager;->mNonConfig:Landroidx/fragment/app/FragmentManagerViewModel;
+
+    invoke-virtual {p1, p0}, Landroidx/fragment/app/FragmentManagerViewModel;->removeRetainedFragment(Landroidx/fragment/app/Fragment;)V
 
     goto :goto_0
 
@@ -3257,6 +4709,31 @@
     return-void
 .end method
 
+.method public setSharedElementNames(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    iput-object p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mSharedElementSourceNames:Ljava/util/ArrayList;
+
+    iput-object p2, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mSharedElementTargetNames:Ljava/util/ArrayList;
+
+    return-void
+.end method
+
 .method public setSharedElementReturnTransition(Ljava/lang/Object;)V
     .locals 1
 
@@ -3269,20 +4746,10 @@
     return-void
 .end method
 
-.method public setStateAfterAnimating(I)V
-    .locals 1
-
-    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
-
-    move-result-object v0
-
-    iput p1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mStateAfterAnimating:I
-
-    return-void
-.end method
-
 .method public setTargetFragment(Landroidx/fragment/app/Fragment;I)V
     .locals 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
@@ -3313,7 +4780,7 @@
 
     const-string v1, " must share the same FragmentManager to be set as a target fragment"
 
-    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -3328,7 +4795,11 @@
     :goto_2
     if-eqz v0, :cond_4
 
-    if-eq v0, p0, :cond_3
+    invoke-virtual {v0, p0}, Landroidx/fragment/app/Fragment;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
 
     invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getTargetFragment()Landroidx/fragment/app/Fragment;
 
@@ -3405,13 +4876,13 @@
 .end method
 
 .method public setUserVisibleHint(Z)V
-    .locals 2
+    .locals 3
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     iget-boolean v0, p0, Landroidx/fragment/app/Fragment;->mUserVisibleHint:Z
 
-    const/4 v1, 0x3
+    const/4 v1, 0x5
 
     if-nez v0, :cond_0
 
@@ -3437,7 +4908,11 @@
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
 
-    invoke-virtual {v0, p0}, Landroidx/fragment/app/FragmentManager;->performPendingDeferredStart(Landroidx/fragment/app/Fragment;)V
+    invoke-virtual {v0, p0}, Landroidx/fragment/app/FragmentManager;->createOrGetFragmentStateManager(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentStateManager;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroidx/fragment/app/FragmentManager;->performPendingDeferredStart(Landroidx/fragment/app/FragmentStateManager;)V
 
     :cond_0
     iput-boolean p1, p0, Landroidx/fragment/app/Fragment;->mUserVisibleHint:Z
@@ -3479,11 +4954,7 @@
 
     if-eqz v0, :cond_0
 
-    check-cast v0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;
-
-    iget-object v0, v0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
-
-    invoke-static {v0, p1}, Landroidx/core/app/ActivityCompat;->shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
+    invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentHostCallback;->onShouldShowRequestPermissionRationale(Ljava/lang/String;)Z
 
     move-result p1
 
@@ -3526,9 +4997,11 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v1, -0x1
+    iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, p0, p1, v1, p2}, Landroidx/fragment/app/FragmentHostCallback;->onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
+    sget-object v1, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+
+    invoke-static {v0, p1, p2}, Landroidx/core/content/ContextCompat$Api16Impl;->startActivity(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
 
     return-void
 
@@ -3539,7 +5012,7 @@
 
     const-string v0, " not attached to Activity"
 
-    invoke-static {p2, p0, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p0, v0}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3557,6 +5030,8 @@
             }
         .end annotation
     .end param
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -3566,7 +5041,7 @@
 .end method
 
 .method public startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
-    .locals 1
+    .locals 3
     .param p1    # Landroid/content/Intent;
         .annotation build Landroid/annotation/SuppressLint;
             value = {
@@ -3574,23 +5049,83 @@
             }
         .end annotation
     .end param
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     iget-object v0, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3
 
-    invoke-virtual {v0, p0, p1, p2, p3}, Landroidx/fragment/app/FragmentHostCallback;->onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getParentFragmentManager()Landroidx/fragment/app/FragmentManager;
 
-    return-void
+    move-result-object v0
+
+    iget-object v1, v0, Landroidx/fragment/app/FragmentManager;->mStartActivityForResult:Landroidx/activity/result/ActivityResultLauncher;
+
+    if-eqz v1, :cond_1
+
+    new-instance v1, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;
+
+    iget-object v2, p0, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-direct {v1, v2, p2}, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;-><init>(Ljava/lang/String;I)V
+
+    iget-object p2, v0, Landroidx/fragment/app/FragmentManager;->mLaunchedFragments:Ljava/util/ArrayDeque;
+
+    invoke-virtual {p2, v1}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
+
+    if-eqz p1, :cond_0
+
+    if-eqz p3, :cond_0
+
+    const-string p2, "androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE"
+
+    invoke-virtual {p1, p2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
     :cond_0
+    iget-object p2, v0, Landroidx/fragment/app/FragmentManager;->mStartActivityForResult:Landroidx/activity/result/ActivityResultLauncher;
+
+    const/4 p3, 0x0
+
+    invoke-virtual {p2, p1, p3}, Landroidx/activity/result/ActivityResultLauncher;->launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v1, -0x1
+
+    if-ne p2, v1, :cond_2
+
+    iget-object p2, v0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
+
+    sget-object v0, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+
+    invoke-static {p2, p1, p3}, Landroidx/core/content/ContextCompat$Api16Impl;->startActivity(Landroid/content/Context;Landroid/content/Intent;Landroid/os/Bundle;)V
+
+    :goto_0
+    return-void
+
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Starting activity with a requestCode requires a FragmentActivity host"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Fragment "
 
     const-string p3, " not attached to Activity"
 
-    invoke-static {p2, p0, p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p0, p3}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3600,7 +5135,7 @@
 .end method
 
 .method public startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
-    .locals 13
+    .locals 11
     .param p1    # Landroid/content/IntentSender;
         .annotation build Landroid/annotation/SuppressLint;
             value = {
@@ -3614,163 +5149,269 @@
         }
     .end annotation
 
-    move-object v1, p0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    move v0, p2
+    move-object v0, p0
 
-    iget-object v2, v1, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+    move-object v2, p1
 
-    if-eqz v2, :cond_1
+    move v3, p2
 
-    check-cast v2, Landroidx/fragment/app/FragmentActivity$HostCallbacks;
+    move-object v4, p3
 
-    iget-object v11, v2, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+    move-object/from16 v8, p7
 
-    const/4 v2, 0x1
+    iget-object v1, v0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    iput-boolean v2, v11, Landroidx/fragment/app/FragmentActivity;->mStartedIntentSenderFromFragment:Z
+    const-string v5, "Fragment "
 
-    const/4 v3, -0x1
+    if-eqz v1, :cond_7
 
-    const/4 v12, 0x0
+    const/4 v1, 0x2
 
-    if-ne v0, v3, :cond_0
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
 
-    move-object v2, v11
+    move-result v6
 
-    move-object v3, p1
+    const-string v7, "FragmentManager"
 
-    move v4, p2
+    if-eqz v6, :cond_0
 
-    move-object/from16 v5, p3
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    move/from16 v6, p4
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move/from16 v7, p5
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move/from16 v8, p6
+    invoke-virtual {v6, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v9, p7
+    const-string v9, " received the following in startIntentSenderForResult() requestCode: "
 
-    :try_start_0
-    invoke-static/range {v2 .. v9}, Landroidx/core/app/ActivityCompat;->startIntentSenderForResult(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v9, " IntentSender: "
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v9, " fillInIntent: "
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v9, " options: "
+
+    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v7, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getParentFragmentManager()Landroidx/fragment/app/FragmentManager;
+
+    move-result-object v6
+
+    iget-object v9, v6, Landroidx/fragment/app/FragmentManager;->mStartIntentSenderForResult:Landroidx/activity/result/ActivityResultLauncher;
+
+    if-eqz v9, :cond_5
+
+    if-eqz v8, :cond_3
+
+    if-nez v4, :cond_1
+
+    new-instance v4, Landroid/content/Intent;
+
+    invoke-direct {v4}, Landroid/content/Intent;-><init>()V
+
+    const/4 v9, 0x1
+
+    const-string v10, "androidx.fragment.extra.ACTIVITY_OPTIONS_BUNDLE"
+
+    invoke-virtual {v4, v10, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    :cond_1
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_2
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "ActivityOptions "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v10, " were added to fillInIntent "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v10, " for fragment "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    const-string v9, "androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE"
+
+    invoke-virtual {v4, v9, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
+
+    :cond_3
+    new-instance v8, Landroidx/activity/result/IntentSenderRequest;
+
+    move v9, p4
+
+    move/from16 v10, p5
+
+    invoke-direct {v8, p1, v4, p4, v10}, Landroidx/activity/result/IntentSenderRequest;-><init>(Landroid/content/IntentSender;Landroid/content/Intent;II)V
+
+    new-instance v2, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;
+
+    iget-object v4, v0, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
+
+    invoke-direct {v2, v4, p2}, Landroidx/fragment/app/FragmentManager$LaunchedFragmentInfo;-><init>(Ljava/lang/String;I)V
+
+    iget-object v3, v6, Landroidx/fragment/app/FragmentManager;->mLaunchedFragments:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
+
+    invoke-static {v1}, Landroidx/fragment/app/FragmentManager;->isLoggingEnabled(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, "is launching an IntentSender for result "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v7, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_4
+    iget-object v1, v6, Landroidx/fragment/app/FragmentManager;->mStartIntentSenderForResult:Landroidx/activity/result/ActivityResultLauncher;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v8, v2}, Landroidx/activity/result/ActivityResultLauncher;->launch(Ljava/lang/Object;Landroidx/core/app/ActivityOptionsCompat;)V
 
     goto :goto_0
 
-    :cond_0
-    invoke-static {p2}, Landroidx/fragment/app/FragmentActivity;->checkForValidRequestCode(I)V
+    :cond_5
+    move v9, p4
 
-    invoke-virtual {v11, p0}, Landroidx/fragment/app/FragmentActivity;->allocateRequestIndex(Landroidx/fragment/app/Fragment;)I
+    move/from16 v10, p5
 
-    move-result v3
+    iget-object v1, v6, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    add-int/2addr v3, v2
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    shl-int/lit8 v2, v3, 0x10
+    const/4 v5, -0x1
 
-    const v3, 0xffff
+    if-ne v3, v5, :cond_6
 
-    and-int/2addr v0, v3
+    iget-object v1, v1, Landroidx/fragment/app/FragmentHostCallback;->mActivity:Landroid/app/Activity;
 
-    add-int v5, v2, v0
+    sget v5, Landroidx/core/app/ActivityCompat;->$r8$clinit:I
 
-    move-object v3, v11
+    move-object v2, p1
 
-    move-object v4, p1
+    move v3, p2
 
-    move-object/from16 v6, p3
+    move-object v4, p3
 
-    move/from16 v7, p4
+    move v5, p4
 
-    move/from16 v8, p5
+    move/from16 v6, p5
 
-    move/from16 v9, p6
+    move/from16 v7, p6
 
-    move-object/from16 v10, p7
+    move-object/from16 v8, p7
 
-    invoke-static/range {v3 .. v10}, Landroidx/core/app/ActivityCompat;->startIntentSenderForResult(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual/range {v1 .. v8}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 
     :goto_0
-    iput-boolean v12, v11, Landroidx/fragment/app/FragmentActivity;->mStartedIntentSenderFromFragment:Z
-
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_6
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    iput-boolean v12, v11, Landroidx/fragment/app/FragmentActivity;->mStartedIntentSenderFromFragment:Z
+    const-string v2, "Starting intent sender with a requestCode requires a FragmentActivity host"
 
-    throw v0
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    throw v1
 
-    const-string v2, "Fragment "
+    :cond_7
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v3, " not attached to Activity"
+    const-string v2, " not attached to Activity"
 
-    invoke-static {v2, p0, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline14(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, p0, v2}, Landroidx/fragment/app/Fragment$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/fragment/app/Fragment;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 .end method
 
 .method public startPostponedEnterTransition()V
     .locals 2
 
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mAnimationInfo:Landroidx/fragment/app/Fragment$AnimationInfo;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+    invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mEnterTransitionPostponed:Z
 
     if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
 
-    move-result-object v0
+    if-nez v0, :cond_1
 
-    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
-
-    iget-object v1, v1, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-
-    iget-object v1, v1, Landroidx/fragment/app/FragmentHostCallback;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_1
-
-    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
-
-    iget-object v0, v0, Landroidx/fragment/app/FragmentManager;->mHost:Landroidx/fragment/app/FragmentHostCallback;
-
-    iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mHandler:Landroid/os/Handler;
-
-    new-instance v1, Landroidx/fragment/app/Fragment$3;
-
-    invoke-direct {v1, p0}, Landroidx/fragment/app/Fragment$3;-><init>(Landroidx/fragment/app/Fragment;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->callStartTransitionListener()V
-
-    goto :goto_1
-
-    :cond_2
-    :goto_0
     invoke-direct {p0}, Landroidx/fragment/app/Fragment;->ensureAnimationInfo()Landroidx/fragment/app/Fragment$AnimationInfo;
 
     move-result-object v0
@@ -3779,7 +5420,42 @@
 
     iput-boolean v1, v0, Landroidx/fragment/app/Fragment$AnimationInfo;->mEnterTransitionPostponed:Z
 
-    :goto_1
+    goto :goto_0
+
+    :cond_1
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    iget-object v1, v1, Landroidx/fragment/app/FragmentHostCallback;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_2
+
+    iget-object v0, p0, Landroidx/fragment/app/Fragment;->mHost:Landroidx/fragment/app/FragmentHostCallback;
+
+    iget-object v0, v0, Landroidx/fragment/app/FragmentHostCallback;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Landroidx/fragment/app/Fragment$2;
+
+    invoke-direct {v1, p0}, Landroidx/fragment/app/Fragment$2;-><init>(Landroidx/fragment/app/Fragment;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/Fragment;->callStartTransitionListener(Z)V
+
+    :cond_3
+    :goto_0
     return-void
 .end method
 
@@ -3802,7 +5478,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "{"
+    const-string/jumbo v1, "{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3816,7 +5492,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3825,10 +5501,6 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroidx/fragment/app/Fragment;->mWho:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3853,7 +5525,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v1, " "
+    const-string v1, " tag="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3862,9 +5534,9 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_1
-    const/16 v1, 0x7d
+    const-string v1, ")"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

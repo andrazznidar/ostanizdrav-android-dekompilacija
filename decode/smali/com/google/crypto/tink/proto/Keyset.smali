@@ -20,18 +20,17 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/Keyset;",
         "Lcom/google/crypto/tink/proto/Keyset$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/Keyset;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/Keyset;
 
 .field public static final KEY_FIELD_NUMBER:I = 0x2
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -45,7 +44,7 @@
 
 
 # instance fields
-.field public key_:Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;
+.field private key_:Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList<",
@@ -55,7 +54,7 @@
     .end annotation
 .end field
 
-.field public primaryKeyId_:I
+.field private primaryKeyId_:I
 
 
 # direct methods
@@ -75,7 +74,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -204,7 +203,7 @@
         }
     .end annotation
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lcom/google/crypto/tink/proto/Keyset;->ensureKeyIsMutable()V
 
@@ -226,7 +225,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lcom/google/crypto/tink/proto/Keyset;->ensureKeyIsMutable()V
 
@@ -727,7 +726,7 @@
         }
     .end annotation
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lcom/google/crypto/tink/proto/Keyset;->ensureKeyIsMutable()V
 

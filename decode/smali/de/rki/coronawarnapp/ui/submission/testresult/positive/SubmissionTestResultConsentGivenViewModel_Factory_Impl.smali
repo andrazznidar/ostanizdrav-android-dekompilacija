@@ -3,7 +3,7 @@
 .source "SubmissionTestResultConsentGivenViewModel_Factory_Impl.java"
 
 # interfaces
-.implements Lde/rki/coronawarnapp/util/viewmodel/SimpleCWAViewModelFactory;
+.implements Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel$Factory;
 
 
 # instance fields
@@ -13,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel_Factory;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,8 +31,16 @@
 
 
 # virtual methods
-.method public create()Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
-    .locals 8
+.method public create(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel;
+    .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "testType"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel_Factory_Impl;->delegateFactory:Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel_Factory;
 
@@ -56,7 +72,7 @@
 
     move-object v5, v1
 
-    check-cast v5, Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;
+    check-cast v5, Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;
 
     iget-object v1, v0, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
 
@@ -74,15 +90,17 @@
 
     move-result-object v0
 
-    move-object v7, v0
+    move-object v8, v0
 
-    check-cast v7, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+    check-cast v8, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
     new-instance v0, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel;
 
     move-object v2, v0
 
-    invoke-direct/range {v2 .. v7}, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+    move-object v7, p1
+
+    invoke-direct/range {v2 .. v8}, Lde/rki/coronawarnapp/ui/submission/testresult/positive/SubmissionTestResultConsentGivenViewModel;-><init>(Lde/rki/coronawarnapp/submission/SubmissionRepository;Lde/rki/coronawarnapp/submission/auto/AutoSubmission;Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
 
     return-object v0
 .end method

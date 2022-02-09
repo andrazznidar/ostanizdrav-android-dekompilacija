@@ -19,24 +19,9 @@
         "Ljava/lang/Object;",
         ">",
         "Landroidx/lifecycle/MutableLiveData<",
-        "TD;>;",
-        "Ljava/lang/Object<",
         "TD;>;"
     }
 .end annotation
-
-
-# instance fields
-.field public mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
-
-.field public mObserver:Landroidx/loader/app/LoaderManagerImpl$LoaderObserver;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/loader/app/LoaderManagerImpl$LoaderObserver<",
-            "TD;>;"
-        }
-    .end annotation
-.end field
 
 
 # virtual methods
@@ -67,12 +52,6 @@
     .end annotation
 
     invoke-super {p0, p1}, Landroidx/lifecycle/LiveData;->removeObserver(Landroidx/lifecycle/Observer;)V
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderInfo;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
-
-    iput-object p1, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderInfo;->mObserver:Landroidx/loader/app/LoaderManagerImpl$LoaderObserver;
 
     return-void
 .end method
@@ -127,9 +106,9 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v1, v0}, Landroidx/core/app/AppOpsManagerCompat;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
+    invoke-static {v1, v0}, Landroidx/core/util/DebugUtils;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 
-    const-string v1, "}}"
+    const-string/jumbo v1, "}}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

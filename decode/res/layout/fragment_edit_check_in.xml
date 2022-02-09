@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/trace_location_gradient_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/coordinator_layout" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_marginBottom="@dimen/spacing_small" android:nestedScrollingEnabled="true" app:layout_constraintBottom_toTopOf="@id/edit_checkin_confirm_button" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.material.appbar.CollapsingToolbarLayout android:id="@id/collapsing_toolbar_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="true" app:collapsedTitleTextAppearance="@style/headline5" app:expandedTitleTextAppearance="@style/headline5" app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <ImageView android:id="@id/expandedImage" android:layout_width="fill_parent" android:layout_height="270.0dip" app:layout_collapseMode="parallax" app:srcCompat="@drawable/trace_location_view_cardhighlight_gradient" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_collapseMode="parallax">
+                    <TextView android:textSize="20.0sp" android:textColor="@color/colorStableLight" android:gravity="start" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="110.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="12.0dip" android:text="@string/edit_checkin_title_text" android:layout_marginHorizontal="24.0dip" style="@style/headline6" />
+                </LinearLayout>
+                <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:layout_scrollFlags="scroll|enterAlways" app:navigationIcon="@drawable/ic_close_white">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_text_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <ImageView android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginEnd="72.0dip" app:srcCompat="@drawable/ic_cwa_logo_white" />
+                    </LinearLayout>
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" app:behavior_overlapTop="140.0dip" app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/edit_checkin_info_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_normal" android:layout_marginTop="24.0dip" android:layout_marginRight="@dimen/spacing_normal" android:layout_marginBottom="@dimen/spacing_tiny" android:layout_marginHorizontal="@dimen/spacing_normal" style="@style/Card.NoElevation">
+                    <TextView android:id="@id/edit_checkin_info_card_header" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/subtitleMedium" />
+                    <TextView android:id="@id/edit_checkin_info_card_title" android:layout_width="276.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" style="@style/headline5Bold" />
+                    <TextView android:id="@id/edit_checkin_info_card_address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" style="@style/subtitleMedium" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/edit_checkin_edit_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_normal" android:layout_marginRight="@dimen/spacing_normal" android:layout_marginHorizontal="@dimen/spacing_normal" style="@style/Card.NoElevation">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit_checkin_edit_card_checkin_time_label" style="@style/body2" />
+                        <Space android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <TextView android:id="@id/edit_checkin_edit_card_checkin_date" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/body2Medium" />
+                        <TextView android:id="@id/edit_checkin_edit_card_checkin_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_tiny" style="@style/body2Medium" />
+                    </LinearLayout>
+                    <View android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="@dimen/spacing_small" android:layout_marginBottom="@dimen/spacing_small" android:layout_marginVertical="@dimen/spacing_small" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit_checkin_edit_card_checkout_time_label" style="@style/body2" />
+                        <Space android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <TextView android:id="@id/edit_checkin_edit_card_checkout_date" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/body2Medium" />
+                        <TextView android:id="@id/edit_checkin_edit_card_checkout_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_tiny" style="@style/body2Medium" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:id="@id/edit_checkin_duration_edit_hint_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_normal" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginRight="@dimen/spacing_normal" android:layout_marginHorizontal="@dimen/spacing_normal" style="@style/Card.NoElevation">
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/edit_checkin_duration_edit_hint_card_text" style="@style/body2" />
+                </LinearLayout>
+                <TextView android:textColor="@color/colorTextSemanticRed" android:id="@id/edit_checkin_wrong_input_warning" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_normal" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginRight="@dimen/spacing_normal" android:text="@string/edit_checkin_wrong_input_warning_text" android:layout_marginHorizontal="@dimen/spacing_normal" style="@style/body2" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button android:id="@id/edit_checkin_confirm_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_small" android:text="@string/edit_checkin_confirm_button_text" android:layout_marginStart="@dimen/spacing_normal" android:layout_marginEnd="@dimen/spacing_normal" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" style="@style/buttonPrimary" />
+</androidx.constraintlayout.widget.ConstraintLayout>

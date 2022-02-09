@@ -21,13 +21,22 @@
 .method public abstract getAppFeatures()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppFeaturesOuterClass$AppFeatures;
 .end method
 
+.method public abstract getCoronaTestParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/CoronaTestParametersOuterClass$CoronaTestParameters;
+.end method
+
 .method public abstract getDailySummariesConfig()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
 .end method
 
 .method public abstract synthetic getDefaultInstanceForType()Lcom/google/protobuf/MessageLite;
 .end method
 
+.method public abstract getDgcParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/DgcParameters$DGCParameters;
+.end method
+
 .method public abstract getDiagnosisKeysDataMapping()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
+.end method
+
+.method public abstract getErrorLogSharingParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddElsParameters$PPDDErrorLogSharingParametersAndroid;
 .end method
 
 .method public abstract getEventDrivenUserSurveyParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddEdusParameters$PPDDEventDrivenUserSurveyParametersAndroid;
@@ -43,6 +52,9 @@
 .end method
 
 .method public abstract getMinVersionCode()J
+.end method
+
+.method public abstract getPresenceTracingParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PresenceTracingParametersOuterClass$PresenceTracingParameters;
 .end method
 
 .method public abstract getPrivacyPreservingAnalyticsParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/PpddPpaParameters$PPDDPrivacyPreservingAnalyticsParametersAndroid;
@@ -74,10 +86,19 @@
 .method public abstract hasAppFeatures()Z
 .end method
 
+.method public abstract hasCoronaTestParameters()Z
+.end method
+
 .method public abstract hasDailySummariesConfig()Z
 .end method
 
+.method public abstract hasDgcParameters()Z
+.end method
+
 .method public abstract hasDiagnosisKeysDataMapping()Z
+.end method
+
+.method public abstract hasErrorLogSharingParameters()Z
 .end method
 
 .method public abstract hasEventDrivenUserSurveyParameters()Z
@@ -87,6 +108,9 @@
 .end method
 
 .method public abstract hasKeyDownloadParameters()Z
+.end method
+
+.method public abstract hasPresenceTracingParameters()Z
 .end method
 
 .method public abstract hasPrivacyPreservingAnalyticsParameters()Z

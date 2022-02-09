@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/ListIterator;
+.implements Lj$/util/Iterator;
 
 
 # annotations
@@ -21,7 +22,8 @@
         "Ljava/lang/Object;",
         "Ljava/util/ListIterator<",
         "Ljava/lang/String;",
-        ">;"
+        ">;",
+        "Lj$/util/Iterator;"
     }
 .end annotation
 
@@ -37,26 +39,14 @@
     .end annotation
 .end field
 
-.field public final synthetic this$0:Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;
-
-.field public final synthetic val$index:I
-
 
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;I)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList$1;->this$0:Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;
-
-    iput p2, p0, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList$1;->val$index:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList$1;->this$0:Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;
-
     iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;->list:Lcom/google/crypto/tink/shaded/protobuf/LazyStringList;
-
-    iget p2, p0, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList$1;->val$index:I
 
     invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
 
@@ -79,6 +69,14 @@
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw p1
+.end method
+
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
 .end method
 
 .method public hasNext()Z

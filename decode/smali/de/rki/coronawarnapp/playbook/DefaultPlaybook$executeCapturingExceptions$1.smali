@@ -13,11 +13,20 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lkotlin/coroutines/jvm/internal/ContinuationImpl;"
+    }
+.end annotation
+
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0xb5
+        0xb9
     }
     m = "executeCapturingExceptions"
 .end annotation
@@ -34,6 +43,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook$executeCapturingExceptions$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$executeCapturingExceptions$1;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 

@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
-    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$000()Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
     move-result-object v0
 
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$1;)V
+.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics$Builder-IA;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics$Builder;-><init>()V
@@ -69,7 +69,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$300(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$maddAllCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
 
     return-object p0
 .end method
@@ -93,7 +93,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$1100(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$maddAllKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
 
     return-object p0
 .end method
@@ -107,7 +107,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$200(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$maddCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
 
     return-object p0
 .end method
@@ -121,7 +121,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$1000(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
 
     return-object p0
 .end method
@@ -135,7 +135,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$800(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
 
     return-object p0
 .end method
@@ -149,7 +149,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$900(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
 
     return-object p0
 .end method
@@ -163,7 +163,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$700(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
 
     return-object p0
 .end method
@@ -177,7 +177,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$400(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$mclearCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
 
     return-object p0
 .end method
@@ -191,7 +191,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$1200(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$mclearKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
 
     return-object p0
 .end method
@@ -313,7 +313,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$1300(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$mremoveKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
 
     return-object p0
 .end method
@@ -327,7 +327,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$100(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;II)V
+    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$msetCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;II)V
 
     return-object p0
 .end method
@@ -341,7 +341,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$600(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$msetKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
 
     return-object p0
 .end method
@@ -355,7 +355,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
-    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->access$500(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->-$$Nest$msetKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
 
     return-object p0
 .end method

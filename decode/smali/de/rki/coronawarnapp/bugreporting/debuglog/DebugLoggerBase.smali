@@ -8,7 +8,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ldagger/Lazy<",
-            "Ljava/util/List<",
+            "Ljava/util/Set<",
             "Lde/rki/coronawarnapp/bugreporting/censors/BugCensor;",
             ">;>;"
         }

@@ -24,6 +24,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "algorithm"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,6 +47,18 @@
 
 .method public isRtl(Ljava/lang/CharSequence;II)Z
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "cs",
+            "start",
+            "count"
+        }
+    .end annotation
 
     if-ltz p2, :cond_3
 

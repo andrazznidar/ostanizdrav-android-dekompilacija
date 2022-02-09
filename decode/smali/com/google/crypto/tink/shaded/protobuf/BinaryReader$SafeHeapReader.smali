@@ -399,7 +399,7 @@
 .end method
 
 .method public readBytes()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -431,9 +431,11 @@
 
     iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;->pos:I
 
-    invoke-static {v1, v2, v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->wrap([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v3, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    move-result-object v1
+    new-instance v3, Lcom/google/crypto/tink/shaded/protobuf/ByteString$BoundedByteString;
+
+    invoke-direct {v3, v1, v2, v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$BoundedByteString;-><init>([BII)V
 
     goto :goto_0
 
@@ -444,16 +446,16 @@
 
     invoke-static {v1, v2, v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    move-result-object v1
+    move-result-object v3
 
     :goto_0
-    iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;->pos:I
+    iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;->pos:I
 
-    add-int/2addr v2, v0
+    add-int/2addr v1, v0
 
-    iput v2, p0, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;->pos:I
+    iput v1, p0, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;->pos:I
 
-    return-object v1
+    return-object v3
 .end method
 
 .method public readBytesList(Ljava/util/List;)V
@@ -2376,6 +2378,8 @@
     const/4 p1, 0x0
 
     :try_start_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     throw p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0

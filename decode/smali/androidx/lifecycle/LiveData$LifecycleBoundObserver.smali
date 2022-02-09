@@ -1,4 +1,4 @@
-.class public Landroidx/lifecycle/LiveData$LifecycleBoundObserver;
+.class Landroidx/lifecycle/LiveData$LifecycleBoundObserver;
 .super Landroidx/lifecycle/LiveData$ObserverWrapper;
 .source "LiveData.java"
 
@@ -63,11 +63,7 @@
 
     move-result-object v0
 
-    check-cast v0, Landroidx/lifecycle/LifecycleRegistry;
-
-    iget-object v0, v0, Landroidx/lifecycle/LifecycleRegistry;->mObserverMap:Landroidx/arch/core/internal/FastSafeIterableMap;
-
-    invoke-virtual {v0, p0}, Landroidx/arch/core/internal/FastSafeIterableMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Landroidx/lifecycle/Lifecycle;->removeObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
     return-void
 .end method
@@ -91,7 +87,7 @@
 .end method
 
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .locals 0
+    .locals 1
 
     iget-object p1, p0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroidx/lifecycle/LifecycleOwner;
 
@@ -99,9 +95,9 @@
 
     move-result-object p1
 
-    check-cast p1, Landroidx/lifecycle/LifecycleRegistry;
+    invoke-virtual {p1}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
 
-    iget-object p1, p1, Landroidx/lifecycle/LifecycleRegistry;->mState:Landroidx/lifecycle/Lifecycle$State;
+    move-result-object p1
 
     sget-object p2, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 
@@ -116,12 +112,36 @@
     return-void
 
     :cond_0
+    const/4 p2, 0x0
+
+    :goto_0
+    if-eq p2, p1, :cond_1
+
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->shouldBeActive()Z
 
-    move-result p1
+    move-result p2
 
-    invoke-virtual {p0, p1}, Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V
+    invoke-virtual {p0, p2}, Landroidx/lifecycle/LiveData$ObserverWrapper;->activeStateChanged(Z)V
 
+    iget-object p2, p0, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroidx/lifecycle/LifecycleOwner;
+
+    invoke-interface {p2}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
+
+    move-result-object p2
+
+    move-object v0, p2
+
+    move-object p2, p1
+
+    move-object p1, v0
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 
@@ -134,9 +154,9 @@
 
     move-result-object v0
 
-    check-cast v0, Landroidx/lifecycle/LifecycleRegistry;
+    invoke-virtual {v0}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
 
-    iget-object v0, v0, Landroidx/lifecycle/LifecycleRegistry;->mState:Landroidx/lifecycle/Lifecycle$State;
+    move-result-object v0
 
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->STARTED:Landroidx/lifecycle/Lifecycle$State;
 

@@ -13,12 +13,6 @@
     name = "LastSevenDays"
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/submission/Symptoms$StartOf$LastSevenDays$Creator;
-    }
-.end annotation
-
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
@@ -94,7 +88,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    const-string p2, "parcel"
+    const-string p2, "out"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

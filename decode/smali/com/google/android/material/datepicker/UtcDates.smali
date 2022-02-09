@@ -48,25 +48,83 @@
     return-wide p0
 .end method
 
-.method public static getAbbrMonthWeekdayDayFormat(Ljava/util/Locale;)Landroid/icu/text/DateFormat;
-    .locals 1
+.method public static findCharactersInDateFormatPattern(Ljava/lang/String;Ljava/lang/String;II)I
+    .locals 2
+
+    :goto_0
+    if-ltz p3, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-ge p3, v0, :cond_1
+
+    invoke-virtual {p0, p3}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1
+
+    invoke-virtual {p0, p3}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    const/16 v1, 0x27
+
+    if-ne v0, v1, :cond_0
+
+    :goto_1
+    add-int/2addr p3, p2
+
+    if-ltz p3, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-ge p3, v0, :cond_0
+
+    invoke-virtual {p0, p3}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    if-eq v0, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    add-int/2addr p3, p2
+
+    goto :goto_0
+
+    :cond_1
+    return p3
+.end method
+
+.method public static getAndroidFormat(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;
+    .locals 0
     .annotation build Landroid/annotation/TargetApi;
         value = 0x18
     .end annotation
 
-    const-string v0, "MMMEd"
-
-    invoke-static {v0, p0}, Landroid/icu/text/DateFormat;->getInstanceForSkeleton(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;
+    invoke-static {p0, p1}, Landroid/icu/text/DateFormat;->getInstanceForSkeleton(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;
 
     move-result-object p0
 
-    const-string v0, "UTC"
+    const-string p1, "UTC"
 
-    invoke-static {v0}, Landroid/icu/util/TimeZone;->getTimeZone(Ljava/lang/String;)Landroid/icu/util/TimeZone;
+    invoke-static {p1}, Landroid/icu/util/TimeZone;->getTimeZone(Ljava/lang/String;)Landroid/icu/util/TimeZone;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p0, v0}, Landroid/icu/text/DateFormat;->setTimeZone(Landroid/icu/util/TimeZone;)V
+    invoke-virtual {p0, p1}, Landroid/icu/text/DateFormat;->setTimeZone(Landroid/icu/util/TimeZone;)V
 
     return-object p0
 .end method
@@ -105,30 +163,12 @@
     return-object v0
 .end method
 
-.method public static getFullFormat(Ljava/util/Locale;)Ljava/text/DateFormat;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0, p0}, Ljava/text/DateFormat;->getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
-
-    move-result-object p0
-
-    invoke-static {}, Lcom/google/android/material/datepicker/UtcDates;->getTimeZone()Ljava/util/TimeZone;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    return-object p0
-.end method
-
 .method public static getTimeZone()Ljava/util/TimeZone;
     .locals 1
 
     const-string v0, "UTC"
 
-    invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+    invoke-static {v0}, Lj$/util/DesugarTimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
     move-result-object v0
 
@@ -243,27 +283,4 @@
 
     :goto_0
     return-object v0
-.end method
-
-.method public static getYearAbbrMonthWeekdayDayFormat(Ljava/util/Locale;)Landroid/icu/text/DateFormat;
-    .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x18
-    .end annotation
-
-    const-string v0, "yMMMEd"
-
-    invoke-static {v0, p0}, Landroid/icu/text/DateFormat;->getInstanceForSkeleton(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateFormat;
-
-    move-result-object p0
-
-    const-string v0, "UTC"
-
-    invoke-static {v0}, Landroid/icu/util/TimeZone;->getTimeZone(Ljava/lang/String;)Landroid/icu/util/TimeZone;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/icu/text/DateFormat;->setTimeZone(Landroid/icu/util/TimeZone;)V
-
-    return-object p0
 .end method

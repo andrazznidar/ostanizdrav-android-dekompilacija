@@ -40,6 +40,42 @@
 
 
 # virtual methods
+.method public onCreateMotionSpec(Landroid/content/Context;Z)Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;
+    .locals 2
+
+    if-eqz p2, :cond_0
+
+    sget p2, Lcom/google/android/material/R$animator;->mtrl_fab_transformation_sheet_expand_spec:I
+
+    goto :goto_0
+
+    :cond_0
+    sget p2, Lcom/google/android/material/R$animator;->mtrl_fab_transformation_sheet_collapse_spec:I
+
+    :goto_0
+    new-instance v0, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;
+
+    invoke-direct {v0}, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;-><init>()V
+
+    invoke-static {p1, p2}, Lcom/google/android/material/animation/MotionSpec;->createFromResource(Landroid/content/Context;I)Lcom/google/android/material/animation/MotionSpec;
+
+    move-result-object p1
+
+    iput-object p1, v0, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->timings:Lcom/google/android/material/animation/MotionSpec;
+
+    new-instance p1, Lcom/google/android/material/animation/Positioning;
+
+    const/16 p2, 0x11
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, p2, v1, v1}, Lcom/google/android/material/animation/Positioning;-><init>(IFF)V
+
+    iput-object p1, v0, Lcom/google/android/material/transformation/FabTransformationBehavior$FabTransformationSpec;->positioning:Lcom/google/android/material/animation/Positioning;
+
+    return-object v0
+.end method
+
 .method public onExpandedStateChange(Landroid/view/View;Landroid/view/View;ZZ)Z
     .locals 8
 
@@ -141,7 +177,9 @@
 
     move-result v6
 
-    invoke-static {v5, v6}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+    sget-object v7, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     goto :goto_2
 
@@ -160,7 +198,9 @@
 
     const/4 v6, 0x4
 
-    invoke-static {v5, v6}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+    sget-object v7, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     :cond_5
     :goto_2

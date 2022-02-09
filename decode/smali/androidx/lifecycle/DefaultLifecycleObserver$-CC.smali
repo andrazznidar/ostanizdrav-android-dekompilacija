@@ -10,6 +10,12 @@
     return-void
 .end method
 
+.method public static $default$onDestroy(Landroidx/lifecycle/DefaultLifecycleObserver;Landroidx/lifecycle/LifecycleOwner;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static $default$onPause(Landroidx/lifecycle/DefaultLifecycleObserver;Landroidx/lifecycle/LifecycleOwner;)V
     .locals 0
 

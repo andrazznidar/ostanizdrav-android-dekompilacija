@@ -46,6 +46,21 @@
 
 
 # virtual methods
+.method public add(Lcom/google/gson/JsonElement;)V
+    .locals 1
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    :cond_0
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
 

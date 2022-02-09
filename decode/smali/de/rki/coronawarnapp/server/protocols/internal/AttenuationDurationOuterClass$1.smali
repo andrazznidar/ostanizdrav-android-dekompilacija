@@ -1,4 +1,4 @@
-.class public synthetic Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$1;
+.class synthetic Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$1;
 .super Ljava/lang/Object;
 .source "AttenuationDurationOuterClass.java"
 

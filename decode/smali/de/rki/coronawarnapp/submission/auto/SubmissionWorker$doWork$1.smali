@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.submission.auto.SubmissionWorker"
     f = "SubmissionWorker.kt"
     l = {
-        0x1d
+        0x1c
     }
     m = "doWork"
 .end annotation
@@ -34,6 +34,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/submission/auto/SubmissionWorker;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/submission/auto/SubmissionWorker;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/submission/auto/SubmissionWorker$doWork$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker$doWork$1;->this$0:Lde/rki/coronawarnapp/submission/auto/SubmissionWorker;
 

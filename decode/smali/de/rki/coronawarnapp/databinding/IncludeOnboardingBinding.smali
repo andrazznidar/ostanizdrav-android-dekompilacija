@@ -58,6 +58,40 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;Landroid/widget/TextView;Landroid/widget/ImageView;Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBinding;Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBinding;Lde/rki/coronawarnapp/databinding/Include16YearsBinding;Landroid/widget/TextView;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "guidelineEnd",
+            "guidelineStart",
+            "onboardingBody",
+            "onboardingBodyEmphasized",
+            "onboardingCard",
+            "onboardingHeadline",
+            "onboardingIllustration",
+            "onboardingInteroperability",
+            "onboardingLocationCard",
+            "onboardingLocationCard16Years",
+            "onboardingSubtitle"
+        }
+    .end annotation
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/databinding/ViewDataBinding;-><init>(Ljava/lang/Object;Landroid/view/View;I)V
 
@@ -85,15 +119,48 @@
 
 # virtual methods
 .method public abstract setBody(Ljava/lang/CharSequence;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "body"
+        }
+    .end annotation
 .end method
 
 .method public abstract setBodyCard(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "bodyCard"
+        }
+    .end annotation
 .end method
 
 .method public abstract setBodyEmphasized(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "bodyEmphasized"
+        }
+    .end annotation
 .end method
 
 .method public abstract setCountryData(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "countryData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -105,25 +172,89 @@
 .end method
 
 .method public abstract setHeadline(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "headline"
+        }
+    .end annotation
 .end method
 
 .method public abstract setHeadlineCard(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "headlineCard"
+        }
+    .end annotation
 .end method
 
 .method public abstract setIllustration(Landroid/graphics/drawable/Drawable;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "illustration"
+        }
+    .end annotation
 .end method
 
 .method public abstract setIllustrationDescription(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "illustrationDescription"
+        }
+    .end annotation
 .end method
 
 .method public abstract setLocationBodyCard(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "locationBodyCard"
+        }
+    .end annotation
 .end method
 
 .method public abstract setLocationHeadlineCard(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "locationHeadlineCard"
+        }
+    .end annotation
 .end method
 
 .method public abstract setLocationIconCard(Landroid/graphics/drawable/Drawable;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "locationIconCard"
+        }
+    .end annotation
 .end method
 
 .method public abstract setSubtitle(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "subtitle"
+        }
+    .end annotation
 .end method

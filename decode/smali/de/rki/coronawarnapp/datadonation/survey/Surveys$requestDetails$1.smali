@@ -18,7 +18,7 @@
     f = "Surveys.kt"
     l = {
         0x47,
-        0x56,
+        0x55,
         0x5e,
         0x69
     }
@@ -47,6 +47,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/survey/Surveys;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/datadonation/survey/Surveys;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/datadonation/survey/Surveys$requestDetails$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/survey/Surveys$requestDetails$1;->this$0:Lde/rki/coronawarnapp/datadonation/survey/Surveys;
 

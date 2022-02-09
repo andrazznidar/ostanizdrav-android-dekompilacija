@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
 .super Lcom/google/android/gms/common/api/internal/BasePendingResult;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -12,8 +12,6 @@
         "Lcom/google/android/gms/common/api/Api$AnyClient;",
         ">",
         "Lcom/google/android/gms/common/api/internal/BasePendingResult<",
-        "TR;>;",
-        "Ljava/lang/Object<",
         "TR;>;"
     }
 .end annotation
@@ -42,13 +40,13 @@
 
     const-string v0, "GoogleApiClient must not be null"
 
-    invoke-static {p2, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0, p2}, Lcom/google/android/gms/common/api/internal/BasePendingResult;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
 
     const-string p2, "Api must not be null"
 
-    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -88,15 +86,13 @@
 
     const-string v1, "Failed result must not be success"
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    new-instance v0, Lcom/google/android/gms/internal/safetynet/zzk$zza;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
 
-    const/4 v1, 0x0
+    move-result-object p1
 
-    invoke-direct {v0, p1, v1}, Lcom/google/android/gms/internal/safetynet/zzk$zza;-><init>(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/safetynet/zza;)V
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
 
     return-void
 .end method

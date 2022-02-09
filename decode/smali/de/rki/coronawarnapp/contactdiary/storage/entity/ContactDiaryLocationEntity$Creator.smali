@@ -1,17 +1,18 @@
 .class public final Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity$Creator;
 .super Ljava/lang/Object;
+.source "ContactDiaryLocationEntity.kt"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><clinit>()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x19
     name = "Creator"
 .end annotation
 
@@ -37,9 +38,9 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 7
+    .locals 8
 
-    const-string v0, "in"
+    const-string v0, "parcel"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -61,9 +62,17 @@
 
     move-result-object v6
 
+    invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
+
+    move-result-object p1
+
+    move-object v7, p1
+
+    check-cast v7, Lokio/ByteString;
+
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v7}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lokio/ByteString;)V
 
     return-object v0
 .end method

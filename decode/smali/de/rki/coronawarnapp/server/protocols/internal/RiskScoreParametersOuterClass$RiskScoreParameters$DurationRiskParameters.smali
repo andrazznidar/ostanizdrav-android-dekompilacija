@@ -34,7 +34,7 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;
 
 .field public static final EQ_0_MIN_FIELD_NUMBER:I = 0x1
 
@@ -52,7 +52,7 @@
 
 .field public static final GT_5_LE_10_MIN_FIELD_NUMBER:I = 0x3
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -64,24 +64,224 @@
 
 
 # instance fields
-.field public eq0Min_:I
+.field private eq0Min_:I
 
-.field public gt0Le5Min_:I
+.field private gt0Le5Min_:I
 
-.field public gt10Le15Min_:I
+.field private gt10Le15Min_:I
 
-.field public gt15Le20Min_:I
+.field private gt15Le20Min_:I
 
-.field public gt20Le25Min_:I
+.field private gt20Le25Min_:I
 
-.field public gt25Le30Min_:I
+.field private gt25Le30Min_:I
 
-.field public gt30Min_:I
+.field private gt30Min_:I
 
-.field public gt5Le10Min_:I
+.field private gt5Le10Min_:I
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearEq0Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearEq0Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearGt0Le5Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt0Le5Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearGt10Le15Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt10Le15Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearGt15Le20Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt15Le20Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearGt20Le25Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt20Le25Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearGt25Le30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt25Le30Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearGt30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt30Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearGt5Le10Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt5Le10Min()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetEq0Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setEq0Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetEq0MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setEq0MinValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt0Le5Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt0Le5Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt0Le5MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt0Le5MinValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt10Le15Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt10Le15Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt10Le15MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt10Le15MinValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt15Le20Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt15Le20Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt15Le20MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt15Le20MinValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt20Le25Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt20Le25Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt20Le25MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt20Le25MinValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt25Le30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt25Le30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt25Le30MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt25Le30MinValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt30MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt30MinValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt5Le10Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt5Le10Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetGt5Le10MinValue(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt5Le10MinValue(I)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -96,210 +296,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$2600()Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$2700(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setEq0MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2800(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setEq0Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$2900(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearEq0Min()V
-
-    return-void
-.end method
-
-.method public static synthetic access$3000(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt0Le5MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3100(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt0Le5Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3200(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt0Le5Min()V
-
-    return-void
-.end method
-
-.method public static synthetic access$3300(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt5Le10MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3400(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt5Le10Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3500(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt5Le10Min()V
-
-    return-void
-.end method
-
-.method public static synthetic access$3600(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt10Le15MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3700(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt10Le15Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$3800(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt10Le15Min()V
-
-    return-void
-.end method
-
-.method public static synthetic access$3900(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt15Le20MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4000(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt15Le20Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4100(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt15Le20Min()V
-
-    return-void
-.end method
-
-.method public static synthetic access$4200(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt20Le25MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4300(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt20Le25Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4400(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt20Le25Min()V
-
-    return-void
-.end method
-
-.method public static synthetic access$4500(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt25Le30MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4600(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt25Le30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4700(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt25Le30Min()V
-
-    return-void
-.end method
-
-.method public static synthetic access$4800(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt30MinValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4900(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->setGt30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5000(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->clearGt30Min()V
 
     return-void
 .end method
@@ -639,7 +639,7 @@
 .method private setEq0Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -648,11 +648,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setEq0MinValue(I)V
@@ -666,7 +661,7 @@
 .method private setGt0Le5Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -675,11 +670,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setGt0Le5MinValue(I)V
@@ -693,7 +683,7 @@
 .method private setGt10Le15Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -702,11 +692,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setGt10Le15MinValue(I)V
@@ -720,7 +705,7 @@
 .method private setGt15Le20Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -729,11 +714,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setGt15Le20MinValue(I)V
@@ -747,7 +727,7 @@
 .method private setGt20Le25Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -756,11 +736,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setGt20Le25MinValue(I)V
@@ -774,7 +749,7 @@
 .method private setGt25Le30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -783,11 +758,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setGt25Le30MinValue(I)V
@@ -801,7 +771,7 @@
 .method private setGt30Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -810,11 +780,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt30Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setGt30MinValue(I)V
@@ -828,7 +793,7 @@
 .method private setGt5Le10Min(Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -837,11 +802,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setGt5Le10MinValue(I)V
@@ -1107,31 +1067,27 @@
 
     if-eqz p1, :cond_d
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_4
 
     :cond_d
-    move p1, v1
+    move v0, v1
 
     :goto_4
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
 
     if-eqz v3, :cond_e
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_5
 
     :cond_e
-    move v3, v1
+    move v4, v1
 
     :goto_5
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1141,31 +1097,27 @@
 
     if-eqz p1, :cond_f
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_6
 
     :cond_f
-    move p1, v1
+    move v0, v1
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
 
     if-eqz v3, :cond_10
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_7
 
     :cond_10
-    move v3, v1
+    move v4, v1
 
     :goto_7
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1175,31 +1127,27 @@
 
     if-eqz p1, :cond_11
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_8
 
     :cond_11
-    move p1, v1
+    move v0, v1
 
     :goto_8
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
 
     if-eqz v3, :cond_12
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_9
 
     :cond_12
-    move v3, v1
+    move v4, v1
 
     :goto_9
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1209,31 +1157,27 @@
 
     if-eqz p1, :cond_13
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_a
 
     :cond_13
-    move p1, v1
+    move v0, v1
 
     :goto_a
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
 
     if-eqz v3, :cond_14
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_b
 
     :cond_14
-    move v3, v1
+    move v4, v1
 
     :goto_b
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1243,31 +1187,27 @@
 
     if-eqz p1, :cond_15
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_c
 
     :cond_15
-    move p1, v1
+    move v0, v1
 
     :goto_c
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
 
     if-eqz v3, :cond_16
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_d
 
     :cond_16
-    move v3, v1
+    move v4, v1
 
     :goto_d
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1277,31 +1217,27 @@
 
     if-eqz p1, :cond_17
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_e
 
     :cond_17
-    move p1, v1
+    move v0, v1
 
     :goto_e
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
 
     if-eqz v3, :cond_18
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_f
 
     :cond_18
-    move v3, v1
+    move v4, v1
 
     :goto_f
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1311,31 +1247,27 @@
 
     if-eqz p1, :cond_19
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_10
 
     :cond_19
-    move p1, v1
+    move v0, v1
 
     :goto_10
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
 
     if-eqz v3, :cond_1a
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_11
 
     :cond_1a
-    move v3, v1
+    move v4, v1
 
     :goto_11
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1345,26 +1277,22 @@
 
     if-eqz p1, :cond_1b
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_12
 
     :cond_1b
-    move p1, v1
+    move v0, v1
 
     :goto_12
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt30Min_:I
+    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt30Min_:I
 
-    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt30Min_:I
-
-    if-eqz v3, :cond_1c
+    if-eqz p3, :cond_1c
 
     move v1, v2
 
     :cond_1c
-    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt30Min_:I
-
-    invoke-interface {p2, p1, v0, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1375,7 +1303,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters$Builder-IA;)V
 
     return-object p1
 
@@ -1610,7 +1538,7 @@
 .end method
 
 .method public getSerializedSize()I
-    .locals 3
+    .locals 4
 
     iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
@@ -1629,15 +1557,15 @@
 
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v3, :cond_1
 
     const/4 v1, 0x1
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1646,19 +1574,17 @@
     :cond_1
     iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v3, :cond_2
 
     const/4 v1, 0x2
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1667,19 +1593,17 @@
     :cond_2
     iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v3, :cond_3
 
     const/4 v1, 0x3
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1688,19 +1612,17 @@
     :cond_3
     iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_4
+    if-eq v1, v3, :cond_4
 
     const/4 v1, 0x4
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1709,19 +1631,17 @@
     :cond_4
     iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_5
+    if-eq v1, v3, :cond_5
 
     const/4 v1, 0x5
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1730,19 +1650,17 @@
     :cond_5
     iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_6
+    if-eq v1, v3, :cond_6
 
     const/4 v1, 0x6
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1751,19 +1669,17 @@
     :cond_6
     iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_7
+    if-eq v1, v3, :cond_7
 
     const/4 v1, 0x7
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1771,8 +1687,6 @@
 
     :cond_7
     iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt30Min_:I
-
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
@@ -1797,7 +1711,7 @@
 .end method
 
 .method public writeTo(Lcom/google/protobuf/CodedOutputStream;)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1810,122 +1724,108 @@
 
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_0
+    if-eq v0, v2, :cond_0
 
     const/4 v0, 0x1
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->eq0Min_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_0
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
 
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v2, :cond_1
 
     const/4 v0, 0x2
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt0Le5Min_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_1
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
 
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v2, :cond_2
 
     const/4 v0, 0x3
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt5Le10Min_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_2
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
 
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v2, :cond_3
 
     const/4 v0, 0x4
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt10Le15Min_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_3
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
 
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_4
+    if-eq v0, v2, :cond_4
 
     const/4 v0, 0x5
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt15Le20Min_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_4
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
 
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_5
+    if-eq v0, v2, :cond_5
 
     const/4 v0, 0x6
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt20Le25Min_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_5
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
 
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
-
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_6
+    if-eq v0, v2, :cond_6
 
     const/4 v0, 0x7
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt25Le30Min_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_6
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$DurationRiskParameters;->gt30Min_:I
-
-    sget-object v1, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->RISK_LEVEL_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;
 
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/RiskLevelOuterClass$RiskLevel;->getNumber()I
 

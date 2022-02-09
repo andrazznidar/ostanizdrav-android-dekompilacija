@@ -42,14 +42,26 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;JLkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljava/io/File;JLde/rki/coronawarnapp/storage/DeviceStorage;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/io/File;",
+            "J",
+            "Lde/rki/coronawarnapp/storage/DeviceStorage;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;",
+            ">;)V"
+        }
+    .end annotation
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    iput-object p1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    iput-wide p2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    iput-wide p3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    iput-object p4, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
 
     const/4 p1, 0x2
 
@@ -74,49 +86,43 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    iget-wide v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    iget-object v4, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
 
     move-object v0, p1
 
     move-object v5, p2
 
-    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;-><init>(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;JLkotlin/coroutines/Continuation;)V
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;-><init>(Ljava/io/File;JLde/rki/coronawarnapp/storage/DeviceStorage;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 6
+
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
     move-object v5, p2
 
     check-cast v5, Lkotlin/coroutines/Continuation;
 
-    const-string p1, "completion"
-
-    invoke-static {v5, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    iget-wide v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    iget-object v4, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
 
     move-object v0, p1
 
-    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;-><init>(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;JLkotlin/coroutines/Continuation;)V
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;-><init>(Ljava/io/File;JLde/rki/coronawarnapp/storage/DeviceStorage;Lkotlin/coroutines/Continuation;)V
 
     sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -128,151 +134,131 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 10
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    const-string v0, "DeviceStorage"
+
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_0
-    sget-object p1, Lde/rki/coronawarnapp/storage/DeviceStorage;->Companion:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object p1, Lde/rki/coronawarnapp/storage/DeviceStorage;->TAG:Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v1, "checkSpace(path=%s, requiredBytes=%d)"
 
-    move-result-object p1
+    const/4 v2, 0x2
 
-    const-string v0, "checkSpace(path=%s, requiredBytes=%d)"
+    new-array v3, v2, [Ljava/lang/Object;
 
-    const/4 v1, 0x2
+    iget-object v4, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    new-array v2, v1, [Ljava/lang/Object;
+    const/4 v5, 0x0
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    aput-object v4, v3, v5
 
-    const/4 v4, 0x0
+    iget-wide v6, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    aput-object v3, v2, v4
+    new-instance v4, Ljava/lang/Long;
 
-    iget-wide v5, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    invoke-direct {v4, v6, v7}, Ljava/lang/Long;-><init>(J)V
 
-    new-instance v3, Ljava/lang/Long;
+    const/4 v6, 0x1
 
-    invoke-direct {v3, v5, v6}, Ljava/lang/Long;-><init>(J)V
+    aput-object v4, v3, v6
 
-    const/4 v5, 0x1
+    invoke-virtual {p1, v1, v3}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    aput-object v3, v2, v5
+    sget-object p1, Lde/rki/coronawarnapp/util/BuildVersionWrap;->INSTANCE:Lde/rki/coronawarnapp/util/BuildVersionWrap;
 
-    invoke-virtual {p1, v0, v2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    const/16 v1, 0x1a
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    invoke-static {p1, v1}, Lcom/airbnb/lottie/utils/GammaEvaluator;->hasAPILevel(Lde/rki/coronawarnapp/util/BuildVersionWrap;I)Z
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/storage/DeviceStorage;->apiLevel:Lde/rki/coronawarnapp/util/ApiLevel;
-
-    const/16 v0, 0x1a
-
-    iget p1, p1, Lde/rki/coronawarnapp/util/ApiLevel;->currentLevel:I
+    move-result p1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    if-lt p1, v0, :cond_0
-
-    move p1, v5
-
-    goto :goto_0
-
-    :cond_0
-    move p1, v4
-
-    :goto_0
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     :try_start_1
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    iget-wide v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    iget-wide v3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    invoke-static {p1, v0, v2, v3}, Lde/rki/coronawarnapp/storage/DeviceStorage;->access$requestStorageAPI26Plus(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;J)Lde/rki/coronawarnapp/storage/DeviceStorage$CheckResult;
+    invoke-static {p1, v1, v3, v4}, Lde/rki/coronawarnapp/storage/DeviceStorage;->access$requestStorageAPI26Plus(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;J)Lde/rki/coronawarnapp/storage/DeviceStorage$CheckResult;
 
     move-result-object p1
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception p1
 
     :try_start_2
-    sget-object v0, Lde/rki/coronawarnapp/storage/DeviceStorage;->Companion:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v0, Lde/rki/coronawarnapp/storage/DeviceStorage;->TAG:Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v3, "requestStorageAPI26Plus() failed"
 
-    move-result-object v0
+    new-array v4, v5, [Ljava/lang/Object;
 
-    const-string v2, "requestStorageAPI26Plus() failed"
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    invoke-virtual {v0, p1, v2, v3}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, p1, v3, v4}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    iget-wide v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    iget-wide v3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    invoke-static {p1, v0, v2, v3}, Lde/rki/coronawarnapp/storage/DeviceStorage;->access$requestStorageLegacy(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;J)Lde/rki/coronawarnapp/storage/DeviceStorage$CheckResult;
+    invoke-static {p1, v1, v3, v4}, Lde/rki/coronawarnapp/storage/DeviceStorage;->access$requestStorageLegacy(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;J)Lde/rki/coronawarnapp/storage/DeviceStorage$CheckResult;
 
     move-result-object p1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1
+    :cond_0
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->this$0:Lde/rki/coronawarnapp/storage/DeviceStorage;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    iget-object v1, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    iget-wide v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    iget-wide v3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    invoke-static {p1, v0, v2, v3}, Lde/rki/coronawarnapp/storage/DeviceStorage;->access$requestStorageLegacy(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;J)Lde/rki/coronawarnapp/storage/DeviceStorage$CheckResult;
+    invoke-static {p1, v1, v3, v4}, Lde/rki/coronawarnapp/storage/DeviceStorage;->access$requestStorageLegacy(Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/io/File;J)Lde/rki/coronawarnapp/storage/DeviceStorage$CheckResult;
 
     move-result-object p1
 
-    :goto_1
-    sget-object v0, Lde/rki/coronawarnapp/storage/DeviceStorage;->Companion:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    :goto_0
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v0, Lde/rki/coronawarnapp/storage/DeviceStorage;->TAG:Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v3, "Requested %d from %s: %s"
 
-    move-result-object v0
+    const/4 v4, 0x3
 
-    const-string v2, "Requested %d from %s: %s"
+    new-array v4, v4, [Ljava/lang/Object;
 
-    const/4 v3, 0x3
+    iget-wide v7, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-instance v9, Ljava/lang/Long;
 
-    iget-wide v6, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+    invoke-direct {v9, v7, v8}, Ljava/lang/Long;-><init>(J)V
 
-    new-instance v8, Ljava/lang/Long;
+    aput-object v9, v4, v5
 
-    invoke-direct {v8, v6, v7}, Ljava/lang/Long;-><init>(J)V
+    iget-object v5, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    aput-object v8, v3, v4
+    aput-object v5, v4, v6
 
-    iget-object v4, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
+    aput-object p1, v4, v2
 
-    aput-object v4, v3, v5
-
-    aput-object p1, v3, v1
-
-    invoke-virtual {v0, v2, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
@@ -281,45 +267,43 @@
     :catch_1
     move-exception p1
 
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "checkSpace(path="
-
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    new-instance v1, Ljava/io/IOException;
 
     iget-object v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$path:Ljava/io/File;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-wide v3, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "checkSpace(path="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v2, ", requiredBytes="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v2, p0, Lde/rki/coronawarnapp/storage/DeviceStorage$checkSpace$2;->$requiredBytes:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v2, ") FAILED"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-direct {v0, v1, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sget-object p1, Lde/rki/coronawarnapp/storage/DeviceStorage;->Companion:Lde/rki/coronawarnapp/storage/DeviceStorage;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object p1, Lde/rki/coronawarnapp/storage/DeviceStorage;->TAG:Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;)V
 
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;)V
-
-    throw v0
+    throw v1
 .end method

@@ -151,7 +151,7 @@
 
     move-result v5
 
-    const-string v9, "type"
+    const-string/jumbo v9, "type"
 
     invoke-interface {v2, v9}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -270,7 +270,7 @@
 
     move-result v9
 
-    const-string v10, "table"
+    const-string/jumbo v10, "table"
 
     invoke-interface {v5, v10}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -335,14 +335,11 @@
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     move-object/from16 v19, v13
 
     check-cast v19, Ljava/util/ArrayList;
 
-    :try_start_3
     invoke-virtual/range {v19 .. v19}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v19
@@ -413,8 +410,8 @@
     invoke-direct/range {v21 .. v26}, Landroidx/room/util/TableInfo$ForeignKey;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
 
     invoke-virtual {v2, v7}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :goto_4
     add-int/lit8 v15, v15, 0x1
@@ -452,7 +449,7 @@
 
     move-result-object v3
 
-    :try_start_4
+    :try_start_3
     invoke-interface {v3, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v5
@@ -463,7 +460,7 @@
 
     move-result v6
 
-    const-string v7, "unique"
+    const-string/jumbo v7, "unique"
 
     invoke-interface {v3, v7}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -538,8 +535,8 @@
 
     :cond_9
     invoke-virtual {v9, v10}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_5
 
@@ -614,7 +611,7 @@
 
     move-result v2
 
-    const-string v3, "to"
+    const-string/jumbo v3, "to"
 
     invoke-interface {p0, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -981,7 +978,7 @@
 
     const-string v0, "TableInfo{name=\'"
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

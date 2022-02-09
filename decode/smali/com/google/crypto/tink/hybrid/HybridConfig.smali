@@ -4,10 +4,6 @@
 
 
 # static fields
-.field public static final ECIES_AEAD_HKDF_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
-
-.field public static final ECIES_AEAD_HKDF_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
-
 .field public static final LATEST:Lcom/google/crypto/tink/proto/RegistryConfig;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -32,17 +28,9 @@
 
     invoke-direct {v0}, Lcom/google/crypto/tink/hybrid/EciesAeadHkdfPublicKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.EciesAeadHkdfPublicKey"
-
-    sput-object v0, Lcom/google/crypto/tink/hybrid/HybridConfig;->ECIES_AEAD_HKDF_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
-
     new-instance v0, Lcom/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/hybrid/EciesAeadHkdfPrivateKeyManager;-><init>()V
-
-    const-string v0, "type.googleapis.com/google.crypto.tink.EciesAeadHkdfPrivateKey"
-
-    sput-object v0, Lcom/google/crypto/tink/hybrid/HybridConfig;->ECIES_AEAD_HKDF_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
 
     invoke-static {}, Lcom/google/crypto/tink/proto/RegistryConfig;->getDefaultInstance()Lcom/google/crypto/tink/proto/RegistryConfig;
 

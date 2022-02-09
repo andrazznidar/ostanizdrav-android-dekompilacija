@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/UnsupportedApiCallException;
 .super Ljava/lang/UnsupportedOperationException;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # instance fields
@@ -24,7 +24,7 @@
 
 
 # virtual methods
-.method public final getMessage()Ljava/lang/String;
+.method public getMessage()Ljava/lang/String;
     .locals 3
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
@@ -39,19 +39,15 @@
 
     move-result v1
 
-    add-int/lit8 v1, v1, 0x8
-
     new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x8
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v1, "Missing "
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v1, v0}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

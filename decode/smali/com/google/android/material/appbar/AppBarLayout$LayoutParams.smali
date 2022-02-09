@@ -42,19 +42,23 @@
 
     iput v0, p0, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;->scrollFlags:I
 
-    sget-object v1, Lcom/google/android/material/R$styleable;->AppBarLayout_Layout:[I
+    sget-object v0, Lcom/google/android/material/R$styleable;->AppBarLayout_Layout:[I
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p2
 
+    sget v0, Lcom/google/android/material/R$styleable;->AppBarLayout_Layout_layout_scrollFlags:I
+
     const/4 v1, 0x0
 
-    invoke-virtual {p2, v1, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {p2, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v2
+    move-result v0
 
-    iput v2, p0, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;->scrollFlags:I
+    iput v0, p0, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;->scrollFlags:I
+
+    sget v0, Lcom/google/android/material/R$styleable;->AppBarLayout_Layout_layout_scrollInterpolator:I
 
     invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 

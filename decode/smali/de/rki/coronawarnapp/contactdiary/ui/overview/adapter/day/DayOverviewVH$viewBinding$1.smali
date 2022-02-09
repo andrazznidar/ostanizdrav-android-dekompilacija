@@ -54,175 +54,224 @@
 
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const v2, 0x7f090121
+    const v2, 0x7f0a0264
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v3
 
-    move-object v6, v3
+    const-string v4, "Missing required view with ID: "
 
-    check-cast v6, Landroidx/constraintlayout/widget/Barrier;
+    if-eqz v3, :cond_b
 
-    const-string v3, "Missing required view with ID: "
+    const v2, 0x7f0a059a
 
-    if-eqz v6, :cond_2
-
-    move-object v7, v1
-
-    check-cast v7, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    const v2, 0x7f090124
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_2
-
-    const v2, 0x7f090125
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    move-object v9, v4
-
-    check-cast v9, Landroidx/constraintlayout/widget/Guideline;
-
-    if-eqz v9, :cond_2
-
-    const v2, 0x7f090127
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    move-object v10, v4
-
-    check-cast v10, Landroid/widget/TextView;
-
-    if-eqz v10, :cond_2
-
-    const v2, 0x7f090129
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    move-object v11, v4
-
-    check-cast v11, Landroid/widget/ImageView;
-
-    if-eqz v11, :cond_2
-
-    const v2, 0x7f09012d
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    move-object v12, v4
-
-    check-cast v12, Landroidx/constraintlayout/widget/Group;
-
-    if-eqz v12, :cond_2
-
-    const v2, 0x7f09012e
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_2
-
-    const v2, 0x7f09012a
-
-    invoke-virtual {v4, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v3, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v5
+
+    check-cast v5, Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v5, :cond_a
+
+    new-instance v8, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;
+
+    check-cast v3, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-direct {v8, v3, v5}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/recyclerview/widget/RecyclerView;)V
+
+    move-object v9, v1
+
+    check-cast v9, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    const v3, 0x7f0a0266
+
+    invoke-static {v1, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_9
+
+    const v3, 0x7f0a0114
+
+    invoke-static {v5, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/widget/ImageView;
+
+    if-eqz v6, :cond_8
+
+    const v3, 0x7f0a0258
+
+    invoke-static {v5, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/TextView;
+
+    if-eqz v7, :cond_8
+
+    check-cast v5, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    new-instance v10, Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
+
+    invoke-direct {v10, v5, v6, v7, v5}, Lde/rki/coronawarnapp/databinding/FabTooltipBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;)V
+
+    const v3, 0x7f0a0267
+
+    invoke-static {v1, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_9
+
+    const v3, 0x7f0a0201
+
+    invoke-static {v5, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v6
+
+    move-object v13, v6
+
+    check-cast v13, Landroid/widget/TextView;
+
+    const v6, 0x7f0a0206
+
+    const v7, 0x7f0a0203
+
+    if-eqz v13, :cond_7
+
+    invoke-static {v5, v7}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v11
+
+    move-object v14, v11
+
+    check-cast v14, Landroid/widget/TextView;
+
+    if-eqz v14, :cond_6
 
     move-object v15, v5
 
+    check-cast v15, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-static {v5, v6}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v11
+
+    move-object/from16 v16, v11
+
+    check-cast v16, Landroid/widget/ImageView;
+
+    if-eqz v16, :cond_5
+
+    new-instance v5, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;
+
+    move-object v11, v5
+
+    move-object v12, v15
+
+    invoke-direct/range {v11 .. v16}, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;)V
+
+    const v11, 0x7f0a0268
+
+    invoke-static {v1, v11}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v12
+
+    if-eqz v12, :cond_4
+
+    invoke-static {v12, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v11
+
+    move-object v15, v11
+
     check-cast v15, Landroid/widget/TextView;
 
-    if-eqz v15, :cond_1
+    if-eqz v15, :cond_3
 
-    const v2, 0x7f09012b
+    const v3, 0x7f0a0202
 
-    invoke-virtual {v4, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v12, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
-    move-result-object v16
+    move-result-object v11
 
-    if-eqz v16, :cond_1
+    move-object/from16 v16, v11
 
-    const v2, 0x7f09012c
+    check-cast v16, Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-virtual {v4, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    if-eqz v16, :cond_3
 
-    move-result-object v5
+    invoke-static {v12, v7}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
-    move-object/from16 v17, v5
+    move-result-object v3
+
+    move-object/from16 v17, v3
 
     check-cast v17, Landroid/widget/TextView;
 
-    if-eqz v17, :cond_1
+    if-eqz v17, :cond_2
 
-    move-object/from16 v18, v4
+    move-object/from16 v18, v12
 
     check-cast v18, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const v2, 0x7f090132
+    invoke-static {v12, v6}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
-    invoke-virtual {v4, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v3
 
-    move-result-object v5
-
-    move-object/from16 v19, v5
+    move-object/from16 v19, v3
 
     check-cast v19, Landroid/widget/ImageView;
 
     if-eqz v19, :cond_1
 
-    new-instance v2, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;
+    new-instance v12, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;
 
-    move-object v13, v2
+    move-object v13, v12
 
     move-object/from16 v14, v18
 
-    invoke-direct/range {v13 .. v19}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/view/View;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;)V
+    invoke-direct/range {v13 .. v19}, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroidx/recyclerview/widget/RecyclerView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;)V
 
-    const v4, 0x7f09012f
+    const v3, 0x7f0a0269
 
-    invoke-virtual {v1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1, v3}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v6
 
-    move-object v14, v5
+    if-eqz v6, :cond_9
 
-    check-cast v14, Landroidx/recyclerview/widget/RecyclerView;
+    invoke-static {v6, v2}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
-    if-eqz v14, :cond_0
+    move-result-object v1
+
+    check-cast v1, Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v1, :cond_0
+
+    new-instance v13, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;
+
+    check-cast v6, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-direct {v13, v6, v1}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/recyclerview/widget/RecyclerView;)V
 
     new-instance v1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;
 
-    move-object v4, v1
+    move-object v6, v1
 
-    move-object v5, v7
+    move-object v7, v9
 
-    move-object v13, v2
+    move-object v11, v5
 
-    invoke-direct/range {v4 .. v14}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/view/View;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/Group;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;Landroidx/recyclerview/widget/RecyclerView;)V
+    invoke-direct/range {v6 .. v13}, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/FabTooltipBinding;Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;)V
 
     return-object v1
 
     :cond_0
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v6}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -232,7 +281,7 @@
 
     new-instance v2, Ljava/lang/NullPointerException;
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -240,8 +289,112 @@
 
     throw v2
 
+    :cond_1
+    move v3, v6
+
+    goto :goto_0
+
     :cond_2
+    move v3, v7
+
+    :cond_3
     :goto_0
+    invoke-virtual {v12}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/NullPointerException;
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_4
+    move v2, v11
+
+    goto :goto_2
+
+    :cond_5
+    move v3, v6
+
+    goto :goto_1
+
+    :cond_6
+    move v3, v7
+
+    :cond_7
+    :goto_1
+    invoke-virtual {v5}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/NullPointerException;
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_8
+    invoke-virtual {v5}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/NullPointerException;
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_9
+    move v2, v3
+
+    goto :goto_2
+
+    :cond_a
+    invoke-virtual {v3}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/NullPointerException;
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_b
+    :goto_2
     invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -252,7 +405,7 @@
 
     new-instance v2, Ljava/lang/NullPointerException;
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

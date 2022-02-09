@@ -43,3 +43,9 @@
 # virtual methods
 .method public abstract addObserver(Landroidx/lifecycle/LifecycleObserver;)V
 .end method
+
+.method public abstract getCurrentState()Landroidx/lifecycle/Lifecycle$State;
+.end method
+
+.method public abstract removeObserver(Landroidx/lifecycle/LifecycleObserver;)V
+.end method

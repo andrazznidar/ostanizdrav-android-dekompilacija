@@ -50,7 +50,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerStorage$gson$2;->$gson:Lcom/google/gson/Gson;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Lcom/google/gson/GsonBuilder;
 
@@ -64,7 +64,7 @@
 
     move-result-object v2
 
-    const-string v3, "$this$getDefaultGsonTypeAdapter"
+    const-string v3, "<this>"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -72,7 +72,7 @@
 
     invoke-direct {v3}, Lcom/google/gson/Gson;-><init>()V
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
+    invoke-static {v2}, Lkotlin/jvm/JvmClassMappingKt;->getJavaClass(Lkotlin/reflect/KClass;)Ljava/lang/Class;
 
     move-result-object v2
 
@@ -91,9 +91,4 @@
     move-result-object v0
 
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

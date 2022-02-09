@@ -17,8 +17,6 @@
 # static fields
 .field public static final DEF_STYLE_RES:I
 
-.field public static final LOG_TAG:Ljava/lang/String;
-
 
 # instance fields
 .field public checkedId:I
@@ -72,13 +70,7 @@
 
     const-class v0, Lcom/google/android/material/button/MaterialButtonToggleGroup;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/material/button/MaterialButtonToggleGroup;->LOG_TAG:Ljava/lang/String;
-
-    const v0, 0x7f1302c6
+    sget v0, Lcom/google/android/material/R$style;->Widget_MaterialComponents_MaterialButtonToggleGroup:I
 
     sput v0, Lcom/google/android/material/button/MaterialButtonToggleGroup;->DEF_STYLE_RES:I
 
@@ -88,15 +80,15 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
 
-    const v0, 0x7f1302c6
+    sget v3, Lcom/google/android/material/R$attr;->materialButtonToggleGroupStyle:I
 
-    const v1, 0x7f040244
+    sget v4, Lcom/google/android/material/button/MaterialButtonToggleGroup;->DEF_STYLE_RES:I
 
-    invoke-static {p1, p2, v1, v0}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    invoke-static {p1, p2, v3, v4}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {p0, p1, p2, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     new-instance p1, Ljava/util/ArrayList;
 
@@ -142,17 +134,13 @@
 
     new-array v5, p1, [I
 
-    const v4, 0x7f1302c6
-
-    const v3, 0x7f040244
-
     move-object v1, p2
 
     invoke-static/range {v0 .. v5}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
 
     move-result-object p2
 
-    const/4 v0, 0x2
+    sget v0, Lcom/google/android/material/R$styleable;->MaterialButtonToggleGroup_singleSelection:I
 
     invoke-virtual {p2, v0, p1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -160,15 +148,17 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->setSingleSelection(Z)V
 
-    const/4 v0, -0x1
+    sget v0, Lcom/google/android/material/R$styleable;->MaterialButtonToggleGroup_checkedButton:I
 
-    invoke-virtual {p2, p1, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    const/4 v1, -0x1
+
+    invoke-virtual {p2, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/material/button/MaterialButtonToggleGroup;->checkedId:I
 
-    const/4 v0, 0x1
+    sget v0, Lcom/google/android/material/R$styleable;->MaterialButtonToggleGroup_selectionRequired:I
 
     invoke-virtual {p2, v0, p1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -176,80 +166,17 @@
 
     iput-boolean p1, p0, Lcom/google/android/material/button/MaterialButtonToggleGroup;->selectionRequired:Z
 
-    invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setChildrenDrawingOrderEnabled(Z)V
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setChildrenDrawingOrderEnabled(Z)V
 
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-static {p0, v0}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+    sget-object p2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     return-void
-.end method
-
-.method public static access$200(Lcom/google/android/material/button/MaterialButtonToggleGroup;Landroid/view/View;)I
-    .locals 4
-
-    if-eqz p0, :cond_4
-
-    instance-of v0, p1, Lcom/google/android/material/button/MaterialButton;
-
-    const/4 v1, -0x1
-
-    if-nez v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    move v2, v0
-
-    :goto_0
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
-
-    move-result v3
-
-    if-ge v0, v3, :cond_3
-
-    invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    if-ne v3, p1, :cond_1
-
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    instance-of v3, v3, Lcom/google/android/material/button/MaterialButton;
-
-    if-eqz v3, :cond_2
-
-    invoke-virtual {p0, v0}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->isChildVisible(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    add-int/lit8 v2, v2, 0x1
-
-    :cond_2
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    :goto_1
-    return v1
-
-    :cond_4
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 .method private getFirstVisibleChildIndex()I
@@ -376,7 +303,9 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-static {}, Landroidx/core/view/ViewCompat;->generateViewId()I
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-static {}, Landroid/view/View;->generateViewId()I
 
     move-result v0
 
@@ -423,7 +352,7 @@
 
     if-nez v0, :cond_0
 
-    sget-object p1, Lcom/google/android/material/button/MaterialButtonToggleGroup;->LOG_TAG:Ljava/lang/String;
+    const-string p1, "MaterialButtonToggleGroup"
 
     const-string p2, "Child views must be of type MaterialButton."
 
@@ -432,7 +361,7 @@
     return-void
 
     :cond_0
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     check-cast p1, Lcom/google/android/material/button/MaterialButton;
 
@@ -569,18 +498,22 @@
 
     invoke-virtual {v6, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    neg-int v4, v5
+    neg-int v5, v5
 
-    invoke-virtual {v6, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
+    invoke-virtual {v6, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
+
+    iput v4, v6, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     goto :goto_2
 
     :cond_2
     iput v4, v6, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
-    neg-int v4, v5
+    neg-int v5, v5
 
-    iput v4, v6, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+    iput v5, v6, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+
+    invoke-virtual {v6, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
     :goto_2
     invoke-virtual {v3, v6}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -653,12 +586,17 @@
     :cond_0
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->setCheckedStateForView(IZ)V
+    invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->updateCheckedStates(IZ)Z
+    move-result-object p1
 
-    invoke-direct {p0, p1}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->setCheckedId(I)V
+    check-cast p1, Lcom/google/android/material/button/MaterialButton;
 
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1, v0}, Lcom/google/android/material/button/MaterialButton;->setChecked(Z)V
+
+    :cond_1
     return-void
 .end method
 
@@ -755,7 +693,7 @@
 
     iput-object v0, p0, Lcom/google/android/material/button/MaterialButtonToggleGroup;->childOrder:[Ljava/lang/Integer;
 
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method
@@ -909,7 +847,7 @@
 
     :cond_1
     :goto_0
-    sget-object p1, Lcom/google/android/material/button/MaterialButtonToggleGroup;->LOG_TAG:Ljava/lang/String;
+    const-string p1, "MaterialButtonToggleGroup"
 
     const-string v0, "Child order wasn\'t updated"
 
@@ -947,7 +885,7 @@
 .method public onFinishInflate()V
     .locals 2
 
-    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
     iget v0, p0, Lcom/google/android/material/button/MaterialButtonToggleGroup;->checkedId:I
 
@@ -957,11 +895,15 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->setCheckedStateForView(IZ)V
+    invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->updateCheckedStates(IZ)Z
+    move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->setCheckedId(I)V
+    check-cast v0, Lcom/google/android/material/button/MaterialButton;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/button/MaterialButton;->setChecked(Z)V
 
     :cond_0
     return-void
@@ -970,7 +912,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     invoke-direct {p0}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->getVisibleButtonCount()I
 
@@ -1020,7 +962,7 @@
 .method public onViewRemoved(Landroid/view/View;)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onViewRemoved(Landroid/view/View;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
 
     instance-of v0, p1, Lcom/google/android/material/button/MaterialButton;
 
@@ -1216,7 +1158,7 @@
     move v4, v3
 
     :goto_0
-    if-ge v4, v0, :cond_b
+    if-ge v4, v0, :cond_a
 
     invoke-virtual {p0, v4}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->getChildButton(I)Lcom/google/android/material/button/MaterialButton;
 
@@ -1230,20 +1172,18 @@
 
     if-ne v6, v7, :cond_0
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_0
     invoke-virtual {v5}, Lcom/google/android/material/button/MaterialButton;->getShapeAppearanceModel()Lcom/google/android/material/shape/ShapeAppearanceModel;
 
     move-result-object v6
 
-    const/4 v7, 0x0
+    invoke-static {v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v6, :cond_a
+    new-instance v7, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
-    new-instance v8, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
-
-    invoke-direct {v8, v6}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
+    invoke-direct {v7, v6}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;-><init>(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
 
     iget-object v6, p0, Lcom/google/android/material/button/MaterialButtonToggleGroup;->originalCornerData:Ljava/util/List;
 
@@ -1255,36 +1195,34 @@
 
     if-ne v1, v2, :cond_1
 
-    move-object v7, v6
-
-    goto :goto_2
+    goto/16 :goto_3
 
     :cond_1
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getOrientation()I
 
-    move-result v9
+    move-result v8
 
-    if-nez v9, :cond_2
+    if-nez v8, :cond_2
 
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     goto :goto_1
 
     :cond_2
-    move v9, v3
+    move v8, v3
 
     :goto_1
     if-ne v4, v1, :cond_5
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_4
 
-    invoke-static {p0}, Lcom/google/android/material/R$style;->isLayoutRtl(Landroid/view/View;)Z
+    invoke-static {p0}, Lcom/google/android/material/internal/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_3
+    if-eqz v8, :cond_3
 
-    new-instance v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
+    new-instance v8, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
 
     sget-object v9, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->noCorner:Lcom/google/android/material/shape/CornerSize;
 
@@ -1292,12 +1230,12 @@
 
     iget-object v6, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->bottomRight:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-direct {v7, v9, v9, v10, v6}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
+    invoke-direct {v8, v9, v9, v10, v6}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
 
     goto :goto_2
 
     :cond_3
-    new-instance v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
+    new-instance v8, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
 
     iget-object v9, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topLeft:Lcom/google/android/material/shape/CornerSize;
 
@@ -1305,12 +1243,12 @@
 
     sget-object v10, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->noCorner:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-direct {v7, v9, v6, v10, v10}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
+    invoke-direct {v8, v9, v6, v10, v10}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
 
     goto :goto_2
 
     :cond_4
-    new-instance v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
+    new-instance v8, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
 
     iget-object v9, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topLeft:Lcom/google/android/material/shape/CornerSize;
 
@@ -1318,22 +1256,25 @@
 
     iget-object v6, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topRight:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-direct {v7, v9, v10, v6, v10}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
+    invoke-direct {v8, v9, v10, v6, v10}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
 
-    goto :goto_2
+    :goto_2
+    move-object v6, v8
+
+    goto :goto_3
 
     :cond_5
     if-ne v4, v2, :cond_8
 
-    if-eqz v9, :cond_7
+    if-eqz v8, :cond_7
 
-    invoke-static {p0}, Lcom/google/android/material/R$style;->isLayoutRtl(Landroid/view/View;)Z
+    invoke-static {p0}, Lcom/google/android/material/internal/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_6
+    if-eqz v8, :cond_6
 
-    new-instance v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
+    new-instance v8, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
 
     iget-object v9, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topLeft:Lcom/google/android/material/shape/CornerSize;
 
@@ -1341,12 +1282,12 @@
 
     sget-object v10, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->noCorner:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-direct {v7, v9, v6, v10, v10}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
+    invoke-direct {v8, v9, v6, v10, v10}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
 
     goto :goto_2
 
     :cond_6
-    new-instance v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
+    new-instance v8, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
 
     sget-object v9, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->noCorner:Lcom/google/android/material/shape/CornerSize;
 
@@ -1354,12 +1295,12 @@
 
     iget-object v6, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->bottomRight:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-direct {v7, v9, v9, v10, v6}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
+    invoke-direct {v8, v9, v9, v10, v6}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
 
     goto :goto_2
 
     :cond_7
-    new-instance v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
+    new-instance v8, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;
 
     sget-object v9, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->noCorner:Lcom/google/android/material/shape/CornerSize;
 
@@ -1367,50 +1308,51 @@
 
     iget-object v6, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->bottomRight:Lcom/google/android/material/shape/CornerSize;
 
-    invoke-direct {v7, v9, v10, v9, v6}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
+    invoke-direct {v8, v9, v10, v9, v6}, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;-><init>(Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;Lcom/google/android/material/shape/CornerSize;)V
+
+    goto :goto_2
 
     :cond_8
-    :goto_2
-    if-nez v7, :cond_9
+    const/4 v6, 0x0
+
+    :goto_3
+    if-nez v6, :cond_9
 
     const/4 v6, 0x0
 
-    invoke-virtual {v8, v6}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setAllCornerSizes(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    invoke-virtual {v7, v6}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->setAllCornerSizes(F)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_9
-    iget-object v6, v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topLeft:Lcom/google/android/material/shape/CornerSize;
+    iget-object v8, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topLeft:Lcom/google/android/material/shape/CornerSize;
 
-    iput-object v6, v8, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
+    iput-object v8, v7, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    iget-object v6, v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->bottomLeft:Lcom/google/android/material/shape/CornerSize;
+    iget-object v8, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->bottomLeft:Lcom/google/android/material/shape/CornerSize;
 
-    iput-object v6, v8, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
+    iput-object v8, v7, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomLeftCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    iget-object v6, v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topRight:Lcom/google/android/material/shape/CornerSize;
+    iget-object v8, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->topRight:Lcom/google/android/material/shape/CornerSize;
 
-    iput-object v6, v8, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topRightCornerSize:Lcom/google/android/material/shape/CornerSize;
+    iput-object v8, v7, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->topRightCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    iget-object v6, v7, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->bottomRight:Lcom/google/android/material/shape/CornerSize;
+    iget-object v6, v6, Lcom/google/android/material/button/MaterialButtonToggleGroup$CornerData;->bottomRight:Lcom/google/android/material/shape/CornerSize;
 
-    iput-object v6, v8, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomRightCornerSize:Lcom/google/android/material/shape/CornerSize;
+    iput-object v6, v7, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->bottomRightCornerSize:Lcom/google/android/material/shape/CornerSize;
 
-    :goto_3
-    invoke-virtual {v8}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->build()Lcom/google/android/material/shape/ShapeAppearanceModel;
+    :goto_4
+    invoke-virtual {v7}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->build()Lcom/google/android/material/shape/ShapeAppearanceModel;
 
     move-result-object v6
 
     invoke-virtual {v5, v6}, Lcom/google/android/material/button/MaterialButton;->setShapeAppearanceModel(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
 
-    :goto_4
+    :goto_5
     add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_0
 
     :cond_a
-    throw v7
-
-    :cond_b
     return-void
 .end method

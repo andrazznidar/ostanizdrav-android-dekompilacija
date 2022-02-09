@@ -16,7 +16,69 @@
 # static fields
 .field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/ui/Country;
 
+.field public static final enum AT:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum BE:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum BG:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum CH:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum CY:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum CZ:Lde/rki/coronawarnapp/ui/Country;
+
 .field public static final enum DE:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum DK:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum EE:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum ES:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum FI:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum FR:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum GR:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum HR:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum HU:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum IE:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum IS:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum IT:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum LI:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum LT:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum LU:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum LV:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum MT:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum NL:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum NO:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum PL:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum PT:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum RO:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum SE:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum SI:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum SK:Lde/rki/coronawarnapp/ui/Country;
+
+.field public static final enum UK:Lde/rki/coronawarnapp/ui/Country;
 
 
 # instance fields
@@ -29,655 +91,719 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 14
+    .locals 47
 
-    const/16 v0, 0x20
+    new-instance v6, Lde/rki/coronawarnapp/ui/Country;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/ui/Country;
+    const-string v1, "AT"
+
+    const/4 v2, 0x0
+
+    const-string v3, "at"
+
+    const v4, 0x7f130115
+
+    const v5, 0x7f0800ec
+
+    move-object v0, v6
+
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v6, Lde/rki/coronawarnapp/ui/Country;->AT:Lde/rki/coronawarnapp/ui/Country;
+
+    new-instance v0, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v8, "BE"
+
+    const/4 v9, 0x1
+
+    const-string v10, "be"
+
+    const v11, 0x7f130116
+
+    const v12, 0x7f0800ed
+
+    move-object v7, v0
+
+    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v0, Lde/rki/coronawarnapp/ui/Country;->BE:Lde/rki/coronawarnapp/ui/Country;
+
+    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v14, "BG"
+
+    const/4 v15, 0x2
+
+    const-string v16, "bg"
+
+    const v17, 0x7f130117
+
+    const v18, 0x7f0800ee
+
+    move-object v13, v1
+
+    invoke-direct/range {v13 .. v18}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v1, Lde/rki/coronawarnapp/ui/Country;->BG:Lde/rki/coronawarnapp/ui/Country;
+
+    new-instance v2, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v8, "CH"
+
+    const/4 v9, 0x3
+
+    const-string v10, "ch"
+
+    const v11, 0x7f130118
+
+    const v12, 0x7f0800ef
+
+    move-object v7, v2
+
+    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v2, Lde/rki/coronawarnapp/ui/Country;->CH:Lde/rki/coronawarnapp/ui/Country;
+
+    new-instance v3, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v14, "CY"
+
+    const/4 v15, 0x4
+
+    const-string v16, "cy"
+
+    const v17, 0x7f130119
+
+    const v18, 0x7f0800f0
+
+    move-object v13, v3
+
+    invoke-direct/range {v13 .. v18}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v3, Lde/rki/coronawarnapp/ui/Country;->CY:Lde/rki/coronawarnapp/ui/Country;
+
+    new-instance v4, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v8, "CZ"
+
+    const/4 v9, 0x5
+
+    const-string v10, "cz"
+
+    const v11, 0x7f13011a
+
+    const v12, 0x7f0800f1
+
+    move-object v7, v4
+
+    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v4, Lde/rki/coronawarnapp/ui/Country;->CZ:Lde/rki/coronawarnapp/ui/Country;
+
+    new-instance v5, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v14, "DE"
+
+    const/4 v15, 0x6
+
+    const-string v16, "de"
+
+    const v17, 0x7f13011b
+
+    const v18, 0x7f0800f2
+
+    move-object v13, v5
+
+    invoke-direct/range {v13 .. v18}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v5, Lde/rki/coronawarnapp/ui/Country;->DE:Lde/rki/coronawarnapp/ui/Country;
+
+    new-instance v13, Lde/rki/coronawarnapp/ui/Country;
+
+    const-string v8, "DK"
+
+    const/4 v9, 0x7
+
+    const-string v10, "dk"
+
+    const v11, 0x7f13011c
+
+    const v12, 0x7f0800f3
+
+    move-object v7, v13
+
+    invoke-direct/range {v7 .. v12}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+
+    sput-object v13, Lde/rki/coronawarnapp/ui/Country;->DK:Lde/rki/coronawarnapp/ui/Country;
 
     new-instance v7, Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v2, "AT"
+    const-string v15, "EE"
 
-    const/4 v3, 0x0
+    const/16 v16, 0x8
 
-    const-string v4, "at"
+    const-string v17, "ee"
 
-    const v5, 0x7f1200c2
+    const v18, 0x7f13011d
 
-    const v6, 0x7f0800ae
+    const v19, 0x7f0800f4
 
-    move-object v1, v7
+    move-object v14, v7
 
-    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    invoke-direct/range {v14 .. v19}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const/4 v1, 0x0
+    sput-object v7, Lde/rki/coronawarnapp/ui/Country;->EE:Lde/rki/coronawarnapp/ui/Country;
 
-    aput-object v7, v0, v1
+    new-instance v8, Lde/rki/coronawarnapp/ui/Country;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const-string v21, "ES"
 
-    const-string v9, "BE"
+    const/16 v22, 0x9
 
-    const/4 v10, 0x1
+    const-string v23, "es"
 
-    const-string v11, "be"
+    const v24, 0x7f13011e
 
-    const v12, 0x7f1200c3
+    const v25, 0x7f0800f5
 
-    const v13, 0x7f0800af
+    move-object/from16 v20, v8
 
-    move-object v8, v1
+    invoke-direct/range {v20 .. v25}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    invoke-direct/range {v8 .. v13}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    sput-object v8, Lde/rki/coronawarnapp/ui/Country;->ES:Lde/rki/coronawarnapp/ui/Country;
 
-    const/4 v2, 0x1
+    new-instance v9, Lde/rki/coronawarnapp/ui/Country;
 
-    aput-object v1, v0, v2
+    const-string v15, "FI"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v16, 0xa
 
-    const-string v4, "BG"
+    const-string v17, "fi"
 
-    const/4 v5, 0x2
+    const v18, 0x7f13011f
 
-    const-string v6, "bg"
+    const v19, 0x7f0800f7
 
-    const v7, 0x7f1200c4
+    move-object v14, v9
 
-    const v8, 0x7f0800b0
+    invoke-direct/range {v14 .. v19}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    move-object v3, v1
+    sput-object v9, Lde/rki/coronawarnapp/ui/Country;->FI:Lde/rki/coronawarnapp/ui/Country;
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    new-instance v10, Lde/rki/coronawarnapp/ui/Country;
 
-    const/4 v2, 0x2
+    const-string v21, "FR"
 
-    aput-object v1, v0, v2
+    const/16 v22, 0xb
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const-string v23, "fr"
 
-    const-string v4, "CH"
+    const v24, 0x7f130120
 
-    const/4 v5, 0x3
+    const v25, 0x7f0800f8
 
-    const-string v6, "ch"
+    move-object/from16 v20, v10
 
-    const v7, 0x7f1200c5
+    invoke-direct/range {v20 .. v25}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const v8, 0x7f0800b1
+    sput-object v10, Lde/rki/coronawarnapp/ui/Country;->FR:Lde/rki/coronawarnapp/ui/Country;
 
-    move-object v3, v1
+    new-instance v11, Lde/rki/coronawarnapp/ui/Country;
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const-string v15, "UK"
 
-    const/4 v2, 0x3
+    const/16 v16, 0xc
 
-    aput-object v1, v0, v2
+    const-string/jumbo v17, "uk"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const v18, 0x7f130134
 
-    const-string v4, "CY"
+    const v19, 0x7f08010c
 
-    const/4 v5, 0x4
+    move-object v14, v11
 
-    const-string v6, "cy"
+    invoke-direct/range {v14 .. v19}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const v7, 0x7f1200c6
+    sput-object v11, Lde/rki/coronawarnapp/ui/Country;->UK:Lde/rki/coronawarnapp/ui/Country;
 
-    const v8, 0x7f0800b2
+    new-instance v12, Lde/rki/coronawarnapp/ui/Country;
 
-    move-object v3, v1
+    const-string v21, "GR"
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const/16 v22, 0xd
 
-    const/4 v2, 0x4
+    const-string v23, "gr"
 
-    aput-object v1, v0, v2
+    const v24, 0x7f130121
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const v25, 0x7f0800f9
 
-    const-string v4, "CZ"
+    move-object/from16 v20, v12
 
-    const/4 v5, 0x5
+    invoke-direct/range {v20 .. v25}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const-string v6, "cz"
+    sput-object v12, Lde/rki/coronawarnapp/ui/Country;->GR:Lde/rki/coronawarnapp/ui/Country;
 
-    const v7, 0x7f1200c7
+    new-instance v20, Lde/rki/coronawarnapp/ui/Country;
 
-    const v8, 0x7f0800b3
+    const-string v15, "HR"
 
-    move-object v3, v1
+    const/16 v16, 0xe
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const-string v17, "hr"
 
-    const/4 v2, 0x5
+    const v18, 0x7f130122
 
-    aput-object v1, v0, v2
+    const v19, 0x7f0800fa
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    move-object/from16 v14, v20
 
-    const-string v4, "DE"
+    invoke-direct/range {v14 .. v19}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const/4 v5, 0x6
+    sput-object v20, Lde/rki/coronawarnapp/ui/Country;->HR:Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v6, "de"
+    new-instance v14, Lde/rki/coronawarnapp/ui/Country;
 
-    const v7, 0x7f1200c8
+    const-string v22, "HU"
 
-    const v8, 0x7f0800b4
+    const/16 v23, 0xf
 
-    move-object v3, v1
+    const-string v24, "hu"
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const v25, 0x7f130123
 
-    sput-object v1, Lde/rki/coronawarnapp/ui/Country;->DE:Lde/rki/coronawarnapp/ui/Country;
+    const v26, 0x7f0800fb
 
-    const/4 v2, 0x6
+    move-object/from16 v21, v14
 
-    aput-object v1, v0, v2
+    invoke-direct/range {v21 .. v26}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    sput-object v14, Lde/rki/coronawarnapp/ui/Country;->HU:Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v4, "DK"
+    new-instance v15, Lde/rki/coronawarnapp/ui/Country;
 
-    const/4 v5, 0x7
+    const-string v28, "IE"
 
-    const-string v6, "dk"
+    const/16 v29, 0x10
 
-    const v7, 0x7f1200c9
+    const-string v30, "ie"
 
-    const v8, 0x7f0800b5
+    const v31, 0x7f130124
 
-    move-object v3, v1
+    const v32, 0x7f0800fc
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    move-object/from16 v27, v15
 
-    const/4 v2, 0x7
+    invoke-direct/range {v27 .. v32}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    aput-object v1, v0, v2
+    sput-object v15, Lde/rki/coronawarnapp/ui/Country;->IE:Lde/rki/coronawarnapp/ui/Country;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    new-instance v16, Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v4, "EE"
+    const-string v22, "IS"
 
-    const/16 v5, 0x8
+    const/16 v23, 0x11
 
-    const-string v6, "ee"
+    const-string v24, "is"
 
-    const v7, 0x7f1200ca
+    const v25, 0x7f130125
 
-    const v8, 0x7f0800b6
+    const v26, 0x7f0800fd
 
-    move-object v3, v1
+    move-object/from16 v21, v16
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    invoke-direct/range {v21 .. v26}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const/16 v2, 0x8
+    sput-object v16, Lde/rki/coronawarnapp/ui/Country;->IS:Lde/rki/coronawarnapp/ui/Country;
 
-    aput-object v1, v0, v2
+    new-instance v17, Lde/rki/coronawarnapp/ui/Country;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const-string v28, "IT"
 
-    const-string v4, "ES"
+    const/16 v29, 0x12
 
-    const/16 v5, 0x9
+    const-string v30, "it"
 
-    const-string v6, "es"
+    const v31, 0x7f130126
 
-    const v7, 0x7f1200cb
+    const v32, 0x7f0800fe
 
-    const v8, 0x7f0800b7
+    move-object/from16 v27, v17
 
-    move-object v3, v1
+    invoke-direct/range {v27 .. v32}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    sput-object v17, Lde/rki/coronawarnapp/ui/Country;->IT:Lde/rki/coronawarnapp/ui/Country;
 
-    const/16 v2, 0x9
+    new-instance v18, Lde/rki/coronawarnapp/ui/Country;
 
-    aput-object v1, v0, v2
+    const-string v22, "LI"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v23, 0x13
 
-    const-string v4, "FI"
+    const-string v24, "li"
 
-    const/16 v5, 0xa
+    const v25, 0x7f130127
 
-    const-string v6, "fi"
+    const v26, 0x7f0800ff
 
-    const v7, 0x7f1200cc
+    move-object/from16 v21, v18
 
-    const v8, 0x7f0800b9
+    invoke-direct/range {v21 .. v26}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    move-object v3, v1
+    sput-object v18, Lde/rki/coronawarnapp/ui/Country;->LI:Lde/rki/coronawarnapp/ui/Country;
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    new-instance v19, Lde/rki/coronawarnapp/ui/Country;
 
-    const/16 v2, 0xa
+    const-string v28, "LT"
 
-    aput-object v1, v0, v2
+    const/16 v29, 0x14
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const-string v30, "lt"
 
-    const-string v4, "FR"
+    const v31, 0x7f130128
 
-    const/16 v5, 0xb
+    const v32, 0x7f080100
 
-    const-string v6, "fr"
+    move-object/from16 v27, v19
 
-    const v7, 0x7f1200cd
+    invoke-direct/range {v27 .. v32}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const v8, 0x7f0800ba
+    sput-object v19, Lde/rki/coronawarnapp/ui/Country;->LT:Lde/rki/coronawarnapp/ui/Country;
 
-    move-object v3, v1
+    new-instance v27, Lde/rki/coronawarnapp/ui/Country;
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const-string v22, "LU"
 
-    const/16 v2, 0xb
+    const/16 v23, 0x15
 
-    aput-object v1, v0, v2
+    const-string v24, "lu"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const v25, 0x7f130129
 
-    const-string v4, "UK"
+    const v26, 0x7f080101
 
-    const/16 v5, 0xc
+    move-object/from16 v21, v27
 
-    const-string v6, "uk"
+    invoke-direct/range {v21 .. v26}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const v7, 0x7f1200e1
+    sput-object v27, Lde/rki/coronawarnapp/ui/Country;->LU:Lde/rki/coronawarnapp/ui/Country;
 
-    const v8, 0x7f0800ce
+    new-instance v21, Lde/rki/coronawarnapp/ui/Country;
 
-    move-object v3, v1
+    const-string v29, "LV"
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const/16 v30, 0x16
 
-    const/16 v2, 0xc
+    const-string v31, "lv"
 
-    aput-object v1, v0, v2
+    const v32, 0x7f13012a
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const v33, 0x7f080102
 
-    const-string v4, "GR"
+    move-object/from16 v28, v21
 
-    const/16 v5, 0xd
+    invoke-direct/range {v28 .. v33}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const-string v6, "gr"
+    sput-object v21, Lde/rki/coronawarnapp/ui/Country;->LV:Lde/rki/coronawarnapp/ui/Country;
 
-    const v7, 0x7f1200ce
+    new-instance v22, Lde/rki/coronawarnapp/ui/Country;
 
-    const v8, 0x7f0800bb
+    const-string v35, "MT"
 
-    move-object v3, v1
+    const/16 v36, 0x17
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const-string v37, "mt"
 
-    const/16 v2, 0xd
+    const v38, 0x7f13012b
 
-    aput-object v1, v0, v2
+    const v39, 0x7f080103
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    move-object/from16 v34, v22
 
-    const-string v4, "HR"
+    invoke-direct/range {v34 .. v39}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const/16 v5, 0xe
+    sput-object v22, Lde/rki/coronawarnapp/ui/Country;->MT:Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v6, "hr"
+    new-instance v23, Lde/rki/coronawarnapp/ui/Country;
 
-    const v7, 0x7f1200cf
+    const-string v29, "NL"
 
-    const v8, 0x7f0800bc
+    const/16 v30, 0x18
 
-    move-object v3, v1
+    const-string v31, "nl"
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const v32, 0x7f13012c
 
-    const/16 v2, 0xe
+    const v33, 0x7f080104
 
-    aput-object v1, v0, v2
+    move-object/from16 v28, v23
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    invoke-direct/range {v28 .. v33}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const-string v4, "HU"
+    sput-object v23, Lde/rki/coronawarnapp/ui/Country;->NL:Lde/rki/coronawarnapp/ui/Country;
 
-    const/16 v5, 0xf
+    new-instance v24, Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v6, "hu"
+    const-string v35, "NO"
 
-    const v7, 0x7f1200d0
+    const/16 v36, 0x19
 
-    const v8, 0x7f0800bd
+    const-string v37, "no"
 
-    move-object v3, v1
+    const v38, 0x7f13012d
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const v39, 0x7f080105
 
-    const/16 v2, 0xf
+    move-object/from16 v34, v24
 
-    aput-object v1, v0, v2
+    invoke-direct/range {v34 .. v39}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    sput-object v24, Lde/rki/coronawarnapp/ui/Country;->NO:Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v4, "IE"
+    new-instance v25, Lde/rki/coronawarnapp/ui/Country;
 
-    const/16 v5, 0x10
+    const-string v29, "PL"
 
-    const-string v6, "ie"
+    const/16 v30, 0x1a
 
-    const v7, 0x7f1200d1
+    const-string v31, "pl"
 
-    const v8, 0x7f0800be
+    const v32, 0x7f13012e
 
-    move-object v3, v1
+    const v33, 0x7f080106
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    move-object/from16 v28, v25
 
-    const/16 v2, 0x10
+    invoke-direct/range {v28 .. v33}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    aput-object v1, v0, v2
+    sput-object v25, Lde/rki/coronawarnapp/ui/Country;->PL:Lde/rki/coronawarnapp/ui/Country;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    new-instance v26, Lde/rki/coronawarnapp/ui/Country;
 
-    const-string v4, "IS"
+    const-string v35, "PT"
 
-    const/16 v5, 0x11
+    const/16 v36, 0x1b
 
-    const-string v6, "is"
+    const-string v37, "pt"
 
-    const v7, 0x7f1200d2
+    const v38, 0x7f13012f
 
-    const v8, 0x7f0800bf
+    const v39, 0x7f080107
 
-    move-object v3, v1
+    move-object/from16 v34, v26
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    invoke-direct/range {v34 .. v39}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const/16 v2, 0x11
+    sput-object v26, Lde/rki/coronawarnapp/ui/Country;->PT:Lde/rki/coronawarnapp/ui/Country;
 
-    aput-object v1, v0, v2
+    new-instance v34, Lde/rki/coronawarnapp/ui/Country;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const-string v29, "RO"
 
-    const-string v4, "IT"
+    const/16 v30, 0x1c
 
-    const/16 v5, 0x12
+    const-string v31, "ro"
 
-    const-string v6, "it"
+    const v32, 0x7f130130
 
-    const v7, 0x7f1200d3
+    const v33, 0x7f080108
 
-    const v8, 0x7f0800c0
+    move-object/from16 v28, v34
 
-    move-object v3, v1
+    invoke-direct/range {v28 .. v33}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    sput-object v34, Lde/rki/coronawarnapp/ui/Country;->RO:Lde/rki/coronawarnapp/ui/Country;
 
-    const/16 v2, 0x12
+    new-instance v28, Lde/rki/coronawarnapp/ui/Country;
 
-    aput-object v1, v0, v2
+    const-string v36, "SE"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v37, 0x1d
 
-    const-string v4, "LI"
+    const-string v38, "se"
 
-    const/16 v5, 0x13
+    const v39, 0x7f130131
 
-    const-string v6, "li"
+    const v40, 0x7f080109
 
-    const v7, 0x7f1200d4
+    move-object/from16 v35, v28
 
-    const v8, 0x7f0800c1
+    invoke-direct/range {v35 .. v40}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    move-object v3, v1
+    sput-object v28, Lde/rki/coronawarnapp/ui/Country;->SE:Lde/rki/coronawarnapp/ui/Country;
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    new-instance v29, Lde/rki/coronawarnapp/ui/Country;
 
-    const/16 v2, 0x13
+    const-string v42, "SI"
 
-    aput-object v1, v0, v2
+    const/16 v43, 0x1e
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const-string/jumbo v44, "si"
 
-    const-string v4, "LT"
+    const v45, 0x7f130132
 
-    const/16 v5, 0x14
+    const v46, 0x7f08010a
 
-    const-string v6, "lt"
+    move-object/from16 v41, v29
 
-    const v7, 0x7f1200d5
+    invoke-direct/range {v41 .. v46}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const v8, 0x7f0800c2
+    sput-object v29, Lde/rki/coronawarnapp/ui/Country;->SI:Lde/rki/coronawarnapp/ui/Country;
 
-    move-object v3, v1
+    new-instance v30, Lde/rki/coronawarnapp/ui/Country;
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    const-string v36, "SK"
 
-    const/16 v2, 0x14
+    const/16 v37, 0x1f
 
-    aput-object v1, v0, v2
+    const-string/jumbo v38, "sk"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const v39, 0x7f130133
 
-    const-string v4, "LU"
+    const v40, 0x7f08010b
 
-    const/16 v5, 0x15
+    move-object/from16 v35, v30
 
-    const-string v6, "lu"
+    invoke-direct/range {v35 .. v40}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
 
-    const v7, 0x7f1200d6
+    sput-object v30, Lde/rki/coronawarnapp/ui/Country;->SK:Lde/rki/coronawarnapp/ui/Country;
 
-    const v8, 0x7f0800c3
+    move-object/from16 v31, v15
 
-    move-object v3, v1
+    const/16 v15, 0x20
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    new-array v15, v15, [Lde/rki/coronawarnapp/ui/Country;
 
-    const/16 v2, 0x15
+    const/16 v32, 0x0
 
-    aput-object v1, v0, v2
+    aput-object v6, v15, v32
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/4 v6, 0x1
 
-    const-string v4, "LV"
+    aput-object v0, v15, v6
 
-    const/16 v5, 0x16
+    const/4 v0, 0x2
 
-    const-string v6, "lv"
+    aput-object v1, v15, v0
 
-    const v7, 0x7f1200d7
+    const/4 v0, 0x3
 
-    const v8, 0x7f0800c4
+    aput-object v2, v15, v0
 
-    move-object v3, v1
+    const/4 v0, 0x4
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    aput-object v3, v15, v0
 
-    const/16 v2, 0x16
+    const/4 v0, 0x5
 
-    aput-object v1, v0, v2
+    aput-object v4, v15, v0
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/4 v0, 0x6
 
-    const-string v4, "MT"
+    aput-object v5, v15, v0
 
-    const/16 v5, 0x17
+    const/4 v0, 0x7
 
-    const-string v6, "mt"
+    aput-object v13, v15, v0
 
-    const v7, 0x7f1200d8
+    const/16 v0, 0x8
 
-    const v8, 0x7f0800c5
+    aput-object v7, v15, v0
 
-    move-object v3, v1
+    const/16 v0, 0x9
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    aput-object v8, v15, v0
 
-    const/16 v2, 0x17
+    const/16 v0, 0xa
 
-    aput-object v1, v0, v2
+    aput-object v9, v15, v0
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v0, 0xb
 
-    const-string v4, "NL"
+    aput-object v10, v15, v0
 
-    const/16 v5, 0x18
+    const/16 v0, 0xc
 
-    const-string v6, "nl"
+    aput-object v11, v15, v0
 
-    const v7, 0x7f1200d9
+    const/16 v0, 0xd
 
-    const v8, 0x7f0800c6
+    aput-object v12, v15, v0
 
-    move-object v3, v1
+    const/16 v0, 0xe
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    aput-object v20, v15, v0
 
-    const/16 v2, 0x18
+    const/16 v0, 0xf
 
-    aput-object v1, v0, v2
+    aput-object v14, v15, v0
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v0, 0x10
 
-    const-string v4, "NO"
+    aput-object v31, v15, v0
 
-    const/16 v5, 0x19
+    const/16 v0, 0x11
 
-    const-string v6, "no"
+    aput-object v16, v15, v0
 
-    const v7, 0x7f1200da
+    const/16 v0, 0x12
 
-    const v8, 0x7f0800c7
+    aput-object v17, v15, v0
 
-    move-object v3, v1
+    const/16 v0, 0x13
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    aput-object v18, v15, v0
 
-    const/16 v2, 0x19
+    const/16 v0, 0x14
 
-    aput-object v1, v0, v2
+    aput-object v19, v15, v0
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v0, 0x15
 
-    const-string v4, "PL"
+    aput-object v27, v15, v0
 
-    const/16 v5, 0x1a
+    const/16 v0, 0x16
 
-    const-string v6, "pl"
+    aput-object v21, v15, v0
 
-    const v7, 0x7f1200db
+    const/16 v0, 0x17
 
-    const v8, 0x7f0800c8
+    aput-object v22, v15, v0
 
-    move-object v3, v1
+    const/16 v0, 0x18
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    aput-object v23, v15, v0
 
-    const/16 v2, 0x1a
+    const/16 v0, 0x19
 
-    aput-object v1, v0, v2
+    aput-object v24, v15, v0
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v0, 0x1a
 
-    const-string v4, "PT"
+    aput-object v25, v15, v0
 
-    const/16 v5, 0x1b
+    const/16 v0, 0x1b
 
-    const-string v6, "pt"
+    aput-object v26, v15, v0
 
-    const v7, 0x7f1200dc
+    const/16 v0, 0x1c
 
-    const v8, 0x7f0800c9
+    aput-object v34, v15, v0
 
-    move-object v3, v1
+    const/16 v0, 0x1d
 
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
+    aput-object v28, v15, v0
 
-    const/16 v2, 0x1b
+    const/16 v0, 0x1e
 
-    aput-object v1, v0, v2
+    aput-object v29, v15, v0
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
+    const/16 v0, 0x1f
 
-    const-string v4, "RO"
+    aput-object v30, v15, v0
 
-    const/16 v5, 0x1c
-
-    const-string v6, "ro"
-
-    const v7, 0x7f1200dd
-
-    const v8, 0x7f0800ca
-
-    move-object v3, v1
-
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
-
-    const/16 v2, 0x1c
-
-    aput-object v1, v0, v2
-
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
-
-    const-string v4, "SE"
-
-    const/16 v5, 0x1d
-
-    const-string v6, "se"
-
-    const v7, 0x7f1200de
-
-    const v8, 0x7f0800cb
-
-    move-object v3, v1
-
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
-
-    const/16 v2, 0x1d
-
-    aput-object v1, v0, v2
-
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
-
-    const-string v4, "SI"
-
-    const/16 v5, 0x1e
-
-    const-string v6, "si"
-
-    const v7, 0x7f1200df
-
-    const v8, 0x7f0800cc
-
-    move-object v3, v1
-
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
-
-    const/16 v2, 0x1e
-
-    aput-object v1, v0, v2
-
-    new-instance v1, Lde/rki/coronawarnapp/ui/Country;
-
-    const-string v4, "SK"
-
-    const/16 v5, 0x1f
-
-    const-string v6, "sk"
-
-    const v7, 0x7f1200e0
-
-    const v8, 0x7f0800cd
-
-    move-object v3, v1
-
-    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/ui/Country;-><init>(Ljava/lang/String;ILjava/lang/String;II)V
-
-    const/16 v2, 0x1f
-
-    aput-object v1, v0, v2
-
-    sput-object v0, Lde/rki/coronawarnapp/ui/Country;->$VALUES:[Lde/rki/coronawarnapp/ui/Country;
+    sput-object v15, Lde/rki/coronawarnapp/ui/Country;->$VALUES:[Lde/rki/coronawarnapp/ui/Country;
 
     return-void
 .end method
@@ -722,7 +848,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/ui/Country;->$VALUES:[Lde/rki/coronawarnapp/ui/Country;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/ui/Country;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -735,10 +861,6 @@
 # virtual methods
 .method public final getLabel(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget v0, p0, Lde/rki/coronawarnapp/ui/Country;->labelRes:I
 

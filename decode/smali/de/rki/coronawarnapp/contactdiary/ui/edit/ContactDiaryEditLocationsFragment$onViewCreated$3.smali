@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactDiaryEditLocationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryEditLocationsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$onViewCreated$3\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,98:1\n295#2,2:99\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryEditLocationsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$onViewCreated$3\n*L\n44#1,2:99\n*E\n"
+    value = "SMAP\nContactDiaryEditLocationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryEditLocationsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$onViewCreated$3\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,98:1\n296#2,2:99\n*S KotlinDebug\n*F\n+ 1 ContactDiaryEditLocationsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$onViewCreated$3\n*L\n44#1:99,2\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;->access$getBinding$p(Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;)Lde/rki/coronawarnapp/databinding/ContactDiaryEditLocationsFragmentBinding;
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragment;->getBinding()Lde/rki/coronawarnapp/databinding/ContactDiaryEditLocationsFragmentBinding;
 
     move-result-object v0
 
@@ -81,7 +83,7 @@
     const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, p1}, Landroidx/constraintlayout/widget/Group;->setVisibility(I)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

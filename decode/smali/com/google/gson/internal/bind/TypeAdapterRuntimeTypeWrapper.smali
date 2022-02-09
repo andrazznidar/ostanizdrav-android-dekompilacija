@@ -1,4 +1,4 @@
-.class public final Lcom/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper;
+.class final Lcom/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper;
 .super Lcom/google/gson/TypeAdapter;
 .source "TypeAdapterRuntimeTypeWrapper.java"
 

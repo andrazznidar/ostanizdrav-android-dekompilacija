@@ -8,7 +8,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 2
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -28,4 +28,29 @@
     sput-boolean v0, Landroidx/core/widget/AutoSizeableTextView;->PLATFORM_SUPPORTS_AUTOSIZE:Z
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract setAutoSizeTextTypeUniformWithConfiguration(IIII)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "autoSizeMinTextSize",
+            "autoSizeMaxTextSize",
+            "autoSizeStepGranularity",
+            "unit"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/IllegalArgumentException;
+        }
+    .end annotation
 .end method

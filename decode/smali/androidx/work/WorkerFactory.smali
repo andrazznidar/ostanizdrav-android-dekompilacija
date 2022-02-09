@@ -30,16 +30,6 @@
     return-void
 .end method
 
-.method public static getDefaultWorkerFactory()Landroidx/work/WorkerFactory;
-    .locals 1
-
-    new-instance v0, Landroidx/work/WorkerFactory$1;
-
-    invoke-direct {v0}, Landroidx/work/WorkerFactory$1;-><init>()V
-
-    return-object v0
-.end method
-
 
 # virtual methods
 .method public abstract createWorker(Landroid/content/Context;Ljava/lang/String;Landroidx/work/WorkerParameters;)Landroidx/work/ListenableWorker;
@@ -112,7 +102,7 @@
 
     const-string v8, "Invalid class: "
 
-    invoke-static {v8, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, p2}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
@@ -169,7 +159,7 @@
 
     const-string v5, "Could not instantiate "
 
-    invoke-static {v5, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, p2}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 

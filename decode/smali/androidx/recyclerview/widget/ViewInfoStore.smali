@@ -233,24 +233,22 @@
 
     iput v0, v1, Landroidx/recyclerview/widget/ViewInfoStore$InfoRecord;->flags:I
 
-    const/4 v0, 0x4
+    const/4 v2, 0x4
 
-    if-ne p2, v0, :cond_1
+    if-ne p2, v2, :cond_1
 
     iget-object p2, v1, Landroidx/recyclerview/widget/ViewInfoStore$InfoRecord;->preInfo:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
     goto :goto_0
 
     :cond_1
-    const/16 v0, 0x8
+    const/16 v2, 0x8
 
-    if-ne p2, v0, :cond_3
+    if-ne p2, v2, :cond_3
 
     iget-object p2, v1, Landroidx/recyclerview/widget/ViewInfoStore$InfoRecord;->postInfo:Landroidx/recyclerview/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
     :goto_0
-    iget v0, v1, Landroidx/recyclerview/widget/ViewInfoStore$InfoRecord;->flags:I
-
     and-int/lit8 v0, v0, 0xc
 
     if-nez v0, :cond_2

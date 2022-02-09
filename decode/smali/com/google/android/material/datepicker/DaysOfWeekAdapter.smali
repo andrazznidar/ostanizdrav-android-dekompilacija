@@ -53,11 +53,9 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->getMaximum(I)I
 
-    move-result v0
+    move-result v1
 
-    iput v0, p0, Lcom/google/android/material/datepicker/DaysOfWeekAdapter;->daysInWeek:I
-
-    iget-object v0, p0, Lcom/google/android/material/datepicker/DaysOfWeekAdapter;->calendar:Ljava/util/Calendar;
+    iput v1, p0, Lcom/google/android/material/datepicker/DaysOfWeekAdapter;->daysInWeek:I
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getFirstDayOfWeek()I
 
@@ -139,7 +137,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f0c00bc
+    sget v0, Lcom/google/android/material/R$layout;->mtrl_calendar_day_of_week:I
 
     invoke-virtual {p2, v0, p3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -167,15 +165,21 @@
 
     invoke-virtual {p2, v2, p1}, Ljava/util/Calendar;->set(II)V
 
-    iget-object p1, p0, Lcom/google/android/material/datepicker/DaysOfWeekAdapter;->calendar:Ljava/util/Calendar;
+    invoke-virtual {v0}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
-    sget p2, Lcom/google/android/material/datepicker/DaysOfWeekAdapter;->CALENDAR_DAY_STYLE:I
+    move-result-object p1
 
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    invoke-virtual {p1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v3
+    move-result-object p1
 
-    invoke-virtual {p1, v2, p2, v3}, Ljava/util/Calendar;->getDisplayName(IILjava/util/Locale;)Ljava/lang/String;
+    iget-object p1, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    iget-object p2, p0, Lcom/google/android/material/datepicker/DaysOfWeekAdapter;->calendar:Ljava/util/Calendar;
+
+    sget v3, Lcom/google/android/material/datepicker/DaysOfWeekAdapter;->CALENDAR_DAY_STYLE:I
+
+    invoke-virtual {p2, v2, v3, p1}, Ljava/util/Calendar;->getDisplayName(IILjava/util/Locale;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -185,7 +189,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f1201bf
+    sget p2, Lcom/google/android/material/R$string;->mtrl_picker_day_of_week_column_header:I
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

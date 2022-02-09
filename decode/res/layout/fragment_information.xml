@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/information_container" android:tag="layout/fragment_information_0" android:layout_width="fill_parent" android:layout_height="fill_parent" android:contentDescription="@string/information_title"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <include android:id="@id/information_header" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toTopOf="@id/scrollview" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" layout="@layout/include_header" />
-    <ScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="@dimen/spacing_normal" android:layout_marginBottom="@dimen/spacing_normal" android:fillViewport="true" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/information_header">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@id/information_header" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:title="@string/information_title" style="@style/CWAToolbar.Close" />
+    <ScrollView android:scrollbarStyle="outsideOverlay" android:id="@id/scrollview" android:paddingTop="@dimen/spacing_normal" android:paddingBottom="@dimen/spacing_normal" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/information_header">
         <LinearLayout android:orientation="vertical" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="wrap_content">
             <include android:id="@id/information_release" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
             <include android:id="@id/information_about" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
@@ -11,10 +11,11 @@
             <include android:id="@id/information_privacy" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
             <include android:id="@id/information_technical" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
             <include android:id="@id/information_contact" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
+            <include android:id="@id/information_debuglog" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
             <include android:id="@id/information_legal" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
-            <include android:id="@id/information_debuglog" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_row" />
             <TextView android:id="@id/information_version" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:layout_marginStart="@dimen/guideline_body_title_padding" style="@style/body2Medium" />
-            <TextView android:id="@id/information_enf_version" android:background="?selectableItemBackground" android:paddingTop="@dimen/spacing_tiny" android:paddingBottom="@dimen/spacing_tiny" android:focusable="true" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/guideline_body_title_padding" style="@style/body2Medium" />
+            <TextView android:id="@id/information_enf_version" android:background="?selectableItemBackground" android:paddingTop="@dimen/spacing_tiny" android:paddingBottom="@dimen/spacing_tiny" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/guideline_body_title_padding" style="@style/body2Medium" />
+            <Space android:layout_width="fill_parent" android:layout_height="@dimen/spacing_huge" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

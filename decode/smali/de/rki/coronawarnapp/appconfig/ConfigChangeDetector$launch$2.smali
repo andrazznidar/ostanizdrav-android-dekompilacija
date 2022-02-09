@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.appconfig.ConfigChangeDetector$launch$2"
     f = "ConfigChangeDetector.kt"
     l = {
-        0x20
+        0x21
     }
     m = "invokeSuspend"
 .end annotation
@@ -42,6 +42,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$launch$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$launch$2;->this$0:Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
 
@@ -68,10 +78,6 @@
         }
     .end annotation
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$launch$2;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$launch$2;->this$0:Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector;
@@ -83,14 +89,12 @@
     return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
+    check-cast p1, Lde/rki/coronawarnapp/appconfig/ConfigData;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$launch$2;
 
@@ -122,7 +126,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -136,17 +140,17 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/ConfigChangeDetector$launch$2;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/appconfig/ConfigData;
 
-    const-string v1, "ConfigChangeDetector"
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v3, "ConfigChangeDetector"
 
-    move-result-object v1
+    invoke-virtual {v1, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v3, 0x0
 

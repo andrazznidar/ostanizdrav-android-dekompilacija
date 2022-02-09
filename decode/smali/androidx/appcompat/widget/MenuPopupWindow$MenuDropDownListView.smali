@@ -223,11 +223,11 @@
     return v1
 
     :cond_1
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget v0, p0, Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;->mRetreatKey:I
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v0, :cond_3
 
     const/4 p1, -0x1
 
@@ -237,8 +237,24 @@
 
     move-result-object p1
 
+    instance-of p2, p1, Landroid/widget/HeaderViewListAdapter;
+
+    if-eqz p2, :cond_2
+
+    check-cast p1, Landroid/widget/HeaderViewListAdapter;
+
+    invoke-virtual {p1}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+
+    move-result-object p1
+
     check-cast p1, Landroidx/appcompat/view/menu/MenuAdapter;
 
+    goto :goto_0
+
+    :cond_2
+    check-cast p1, Landroidx/appcompat/view/menu/MenuAdapter;
+
+    :goto_0
     iget-object p1, p1, Landroidx/appcompat/view/menu/MenuAdapter;->mAdapterMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
     const/4 p2, 0x0
@@ -247,7 +263,7 @@
 
     return v1
 
-    :cond_2
+    :cond_3
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result p1

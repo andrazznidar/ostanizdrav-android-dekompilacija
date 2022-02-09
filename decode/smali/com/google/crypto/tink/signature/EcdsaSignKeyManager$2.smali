@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public createKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Ljava/lang/Object;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -77,11 +77,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->toCurveType1(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v0}, Lcom/google/crypto/tink/signature/SigUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/EllipticCurves;->generateKeyPair(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;)Ljava/security/KeyPair;
 
     move-result-object v0
 
@@ -107,9 +107,7 @@
 
     iget-object v3, p0, Lcom/google/crypto/tink/signature/EcdsaSignKeyManager$2;->this$0:Lcom/google/crypto/tink/signature/EcdsaSignKeyManager;
 
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_1
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -117,9 +115,9 @@
 
     check-cast v3, Lcom/google/crypto/tink/proto/EcdsaPublicKey;
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v3, v5}, Lcom/google/crypto/tink/proto/EcdsaPublicKey;->access$100(Lcom/google/crypto/tink/proto/EcdsaPublicKey;I)V
+    invoke-static {v3, v4}, Lcom/google/crypto/tink/proto/EcdsaPublicKey;->access$100(Lcom/google/crypto/tink/proto/EcdsaPublicKey;I)V
 
     invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -181,7 +179,7 @@
 
     iget-object v2, p0, Lcom/google/crypto/tink/signature/EcdsaSignKeyManager$2;->this$0:Lcom/google/crypto/tink/signature/EcdsaSignKeyManager;
 
-    if-eqz v2, :cond_0
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -189,7 +187,7 @@
 
     check-cast v2, Lcom/google/crypto/tink/proto/EcdsaPrivateKey;
 
-    invoke-static {v2, v5}, Lcom/google/crypto/tink/proto/EcdsaPrivateKey;->access$100(Lcom/google/crypto/tink/proto/EcdsaPrivateKey;I)V
+    invoke-static {v2, v4}, Lcom/google/crypto/tink/proto/EcdsaPrivateKey;->access$100(Lcom/google/crypto/tink/proto/EcdsaPrivateKey;I)V
 
     invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
@@ -226,12 +224,6 @@
     check-cast p1, Lcom/google/crypto/tink/proto/EcdsaPrivateKey;
 
     return-object p1
-
-    :cond_0
-    throw v4
-
-    :cond_1
-    throw v4
 .end method
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
@@ -285,7 +277,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/material/R$style;->validateEcdsaParams(Lcom/google/crypto/tink/proto/EcdsaParams;)V
+    invoke-static {p1}, Lcom/google/crypto/tink/signature/SigUtil;->validateEcdsaParams(Lcom/google/crypto/tink/proto/EcdsaParams;)V
 
     return-void
 .end method

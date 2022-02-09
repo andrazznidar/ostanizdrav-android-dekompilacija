@@ -34,10 +34,9 @@
     c = "de.rki.coronawarnapp.nearby.modules.tracing.DefaultTracingStatus$setTracing$1"
     f = "DefaultTracingStatus.kt"
     l = {
-        0x32,
-        0x35,
-        0x39,
-        0x3c
+        0x31,
+        0x33,
+        0x35
     }
     m = "invokeSuspend"
 .end annotation
@@ -47,10 +46,37 @@
 .field public final synthetic $enable:Z
 
 .field public final synthetic $onError:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/lang/Throwable;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final synthetic $onPermissionRequired:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Lcom/google/android/gms/common/api/Status;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final synthetic $onSuccess:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/lang/Boolean;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public label:I
 
@@ -60,6 +86,32 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;",
+            "Z",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Ljava/lang/Boolean;",
+            "Lkotlin/Unit;",
+            ">;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lcom/google/android/gms/common/api/Status;",
+            "Lkotlin/Unit;",
+            ">;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Ljava/lang/Throwable;",
+            "Lkotlin/Unit;",
+            ">;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
 
@@ -94,10 +146,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
@@ -119,16 +167,30 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
-    invoke-virtual {p0, p1, p2}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-object v6, p2
 
-    move-result-object p1
+    check-cast v6, Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;
+    new-instance p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
+
+    iget-boolean v2, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$enable:Z
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onSuccess:Lkotlin/jvm/functions/Function1;
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onPermissionRequired:Lkotlin/jvm/functions/Function1;
+
+    iget-object v5, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onError:Lkotlin/jvm/functions/Function1;
+
+    move-object v0, p1
+
+    invoke-direct/range {v0 .. v6}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;-><init>(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
 
     sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -140,38 +202,35 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    .locals 5
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
     iget v1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->label:I
 
-    const/4 v2, 0x4
+    const/4 v2, 0x3
 
-    const/4 v3, 0x3
+    const/4 v3, 0x2
 
-    const/4 v4, 0x2
+    const/4 v4, 0x1
 
-    const/4 v5, 0x1
-
-    if-eqz v1, :cond_4
-
-    if-eq v1, v5, :cond_3
+    if-eqz v1, :cond_3
 
     if-eq v1, v4, :cond_2
 
-    if-eq v1, v3, :cond_1
+    if-eq v1, v3, :cond_0
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v2, :cond_1
 
+    :cond_0
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_3
+    goto :goto_1
 
-    :cond_0
+    :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
@@ -180,19 +239,9 @@
 
     throw p1
 
-    :cond_1
-    :try_start_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_2
-
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    :try_start_1
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -201,29 +250,27 @@
     :catch_0
     move-exception p1
 
-    goto :goto_4
+    goto :goto_2
 
-    :cond_4
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    :cond_3
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_2
-    iget-boolean p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$enable:Z
-
-    if-eqz p1, :cond_8
-
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
 
-    iput v5, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->label:I
+    iget-object p1, p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->isTracingEnabled:Lkotlinx/coroutines/flow/Flow;
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->isEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput v4, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->label:I
+
+    invoke-static {p1, p0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_5
+    if-ne p1, v0, :cond_4
 
     return-object v0
 
-    :cond_5
+    :cond_4
     :goto_0
     check-cast p1, Ljava/lang/Boolean;
 
@@ -231,103 +278,65 @@
 
     move-result p1
 
-    if-eqz p1, :cond_6
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$enable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onSuccess:Lkotlin/jvm/functions/Function1;
+    if-eqz v1, :cond_5
 
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    if-nez p1, :cond_5
 
-    invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto/16 :goto_5
-
-    :cond_6
-    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
-
-    iput v4, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->label:I
-
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->asyncStart(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_7
-
-    return-object v0
-
-    :cond_7
-    :goto_1
-    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onSuccess:Lkotlin/jvm/functions/Function1;
-
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_5
-
-    :cond_8
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
 
     iput v3, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->label:I
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->isEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->access$asyncStart(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_9
+    if-ne p1, v0, :cond_6
 
     return-object v0
 
-    :cond_9
-    :goto_2
-    check-cast p1, Ljava/lang/Boolean;
+    :cond_5
+    if-nez v1, :cond_6
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    if-eqz p1, :cond_6
 
-    move-result p1
-
-    if-nez p1, :cond_a
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onSuccess:Lkotlin/jvm/functions/Function1;
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_5
-
-    :cond_a
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
 
     iput v2, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->label:I
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->asyncStop(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->access$asyncStop(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_b
+    if-ne p1, v0, :cond_6
 
     return-object v0
 
-    :cond_b
-    :goto_3
+    :cond_6
+    :goto_1
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onSuccess:Lkotlin/jvm/functions/Function1;
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$enable:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
 
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto :goto_5
+    goto :goto_3
 
-    :goto_4
+    :goto_2
     instance-of v0, p1, Lcom/google/android/gms/common/api/ApiException;
 
     const/4 v1, 0x0
 
     const-string v2, "DefaultTracingStatus"
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_7
 
     move-object v0, p1
 
@@ -339,17 +348,17 @@
 
     const/4 v4, 0x6
 
-    if-ne v3, v4, :cond_c
+    if-ne v3, v4, :cond_7
 
-    invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v2
+    invoke-virtual {v3, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    const-string v3, "Permission needs to be granted by user."
+    const-string v2, "Permission needs to be granted by user."
 
-    invoke-virtual {v2, p1, v3, v1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, p1, v2, v1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$setTracing$1;->$onPermissionRequired:Lkotlin/jvm/functions/Function1;
 
@@ -361,12 +370,12 @@
 
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_5
+    goto :goto_3
 
-    :cond_c
-    invoke-static {v2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    :cond_7
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v0
+    invoke-virtual {v0, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -378,7 +387,7 @@
 
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_5
+    :goto_3
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

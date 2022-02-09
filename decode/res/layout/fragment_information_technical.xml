@@ -2,7 +2,7 @@
 <LinearLayout android:orientation="vertical" android:id="@id/information_technical_container" android:tag="layout/fragment_information_technical_0" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:contentDescription="@string/information_technical_title"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <include android:id="@id/information_technical_header" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_header" />
-    <ScrollView android:tag="binding_1" android:paddingBottom="@dimen/guideline_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+    <ScrollView android:scrollbarStyle="outsideOverlay" android:tag="binding_1" android:paddingBottom="@dimen/spacing_normal" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
         <include android:id="@id/information_technical_header_details" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/include_information_details" />
     </ScrollView>
 </LinearLayout>

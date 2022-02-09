@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->initialRegistration(Ljava/lang/String;Lde/rki/coronawarnapp/verification/server/VerificationKeyType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->initialRegistration(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,10 +17,10 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0x24,
-        0x2e,
-        0x30,
-        0x35
+        0x23,
+        0x2a,
+        0x2c,
+        0x31
     }
     m = "initialRegistration"
 .end annotation
@@ -47,6 +47,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$initialRegistration$1;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
@@ -74,7 +84,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, v0, p0}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->initialRegistration(Ljava/lang/String;Lde/rki/coronawarnapp/verification/server/VerificationKeyType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->initialRegistration(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

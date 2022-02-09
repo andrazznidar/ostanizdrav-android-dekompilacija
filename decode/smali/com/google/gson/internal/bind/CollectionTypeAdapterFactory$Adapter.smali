@@ -1,4 +1,4 @@
-.class public final Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$Adapter;
+.class final Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$Adapter;
 .super Lcom/google/gson/TypeAdapter;
 .source "CollectionTypeAdapterFactory.java"
 

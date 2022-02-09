@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.Analytics"
     f = "Analytics.kt"
     l = {
-        0x111,
+        0xff,
         0xb6,
         0xd1
     }
@@ -40,6 +40,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/analytics/Analytics;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/datadonation/analytics/Analytics;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/datadonation/analytics/Analytics$submitIfWanted$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$submitIfWanted$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/Analytics;
 

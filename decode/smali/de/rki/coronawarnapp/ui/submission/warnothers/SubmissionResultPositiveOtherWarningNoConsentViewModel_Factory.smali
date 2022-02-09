@@ -24,6 +24,16 @@
     .end annotation
 .end field
 
+.field public final checkInRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final dispatcherProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -76,8 +86,31 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "dispatcherProvider",
+            "enfClientProvider",
+            "autoSubmissionProvider",
+            "tekHistoryUpdaterFactoryProvider",
+            "interoperabilityRepositoryProvider",
+            "submissionRepositoryProvider",
+            "checkInRepositoryProvider",
+            "analyticsKeySubmissionCollectorProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,6 +133,9 @@
             "Lde/rki/coronawarnapp/submission/SubmissionRepository;",
             ">;",
             "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/presencetracing/checkins/CheckInRepository;",
+            ">;",
+            "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;",
             ">;)V"
         }
@@ -119,7 +155,9 @@
 
     iput-object p6, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
 
-    iput-object p7, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+    iput-object p7, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel_Factory;->checkInRepositoryProvider:Ljavax/inject/Provider;
+
+    iput-object p8, p0, Lde/rki/coronawarnapp/ui/submission/warnothers/SubmissionResultPositiveOtherWarningNoConsentViewModel_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

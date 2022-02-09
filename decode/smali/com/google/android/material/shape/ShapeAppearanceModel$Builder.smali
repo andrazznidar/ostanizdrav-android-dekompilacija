@@ -254,17 +254,19 @@
 .end method
 
 .method public static compatCornerTreatmentSize(Lcom/google/android/material/shape/CornerTreatment;)F
-    .locals 1
+    .locals 2
 
     instance-of v0, p0, Lcom/google/android/material/shape/RoundedCornerTreatment;
+
+    const/high16 v1, -0x40800000    # -1.0f
 
     if-eqz v0, :cond_0
 
     check-cast p0, Lcom/google/android/material/shape/RoundedCornerTreatment;
 
-    iget p0, p0, Lcom/google/android/material/shape/RoundedCornerTreatment;->radius:F
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return p0
+    return v1
 
     :cond_0
     instance-of v0, p0, Lcom/google/android/material/shape/CutCornerTreatment;
@@ -273,14 +275,10 @@
 
     check-cast p0, Lcom/google/android/material/shape/CutCornerTreatment;
 
-    iget p0, p0, Lcom/google/android/material/shape/CutCornerTreatment;->size:F
-
-    return p0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
-    const/high16 p0, -0x40800000    # -1.0f
-
-    return p0
+    return v1
 .end method
 
 

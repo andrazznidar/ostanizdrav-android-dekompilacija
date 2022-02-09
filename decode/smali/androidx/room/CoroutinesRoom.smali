@@ -21,17 +21,12 @@
         }
     .end annotation
 
+    .annotation runtime Lkotlin/jvm/JvmStatic;
+    .end annotation
+
     const-string v0, "db"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "tableNames"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "callable"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;
 
@@ -71,6 +66,9 @@
             "-TR;>;)",
             "Ljava/lang/Object;"
         }
+    .end annotation
+
+    .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
     invoke-virtual {p0}, Landroidx/room/RoomDatabase;->isOpen()Z
@@ -115,14 +113,14 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    invoke-static {p0}, Landroidx/navigation/ui/R$anim;->getTransactionDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-static {p0}, Landroidx/room/CoroutinesRoomKt;->getTransactionDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object p0
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p0}, Landroidx/navigation/ui/R$anim;->getQueryDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-static {p0}, Landroidx/room/CoroutinesRoomKt;->getQueryDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object p0
 
@@ -136,7 +134,7 @@
 
     invoke-direct {p0, p2, p1}, Landroidx/room/CoroutinesRoom$Companion$execute$2;-><init>(Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v0, p0, p3}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, p0, p3}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 9
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/items/DetailsItem;
 
@@ -57,35 +57,42 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragment$detailsAdapter$1;->this$0:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragment;->access$getVm$p(Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragment;)Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel;
+    sget-object v1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragment;->getVm()Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel;
 
-    const/4 v1, 0x0
+    move-result-object v2
 
-    if-eqz v0, :cond_1
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "item"
+    const-string v0, "item"
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    instance-of v2, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;
+    instance-of v0, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
-    new-instance v2, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$onItemClicked$1;
+    const/4 v3, 0x0
 
-    invoke-direct {v2, v0, p1, v1}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$onItemClicked$1;-><init>(Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel;Lde/rki/coronawarnapp/tracing/ui/details/items/DetailsItem;Lkotlin/coroutines/Continuation;)V
+    const/4 v4, 0x0
 
-    const/4 p1, 0x1
+    const/4 v5, 0x0
 
-    invoke-static {v0, v1, v2, p1, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+    new-instance v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$onItemClicked$1;
+
+    const/4 v0, 0x0
+
+    invoke-direct {v6, v2, p1, v0}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel$onItemClicked$1;-><init>(Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentViewModel;Lde/rki/coronawarnapp/tracing/ui/details/items/DetailsItem;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v7, 0x7
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v2 .. v8}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineExceptionHandler;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 
     :cond_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_1
-    throw v1
 .end method

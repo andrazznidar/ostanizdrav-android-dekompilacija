@@ -18,11 +18,11 @@
 
 
 # instance fields
-.field public final enfClientProvider:Ljavax/inject/Provider;
+.field public final keyCacheRepositoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/nearby/ENFClient;",
+            "Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;",
             ">;"
         }
     .end annotation
@@ -42,6 +42,17 @@
 # direct methods
 .method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "timeStamperProvider",
+            "keyCacheRepositoryProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,7 +60,7 @@
             "Lde/rki/coronawarnapp/util/TimeStamper;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/nearby/ENFClient;",
+            "Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;",
             ">;)V"
         }
     .end annotation
@@ -58,7 +69,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;->timeStamperProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;->enfClientProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -76,17 +87,17 @@
 
     check-cast v0, Lde/rki/coronawarnapp/util/TimeStamper;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;->enfClientProvider:Ljavax/inject/Provider;
+    iget-object v1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation_Factory;->keyCacheRepositoryProvider:Ljavax/inject/Provider;
 
     invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/nearby/ENFClient;
+    check-cast v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     new-instance v2, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;-><init>(Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/nearby/ENFClient;)V
+    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;-><init>(Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
 
     return-object v2
 .end method

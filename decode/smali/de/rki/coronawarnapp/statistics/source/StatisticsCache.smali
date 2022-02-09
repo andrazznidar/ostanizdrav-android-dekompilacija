@@ -55,9 +55,9 @@
 
     if-eqz p1, :cond_0
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object p1
+    invoke-virtual {p1, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -77,13 +77,13 @@
 
     if-eqz v2, :cond_2
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v1
+    invoke-virtual {v2, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     array-length v3, p1
 
@@ -91,11 +91,11 @@
 
     move-result-object v3
 
-    aput-object v3, v2, v0
+    aput-object v3, v1, v0
 
     const-string v0, "Overwriting with new data (size=%d)"
 
-    invoke-virtual {v1, v0, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_2
     iget-object v0, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsCache;->cacheFile:Ljava/io/File;
@@ -104,48 +104,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    if-nez v0, :cond_3
 
-    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+    goto :goto_0
 
     :cond_3
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+
+    :goto_0
     iget-object v0, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsCache;->cacheFile:Ljava/io/File;
 
-    const-string v1, "$this$writeBytes"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "array"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v1, Ljava/io/FileOutputStream;
-
-    invoke-direct {v1, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    :try_start_0
-    invoke-virtual {v1, p1}, Ljava/io/FileOutputStream;->write([B)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 p1, 0x0
-
-    invoke-static {v1, p1}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lkotlin/io/FilesKt__FileReadWriteKt;->writeBytes(Ljava/io/File;[B)V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    throw p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :catchall_1
-    move-exception v0
-
-    invoke-static {v1, p1}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    throw v0
 .end method

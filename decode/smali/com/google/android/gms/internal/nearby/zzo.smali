@@ -40,7 +40,7 @@
 
     check-cast p2, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    sget v0, Lcom/google/android/gms/internal/nearby/zzaw;->zza:I
+    sget-object v0, Lcom/google/android/gms/internal/nearby/zzaw;->zzb:Lcom/google/android/gms/common/api/Api;
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getService()Landroid/os/IInterface;
 
@@ -48,19 +48,27 @@
 
     check-cast p1, Lcom/google/android/gms/internal/nearby/zzdq;
 
-    new-instance v0, Lcom/google/android/gms/internal/nearby/zzeu;
+    new-instance v0, Lokhttp3/ConnectionPool;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzeu;-><init>(Lcom/google/android/gms/internal/nearby/zzes;)V
+    invoke-direct {v0, v1}, Lokhttp3/ConnectionPool;-><init>(I)V
 
     new-instance v1, Lcom/google/android/gms/internal/nearby/zzan;
 
     invoke-direct {v1, p2}, Lcom/google/android/gms/internal/nearby/zzan;-><init>(Lcom/google/android/gms/tasks/TaskCompletionSource;)V
 
+    iget-object p2, v0, Lokhttp3/ConnectionPool;->delegate:Ljava/lang/Object;
+
+    move-object v0, p2
+
+    check-cast v0, Lcom/google/android/gms/internal/nearby/zzeu;
+
     iput-object v1, v0, Lcom/google/android/gms/internal/nearby/zzeu;->zza:Lcom/google/android/gms/common/api/internal/IStatusCallback;
 
-    invoke-interface {p1, v0}, Lcom/google/android/gms/internal/nearby/zzdq;->zzd(Lcom/google/android/gms/internal/nearby/zzeu;)V
+    check-cast p2, Lcom/google/android/gms/internal/nearby/zzeu;
+
+    invoke-interface {p1, p2}, Lcom/google/android/gms/internal/nearby/zzdq;->zzd(Lcom/google/android/gms/internal/nearby/zzeu;)V
 
     return-void
 .end method

@@ -6,8 +6,6 @@
 # static fields
 .field public static final SCANNER_ALPHA:[I
 
-.field public static final TAG:Ljava/lang/String;
-
 
 # instance fields
 .field public cameraPreview:Lcom/journeyapps/barcodescanner/CameraPreview;
@@ -44,8 +42,6 @@
 
 .field public previewSize:Lcom/journeyapps/barcodescanner/Size;
 
-.field public final resultColor:I
-
 .field public final resultPointColor:I
 
 .field public scannerAlpha:I
@@ -56,12 +52,6 @@
     .locals 1
 
     const-class v0, Lcom/journeyapps/barcodescanner/ViewfinderView;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/journeyapps/barcodescanner/ViewfinderView;->TAG:Ljava/lang/String;
 
     const/16 v0, 0x8
 
@@ -113,53 +103,51 @@
 
     move-result-object p2
 
-    const v1, 0x7f060137
+    sget v1, Lcom/google/zxing/client/android/R$styleable;->zxing_finder_zxing_viewfinder_mask:I
 
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getColor(I)I
+    sget v2, Lcom/google/zxing/client/android/R$color;->zxing_viewfinder_mask:I
 
-    move-result v1
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
-    const/4 v2, 0x4
+    move-result v2
 
-    invoke-virtual {p2, v2, v1}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {p2, v1, v2}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->maskColor:I
 
-    const v1, 0x7f060133
+    sget v1, Lcom/google/zxing/client/android/R$styleable;->zxing_finder_zxing_result_view:I
 
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getColor(I)I
+    sget v2, Lcom/google/zxing/client/android/R$color;->zxing_result_view:I
 
-    move-result v1
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
-    invoke-virtual {p2, v0, v1}, Landroid/content/res/TypedArray;->getColor(II)I
+    move-result v2
 
-    move-result v1
+    invoke-virtual {p2, v1, v2}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    iput v1, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->resultColor:I
+    sget v1, Lcom/google/zxing/client/android/R$styleable;->zxing_finder_zxing_viewfinder_laser:I
 
-    const v1, 0x7f060136
+    sget v2, Lcom/google/zxing/client/android/R$color;->zxing_viewfinder_laser:I
 
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x2
-
-    invoke-virtual {p2, v2, v1}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {p2, v1, v2}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->laserColor:I
 
-    const v1, 0x7f060132
+    sget v1, Lcom/google/zxing/client/android/R$styleable;->zxing_finder_zxing_possible_result_points:I
 
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getColor(I)I
+    sget v2, Lcom/google/zxing/client/android/R$color;->zxing_possible_result_points:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result p1
-
-    const/4 v1, 0x0
 
     invoke-virtual {p2, v1, p1}, Landroid/content/res/TypedArray;->getColor(II)I
 
@@ -167,7 +155,7 @@
 
     iput p1, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->resultPointColor:I
 
-    const/4 p1, 0x3
+    sget p1, Lcom/google/zxing/client/android/R$styleable;->zxing_finder_zxing_viewfinder_laser_visibility:I
 
     invoke-virtual {p2, p1, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -177,7 +165,9 @@
 
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
-    iput v1, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->scannerAlpha:I
+    const/4 p1, 0x0
+
+    iput p1, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->scannerAlpha:I
 
     new-instance p1, Ljava/util/ArrayList;
 
@@ -322,15 +312,13 @@
 
     iget v2, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->scannerAlpha:I
 
-    aget v1, v1, v2
+    aget v2, v1, v2
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     iget v0, p0, Lcom/journeyapps/barcodescanner/ViewfinderView;->scannerAlpha:I
 
     add-int/lit8 v0, v0, 0x1
-
-    sget-object v1, Lcom/journeyapps/barcodescanner/ViewfinderView;->SCANNER_ALPHA:[I
 
     array-length v1, v1
 

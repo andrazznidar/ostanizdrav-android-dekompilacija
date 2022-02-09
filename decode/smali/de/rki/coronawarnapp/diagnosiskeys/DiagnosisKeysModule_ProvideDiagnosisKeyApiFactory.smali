@@ -54,6 +54,21 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "module",
+            "clientProvider",
+            "urlProvider",
+            "gsonConverterFactoryProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,7 +101,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule_ProvideDiagnosisKeyApiFactory;->module:Lde/rki/coronawarnapp/diagnosiskeys/DiagnosisKeysModule;
 
@@ -114,13 +129,13 @@
 
     check-cast v3, Lretrofit2/converter/gson/GsonConverterFactory;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "client"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "url"
+    const-string/jumbo v0, "url"
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -138,38 +153,15 @@
 
     iget-object v1, v0, Lretrofit2/Retrofit$Builder;->converterFactories:Ljava/util/List;
 
-    const-string v2, "factory == null"
+    const-class v2, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
 
-    invoke-static {v3, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const-string v4, "Builder()\n        .clien\u2026osisKeyApiV1::class.java)"
 
-    move-result-object v2
-
-    check-cast v2, Lretrofit2/Converter$Factory;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0}, Lretrofit2/Retrofit$Builder;->build()Lretrofit2/Retrofit;
+    invoke-static {v1, v3, v0, v2, v4}, Lde/rki/coronawarnapp/appconfig/AppConfigModule$$ExternalSyntheticOutline0;->m(Ljava/util/List;Lretrofit2/converter/gson/GsonConverterFactory;Lretrofit2/Retrofit$Builder;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
-
-    const-class v1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
-
-    invoke-virtual {v0, v1}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v1, "Retrofit.Builder()\n     \u2026osisKeyApiV1::class.java)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
-
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

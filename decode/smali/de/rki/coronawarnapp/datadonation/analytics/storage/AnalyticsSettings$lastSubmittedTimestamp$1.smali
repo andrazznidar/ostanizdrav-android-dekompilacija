@@ -64,7 +64,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$createFlowPreference"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

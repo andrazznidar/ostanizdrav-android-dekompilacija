@@ -13,20 +13,35 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/OnSuccessListener<",
-        "Lcom/google/android/gms/safetynet/SafetyNetApi$AttestationResponse;",
-        ">;"
+        "Lcom/google/android/gms/tasks/OnSuccessListener;"
     }
 .end annotation
 
 
 # instance fields
 .field public final synthetic $cont:Lkotlinx/coroutines/CancellableContinuation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "Lcom/google/android/gms/safetynet/SafetyNetApi$AttestationResponse;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlinx/coroutines/CancellableContinuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lcom/google/android/gms/safetynet/SafetyNetApi$AttestationResponse;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$1;->$cont:Lkotlinx/coroutines/CancellableContinuation;
 
@@ -42,11 +57,11 @@
 
     check-cast p1, Lcom/google/android/gms/safetynet/SafetyNetApi$AttestationResponse;
 
-    const-string v0, "SafetyNetWrapper"
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v1, "SafetyNetWrapper"
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v1, 0x1
 
@@ -58,7 +73,7 @@
 
     const-string v2, "Attestation finished with %s"
 
-    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$1;->$cont:Lkotlinx/coroutines/CancellableContinuation;
 

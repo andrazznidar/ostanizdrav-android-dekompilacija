@@ -153,33 +153,33 @@
     :cond_4
     iget-object v6, v1, Lcom/airbnb/lottie/network/NetworkFetcher;->networkCache:Lcom/airbnb/lottie/network/NetworkCache;
 
-    if-eqz v6, :cond_13
-
-    sget-object v7, Lcom/airbnb/lottie/network/FileExtension;->JSON:Lcom/airbnb/lottie/network/FileExtension;
+    invoke-static {v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_3
-    new-instance v8, Ljava/io/File;
+    new-instance v7, Ljava/io/File;
 
     invoke-virtual {v6}, Lcom/airbnb/lottie/network/NetworkCache;->parentDir()Ljava/io/File;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v0, v7, v4}, Lcom/airbnb/lottie/network/NetworkCache;->filenameForUrl(Ljava/lang/String;Lcom/airbnb/lottie/network/FileExtension;Z)Ljava/lang/String;
+    sget-object v9, Lcom/airbnb/lottie/network/FileExtension;->JSON:Lcom/airbnb/lottie/network/FileExtension;
+
+    invoke-static {v0, v9, v4}, Lcom/airbnb/lottie/network/NetworkCache;->filenameForUrl(Ljava/lang/String;Lcom/airbnb/lottie/network/FileExtension;Z)Ljava/lang/String;
 
     move-result-object v10
 
-    invoke-direct {v8, v9, v10}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v7, v8, v10}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-virtual {v8}, Ljava/io/File;->exists()Z
+    invoke-virtual {v7}, Ljava/io/File;->exists()Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_5
+    if-eqz v8, :cond_5
 
     goto :goto_2
 
     :cond_5
-    new-instance v8, Ljava/io/File;
+    new-instance v7, Ljava/io/File;
 
     invoke-virtual {v6}, Lcom/airbnb/lottie/network/NetworkCache;->parentDir()Ljava/io/File;
 
@@ -187,11 +187,11 @@
 
     invoke-static {v0, v3, v4}, Lcom/airbnb/lottie/network/NetworkCache;->filenameForUrl(Ljava/lang/String;Lcom/airbnb/lottie/network/FileExtension;Z)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-direct {v8, v6, v9}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v7, v6, v8}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-virtual {v8}, Ljava/io/File;->exists()Z
+    invoke-virtual {v7}, Ljava/io/File;->exists()Z
 
     move-result v6
 
@@ -200,76 +200,62 @@
     goto :goto_2
 
     :cond_6
-    move-object v8, v5
+    move-object v7, v5
 
     :goto_2
-    if-nez v8, :cond_7
+    if-nez v7, :cond_7
 
     goto :goto_3
 
     :cond_7
     new-instance v6, Ljava/io/FileInputStream;
 
-    invoke-direct {v6, v8}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v6, v7}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_3
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
 
-    invoke-virtual {v8}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
     const-string v10, ".zip"
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v8, v10}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_8
+    if-eqz v8, :cond_8
 
-    move-object v7, v3
+    move-object v9, v3
 
     :cond_8
-    const-string v9, "Cache hit for "
+    invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    const-string v10, " at "
+    sget-object v7, Lcom/airbnb/lottie/utils/Logger;->INSTANCE:Lcom/airbnb/lottie/LottieLogger;
 
-    invoke-static {v9, v0, v10}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline32(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v9
+    new-instance v7, Landroid/util/Pair;
 
-    invoke-virtual {v8}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/airbnb/lottie/utils/Logger;->debug(Ljava/lang/String;)V
-
-    new-instance v8, Landroid/util/Pair;
-
-    invoke-direct {v8, v7, v6}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v7, v9, v6}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_4
 
     :catch_0
     :goto_3
-    move-object v8, v5
+    move-object v7, v5
 
     :goto_4
-    if-nez v8, :cond_9
+    if-nez v7, :cond_9
 
     goto :goto_6
 
     :cond_9
-    iget-object v6, v8, Landroid/util/Pair;->first:Ljava/lang/Object;
+    iget-object v6, v7, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v6, Lcom/airbnb/lottie/network/FileExtension;
 
-    iget-object v7, v8, Landroid/util/Pair;->second:Ljava/lang/Object;
+    iget-object v7, v7, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v7, Ljava/io/InputStream;
 
@@ -310,46 +296,18 @@
 
     invoke-direct {v0, v3}, Lcom/airbnb/lottie/LottieResult;-><init>(Ljava/lang/Object;)V
 
-    goto/16 :goto_b
+    goto :goto_b
 
     :cond_c
-    new-instance v3, Ljava/lang/StringBuilder;
+    sget-object v3, Lcom/airbnb/lottie/utils/Logger;->INSTANCE:Lcom/airbnb/lottie/LottieLogger;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Animation for "
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, " not found in cache. Fetching from network."
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/airbnb/lottie/utils/Logger;->debug(Ljava/lang/String;)V
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v3, "LottieFetchResult close failed "
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    sget-object v6, Lcom/airbnb/lottie/utils/Logger;->INSTANCE:Lcom/airbnb/lottie/LottieLogger;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Fetching "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Lcom/airbnb/lottie/utils/Logger;->debug(Ljava/lang/String;)V
+    invoke-static {v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_4
     iget-object v6, v1, Lcom/airbnb/lottie/network/NetworkFetcher;->fetcher:Lcom/airbnb/lottie/network/DefaultLottieNetworkFetcher;
@@ -361,79 +319,63 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    const/4 v6, 0x1
-
     :try_start_5
-    iget-object v7, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
+    iget-object v6, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
 
-    invoke-virtual {v7}, Ljava/net/HttpURLConnection;->getResponseCode()I
+    invoke-virtual {v6}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
-    move-result v7
+    move-result v6
 
-    div-int/lit8 v7, v7, 0x64
+    div-int/lit8 v6, v6, 0x64
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
-    if-ne v7, v8, :cond_d
+    if-ne v6, v7, :cond_d
 
-    move v7, v6
-
-    goto :goto_8
+    const/4 v4, 0x1
 
     :catch_1
     :cond_d
-    move v7, v4
-
-    :goto_8
-    if-eqz v7, :cond_f
+    if-eqz v4, :cond_e
 
     :try_start_6
-    iget-object v7, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
+    iget-object v4, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
 
-    invoke-virtual {v7}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    invoke-virtual {v4}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
-    move-result-object v7
+    move-result-object v4
 
-    iget-object v8, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
+    iget-object v6, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
 
-    invoke-virtual {v8}, Ljava/net/HttpURLConnection;->getContentType()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/net/HttpURLConnection;->getContentType()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v6
 
-    invoke-virtual {v1, v0, v7, v8, v2}, Lcom/airbnb/lottie/network/NetworkFetcher;->fromInputStream(Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;)Lcom/airbnb/lottie/LottieResult;
+    invoke-virtual {v1, v0, v4, v6, v2}, Lcom/airbnb/lottie/network/NetworkFetcher;->fromInputStream(Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;)Lcom/airbnb/lottie/LottieResult;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    sget-object v1, Lcom/airbnb/lottie/utils/Logger;->INSTANCE:Lcom/airbnb/lottie/LottieLogger;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    const-string v2, "Completed fetch from network. Success: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, v0, Lcom/airbnb/lottie/LottieResult;->value:Ljava/lang/Object;
-
-    if-eqz v2, :cond_e
-
-    move v4, v6
-
-    :cond_e
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/airbnb/lottie/utils/Logger;->debug(Ljava/lang/String;)V
+    :goto_8
+    :try_start_7
+    iget-object v1, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
 
     goto :goto_9
 
-    :cond_f
+    :cond_e
+    :try_start_8
     new-instance v0, Lcom/airbnb/lottie/LottieResult;
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -445,17 +387,17 @@
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     invoke-direct {v0, v1}, Lcom/airbnb/lottie/LottieResult;-><init>(Ljava/lang/Throwable;)V
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_3
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
+
+    goto :goto_8
 
     :goto_9
-    :try_start_7
-    iget-object v1, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
-
+    :try_start_9
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_2
 
     goto :goto_b
 
@@ -474,19 +416,21 @@
     :catch_3
     move-exception v0
 
-    :try_start_8
+    :try_start_a
     new-instance v1, Lcom/airbnb/lottie/LottieResult;
 
     invoke-direct {v1, v0}, Lcom/airbnb/lottie/LottieResult;-><init>(Ljava/lang/Throwable;)V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_2
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_2
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_f
 
-    :try_start_9
-    invoke-interface {v5}, Ljava/io/Closeable;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_4
+    :try_start_b
+    iget-object v0, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
+
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
+    :try_end_b
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_4
 
     goto :goto_a
 
@@ -495,18 +439,18 @@
 
     invoke-static {v3, v0}, Lcom/airbnb/lottie/utils/Logger;->warning(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_10
+    :cond_f
     :goto_a
     move-object v0, v1
 
     :goto_b
     iget-object v1, p0, Lcom/airbnb/lottie/LottieCompositionFactory$1;->val$cacheKey:Ljava/lang/String;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_10
 
     iget-object v2, v0, Lcom/airbnb/lottie/LottieResult;->value:Ljava/lang/Object;
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_10
 
     sget-object v3, Lcom/airbnb/lottie/model/LottieCompositionCache;->INSTANCE:Lcom/airbnb/lottie/model/LottieCompositionCache;
 
@@ -514,16 +458,18 @@
 
     invoke-virtual {v3, v1, v2}, Lcom/airbnb/lottie/model/LottieCompositionCache;->put(Ljava/lang/String;Lcom/airbnb/lottie/LottieComposition;)V
 
-    :cond_11
+    :cond_10
     return-object v0
 
     :goto_c
-    if-eqz v5, :cond_12
+    if-eqz v5, :cond_11
 
-    :try_start_a
-    invoke-interface {v5}, Ljava/io/Closeable;->close()V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_5
+    :try_start_c
+    iget-object v1, v5, Lcom/airbnb/lottie/network/DefaultLottieFetchResult;->connection:Ljava/net/HttpURLConnection;
+
+    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
+    :try_end_c
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_5
 
     goto :goto_d
 
@@ -532,10 +478,7 @@
 
     invoke-static {v3, v1}, Lcom/airbnb/lottie/utils/Logger;->warning(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_12
+    :cond_11
     :goto_d
     throw v0
-
-    :cond_13
-    throw v5
 .end method

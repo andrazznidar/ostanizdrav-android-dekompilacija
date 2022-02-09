@@ -1105,63 +1105,6 @@
     return-void
 .end method
 
-.method public static getVersionForDimensions(II)Lcom/google/zxing/datamatrix/decoder/Version;
-    .locals 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/zxing/FormatException;
-        }
-    .end annotation
-
-    and-int/lit8 v0, p0, 0x1
-
-    if-nez v0, :cond_2
-
-    and-int/lit8 v0, p1, 0x1
-
-    if-nez v0, :cond_2
-
-    sget-object v0, Lcom/google/zxing/datamatrix/decoder/Version;->VERSIONS:[Lcom/google/zxing/datamatrix/decoder/Version;
-
-    array-length v1, v0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_1
-
-    aget-object v3, v0, v2
-
-    iget v4, v3, Lcom/google/zxing/datamatrix/decoder/Version;->symbolSizeRows:I
-
-    if-ne v4, p0, :cond_0
-
-    iget v4, v3, Lcom/google/zxing/datamatrix/decoder/Version;->symbolSizeColumns:I
-
-    if-ne v4, p1, :cond_0
-
-    return-object v3
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object p0
-
-    throw p0
-
-    :cond_2
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object p0
-
-    throw p0
-.end method
-
 
 # virtual methods
 .method public toString()Ljava/lang/String;

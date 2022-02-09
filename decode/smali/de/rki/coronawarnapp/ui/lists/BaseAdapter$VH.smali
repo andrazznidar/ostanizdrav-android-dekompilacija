@@ -22,10 +22,6 @@
 .method public constructor <init>(ILandroid/view/ViewGroup;)V
     .locals 2
 
-    const-string v0, "parent"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -76,7 +72,7 @@
 
     move-result-object v0
 
-    const-string v1, "LayoutInflater.from(context)"
+    const-string v1, "from(context)"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

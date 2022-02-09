@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 3
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragmentEvents;
 
@@ -63,13 +63,13 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f090051
+    const v1, 0x7f0a0067
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_0
     sget-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragmentEvents$ShowNewReleaseFragment;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingFragmentEvents$ShowNewReleaseFragment;
@@ -88,7 +88,7 @@
 
     invoke-direct {v0, v1}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragmentDirections$ActionLoadingFragmentToNewReleaseInfoFragment;-><init>(Z)V
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     goto :goto_1
 
@@ -105,11 +105,11 @@
 
     new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
 
-    const v1, 0x7f090052
+    const v1, 0x7f0a0068
 
     invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     goto :goto_1
 
@@ -120,81 +120,64 @@
 
     move-result p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
-    sget-object p1, Lde/rki/coronawarnapp/ui/main/MainActivity;->Companion:Lde/rki/coronawarnapp/ui/main/MainActivity$Companion;
+    sget-object p1, Lde/rki/coronawarnapp/ui/main/MainActivity;->Companion:Lde/rki/coronawarnapp/ui/main/MainActivity;
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment;
+
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    const-string v0, "requireContext()"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment;
 
-    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object v0
 
-    const-string v2, "requireContext()"
+    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const-string v2, "requireActivity().intent"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v2, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->Companion:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$Companion;
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/ui/main/MainActivity;->start(Landroid/content/Context;Landroid/content/Intent;)V
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment;
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment;
 
-    invoke-virtual {v2}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
+    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
-    move-result-object v2
+    move-result-object p1
 
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {v2}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v2
+    if-nez p1, :cond_3
 
     goto :goto_0
 
     :cond_3
-    move-object v2, v3
-
-    :goto_0
-    if-eqz v2, :cond_4
-
-    const-string v4, "shortcut"
-
-    invoke-virtual {v2, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_4
-
-    invoke-static {v2}, Lde/rki/coronawarnapp/util/AppShortcuts;->valueOf(Ljava/lang/String;)Lde/rki/coronawarnapp/util/AppShortcuts;
-
-    move-result-object v3
-
-    :cond_4
-    invoke-virtual {p1, v0, v3}, Lde/rki/coronawarnapp/ui/main/MainActivity$Companion;->start(Landroid/content/Context;Lde/rki/coronawarnapp/util/AppShortcuts;)V
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment;
-
-    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_5
-
     invoke-virtual {p1, v1, v1}, Landroid/app/Activity;->overridePendingTransition(II)V
 
-    :cond_5
+    :goto_0
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingFragment;
 
     invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->getActivity()Landroidx/fragment/app/FragmentActivity;
 
     move-result-object p1
 
-    if-eqz p1, :cond_6
+    if-nez p1, :cond_4
 
+    goto :goto_1
+
+    :cond_4
     invoke-virtual {p1}, Landroid/app/Activity;->finish()V
 
-    :cond_6
+    :cond_5
     :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -56,17 +56,11 @@
 
     iget v1, p1, Lcom/google/zxing/qrcode/detector/FinderPattern;->count:I
 
-    if-ne v0, v1, :cond_2
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
 
-    iget p2, p2, Lcom/google/zxing/qrcode/detector/FinderPattern;->estimatedModuleSize:F
+    move-result v0
 
-    iget v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;->average:F
-
-    sub-float/2addr p2, v0
-
-    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
-
-    move-result p2
+    if-nez v0, :cond_0
 
     iget p1, p1, Lcom/google/zxing/qrcode/detector/FinderPattern;->estimatedModuleSize:F
 
@@ -78,31 +72,20 @@
 
     move-result p1
 
-    cmpg-float v0, p2, p1
+    iget p2, p2, Lcom/google/zxing/qrcode/detector/FinderPattern;->estimatedModuleSize:F
 
-    if-gez v0, :cond_0
+    iget v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;->average:F
 
-    const/4 p1, 0x1
+    sub-float/2addr p2, v0
 
-    goto :goto_0
+    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
+
+    move-result p2
+
+    invoke-static {p1, p2}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v0
 
     :cond_0
-    cmpl-float p1, p2, p1
-
-    if-nez p1, :cond_1
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, -0x1
-
-    goto :goto_0
-
-    :cond_2
-    sub-int p1, v0, v1
-
-    :goto_0
-    return p1
+    return v0
 .end method

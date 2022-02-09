@@ -17,22 +17,26 @@
 # instance fields
 .field public final currentSize:J
 
-.field public final isRecording:Z
+.field public final isActionInProgress:Z
 
-.field public final sharingInProgress:Z
+.field public final isLowStorage:Z
+
+.field public final isRecording:Z
 
 
 # direct methods
-.method public constructor <init>(ZZJ)V
+.method public constructor <init>(ZZZJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-boolean p1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
 
-    iput-boolean p2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->sharingInProgress:Z
+    iput-boolean p2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isLowStorage:Z
 
-    iput-wide p3, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
+    iput-boolean p3, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isActionInProgress:Z
+
+    iput-wide p4, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
 
     return-void
 .end method
@@ -40,52 +44,69 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;
-
-    iget-boolean v0, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
-
-    iget-boolean v1, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget-boolean v0, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->sharingInProgress:Z
-
-    iget-boolean v1, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->sharingInProgress:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget-wide v0, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
-
-    iget-wide v2, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
-
-    cmp-long p1, v0, v2
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    const/4 p1, 0x0
+    instance-of v1, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;
 
-    return p1
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    :goto_0
-    const/4 p1, 0x1
+    check-cast p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;
 
-    return p1
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
+
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
+
+    if-eq v1, v3, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isLowStorage:Z
+
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isLowStorage:Z
+
+    if-eq v1, v3, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isActionInProgress:Z
+
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isActionInProgress:Z
+
+    if-eq v1, v3, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-wide v3, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
+
+    iget-wide v5, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
+
+    cmp-long p1, v3, v5
+
+    if-eqz p1, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 5
 
     iget-boolean v0, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
 
@@ -98,13 +119,24 @@
     :cond_0
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-boolean v2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->sharingInProgress:Z
+    iget-boolean v2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isLowStorage:Z
 
     if-eqz v2, :cond_1
 
-    goto :goto_0
+    move v2, v1
 
     :cond_1
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isActionInProgress:Z
+
+    if-eqz v2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
     move v1, v2
 
     :goto_0
@@ -114,9 +146,13 @@
 
     iget-wide v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
 
-    invoke-static {v1, v2}, L$r8$backportedMethods$utility$Long$1$hashCode;->hashCode(J)I
+    const/16 v3, 0x20
 
-    move-result v1
+    ushr-long v3, v1, v3
+
+    xor-long/2addr v1, v3
+
+    long-to-int v1, v1
 
     add-int/2addr v0, v1
 
@@ -124,39 +160,49 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 7
 
-    const-string v0, "State(isRecording="
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isLowStorage:Z
 
-    move-result-object v0
+    iget-boolean v2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isActionInProgress:Z
 
-    iget-boolean v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->isRecording:Z
+    iget-wide v3, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v1, ", sharingInProgress="
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, "State(isRecording="
 
-    iget-boolean v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->sharingInProgress:Z
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", currentSize="
+    const-string v0, ", isLowStorage="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;->currentSize:J
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string v0, ", isActionInProgress="
 
-    const-string v1, ")"
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v0, ", currentSize="
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

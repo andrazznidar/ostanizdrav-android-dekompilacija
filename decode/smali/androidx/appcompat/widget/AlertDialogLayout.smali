@@ -15,7 +15,9 @@
 .method public static resolveMinimumHeight(Landroid/view/View;)I
     .locals 3
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->getMinimumHeight()I
 
     move-result v0
 
@@ -186,14 +188,16 @@
 
     check-cast v6, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
 
-    iget v7, v6, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;->gravity:I
+    iget v7, v6, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     if-gez v7, :cond_3
 
     move v7, v2
 
     :cond_3
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    sget-object v8, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v8
 
@@ -211,7 +215,7 @@
 
     if-eq v7, v8, :cond_4
 
-    iget v7, v6, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v7, v6, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v7, p1
 
@@ -220,7 +224,7 @@
     :cond_4
     sub-int v7, p2, v4
 
-    iget v8, v6, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v8, v6, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     goto :goto_2
 
@@ -231,11 +235,11 @@
 
     add-int/2addr v7, p1
 
-    iget v8, v6, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v8, v6, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v7, v8
 
-    iget v8, v6, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v8, v6, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     :goto_2
     sub-int/2addr v7, v8
@@ -250,7 +254,7 @@
     add-int/2addr p3, p5
 
     :cond_6
-    iget v8, v6, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v8, v6, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr p3, v8
 
@@ -260,7 +264,7 @@
 
     invoke-virtual {v3, v7, p3, v4, v8}, Landroid/view/View;->layout(IIII)V
 
-    iget v3, v6, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v3, v6, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v5, v3
 
@@ -320,7 +324,7 @@
 
     move-result v9
 
-    const v10, 0x7f090544
+    sget v10, Landroidx/appcompat/R$id;->topPanel:I
 
     if-ne v9, v10, :cond_1
 
@@ -329,7 +333,7 @@
     goto :goto_1
 
     :cond_1
-    const v10, 0x7f0900d0
+    sget v10, Landroidx/appcompat/R$id;->buttonPanel:I
 
     if-ne v9, v10, :cond_2
 
@@ -338,11 +342,11 @@
     goto :goto_1
 
     :cond_2
-    const v10, 0x7f09014a
+    sget v10, Landroidx/appcompat/R$id;->contentPanel:I
 
     if-eq v9, v10, :cond_3
 
-    const v10, 0x7f090158
+    sget v10, Landroidx/appcompat/R$id;->customPanel:I
 
     if-ne v9, v10, :cond_4
 
@@ -640,19 +644,19 @@
 
     check-cast v13, Landroidx/appcompat/widget/LinearLayoutCompat$LayoutParams;
 
-    iget v0, v13, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iget v0, v13, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_10
 
-    iget v14, v13, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iget v14, v13, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    iput v0, v13, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v0, v13, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     const/4 v3, 0x0
 
@@ -666,7 +670,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    iput v14, v13, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v14, v13, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     :cond_10
     add-int/lit8 v12, v12, 0x1

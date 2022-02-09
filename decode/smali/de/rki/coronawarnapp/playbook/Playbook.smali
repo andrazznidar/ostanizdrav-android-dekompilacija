@@ -25,19 +25,15 @@
     .end annotation
 .end method
 
-.method public abstract initialRegistration(Ljava/lang/String;Lde/rki/coronawarnapp/verification/server/VerificationKeyType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public abstract initialRegistration(Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/lang/String;",
-            "Lde/rki/coronawarnapp/verification/server/VerificationKeyType;",
+            "Lde/rki/coronawarnapp/coronatest/server/RegistrationRequest;",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Lkotlin/Pair<",
-            "Ljava/lang/String;",
-            "+",
-            "Lde/rki/coronawarnapp/util/formatter/TestResult;",
-            ">;>;)",
+            "Lde/rki/coronawarnapp/coronatest/server/RegistrationData;",
+            ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
@@ -64,7 +60,7 @@
             "Ljava/lang/String;",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Lde/rki/coronawarnapp/util/formatter/TestResult;",
+            "Lde/rki/coronawarnapp/coronatest/server/CoronaTestResultResponse;",
             ">;)",
             "Ljava/lang/Object;"
         }

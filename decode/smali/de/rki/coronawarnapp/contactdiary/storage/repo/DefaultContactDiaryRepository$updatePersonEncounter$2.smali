@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;->updatePersonEncounter(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;->updatePersonEncounter(JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -33,14 +33,26 @@
     c = "de.rki.coronawarnapp.contactdiary.storage.repo.DefaultContactDiaryRepository$updatePersonEncounter$2"
     f = "DefaultContactDiaryRepository.kt"
     l = {
-        0xd0
+        0xe2,
+        0xe4
     }
     m = "invokeSuspend"
 .end annotation
 
 
 # instance fields
-.field public final synthetic $contactDiaryPersonEncounter:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
+.field public final synthetic $encounterId:J
+
+.field public final synthetic $update:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public label:I
 
@@ -48,42 +60,63 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;",
+            "J",
+            "Lkotlin/jvm/functions/Function1<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;",
+            "+",
+            "Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;",
+            ">;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$contactDiaryPersonEncounter:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
+    iput-wide p2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$encounterId:J
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$update:Lkotlin/jvm/functions/Function1;
 
     const/4 p1, 0x1
 
-    invoke-direct {p0, p1, p3}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p5}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    check-cast p1, Lkotlin/coroutines/Continuation;
+    move-object v5, p1
 
-    const-string v0, "completion"
+    check-cast v5, Lkotlin/coroutines/Continuation;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;
+    new-instance p1, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$contactDiaryPersonEncounter:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
+    iget-wide v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$encounterId:J
 
-    invoke-direct {v0, v1, v2, p1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;Lkotlin/coroutines/Continuation;)V
+    iget-object v4, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$update:Lkotlin/jvm/functions/Function1;
 
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    move-object v0, p1
 
-    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;JLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
+
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -91,21 +124,25 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 6
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
     iget v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->label:I
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
-    if-eqz v1, :cond_1
+    const/4 v3, 0x1
+
+    if-eqz v1, :cond_2
+
+    if-eq v1, v3, :cond_1
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -117,13 +154,46 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$contactDiaryPersonEncounter:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
+    goto :goto_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->toContactDiaryPersonEncounterEntity(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;)Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterEntity;
+    :cond_2
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;->getContactDiaryPersonEncounterDao()Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonEncounterDao;
 
     move-result-object p1
+
+    iget-wide v4, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$encounterId:J
+
+    iput v3, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->label:I
+
+    invoke-virtual {p1, v4, v5, p0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryPersonEncounterDao;->entityForId(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_3
+
+    return-object v0
+
+    :cond_3
+    :goto_0
+    check-cast p1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapper;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->$update:Lkotlin/jvm/functions/Function1;
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapperKt;->toContactDiaryPersonEncounter(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterWrapper;)Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
+
+    move-result-object p1
+
+    invoke-interface {v1, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
 
@@ -131,18 +201,22 @@
 
     move-result-object v1
 
+    invoke-static {p1}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterEntityKt;->toContactDiaryPersonEncounterEntity(Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter;)Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryPersonEncounterEntity;
+
+    move-result-object p1
+
     iput v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$updatePersonEncounter$2;->label:I
 
     invoke-virtual {v1, p1, p0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/BaseRoomDao;->update(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v0, :cond_4
 
     return-object v0
 
-    :cond_2
-    :goto_0
+    :cond_4
+    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

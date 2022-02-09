@@ -132,7 +132,9 @@
 
     if-eqz p14, :cond_0
 
-    instance-of p1, p5, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+    invoke-virtual {p14, p5}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->hasExtensions(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Z
+
+    move-result p1
 
     if-eqz p1, :cond_0
 
@@ -267,7 +269,7 @@
 .end method
 
 .method public static newSchemaForRawMessageInfo(Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;Lcom/google/crypto/tink/shaded/protobuf/NewInstanceSchema;Lcom/google/crypto/tink/shaded/protobuf/ListFieldSchema;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;)Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;
-    .locals 37
+    .locals 36
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -289,29 +291,29 @@
 
     move-object/from16 v0, p0
 
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;->PROTO3:Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;
+    iget v1, v0, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->flags:I
 
-    iget v2, v0, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->flags:I
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    and-int/2addr v1, v2
 
-    and-int/2addr v2, v3
+    const/4 v3, 0x2
 
-    if-ne v2, v3, :cond_0
+    if-ne v1, v2, :cond_0
 
-    sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;->PROTO2:Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    move-object v2, v1
+    move v1, v3
 
     :goto_0
     const/4 v4, 0x0
 
-    if-ne v2, v1, :cond_1
+    if-ne v1, v3, :cond_1
 
-    move v11, v3
+    move v11, v2
 
     goto :goto_1
 
@@ -323,177 +325,136 @@
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v5
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->charAt(I)C
 
-    move-result v5
+    move-result v6
 
     const v7, 0xd800
 
-    if-lt v5, v7, :cond_3
+    if-lt v6, v7, :cond_3
 
-    and-int/lit16 v5, v5, 0x1fff
+    and-int/lit16 v6, v6, 0x1fff
 
-    move v8, v3
+    move v9, v2
 
-    const/16 v9, 0xd
+    const/16 v10, 0xd
 
     :goto_2
-    add-int/lit8 v10, v8, 0x1
-
-    invoke-virtual {v1, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    if-lt v8, v7, :cond_2
-
-    and-int/lit16 v8, v8, 0x1fff
-
-    shl-int/2addr v8, v9
-
-    or-int/2addr v5, v8
-
-    add-int/lit8 v9, v9, 0xd
-
-    move v8, v10
-
-    goto :goto_2
-
-    :cond_2
-    shl-int/2addr v8, v9
-
-    or-int/2addr v5, v8
-
-    goto :goto_3
-
-    :cond_3
-    move v10, v3
-
-    :goto_3
-    add-int/lit8 v8, v10, 0x1
-
-    invoke-virtual {v1, v10}, Ljava/lang/String;->charAt(I)C
-
-    move-result v9
-
-    if-lt v9, v7, :cond_5
-
-    and-int/lit16 v9, v9, 0x1fff
-
-    const/16 v10, 0xd
-
-    :goto_4
-    add-int/lit8 v12, v8, 0x1
-
-    invoke-virtual {v1, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    if-lt v8, v7, :cond_4
-
-    and-int/lit16 v8, v8, 0x1fff
-
-    shl-int/2addr v8, v10
-
-    or-int/2addr v9, v8
-
-    add-int/lit8 v10, v10, 0xd
-
-    move v8, v12
-
-    goto :goto_4
-
-    :cond_4
-    shl-int/2addr v8, v10
-
-    or-int/2addr v9, v8
-
-    move v8, v12
-
-    :cond_5
-    if-nez v9, :cond_6
-
-    sget-object v9, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->EMPTY_INT_ARRAY:[I
-
-    move v6, v4
-
-    move v10, v6
-
-    move v12, v10
-
-    move v13, v12
-
-    move v15, v13
-
-    move-object v14, v9
-
-    move v9, v15
-
-    goto/16 :goto_e
-
-    :cond_6
-    add-int/lit8 v9, v8, 0x1
-
-    invoke-virtual {v1, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    if-lt v8, v7, :cond_8
-
-    and-int/lit16 v8, v8, 0x1fff
-
-    const/16 v10, 0xd
-
-    :goto_5
     add-int/lit8 v12, v9, 0x1
 
     invoke-virtual {v1, v9}, Ljava/lang/String;->charAt(I)C
 
     move-result v9
 
-    if-lt v9, v7, :cond_7
+    if-lt v9, v7, :cond_2
 
     and-int/lit16 v9, v9, 0x1fff
 
     shl-int/2addr v9, v10
 
-    or-int/2addr v8, v9
+    or-int/2addr v6, v9
 
     add-int/lit8 v10, v10, 0xd
 
     move v9, v12
 
-    goto :goto_5
+    goto :goto_2
 
-    :cond_7
+    :cond_2
     shl-int/2addr v9, v10
 
-    or-int/2addr v8, v9
+    or-int/2addr v6, v9
 
-    move v9, v12
+    goto :goto_3
 
-    :cond_8
+    :cond_3
+    move v12, v2
+
+    :goto_3
+    add-int/lit8 v9, v12, 0x1
+
+    invoke-virtual {v1, v12}, Ljava/lang/String;->charAt(I)C
+
+    move-result v10
+
+    if-lt v10, v7, :cond_5
+
+    and-int/lit16 v10, v10, 0x1fff
+
+    const/16 v12, 0xd
+
+    :goto_4
+    add-int/lit8 v13, v9, 0x1
+
+    invoke-virtual {v1, v9}, Ljava/lang/String;->charAt(I)C
+
+    move-result v9
+
+    if-lt v9, v7, :cond_4
+
+    and-int/lit16 v9, v9, 0x1fff
+
+    shl-int/2addr v9, v12
+
+    or-int/2addr v10, v9
+
+    add-int/lit8 v12, v12, 0xd
+
+    move v9, v13
+
+    goto :goto_4
+
+    :cond_4
+    shl-int/2addr v9, v12
+
+    or-int/2addr v10, v9
+
+    move v9, v13
+
+    :cond_5
+    if-nez v10, :cond_6
+
+    sget-object v10, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->EMPTY_INT_ARRAY:[I
+
+    move v2, v4
+
+    move v8, v2
+
+    move v12, v8
+
+    move v13, v12
+
+    move v15, v13
+
+    move-object v14, v10
+
+    move v10, v15
+
+    goto/16 :goto_f
+
+    :cond_6
     add-int/lit8 v10, v9, 0x1
 
     invoke-virtual {v1, v9}, Ljava/lang/String;->charAt(I)C
 
     move-result v9
 
-    if-lt v9, v7, :cond_a
+    if-lt v9, v7, :cond_8
 
     and-int/lit16 v9, v9, 0x1fff
 
     const/16 v12, 0xd
 
-    :goto_6
+    :goto_5
     add-int/lit8 v13, v10, 0x1
 
     invoke-virtual {v1, v10}, Ljava/lang/String;->charAt(I)C
 
     move-result v10
 
-    if-lt v10, v7, :cond_9
+    if-lt v10, v7, :cond_7
 
     and-int/lit16 v10, v10, 0x1fff
 
@@ -505,36 +466,36 @@
 
     move v10, v13
 
-    goto :goto_6
+    goto :goto_5
 
-    :cond_9
+    :cond_7
     shl-int/2addr v10, v12
 
     or-int/2addr v9, v10
 
     move v10, v13
 
-    :cond_a
+    :cond_8
     add-int/lit8 v12, v10, 0x1
 
     invoke-virtual {v1, v10}, Ljava/lang/String;->charAt(I)C
 
     move-result v10
 
-    if-lt v10, v7, :cond_c
+    if-lt v10, v7, :cond_a
 
     and-int/lit16 v10, v10, 0x1fff
 
     const/16 v13, 0xd
 
-    :goto_7
+    :goto_6
     add-int/lit8 v14, v12, 0x1
 
     invoke-virtual {v1, v12}, Ljava/lang/String;->charAt(I)C
 
     move-result v12
 
-    if-lt v12, v7, :cond_b
+    if-lt v12, v7, :cond_9
 
     and-int/lit16 v12, v12, 0x1fff
 
@@ -546,36 +507,36 @@
 
     move v12, v14
 
-    goto :goto_7
+    goto :goto_6
 
-    :cond_b
+    :cond_9
     shl-int/2addr v12, v13
 
     or-int/2addr v10, v12
 
     move v12, v14
 
-    :cond_c
+    :cond_a
     add-int/lit8 v13, v12, 0x1
 
     invoke-virtual {v1, v12}, Ljava/lang/String;->charAt(I)C
 
     move-result v12
 
-    if-lt v12, v7, :cond_e
+    if-lt v12, v7, :cond_c
 
     and-int/lit16 v12, v12, 0x1fff
 
     const/16 v14, 0xd
 
-    :goto_8
+    :goto_7
     add-int/lit8 v15, v13, 0x1
 
     invoke-virtual {v1, v13}, Ljava/lang/String;->charAt(I)C
 
     move-result v13
 
-    if-lt v13, v7, :cond_d
+    if-lt v13, v7, :cond_b
 
     and-int/lit16 v13, v13, 0x1fff
 
@@ -587,36 +548,36 @@
 
     move v13, v15
 
-    goto :goto_8
+    goto :goto_7
 
-    :cond_d
+    :cond_b
     shl-int/2addr v13, v14
 
     or-int/2addr v12, v13
 
     move v13, v15
 
-    :cond_e
+    :cond_c
     add-int/lit8 v14, v13, 0x1
 
     invoke-virtual {v1, v13}, Ljava/lang/String;->charAt(I)C
 
     move-result v13
 
-    if-lt v13, v7, :cond_10
+    if-lt v13, v7, :cond_e
 
     and-int/lit16 v13, v13, 0x1fff
 
     const/16 v15, 0xd
 
-    :goto_9
+    :goto_8
     add-int/lit8 v16, v14, 0x1
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->charAt(I)C
 
     move-result v14
 
-    if-lt v14, v7, :cond_f
+    if-lt v14, v7, :cond_d
 
     and-int/lit16 v14, v14, 0x1fff
 
@@ -628,36 +589,36 @@
 
     move/from16 v14, v16
 
-    goto :goto_9
+    goto :goto_8
 
-    :cond_f
+    :cond_d
     shl-int/2addr v14, v15
 
     or-int/2addr v13, v14
 
     move/from16 v14, v16
 
-    :cond_10
+    :cond_e
     add-int/lit8 v15, v14, 0x1
 
     invoke-virtual {v1, v14}, Ljava/lang/String;->charAt(I)C
 
     move-result v14
 
-    if-lt v14, v7, :cond_12
+    if-lt v14, v7, :cond_10
 
     and-int/lit16 v14, v14, 0x1fff
 
     const/16 v16, 0xd
 
-    :goto_a
+    :goto_9
     add-int/lit8 v17, v15, 0x1
 
     invoke-virtual {v1, v15}, Ljava/lang/String;->charAt(I)C
 
     move-result v15
 
-    if-lt v15, v7, :cond_11
+    if-lt v15, v7, :cond_f
 
     and-int/lit16 v15, v15, 0x1fff
 
@@ -669,23 +630,23 @@
 
     move/from16 v15, v17
 
-    goto :goto_a
+    goto :goto_9
 
-    :cond_11
+    :cond_f
     shl-int v15, v15, v16
 
     or-int/2addr v14, v15
 
     move/from16 v15, v17
 
-    :cond_12
+    :cond_10
     add-int/lit8 v16, v15, 0x1
 
     invoke-virtual {v1, v15}, Ljava/lang/String;->charAt(I)C
 
     move-result v15
 
-    if-lt v15, v7, :cond_14
+    if-lt v15, v7, :cond_12
 
     and-int/lit16 v15, v15, 0x1fff
 
@@ -693,14 +654,14 @@
 
     const/16 v16, 0xd
 
-    :goto_b
+    :goto_a
     add-int/lit8 v18, v4, 0x1
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
-    if-lt v4, v7, :cond_13
+    if-lt v4, v7, :cond_11
 
     and-int/lit16 v4, v4, 0x1fff
 
@@ -712,214 +673,264 @@
 
     move/from16 v4, v18
 
-    goto :goto_b
+    goto :goto_a
 
-    :cond_13
+    :cond_11
     shl-int v4, v4, v16
 
     or-int/2addr v15, v4
 
     move/from16 v4, v18
 
-    goto :goto_c
+    goto :goto_b
 
-    :cond_14
+    :cond_12
     move/from16 v4, v16
 
-    :goto_c
+    :goto_b
     add-int/lit8 v16, v4, 0x1
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
 
-    if-lt v4, v7, :cond_16
+    if-lt v4, v7, :cond_14
 
     and-int/lit16 v4, v4, 0x1fff
 
-    move/from16 v6, v16
+    move/from16 v8, v16
 
     const/16 v16, 0xd
 
-    :goto_d
-    add-int/lit8 v19, v6, 0x1
+    :goto_c
+    add-int/lit8 v19, v8, 0x1
 
-    invoke-virtual {v1, v6}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v1, v8}, Ljava/lang/String;->charAt(I)C
 
-    move-result v6
+    move-result v8
 
-    if-lt v6, v7, :cond_15
+    if-lt v8, v7, :cond_13
 
-    and-int/lit16 v6, v6, 0x1fff
+    and-int/lit16 v8, v8, 0x1fff
 
-    shl-int v6, v6, v16
+    shl-int v8, v8, v16
 
-    or-int/2addr v4, v6
+    or-int/2addr v4, v8
 
     add-int/lit8 v16, v16, 0xd
 
-    move/from16 v6, v19
+    move/from16 v8, v19
+
+    goto :goto_c
+
+    :cond_13
+    shl-int v8, v8, v16
+
+    or-int/2addr v4, v8
+
+    move/from16 v8, v19
 
     goto :goto_d
 
-    :cond_15
-    shl-int v6, v6, v16
-
-    or-int/2addr v4, v6
-
-    move/from16 v16, v19
-
-    :cond_16
-    add-int v6, v4, v14
-
-    add-int/2addr v6, v15
-
-    new-array v6, v6, [I
-
-    mul-int/lit8 v15, v8, 0x2
-
-    add-int/2addr v15, v9
-
-    move v9, v12
-
-    move v12, v15
-
-    move v15, v4
-
-    move v4, v8
-
+    :cond_14
     move/from16 v8, v16
 
-    move/from16 v36, v14
+    :goto_d
+    add-int/lit8 v16, v8, 0x1
 
-    move-object v14, v6
+    invoke-virtual {v1, v8}, Ljava/lang/String;->charAt(I)C
 
-    move/from16 v6, v36
+    move-result v8
+
+    if-lt v8, v7, :cond_16
+
+    and-int/lit16 v8, v8, 0x1fff
+
+    move/from16 v2, v16
+
+    const/16 v16, 0xd
 
     :goto_e
-    sget-object v3, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->UNSAFE:Lsun/misc/Unsafe;
-
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->objects:[Ljava/lang/Object;
-
-    move/from16 v20, v8
-
-    iget-object v8, v0, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->defaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
-
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v8
-
-    move/from16 v21, v12
-
-    mul-int/lit8 v12, v13, 0x3
-
-    new-array v12, v12, [I
-
-    mul-int/lit8 v13, v13, 0x2
-
-    new-array v13, v13, [Ljava/lang/Object;
-
-    add-int v22, v15, v6
-
-    move/from16 v24, v15
-
-    move/from16 v6, v20
-
-    move/from16 v25, v22
-
-    const/16 v20, 0x0
-
-    const/16 v23, 0x0
-
-    :goto_f
-    if-ge v6, v2, :cond_34
-
-    add-int/lit8 v26, v6, 0x1
-
-    invoke-virtual {v1, v6}, Ljava/lang/String;->charAt(I)C
-
-    move-result v6
-
-    move/from16 v27, v2
-
-    const v2, 0xd800
-
-    if-lt v6, v2, :cond_18
-
-    and-int/lit16 v6, v6, 0x1fff
-
-    move/from16 v2, v26
-
-    const/16 v26, 0xd
-
-    :goto_10
-    add-int/lit8 v28, v2, 0x1
+    add-int/lit8 v20, v2, 0x1
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
 
-    move/from16 v29, v15
-
-    const v15, 0xd800
-
-    if-lt v2, v15, :cond_17
+    if-lt v2, v7, :cond_15
 
     and-int/lit16 v2, v2, 0x1fff
 
-    shl-int v2, v2, v26
+    shl-int v2, v2, v16
 
-    or-int/2addr v6, v2
+    or-int/2addr v8, v2
 
-    add-int/lit8 v26, v26, 0xd
+    add-int/lit8 v16, v16, 0xd
 
-    move/from16 v2, v28
+    move/from16 v2, v20
 
-    move/from16 v15, v29
+    goto :goto_e
 
-    goto :goto_10
+    :cond_15
+    shl-int v2, v2, v16
 
-    :cond_17
-    shl-int v2, v2, v26
+    or-int/2addr v8, v2
 
-    or-int/2addr v6, v2
+    move/from16 v16, v20
 
-    move/from16 v2, v28
+    :cond_16
+    add-int v2, v8, v15
+
+    add-int/2addr v2, v4
+
+    new-array v2, v2, [I
+
+    mul-int/lit8 v4, v9, 0x2
+
+    add-int/2addr v4, v10
+
+    move v10, v14
+
+    move-object v14, v2
+
+    move v2, v9
+
+    move/from16 v9, v16
+
+    move/from16 v35, v15
+
+    move v15, v8
+
+    move v8, v12
+
+    move/from16 v12, v35
+
+    :goto_f
+    sget-object v7, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->UNSAFE:Lsun/misc/Unsafe;
+
+    iget-object v3, v0, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->objects:[Ljava/lang/Object;
+
+    move/from16 v21, v4
+
+    iget-object v4, v0, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->defaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v4
+
+    move/from16 v22, v9
+
+    mul-int/lit8 v9, v10, 0x3
+
+    new-array v9, v9, [I
+
+    const/16 v20, 0x2
+
+    mul-int/lit8 v10, v10, 0x2
+
+    new-array v10, v10, [Ljava/lang/Object;
+
+    add-int v23, v15, v12
+
+    move/from16 v25, v15
+
+    move/from16 v12, v22
+
+    move/from16 v26, v23
+
+    const/16 v22, 0x0
+
+    const/16 v24, 0x0
+
+    :goto_10
+    if-ge v12, v5, :cond_34
+
+    add-int/lit8 v27, v12, 0x1
+
+    invoke-virtual {v1, v12}, Ljava/lang/String;->charAt(I)C
+
+    move-result v12
+
+    move/from16 v28, v5
+
+    const v5, 0xd800
+
+    if-lt v12, v5, :cond_18
+
+    and-int/lit16 v12, v12, 0x1fff
+
+    move/from16 v5, v27
+
+    const/16 v27, 0xd
+
+    :goto_11
+    add-int/lit8 v29, v5, 0x1
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->charAt(I)C
+
+    move-result v5
+
+    move/from16 v30, v15
+
+    const v15, 0xd800
+
+    if-lt v5, v15, :cond_17
+
+    and-int/lit16 v5, v5, 0x1fff
+
+    shl-int v5, v5, v27
+
+    or-int/2addr v12, v5
+
+    add-int/lit8 v27, v27, 0xd
+
+    move/from16 v5, v29
+
+    move/from16 v15, v30
 
     goto :goto_11
 
+    :cond_17
+    shl-int v5, v5, v27
+
+    or-int/2addr v12, v5
+
+    move/from16 v5, v29
+
+    goto :goto_12
+
     :cond_18
-    move/from16 v29, v15
+    move/from16 v30, v15
 
-    move/from16 v2, v26
+    move/from16 v5, v27
 
-    :goto_11
-    add-int/lit8 v15, v2, 0x1
+    :goto_12
+    add-int/lit8 v15, v5, 0x1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v1, v5}, Ljava/lang/String;->charAt(I)C
 
-    move-result v2
+    move-result v5
 
-    move/from16 v26, v15
+    move/from16 v27, v15
 
     const v15, 0xd800
 
-    if-lt v2, v15, :cond_1a
+    if-lt v5, v15, :cond_1a
 
-    and-int/lit16 v2, v2, 0x1fff
+    and-int/lit16 v5, v5, 0x1fff
 
-    move/from16 v15, v26
+    move/from16 v15, v27
 
-    const/16 v26, 0xd
+    const/16 v27, 0xd
 
-    :goto_12
-    add-int/lit8 v28, v15, 0x1
+    :goto_13
+    add-int/lit8 v29, v15, 0x1
 
     invoke-virtual {v1, v15}, Ljava/lang/String;->charAt(I)C
 
     move-result v15
 
-    move/from16 v30, v11
+    move/from16 v31, v11
 
     const v11, 0xd800
 
@@ -927,240 +938,269 @@
 
     and-int/lit16 v11, v15, 0x1fff
 
-    shl-int v11, v11, v26
+    shl-int v11, v11, v27
 
-    or-int/2addr v2, v11
+    or-int/2addr v5, v11
 
-    add-int/lit8 v26, v26, 0xd
+    add-int/lit8 v27, v27, 0xd
 
-    move/from16 v15, v28
+    move/from16 v15, v29
 
-    move/from16 v11, v30
-
-    goto :goto_12
-
-    :cond_19
-    shl-int v11, v15, v26
-
-    or-int/2addr v2, v11
-
-    move/from16 v15, v28
+    move/from16 v11, v31
 
     goto :goto_13
 
+    :cond_19
+    shl-int v11, v15, v27
+
+    or-int/2addr v5, v11
+
+    move/from16 v15, v29
+
+    goto :goto_14
+
     :cond_1a
-    move/from16 v30, v11
+    move/from16 v31, v11
 
-    move/from16 v15, v26
+    move/from16 v15, v27
 
-    :goto_13
-    and-int/lit16 v11, v2, 0xff
+    :goto_14
+    and-int/lit16 v11, v5, 0xff
 
-    move/from16 v26, v9
+    move/from16 v27, v13
 
-    and-int/lit16 v9, v2, 0x400
+    and-int/lit16 v13, v5, 0x400
 
-    if-eqz v9, :cond_1b
+    if-eqz v13, :cond_1b
 
-    add-int/lit8 v9, v20, 0x1
+    add-int/lit8 v13, v22, 0x1
 
-    aput v23, v14, v20
+    aput v24, v14, v22
 
-    move/from16 v20, v9
+    move/from16 v22, v13
 
     :cond_1b
-    const/16 v9, 0x33
+    const/16 v13, 0x33
 
-    move/from16 v32, v10
+    if-lt v11, v13, :cond_23
 
-    if-lt v11, v9, :cond_23
-
-    add-int/lit8 v9, v15, 0x1
+    add-int/lit8 v13, v15, 0x1
 
     invoke-virtual {v1, v15}, Ljava/lang/String;->charAt(I)C
 
     move-result v15
 
-    const v10, 0xd800
+    move/from16 v29, v13
 
-    if-lt v15, v10, :cond_1d
+    const v13, 0xd800
+
+    if-lt v15, v13, :cond_1d
 
     and-int/lit16 v15, v15, 0x1fff
 
-    const/16 v34, 0xd
+    const/16 v33, 0xd
 
-    :goto_14
-    add-int/lit8 v35, v9, 0x1
+    move/from16 v35, v29
 
-    invoke-virtual {v1, v9}, Ljava/lang/String;->charAt(I)C
+    move/from16 v29, v15
 
-    move-result v9
+    move/from16 v15, v35
 
-    if-lt v9, v10, :cond_1c
+    :goto_15
+    add-int/lit8 v34, v15, 0x1
 
-    and-int/lit16 v9, v9, 0x1fff
+    invoke-virtual {v1, v15}, Ljava/lang/String;->charAt(I)C
 
-    shl-int v9, v9, v34
+    move-result v15
 
-    or-int/2addr v15, v9
+    if-lt v15, v13, :cond_1c
 
-    add-int/lit8 v34, v34, 0xd
+    and-int/lit16 v13, v15, 0x1fff
 
-    move/from16 v9, v35
+    shl-int v13, v13, v33
 
-    const v10, 0xd800
+    or-int v29, v29, v13
 
-    goto :goto_14
+    add-int/lit8 v33, v33, 0xd
 
-    :cond_1c
-    shl-int v9, v9, v34
+    move/from16 v15, v34
 
-    or-int/2addr v15, v9
-
-    move/from16 v9, v35
-
-    :cond_1d
-    add-int/lit8 v10, v11, -0x33
-
-    move/from16 v34, v9
-
-    const/16 v9, 0x9
-
-    if-eq v10, v9, :cond_1f
-
-    const/16 v9, 0x11
-
-    if-ne v10, v9, :cond_1e
+    const v13, 0xd800
 
     goto :goto_15
 
-    :cond_1e
-    const/16 v9, 0xc
+    :cond_1c
+    shl-int v13, v15, v33
 
-    if-ne v10, v9, :cond_20
+    or-int v15, v29, v13
 
-    and-int/lit8 v9, v5, 0x1
-
-    const/4 v10, 0x1
-
-    if-ne v9, v10, :cond_20
-
-    div-int/lit8 v9, v23, 0x3
-
-    mul-int/lit8 v9, v9, 0x2
-
-    add-int/2addr v9, v10
-
-    add-int/lit8 v10, v21, 0x1
-
-    aget-object v21, v7, v21
-
-    aput-object v21, v13, v9
+    move/from16 v13, v34
 
     goto :goto_16
 
-    :cond_1f
-    :goto_15
-    div-int/lit8 v9, v23, 0x3
-
-    mul-int/lit8 v9, v9, 0x2
-
-    const/4 v10, 0x1
-
-    add-int/2addr v9, v10
-
-    add-int/lit8 v10, v21, 0x1
-
-    aget-object v21, v7, v21
-
-    aput-object v21, v13, v9
+    :cond_1d
+    move/from16 v13, v29
 
     :goto_16
-    move/from16 v21, v10
+    move/from16 v29, v13
 
-    :cond_20
-    mul-int/lit8 v15, v15, 0x2
+    add-int/lit8 v13, v11, -0x33
 
-    aget-object v9, v7, v15
+    move/from16 v33, v8
 
-    instance-of v10, v9, Ljava/lang/reflect/Field;
+    const/16 v8, 0x9
 
-    if-eqz v10, :cond_21
+    if-eq v13, v8, :cond_20
 
-    check-cast v9, Ljava/lang/reflect/Field;
+    const/16 v8, 0x11
+
+    if-ne v13, v8, :cond_1e
 
     goto :goto_17
 
-    :cond_21
-    check-cast v9, Ljava/lang/String;
+    :cond_1e
+    const/16 v8, 0xc
 
-    invoke-static {v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    if-ne v13, v8, :cond_1f
 
-    move-result-object v9
+    and-int/lit8 v8, v6, 0x1
 
-    aput-object v9, v7, v15
+    const/4 v13, 0x1
 
-    :goto_17
-    invoke-virtual {v3, v9}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+    if-ne v8, v13, :cond_1f
 
-    move-result-wide v9
+    div-int/lit8 v8, v24, 0x3
 
-    long-to-int v9, v9
+    const/16 v19, 0x2
 
-    add-int/lit8 v15, v15, 0x1
+    mul-int/lit8 v8, v8, 0x2
 
-    aget-object v10, v7, v15
+    add-int/2addr v8, v13
 
-    move/from16 v28, v9
+    add-int/lit8 v13, v21, 0x1
 
-    instance-of v9, v10, Ljava/lang/reflect/Field;
+    aget-object v21, v3, v21
 
-    if-eqz v9, :cond_22
+    aput-object v21, v10, v8
 
-    check-cast v10, Ljava/lang/reflect/Field;
+    move/from16 v21, v13
+
+    :cond_1f
+    const/4 v13, 0x2
 
     goto :goto_18
 
-    :cond_22
-    check-cast v10, Ljava/lang/String;
+    :cond_20
+    :goto_17
+    div-int/lit8 v8, v24, 0x3
 
-    invoke-static {v8, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    const/4 v13, 0x2
 
-    move-result-object v10
+    mul-int/2addr v8, v13
 
-    aput-object v10, v7, v15
+    const/16 v19, 0x1
+
+    add-int/lit8 v8, v8, 0x1
+
+    add-int/lit8 v20, v21, 0x1
+
+    aget-object v21, v3, v21
+
+    aput-object v21, v10, v8
+
+    move/from16 v21, v20
 
     :goto_18
-    invoke-virtual {v3, v10}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+    mul-int/2addr v15, v13
 
-    move-result-wide v9
+    aget-object v8, v3, v15
 
-    long-to-int v9, v9
+    instance-of v13, v8, Ljava/lang/reflect/Field;
 
-    move-object/from16 v31, v1
+    if-eqz v13, :cond_21
 
-    move v0, v9
+    check-cast v8, Ljava/lang/reflect/Field;
 
-    move/from16 v9, v28
+    goto :goto_19
 
-    move/from16 v10, v34
+    :cond_21
+    check-cast v8, Ljava/lang/String;
+
+    invoke-static {v4, v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v8
+
+    aput-object v8, v3, v15
+
+    :goto_19
+    move-object v13, v9
+
+    invoke-virtual {v7, v8}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+
+    move-result-wide v8
+
+    long-to-int v8, v8
+
+    add-int/lit8 v15, v15, 0x1
+
+    aget-object v9, v3, v15
+
+    move/from16 v32, v8
+
+    instance-of v8, v9, Ljava/lang/reflect/Field;
+
+    if-eqz v8, :cond_22
+
+    check-cast v9, Ljava/lang/reflect/Field;
+
+    goto :goto_1a
+
+    :cond_22
+    check-cast v9, Ljava/lang/String;
+
+    invoke-static {v4, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v9
+
+    aput-object v9, v3, v15
+
+    :goto_1a
+    invoke-virtual {v7, v9}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+
+    move-result-wide v8
+
+    long-to-int v8, v8
+
+    move-object v9, v1
+
+    move/from16 v20, v6
+
+    move v0, v8
+
+    move/from16 v8, v32
 
     const/4 v15, 0x0
 
-    move/from16 v28, v2
+    move/from16 v32, v29
 
-    goto/16 :goto_23
+    move/from16 v29, v5
+
+    goto/16 :goto_25
 
     :cond_23
-    add-int/lit8 v9, v21, 0x1
+    move/from16 v33, v8
 
-    aget-object v10, v7, v21
+    move-object v13, v9
 
-    check-cast v10, Ljava/lang/String;
+    add-int/lit8 v8, v21, 0x1
 
-    invoke-static {v8, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    aget-object v9, v3, v21
 
-    move-result-object v10
+    check-cast v9, Ljava/lang/String;
+
+    invoke-static {v4, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v9
 
     const/16 v0, 0x9
 
@@ -1170,7 +1210,7 @@
 
     if-ne v11, v0, :cond_24
 
-    goto/16 :goto_1d
+    goto/16 :goto_1f
 
     :cond_24
     const/16 v0, 0x1b
@@ -1181,7 +1221,7 @@
 
     if-ne v11, v0, :cond_25
 
-    goto :goto_1b
+    goto :goto_1d
 
     :cond_25
     const/16 v0, 0xc
@@ -1196,224 +1236,230 @@
 
     if-ne v11, v0, :cond_26
 
-    goto :goto_1a
+    goto :goto_1c
 
     :cond_26
     const/16 v0, 0x32
 
     if-ne v11, v0, :cond_28
 
-    add-int/lit8 v0, v24, 0x1
+    add-int/lit8 v0, v25, 0x1
 
-    aput v23, v14, v24
+    aput v24, v14, v25
 
-    div-int/lit8 v24, v23, 0x3
+    div-int/lit8 v25, v24, 0x3
 
-    mul-int/lit8 v24, v24, 0x2
+    const/16 v20, 0x2
 
-    add-int/lit8 v28, v9, 0x1
+    mul-int/lit8 v25, v25, 0x2
 
-    aget-object v9, v7, v9
+    add-int/lit8 v29, v8, 0x1
 
-    aput-object v9, v13, v24
+    aget-object v8, v3, v8
 
-    and-int/lit16 v9, v2, 0x800
+    aput-object v8, v10, v25
 
-    if-eqz v9, :cond_27
+    and-int/lit16 v8, v5, 0x800
 
-    add-int/lit8 v24, v24, 0x1
+    if-eqz v8, :cond_27
 
-    add-int/lit8 v9, v28, 0x1
+    add-int/lit8 v25, v25, 0x1
 
-    aget-object v28, v7, v28
+    add-int/lit8 v8, v29, 0x1
 
-    aput-object v28, v13, v24
+    aget-object v29, v3, v29
 
-    move/from16 v24, v0
+    aput-object v29, v10, v25
 
-    move/from16 v28, v2
-
-    move v0, v9
-
-    goto :goto_19
+    goto :goto_1b
 
     :cond_27
-    move/from16 v24, v0
+    move/from16 v8, v29
 
-    move/from16 v0, v28
+    :goto_1b
+    move/from16 v25, v0
 
-    move/from16 v28, v2
+    move/from16 v29, v5
 
-    :goto_19
-    const/4 v2, 0x1
-
-    goto :goto_1f
+    goto :goto_20
 
     :cond_28
-    move/from16 v28, v2
+    move/from16 v29, v5
 
-    const/4 v2, 0x1
+    const/4 v5, 0x1
+
+    goto :goto_20
+
+    :cond_29
+    :goto_1c
+    and-int/lit8 v0, v6, 0x1
+
+    move/from16 v29, v5
+
+    const/4 v5, 0x1
+
+    if-ne v0, v5, :cond_2c
+
+    div-int/lit8 v0, v24, 0x3
+
+    const/16 v19, 0x2
+
+    mul-int/lit8 v0, v0, 0x2
+
+    add-int/2addr v0, v5
+
+    add-int/lit8 v20, v8, 0x1
+
+    aget-object v8, v3, v8
+
+    aput-object v8, v10, v0
 
     goto :goto_1e
 
-    :cond_29
-    :goto_1a
-    and-int/lit8 v0, v5, 0x1
-
-    move/from16 v28, v2
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_2c
-
-    div-int/lit8 v0, v23, 0x3
-
-    mul-int/lit8 v0, v0, 0x2
-
-    add-int/2addr v0, v2
-
-    add-int/lit8 v16, v9, 0x1
-
-    aget-object v9, v7, v9
-
-    aput-object v9, v13, v0
-
-    goto :goto_1c
-
     :cond_2a
-    :goto_1b
-    move/from16 v28, v2
+    :goto_1d
+    move/from16 v29, v5
 
-    const/4 v2, 0x1
+    const/4 v5, 0x1
 
-    div-int/lit8 v0, v23, 0x3
+    const/16 v19, 0x2
+
+    div-int/lit8 v0, v24, 0x3
 
     mul-int/lit8 v0, v0, 0x2
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v5
 
-    add-int/lit8 v16, v9, 0x1
+    add-int/lit8 v20, v8, 0x1
 
-    aget-object v9, v7, v9
+    aget-object v8, v3, v8
 
-    aput-object v9, v13, v0
+    aput-object v8, v10, v0
 
-    :goto_1c
-    move/from16 v0, v16
+    :goto_1e
+    move/from16 v8, v20
 
-    goto :goto_1f
+    goto :goto_20
 
     :cond_2b
-    :goto_1d
-    move/from16 v28, v2
+    :goto_1f
+    move/from16 v29, v5
 
-    const/4 v2, 0x1
+    const/4 v5, 0x1
 
-    div-int/lit8 v0, v23, 0x3
+    const/16 v19, 0x2
+
+    div-int/lit8 v0, v24, 0x3
 
     mul-int/lit8 v0, v0, 0x2
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v5
 
-    invoke-virtual {v10}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
+    invoke-virtual {v9}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
-    move-result-object v16
+    move-result-object v19
 
-    aput-object v16, v13, v0
+    aput-object v19, v10, v0
 
     :cond_2c
-    :goto_1e
-    move v0, v9
+    :goto_20
+    move v0, v6
 
-    :goto_1f
-    invoke-virtual {v3, v10}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+    invoke-virtual {v7, v9}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
-    move-result-wide v9
+    move-result-wide v5
 
-    long-to-int v9, v9
+    long-to-int v5, v5
 
-    and-int/lit8 v10, v5, 0x1
+    and-int/lit8 v6, v0, 0x1
 
-    if-ne v10, v2, :cond_30
+    const/4 v9, 0x1
 
-    const/16 v10, 0x11
+    if-ne v6, v9, :cond_30
 
-    if-gt v11, v10, :cond_30
+    const/16 v6, 0x11
 
-    add-int/lit8 v10, v15, 0x1
+    if-gt v11, v6, :cond_30
+
+    add-int/lit8 v6, v15, 0x1
 
     invoke-virtual {v1, v15}, Ljava/lang/String;->charAt(I)C
 
     move-result v15
 
-    const v2, 0xd800
+    const v9, 0xd800
 
-    if-lt v15, v2, :cond_2e
+    if-lt v15, v9, :cond_2e
 
     and-int/lit16 v15, v15, 0x1fff
 
-    const/16 v19, 0xd
+    const/16 v16, 0xd
 
-    :goto_20
-    add-int/lit8 v31, v10, 0x1
+    :goto_21
+    add-int/lit8 v32, v6, 0x1
 
-    invoke-virtual {v1, v10}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v1, v6}, Ljava/lang/String;->charAt(I)C
 
-    move-result v10
+    move-result v6
 
-    if-lt v10, v2, :cond_2d
+    if-lt v6, v9, :cond_2d
 
-    and-int/lit16 v10, v10, 0x1fff
+    and-int/lit16 v6, v6, 0x1fff
 
-    shl-int v10, v10, v19
+    shl-int v6, v6, v16
 
-    or-int/2addr v15, v10
+    or-int/2addr v15, v6
 
-    add-int/lit8 v19, v19, 0xd
+    add-int/lit8 v16, v16, 0xd
 
-    move/from16 v10, v31
-
-    goto :goto_20
-
-    :cond_2d
-    shl-int v10, v10, v19
-
-    or-int/2addr v15, v10
-
-    move/from16 v10, v31
-
-    :cond_2e
-    mul-int/lit8 v19, v4, 0x2
-
-    div-int/lit8 v31, v15, 0x20
-
-    add-int v31, v31, v19
-
-    aget-object v2, v7, v31
-
-    move/from16 v33, v0
-
-    instance-of v0, v2, Ljava/lang/reflect/Field;
-
-    if-eqz v0, :cond_2f
-
-    check-cast v2, Ljava/lang/reflect/Field;
+    move/from16 v6, v32
 
     goto :goto_21
 
+    :cond_2d
+    shl-int v6, v6, v16
+
+    or-int/2addr v15, v6
+
+    goto :goto_22
+
+    :cond_2e
+    move/from16 v32, v6
+
+    :goto_22
+    const/4 v6, 0x2
+
+    mul-int/lit8 v16, v2, 0x2
+
+    div-int/lit8 v20, v15, 0x20
+
+    add-int v20, v20, v16
+
+    aget-object v6, v3, v20
+
+    instance-of v9, v6, Ljava/lang/reflect/Field;
+
+    if-eqz v9, :cond_2f
+
+    check-cast v6, Ljava/lang/reflect/Field;
+
+    goto :goto_23
+
     :cond_2f
-    check-cast v2, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-static {v8, v2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-static {v4, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->reflectField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v2
+    move-result-object v6
 
-    aput-object v2, v7, v31
+    aput-object v6, v3, v20
 
-    :goto_21
-    move-object/from16 v31, v1
+    :goto_23
+    move/from16 v20, v0
 
-    invoke-virtual {v3, v2}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+    move-object v9, v1
+
+    invoke-virtual {v7, v6}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     move-result-wide v0
 
@@ -1421,20 +1467,20 @@
 
     rem-int/lit8 v15, v15, 0x20
 
-    goto :goto_22
+    goto :goto_24
 
     :cond_30
-    move/from16 v33, v0
+    move/from16 v20, v0
 
-    move-object/from16 v31, v1
+    move-object v9, v1
 
-    move v10, v15
+    move/from16 v32, v15
 
     const/4 v0, 0x0
 
     const/4 v15, 0x0
 
-    :goto_22
+    :goto_24
     const/16 v1, 0x12
 
     if-lt v11, v1, :cond_31
@@ -1443,126 +1489,124 @@
 
     if-gt v11, v1, :cond_31
 
-    add-int/lit8 v1, v25, 0x1
+    add-int/lit8 v1, v26, 0x1
 
-    aput v9, v14, v25
+    aput v5, v14, v26
 
-    move/from16 v25, v1
+    move/from16 v26, v1
 
     :cond_31
-    move/from16 v21, v33
+    move/from16 v21, v8
 
-    :goto_23
-    add-int/lit8 v1, v23, 0x1
+    move v8, v5
 
-    aput v6, v12, v23
+    :goto_25
+    add-int/lit8 v1, v24, 0x1
 
-    add-int/lit8 v2, v1, 0x1
+    aput v12, v13, v24
 
-    move-object/from16 v23, v3
+    add-int/lit8 v5, v1, 0x1
 
-    move/from16 v6, v28
+    move/from16 v6, v29
 
-    and-int/lit16 v3, v6, 0x200
+    and-int/lit16 v12, v6, 0x200
 
-    if-eqz v3, :cond_32
+    if-eqz v12, :cond_32
 
-    const/high16 v3, 0x20000000
+    const/high16 v12, 0x20000000
 
-    goto :goto_24
+    goto :goto_26
 
     :cond_32
-    const/4 v3, 0x0
+    const/4 v12, 0x0
 
-    :goto_24
+    :goto_26
     and-int/lit16 v6, v6, 0x100
 
     if-eqz v6, :cond_33
 
     const/high16 v6, 0x10000000
 
-    goto :goto_25
+    goto :goto_27
 
     :cond_33
     const/4 v6, 0x0
 
-    :goto_25
-    or-int/2addr v3, v6
+    :goto_27
+    or-int/2addr v6, v12
 
-    shl-int/lit8 v6, v11, 0x14
+    shl-int/lit8 v11, v11, 0x14
 
-    or-int/2addr v3, v6
+    or-int/2addr v6, v11
 
-    or-int/2addr v3, v9
+    or-int/2addr v6, v8
 
-    aput v3, v12, v1
+    aput v6, v13, v1
 
-    add-int/lit8 v1, v2, 0x1
+    add-int/lit8 v24, v5, 0x1
 
-    shl-int/lit8 v3, v15, 0x14
+    shl-int/lit8 v1, v15, 0x14
 
-    or-int/2addr v0, v3
+    or-int/2addr v0, v1
 
-    aput v0, v12, v2
+    aput v0, v13, v5
 
     move-object/from16 v0, p0
 
-    move v6, v10
+    move-object v1, v9
 
-    move-object/from16 v3, v23
+    move-object v9, v13
 
-    move/from16 v9, v26
+    move/from16 v6, v20
 
-    move/from16 v2, v27
+    move/from16 v13, v27
 
-    move/from16 v15, v29
+    move/from16 v5, v28
 
-    move/from16 v11, v30
+    move/from16 v15, v30
 
-    move/from16 v10, v32
+    move/from16 v11, v31
 
-    move/from16 v23, v1
+    move/from16 v12, v32
 
-    move-object/from16 v1, v31
+    move/from16 v8, v33
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_34
-    move/from16 v26, v9
+    move/from16 v33, v8
 
-    move/from16 v32, v10
+    move/from16 v31, v11
 
-    move/from16 v30, v11
+    move/from16 v27, v13
 
-    move/from16 v29, v15
+    move/from16 v30, v15
+
+    move-object v13, v9
 
     new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;
 
     move-object/from16 v1, p0
 
-    iget-object v10, v1, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->defaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
+    iget-object v1, v1, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->defaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 
-    const/4 v1, 0x0
+    const/4 v12, 0x0
 
     move-object v5, v0
 
-    move-object v6, v12
+    move-object v6, v13
 
-    move-object v7, v13
+    move-object v7, v10
 
-    move/from16 v8, v32
+    move/from16 v9, v27
 
-    move/from16 v9, v26
-
-    move/from16 v11, v30
-
-    move v12, v1
+    move-object v10, v1
 
     move-object v13, v14
 
-    move/from16 v14, v29
+    move/from16 v14, v30
 
-    move/from16 v15, v22
+    move/from16 v15, v23
 
     move-object/from16 v16, p1
 
@@ -1766,19 +1810,13 @@
 
     const-string v3, " for "
 
-    invoke-static {v2, p1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline32(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, p1, v3}, Landroidx/activity/result/ActivityResultRegistry$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const-string v2, " not found. Known fields are "
 
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " not found. Known fields are "
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v2}, Lcom/fasterxml/jackson/annotation/JsonInclude$Value$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
     invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2358,27 +2396,17 @@
     :cond_3
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    if-eqz v0, :cond_9
+    iget-object v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    move-object v4, p1
+    invoke-virtual {v2, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+    move-result-object v2
 
-    iget-object v4, v4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    if-eqz v0, :cond_8
-
-    move-object v0, p2
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    invoke-virtual {v4, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -2389,23 +2417,19 @@
     :cond_4
     iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v0, :cond_6
+    move-result-object p1
 
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    invoke-virtual {v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v0, :cond_5
-
-    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object p2
 
     invoke-virtual {p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->equals(Ljava/lang/Object;)Z
 
@@ -2414,19 +2438,9 @@
     return p1
 
     :cond_5
-    throw v2
-
-    :cond_6
-    throw v2
-
-    :cond_7
     return v3
 
-    :cond_8
-    throw v2
-
-    :cond_9
-    throw v2
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2583,7 +2597,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_4
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2607,28 +2621,22 @@
 
     if-nez v1, :cond_2
 
-    const/4 p1, 0x0
+    if-nez p3, :cond_3
 
-    if-nez p3, :cond_4
-
-    check-cast p4, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
-
-    if-eqz p4, :cond_3
-
-    goto :goto_0
+    invoke-virtual {p4}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     :cond_3
-    throw p1
-
-    :cond_4
-    :goto_0
     invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
+    const/4 p1, 0x0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     throw p1
 
-    :cond_5
+    :cond_4
     return-object p3
 .end method
 
@@ -3398,7 +3406,9 @@
 
     check-cast v7, Ljava/util/List;
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->computeSizeBoolListNoTag(Ljava/util/List;)I
+    sget-object v9, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->GENERATED_MESSAGE_CLASS:Ljava/lang/Class;
+
+    invoke-interface {v7}, Ljava/util/List;->size()I
 
     move-result v7
 
@@ -3646,11 +3656,9 @@
     move-result v9
 
     :goto_3
-    add-int/2addr v9, v8
+    invoke-static {v9, v8, v7, v5}, Landroidx/appcompat/widget/ActionMenuView$$ExternalSyntheticOutline0;->m(IIII)I
 
-    add-int/2addr v9, v7
-
-    add-int/2addr v5, v9
+    move-result v5
 
     goto/16 :goto_6
 
@@ -4201,37 +4209,25 @@
     :cond_14
     iget-object v2, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v2, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    move-result-object v3
 
-    if-eqz v2, :cond_17
-
-    move-object v2, v1
-
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object v2, v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->getSerializedSize()I
+    invoke-virtual {v2, v3}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getSerializedSize(Ljava/lang/Object;)I
 
     move-result v2
 
     add-int/2addr v2, v5
 
-    iget-boolean v4, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
+    iget-boolean v3, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
-    if-eqz v4, :cond_16
+    if-eqz v3, :cond_15
 
-    iget-object v4, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+    iget-object v3, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v4, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v3, v1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v4, :cond_15
-
-    check-cast v1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object v1, v1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object v1
 
     invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->getSerializedSize()I
 
@@ -4239,17 +4235,8 @@
 
     add-int/2addr v2, v1
 
-    goto :goto_7
-
     :cond_15
-    throw v3
-
-    :cond_16
-    :goto_7
     return v2
-
-    :cond_17
-    throw v3
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -4940,7 +4927,9 @@
 
     check-cast v5, Ljava/util/List;
 
-    invoke-static {v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->computeSizeBoolListNoTag(Ljava/util/List;)I
+    sget-object v7, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->GENERATED_MESSAGE_CLASS:Ljava/lang/Class;
+
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v5
 
@@ -5188,11 +5177,9 @@
     move-result v6
 
     :goto_2
-    add-int/2addr v6, v4
+    invoke-static {v6, v4, v5, v3}, Landroidx/appcompat/widget/ActionMenuView$$ExternalSyntheticOutline0;->m(IIII)I
 
-    add-int/2addr v6, v5
-
-    add-int/2addr v3, v6
+    move-result v3
 
     goto/16 :goto_4
 
@@ -5706,15 +5693,11 @@
     :cond_12
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_13
+    move-result-object p1
 
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->getSerializedSize()I
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getSerializedSize(Ljava/lang/Object;)I
 
     move-result p1
 
@@ -5722,10 +5705,7 @@
 
     return p1
 
-    :cond_13
-    const/4 p1, 0x0
-
-    throw p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -6428,17 +6408,9 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_5
-
-    move-object v0, p1
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
@@ -6446,21 +6418,17 @@
 
     add-int/2addr v0, v2
 
-    iget-boolean v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
+    iget-boolean v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v1, :cond_3
 
     mul-int/lit8 v0, v0, 0x35
 
-    iget-object v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+    iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v1, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v2, :cond_3
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object p1
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->hashCode()I
 
@@ -6468,19 +6436,8 @@
 
     add-int/2addr v0, p1
 
-    goto :goto_4
-
     :cond_3
-    throw v1
-
-    :cond_4
-    :goto_4
     return v0
-
-    :cond_5
-    throw v1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -6945,7 +6902,7 @@
 .end method
 
 .method public final isInitialized(Ljava/lang/Object;)Z
-    .locals 13
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -6963,9 +6920,7 @@
     :goto_0
     iget v4, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->checkInitializedCount:I
 
-    const/4 v5, 0x0
-
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
     if-ge v2, v4, :cond_d
 
@@ -6973,130 +6928,130 @@
 
     aget v4, v4, v2
 
-    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v6, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v7, v7, v4
+    aget v6, v6, v4
 
     invoke-virtual {p0, v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->typeAndOffsetAt(I)I
 
-    move-result v8
+    move-result v7
 
-    iget-boolean v9, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->proto3:Z
+    iget-boolean v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->proto3:Z
 
-    if-nez v9, :cond_0
+    if-nez v8, :cond_0
 
-    iget-object v9, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    add-int/lit8 v10, v4, 0x2
+    add-int/lit8 v9, v4, 0x2
 
-    aget v9, v9, v10
+    aget v8, v8, v9
 
-    const v10, 0xfffff
+    const v9, 0xfffff
 
-    and-int/2addr v10, v9
+    and-int/2addr v9, v8
 
-    ushr-int/lit8 v9, v9, 0x14
+    ushr-int/lit8 v8, v8, 0x14
 
-    shl-int v9, v6, v9
+    shl-int v8, v5, v8
 
-    if-eq v10, v1, :cond_1
+    if-eq v9, v1, :cond_1
 
     sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->UNSAFE:Lsun/misc/Unsafe;
 
-    int-to-long v11, v10
+    int-to-long v10, v9
 
-    invoke-virtual {v1, p1, v11, v12}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
+    invoke-virtual {v1, p1, v10, v11}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
     move-result v3
 
-    move v1, v10
+    move v1, v9
 
     goto :goto_1
 
     :cond_0
-    move v9, v0
+    move v8, v0
 
     :cond_1
     :goto_1
-    const/high16 v10, 0x10000000
+    const/high16 v9, 0x10000000
 
-    and-int/2addr v10, v8
+    and-int/2addr v9, v7
 
-    if-eqz v10, :cond_2
+    if-eqz v9, :cond_2
 
-    move v10, v6
+    move v9, v5
 
     goto :goto_2
 
     :cond_2
-    move v10, v0
+    move v9, v0
 
     :goto_2
-    if-eqz v10, :cond_3
+    if-eqz v9, :cond_3
 
-    invoke-virtual {p0, p1, v4, v3, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;III)Z
+    invoke-virtual {p0, p1, v4, v3, v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;III)Z
 
-    move-result v10
+    move-result v9
 
-    if-nez v10, :cond_3
+    if-nez v9, :cond_3
 
     return v0
 
     :cond_3
-    invoke-static {v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->type(I)I
+    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->type(I)I
 
-    move-result v10
+    move-result v9
 
-    const/16 v11, 0x9
+    const/16 v10, 0x9
 
-    if-eq v10, v11, :cond_b
+    if-eq v9, v10, :cond_b
 
-    const/16 v11, 0x11
+    const/16 v10, 0x11
 
-    if-eq v10, v11, :cond_b
+    if-eq v9, v10, :cond_b
 
-    const/16 v9, 0x1b
+    const/16 v8, 0x1b
 
-    if-eq v10, v9, :cond_7
+    if-eq v9, v8, :cond_7
 
-    const/16 v9, 0x3c
+    const/16 v8, 0x3c
 
-    if-eq v10, v9, :cond_6
+    if-eq v9, v8, :cond_6
 
-    const/16 v9, 0x44
+    const/16 v8, 0x44
 
-    if-eq v10, v9, :cond_6
+    if-eq v9, v8, :cond_6
 
-    const/16 v7, 0x31
+    const/16 v6, 0x31
 
-    if-eq v10, v7, :cond_7
+    if-eq v9, v6, :cond_7
 
-    const/16 v6, 0x32
+    const/16 v5, 0x32
 
-    if-eq v10, v6, :cond_4
+    if-eq v9, v5, :cond_4
 
     goto/16 :goto_5
 
     :cond_4
-    iget-object v6, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->mapFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;
+    iget-object v5, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->mapFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;
 
-    invoke-static {v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    invoke-static {p1, v7, v8}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
-
-    move-result-object v7
-
-    invoke-interface {v6, v7}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;->forMapData(Ljava/lang/Object;)Ljava/util/Map;
+    invoke-static {p1, v6, v7}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
     move-result-object v6
 
-    invoke-interface {v6}, Ljava/util/Map;->isEmpty()Z
+    invoke-interface {v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;->forMapData(Ljava/lang/Object;)Ljava/util/Map;
 
-    move-result v6
+    move-result-object v5
 
-    if-eqz v6, :cond_5
+    invoke-interface {v5}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
 
     goto/16 :goto_5
 
@@ -7113,10 +7068,14 @@
 
     invoke-interface {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;->forMapMetadata(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/MapEntryLite$Metadata;
 
-    throw v5
+    const/4 p1, 0x0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    throw p1
 
     :cond_6
-    invoke-virtual {p0, p1, v7, v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v6, v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
     move-result v5
 
@@ -7126,7 +7085,7 @@
 
     move-result-object v4
 
-    invoke-static {v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
     move-result-wide v5
 
@@ -7143,17 +7102,17 @@
     return v0
 
     :cond_7
-    invoke-static {v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    invoke-static {p1, v7, v8}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v6, v7}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
 
     move-result v7
 
@@ -7169,13 +7128,13 @@
     move v7, v0
 
     :goto_3
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    invoke-interface {v6}, Ljava/util/List;->size()I
 
     move-result v8
 
     if-ge v7, v8, :cond_a
 
-    invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v6, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -7185,7 +7144,7 @@
 
     if-nez v8, :cond_9
 
-    move v6, v0
+    move v5, v0
 
     goto :goto_4
 
@@ -7196,12 +7155,12 @@
 
     :cond_a
     :goto_4
-    if-nez v6, :cond_c
+    if-nez v5, :cond_c
 
     return v0
 
     :cond_b
-    invoke-virtual {p0, p1, v4, v3, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;III)Z
+    invoke-virtual {p0, p1, v4, v3, v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;III)Z
 
     move-result v5
 
@@ -7211,7 +7170,7 @@
 
     move-result-object v4
 
-    invoke-static {v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
     move-result-wide v5
 
@@ -7236,31 +7195,24 @@
     :cond_d
     iget-boolean v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_e
 
     iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v1, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v1, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v1, :cond_e
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object p1
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isInitialized()Z
 
     move-result p1
 
-    if-nez p1, :cond_f
+    if-nez p1, :cond_e
 
     return v0
 
     :cond_e
-    throw v5
-
-    :cond_f
-    return v6
+    return v5
 .end method
 
 .method public final isOneofPresent(Ljava/lang/Object;II)Z
@@ -7376,49 +7328,18 @@
     :cond_2
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_5
-
-    move-object v0, p1
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->isMutable:Z
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->makeImmutable(Ljava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
-
-    if-eqz v0, :cond_3
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
-
-    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->makeImmutable()V
-
-    goto :goto_3
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->makeImmutable(Ljava/lang/Object;)V
 
     :cond_3
-    throw v1
-
-    :cond_4
-    :goto_3
     return-void
-
-    :cond_5
-    throw v1
 .end method
 
 .method public mergeFrom(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)V
@@ -7438,7 +7359,7 @@
         }
     .end annotation
 
-    if-eqz p3, :cond_0
+    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
@@ -7455,11 +7376,6 @@
     invoke-virtual/range {v0 .. v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->mergeFromHelper(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -7470,7 +7386,7 @@
         }
     .end annotation
 
-    if-eqz p2, :cond_3
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -7552,7 +7468,23 @@
     :pswitch_4
     iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->mapFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;
 
-    invoke-static {v1, p1, p2, v2, v3}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->mergeMap(Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;Ljava/lang/Object;Ljava/lang/Object;J)V
+    sget-object v4, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->GENERATED_MESSAGE_CLASS:Ljava/lang/Class;
+
+    invoke-static {p1, v2, v3}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {p2, v2, v3}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-interface {v1, v4, v5}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;->mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    sget-object v4, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$MemoryAccessor;
+
+    invoke-virtual {v4, p1, v2, v3, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$MemoryAccessor;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
     goto/16 :goto_1
 
@@ -7872,7 +7804,21 @@
     :cond_1
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    invoke-static {v0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->mergeUnknownFields(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Ljava/lang/Object;Ljava/lang/Object;)V
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->GENERATED_MESSAGE_CLASS:Ljava/lang/Class;
+
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->merge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->setToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
@@ -7880,15 +7826,26 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    invoke-static {v0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->mergeExtensions(Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getMutableExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
 
     :cond_2
     return-void
 
-    :cond_3
-    const/4 p1, 0x0
-
-    throw p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -8065,7 +8022,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-gez v3, :cond_b
+    if-gez v3, :cond_c
 
     const v2, 0x7fffffff
 
@@ -8152,7 +8109,20 @@
     :cond_6
     invoke-virtual {v9, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->shouldDiscardUnknownFields(Lcom/google/crypto/tink/shaded/protobuf/Reader;)Z
 
-    if-nez v13, :cond_7
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    invoke-interface/range {p4 .. p4}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->skipField()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    goto :goto_0
+
+    :cond_7
+    if-nez v13, :cond_8
 
     invoke-virtual {v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getBuilderFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -8160,24 +8130,24 @@
 
     move-object v13, v1
 
-    :cond_7
+    :cond_8
     invoke-virtual {v9, v13, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->mergeOneFieldFrom(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;)Z
 
     move-result v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_9
 
     goto :goto_0
 
-    :cond_8
+    :cond_9
     iget v0, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->checkInitializedCount:I
 
     :goto_3
     iget v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->repeatedFieldOffsetStart:I
 
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_a
 
     iget-object v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->intArray:[I
 
@@ -8189,15 +8159,15 @@
 
     goto :goto_3
 
-    :cond_9
-    if-eqz v13, :cond_a
+    :cond_a
+    if-eqz v13, :cond_b
 
     invoke-virtual {v9, v10, v13}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->setBuilderToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_a
+    :cond_b
     return-void
 
-    :cond_b
+    :cond_c
     move-object/from16 v15, p2
 
     :try_start_2
@@ -8214,7 +8184,7 @@
 
     packed-switch v2, :pswitch_data_0
 
-    if-nez v13, :cond_13
+    if-nez v13, :cond_14
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
@@ -8326,24 +8296,24 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_e
 
     invoke-interface {v5, v2}, Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumVerifier;->isInRange(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_d
 
     goto :goto_4
 
-    :cond_c
+    :cond_d
     invoke-static {v1, v2, v13, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object v13
 
     goto/16 :goto_0
 
-    :cond_d
+    :cond_e
     :goto_4
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
@@ -8398,7 +8368,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_f
 
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
@@ -8428,7 +8398,7 @@
 
     goto :goto_5
 
-    :cond_e
+    :cond_f
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
     move-result-wide v4
@@ -9129,7 +9099,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_10
 
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
@@ -9159,7 +9129,7 @@
 
     goto/16 :goto_0
 
-    :cond_f
+    :cond_10
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
     move-result-wide v1
@@ -9247,24 +9217,24 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_12
 
     invoke-interface {v5, v2}, Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumVerifier;->isInRange(I)Z
 
     move-result v5
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_11
 
     goto :goto_6
 
-    :cond_10
+    :cond_11
     invoke-static {v1, v2, v13, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object v13
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_12
     :goto_6
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
@@ -9311,7 +9281,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_13
 
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
@@ -9341,7 +9311,7 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_13
     invoke-static {v4}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
     move-result-wide v1
@@ -9490,7 +9460,7 @@
     :goto_7
     move-object v13, v1
 
-    :cond_13
+    :cond_14
     invoke-virtual {v9, v13, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->mergeOneFieldFrom(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;)Z
 
     move-result v1
@@ -9505,7 +9475,7 @@
     :goto_8
     iget v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->repeatedFieldOffsetStart:I
 
-    if-ge v0, v1, :cond_14
+    if-ge v0, v1, :cond_15
 
     iget-object v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->intArray:[I
 
@@ -9517,25 +9487,23 @@
 
     goto :goto_8
 
-    :cond_14
+    :cond_15
+    if-eqz v13, :cond_16
+
     invoke-virtual {v9, v10, v13}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->setBuilderToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
 
+    :cond_16
     return-void
 
     :catch_0
     :try_start_4
     invoke-virtual {v9, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->shouldDiscardUnknownFields(Lcom/google/crypto/tink/shaded/protobuf/Reader;)Z
 
-    if-nez v13, :cond_15
+    move-result v1
 
-    invoke-virtual {v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getBuilderFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v1, :cond_19
 
-    move-result-object v1
-
-    move-object v13, v1
-
-    :cond_15
-    invoke-virtual {v9, v13, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->mergeOneFieldFrom(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;)Z
+    invoke-interface/range {p4 .. p4}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->skipField()Z
 
     move-result v1
     :try_end_4
@@ -9548,7 +9516,7 @@
     :goto_9
     iget v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->repeatedFieldOffsetStart:I
 
-    if-ge v0, v1, :cond_16
+    if-ge v0, v1, :cond_17
 
     iget-object v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->intArray:[I
 
@@ -9560,12 +9528,56 @@
 
     goto :goto_9
 
-    :cond_16
-    if-eqz v13, :cond_17
+    :cond_17
+    if-eqz v13, :cond_18
 
     invoke-virtual {v9, v10, v13}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->setBuilderToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_17
+    :cond_18
+    return-void
+
+    :cond_19
+    if-nez v13, :cond_1a
+
+    :try_start_5
+    invoke-virtual {v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getBuilderFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v13, v1
+
+    :cond_1a
+    invoke-virtual {v9, v13, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->mergeOneFieldFrom(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;)Z
+
+    move-result v1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    if-nez v1, :cond_0
+
+    iget v0, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->checkInitializedCount:I
+
+    :goto_a
+    iget v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->repeatedFieldOffsetStart:I
+
+    if-ge v0, v1, :cond_1b
+
+    iget-object v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->intArray:[I
+
+    aget v1, v1, v0
+
+    invoke-virtual {v8, v10, v1, v13, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->filterMapUnknownEnumValues(Ljava/lang/Object;ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_a
+
+    :cond_1b
+    if-eqz v13, :cond_1c
+
+    invoke-virtual {v9, v10, v13}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->setBuilderToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    :cond_1c
     return-void
 
     :catchall_0
@@ -9573,10 +9585,10 @@
 
     iget v1, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->checkInitializedCount:I
 
-    :goto_a
+    :goto_b
     iget v2, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->repeatedFieldOffsetStart:I
 
-    if-ge v1, v2, :cond_18
+    if-ge v1, v2, :cond_1d
 
     iget-object v2, v8, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->intArray:[I
 
@@ -9586,17 +9598,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a
+    goto :goto_b
 
-    :cond_18
-    if-eqz v13, :cond_19
+    :cond_1d
+    if-eqz v13, :cond_1e
 
     invoke-virtual {v9, v10, v13}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->setBuilderToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_19
+    :cond_1e
     throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -9761,7 +9771,7 @@
 
     invoke-interface {p2, p3}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;->forMapMetadata(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/MapEntryLite$Metadata;
 
-    move-result-object p2
+    const/4 p2, 0x0
 
     invoke-interface {p5, p1, p2, p4}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readMap(Ljava/util/Map;Lcom/google/crypto/tink/shaded/protobuf/MapEntryLite$Metadata;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)V
 
@@ -9984,7 +9994,7 @@
 
     invoke-interface {p1, v1}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;->forMutableMapData(Ljava/lang/Object;)Ljava/util/Map;
 
-    invoke-static {p2, p3, p8}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {p2, p3, p8}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result p1
 
@@ -10000,6 +10010,8 @@
 
     :cond_1
     const/4 p1, 0x0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     throw p1
 
@@ -10091,7 +10103,7 @@
 
     move-object/from16 v7, p13
 
-    invoke-static/range {v2 .. v7}, Lcom/google/android/material/R$style;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v2 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10136,7 +10148,7 @@
     :pswitch_1
     if-nez v5, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10159,7 +10171,7 @@
     :pswitch_2
     if-nez v5, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10182,7 +10194,7 @@
     :pswitch_3
     if-nez v5, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v3
 
@@ -10245,7 +10257,7 @@
     :pswitch_4
     if-ne v5, v15, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10266,7 +10278,7 @@
 
     move/from16 v5, p4
 
-    invoke-static {v2, v3, v4, v5, v11}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v2, v3, v4, v5, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10311,7 +10323,7 @@
     :pswitch_6
     if-ne v5, v15, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10369,7 +10381,7 @@
     :pswitch_7
     if-nez v5, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10404,7 +10416,7 @@
 
     if-ne v5, v2, :cond_a
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v2
 
@@ -10425,7 +10437,7 @@
 
     if-ne v5, v2, :cond_a
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v2
 
@@ -10444,7 +10456,7 @@
     :pswitch_a
     if-nez v5, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10463,7 +10475,7 @@
     :pswitch_b
     if-nez v5, :cond_a
 
-    invoke-static {v3, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -10484,7 +10496,11 @@
 
     if-ne v5, v2, :cond_a
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeFloat([BI)F
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     move-result v2
 
@@ -10505,7 +10521,11 @@
 
     if-ne v5, v2, :cond_a
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeDouble([BI)D
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->longBitsToDouble(J)D
 
     move-result-wide v2
 
@@ -10606,7 +10626,7 @@
 
     if-gez v0, :cond_0
 
-    invoke-static {v0, v12, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint32(I[BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v0, v12, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32(I[BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -10815,7 +10835,7 @@
 
     move-object/from16 v5, p6
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/material/R$style;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v0 .. v5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -10877,7 +10897,7 @@
 
     move-object/from16 v10, p2
 
-    invoke-static {v10, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v10, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v19
 
@@ -10930,7 +10950,7 @@
 
     if-nez v10, :cond_6
 
-    invoke-static {v5, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v5, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -10955,7 +10975,7 @@
 
     if-nez v10, :cond_6
 
-    invoke-static {v5, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v5, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11016,7 +11036,7 @@
 
     if-ne v10, v0, :cond_6
 
-    invoke-static {v5, v4, v11}, Lcom/google/android/material/R$style;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v5, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11052,7 +11072,7 @@
 
     const/16 v17, -0x1
 
-    invoke-static {v0, v5, v4, v1, v11}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v0, v5, v4, v1, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11111,14 +11131,14 @@
 
     if-nez v0, :cond_e
 
-    invoke-static {v5, v4, v11}, Lcom/google/android/material/R$style;->decodeString([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v5, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeString([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
     goto :goto_b
 
     :cond_e
-    invoke-static {v5, v4, v11}, Lcom/google/android/material/R$style;->decodeStringRequireUtf8([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v5, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeStringRequireUtf8([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11144,7 +11164,7 @@
 
     if-nez v10, :cond_10
 
-    invoke-static {v5, v4, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v5, v4, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11187,7 +11207,7 @@
 
     if-ne v10, v2, :cond_10
 
-    invoke-static {v5, v4}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+    invoke-static {v5, v4}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v0
 
@@ -11219,7 +11239,7 @@
 
     if-ne v10, v0, :cond_10
 
-    invoke-static {v5, v4}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+    invoke-static {v5, v4}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v19
 
@@ -11280,7 +11300,7 @@
 
     if-nez v10, :cond_11
 
-    invoke-static {v4, v3, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v4, v3, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11313,7 +11333,7 @@
 
     if-nez v10, :cond_11
 
-    invoke-static {v4, v3, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v4, v3, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v19
 
@@ -11389,7 +11409,11 @@
 
     if-ne v10, v2, :cond_12
 
-    invoke-static {v5, v3}, Lcom/google/android/material/R$style;->decodeFloat([BI)F
+    invoke-static {v5, v3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     move-result v0
 
@@ -11422,7 +11446,11 @@
 
     if-ne v10, v0, :cond_12
 
-    invoke-static {v5, v3}, Lcom/google/android/material/R$style;->decodeDouble([BI)D
+    invoke-static {v5, v3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D
 
     move-result-wide v0
 
@@ -11541,7 +11569,7 @@
 
     move-object/from16 v6, p6
 
-    invoke-static/range {v0 .. v6}, Lcom/google/android/material/R$style;->decodeMessageList(Lcom/google/crypto/tink/shaded/protobuf/Schema;I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v0 .. v6}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageList(Lcom/google/crypto/tink/shaded/protobuf/Schema;I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11845,7 +11873,7 @@
 
     move-object/from16 v5, p6
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/material/R$style;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v0 .. v5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11870,7 +11898,7 @@
 
     move-object/from16 v7, p6
 
-    invoke-static/range {v0 .. v7}, Lcom/google/android/material/R$style;->decodeExtension(I[BIILcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v0 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeExtension(I[BIILcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -11901,7 +11929,7 @@
 
     move-object/from16 v5, p6
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/material/R$style;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v0 .. v5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12075,7 +12103,7 @@
 
     if-gez v0, :cond_0
 
-    invoke-static {v0, v12, v3, v11}, Lcom/google/android/material/R$style;->decodeVarint32(I[BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v0, v12, v3, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32(I[BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12173,7 +12201,7 @@
     :pswitch_0
     if-nez v6, :cond_b
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v6
 
@@ -12206,7 +12234,7 @@
 
     if-nez v6, :cond_7
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12227,7 +12255,7 @@
 
     if-nez v6, :cond_7
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12242,7 +12270,7 @@
 
     if-ne v6, v10, :cond_b
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12261,7 +12289,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v12, v8, v13, v11}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v0, v12, v8, v13, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12299,14 +12327,14 @@
 
     if-nez v0, :cond_5
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeString([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeString([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
     goto :goto_4
 
     :cond_5
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeStringRequireUtf8([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeStringRequireUtf8([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12322,7 +12350,7 @@
 
     if-nez v6, :cond_b
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -12355,7 +12383,7 @@
 
     if-ne v6, v0, :cond_b
 
-    invoke-static {v12, v8}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+    invoke-static {v12, v8}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v0
 
@@ -12373,7 +12401,7 @@
 
     if-ne v6, v0, :cond_b
 
-    invoke-static {v12, v8}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+    invoke-static {v12, v8}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v5
 
@@ -12396,7 +12424,7 @@
 
     if-nez v6, :cond_7
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12413,7 +12441,7 @@
 
     if-nez v6, :cond_7
 
-    invoke-static {v12, v8, v11}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v12, v8, v11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v6
 
@@ -12439,7 +12467,11 @@
 
     if-ne v6, v0, :cond_7
 
-    invoke-static {v12, v8}, Lcom/google/android/material/R$style;->decodeFloat([BI)F
+    invoke-static {v12, v8}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     move-result v0
 
@@ -12458,7 +12490,11 @@
 
     if-ne v6, v0, :cond_7
 
-    invoke-static {v12, v8}, Lcom/google/android/material/R$style;->decodeDouble([BI)D
+    invoke-static {v12, v8}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D
 
     move-result-wide v0
 
@@ -12535,7 +12571,7 @@
 
     move-object/from16 v6, p5
 
-    invoke-static/range {v0 .. v6}, Lcom/google/android/material/R$style;->decodeMessageList(Lcom/google/crypto/tink/shaded/protobuf/Schema;I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v0 .. v6}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageList(Lcom/google/crypto/tink/shaded/protobuf/Schema;I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12727,7 +12763,7 @@
 
     move-object/from16 v5, p5
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/material/R$style;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v0 .. v5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v0
 
@@ -12830,46 +12866,44 @@
 
     invoke-virtual {v11, v1, v9, v10}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v12
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v11}, Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;->isModifiable()Z
+    invoke-interface {v12}, Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;->isModifiable()Z
 
-    move-result v12
+    move-result v13
 
-    const/4 v13, 0x2
+    const/4 v14, 0x2
 
-    if-nez v12, :cond_1
+    if-nez v13, :cond_1
 
-    invoke-interface {v11}, Ljava/util/List;->size()I
+    invoke-interface {v12}, Ljava/util/List;->size()I
 
-    move-result v12
+    move-result v13
 
-    if-nez v12, :cond_0
+    if-nez v13, :cond_0
 
-    const/16 v12, 0xa
+    const/16 v13, 0xa
 
     goto :goto_0
 
     :cond_0
-    mul-int/2addr v12, v13
+    mul-int/2addr v13, v14
 
     :goto_0
-    invoke-interface {v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;->mutableCopyWithCapacity(I)Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;
+    invoke-interface {v12, v13}, Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;->mutableCopyWithCapacity(I)Lcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;
 
-    move-result-object v11
+    move-result-object v12
 
-    sget-object v12, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->UNSAFE:Lsun/misc/Unsafe;
-
-    invoke-virtual {v12, v1, v9, v10, v11}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
+    invoke-virtual {v11, v1, v9, v10, v12}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
 
     :cond_1
     const-wide/16 v9, 0x0
 
-    const/4 v12, 0x5
+    const/4 v11, 0x5
 
-    const/4 v14, 0x1
+    const/4 v13, 0x1
 
     const/4 v15, 0x3
 
@@ -12900,18 +12934,18 @@
 
     move-object/from16 p11, p14
 
-    invoke-static/range {p6 .. p11}, Lcom/google/android/material/R$style;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {p6 .. p11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
     iget-object v8, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
-    invoke-interface {v11, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_1
     if-ge v4, v5, :cond_2d
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v8
 
@@ -12934,20 +12968,20 @@
 
     move-object/from16 p11, p14
 
-    invoke-static/range {p6 .. p11}, Lcom/google/android/material/R$style;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {p6 .. p11}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeGroupField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
     iget-object v8, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->object1:Ljava/lang/Object;
 
-    invoke-interface {v11, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :pswitch_1
-    if-ne v6, v13, :cond_3
+    if-ne v6, v14, :cond_3
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedSInt64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedSInt64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -12956,9 +12990,9 @@
     :cond_3
     if-nez v6, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -12968,12 +13002,12 @@
 
     move-result-wide v8
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
 
     :goto_2
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -12984,7 +13018,7 @@
     goto/16 :goto_14
 
     :cond_4
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -12994,14 +13028,14 @@
 
     move-result-wide v8
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
 
     goto :goto_2
 
     :pswitch_2
-    if-ne v6, v13, :cond_5
+    if-ne v6, v14, :cond_5
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedSInt32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedSInt32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13010,9 +13044,9 @@
     :cond_5
     if-nez v6, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13022,12 +13056,12 @@
 
     move-result v4
 
-    invoke-virtual {v11, v4}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+    invoke-virtual {v12, v4}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
 
     :goto_3
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13038,7 +13072,7 @@
     goto/16 :goto_14
 
     :cond_6
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13048,14 +13082,14 @@
 
     move-result v4
 
-    invoke-virtual {v11, v4}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+    invoke-virtual {v12, v4}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
 
     goto :goto_3
 
     :pswitch_3
-    if-ne v6, v13, :cond_7
+    if-ne v6, v14, :cond_7
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedVarint32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedVarint32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -13072,11 +13106,11 @@
 
     move/from16 v5, p4
 
-    move-object v6, v11
+    move-object v6, v12
 
     move-object/from16 v7, p14
 
-    invoke-static/range {v2 .. v7}, Lcom/google/android/material/R$style;->decodeVarint32List(I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v2 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32List(I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v2
 
@@ -13096,9 +13130,9 @@
 
     div-int/lit8 v5, v8, 0x3
 
-    mul-int/2addr v5, v13
+    mul-int/2addr v5, v14
 
-    add-int/2addr v5, v14
+    add-int/2addr v5, v13
 
     aget-object v4, v4, v5
 
@@ -13108,7 +13142,7 @@
 
     move/from16 v6, p6
 
-    invoke-static {v6, v11, v4, v3, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->filterUnknownEnumList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumVerifier;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+    invoke-static {v6, v12, v4, v3, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->filterUnknownEnumList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Internal$EnumVerifier;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -13124,9 +13158,9 @@
     goto/16 :goto_14
 
     :pswitch_4
-    if-ne v6, v13, :cond_2d
+    if-ne v6, v14, :cond_2d
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13144,7 +13178,7 @@
 
     sget-object v4, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    invoke-interface {v11, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_6
 
@@ -13153,7 +13187,7 @@
 
     move-result-object v6
 
-    invoke-interface {v11, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_5
     add-int/2addr v1, v4
@@ -13161,7 +13195,7 @@
     :goto_6
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13172,7 +13206,7 @@
     goto/16 :goto_14
 
     :cond_b
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13190,7 +13224,7 @@
 
     sget-object v4, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    invoke-interface {v11, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_6
 
@@ -13199,7 +13233,7 @@
 
     move-result-object v6
 
-    invoke-interface {v11, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
 
@@ -13232,7 +13266,7 @@
     throw v1
 
     :pswitch_5
-    if-ne v6, v13, :cond_2d
+    if-ne v6, v14, :cond_2d
 
     invoke-virtual {v0, v8}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
 
@@ -13248,30 +13282,30 @@
 
     move/from16 p10, p4
 
-    move-object/from16 p11, v11
+    move-object/from16 p11, v12
 
     move-object/from16 p12, p14
 
-    invoke-static/range {p6 .. p12}, Lcom/google/android/material/R$style;->decodeMessageList(Lcom/google/crypto/tink/shaded/protobuf/Schema;I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {p6 .. p12}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageList(Lcom/google/crypto/tink/shaded/protobuf/Schema;I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     goto/16 :goto_14
 
     :pswitch_6
-    if-ne v6, v13, :cond_2d
+    if-ne v6, v14, :cond_2d
 
-    const-wide/32 v12, 0x20000000
+    const-wide/32 v13, 0x20000000
 
-    and-long v12, p9, v12
+    and-long v13, p9, v13
 
-    cmp-long v1, v12, v9
+    cmp-long v1, v13, v9
 
     const-string v6, ""
 
     if-nez v1, :cond_16
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13281,7 +13315,7 @@
 
     if-nez v4, :cond_11
 
-    invoke-interface {v11, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_8
 
@@ -13292,7 +13326,7 @@
 
     invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    invoke-interface {v11, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_7
     add-int/2addr v1, v4
@@ -13300,7 +13334,7 @@
     :goto_8
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13311,7 +13345,7 @@
     goto/16 :goto_14
 
     :cond_12
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13321,7 +13355,7 @@
 
     if-nez v4, :cond_13
 
-    invoke-interface {v11, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_8
 
@@ -13332,7 +13366,7 @@
 
     invoke-direct {v8, v3, v1, v4, v9}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    invoke-interface {v11, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
@@ -13351,7 +13385,7 @@
     throw v1
 
     :cond_16
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13361,7 +13395,7 @@
 
     if-nez v4, :cond_17
 
-    invoke-interface {v11, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_a
 
@@ -13380,7 +13414,7 @@
 
     invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    invoke-interface {v11, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_9
     move v1, v8
@@ -13388,7 +13422,7 @@
     :goto_a
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13399,7 +13433,7 @@
     goto/16 :goto_14
 
     :cond_18
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13409,7 +13443,7 @@
 
     if-nez v4, :cond_19
 
-    invoke-interface {v11, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_a
 
@@ -13428,7 +13462,7 @@
 
     invoke-direct {v9, v3, v1, v4, v10}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    invoke-interface {v11, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v12, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_9
 
@@ -13461,9 +13495,9 @@
     throw v1
 
     :pswitch_7
-    if-ne v6, v13, :cond_1e
+    if-ne v6, v14, :cond_1e
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedBoolList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedBoolList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13472,21 +13506,21 @@
     :cond_1e
     if-nez v6, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
-    iget-wide v12, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+    iget-wide v14, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
 
-    cmp-long v4, v12, v9
+    cmp-long v4, v14, v9
 
     const/4 v6, 0x0
 
     if-eqz v4, :cond_1f
 
-    move v4, v14
+    move v4, v13
 
     goto :goto_b
 
@@ -13494,12 +13528,12 @@
     move v4, v6
 
     :goto_b
-    invoke-virtual {v11, v4}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;->addBoolean(Z)V
+    invoke-virtual {v12, v4}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;->addBoolean(Z)V
 
     :goto_c
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13510,17 +13544,17 @@
     goto/16 :goto_14
 
     :cond_20
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
-    iget-wide v12, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
+    iget-wide v14, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
 
-    cmp-long v4, v12, v9
+    cmp-long v4, v14, v9
 
     if-eqz v4, :cond_21
 
-    move v4, v14
+    move v4, v13
 
     goto :goto_d
 
@@ -13528,36 +13562,36 @@
     move v4, v6
 
     :goto_d
-    invoke-virtual {v11, v4}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;->addBoolean(Z)V
+    invoke-virtual {v12, v4}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;->addBoolean(Z)V
 
     goto :goto_c
 
     :pswitch_8
-    if-ne v6, v13, :cond_22
+    if-ne v6, v14, :cond_22
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedFixed32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedFixed32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     goto/16 :goto_14
 
     :cond_22
-    if-ne v6, v12, :cond_2d
+    if-ne v6, v11, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v1
 
-    invoke-virtual {v11, v1}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+    invoke-virtual {v12, v1}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
 
     :goto_e
     add-int/lit8 v1, v4, 0x4
 
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13568,40 +13602,40 @@
     goto/16 :goto_14
 
     :cond_23
-    invoke-static {v3, v4}, Lcom/google/android/material/R$style;->decodeFixed32([BI)I
+    invoke-static {v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v1
 
-    invoke-virtual {v11, v1}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
+    invoke-virtual {v12, v1}, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->addInt(I)V
 
     goto :goto_e
 
     :pswitch_9
-    if-ne v6, v13, :cond_24
+    if-ne v6, v14, :cond_24
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedFixed64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedFixed64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     goto/16 :goto_14
 
     :cond_24
-    if-ne v6, v14, :cond_2d
+    if-ne v6, v13, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v8
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
 
     :goto_f
     add-int/lit8 v1, v4, 0x8
 
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13612,18 +13646,18 @@
     goto/16 :goto_14
 
     :cond_25
-    invoke-static {v3, v4}, Lcom/google/android/material/R$style;->decodeFixed64([BI)J
+    invoke-static {v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v8
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
 
     goto :goto_f
 
     :pswitch_a
-    if-ne v6, v13, :cond_26
+    if-ne v6, v14, :cond_26
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedVarint32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedVarint32List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13638,20 +13672,20 @@
 
     move/from16 p8, p4
 
-    move-object/from16 p9, v11
+    move-object/from16 p9, v12
 
     move-object/from16 p10, p14
 
-    invoke-static/range {p5 .. p10}, Lcom/google/android/material/R$style;->decodeVarint32List(I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {p5 .. p10}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32List(I[BIILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     goto/16 :goto_14
 
     :pswitch_b
-    if-ne v6, v13, :cond_27
+    if-ne v6, v14, :cond_27
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedVarint64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedVarint64List([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
@@ -13660,20 +13694,20 @@
     :cond_27
     if-nez v6, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
 
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     iget-wide v8, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
 
     :goto_10
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13681,45 +13715,49 @@
 
     if-eq v2, v6, :cond_28
 
-    goto :goto_14
+    goto/16 :goto_14
 
     :cond_28
-    invoke-static {v3, v4, v7}, Lcom/google/android/material/R$style;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint64([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     iget-wide v8, v7, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;->long1:J
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->addLong(J)V
 
     goto :goto_10
 
     :pswitch_c
-    if-ne v6, v13, :cond_29
+    if-ne v6, v14, :cond_29
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedFloatList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedFloatList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     goto :goto_14
 
     :cond_29
-    if-ne v6, v12, :cond_2d
+    if-ne v6, v11, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeFloat([BI)F
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v1
 
-    invoke-virtual {v11, v1}, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;->addFloat(F)V
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result v1
+
+    invoke-virtual {v12, v1}, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;->addFloat(F)V
 
     :goto_11
     add-int/lit8 v1, v4, 0x4
 
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13730,40 +13768,48 @@
     goto :goto_14
 
     :cond_2a
-    invoke-static {v3, v4}, Lcom/google/android/material/R$style;->decodeFloat([BI)F
+    invoke-static {v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed32([BI)I
 
     move-result v1
 
-    invoke-virtual {v11, v1}, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;->addFloat(F)V
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result v1
+
+    invoke-virtual {v12, v1}, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;->addFloat(F)V
 
     goto :goto_11
 
     :pswitch_d
-    if-ne v6, v13, :cond_2b
+    if-ne v6, v14, :cond_2b
 
-    invoke-static {v3, v4, v11, v7}, Lcom/google/android/material/R$style;->decodePackedDoubleList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v4, v12, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodePackedDoubleList([BILcom/google/crypto/tink/shaded/protobuf/Internal$ProtobufList;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v1
 
     goto :goto_14
 
     :cond_2b
-    if-ne v6, v14, :cond_2d
+    if-ne v6, v13, :cond_2d
 
-    check-cast v11, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;
+    check-cast v12, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;
 
-    invoke-static/range {p2 .. p3}, Lcom/google/android/material/R$style;->decodeDouble([BI)D
+    invoke-static/range {p2 .. p3}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v8
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;->addDouble(D)V
+    invoke-static {v8, v9}, Ljava/lang/Double;->longBitsToDouble(J)D
+
+    move-result-wide v8
+
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;->addDouble(D)V
 
     :goto_12
     add-int/lit8 v1, v4, 0x8
 
     if-ge v1, v5, :cond_2e
 
-    invoke-static {v3, v1, v7}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v3, v1, v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -13774,11 +13820,15 @@
     goto :goto_14
 
     :cond_2c
-    invoke-static {v3, v4}, Lcom/google/android/material/R$style;->decodeDouble([BI)D
+    invoke-static {v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeFixed64([BI)J
 
     move-result-wide v8
 
-    invoke-virtual {v11, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;->addDouble(D)V
+    invoke-static {v8, v9}, Ljava/lang/Double;->longBitsToDouble(J)D
+
+    move-result-wide v8
+
+    invoke-virtual {v12, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;->addDouble(D)V
 
     goto :goto_12
 
@@ -13789,6 +13839,8 @@
     :cond_2e
     :goto_14
     return v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x12
@@ -14212,27 +14264,19 @@
 
     iget-boolean v3, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
     iget-object v3, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v3, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v3, v1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v3, :cond_0
-
-    move-object v3, v1
-
-    check-cast v3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object v3, v3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object v3
 
     invoke-virtual {v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isEmpty()Z
 
     move-result v5
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_0
 
     invoke-virtual {v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->iterator()Ljava/util/Iterator;
 
@@ -14247,12 +14291,9 @@
     goto :goto_0
 
     :cond_0
-    throw v4
+    const/4 v3, 0x0
 
-    :cond_1
-    move-object v3, v4
-
-    move-object v5, v3
+    const/4 v5, 0x0
 
     :goto_0
     const/4 v6, -0x1
@@ -14268,7 +14309,7 @@
     const/4 v11, 0x0
 
     :goto_1
-    if-ge v10, v7, :cond_8
+    if-ge v10, v7, :cond_7
 
     invoke-virtual {v0, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->typeAndOffsetAt(I)I
 
@@ -14284,11 +14325,11 @@
 
     iget-boolean v15, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->proto3:Z
 
-    if-nez v15, :cond_3
+    if-nez v15, :cond_2
 
     const/16 v15, 0x11
 
-    if-gt v14, v15, :cond_3
+    if-gt v14, v15, :cond_2
 
     iget-object v15, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
@@ -14302,7 +14343,7 @@
 
     move-object/from16 v16, v5
 
-    if-eq v9, v6, :cond_2
+    if-eq v9, v6, :cond_1
 
     int-to-long v4, v9
 
@@ -14312,7 +14353,7 @@
 
     move v6, v9
 
-    :cond_2
+    :cond_1
     ushr-int/lit8 v4, v15, 0x14
 
     const/4 v5, 0x1
@@ -14323,7 +14364,7 @@
 
     goto :goto_2
 
-    :cond_3
+    :cond_2
     move-object/from16 v16, v5
 
     move-object/from16 v5, v16
@@ -14331,7 +14372,7 @@
     const/4 v4, 0x0
 
     :goto_2
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_4
 
     iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
@@ -14339,7 +14380,7 @@
 
     move-result v9
 
-    if-gt v9, v13, :cond_5
+    if-gt v9, v13, :cond_4
 
     iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
@@ -14349,7 +14390,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_3
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -14359,12 +14400,12 @@
 
     goto :goto_2
 
-    :cond_4
+    :cond_3
     const/4 v5, 0x0
 
     goto :goto_2
 
-    :cond_5
+    :cond_4
     move-object v15, v5
 
     move v9, v6
@@ -14375,7 +14416,7 @@
 
     packed-switch v14, :pswitch_data_0
 
-    :cond_6
+    :cond_5
     :goto_3
     const/4 v12, 0x0
 
@@ -14386,7 +14427,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -14409,7 +14450,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
@@ -14428,7 +14469,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
@@ -14447,7 +14488,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
@@ -14468,7 +14509,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
@@ -14489,7 +14530,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
@@ -14510,7 +14551,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
@@ -14531,7 +14572,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -14554,7 +14595,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -14577,7 +14618,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -14592,7 +14633,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofBooleanAt(Ljava/lang/Object;J)Z
 
@@ -14613,7 +14654,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
@@ -14634,7 +14675,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
@@ -14655,7 +14696,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
@@ -14676,7 +14717,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
@@ -14697,7 +14738,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
@@ -14718,7 +14759,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofFloatAt(Ljava/lang/Object;J)F
 
@@ -14737,7 +14778,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofDoubleAt(Ljava/lang/Object;J)D
 
@@ -15309,7 +15350,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -15332,7 +15373,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
@@ -15351,7 +15392,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
@@ -15370,7 +15411,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
@@ -15391,7 +15432,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
@@ -15412,7 +15453,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
@@ -15433,7 +15474,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
@@ -15454,7 +15495,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -15477,7 +15518,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -15500,7 +15541,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
@@ -15515,7 +15556,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getBoolean(Ljava/lang/Object;J)Z
 
@@ -15536,7 +15577,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
@@ -15557,7 +15598,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
@@ -15578,7 +15619,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
@@ -15599,7 +15640,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
@@ -15620,7 +15661,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v8, v1, v5, v6}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
 
@@ -15641,7 +15682,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getFloat(Ljava/lang/Object;J)F
 
@@ -15660,7 +15701,7 @@
 
     and-int/2addr v4, v11
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-static {v1, v5, v6}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getDouble(Ljava/lang/Object;J)D
 
@@ -15672,7 +15713,7 @@
 
     invoke-virtual {v6, v13, v4, v5}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeDouble(ID)V
 
-    :cond_7
+    :cond_6
     :goto_4
     add-int/lit8 v10, v10, 0x3
 
@@ -15680,15 +15721,13 @@
 
     move-object v5, v15
 
-    const/4 v4, 0x0
-
     goto/16 :goto_1
 
-    :cond_8
+    :cond_7
     move-object/from16 v16, v5
 
     :goto_5
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_9
 
     iget-object v4, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
@@ -15698,7 +15737,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_8
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -15710,15 +15749,19 @@
 
     goto :goto_5
 
-    :cond_9
+    :cond_8
     const/4 v5, 0x0
 
     goto :goto_5
 
-    :cond_a
+    :cond_9
     iget-object v3, v0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    invoke-virtual {v0, v3, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeUnknownInMessageTo(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+    invoke-virtual {v3, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->writeTo(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
     return-void
 
@@ -15820,7 +15863,7 @@
         }
     .end annotation
 
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_1
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->mapFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;
 
@@ -15846,9 +15889,7 @@
 
     iget-object p4, p1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
-    const/4 v0, 0x0
-
-    if-eqz p4, :cond_1
+    invoke-static {p4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {p3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -15881,12 +15922,13 @@
 
     invoke-interface {p3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    throw v0
+    const/4 p1, 0x0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    throw p1
 
     :cond_1
-    throw v0
-
-    :cond_2
     :goto_0
     return-void
 .end method
@@ -15927,7 +15969,7 @@
 .end method
 
 .method public writeTo(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
-    .locals 13
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -15942,1550 +15984,1672 @@
         }
     .end annotation
 
-    move-object v0, p2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+    iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->proto3:Z
+
+    if-eqz v0, :cond_7
+
+    iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    iget-boolean v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->proto3:Z
+    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    if-eqz v2, :cond_8
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    iget-boolean v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->hasExtensions:Z
+    move-result-object v0
 
-    if-eqz v2, :cond_1
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isEmpty()Z
 
-    iget-object v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+    move-result v2
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    if-nez v2, :cond_0
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->iterator()Ljava/util/Iterator;
 
-    move-object v2, p1
+    move-result-object v0
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object v2, v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
-
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Map$Entry;
+    check-cast v2, Ljava/util/Map$Entry;
 
     goto :goto_0
 
     :cond_0
-    throw v1
+    move-object v0, v1
+
+    move-object v2, v0
+
+    :goto_0
+    iget-object v3, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+
+    array-length v3, v3
+
+    const/4 v4, 0x0
+
+    move v5, v4
+
+    :goto_1
+    if-ge v5, v3, :cond_4
+
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->typeAndOffsetAt(I)I
+
+    move-result v6
+
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+
+    aget v7, v7, v5
+
+    :goto_2
+    if-eqz v2, :cond_2
+
+    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+
+    invoke-virtual {v8, v2}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->extensionNumber(Ljava/util/Map$Entry;)I
+
+    move-result v8
+
+    if-gt v8, v7, :cond_2
+
+    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+
+    invoke-virtual {v8, p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->serializeExtension(Lcom/google/crypto/tink/shaded/protobuf/Writer;Ljava/util/Map$Entry;)V
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Map$Entry;
+
+    goto :goto_2
 
     :cond_1
     move-object v2, v1
 
-    move-object v3, v2
-
-    :goto_0
-    iget-object v4, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
-
-    array-length v4, v4
-
-    const/4 v5, 0x0
-
-    move v6, v5
-
-    :goto_1
-    if-ge v6, v4, :cond_5
-
-    invoke-virtual {p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->typeAndOffsetAt(I)I
-
-    move-result v7
-
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
-
-    aget v8, v8, v6
-
-    :goto_2
-    if-eqz v3, :cond_3
-
-    iget-object v9, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
-
-    invoke-virtual {v9, v3}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->extensionNumber(Ljava/util/Map$Entry;)I
-
-    move-result v9
-
-    if-gt v9, v8, :cond_3
-
-    iget-object v9, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
-
-    invoke-virtual {v9, p2, v3}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->serializeExtension(Lcom/google/crypto/tink/shaded/protobuf/Writer;Ljava/util/Map$Entry;)V
-
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Map$Entry;
-
     goto :goto_2
 
     :cond_2
-    move-object v3, v1
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->type(I)I
 
-    goto :goto_2
+    move-result v8
 
-    :cond_3
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->type(I)I
+    const/4 v9, 0x1
 
-    move-result v9
-
-    const/4 v10, 0x1
-
-    packed-switch v9, :pswitch_data_0
+    packed-switch v8, :pswitch_data_0
 
     goto/16 :goto_3
 
     :pswitch_0
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v0, v8, v7, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeGroup(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+    move-object v9, p2
+
+    check-cast v9, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v9, v7, v6, v8}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeGroup(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
 
     goto/16 :goto_3
 
     :pswitch_1
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-virtual {v0, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt64(IJ)V
+    move-object v6, p2
+
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt64(IJ)V
 
     goto/16 :goto_3
 
     :pswitch_2
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    invoke-virtual {v0, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt32(II)V
+    move-object v8, p2
+
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt32(II)V
 
     goto/16 :goto_3
 
     :pswitch_3
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
 
     goto/16 :goto_3
 
     :pswitch_4
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
 
     goto/16 :goto_3
 
     :pswitch_5
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
 
     goto/16 :goto_3
 
     :pswitch_6
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt32(II)V
 
     goto/16 :goto_3
 
     :pswitch_7
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBytes(ILcom/google/crypto/tink/shaded/protobuf/ByteString;)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBytes(ILcom/google/crypto/tink/shaded/protobuf/ByteString;)V
 
     goto/16 :goto_3
 
     :pswitch_8
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v0, v8, v7, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessage(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+    move-object v9, p2
+
+    check-cast v9, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v9, v7, v6, v8}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessage(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
 
     goto/16 :goto_3
 
     :pswitch_9
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {p0, v8, v7, p2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeString(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+    invoke-virtual {p0, v7, v6, p2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeString(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
     goto/16 :goto_3
 
     :pswitch_a
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofBooleanAt(Ljava/lang/Object;J)Z
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofBooleanAt(Ljava/lang/Object;J)Z
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBool(IZ)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBool(IZ)V
 
     goto/16 :goto_3
 
     :pswitch_b
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
 
     goto/16 :goto_3
 
     :pswitch_c
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
 
     goto/16 :goto_3
 
     :pswitch_d
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofIntAt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
 
     goto/16 :goto_3
 
     :pswitch_e
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
     goto/16 :goto_3
 
     :pswitch_f
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofLongAt(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
     goto/16 :goto_3
 
     :pswitch_10
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofFloatAt(Ljava/lang/Object;J)F
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofFloatAt(Ljava/lang/Object;J)F
 
-    move-result v7
+    move-result v6
 
-    invoke-virtual {v0, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeFloat(IF)V
+    move-object v8, p2
+
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeFloat(IF)V
 
     goto/16 :goto_3
 
     :pswitch_11
-    invoke-virtual {p0, p1, v8, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
+    invoke-virtual {p0, p1, v7, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isOneofPresent(Ljava/lang/Object;II)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofDoubleAt(Ljava/lang/Object;J)D
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->oneofDoubleAt(Ljava/lang/Object;J)D
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-virtual {v0, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeDouble(ID)V
+    move-object v6, p2
+
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeDouble(ID)V
 
     goto/16 :goto_3
 
     :pswitch_12
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {p0, p2, v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeMapHelper(Lcom/google/crypto/tink/shaded/protobuf/Writer;ILjava/lang/Object;I)V
+    invoke-virtual {p0, p2, v7, v6, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeMapHelper(Lcom/google/crypto/tink/shaded/protobuf/Writer;ILjava/lang/Object;I)V
 
     goto/16 :goto_3
 
     :pswitch_13
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-virtual {p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v8, v7, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeGroupList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+    invoke-static {v7, v6, p2, v8}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeGroupList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
 
     goto/16 :goto_3
 
     :pswitch_14
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_15
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_16
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_17
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_18
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeEnumList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeEnumList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_19
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_1a
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBoolList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBoolList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_1b
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_1c
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_1d
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_1e
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_1f
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_20
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFloatList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFloatList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_21
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v11
+    move-result-wide v10
 
-    invoke-static {p1, v11, v12}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v10, v11}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v10}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeDoubleList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeDoubleList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_22
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_23
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_24
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_25
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeSFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_26
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeEnumList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeEnumList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_27
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_28
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBytesList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+    invoke-static {v7, v6, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBytesList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
     goto/16 :goto_3
 
     :pswitch_29
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-virtual {p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-static {v8, v7, p2, v9}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeMessageList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+    invoke-static {v7, v6, p2, v8}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeMessageList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
 
     goto/16 :goto_3
 
     :pswitch_2a
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeStringList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+    invoke-static {v7, v6, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeStringList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
     goto/16 :goto_3
 
     :pswitch_2b
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBoolList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeBoolList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_2c
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_2d
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFixed64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_2e
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt32List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_2f
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeUInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_30
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeInt64List(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_31
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFloatList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeFloatList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_32
-    iget-object v8, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
+    iget-object v7, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->buffer:[I
 
-    aget v8, v8, v6
+    aget v7, v7, v5
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Ljava/util/List;
+    check-cast v6, Ljava/util/List;
 
-    invoke-static {v8, v7, p2, v5}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeDoubleList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
+    invoke-static {v7, v6, p2, v4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->writeDoubleList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
 
     goto/16 :goto_3
 
     :pswitch_33
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v0, v8, v7, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeGroup(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+    move-object v9, p2
+
+    check-cast v9, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v9, v7, v6, v8}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeGroup(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
 
     goto/16 :goto_3
 
     :pswitch_34
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-virtual {v0, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt64(IJ)V
+    move-object v6, p2
+
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt64(IJ)V
 
     goto/16 :goto_3
 
     :pswitch_35
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    invoke-virtual {v0, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt32(II)V
+    move-object v8, p2
+
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeSInt32(II)V
 
     goto/16 :goto_3
 
     :pswitch_36
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
 
     goto/16 :goto_3
 
     :pswitch_37
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
 
     goto/16 :goto_3
 
     :pswitch_38
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
 
     goto/16 :goto_3
 
     :pswitch_39
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt32(II)V
 
     goto/16 :goto_3
 
     :pswitch_3a
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    check-cast v7, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBytes(ILcom/google/crypto/tink/shaded/protobuf/ByteString;)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBytes(ILcom/google/crypto/tink/shaded/protobuf/ByteString;)V
 
     goto/16 :goto_3
 
     :pswitch_3b
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {p0, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->getMessageFieldSchema(I)Lcom/google/crypto/tink/shaded/protobuf/Schema;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v0, v8, v7, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessage(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
+    move-object v9, p2
+
+    check-cast v9, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v9, v7, v6, v8}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessage(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Schema;)V
 
     goto/16 :goto_3
 
     :pswitch_3c
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {p0, v8, v7, p2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeString(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+    invoke-virtual {p0, v7, v6, p2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeString(ILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
     goto/16 :goto_3
 
     :pswitch_3d
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getBoolean(Ljava/lang/Object;J)Z
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getBoolean(Ljava/lang/Object;J)Z
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBool(IZ)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeBool(IZ)V
 
     goto/16 :goto_3
 
     :pswitch_3e
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
 
     goto/16 :goto_3
 
     :pswitch_3f
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
 
     goto :goto_3
 
     :pswitch_40
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getInt(Ljava/lang/Object;J)I
 
-    move-result v7
+    move-result v6
 
-    iget-object v9, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v8, p2
 
-    invoke-virtual {v9, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v8, v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeInt32(II)V
 
     goto :goto_3
 
     :pswitch_41
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
     goto :goto_3
 
     :pswitch_42
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getLong(Ljava/lang/Object;J)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+    move-object v6, p2
 
-    invoke-virtual {v7, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    iget-object v6, v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
     goto :goto_3
 
     :pswitch_43
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getFloat(Ljava/lang/Object;J)F
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getFloat(Ljava/lang/Object;J)F
 
-    move-result v7
+    move-result v6
 
-    invoke-virtual {v0, v8, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeFloat(IF)V
+    move-object v8, p2
+
+    check-cast v8, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v8, v7, v6}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeFloat(IF)V
 
     goto :goto_3
 
     :pswitch_44
-    invoke-virtual {p0, p1, v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
+    invoke-virtual {p0, p1, v5}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->isFieldPresent(Ljava/lang/Object;I)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_3
 
-    invoke-static {v7}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
+    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->offset(I)J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-static {p1, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getDouble(Ljava/lang/Object;J)D
+    invoke-static {p1, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getDouble(Ljava/lang/Object;J)D
 
-    move-result-wide v9
+    move-result-wide v8
 
-    invoke-virtual {v0, v8, v9, v10}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeDouble(ID)V
+    move-object v6, p2
 
-    :cond_4
+    check-cast v6, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v6, v7, v8, v9}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeDouble(ID)V
+
+    :cond_3
     :goto_3
-    add-int/lit8 v6, v6, 0x3
+    add-int/lit8 v5, v5, 0x3
 
     goto/16 :goto_1
 
-    :cond_5
+    :cond_4
     :goto_4
-    if-eqz v3, :cond_7
+    if-eqz v2, :cond_6
 
-    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+    iget-object v3, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    invoke-virtual {v0, p2, v3}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->serializeExtension(Lcom/google/crypto/tink/shaded/protobuf/Writer;Ljava/util/Map$Entry;)V
+    invoke-virtual {v3, p2, v2}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->serializeExtension(Lcom/google/crypto/tink/shaded/protobuf/Writer;Ljava/util/Map$Entry;)V
 
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_6
+    if-eqz v2, :cond_5
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    move-object v3, v0
+    check-cast v2, Ljava/util/Map$Entry;
 
-    check-cast v3, Ljava/util/Map$Entry;
+    goto :goto_4
+
+    :cond_5
+    move-object v2, v1
 
     goto :goto_4
 
     :cond_6
-    move-object v3, v1
-
-    goto :goto_4
-
-    :cond_7
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    invoke-virtual {p0, v0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeUnknownInMessageTo(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->writeTo(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
     goto :goto_5
 
-    :cond_8
+    :cond_7
     invoke-virtual {p0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/MessageSchema;->writeFieldsInAscendingOrderProto2(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
     :goto_5
     return-void
-
-    :cond_9
-    throw v1
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -17559,44 +17723,4 @@
         :pswitch_1
         :pswitch_0
     .end packed-switch
-.end method
-
-.method public final writeUnknownInMessageTo(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<UT:",
-            "Ljava/lang/Object;",
-            "UB:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema<",
-            "TUT;TUB;>;TT;",
-            "Lcom/google/crypto/tink/shaded/protobuf/Writer;",
-            ")V"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
-
-    if-eqz p1, :cond_0
-
-    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object p1, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    invoke-virtual {p1, p3}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->writeTo(Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
-
-    return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method

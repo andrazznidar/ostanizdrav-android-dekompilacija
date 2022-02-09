@@ -12,7 +12,8 @@
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
         "Lkotlin/jvm/functions/Function2<",
         "Lkotlinx/coroutines/flow/FlowCollector<",
-        "-TR;>;",
+        "Ljava/lang/Object;",
+        ">;",
         "Lkotlin/coroutines/Continuation<",
         "-",
         "Lkotlin/Unit;",
@@ -175,7 +176,7 @@
 
     check-cast v0, Lkotlinx/coroutines/flow/FlowCollector;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -189,7 +190,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->p$:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -199,7 +200,7 @@
 
     const/4 v4, 0x6
 
-    invoke-static {v1, v3, v3, v4}, Lcom/google/zxing/client/android/R$id;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
+    invoke-static {v1, v3, v3, v4}, Lkotlin/collections/SetsKt__SetsKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;I)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object v1
 
@@ -211,7 +212,11 @@
 
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    invoke-interface {v1, v3}, Lkotlinx/coroutines/channels/SendChannel;->offer(Ljava/lang/Object;)Z
+    move-object v4, v1
+
+    check-cast v4, Lkotlinx/coroutines/channels/AbstractSendChannel;
+
+    invoke-virtual {v4, v3}, Lkotlinx/coroutines/channels/AbstractSendChannel;->offer(Ljava/lang/Object;)Z
 
     iget-object v11, p0, Lkotlin/coroutines/jvm/internal/ContinuationImpl;->_context:Lkotlin/coroutines/CoroutineContext;
 
@@ -223,7 +228,7 @@
 
     iget-object v3, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->$db:Landroidx/room/RoomDatabase;
 
-    invoke-static {v3}, Landroidx/navigation/ui/R$anim;->getTransactionDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-static {v3}, Landroidx/room/CoroutinesRoomKt;->getTransactionDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object v3
 
@@ -232,7 +237,7 @@
     :cond_2
     iget-object v3, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->$db:Landroidx/room/RoomDatabase;
 
-    invoke-static {v3}, Landroidx/navigation/ui/R$anim;->getQueryDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
+    invoke-static {v3}, Landroidx/room/CoroutinesRoomKt;->getQueryDispatcher(Landroidx/room/RoomDatabase;)Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object v3
 
@@ -269,7 +274,7 @@
 
     iput v2, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1;->label:I
 
-    invoke-static {v12, v13, p0}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v12, v13, p0}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

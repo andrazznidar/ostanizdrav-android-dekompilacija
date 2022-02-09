@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Landroid/view/ViewGroup;",
-        "Lde/rki/coronawarnapp/tracing/ui/homecards/TracingDisabledCard;",
+        "Lde/rki/coronawarnapp/tracing/ui/homecards/TracingFailedCard;",
         ">;"
     }
 .end annotation
@@ -65,13 +65,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingDisabledCard;
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingFailedCard;
 
     const/4 v1, 0x0
 
     const/4 v2, 0x2
 
-    invoke-direct {v0, p1, v1, v2}, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingDisabledCard;-><init>(Landroid/view/ViewGroup;II)V
+    invoke-direct {v0, p1, v1, v2}, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingFailedCard;-><init>(Landroid/view/ViewGroup;II)V
 
     return-object v0
 .end method

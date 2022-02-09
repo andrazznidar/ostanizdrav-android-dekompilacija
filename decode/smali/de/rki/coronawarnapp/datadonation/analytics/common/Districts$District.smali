@@ -15,37 +15,37 @@
 
 
 # instance fields
-.field public final districtId:I
+.field private final districtId:I
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "districtId"
     .end annotation
 .end field
 
-.field public final districtName:Ljava/lang/String;
+.field private final districtName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "districtName"
     .end annotation
 .end field
 
-.field public final districtShortName:Ljava/lang/String;
+.field private final districtShortName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "districtShortName"
     .end annotation
 .end field
 
-.field public final federalStateId:I
+.field private final federalStateId:I
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "federalStateId"
     .end annotation
 .end field
 
-.field public final federalStateName:Ljava/lang/String;
+.field private final federalStateName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "federalStateName"
     .end annotation
 .end field
 
-.field public final federalStateShortName:Ljava/lang/String;
+.field private final federalStateShortName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
         value = "federalStateShortName"
     .end annotation
@@ -179,80 +179,121 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
+    iget-object v3, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtShortName:Ljava/lang/String;
+    return v2
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtShortName:Ljava/lang/String;
+    :cond_2
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtShortName:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v3, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtShortName:Ljava/lang/String;
 
-    move-result v0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
+    if-nez v1, :cond_3
 
-    iget v1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
+    return v2
 
-    if-ne v0, v1, :cond_0
+    :cond_3
+    iget v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
+    iget v3, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
+    if-eq v1, v3, :cond_4
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return v2
 
-    move-result v0
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
+    move-result v1
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-nez v1, :cond_5
 
-    move-result v0
+    return v2
 
-    if-eqz v0, :cond_0
+    :cond_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
 
-    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateId:I
+    iget-object v3, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateId:I
 
     iget p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateId:I
 
-    if-ne v0, p1, :cond_0
+    if-eq v1, p1, :cond_7
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
+    :cond_7
+    return v0
+.end method
 
-    return p1
+.method public final getDistrictId()I
+    .locals 1
 
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
+    iget v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
 
-    return p1
+    return v0
+.end method
+
+.method public final getDistrictName()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getFederalStateShortName()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public hashCode()I
@@ -260,76 +301,37 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtShortName:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtShortName:Ljava/lang/String;
 
-    if-eqz v2, :cond_1
+    const/16 v2, 0x1f
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v1, v0, v2}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
 
-    move-result v2
+    move-result v0
 
-    goto :goto_1
+    iget v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
 
-    :cond_1
-    move v2, v1
-
-    :goto_1
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
-
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    goto :goto_2
-
-    :cond_2
-    move v2, v1
-
-    :goto_2
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    :cond_3
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
+
+    invoke-static {v1, v0, v2}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
+
+    move-result v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
+
+    invoke-static {v1, v0, v2}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
+
+    move-result v0
 
     iget v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateId:I
 
@@ -339,59 +341,55 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 9
 
-    const-string v0, "District(districtName="
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", districtShortName="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtName:Ljava/lang/String;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtShortName:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v2, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
 
-    const-string v1, ", districtId="
+    iget-object v3, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
 
-    iget v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
+    iget v5, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateId:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v6, "District(districtName="
+
+    const-string v7, ", districtShortName="
+
+    const-string v8, ", districtId="
+
+    invoke-static {v6, v0, v7, v1, v8}, Landroidx/navigation/NavInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ", federalStateName="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", federalStateShortName="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateShortName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", federalStateId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->federalStateId:I
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, ")"
+    const-string v1, ")"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

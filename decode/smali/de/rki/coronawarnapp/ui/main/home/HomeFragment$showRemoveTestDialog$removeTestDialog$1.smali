@@ -18,14 +18,18 @@
 
 
 # instance fields
+.field public final synthetic $type:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
+
 .field public final synthetic this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
     .locals 0
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$showRemoveTestDialog$removeTestDialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$showRemoveTestDialog$removeTestDialog$1;->$type:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
     const/4 p1, 0x0
 
@@ -37,23 +41,27 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$showRemoveTestDialog$removeTestDialog$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->access$getVm$p(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
+    sget-object v1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->Companion:Lde/rki/coronawarnapp/ui/main/home/HomeFragment$Companion;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->getViewModel()Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
     move-result-object v0
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$showRemoveTestDialog$removeTestDialog$1;->$type:Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->removeTestFromDevice()V
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string/jumbo v2, "type"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->submissionRepository:Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->refreshDeviceUIState(Z)V
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/submission/SubmissionRepository;->removeTestFromDevice(Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -219,11 +219,7 @@
     return-object p0
 
     :pswitch_10
-    invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream;->readRawLittleEndian32()I
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+    invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream;->readFloat()F
 
     move-result p0
 

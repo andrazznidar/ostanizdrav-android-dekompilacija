@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # instance fields
 .field public badgeAnchorView:Landroid/view/View;
 
@@ -40,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/material/tabs/TabLayout;Landroid/content/Context;)V
-    .locals 3
+    .locals 4
 
     iput-object p1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->this$0:Lcom/google/android/material/tabs/TabLayout;
 
@@ -59,6 +63,8 @@
     iget v1, p1, Lcom/google/android/material/tabs/TabLayout;->tabPaddingEnd:I
 
     iget v2, p1, Lcom/google/android/material/tabs/TabLayout;->tabPaddingBottom:I
+
+    sget-object v3, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
 
     invoke-virtual {p0, p2, v0, v1, v2}, Landroid/view/View;->setPaddingRelative(IIII)V
 
@@ -91,32 +97,6 @@
     return-void
 .end method
 
-.method public static synthetic access$000(Lcom/google/android/material/tabs/TabLayout$TabView;Landroid/content/Context;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/google/android/material/tabs/TabLayout$TabView;->updateBackgroundDrawable(Landroid/content/Context;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1400(Lcom/google/android/material/tabs/TabLayout$TabView;)I
-    .locals 0
-
-    invoke-direct {p0}, Lcom/google/android/material/tabs/TabLayout$TabView;->getContentWidth()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic access$900(Lcom/google/android/material/tabs/TabLayout$TabView;Landroid/view/View;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/google/android/material/tabs/TabLayout$TabView;->tryUpdateBadgeDrawableBounds(Landroid/view/View;)V
-
-    return-void
-.end method
-
 .method private getBadge()Lcom/google/android/material/badge/BadgeDrawable;
     .locals 1
 
@@ -125,7 +105,180 @@
     return-object v0
 .end method
 
-.method private getContentWidth()I
+.method private getOrCreateBadge()Lcom/google/android/material/badge/BadgeDrawable;
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/material/badge/BadgeDrawable;->create(Landroid/content/Context;)Lcom/google/android/material/badge/BadgeDrawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/android/material/tabs/TabLayout$TabView;->tryUpdateBadgeAnchor()V
+
+    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
+
+    if-eqz v0, :cond_1
+
+    return-object v0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Unable to create badge"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public drawableStateChanged()V
+    .locals 3
+
+    invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
+
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getDrawableState()[I
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->baseBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->baseBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+
+    move-result v0
+
+    or-int/2addr v2, v0
+
+    :cond_0
+    if-eqz v2, :cond_1
+
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->invalidate()V
+
+    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->this$0:Lcom/google/android/material/tabs/TabLayout;
+
+    invoke-virtual {v0}, Landroid/widget/HorizontalScrollView;->invalidate()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public getContentHeight()I
+    .locals 9
+
+    const/4 v0, 0x3
+
+    new-array v1, v0, [Landroid/view/View;
+
+    iget-object v2, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->textView:Landroid/widget/TextView;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    iget-object v2, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->iconView:Landroid/widget/ImageView;
+
+    const/4 v4, 0x1
+
+    aput-object v2, v1, v4
+
+    iget-object v2, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->customView:Landroid/view/View;
+
+    const/4 v5, 0x2
+
+    aput-object v2, v1, v5
+
+    move v2, v3
+
+    move v5, v2
+
+    move v6, v5
+
+    :goto_0
+    if-ge v3, v0, :cond_3
+
+    aget-object v7, v1, v3
+
+    if-eqz v7, :cond_2
+
+    invoke-virtual {v7}, Landroid/view/View;->getVisibility()I
+
+    move-result v8
+
+    if-nez v8, :cond_2
+
+    if-eqz v6, :cond_0
+
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+
+    move-result v8
+
+    invoke-static {v5, v8}, Ljava/lang/Math;->min(II)I
+
+    move-result v5
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+
+    move-result v5
+
+    :goto_1
+    if-eqz v6, :cond_1
+
+    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
+
+    move-result v6
+
+    invoke-static {v2, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    goto :goto_2
+
+    :cond_1
+    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
+
+    move-result v2
+
+    :goto_2
+    move v6, v4
+
+    :cond_2
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    sub-int/2addr v2, v5
+
+    return v2
+.end method
+
+.method public getContentWidth()I
     .locals 9
 
     const/4 v0, 0x3
@@ -218,192 +371,6 @@
     return v2
 .end method
 
-.method private getOrCreateBadge()Lcom/google/android/material/badge/BadgeDrawable;
-    .locals 9
-
-    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    new-instance v7, Lcom/google/android/material/badge/BadgeDrawable;
-
-    invoke-direct {v7, v0}, Lcom/google/android/material/badge/BadgeDrawable;-><init>(Landroid/content/Context;)V
-
-    sget-object v3, Lcom/google/android/material/R$styleable;->Badge:[I
-
-    const/4 v8, 0x0
-
-    new-array v6, v8, [I
-
-    const/4 v2, 0x0
-
-    const v4, 0x7f04004c
-
-    const v5, 0x7f1302a3
-
-    move-object v1, v0
-
-    invoke-static/range {v1 .. v6}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
-
-    move-result-object v1
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v1, v2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v2
-
-    invoke-virtual {v7, v2}, Lcom/google/android/material/badge/BadgeDrawable;->setMaxCharacterCount(I)V
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v1, v2, v8}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v2
-
-    invoke-virtual {v7, v2}, Lcom/google/android/material/badge/BadgeDrawable;->setNumber(I)V
-
-    :cond_0
-    invoke-static {v0, v1, v8}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/ColorStateList;->getDefaultColor()I
-
-    move-result v2
-
-    invoke-virtual {v7, v2}, Lcom/google/android/material/badge/BadgeDrawable;->setBackgroundColor(I)V
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-static {v0, v1, v2}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
-
-    move-result v0
-
-    invoke-virtual {v7, v0}, Lcom/google/android/material/badge/BadgeDrawable;->setBadgeTextColor(I)V
-
-    :cond_1
-    const/4 v0, 0x1
-
-    const v2, 0x800035
-
-    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v0
-
-    invoke-virtual {v7, v0}, Lcom/google/android/material/badge/BadgeDrawable;->setBadgeGravity(I)V
-
-    const/4 v0, 0x3
-
-    invoke-virtual {v1, v0, v8}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
-
-    move-result v0
-
-    iget-object v2, v7, Lcom/google/android/material/badge/BadgeDrawable;->savedState:Lcom/google/android/material/badge/BadgeDrawable$SavedState;
-
-    iput v0, v2, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->horizontalOffset:I
-
-    invoke-virtual {v7}, Lcom/google/android/material/badge/BadgeDrawable;->updateCenterAndBounds()V
-
-    const/4 v0, 0x6
-
-    invoke-virtual {v1, v0, v8}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
-
-    move-result v0
-
-    iget-object v2, v7, Lcom/google/android/material/badge/BadgeDrawable;->savedState:Lcom/google/android/material/badge/BadgeDrawable$SavedState;
-
-    iput v0, v2, Lcom/google/android/material/badge/BadgeDrawable$SavedState;->verticalOffset:I
-
-    invoke-virtual {v7}, Lcom/google/android/material/badge/BadgeDrawable;->updateCenterAndBounds()V
-
-    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
-
-    iput-object v7, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
-
-    :cond_2
-    invoke-virtual {p0}, Lcom/google/android/material/tabs/TabLayout$TabView;->tryUpdateBadgeAnchor()V
-
-    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
-
-    if-eqz v0, :cond_3
-
-    return-object v0
-
-    :cond_3
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Unable to create badge"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method public drawableStateChanged()V
-    .locals 3
-
-    invoke-super {p0}, Landroid/widget/LinearLayout;->drawableStateChanged()V
-
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getDrawableState()[I
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->baseBackgroundDrawable:Landroid/graphics/drawable/Drawable;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->baseBackgroundDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    move-result v0
-
-    or-int/2addr v2, v0
-
-    :cond_0
-    if-eqz v2, :cond_1
-
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->invalidate()V
-
-    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->this$0:Lcom/google/android/material/tabs/TabLayout;
-
-    invoke-virtual {v0}, Landroid/widget/HorizontalScrollView;->invalidate()V
-
-    :cond_1
-    return-void
-.end method
-
 .method public getTab()Lcom/google/android/material/tabs/TabLayout$Tab;
     .locals 1
 
@@ -433,7 +400,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 7
 
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
 
@@ -519,15 +486,23 @@
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->removeAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)Z
 
     :cond_1
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Lcom/google/android/material/R$string;->item_view_role_description:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getExtras()Landroid/os/Bundle;
 
     move-result-object p1
 
-    const-string v0, "AccessibilityNodeInfo.roleDescription"
+    const-string v1, "AccessibilityNodeInfo.roleDescription"
 
-    const-string v1, "Tab"
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -720,7 +695,7 @@
 .method public performClick()Z
     .locals 3
 
-    invoke-super {p0}, Landroid/widget/LinearLayout;->performClick()Z
+    invoke-super {p0}, Landroid/view/View;->performClick()Z
 
     move-result v0
 
@@ -777,7 +752,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setSelected(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setSelected(Z)V
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->textView:Landroid/widget/TextView;
 
@@ -855,13 +830,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, p1, v1}, Lcom/google/android/material/badge/BadgeUtils;->setBadgeDrawableBounds(Lcom/google/android/material/badge/BadgeDrawable;Landroid/view/View;Landroid/widget/FrameLayout;)V
-
-    invoke-virtual {p1}, Landroid/view/View;->getOverlay()Landroid/view/ViewOverlay;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewOverlay;->add(Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0, p1, v1}, Lcom/google/android/material/badge/BadgeUtils;->attachBadgeDrawable(Lcom/google/android/material/badge/BadgeDrawable;Landroid/view/View;Landroid/widget/FrameLayout;)V
 
     iput-object p1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeAnchorView:Landroid/view/View;
 
@@ -902,32 +871,22 @@
     :cond_1
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeAnchorView:Landroid/view/View;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
 
-    if-nez v1, :cond_2
+    invoke-static {v1, v0}, Lcom/google/android/material/badge/BadgeUtils;->detachBadgeDrawable(Lcom/google/android/material/badge/BadgeDrawable;Landroid/view/View;)V
 
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {v0}, Landroid/view/View;->getOverlay()Landroid/view/ViewOverlay;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewOverlay;->remove(Landroid/graphics/drawable/Drawable;)V
-
-    :goto_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeAnchorView:Landroid/view/View;
 
-    :cond_3
+    :cond_2
     return-void
 .end method
 
 .method public final tryUpdateBadgeAnchor()V
-    .locals 3
+    .locals 2
 
     invoke-virtual {p0}, Lcom/google/android/material/tabs/TabLayout$TabView;->hasBadgeDrawable()Z
 
@@ -981,19 +940,17 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->tab:Lcom/google/android/material/tabs/TabLayout$Tab;
+    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->tab:Lcom/google/android/material/tabs/TabLayout$Tab;
 
-    if-eqz v1, :cond_5
+    if-eqz v0, :cond_5
 
-    iget v1, v1, Lcom/google/android/material/tabs/TabLayout$Tab;->labelVisibilityMode:I
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeAnchorView:Landroid/view/View;
 
-    if-ne v1, v2, :cond_5
+    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->textView:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeAnchorView:Landroid/view/View;
-
-    if-eq v1, v0, :cond_4
+    if-eq v0, v1, :cond_4
 
     invoke-virtual {p0}, Lcom/google/android/material/tabs/TabLayout$TabView;->tryRemoveBadgeFromAnchor()V
 
@@ -1004,7 +961,7 @@
     goto :goto_0
 
     :cond_4
-    invoke-virtual {p0, v0}, Lcom/google/android/material/tabs/TabLayout$TabView;->tryUpdateBadgeDrawableBounds(Landroid/view/View;)V
+    invoke-virtual {p0, v1}, Lcom/google/android/material/tabs/TabLayout$TabView;->tryUpdateBadgeDrawableBounds(Landroid/view/View;)V
 
     goto :goto_0
 
@@ -1029,8 +986,6 @@
     if-ne p1, v0, :cond_0
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->badgeDrawable:Lcom/google/android/material/badge/BadgeDrawable;
-
-    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->iconView:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
@@ -1161,7 +1116,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f0c003b
+    sget v4, Lcom/google/android/material/R$layout;->design_layout_tab_icon:I
 
     invoke-virtual {v2, v4, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1214,7 +1169,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0c003c
+    sget v2, Lcom/google/android/material/R$layout;->design_layout_tab_text:I
 
     invoke-virtual {v1, v2, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1296,13 +1251,11 @@
 
     if-nez v1, :cond_10
 
-    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->customIconView:Landroid/widget/ImageView;
+    iget-object v2, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->customIconView:Landroid/widget/ImageView;
 
-    if-eqz v1, :cond_11
+    if-eqz v2, :cond_11
 
     :cond_10
-    iget-object v1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->customTextView:Landroid/widget/TextView;
-
     iget-object v2, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->customIconView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v2}, Lcom/google/android/material/tabs/TabLayout$TabView;->updateTextAndIcon(Landroid/widget/TextView;Landroid/widget/ImageView;)V
@@ -1455,10 +1408,6 @@
     move-object p1, v1
 
     :cond_2
-    iget-object v4, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->this$0:Lcom/google/android/material/tabs/TabLayout;
-
-    iget-boolean v4, v4, Lcom/google/android/material/tabs/TabLayout;->unboundedRipple:Z
-
     if-eqz v4, :cond_3
 
     goto :goto_1
@@ -1472,7 +1421,9 @@
     move-object p1, v3
 
     :cond_4
-    invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     iget-object p1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->this$0:Lcom/google/android/material/tabs/TabLayout;
 
@@ -1543,42 +1494,32 @@
 
     move-result v0
 
-    const/4 v5, 0x1
+    xor-int/lit8 v0, v0, 0x1
 
-    xor-int/2addr v0, v5
+    if-eqz p1, :cond_5
 
-    if-eqz p1, :cond_6
-
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v2, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->tab:Lcom/google/android/material/tabs/TabLayout$Tab;
+    iget-object v5, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->tab:Lcom/google/android/material/tabs/TabLayout$Tab;
 
-    iget v2, v2, Lcom/google/android/material/tabs/TabLayout$Tab;->labelVisibilityMode:I
-
-    if-ne v2, v5, :cond_4
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1, v4}, Landroid/widget/TextView;->setVisibility(I)V
+
+    invoke-virtual {p0, v4}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     goto :goto_3
 
     :cond_4
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    :goto_3
-    invoke-virtual {p0, v4}, Landroid/widget/LinearLayout;->setVisibility(I)V
-
-    goto :goto_4
-
-    :cond_5
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_6
-    :goto_4
-    if-eqz p2, :cond_9
+    :cond_5
+    :goto_3
+    if-eqz p2, :cond_8
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1586,43 +1527,43 @@
 
     check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->getVisibility()I
 
-    move-result v2
+    move-result v5
 
-    if-nez v2, :cond_7
+    if-nez v5, :cond_6
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-static {v2, v3}, Lcom/google/android/material/R$style;->dpToPx(Landroid/content/Context;I)F
-
-    move-result v2
-
-    float-to-int v2, v2
-
-    goto :goto_5
-
-    :cond_7
-    move v2, v4
-
-    :goto_5
-    iget-object v3, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->this$0:Lcom/google/android/material/tabs/TabLayout;
-
-    iget-boolean v3, v3, Lcom/google/android/material/tabs/TabLayout;->inlineLabel:Z
-
-    if-eqz v3, :cond_8
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginEnd()I
+    invoke-static {v5, v3}, Lcom/google/android/material/internal/ViewUtils;->dpToPx(Landroid/content/Context;I)F
 
     move-result v3
 
-    if-eq v2, v3, :cond_9
+    float-to-int v3, v3
 
-    invoke-virtual {p1, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
+    goto :goto_4
+
+    :cond_6
+    move v3, v4
+
+    :goto_4
+    iget-object v5, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->this$0:Lcom/google/android/material/tabs/TabLayout;
+
+    iget-boolean v5, v5, Lcom/google/android/material/tabs/TabLayout;->inlineLabel:Z
+
+    if-eqz v5, :cond_7
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup$MarginLayoutParams;->getMarginEnd()I
+
+    move-result v5
+
+    if-eq v3, v5, :cond_8
+
+    invoke-virtual {p1, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
     iput v4, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
@@ -1630,14 +1571,14 @@
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->requestLayout()V
 
-    goto :goto_6
+    goto :goto_5
 
-    :cond_8
-    iget v3, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    :cond_7
+    iget v5, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    if-eq v2, v3, :cond_9
+    if-eq v3, v5, :cond_8
 
-    iput v2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iput v3, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     invoke-virtual {p1, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
@@ -1645,29 +1586,31 @@
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->requestLayout()V
 
-    :cond_9
-    :goto_6
+    :cond_8
+    :goto_5
     iget-object p1, p0, Lcom/google/android/material/tabs/TabLayout$TabView;->tab:Lcom/google/android/material/tabs/TabLayout$Tab;
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_9
 
-    iget-object p1, p1, Lcom/google/android/material/tabs/TabLayout$Tab;->contentDesc:Ljava/lang/CharSequence;
+    iget-object v1, p1, Lcom/google/android/material/tabs/TabLayout$Tab;->contentDesc:Ljava/lang/CharSequence;
 
-    goto :goto_7
+    :cond_9
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 p2, 0x17
+
+    if-le p1, p2, :cond_b
+
+    if-eqz v0, :cond_a
+
+    goto :goto_6
 
     :cond_a
-    move-object p1, v1
+    move-object v2, v1
 
-    :goto_7
-    if-eqz v0, :cond_b
-
-    goto :goto_8
+    :goto_6
+    invoke-static {p0, v2}, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     :cond_b
-    move-object v1, p1
-
-    :goto_8
-    invoke-static {p0, v1}, Landroidx/appcompat/R$string;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
-
     return-void
 .end method

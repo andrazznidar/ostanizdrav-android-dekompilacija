@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 7
+    .locals 9
 
     new-instance v0, Landroidx/work/ExistingWorkPolicy;
 
@@ -39,55 +39,49 @@
 
     sput-object v0, Landroidx/work/ExistingWorkPolicy;->REPLACE:Landroidx/work/ExistingWorkPolicy;
 
-    new-instance v0, Landroidx/work/ExistingWorkPolicy;
+    new-instance v1, Landroidx/work/ExistingWorkPolicy;
 
-    const-string v1, "KEEP"
+    const-string v3, "KEEP"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Landroidx/work/ExistingWorkPolicy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Landroidx/work/ExistingWorkPolicy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroidx/work/ExistingWorkPolicy;->KEEP:Landroidx/work/ExistingWorkPolicy;
+    sput-object v1, Landroidx/work/ExistingWorkPolicy;->KEEP:Landroidx/work/ExistingWorkPolicy;
 
-    new-instance v0, Landroidx/work/ExistingWorkPolicy;
+    new-instance v3, Landroidx/work/ExistingWorkPolicy;
 
-    const-string v1, "APPEND"
+    const-string v5, "APPEND"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4}, Landroidx/work/ExistingWorkPolicy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Landroidx/work/ExistingWorkPolicy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroidx/work/ExistingWorkPolicy;->APPEND:Landroidx/work/ExistingWorkPolicy;
+    sput-object v3, Landroidx/work/ExistingWorkPolicy;->APPEND:Landroidx/work/ExistingWorkPolicy;
 
-    new-instance v0, Landroidx/work/ExistingWorkPolicy;
+    new-instance v5, Landroidx/work/ExistingWorkPolicy;
 
-    const-string v1, "APPEND_OR_REPLACE"
+    const-string v7, "APPEND_OR_REPLACE"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5}, Landroidx/work/ExistingWorkPolicy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Landroidx/work/ExistingWorkPolicy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroidx/work/ExistingWorkPolicy;->APPEND_OR_REPLACE:Landroidx/work/ExistingWorkPolicy;
+    sput-object v5, Landroidx/work/ExistingWorkPolicy;->APPEND_OR_REPLACE:Landroidx/work/ExistingWorkPolicy;
 
-    const/4 v1, 0x4
+    const/4 v7, 0x4
 
-    new-array v1, v1, [Landroidx/work/ExistingWorkPolicy;
+    new-array v7, v7, [Landroidx/work/ExistingWorkPolicy;
 
-    sget-object v6, Landroidx/work/ExistingWorkPolicy;->REPLACE:Landroidx/work/ExistingWorkPolicy;
+    aput-object v0, v7, v2
 
-    aput-object v6, v1, v2
+    aput-object v1, v7, v4
 
-    sget-object v2, Landroidx/work/ExistingWorkPolicy;->KEEP:Landroidx/work/ExistingWorkPolicy;
+    aput-object v3, v7, v6
 
-    aput-object v2, v1, v3
+    aput-object v5, v7, v8
 
-    sget-object v2, Landroidx/work/ExistingWorkPolicy;->APPEND:Landroidx/work/ExistingWorkPolicy;
-
-    aput-object v2, v1, v4
-
-    aput-object v0, v1, v5
-
-    sput-object v1, Landroidx/work/ExistingWorkPolicy;->$VALUES:[Landroidx/work/ExistingWorkPolicy;
+    sput-object v7, Landroidx/work/ExistingWorkPolicy;->$VALUES:[Landroidx/work/ExistingWorkPolicy;
 
     return-void
 .end method

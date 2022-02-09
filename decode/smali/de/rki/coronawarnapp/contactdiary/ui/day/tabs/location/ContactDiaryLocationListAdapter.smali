@@ -2,9 +2,6 @@
 .super Lde/rki/coronawarnapp/contactdiary/util/AbstractAdapter;
 .source "ContactDiaryLocationListAdapter.kt"
 
-# interfaces
-.implements Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;
-
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -44,7 +41,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
+    invoke-static {p0}, Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter$DefaultImpls;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
 
     move-result-object p3
 
@@ -52,11 +49,11 @@
 
     move-result-object p2
 
-    const/4 p3, 0x0
+    const/4 p3, 0x2
 
-    const/4 v0, 0x2
+    const/4 v0, 0x0
 
-    invoke-static {p1, p2, p3, v0, p3}, Lcom/google/zxing/client/android/R$id;->bind$default(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;ILjava/lang/Object;)V
+    invoke-static {p1, p2, v0, p3, v0}, Lde/rki/coronawarnapp/util/lists/BindableVH$DefaultImpls;->bind$default(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;ILjava/lang/Object;)V
 
     return-void
 .end method

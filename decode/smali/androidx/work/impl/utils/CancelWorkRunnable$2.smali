@@ -49,21 +49,15 @@
     move-result-object v1
 
     iget-object v2, p0, Landroidx/work/impl/utils/CancelWorkRunnable$2;->val$tag:Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v1, v2}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getUnfinishedWorkWithTag(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     check-cast v1, Ljava/util/ArrayList;
 
-    :try_start_2
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -89,8 +83,8 @@
 
     :cond_0
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 

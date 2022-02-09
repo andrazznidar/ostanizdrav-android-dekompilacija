@@ -13,12 +13,6 @@
     name = "StreamDecoder"
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder$RefillCallback;
-    }
-.end annotation
-
 
 # instance fields
 .field public final buffer:[B
@@ -35,28 +29,22 @@
 
 .field public pos:I
 
-.field public refillCallback:Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder$RefillCallback;
-
 .field public totalBytesRetired:I
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;ILcom/google/crypto/tink/shaded/protobuf/CodedInputStream$1;)V
-    .locals 1
+    .locals 0
 
     const/4 p3, 0x0
 
     invoke-direct {p0, p3}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;-><init>(Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$1;)V
 
-    const v0, 0x7fffffff
+    const p3, 0x7fffffff
 
-    iput v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->currentLimit:I
+    iput p3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->currentLimit:I
 
-    iput-object p3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->refillCallback:Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder$RefillCallback;
-
-    const-string p3, "input"
-
-    invoke-static {p1, p3}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    sget-object p3, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
     iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->input:Ljava/io/InputStream;
 
@@ -297,9 +285,15 @@
 
     move-result-object v1
 
+    const/4 v2, 0x0
+
     if-eqz v1, :cond_2
 
-    invoke-static {v1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    array-length v0, v1
+
+    invoke-static {v1, v2, v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     move-result-object v0
 
@@ -308,67 +302,69 @@
     :cond_2
     iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
 
-    iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
+    iget v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    sub-int v3, v2, v1
+    sub-int v4, v3, v1
 
-    iget v4, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
+    iget v5, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
-    add-int/2addr v4, v2
+    add-int/2addr v5, v3
 
-    iput v4, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
-
-    const/4 v2, 0x0
+    iput v5, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
     iput v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
 
     iput v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    sub-int v4, v0, v3
+    sub-int v3, v0, v4
 
-    invoke-virtual {p0, v4}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->readRawBytesSlowPathRemainingChunks(I)Ljava/util/List;
+    invoke-virtual {p0, v3}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->readRawBytesSlowPathRemainingChunks(I)Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v3
 
     new-array v0, v0, [B
 
     iget-object v5, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->buffer:[B
 
-    invoke-static {v5, v1, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v5, v1, v0, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    check-cast v4, Ljava/util/ArrayList;
+    check-cast v3, Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_3
+    if-eqz v3, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, [B
+    check-cast v3, [B
 
-    array-length v5, v4
+    array-length v5, v3
 
-    invoke-static {v4, v2, v0, v3, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v3, v2, v0, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    array-length v4, v4
+    array-length v3, v3
 
-    add-int/2addr v3, v4
+    add-int/2addr v4, v3
 
     goto :goto_0
 
     :cond_3
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->wrap([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    move-result-object v0
+    new-instance v1, Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;
+
+    invoke-direct {v1, v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;-><init>([B)V
+
+    move-object v0, v1
 
     :goto_1
     return-object v0
@@ -1670,13 +1666,11 @@
 
     new-instance v1, Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->buffer:[B
-
-    iget v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
+    iget-object v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->buffer:[B
 
     sget-object v4, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v1, v2, v3, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v1, v3, v2, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
 
@@ -1735,7 +1729,7 @@
 .end method
 
 .method public readStringRequireUtf8()Ljava/lang/String;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1750,11 +1744,11 @@
 
     iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    sub-int/2addr v2, v1
+    sub-int v3, v2, v1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    if-gt v0, v2, :cond_0
+    if-gt v0, v3, :cond_0
 
     if-lez v0, :cond_0
 
@@ -1774,9 +1768,7 @@
     return-object v0
 
     :cond_1
-    iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
-
-    if-gt v0, v1, :cond_2
+    if-gt v0, v2, :cond_2
 
     invoke-virtual {p0, v0}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->refillBuffer(I)V
 
@@ -1789,12 +1781,12 @@
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p0, v0, v3}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->readRawBytesSlowPath(IZ)[B
+    invoke-virtual {p0, v0, v4}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->readRawBytesSlowPath(IZ)[B
 
     move-result-object v2
 
     :goto_0
-    move v1, v3
+    move v1, v4
 
     :goto_1
     invoke-static {v2, v1, v0}, Lcom/google/crypto/tink/shaded/protobuf/Utf8;->decodeUtf8([BII)Ljava/lang/String;
@@ -2113,7 +2105,7 @@
 .end method
 
 .method public skipRawBytes(I)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2124,9 +2116,9 @@
 
     iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
 
-    sub-int/2addr v0, v1
+    sub-int v2, v0, v1
 
-    if-gt p1, v0, :cond_0
+    if-gt p1, v2, :cond_0
 
     if-ltz p1, :cond_0
 
@@ -2137,79 +2129,69 @@
     goto/16 :goto_3
 
     :cond_0
-    if-ltz p1, :cond_8
+    if-ltz p1, :cond_7
 
-    iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
+    iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
-    iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
+    add-int v3, v2, v1
 
-    add-int v2, v0, v1
+    add-int v4, v3, p1
 
-    add-int v3, v2, p1
+    iget v5, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->currentLimit:I
 
-    iget v4, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->currentLimit:I
+    if-gt v4, v5, :cond_6
 
-    if-gt v3, v4, :cond_7
-
-    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->refillCallback:Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder$RefillCallback;
-
-    const/4 v3, 0x0
-
-    if-nez v0, :cond_4
-
-    iput v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
-
-    iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
+    iput v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
     sub-int/2addr v0, v1
 
-    iput v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
+    const/4 v1, 0x0
 
-    iput v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
+    iput v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    move v3, v0
+    iput v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
 
     :goto_0
-    if-ge v3, p1, :cond_3
+    if-ge v0, p1, :cond_3
 
-    sub-int v0, p1, v3
+    sub-int v1, p1, v0
 
     :try_start_0
-    iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->input:Ljava/io/InputStream;
+    iget-object v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->input:Ljava/io/InputStream;
 
-    int-to-long v4, v0
+    int-to-long v3, v1
 
-    invoke-virtual {v1, v4, v5}, Ljava/io/InputStream;->skip(J)J
+    invoke-virtual {v2, v3, v4}, Ljava/io/InputStream;->skip(J)J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v5, 0x0
 
-    cmp-long v2, v0, v6
+    cmp-long v5, v1, v5
 
-    if-ltz v2, :cond_2
+    if-ltz v5, :cond_2
 
-    cmp-long v4, v0, v4
+    cmp-long v3, v1, v3
 
-    if-gtz v4, :cond_2
+    if-gtz v3, :cond_2
 
-    if-nez v2, :cond_1
+    if-nez v5, :cond_1
 
     goto :goto_1
 
     :cond_1
-    long-to-int v0, v0
+    long-to-int v1, v1
 
-    add-int/2addr v3, v0
+    add-int/2addr v0, v1
 
     goto :goto_0
 
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v4, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->input:Ljava/io/InputStream;
 
@@ -2217,23 +2199,23 @@
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v4, "#skip returned invalid result: "
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v0, "\nThe InputStream implementation is buggy."
+    const-string v1, "\nThe InputStream implementation is buggy."
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
     :try_end_0
@@ -2242,11 +2224,11 @@
     :catchall_0
     move-exception p1
 
-    iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
+    iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v1, v0
 
-    iput v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
+    iput v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->recomputeBufferSizeAfterLimit()V
 
@@ -2254,16 +2236,15 @@
 
     :cond_3
     :goto_1
-    iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
+    iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
-    add-int/2addr v0, v3
+    add-int/2addr v1, v0
 
-    iput v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
+    iput v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->recomputeBufferSizeAfterLimit()V
 
-    :cond_4
-    if-ge v3, p1, :cond_6
+    if-ge v0, p1, :cond_5
 
     iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
@@ -2282,7 +2263,7 @@
 
     iget v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    if-le v2, v3, :cond_5
+    if-le v2, v3, :cond_4
 
     add-int/2addr v1, v3
 
@@ -2292,19 +2273,19 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_4
     iput v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
 
-    :cond_6
+    :cond_5
     :goto_3
     return-void
 
-    :cond_7
-    sub-int/2addr v4, v0
+    :cond_6
+    sub-int/2addr v5, v2
 
-    sub-int/2addr v4, v1
+    sub-int/2addr v5, v1
 
-    invoke-virtual {p0, v4}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->skipRawBytes(I)V
+    invoke-virtual {p0, v5}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->skipRawBytes(I)V
 
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
@@ -2312,7 +2293,7 @@
 
     throw p1
 
-    :cond_8
+    :cond_7
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
@@ -2334,56 +2315,45 @@
 
     iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    if-le v1, v2, :cond_8
+    if-le v1, v2, :cond_7
 
     iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->sizeLimit:I
 
-    iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
+    iget v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v1, v3
 
     sub-int/2addr v1, v0
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     if-le p1, v1, :cond_0
 
-    return v3
+    return v4
 
     :cond_0
-    add-int/2addr v2, v0
+    add-int/2addr v3, v0
 
-    add-int/2addr v2, p1
+    add-int/2addr v3, p1
 
-    iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->currentLimit:I
+    iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->currentLimit:I
 
-    if-le v2, v0, :cond_1
+    if-le v3, v1, :cond_1
 
-    return v3
+    return v4
 
     :cond_1
-    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->refillCallback:Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder$RefillCallback;
+    if-lez v0, :cond_3
 
-    if-eqz v0, :cond_2
+    if-le v2, v0, :cond_2
 
-    invoke-interface {v0}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder$RefillCallback;->onRefill()V
+    iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->buffer:[B
+
+    sub-int/2addr v2, v0
+
+    invoke-static {v1, v0, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     :cond_2
-    iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
-
-    if-lez v0, :cond_4
-
-    iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
-
-    if-le v1, v0, :cond_3
-
-    iget-object v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->buffer:[B
-
-    sub-int/2addr v1, v0
-
-    invoke-static {v2, v0, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_3
     iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->totalBytesRetired:I
 
     add-int/2addr v1, v0
@@ -2396,18 +2366,18 @@
 
     iput v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    iput v3, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
+    iput v4, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->pos:I
 
-    :cond_4
+    :cond_3
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->input:Ljava/io/InputStream;
 
     iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->buffer:[B
 
     iget v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    array-length v4, v1
+    array-length v3, v1
 
-    sub-int/2addr v4, v2
+    sub-int/2addr v3, v2
 
     iget v5, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->sizeLimit:I
 
@@ -2417,27 +2387,27 @@
 
     sub-int/2addr v5, v2
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
+    invoke-static {v3, v5}, Ljava/lang/Math;->min(II)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v0, v1, v2, v4}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v0, v1, v2, v3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     const/4 v1, -0x1
 
-    if-lt v0, v1, :cond_7
+    if-lt v0, v1, :cond_6
 
     iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->buffer:[B
 
     array-length v1, v1
 
-    if-gt v0, v1, :cond_7
+    if-gt v0, v1, :cond_6
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_5
 
     iget v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
@@ -2449,13 +2419,13 @@
 
     iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->bufferSize:I
 
-    if-lt v0, p1, :cond_5
+    if-lt v0, p1, :cond_4
 
     const/4 p1, 0x1
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     invoke-virtual {p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$StreamDecoder;->tryRefillBuffer(I)Z
 
     move-result p1
@@ -2463,10 +2433,10 @@
     :goto_0
     return p1
 
-    :cond_6
-    return v3
+    :cond_5
+    return v4
 
-    :cond_7
+    :cond_6
     new-instance p1, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2499,14 +2469,14 @@
 
     throw p1
 
-    :cond_8
+    :cond_7
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "refillBuffer() called when "
 
     const-string v2, " bytes were already available in buffer"
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

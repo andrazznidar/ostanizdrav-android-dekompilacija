@@ -6,12 +6,20 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     const/4 v0, 0x4
 
@@ -77,11 +85,9 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -124,7 +130,7 @@
 
     if-eqz v7, :cond_0
 
-    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v4}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v9
 
@@ -142,7 +148,7 @@
 
     if-eqz v10, :cond_1
 
-    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->formatVisibilityText(Ljava/lang/String;)I
+    invoke-static {v5}, Lcom/google/android/gms/internal/nearby/zzfc;->formatVisibilityText(Ljava/lang/String;)I
 
     move-result v8
 
@@ -157,7 +163,7 @@
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->countryHeaderDescription:Landroid/widget/TextView;
 
-    invoke-static {v1, v4}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v1, v4}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->countryHeaderDescription:Landroid/widget/TextView;
 
@@ -175,7 +181,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->labelCountrySelectionInfo:Landroid/widget/TextView;
 
-    invoke-static {v0, v5}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v5}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->labelCountrySelectionInfo:Landroid/widget/TextView;
 
@@ -263,6 +269,15 @@
 
 .method public setCountryData(Ljava/util/List;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "CountryData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -293,7 +308,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 
@@ -310,6 +325,14 @@
 
 .method public setCountryListHint(Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "CountryListHint"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -334,7 +357,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 
@@ -351,6 +374,14 @@
 
 .method public setCountryListTitle(Ljava/lang/String;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "CountryListTitle"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;->mCountryListTitle:Ljava/lang/String;
 
@@ -373,7 +404,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

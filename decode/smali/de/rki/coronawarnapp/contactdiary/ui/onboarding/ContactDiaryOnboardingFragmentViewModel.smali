@@ -4,10 +4,10 @@
 
 
 # instance fields
-.field public final routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+.field public final routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde/rki/coronawarnapp/ui/SingleLiveEvent<",
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
             "Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingNavigationEvents;",
             ">;"
         }
@@ -25,11 +25,11 @@
 
     invoke-direct {p0, v0, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    new-instance v0, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;-><init>()V
+    invoke-direct {v0}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
 
-    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel;->routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iput-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/onboarding/ContactDiaryOnboardingFragmentViewModel;->routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     return-void
 .end method

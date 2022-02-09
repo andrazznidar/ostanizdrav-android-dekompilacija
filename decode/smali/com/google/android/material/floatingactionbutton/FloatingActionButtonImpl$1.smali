@@ -63,17 +63,15 @@
 
     if-eqz v0, :cond_0
 
-    const/16 v0, 0x8
+    const/16 v1, 0x8
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x4
+    const/4 v1, 0x4
 
     :goto_0
-    iget-boolean v1, p0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl$1;->val$fromUser:Z
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/material/internal/VisibilityAwareImageButton;->internalSetVisibility(IZ)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/material/internal/VisibilityAwareImageButton;->internalSetVisibility(IZ)V
 
     iget-object p1, p0, Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl$1;->val$listener:Lcom/google/android/material/floatingactionbutton/FloatingActionButtonImpl$InternalVisibilityChangedListener;
 

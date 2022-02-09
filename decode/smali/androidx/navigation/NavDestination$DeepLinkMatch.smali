@@ -68,15 +68,13 @@
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mIsExactDeepLink:Z
+    iget-boolean v2, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mIsExactDeepLink:Z
 
-    if-nez v0, :cond_0
+    if-nez v2, :cond_0
 
     return v1
 
     :cond_0
-    iget-boolean v0, p0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mIsExactDeepLink:Z
-
     const/4 v2, -0x1
 
     if-nez v0, :cond_1
@@ -92,26 +90,22 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
+    iget-object v3, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
 
-    if-nez v0, :cond_2
+    if-nez v3, :cond_2
 
     return v1
 
     :cond_2
-    iget-object v0, p0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
-
     if-nez v0, :cond_3
 
-    iget-object v0, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
+    iget-object v3, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
 
-    if-eqz v0, :cond_3
+    if-eqz v3, :cond_3
 
     return v2
 
     :cond_3
-    iget-object v0, p0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mMatchingArgs:Landroid/os/Bundle;
-
     if-eqz v0, :cond_5
 
     invoke-virtual {v0}, Landroid/os/Bundle;->size()I
@@ -140,15 +134,13 @@
 
     if-eqz v0, :cond_6
 
-    iget-boolean v0, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mHasMatchingAction:Z
+    iget-boolean v3, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mHasMatchingAction:Z
 
-    if-nez v0, :cond_6
+    if-nez v3, :cond_6
 
     return v1
 
     :cond_6
-    iget-boolean v0, p0, Landroidx/navigation/NavDestination$DeepLinkMatch;->mHasMatchingAction:Z
-
     if-nez v0, :cond_7
 
     iget-boolean v0, p1, Landroidx/navigation/NavDestination$DeepLinkMatch;->mHasMatchingAction:Z

@@ -1,4 +1,4 @@
-.class public Landroidx/viewpager2/adapter/FragmentStateAdapter$5;
+.class Landroidx/viewpager2/adapter/FragmentStateAdapter$5;
 .super Ljava/lang/Object;
 .source "FragmentStateAdapter.java"
 
@@ -44,11 +44,7 @@
 
     move-result-object p1
 
-    check-cast p1, Landroidx/lifecycle/LifecycleRegistry;
-
-    iget-object p1, p1, Landroidx/lifecycle/LifecycleRegistry;->mObserverMap:Landroidx/arch/core/internal/FastSafeIterableMap;
-
-    invoke-virtual {p1, p0}, Landroidx/arch/core/internal/FastSafeIterableMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Landroidx/lifecycle/Lifecycle;->removeObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
     :cond_0
     return-void

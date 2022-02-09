@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/internal/BaseGmsClient$LegacyClientCallbackAdapter;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/BaseGmsClient$ConnectionProgressReportCallbacks;
@@ -24,10 +24,6 @@
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/internal/BaseGmsClient;)V
     .locals 0
-    .param p1    # Lcom/google/android/gms/common/internal/BaseGmsClient;
-        .annotation build Landroidx/annotation/RecentlyNonNull;
-        .end annotation
-    .end param
 
     iput-object p1, p0, Lcom/google/android/gms/common/internal/BaseGmsClient$LegacyClientCallbackAdapter;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
@@ -38,7 +34,7 @@
 
 
 # virtual methods
-.method public onReportServiceBinding(Lcom/google/android/gms/common/ConnectionResult;)V
+.method public final onReportServiceBinding(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 2
     .param p1    # Lcom/google/android/gms/common/ConnectionResult;
         .annotation build Landroidx/annotation/RecentlyNonNull;
@@ -55,11 +51,9 @@
 
     const/4 v0, 0x0
 
-    move-object v1, p1
+    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getScopes()Ljava/util/Set;
 
-    check-cast v1, Lcom/google/android/gms/common/internal/GmsClient;
-
-    iget-object v1, v1, Lcom/google/android/gms/common/internal/GmsClient;->zab:Ljava/util/Set;
+    move-result-object v1
 
     invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/common/internal/BaseGmsClient;->getRemoteService(Lcom/google/android/gms/common/internal/IAccountAccessor;Ljava/util/Set;)V
 

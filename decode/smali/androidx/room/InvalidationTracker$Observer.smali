@@ -39,14 +39,6 @@
 
 
 # virtual methods
-.method public isRemote()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public abstract onInvalidated(Ljava/util/Set;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {

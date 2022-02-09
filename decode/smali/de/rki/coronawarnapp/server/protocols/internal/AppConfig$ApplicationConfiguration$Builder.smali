@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
-    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$000()Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
     move-result-object v0
 
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$1;)V
+.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder-IA;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration$Builder;-><init>()V
@@ -68,7 +68,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/Iterable;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$maddAllSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/Iterable;)V
 
     return-object p0
 .end method
@@ -82,7 +82,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$maddSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Ljava/lang/String;)V
 
     return-object p0
 .end method
@@ -96,7 +96,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lcom/google/protobuf/ByteString;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$maddSupportedCountriesBytes(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lcom/google/protobuf/ByteString;)V
 
     return-object p0
 .end method
@@ -110,7 +110,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$4300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -124,7 +124,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -138,7 +138,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -152,7 +152,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -166,7 +166,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -180,7 +180,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -194,7 +194,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -208,7 +208,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -222,7 +222,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearMinRiskScore(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -236,7 +236,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -250,7 +250,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mclearSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;)V
 
     return-object p0
 .end method
@@ -598,7 +598,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$4200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
 
     return-object p0
 .end method
@@ -612,7 +612,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
 
     return-object p0
 .end method
@@ -626,7 +626,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
 
     return-object p0
 .end method
@@ -640,7 +640,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
 
     return-object p0
 .end method
@@ -654,7 +654,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
 
     return-object p0
 .end method
@@ -668,7 +668,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
 
     return-object p0
 .end method
@@ -682,7 +682,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
 
     return-object p0
 .end method
@@ -696,7 +696,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
 
     return-object p0
 .end method
@@ -710,7 +710,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$mmergeRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
 
     return-object p0
 .end method
@@ -724,7 +724,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$4100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid$Builder;)V
 
     return-object p0
 .end method
@@ -738,7 +738,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$4000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAndroidExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersAndroid;)V
 
     return-object p0
 .end method
@@ -752,7 +752,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid$Builder;)V
 
     return-object p0
 .end method
@@ -766,7 +766,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAndroidKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersAndroid;)V
 
     return-object p0
 .end method
@@ -780,7 +780,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2000(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;)V
 
     return-object p0
 .end method
@@ -794,7 +794,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
 
     return-object p0
 .end method
@@ -808,7 +808,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration$Builder;)V
 
     return-object p0
 .end method
@@ -822,7 +822,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1500(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAppVersion(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$ApplicationVersionConfiguration;)V
 
     return-object p0
 .end method
@@ -836,7 +836,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1200(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration$Builder;)V
 
     return-object p0
 .end method
@@ -850,7 +850,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$1100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetAttenuationDuration(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$AttenuationDuration;)V
 
     return-object p0
 .end method
@@ -864,7 +864,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters$Builder;)V
 
     return-object p0
 .end method
@@ -878,7 +878,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetExposureConfig(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreParametersOuterClass$RiskScoreParameters;)V
 
     return-object p0
 .end method
@@ -892,7 +892,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3700(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS$Builder;)V
 
     return-object p0
 .end method
@@ -906,7 +906,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$3600(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetIosExposureDetectionParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/ExposureDetectionParameters$ExposureDetectionParametersIOS;)V
 
     return-object p0
 .end method
@@ -920,7 +920,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2900(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS$Builder;)V
 
     return-object p0
 .end method
@@ -934,7 +934,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2800(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetIosKeyDownloadParameters(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/KeyDownloadParameters$KeyDownloadParametersIOS;)V
 
     return-object p0
 .end method
@@ -948,7 +948,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$100(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;I)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetMinRiskScore(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;I)V
 
     return-object p0
 .end method
@@ -962,7 +962,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$400(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification$Builder;)V
 
     return-object p0
 .end method
@@ -976,7 +976,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetRiskScoreClasses(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;Lde/rki/coronawarnapp/server/protocols/internal/RiskScoreClassificationOuterClass$RiskScoreClassification;)V
 
     return-object p0
 .end method
@@ -990,7 +990,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;
 
-    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->access$2300(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;ILjava/lang/String;)V
+    invoke-static {v0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;->-$$Nest$msetSupportedCountries(Lde/rki/coronawarnapp/server/protocols/internal/AppConfig$ApplicationConfiguration;ILjava/lang/String;)V
 
     return-object p0
 .end method

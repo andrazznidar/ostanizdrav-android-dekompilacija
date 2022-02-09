@@ -14,5 +14,10 @@
 
 
 # virtual methods
-.method public abstract getCornerPath(Lcom/google/android/material/shape/ShapePath;FFF)V
+.method public getCornerPath(Lcom/google/android/material/shape/ShapePath;FFF)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method

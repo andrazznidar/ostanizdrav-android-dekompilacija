@@ -38,3 +38,34 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public warning(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 2
+
+    sget-object v0, Lcom/airbnb/lottie/utils/LogcatLogger;->loggedMessages:Ljava/util/Set;
+
+    move-object v1, v0
+
+    check-cast v1, Ljava/util/HashSet;
+
+    invoke-virtual {v1, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    :cond_0
+    const-string v1, "LOTTIE"
+
+    invoke-static {v1, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    check-cast v0, Ljava/util/HashSet;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method

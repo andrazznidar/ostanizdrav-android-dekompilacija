@@ -31,10 +31,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDayOverviewVH.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DayOverviewVH.kt\nde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,56:1\n295#2,2:57\n295#2,2:59\n295#2,2:62\n1#3:61\n*E\n*S KotlinDebug\n*F\n+ 1 DayOverviewVH.kt\nde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1\n*L\n36#1,2:57\n41#1,2:59\n52#1,2:62\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final synthetic this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
@@ -56,7 +52,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 9
 
     check-cast p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;
 
@@ -64,7 +60,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -72,267 +68,503 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 1>"
+    const-string v0, "$noName_1"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->contactDiaryOverviewNestedRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
 
-    const-string v0, "contactDiaryOverviewNestedRecyclerView"
+    iget-object v0, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayHeader:Lde/rki/coronawarnapp/databinding/FabTooltipBinding;
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "dayHeader"
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;->nestedItemAdapter$delegate:Lkotlin/Lazy;
+    iget-object v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->date:Lorg/joda/time/LocalDate;
+
+    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/FabTooltipBinding;->subtitle:Landroid/widget/TextView;
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt;->toFormattedDay(Lorg/joda/time/LocalDate;Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayRiskEnf:Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;
+
+    const-string v1, "dayRiskEnf"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->riskEnfItem:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskenf/RiskEnfItem;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;->getRoot()Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    move-result-object v2
+
+    const-string v3, "root"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    if-nez v1, :cond_0
+
+    move v6, v4
+
+    goto :goto_0
+
+    :cond_0
+    move v6, v5
+
+    :goto_0
+    const/16 v7, 0x8
+
+    if-eqz v6, :cond_1
+
+    move v6, v7
+
+    goto :goto_1
+
+    :cond_1
+    move v6, v5
+
+    :goto_1
+    invoke-virtual {v2, v6}, Landroid/view/View;->setVisibility(I)V
+
+    if-nez v1, :cond_2
+
+    goto :goto_3
+
+    :cond_2
+    iget-object v2, v0, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;->debugLogLegalPrivacyCardSecondSection:Landroid/widget/TextView;
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v6
+
+    iget v8, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskenf/RiskEnfItem;->title:I
+
+    invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;->debugLogLegalPrivacyCardTitle:Ljava/lang/Object;
+
+    check-cast v2, Landroid/widget/ImageView;
+
+    iget v6, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskenf/RiskEnfItem;->drawableId:I
+
+    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v6
+
+    iget v8, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskenf/RiskEnfItem;->body:I
+
+    invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskenf/RiskEnfItem;->bodyExtended:Ljava/lang/Integer;
+
+    if-nez v1, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+
+    move-result v1
+
+    const/16 v6, 0xa
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_2
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/IncludeDebuglogLegalPrivacyCardBinding;->debugLogLegalPrivacyCardFirstSection:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_3
+    iget-object v0, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayRiskEvent:Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;
+
+    const-string v1, "dayRiskEvent"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->riskEventItem:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;->rootView:Ljava/lang/Object;
+
+    check-cast v2, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-nez v1, :cond_4
+
+    move v6, v4
+
+    goto :goto_4
+
+    :cond_4
+    move v6, v5
+
+    :goto_4
+    if-eqz v6, :cond_5
+
+    move v6, v7
+
+    goto :goto_5
+
+    :cond_5
+    move v6, v5
+
+    :goto_5
+    invoke-virtual {v2, v6}, Landroid/view/View;->setVisibility(I)V
+
+    if-nez v1, :cond_6
+
+    goto/16 :goto_8
+
+    :cond_6
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;->titleElement:Landroid/widget/TextView;
+
+    iget v8, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;->title:I
+
+    invoke-virtual {v2, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;->subtitleElement:Landroid/widget/TextView;
+
+    iget v8, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;->body:I
+
+    invoke-virtual {v2, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v6, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v2, v0, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;->toggle:Ljava/lang/Object;
+
+    check-cast v2, Landroid/widget/ImageView;
+
+    iget v6, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;->drawableId:I
+
+    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/ViewMoreInformationBinding;->bottomDivider:Ljava/lang/Object;
+
+    check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    move-result-object v2
+
+    if-nez v2, :cond_7
+
+    iget-object v2, p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;->riskEventAdapter$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v2}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventAdapter;
+
+    invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+
+    :cond_7
+    iget-object v0, p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;->riskEventAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayDataNestedAdapter;
+    check-cast v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventAdapter;
 
-    invoke-virtual {p3, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+    iget-object v1, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem;->events:Ljava/util/List;
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->contactDiaryOverviewNestedRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    const-string v2, "events"
 
-    invoke-virtual {p3, v0}, Landroidx/recyclerview/widget/RecyclerView;->suppressLayout(Z)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->contactDiaryOverviewElementBody:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventAdapter;->events:Landroidx/recyclerview/widget/SortedList;
 
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1$1;
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/SortedList;->beginBatchedUpdates()V
 
-    invoke-direct {v0, p2}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;)V
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/SortedList;->throwIfInMutationOperation()V
 
-    invoke-virtual {p3, v0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iget v2, v0, Landroidx/recyclerview/widget/SortedList;->mSize:I
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->contactDiaryOverviewElementBody:Landroidx/constraintlayout/widget/ConstraintLayout;
+    if-nez v2, :cond_8
 
-    const-string v0, "contactDiaryOverviewElementBody"
+    goto :goto_6
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :cond_8
+    iget-object v6, v0, Landroidx/recyclerview/widget/SortedList;->mData:[Ljava/lang/Object;
 
-    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->date:Lorg/joda/time/LocalDate;
+    const/4 v8, 0x0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
+    invoke-static {v6, v5, v2, v8}, Ljava/util/Arrays;->fill([Ljava/lang/Object;IILjava/lang/Object;)V
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    iput v5, v0, Landroidx/recyclerview/widget/SortedList;->mSize:I
 
-    move-result-object v1
+    iget-object v6, v0, Landroidx/recyclerview/widget/SortedList;->mCallback:Landroidx/recyclerview/widget/SortedList$Callback;
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
+    invoke-interface {v6, v5, v2}, Landroidx/recyclerview/widget/ListUpdateCallback;->onRemoved(II)V
 
-    move-result-object v1
+    :goto_6
+    const-class v2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/riskevent/RiskEventItem$Event;
 
-    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->toFormattedDayForAccessibility(Lorg/joda/time/LocalDate;Ljava/util/Locale;)Ljava/lang/String;
+    invoke-interface {v1}, Ljava/util/Collection;->size()I
 
-    move-result-object v0
+    move-result v6
 
-    invoke-virtual {p3, v0}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-static {v2, v6}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->contactDiaryOverviewElementName:Landroid/widget/TextView;
+    move-result-object v2
 
-    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->date:Lorg/joda/time/LocalDate;
+    check-cast v2, [Ljava/lang/Object;
 
-    invoke-virtual {p3}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const-string v2, "context"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
+    invoke-interface {v1, v2}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->toFormattedDay(Lorg/joda/time/LocalDate;Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/SortedList;->throwIfInMutationOperation()V
 
-    move-result-object v0
+    array-length v2, v1
 
-    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    if-nez v2, :cond_9
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->contactDiaryOverviewNestedElementGroup:Landroidx/constraintlayout/widget/Group;
+    goto :goto_7
 
-    const-string v0, "contactDiaryOverviewNestedElementGroup"
+    :cond_9
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/SortedList;->addAllInternal([Ljava/lang/Object;)V
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :goto_7
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/SortedList;->endBatchedUpdates()V
 
-    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->data:Ljava/util/List;
+    :goto_8
+    iget-object v0, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayContact:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+    const-string v1, "dayContact"
 
-    move-result v0
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/16 v1, 0x8
+    iget-object v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->contactItem:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem;
 
-    const/4 v2, 0x0
+    iget-object v2, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    if-eqz v0, :cond_0
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move v0, v1
+    if-eqz v1, :cond_b
 
-    goto :goto_0
+    iget-object v6, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem;->data:Ljava/util/List;
 
-    :cond_0
-    move v0, v2
+    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
 
-    :goto_0
-    invoke-virtual {p3, v0}, Landroid/view/View;->setVisibility(I)V
+    move-result v6
 
-    iget-object p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
+    if-eqz v6, :cond_a
 
-    iget-object p3, p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;->nestedItemAdapter$delegate:Lkotlin/Lazy;
+    goto :goto_9
+
+    :cond_a
+    move v6, v5
+
+    goto :goto_a
+
+    :cond_b
+    :goto_9
+    move v6, v4
+
+    :goto_a
+    if-eqz v6, :cond_c
+
+    move v6, v7
+
+    goto :goto_b
+
+    :cond_c
+    move v6, v5
+
+    :goto_b
+    invoke-virtual {v2, v6}, Landroid/view/View;->setVisibility(I)V
+
+    if-nez v1, :cond_d
+
+    goto :goto_c
+
+    :cond_d
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemContactBinding;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
+
+    iget-object p3, p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;->contactAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {p3}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object p3
 
-    check-cast p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayDataNestedAdapter;
+    check-cast p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactAdapter;
 
-    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->data:Ljava/util/List;
+    iget-object v1, v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactItem;->data:Ljava/util/List;
 
-    if-eqz p3, :cond_3
+    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "dataList"
+    const-string v2, "dataList"
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v3, p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayDataNestedAdapter;->dataList:Ljava/util/List;
+    iget-object v2, p3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/contact/ContactAdapter;->dataList:Ljava/util/List;
 
-    const-string v4, "$this$clearAndAddAll"
+    const-string v6, "<this>"
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "newItems"
+    const-string v6, "newItems"
 
-    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v3}, Ljava/util/List;->clear()V
+    invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    invoke-interface {v3, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mObservable:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;
+    iget-object v1, p3, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mObservable:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;
 
-    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;->notifyChanged()V
+    invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;->notifyChanged()V
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->contactDiaryOverviewNestedListItemRisk:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;
+    invoke-virtual {v0, p3}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->risk:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem$Risk;
+    invoke-virtual {v0, v4}, Landroidx/recyclerview/widget/RecyclerView;->suppressLayout(Z)V
 
-    const-string p3, "this.contactDiaryOverviewRiskItem"
+    :goto_c
+    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayTestResult:Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;
 
-    if-eqz p2, :cond_2
-
-    iget-object v0, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;->contactDiaryOverviewRiskItem:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    invoke-static {v0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;->contactDiaryOverviewItemRiskTitle:Landroid/widget/TextView;
-
-    const-string v0, "this.contactDiaryOverviewItemRiskTitle"
+    const-string v0, "dayTestResult"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
+    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->coronaTestItem:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/coronatest/CoronaTestItem;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    iget-object v1, p3, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;->rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-result-object v0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem$Risk;->title:I
+    if-eqz v0, :cond_f
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    iget-object v2, v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/coronatest/CoronaTestItem;->data:Ljava/util/List;
 
-    move-result-object v0
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
-    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result v2
 
-    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;->contactDiaryOverviewRiskItemImage:Landroid/widget/ImageView;
+    if-eqz v2, :cond_e
 
-    iget v0, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem$Risk;->drawableId:I
+    goto :goto_d
 
-    invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setImageResource(I)V
+    :cond_e
+    move v2, v5
 
-    new-instance p3, Ljava/lang/StringBuilder;
+    goto :goto_e
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    :cond_f
+    :goto_d
+    move v2, v4
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
+    :goto_e
+    if-eqz v2, :cond_10
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    move v5, v7
 
-    move-result-object v0
+    :cond_10
+    invoke-virtual {v1, v5}, Landroid/view/View;->setVisibility(I)V
 
-    iget v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem$Risk;->body:I
+    if-nez v0, :cond_11
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    goto :goto_f
 
-    move-result-object v0
+    :cond_11
+    iget-object p3, p3, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewDayListItemTestResultsBinding;->recyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/coronatest/CoronaTestAdapter;
 
-    const-string v0, "StringBuilder().append(context.getString(it.body))"
+    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/coronatest/CoronaTestItem;->data:Ljava/util/List;
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/coronatest/CoronaTestAdapter;-><init>(Ljava/util/List;)V
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem$Risk;->bodyExtended:Ljava/lang/Integer;
+    invoke-virtual {p3, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    if-eqz p2, :cond_1
+    invoke-virtual {p3, v4}, Landroidx/recyclerview/widget/RecyclerView;->suppressLayout(Z)V
 
-    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+    :goto_f
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewListItemBinding;->dayElementBody:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-result p2
+    iget-object p3, p2, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;->date:Lorg/joda/time/LocalDate;
 
-    const/16 v0, 0xa
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    const-string v0, "append(\'\\n\')"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewVH;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    const-string v1, "context"
 
-    move-result-object p2
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt;->getLocale(Landroid/content/Context;)Ljava/util/Locale;
 
-    :cond_1
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;->contactDiaryOverviewItemRiskBody:Landroid/widget/TextView;
+    move-result-object v0
 
-    const-string p2, "this.contactDiaryOverviewItemRiskBody"
+    invoke-static {p3, v0}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt;->toFormattedDayForAccessibility(Lorg/joda/time/LocalDate;Ljava/util/Locale;)Ljava/lang/String;
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p3
 
-    invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    goto :goto_1
+    new-instance p3, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda1;
 
-    :cond_2
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryOverviewNestedListItemRiskBinding;->contactDiaryOverviewRiskItem:Landroidx/constraintlayout/widget/ConstraintLayout;
+    invoke-direct {p3, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/day/DayOverviewItem;)V
 
-    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    :goto_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_3
-    const/4 p1, 0x0
-
-    throw p1
 .end method

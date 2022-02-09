@@ -3,17 +3,6 @@
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
-        "Lcom/google/android/gms/common/api/Api$ApiOptions$NoOptions;",
-        ">;"
-    }
-.end annotation
-
-
 # virtual methods
 .method public abstract deviceSupportsLocationlessScanning()Z
 .end method

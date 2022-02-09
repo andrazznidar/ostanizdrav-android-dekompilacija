@@ -27,14 +27,14 @@
 
 
 # instance fields
-.field public final synthetic this$0:Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;
+.field public final synthetic this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/CoronaWarnApplication;)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;
+    iput-object p1, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
     const/4 p1, 0x0
 
@@ -48,9 +48,7 @@
 .method public invoke()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
+    iget-object v0, p0, Lde/rki/coronawarnapp/CoronaWarnApplication$activityLifecycleCallback$1$localBM$2;->this$0:Lde/rki/coronawarnapp/CoronaWarnApplication;
 
     invoke-static {v0}, Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->getInstance(Landroid/content/Context;)Landroidx/localbroadcastmanager/content/LocalBroadcastManager;
 

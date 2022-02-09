@@ -196,7 +196,7 @@
 .end method
 
 .method public constructor <init>(I[B)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -246,9 +246,9 @@
     :goto_1
     iput-boolean p2, p0, Lcom/google/crypto/tink/subtle/Base64$Encoder;->doNewline:Z
 
-    and-int/lit8 p2, p1, 0x4
+    and-int/lit8 v2, p1, 0x4
 
-    if-eqz p2, :cond_2
+    if-eqz v2, :cond_2
 
     goto :goto_2
 
@@ -280,9 +280,7 @@
 
     iput v1, p0, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
 
-    iget-boolean p1, p0, Lcom/google/crypto/tink/subtle/Base64$Encoder;->doNewline:Z
-
-    if-eqz p1, :cond_4
+    if-eqz p2, :cond_4
 
     const/16 p1, 0x13
 

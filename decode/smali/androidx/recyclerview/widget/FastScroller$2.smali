@@ -115,21 +115,19 @@
     goto :goto_2
 
     :cond_2
-    iget-boolean v3, p2, Landroidx/recyclerview/widget/FastScroller;->mNeedVerticalScrollbar:Z
+    const/high16 v3, 0x40000000    # 2.0f
 
-    const/high16 v6, 0x40000000    # 2.0f
-
-    if-eqz v3, :cond_3
+    if-eqz v7, :cond_3
 
     int-to-float p1, p1
 
-    int-to-float v3, v1
+    int-to-float v6, v1
 
-    div-float v7, v3, v6
+    div-float v7, v6, v3
 
     add-float/2addr v7, p1
 
-    mul-float/2addr v7, v3
+    mul-float/2addr v7, v6
 
     int-to-float p1, v0
 
@@ -158,7 +156,7 @@
 
     int-to-float p3, v5
 
-    div-float v0, p3, v6
+    div-float v0, p3, v3
 
     add-float/2addr v0, p1
 

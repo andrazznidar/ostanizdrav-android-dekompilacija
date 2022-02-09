@@ -123,7 +123,7 @@
     :cond_0
     iget-object v0, p1, Landroidx/navigation/fragment/FragmentNavigator$Destination;->mClassName:Ljava/lang/String;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_19
 
     const/4 v2, 0x0
 
@@ -173,8 +173,6 @@
     invoke-virtual {v0, p2}, Landroidx/fragment/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
     iget-object p2, p0, Landroidx/navigation/fragment/FragmentNavigator;->mFragmentManager:Landroidx/fragment/app/FragmentManager;
-
-    if-eqz p2, :cond_1a
 
     new-instance v3, Landroidx/fragment/app/BackStackRecord;
 
@@ -274,13 +272,13 @@
     :cond_b
     iget v4, p0, Landroidx/navigation/fragment/FragmentNavigator;->mContainerId:I
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_18
 
     const/4 v5, 0x2
 
-    invoke-virtual {v3, v4, v0, v1, v5}, Landroidx/fragment/app/FragmentTransaction;->doAddOp(ILandroidx/fragment/app/Fragment;Ljava/lang/String;I)V
+    invoke-virtual {v3, v4, v0, v1, v5}, Landroidx/fragment/app/BackStackRecord;->doAddOp(ILandroidx/fragment/app/Fragment;Ljava/lang/String;I)V
 
-    invoke-virtual {v3, v0}, Landroidx/fragment/app/FragmentTransaction;->setPrimaryNavigationFragment(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;
+    invoke-virtual {v3, v0}, Landroidx/fragment/app/BackStackRecord;->setPrimaryNavigationFragment(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;
 
     iget v0, p1, Landroidx/navigation/NavDestination;->mId:I
 
@@ -411,7 +409,7 @@
 
     iget-boolean p3, v3, Landroidx/fragment/app/FragmentTransaction;->mAllowAddToBackStack:Z
 
-    if-eqz p3, :cond_18
+    if-eqz p3, :cond_17
 
     iput-boolean v5, v3, Landroidx/fragment/app/FragmentTransaction;->mAddToBackStack:Z
 
@@ -424,13 +422,13 @@
     :goto_a
     instance-of p2, p4, Landroidx/navigation/fragment/FragmentNavigator$Extras;
 
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_15
 
     check-cast p4, Landroidx/navigation/fragment/FragmentNavigator$Extras;
 
-    if-eqz p4, :cond_15
+    iget-object p2, p4, Landroidx/navigation/fragment/FragmentNavigator$Extras;->mSharedElements:Ljava/util/LinkedHashMap;
 
-    invoke-static {v1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {p2}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p2
 
@@ -447,7 +445,7 @@
 
     move-result p3
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_15
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -467,9 +465,11 @@
 
     check-cast p3, Ljava/lang/String;
 
-    invoke-static {}, Landroidx/fragment/app/FragmentTransition;->supportsTransition()Z
+    sget-object v4, Landroidx/fragment/app/FragmentTransition;->INVERSE_OPS:[I
 
-    invoke-static {p4}, Landroidx/core/view/ViewCompat;->getTransitionName(Landroid/view/View;)Ljava/lang/String;
+    sget-object v4, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p4}, Landroid/view/View;->getTransitionName()Ljava/lang/String;
 
     move-result-object p4
 
@@ -528,7 +528,7 @@
 
     const-string p2, "A shared element with the source name \'"
 
-    invoke-static {p2, p4, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p4, v6}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -541,7 +541,7 @@
 
     const-string p2, "A shared element with the target name \'"
 
-    invoke-static {p2, p3, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3, v6}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -559,14 +559,11 @@
     throw p1
 
     :cond_15
-    throw v1
-
-    :cond_16
     iput-boolean v5, v3, Landroidx/fragment/app/FragmentTransaction;->mReorderingAllowed:Z
 
-    invoke-virtual {v3}, Landroidx/fragment/app/FragmentTransaction;->commit()I
+    invoke-virtual {v3}, Landroidx/fragment/app/BackStackRecord;->commit()I
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_16
 
     iget-object p2, p0, Landroidx/navigation/fragment/FragmentNavigator;->mBackStack:Ljava/util/ArrayDeque;
 
@@ -578,21 +575,21 @@
 
     goto :goto_e
 
-    :cond_17
+    :cond_16
     :goto_d
     move-object p1, v1
 
     :goto_e
     return-object p1
 
-    :cond_18
+    :cond_17
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
-    :cond_19
+    :cond_18
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "Must use non-zero containerViewId"
@@ -601,10 +598,7 @@
 
     throw p1
 
-    :cond_1a
-    throw v1
-
-    :cond_1b
+    :cond_19
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string p2, "Fragment class was not set"

@@ -65,15 +65,15 @@
     return-object p0
 .end method
 
-.method public static checkIsLite(Lcom/google/protobuf/ExtensionLite;)Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
+.method private static checkIsLite(Lcom/google/protobuf/ExtensionLite;)Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType:",
             "Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<",
             "TMessageType;TBuilderType;>;BuilderType:",
-            "Ljava/lang/Object<",
-            "TMessageType;TBuilderType;>;T:",
+            "Ljava/lang/Object;",
+            "T:",
             "Ljava/lang/Object;",
             ">(",
             "Lcom/google/protobuf/ExtensionLite<",
@@ -83,19 +83,14 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     return-object p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
-.method public static checkMessageInitialized(Lcom/google/protobuf/GeneratedMessageLite;)Lcom/google/protobuf/GeneratedMessageLite;
+.method private static checkMessageInitialized(Lcom/google/protobuf/GeneratedMessageLite;)Lcom/google/protobuf/GeneratedMessageLite;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -117,13 +112,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMessageLite;->newUninitializedMessageException()Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -135,12 +133,8 @@
 
     throw v0
 
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
     :cond_1
+    :goto_0
     return-object p0
 .end method
 
@@ -230,7 +224,7 @@
     return-void
 .end method
 
-.method public static varargs getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+.method static varargs getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     .locals 2
 
     :try_start_0
@@ -249,7 +243,7 @@
 
     const-string v1, "Generated message class \""
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -278,7 +272,7 @@
     throw v0
 .end method
 
-.method public static varargs invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+.method static varargs invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     :try_start_0
@@ -389,9 +383,11 @@
 .method public static mutableCopy(Lcom/google/protobuf/Internal$BooleanList;)Lcom/google/protobuf/Internal$BooleanList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/protobuf/BooleanArrayList;
+
+    iget v0, v0, Lcom/google/protobuf/BooleanArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -415,9 +411,11 @@
 .method public static mutableCopy(Lcom/google/protobuf/Internal$DoubleList;)Lcom/google/protobuf/Internal$DoubleList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/protobuf/DoubleArrayList;
+
+    iget v0, v0, Lcom/google/protobuf/DoubleArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -441,9 +439,11 @@
 .method public static mutableCopy(Lcom/google/protobuf/Internal$FloatList;)Lcom/google/protobuf/Internal$FloatList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/protobuf/FloatArrayList;
+
+    iget v0, v0, Lcom/google/protobuf/FloatArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -467,9 +467,11 @@
 .method public static mutableCopy(Lcom/google/protobuf/Internal$IntList;)Lcom/google/protobuf/Internal$IntList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/protobuf/IntArrayList;
+
+    iget v0, v0, Lcom/google/protobuf/IntArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -493,9 +495,11 @@
 .method public static mutableCopy(Lcom/google/protobuf/Internal$LongList;)Lcom/google/protobuf/Internal$LongList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/protobuf/LongArrayList;
+
+    iget v0, v0, Lcom/google/protobuf/LongArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -958,7 +962,7 @@
     return-object p0
 .end method
 
-.method public static parsePartialDelimitedFrom(Lcom/google/protobuf/GeneratedMessageLite;Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/GeneratedMessageLite;
+.method private static parsePartialDelimitedFrom(Lcom/google/protobuf/GeneratedMessageLite;Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/GeneratedMessageLite;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1037,7 +1041,7 @@
     throw p1
 .end method
 
-.method public static parsePartialFrom(Lcom/google/protobuf/GeneratedMessageLite;Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/GeneratedMessageLite;
+.method private static parsePartialFrom(Lcom/google/protobuf/GeneratedMessageLite;Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/GeneratedMessageLite;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1180,7 +1184,7 @@
     throw p0
 .end method
 
-.method public static parsePartialFrom(Lcom/google/protobuf/GeneratedMessageLite;[BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/GeneratedMessageLite;
+.method private static parsePartialFrom(Lcom/google/protobuf/GeneratedMessageLite;[BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/GeneratedMessageLite;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1672,7 +1676,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v1, v0}, Lcom/google/android/material/R$style;->reflectivePrintWithIndent(Lcom/google/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
+    invoke-static {p0, v1, v0}, Lcom/google/protobuf/MessageLiteToString;->reflectivePrintWithIndent(Lcom/google/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

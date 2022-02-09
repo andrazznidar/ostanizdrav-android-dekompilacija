@@ -23,8 +23,6 @@
 
 .field public mInfinite:Z
 
-.field public mIsPreLayout:Z
-
 .field public mItemDirection:I
 
 .field public mLastScrollDelta:I

@@ -9,8 +9,7 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "<TT>"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
@@ -24,6 +23,14 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "maxPoolSize"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,7 +58,7 @@
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT"
+            "()TT;"
         }
     .end annotation
 
@@ -81,9 +88,18 @@
 
 .method public release(Ljava/lang/Object;)Z
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "instance"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT)Z"
+            "(TT;)Z"
         }
     .end annotation
 
@@ -98,11 +114,11 @@
 
     if-ge v1, v2, :cond_1
 
-    iget-object v2, p0, Landroidx/core/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    iget-object v4, p0, Landroidx/core/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
 
-    aget-object v2, v2, v1
+    aget-object v4, v4, v1
 
-    if-ne v2, p1, :cond_0
+    if-ne v4, p1, :cond_0
 
     move v1, v3
 
@@ -119,19 +135,17 @@
     :goto_1
     if-nez v1, :cond_3
 
-    iget v1, p0, Landroidx/core/util/Pools$SimplePool;->mPoolSize:I
+    iget-object v1, p0, Landroidx/core/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
 
-    iget-object v2, p0, Landroidx/core/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    array-length v4, v1
 
-    array-length v4, v2
+    if-ge v2, v4, :cond_2
 
-    if-ge v1, v4, :cond_2
+    aput-object p1, v1, v2
 
-    aput-object p1, v2, v1
+    add-int/2addr v2, v3
 
-    add-int/2addr v1, v3
-
-    iput v1, p0, Landroidx/core/util/Pools$SimplePool;->mPoolSize:I
+    iput v2, p0, Landroidx/core/util/Pools$SimplePool;->mPoolSize:I
 
     return v3
 

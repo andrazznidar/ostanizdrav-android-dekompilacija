@@ -12,8 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 .field public final mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
 
@@ -47,13 +45,11 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c0090
+    const v6, 0x7f0d00d8
 
     aput v6, v4, v5
 
     invoke-virtual {v0, v5, v1, v3, v4}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     const-string v1, "merge_guidelines_card"
 
@@ -69,7 +65,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c00b3
+    const v6, 0x7f0d0109
 
     aput v6, v4, v5
 
@@ -81,63 +77,49 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0904fa
+    const v1, 0x7f0a0769
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0900f8
+    const v1, 0x7f0a01cf
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090253
+    const v1, 0x7f0a03ed
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09024b
+    const v1, 0x7f0a03e5
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904f9
+    const v1, 0x7f0a0768
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904f8
+    const v1, 0x7f0a0767
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901cf
+    const v1, 0x7f0a0348
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901cc
+    const v1, 0x7f0a0345
 
     const/16 v2, 0xb
 
@@ -148,6 +130,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 18
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     move-object/from16 v14, p0
 
@@ -273,8 +265,6 @@
 
     check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object v0, v14, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
     const/4 v0, 0x3
@@ -297,7 +287,7 @@
     iput-object v14, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
-    const v0, 0x7f09015b
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {v15, v0, v14}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -336,9 +326,9 @@
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f0800a2
+    const v2, 0x7f0800dd
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBinding;->toolbar:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
@@ -463,6 +453,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

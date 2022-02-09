@@ -99,7 +99,7 @@
 
     iget v3, v1, Landroid/graphics/PointF;->x:F
 
-    invoke-static {v3, v2, p2, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline0(FFFF)F
+    invoke-static {v3, v2, p2, v2}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;->m(FFFF)F
 
     move-result v2
 

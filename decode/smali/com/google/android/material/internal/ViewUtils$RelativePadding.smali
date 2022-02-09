@@ -3,6 +3,17 @@
 .source "ViewUtils.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/material/internal/ViewUtils;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "RelativePadding"
+.end annotation
+
+
 # instance fields
 .field public bottom:I
 

@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string p2, "withRSA"
+    const-string/jumbo p2, "withRSA"
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -126,43 +126,41 @@
 
     invoke-virtual {v0, v1}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
-
-    check-cast v0, Ljava/security/Signature;
-
-    iget-object v1, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->privateKey:Ljava/security/interfaces/RSAPrivateCrtKey;
-
-    invoke-virtual {v0, v1}, Ljava/security/Signature;->initSign(Ljava/security/PrivateKey;)V
-
-    invoke-virtual {v0, p1}, Ljava/security/Signature;->update([B)V
-
-    invoke-virtual {v0}, Ljava/security/Signature;->sign()[B
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/crypto/tink/subtle/EngineFactory;->SIGNATURE:Lcom/google/crypto/tink/subtle/EngineFactory;
-
-    iget-object v2, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->signatureAlgorithm:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
-
     move-result-object v1
 
     check-cast v1, Ljava/security/Signature;
 
-    iget-object v2, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->publicKey:Ljava/security/interfaces/RSAPublicKey;
+    iget-object v2, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->privateKey:Ljava/security/interfaces/RSAPrivateCrtKey;
 
-    invoke-virtual {v1, v2}, Ljava/security/Signature;->initVerify(Ljava/security/PublicKey;)V
+    invoke-virtual {v1, v2}, Ljava/security/Signature;->initSign(Ljava/security/PrivateKey;)V
 
     invoke-virtual {v1, p1}, Ljava/security/Signature;->update([B)V
 
-    invoke-virtual {v1, v0}, Ljava/security/Signature;->verify([B)Z
+    invoke-virtual {v1}, Ljava/security/Signature;->sign()[B
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->signatureAlgorithm:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Lcom/google/crypto/tink/subtle/EngineFactory;->getInstance(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/security/Signature;
+
+    iget-object v2, p0, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->publicKey:Ljava/security/interfaces/RSAPublicKey;
+
+    invoke-virtual {v0, v2}, Ljava/security/Signature;->initVerify(Ljava/security/PublicKey;)V
+
+    invoke-virtual {v0, p1}, Ljava/security/Signature;->update([B)V
+
+    invoke-virtual {v0, v1}, Ljava/security/Signature;->verify([B)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    return-object v0
+    return-object v1
 
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;

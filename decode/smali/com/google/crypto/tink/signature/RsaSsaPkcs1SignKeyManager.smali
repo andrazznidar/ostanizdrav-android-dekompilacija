@@ -70,7 +70,7 @@
 .method public getKeyType()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.RsaSsaPkcs1PrivateKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.RsaSsaPkcs1PrivateKey"
 
     return-object v0
 .end method
@@ -161,21 +161,21 @@
 
     new-instance v0, Ljava/math/BigInteger;
 
-    const/4 v1, 0x1
-
     invoke-virtual {p1}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PrivateKey;->getPublicKey()Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;->getN()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    invoke-virtual {v1}, Lcom/google/crypto/tink/proto/RsaSsaPkcs1PublicKey;->getN()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->toByteArray()[B
+    invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->toByteArray()[B
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v0, v1, v2}, Ljava/math/BigInteger;-><init>(I[B)V
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v2, v1}, Ljava/math/BigInteger;-><init>(I[B)V
 
     invoke-virtual {v0}, Ljava/math/BigInteger;->bitLength()I
 
@@ -191,7 +191,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/material/R$style;->validateRsaSsaPkcs1Params(Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;)V
+    invoke-static {p1}, Lcom/google/crypto/tink/signature/SigUtil;->validateRsaSsaPkcs1Params(Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;)V
 
     return-void
 .end method

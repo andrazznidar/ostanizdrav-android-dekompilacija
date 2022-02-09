@@ -17,8 +17,6 @@
 # instance fields
 .field public final synthetic $observerChannel:Lkotlinx/coroutines/channels/Channel;
 
-.field public final synthetic this$0:Landroidx/room/CoroutinesRoom$Companion$createFlow$1;
-
 
 # direct methods
 .method public constructor <init>(Landroidx/room/CoroutinesRoom$Companion$createFlow$1;Lkotlinx/coroutines/channels/Channel;[Ljava/lang/String;)V
@@ -32,8 +30,6 @@
             ")V"
         }
     .end annotation
-
-    iput-object p1, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1$observer$1;->this$0:Landroidx/room/CoroutinesRoom$Companion$createFlow$1;
 
     iput-object p2, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1$observer$1;->$observerChannel:Lkotlinx/coroutines/channels/Channel;
 
@@ -54,10 +50,6 @@
             ">;)V"
         }
     .end annotation
-
-    const-string v0, "tables"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p1, p0, Landroidx/room/CoroutinesRoom$Companion$createFlow$1$observer$1;->$observerChannel:Lkotlinx/coroutines/channels/Channel;
 

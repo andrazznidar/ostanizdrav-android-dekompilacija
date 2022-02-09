@@ -24,9 +24,9 @@
 
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Landroidx/appcompat/widget/ActionMenuPresenter;
 
-    const/4 v4, 0x0
+    sget v5, Landroidx/appcompat/R$attr;->actionOverflowMenuStyle:I
 
-    const v5, 0x7f04001f
+    const/4 v4, 0x0
 
     const/4 v6, 0x0
 

@@ -10,6 +10,16 @@
 # direct methods
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;[Landroid/view/View;)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -64,7 +74,7 @@
 
     aget-object v0, p2, v2
 
-    const v1, 0x7f09015b
+    sget v1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {v0, v1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

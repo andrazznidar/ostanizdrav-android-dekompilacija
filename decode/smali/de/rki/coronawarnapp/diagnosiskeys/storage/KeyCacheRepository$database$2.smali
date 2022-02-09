@@ -58,7 +58,7 @@
 
     const-string v2, "keycache.db"
 
-    invoke-static {v0, v1, v2}, Landroidx/navigation/ui/R$anim;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
+    invoke-static {v0, v1, v2}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
 
     move-result-object v0
 
@@ -71,10 +71,6 @@
     invoke-virtual {v0}, Landroidx/room/RoomDatabase$Builder;->build()Landroidx/room/RoomDatabase;
 
     move-result-object v0
-
-    const-string v1, "Room\n            .databa\u2026om()\n            .build()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase;
 

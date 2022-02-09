@@ -28,22 +28,22 @@
 
     iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar$7;->this$0:Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    sget-object v0, Lcom/google/android/material/datepicker/MaterialCalendar$CalendarSelector;->DAY:Lcom/google/android/material/datepicker/MaterialCalendar$CalendarSelector;
+    iget v0, p1, Lcom/google/android/material/datepicker/MaterialCalendar;->calendarSelector:I
 
-    sget-object v1, Lcom/google/android/material/datepicker/MaterialCalendar$CalendarSelector;->YEAR:Lcom/google/android/material/datepicker/MaterialCalendar$CalendarSelector;
+    const/4 v1, 0x1
 
-    iget-object v2, p1, Lcom/google/android/material/datepicker/MaterialCalendar;->calendarSelector:Lcom/google/android/material/datepicker/MaterialCalendar$CalendarSelector;
+    const/4 v2, 0x2
 
-    if-ne v2, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
-    invoke-virtual {p1, v0}, Lcom/google/android/material/datepicker/MaterialCalendar;->setSelector(Lcom/google/android/material/datepicker/MaterialCalendar$CalendarSelector;)V
+    invoke-virtual {p1, v1}, Lcom/google/android/material/datepicker/MaterialCalendar;->setSelector$enumunboxing$(I)V
 
     goto :goto_0
 
     :cond_0
-    if-ne v2, v0, :cond_1
+    if-ne v0, v1, :cond_1
 
-    invoke-virtual {p1, v1}, Lcom/google/android/material/datepicker/MaterialCalendar;->setSelector(Lcom/google/android/material/datepicker/MaterialCalendar$CalendarSelector;)V
+    invoke-virtual {p1, v2}, Lcom/google/android/material/datepicker/MaterialCalendar;->setSelector$enumunboxing$(I)V
 
     :cond_1
     :goto_0

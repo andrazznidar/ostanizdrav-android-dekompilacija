@@ -3,14 +3,6 @@
 .source "Decoder.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/zxing/aztec/decoder/Decoder$Table;
-    }
-.end annotation
-
-
 # static fields
 .field public static final DIGIT_TABLE:[Ljava/lang/String;
 
@@ -143,19 +135,19 @@
 
     const-string v21, "s"
 
-    const-string v22, "t"
+    const-string/jumbo v22, "t"
 
-    const-string v23, "u"
+    const-string/jumbo v23, "u"
 
-    const-string v24, "v"
+    const-string/jumbo v24, "v"
 
-    const-string v25, "w"
+    const-string/jumbo v25, "w"
 
-    const-string v26, "x"
+    const-string/jumbo v26, "x"
 
-    const-string v27, "y"
+    const-string/jumbo v27, "y"
 
-    const-string v28, "z"
+    const-string/jumbo v28, "z"
 
     const-string v29, "CTRL_US"
 
@@ -221,11 +213,11 @@
 
     const-string v25, "`"
 
-    const-string v26, "|"
+    const-string/jumbo v26, "|"
 
-    const-string v27, "~"
+    const-string/jumbo v27, "~"
 
-    const-string v28, "\u007f"
+    const-string/jumbo v28, "\u007f"
 
     const-string v29, "CTRL_LL"
 
@@ -299,9 +291,9 @@
 
     const-string v29, "]"
 
-    const-string v30, "{"
+    const-string/jumbo v30, "{"
 
-    const-string v31, "}"
+    const-string/jumbo v31, "}"
 
     const-string v32, "CTRL_UL"
 
@@ -392,7 +384,7 @@
 
 # virtual methods
 .method public decode(Lcom/google/zxing/aztec/AztecDetectorResult;)Lcom/google/zxing/common/DecoderResult;
-    .locals 21
+    .locals 22
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -405,7 +397,9 @@
 
     iput-object v0, v1, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    iget-object v2, v0, Lcom/google/zxing/common/DetectorResult;->bits:Lcom/google/zxing/common/BitMatrix;
+    iget-object v2, v0, Lcom/google/zxing/common/DetectorResult;->bits:Ljava/lang/Object;
+
+    check-cast v2, Lcom/google/zxing/common/BitMatrix;
 
     iget-boolean v3, v0, Lcom/google/zxing/aztec/AztecDetectorResult;->compact:Z
 
@@ -674,51 +668,51 @@
     :cond_7
     iget-object v0, v1, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    iget v0, v0, Lcom/google/zxing/aztec/AztecDetectorResult;->nbLayers:I
+    iget v2, v0, Lcom/google/zxing/aztec/AztecDetectorResult;->nbLayers:I
 
-    const/16 v3, 0x8
+    const/4 v3, 0x6
 
-    const/4 v4, 0x2
+    const/16 v4, 0x8
 
-    if-gt v0, v4, :cond_8
+    const/4 v5, 0x2
 
-    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    if-gt v2, v5, :cond_8
 
-    const/4 v14, 0x6
-
-    goto :goto_7
-
-    :cond_8
-    if-gt v0, v3, :cond_9
-
-    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v2, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     move v14, v3
 
     goto :goto_7
 
-    :cond_9
-    const/16 v4, 0x16
+    :cond_8
+    if-gt v2, v4, :cond_9
 
-    if-gt v0, v4, :cond_a
+    sget-object v2, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
+
+    move v14, v4
+
+    goto :goto_7
+
+    :cond_9
+    const/16 v5, 0x16
+
+    if-gt v2, v5, :cond_a
 
     const/16 v14, 0xa
 
-    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_10:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v2, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_10:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     goto :goto_7
 
     :cond_a
-    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_12:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v2, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_12:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     :goto_7
-    iget-object v4, v1, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
-
-    iget v4, v4, Lcom/google/zxing/aztec/AztecDetectorResult;->nbDatablocks:I
+    iget v0, v0, Lcom/google/zxing/aztec/AztecDetectorResult;->nbDatablocks:I
 
     div-int v5, v7, v14
 
-    if-lt v5, v4, :cond_2b
+    if-lt v5, v0, :cond_2b
 
     rem-int/2addr v7, v14
 
@@ -745,26 +739,26 @@
     :try_start_0
     new-instance v7, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
 
-    invoke-direct {v7, v0}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;)V
+    invoke-direct {v7, v2}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;)V
 
-    sub-int/2addr v5, v4
+    sub-int/2addr v5, v0
 
     invoke-virtual {v7, v6, v5}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
     :try_end_0
     .catch Lcom/google/zxing/common/reedsolomon/ReedSolomonException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
-    shl-int v5, v0, v14
+    shl-int v5, v2, v14
 
-    sub-int/2addr v5, v0
+    sub-int/2addr v5, v2
 
     const/4 v7, 0x0
 
     const/4 v8, 0x0
 
     :goto_9
-    if-ge v7, v4, :cond_f
+    if-ge v7, v0, :cond_f
 
     aget v9, v6, v7
 
@@ -772,11 +766,11 @@
 
     if-eq v9, v5, :cond_e
 
-    if-eq v9, v0, :cond_c
+    if-eq v9, v2, :cond_c
 
-    add-int/lit8 v0, v5, -0x1
+    add-int/lit8 v2, v5, -0x1
 
-    if-ne v9, v0, :cond_d
+    if-ne v9, v2, :cond_d
 
     :cond_c
     add-int/lit8 v8, v8, 0x1
@@ -784,7 +778,7 @@
     :cond_d
     add-int/lit8 v7, v7, 0x1
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_9
 
@@ -796,18 +790,18 @@
     throw v0
 
     :cond_f
-    mul-int v0, v4, v14
+    mul-int v2, v0, v14
 
-    sub-int/2addr v0, v8
+    sub-int/2addr v2, v8
 
-    new-array v7, v0, [Z
+    new-array v7, v2, [Z
 
     const/4 v8, 0x0
 
     const/4 v9, 0x0
 
     :goto_a
-    if-ge v8, v4, :cond_15
+    if-ge v8, v0, :cond_15
 
     aget v10, v6, v8
 
@@ -885,24 +879,24 @@
     goto :goto_a
 
     :cond_15
-    add-int/lit8 v4, v0, 0x7
+    add-int/lit8 v0, v2, 0x7
 
-    div-int/2addr v4, v3
+    div-int/2addr v0, v4
 
-    new-array v5, v4, [B
+    new-array v5, v0, [B
 
     const/4 v6, 0x0
 
     :goto_f
-    if-ge v6, v4, :cond_17
+    if-ge v6, v0, :cond_17
 
     shl-int/lit8 v8, v6, 0x3
 
-    sub-int v9, v0, v8
+    sub-int v9, v2, v8
 
-    if-lt v9, v3, :cond_16
+    if-lt v9, v4, :cond_16
 
-    invoke-static {v7, v8, v3}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {v7, v8, v4}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
     move-result v8
 
@@ -927,147 +921,139 @@
     goto :goto_f
 
     :cond_17
-    sget-object v4, Lcom/google/zxing/aztec/decoder/Decoder$Table;->DIGIT:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    sget-object v6, Lcom/google/zxing/aztec/decoder/Decoder$Table;->BINARY:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    const/16 v6, 0x14
 
-    sget-object v8, Lcom/google/zxing/aztec/decoder/Decoder$Table;->UPPER:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    invoke-direct {v0, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    const/4 v6, 0x1
 
-    const/16 v10, 0x14
+    const/4 v8, 0x1
 
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    move-object v11, v8
-
-    move-object v12, v11
-
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
     :goto_11
-    if-ge v10, v0, :cond_29
+    if-ge v9, v2, :cond_29
 
-    const/4 v13, 0x5
+    const/4 v10, 0x5
 
-    if-ne v11, v6, :cond_1b
+    if-ne v6, v3, :cond_1b
 
-    sub-int v11, v0, v10
+    sub-int v6, v2, v9
 
-    if-lt v11, v13, :cond_29
+    if-lt v6, v10, :cond_29
 
-    invoke-static {v7, v10, v13}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {v7, v9, v10}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
-    move-result v11
+    move-result v6
 
-    add-int/lit8 v10, v10, 0x5
+    add-int/lit8 v9, v9, 0x5
 
-    if-nez v11, :cond_18
+    if-nez v6, :cond_18
 
-    sub-int v11, v0, v10
+    sub-int v6, v2, v9
 
-    const/16 v14, 0xb
+    const/16 v11, 0xb
 
-    if-lt v11, v14, :cond_29
+    if-lt v6, v11, :cond_29
 
-    invoke-static {v7, v10, v14}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {v7, v9, v11}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
-    move-result v11
+    move-result v6
 
-    add-int/lit8 v11, v11, 0x1f
+    add-int/lit8 v6, v6, 0x1f
 
-    add-int/lit8 v10, v10, 0xb
+    add-int/lit8 v9, v9, 0xb
 
     goto :goto_12
 
     :cond_18
-    const/16 v14, 0xb
+    const/16 v11, 0xb
 
     :goto_12
-    const/4 v13, 0x0
+    const/4 v10, 0x0
 
     :goto_13
-    if-ge v13, v11, :cond_1a
+    if-ge v10, v6, :cond_1a
 
-    sub-int v15, v0, v10
+    sub-int v12, v2, v9
 
-    if-ge v15, v3, :cond_19
+    if-ge v12, v4, :cond_19
 
-    move v10, v0
+    move v9, v2
 
     goto :goto_14
 
     :cond_19
-    invoke-static {v7, v10, v3}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {v7, v9, v4}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
-    move-result v15
+    move-result v12
 
-    int-to-char v15, v15
+    int-to-char v12, v12
 
-    invoke-virtual {v9, v15}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v10, v10, 0x8
+    add-int/lit8 v9, v9, 0x8
 
-    add-int/lit8 v13, v13, 0x1
+    add-int/lit8 v10, v10, 0x1
 
     goto :goto_13
 
     :cond_1a
     :goto_14
-    move-object v11, v12
+    move v6, v8
 
-    const/4 v14, 0x6
-
-    goto/16 :goto_18
+    goto :goto_11
 
     :cond_1b
-    const/16 v14, 0xb
+    const/16 v11, 0xb
 
-    const/4 v15, 0x4
+    const/4 v12, 0x4
 
-    if-ne v11, v4, :cond_1c
+    if-ne v6, v12, :cond_1c
 
-    move v3, v15
+    move v13, v12
 
     goto :goto_15
 
     :cond_1c
-    move v3, v13
+    move v13, v10
 
     :goto_15
-    sub-int v14, v0, v10
+    sub-int v14, v2, v9
 
-    if-lt v14, v3, :cond_29
+    if-lt v14, v13, :cond_29
 
-    invoke-static {v7, v10, v3}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {v7, v9, v13}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
     move-result v14
 
-    add-int/2addr v10, v3
+    add-int/2addr v9, v13
 
-    invoke-virtual {v11}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v6}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
 
-    move-result v3
+    move-result v13
 
-    if-eqz v3, :cond_21
+    const/4 v15, 0x3
 
-    const/4 v2, 0x1
+    if-eqz v13, :cond_21
 
-    if-eq v3, v2, :cond_20
+    const/4 v4, 0x1
 
-    const/4 v2, 0x2
+    if-eq v13, v4, :cond_20
 
-    if-eq v3, v2, :cond_1f
+    const/4 v4, 0x2
 
-    const/4 v2, 0x3
+    if-eq v13, v4, :cond_1f
 
-    if-eq v3, v2, :cond_1e
+    if-eq v13, v15, :cond_1e
 
-    if-ne v3, v15, :cond_1d
+    if-ne v13, v12, :cond_1d
 
-    sget-object v2, Lcom/google/zxing/aztec/decoder/Decoder;->PUNCT_TABLE:[Ljava/lang/String;
+    sget-object v13, Lcom/google/zxing/aztec/decoder/Decoder;->PUNCT_TABLE:[Ljava/lang/String;
 
-    aget-object v2, v2, v14
+    aget-object v13, v13, v14
 
     goto :goto_16
 
@@ -1081,138 +1067,137 @@
     throw v0
 
     :cond_1e
-    sget-object v2, Lcom/google/zxing/aztec/decoder/Decoder;->DIGIT_TABLE:[Ljava/lang/String;
+    sget-object v13, Lcom/google/zxing/aztec/decoder/Decoder;->DIGIT_TABLE:[Ljava/lang/String;
 
-    aget-object v2, v2, v14
+    aget-object v13, v13, v14
 
     goto :goto_16
 
     :cond_1f
-    sget-object v2, Lcom/google/zxing/aztec/decoder/Decoder;->MIXED_TABLE:[Ljava/lang/String;
+    sget-object v13, Lcom/google/zxing/aztec/decoder/Decoder;->MIXED_TABLE:[Ljava/lang/String;
 
-    aget-object v2, v2, v14
+    aget-object v13, v13, v14
 
     goto :goto_16
 
     :cond_20
-    sget-object v2, Lcom/google/zxing/aztec/decoder/Decoder;->LOWER_TABLE:[Ljava/lang/String;
+    const/4 v4, 0x2
 
-    aget-object v2, v2, v14
+    sget-object v13, Lcom/google/zxing/aztec/decoder/Decoder;->LOWER_TABLE:[Ljava/lang/String;
+
+    aget-object v13, v13, v14
 
     goto :goto_16
 
     :cond_21
-    sget-object v2, Lcom/google/zxing/aztec/decoder/Decoder;->UPPER_TABLE:[Ljava/lang/String;
+    const/4 v4, 0x2
 
-    aget-object v2, v2, v14
+    sget-object v13, Lcom/google/zxing/aztec/decoder/Decoder;->UPPER_TABLE:[Ljava/lang/String;
+
+    aget-object v13, v13, v14
 
     :goto_16
-    const-string v3, "CTRL_"
+    const-string v14, "CTRL_"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v13, v14}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v14
 
-    if-eqz v3, :cond_28
+    if-eqz v14, :cond_28
 
-    invoke-virtual {v2, v13}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v13, v10}, Ljava/lang/String;->charAt(I)C
 
-    move-result v3
+    move-result v8
 
-    const/16 v12, 0x42
+    const/16 v14, 0x42
 
-    const/16 v13, 0x4c
+    const/16 v4, 0x4c
 
-    if-eq v3, v12, :cond_26
+    if-eq v8, v14, :cond_26
 
-    const/16 v12, 0x44
+    const/16 v14, 0x44
 
-    if-eq v3, v12, :cond_25
+    if-eq v8, v14, :cond_25
 
     const/16 v12, 0x50
 
-    if-eq v3, v12, :cond_24
+    if-eq v8, v12, :cond_24
 
-    if-eq v3, v13, :cond_23
+    if-eq v8, v4, :cond_23
 
-    const/16 v12, 0x4d
+    const/16 v10, 0x4d
 
-    if-eq v3, v12, :cond_22
+    if-eq v8, v10, :cond_22
 
-    move-object v3, v8
+    const/4 v8, 0x1
 
     goto :goto_17
 
     :cond_22
-    sget-object v3, Lcom/google/zxing/aztec/decoder/Decoder$Table;->MIXED:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    move v8, v15
 
     goto :goto_17
 
     :cond_23
-    sget-object v3, Lcom/google/zxing/aztec/decoder/Decoder$Table;->LOWER:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    const/4 v8, 0x2
 
     goto :goto_17
 
     :cond_24
-    sget-object v3, Lcom/google/zxing/aztec/decoder/Decoder$Table;->PUNCT:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    move v8, v10
 
     goto :goto_17
 
     :cond_25
-    move-object v3, v4
+    move v8, v12
 
     goto :goto_17
 
     :cond_26
-    move-object v3, v6
+    move v8, v3
 
     :goto_17
-    const/4 v14, 0x6
+    invoke-virtual {v13, v3}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v2, v14}, Ljava/lang/String;->charAt(I)C
+    move-result v10
 
-    move-result v2
-
-    if-ne v2, v13, :cond_27
-
-    move-object v11, v3
+    if-ne v10, v4, :cond_27
 
     goto :goto_18
 
     :cond_27
-    move-object v12, v11
+    const/16 v4, 0x8
 
-    move-object v11, v3
+    move/from16 v21, v8
 
-    goto :goto_19
+    move v8, v6
+
+    move/from16 v6, v21
+
+    goto/16 :goto_11
 
     :cond_28
-    const/4 v14, 0x6
-
-    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-object v11, v12
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_18
-    move-object v12, v11
+    move v6, v8
 
-    :goto_19
-    const/16 v3, 0x8
+    const/16 v4, 0x8
 
     goto/16 :goto_11
 
     :cond_29
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     new-instance v3, Lcom/google/zxing/common/DecoderResult;
 
     const/4 v4, 0x0
 
-    invoke-direct {v3, v5, v2, v4, v4}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {v3, v5, v0, v4, v4}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
 
-    iput v0, v3, Lcom/google/zxing/common/DecoderResult;->numBits:I
+    iput v2, v3, Lcom/google/zxing/common/DecoderResult;->numBits:I
 
     return-object v3
 
@@ -1227,12 +1212,12 @@
 
     invoke-direct {v2, v0}, Lcom/google/zxing/FormatException;-><init>(Ljava/lang/Throwable;)V
 
-    goto :goto_1a
+    goto :goto_19
 
     :cond_2a
     sget-object v2, Lcom/google/zxing/FormatException;->INSTANCE:Lcom/google/zxing/FormatException;
 
-    :goto_1a
+    :goto_19
     throw v2
 
     :cond_2b

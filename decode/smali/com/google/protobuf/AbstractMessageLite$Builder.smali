@@ -45,7 +45,7 @@
 .end method
 
 .method public static addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -58,13 +58,11 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p0, :cond_4
+    instance-of v0, p0, Lcom/google/protobuf/LazyStringList;
 
-    instance-of v1, p0, Lcom/google/protobuf/LazyStringList;
-
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
@@ -83,9 +81,9 @@
     goto :goto_1
 
     :cond_0
-    instance-of v1, p0, Ljava/util/Collection;
+    instance-of v0, p0, Ljava/util/Collection;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     invoke-static {p0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->checkForNullValues(Ljava/lang/Iterable;)V
 
@@ -103,32 +101,26 @@
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_2
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_2
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p1, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_2
-    throw v0
-
-    :cond_3
     :goto_1
     return-void
-
-    :cond_4
-    throw v0
 .end method
 
-.method public static checkForNullValues(Ljava/lang/Iterable;)V
+.method private static checkForNullValues(Ljava/lang/Iterable;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -147,22 +139,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
     return-void
 .end method
 
@@ -171,7 +158,7 @@
 
     const-string v0, "Reading "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

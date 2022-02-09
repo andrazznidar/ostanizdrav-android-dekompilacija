@@ -34,9 +34,9 @@
     c = "de.rki.coronawarnapp.storage.TracingRepository$refreshRiskLevel$2"
     f = "TracingRepository.kt"
     l = {
-        0x81,
-        0x84,
-        0x88
+        0x75,
+        0x78,
+        0x7b
     }
     m = "invokeSuspend"
 .end annotation
@@ -51,6 +51,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/storage/TracingRepository;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/storage/TracingRepository;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->this$0:Lde/rki/coronawarnapp/storage/TracingRepository;
 
@@ -77,10 +87,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->this$0:Lde/rki/coronawarnapp/storage/TracingRepository;
@@ -90,14 +96,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;
 
@@ -115,29 +119,31 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+    .locals 14
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
     iget v1, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->label:I
 
-    const/4 v2, 0x3
+    const-string v2, "TracingRepository"
 
-    const/4 v3, 0x2
+    const/4 v3, 0x3
 
-    const/4 v4, 0x0
+    const/4 v4, 0x2
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
 
     if-eqz v1, :cond_3
 
-    if-eq v1, v5, :cond_2
+    if-eq v1, v6, :cond_2
 
-    if-eq v1, v3, :cond_1
+    if-eq v1, v4, :cond_1
 
-    if-ne v1, v2, :cond_0
+    if-ne v1, v3, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
@@ -151,25 +157,25 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->this$0:Lde/rki/coronawarnapp/storage/TracingRepository;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/storage/TracingRepository;->exposureDetectionTracker:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
 
-    iput v5, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->label:I
+    iput v6, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->label:I
 
-    invoke-static {p1, v4, p0}, Lcom/google/zxing/client/android/R$id;->lastSubmission(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v5, p0}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerExtensionsKt;->lastSubmission(Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -181,27 +187,25 @@
     :goto_0
     check-cast p1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
 
-    sget-object v1, Lde/rki/coronawarnapp/storage/TracingRepository;->TAG:Ljava/lang/String;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object v1
+    new-array v7, v6, [Ljava/lang/Object;
 
-    new-array v6, v5, [Ljava/lang/Object;
+    aput-object p1, v7, v5
 
-    aput-object p1, v6, v4
+    const-string v8, "Last submission was %s"
 
-    const-string v7, "Last submission was %s"
-
-    invoke-virtual {v1, v7, v6}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v8, v7}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     if-eqz p1, :cond_6
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->this$0:Lde/rki/coronawarnapp/storage/TracingRepository;
 
-    iput v3, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->label:I
+    iput v4, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->label:I
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/storage/TracingRepository;->downloadDiagnosisKeysTaskDidNotRunRecently(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lde/rki/coronawarnapp/storage/TracingRepository;->access$downloadDiagnosisKeysTaskDidNotRunRecently(Lde/rki/coronawarnapp/storage/TracingRepository;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -220,17 +224,15 @@
     if-eqz p1, :cond_8
 
     :cond_6
-    sget-object p1, Lde/rki/coronawarnapp/storage/TracingRepository;->TAG:Ljava/lang/String;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {p1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object p1
+    new-array v1, v5, [Ljava/lang/Object;
 
-    new-array v1, v4, [Ljava/lang/Object;
+    const-string v2, "Start the fetching and submitting of the diagnosis keys"
 
-    const-string v3, "Start the fetching and submitting of the diagnosis keys"
-
-    invoke-virtual {p1, v3, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->this$0:Lde/rki/coronawarnapp/storage/TracingRepository;
 
@@ -238,33 +240,33 @@
 
     new-instance v1, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
 
-    const-class v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
+    const-class v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
-    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v7
+    move-result-object v8
 
-    new-instance v8, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Arguments;
+    new-instance v9, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Arguments;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {v8, v3, v5}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Arguments;-><init>(Ljava/util/List;I)V
+    invoke-direct {v9, v2, v6}, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$Arguments;-><init>(Ljava/util/List;I)V
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
-    const/16 v12, 0x14
+    const/16 v13, 0x14
 
-    const-string v10, "TracingRepository.refreshRisklevel()"
+    const-string v11, "TracingRepository.refreshRisklevel()"
 
-    move-object v6, v1
+    move-object v7, v1
 
-    invoke-direct/range {v6 .. v12}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
+    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;-><init>(Lkotlin/reflect/KClass;Lde/rki/coronawarnapp/task/Task$Arguments;Ljava/util/UUID;Ljava/lang/String;Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;I)V
 
-    iput v2, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->label:I
+    iput v3, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$2;->label:I
 
-    invoke-static {p1, v1, p0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v1, p0}, Lde/rki/coronawarnapp/task/TaskControllerExtensionsKt;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

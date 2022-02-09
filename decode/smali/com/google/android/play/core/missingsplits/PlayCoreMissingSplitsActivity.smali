@@ -1,5 +1,6 @@
 .class public Lcom/google/android/play/core/missingsplits/PlayCoreMissingSplitsActivity;
 .super Landroid/app/Activity;
+.source "com.google.android.play:core@@1.10.1"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -46,15 +47,9 @@
 
     const-string p2, "market://details?id="
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "&referrer=utm_source%3Dplay.core.missingsplits"
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p2, "&referrer=utm_source%3Dplay.core.missingsplits"
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p2, p1, v1}, Landroidx/fragment/app/BackStackRecord$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -88,7 +83,9 @@
     :catch_0
     move-exception p2
 
-    const-class v0, Lcom/google/android/play/core/missingsplits/PlayCoreMissingSplitsActivity;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
@@ -170,7 +167,7 @@
 
     const-string v2, "Couldn\'t start missing splits activity for %s"
 
-    invoke-static {v0, v2, v1}, Lcom/google/android/play/core/internal/ag;->g(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Lkotlin/jvm/internal/SpreadBuilder;->zzf(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -210,7 +207,7 @@
 
     move-result-object p1
 
-    invoke-static {p0}, Lcom/google/android/play/core/internal/bz;->a(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/google/android/play/core/internal/zzch;->zzb(Landroid/content/Context;)Z
 
     move-result v0
 

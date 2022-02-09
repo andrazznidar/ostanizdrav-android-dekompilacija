@@ -13,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel_Factory;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,6 +31,15 @@
 
 .method public static create(Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel_Factory;)Ljavax/inject/Provider;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -38,9 +55,9 @@
 
     invoke-direct {v0, p0}, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel_Factory_Impl;-><init>(Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel_Factory;)V
 
-    invoke-static {v0}, Ldagger/internal/InstanceFactory;->create(Ljava/lang/Object;)Ldagger/internal/Factory;
+    new-instance p0, Ldagger/internal/InstanceFactory;
 
-    move-result-object p0
+    invoke-direct {p0, v0}, Ldagger/internal/InstanceFactory;-><init>(Ljava/lang/Object;)V
 
     return-object p0
 .end method
@@ -49,6 +66,14 @@
 # virtual methods
 .method public create(Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;)Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "type"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel_Factory_Impl;->delegateFactory:Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel_Factory;
 

@@ -68,41 +68,49 @@
 
 # virtual methods
 .method public final getValueAt(J)F
-    .locals 6
+    .locals 8
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "currentTime"
+        }
+    .end annotation
 
     iget-wide v0, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStartTime:J
 
-    cmp-long v0, p1, v0
+    cmp-long v2, p1, v0
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    if-gez v0, :cond_0
+    if-gez v2, :cond_0
 
-    return v1
+    return v3
 
     :cond_0
-    iget-wide v2, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
+    iget-wide v4, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v0, v2, v4
+    cmp-long v2, v4, v6
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    if-ltz v0, :cond_2
+    if-ltz v2, :cond_2
 
-    cmp-long v0, p1, v2
+    cmp-long v2, p1, v4
 
-    if-gez v0, :cond_1
+    if-gez v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    sub-long/2addr p1, v2
+    sub-long/2addr p1, v4
 
     iget v0, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopValue:F
 
-    sub-float v2, v4, v0
+    sub-float v1, v6, v0
 
     long-to-float p1, p1
 
@@ -112,21 +120,19 @@
 
     div-float/2addr p1, p2
 
-    invoke-static {p1, v1, v4}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
+    invoke-static {p1, v3, v6}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
 
     move-result p1
 
     mul-float/2addr p1, v0
 
-    add-float/2addr p1, v2
+    add-float/2addr p1, v1
 
     return p1
 
     :cond_2
     :goto_0
-    iget-wide v2, p0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStartTime:J
-
-    sub-long/2addr p1, v2
+    sub-long/2addr p1, v0
 
     const/high16 v0, 0x3f000000    # 0.5f
 
@@ -138,7 +144,7 @@
 
     div-float/2addr p1, p2
 
-    invoke-static {p1, v1, v4}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
+    invoke-static {p1, v3, v6}, Landroidx/core/widget/AutoScrollHelper;->constrain(FFF)F
 
     move-result p1
 

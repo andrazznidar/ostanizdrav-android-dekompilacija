@@ -22,7 +22,7 @@
     const/4 v0, 0x0
 
     :try_start_0
-    const-string v1, "sun.misc.Unsafe"
+    const-string/jumbo v1, "sun.misc.Unsafe"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -30,7 +30,7 @@
 
     sput-object v1, Lcom/google/gson/internal/reflect/UnsafeReflectionAccessor;->unsafeClass:Ljava/lang/Class;
 
-    const-string v2, "theUnsafe"
+    const-string/jumbo v2, "theUnsafe"
 
     invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 

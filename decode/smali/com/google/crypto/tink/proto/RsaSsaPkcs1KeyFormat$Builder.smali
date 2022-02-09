@@ -21,8 +21,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder<",
         "Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;",
         "Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 

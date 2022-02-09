@@ -1,4 +1,4 @@
-.class public interface abstract Landroidx/media/AudioAttributesImpl;
+.class interface abstract Landroidx/media/AudioAttributesImpl;
 .super Ljava/lang/Object;
 .source "AudioAttributesImpl.java"
 

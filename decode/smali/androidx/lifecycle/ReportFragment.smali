@@ -12,6 +12,10 @@
 .end annotation
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # instance fields
 .field public mProcessListener:Landroidx/lifecycle/ReportFragment$ActivityInitializationListener;
 
@@ -26,9 +30,11 @@
 .end method
 
 .method public static dispatch(Landroid/app/Activity;Landroidx/lifecycle/Lifecycle$Event;)V
-    .locals 1
+    .locals 2
 
     instance-of v0, p0, Landroidx/lifecycle/LifecycleRegistryOwner;
+
+    const-string v1, "handleLifecycleEvent"
 
     if-eqz v0, :cond_0
 
@@ -38,7 +44,13 @@
 
     move-result-object p0
 
-    invoke-virtual {p0, p1}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+    invoke-virtual {p0, v1}, Landroidx/lifecycle/LifecycleRegistry;->enforceMainThreadIfNeeded(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Landroidx/lifecycle/Lifecycle$Event;->getTargetState()Landroidx/lifecycle/Lifecycle$State;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroidx/lifecycle/LifecycleRegistry;->moveToState(Landroidx/lifecycle/Lifecycle$State;)V
 
     return-void
 
@@ -59,28 +71,16 @@
 
     check-cast p0, Landroidx/lifecycle/LifecycleRegistry;
 
-    invoke-virtual {p0, p1}, Landroidx/lifecycle/LifecycleRegistry;->handleLifecycleEvent(Landroidx/lifecycle/Lifecycle$Event;)V
+    invoke-virtual {p0, v1}, Landroidx/lifecycle/LifecycleRegistry;->enforceMainThreadIfNeeded(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Landroidx/lifecycle/Lifecycle$Event;->getTargetState()Landroidx/lifecycle/Lifecycle$State;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroidx/lifecycle/LifecycleRegistry;->moveToState(Landroidx/lifecycle/Lifecycle$State;)V
 
     :cond_1
     return-void
-.end method
-
-.method public static get(Landroid/app/Activity;)Landroidx/lifecycle/ReportFragment;
-    .locals 1
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object p0
-
-    const-string v0, "androidx.lifecycle.LifecycleDispatcher.report_fragment_tag"
-
-    invoke-virtual {p0, v0}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
-
-    move-result-object p0
-
-    check-cast p0, Landroidx/lifecycle/ReportFragment;
-
-    return-object p0
 .end method
 
 .method public static injectIfNeededIn(Landroid/app/Activity;)V
@@ -92,11 +92,7 @@
 
     if-lt v0, v1, :cond_0
 
-    new-instance v0, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks;
-
-    invoke-direct {v0}, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks;-><init>()V
-
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    invoke-static {p0}, Landroidx/lifecycle/ReportFragment$LifecycleCallbacks;->registerIn(Landroid/app/Activity;)V
 
     :cond_0
     invoke-virtual {p0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;

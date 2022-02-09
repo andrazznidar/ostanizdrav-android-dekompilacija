@@ -192,12 +192,21 @@
     invoke-virtual {v1, v0, v9, v8}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     :goto_0
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const/16 v3, 0x8
+
+    if-lt v0, v3, :cond_0
+
     invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result p1
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    :cond_0
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -219,7 +228,7 @@
 .end method
 
 .method public decodeEnd(Lcom/google/zxing/common/BitArray;I)[I
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -228,9 +237,13 @@
 
     sget-object v0, Lcom/google/zxing/oned/UPCEReader;->MIDDLE_END_PATTERN:[I
 
-    const/4 v1, 0x1
+    array-length v1, v0
 
-    invoke-static {p1, p2, v1, v0}, Lcom/google/zxing/oned/UPCEANReader;->findGuardPattern(Lcom/google/zxing/common/BitArray;IZ[I)[I
+    new-array v1, v1, [I
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, p2, v2, v0, v1}, Lcom/google/zxing/oned/UPCEANReader;->findGuardPattern(Lcom/google/zxing/common/BitArray;IZ[I[I)[I
 
     move-result-object p1
 

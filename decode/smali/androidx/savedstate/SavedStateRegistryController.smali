@@ -37,11 +37,9 @@
 
     move-result-object v0
 
-    move-object v1, v0
+    invoke-virtual {v0}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
 
-    check-cast v1, Landroidx/lifecycle/LifecycleRegistry;
-
-    iget-object v1, v1, Landroidx/lifecycle/LifecycleRegistry;->mState:Landroidx/lifecycle/Lifecycle$State;
+    move-result-object v1
 
     sget-object v2, Landroidx/lifecycle/Lifecycle$State;->INITIALIZED:Landroidx/lifecycle/Lifecycle$State;
 
@@ -108,7 +106,7 @@
 
     iget-object v0, p0, Landroidx/savedstate/SavedStateRegistryController;->mRegistry:Landroidx/savedstate/SavedStateRegistry;
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Landroid/os/Bundle;
 
@@ -166,9 +164,4 @@
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     return-void
-
-    :cond_2
-    const/4 p1, 0x0
-
-    throw p1
 .end method

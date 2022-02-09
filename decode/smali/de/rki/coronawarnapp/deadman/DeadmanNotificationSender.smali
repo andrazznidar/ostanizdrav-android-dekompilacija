@@ -8,11 +8,11 @@
 
 .field public final foregroundState:Lde/rki/coronawarnapp/util/device/ForegroundState;
 
-.field public final notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+.field public final notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Lde/rki/coronawarnapp/notification/NotificationHelper;)V
+.method public constructor <init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Lde/rki/coronawarnapp/notification/GeneralNotifications;)V
     .locals 1
 
     const-string v0, "context"
@@ -33,7 +33,7 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->foregroundState:Lde/rki/coronawarnapp/util/device/ForegroundState;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    iput-object p3, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
     return-void
 .end method
@@ -97,7 +97,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -111,7 +111,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->foregroundState:Lde/rki/coronawarnapp/util/device/ForegroundState;
 
@@ -123,7 +123,7 @@
 
     iput v3, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender$sendNotification$1;->label:I
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -143,11 +143,11 @@
 
     if-eqz p1, :cond_4
 
-    const-string p1, "DeadmanNotification"
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v0, "DeadmanNotification"
 
-    move-result-object p1
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v0, 0x0
 
@@ -155,16 +155,16 @@
 
     const-string v1, "Not sending notification as we are in the foreground."
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
     :cond_4
-    iget-object p1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    iget-object p1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/notification/NotificationHelper;->getBaseBuilder()Landroidx/core/app/NotificationCompat$Builder;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->newBaseBuilder()Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object p1
 
@@ -172,7 +172,7 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->context:Landroid/content/Context;
 
-    const v2, 0x7f1202ac
+    const v2, 0x7f130409
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
 
     iget-object v1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->context:Landroid/content/Context;
 
-    const v2, 0x7f1202ab
+    const v2, 0x7f130408
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -192,29 +192,21 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p1, v1}, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
-
-    new-instance v2, Landroidx/core/app/NotificationCompat$BigTextStyle;
-
-    invoke-direct {v2}, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
-
-    invoke-virtual {v2, v1}, Landroidx/core/app/NotificationCompat$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$BigTextStyle;
-
-    invoke-virtual {p1, v2}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
+    invoke-static {p1, v1}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {p1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object p1
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    const-string v1, "notificationHelper.newBa\u2026      )\n        }.build()"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
     const/4 v1, 0x3
 
-    const-string v2, "notification"
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1, p1}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(ILandroid/app/Notification;)V
+    invoke-virtual {v0, v1, p1}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->sendNotification(ILandroid/app/Notification;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -756,7 +756,7 @@
 
     move-result-object v7
 
-    invoke-static {v3, v7}, Lcom/google/android/material/R$style;->equal([B[B)Z
+    invoke-static {v3, v7}, Lcom/google/crypto/tink/subtle/Bytes;->equal([B[B)Z
 
     move-result v3
 
@@ -1001,7 +1001,7 @@
 .end method
 
 .method public static select(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;IB)V
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -1033,101 +1033,87 @@
 
     sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
 
-    aget-object v2, v2, p1
+    aget-object v4, v2, p1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    aget-object v2, v2, v4
-
-    invoke-static {p2, v3}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
-
-    move-result v5
-
-    invoke-virtual {p0, v2, v5}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
-
-    sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
-
-    aget-object v2, v2, p1
-
-    aget-object v2, v2, v3
-
-    const/4 v3, 0x2
+    aget-object v4, v4, v5
 
     invoke-static {p2, v3}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
 
-    move-result v5
+    move-result v6
 
-    invoke-virtual {p0, v2, v5}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
+    invoke-virtual {p0, v4, v6}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
 
-    sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
+    aget-object v4, v2, p1
 
-    aget-object v2, v2, p1
+    aget-object v3, v4, v3
 
-    aget-object v2, v2, v3
+    const/4 v4, 0x2
 
-    const/4 v3, 0x3
+    invoke-static {p2, v4}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
 
-    invoke-static {p2, v3}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
+    move-result v6
 
-    move-result v5
+    invoke-virtual {p0, v3, v6}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
 
-    invoke-virtual {p0, v2, v5}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
+    aget-object v3, v2, p1
 
-    sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
+    aget-object v3, v3, v4
 
-    aget-object v2, v2, p1
+    const/4 v4, 0x3
 
-    aget-object v2, v2, v3
+    invoke-static {p2, v4}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
 
-    const/4 v3, 0x4
+    move-result v6
 
-    invoke-static {p2, v3}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
+    invoke-virtual {p0, v3, v6}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
 
-    move-result v5
+    aget-object v3, v2, p1
 
-    invoke-virtual {p0, v2, v5}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
+    aget-object v3, v3, v4
 
-    sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
+    const/4 v4, 0x4
 
-    aget-object v2, v2, p1
+    invoke-static {p2, v4}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
 
-    aget-object v2, v2, v3
+    move-result v6
 
-    const/4 v3, 0x5
+    invoke-virtual {p0, v3, v6}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
 
-    invoke-static {p2, v3}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
+    aget-object v3, v2, p1
 
-    move-result v5
+    aget-object v3, v3, v4
 
-    invoke-virtual {p0, v2, v5}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
+    const/4 v4, 0x5
 
-    sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
+    invoke-static {p2, v4}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
 
-    aget-object v2, v2, p1
+    move-result v6
 
-    aget-object v2, v2, v3
+    invoke-virtual {p0, v3, v6}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
 
-    const/4 v3, 0x6
+    aget-object v3, v2, p1
 
-    invoke-static {p2, v3}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
+    aget-object v3, v3, v4
 
-    move-result v5
+    const/4 v4, 0x6
 
-    invoke-virtual {p0, v2, v5}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
+    invoke-static {p2, v4}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
 
-    sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
+    move-result v6
 
-    aget-object v2, v2, p1
+    invoke-virtual {p0, v3, v6}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
 
-    aget-object v2, v2, v3
+    aget-object v3, v2, p1
+
+    aget-object v3, v3, v4
 
     invoke-static {p2, v1}, Lcom/google/crypto/tink/subtle/Ed25519;->eq(II)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {p0, v2, v3}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
-
-    sget-object v2, Lcom/google/crypto/tink/subtle/Ed25519Constants;->B_TABLE:[[Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;
+    invoke-virtual {p0, v3, v4}, Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;->copyConditional(Lcom/google/crypto/tink/subtle/Ed25519$CachedXYT;I)V
 
     aget-object p1, v2, p1
 
@@ -1164,15 +1150,15 @@
     :goto_0
     array-length v2, p2
 
-    if-ge v4, v2, :cond_0
+    if-ge v5, v2, :cond_0
 
-    aget-wide v2, p2, v4
+    aget-wide v2, p2, v5
 
     neg-long v2, v2
 
-    aput-wide v2, p2, v4
+    aput-wide v2, p2, v5
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 

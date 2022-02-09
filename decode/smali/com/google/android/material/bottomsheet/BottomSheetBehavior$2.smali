@@ -3,18 +3,37 @@
 .source "BottomSheetBehavior.java"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->settleToStatePendingLayout(I)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
 
 
 # instance fields
 .field public final synthetic this$0:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
 
+.field public final synthetic val$child:Landroid/view/View;
+
+.field public final synthetic val$finalState:I
+
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
+.method public constructor <init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;Landroid/view/View;I)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;->this$0:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    iput-object p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;->val$child:Landroid/view/View;
+
+    iput p3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;->val$finalState:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,27 +42,16 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 1
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
+.method public run()V
+    .locals 3
 
     iget-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;->this$0:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
 
-    iget-object v0, v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->materialShapeDrawable:Lcom/google/android/material/shape/MaterialShapeDrawable;
+    iget-object v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;->val$child:Landroid/view/View;
 
-    if-eqz v0, :cond_0
+    iget v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;->val$finalState:I
 
-    invoke-virtual {v0, p1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setInterpolation(F)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->settleToState(Landroid/view/View;I)V
 
-    :cond_0
     return-void
 .end method

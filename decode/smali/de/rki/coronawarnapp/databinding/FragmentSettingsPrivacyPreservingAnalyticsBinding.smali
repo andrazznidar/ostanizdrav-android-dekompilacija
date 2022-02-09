@@ -4,30 +4,78 @@
 
 
 # instance fields
-.field public final ageGroupRow:Landroidx/constraintlayout/widget/ConstraintLayout;
+.field public final ageGroupRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-.field public final ageGroupRowBody:Landroid/widget/TextView;
+.field public final districtRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-.field public final districtRow:Landroidx/constraintlayout/widget/ConstraintLayout;
+.field public final federalStateRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-.field public final districtRowBody:Landroid/widget/TextView;
-
-.field public final federalStateRow:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-.field public final federalStateRowBody:Landroid/widget/TextView;
-
-.field public final moreInfoRow:Landroidx/constraintlayout/widget/ConstraintLayout;
+.field public final moreInfoRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
 .field public final onboardingPpaContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final settingsPpaHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+.field public final settingsPpaHeader:Lcom/google/android/material/appbar/MaterialToolbar;
 
-.field public final settingsPpaSwitchRow:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+.field public final settingsPpaSwitchRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ScrollView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/ui/view/MoreInformationView;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/ui/view/MoreInformationView;Lde/rki/coronawarnapp/ui/view/MoreInformationView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/ui/view/MoreInformationView;Landroid/widget/TextView;Landroid/widget/ImageView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ScrollView;Lcom/google/android/material/appbar/MaterialToolbar;Lde/rki/coronawarnapp/ui/view/MoreInformationView;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "ageGroupRow",
+            "bodyEnd",
+            "bodyStart",
+            "bulletPointConsent",
+            "bulletPointIdentity",
+            "bulletPointSixteen",
+            "consentLayout",
+            "districtRow",
+            "federalStateRow",
+            "legalBody",
+            "legalPointConsent",
+            "legalPointIdentity",
+            "legalPointSixteen",
+            "legalTitle",
+            "moreInfoRow",
+            "onboardingBody",
+            "onboardingIllustration",
+            "onboardingPpaContainer",
+            "scrollview",
+            "settingsPpaHeader",
+            "settingsPpaSwitchRow"
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -35,55 +83,53 @@
 
     move-object v1, p4
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->ageGroupRow:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->ageGroupRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-    move-object v1, p5
+    move-object v1, p11
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->ageGroupRowBody:Landroid/widget/TextView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->districtRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-    move-object v1, p13
+    move-object v1, p12
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->districtRow:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->federalStateRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-    move-object/from16 v1, p14
+    move-object/from16 v1, p18
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->districtRowBody:Landroid/widget/TextView;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->moreInfoRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->federalStateRow:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    move-object/from16 v1, p17
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->federalStateRowBody:Landroid/widget/TextView;
-
-    move-object/from16 v1, p28
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->moreInfoRow:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    move-object/from16 v1, p32
+    move-object/from16 v1, p21
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->onboardingPpaContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-object/from16 v1, p34
+    move-object/from16 v1, p23
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->settingsPpaHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->settingsPpaHeader:Lcom/google/android/material/appbar/MaterialToolbar;
 
-    move-object/from16 v1, p35
+    move-object/from16 v1, p24
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->settingsPpaSwitchRow:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;->settingsPpaSwitchRow:Lde/rki/coronawarnapp/ui/view/MoreInformationView;
 
     return-void
 .end method
 
 .method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBinding;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "view"
+        }
+    .end annotation
 
-    sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
+    sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v1, 0x7f0c005f
+    const v0, 0x7f0d008a
 
-    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+    const/4 v1, 0x0
+
+    invoke-static {v1, p0, v0}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 

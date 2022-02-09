@@ -76,7 +76,7 @@
     :cond_0
     new-instance p0, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "tag size too long"
+    const-string/jumbo v0, "tag size too long"
 
     invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
@@ -85,7 +85,7 @@
     :cond_1
     new-instance p0, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "tag size too short"
+    const-string/jumbo v0, "tag size too short"
 
     invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
@@ -97,7 +97,7 @@
 .method public getKeyType()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesCmacKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.AesCmacKey"
 
     return-object v0
 .end method

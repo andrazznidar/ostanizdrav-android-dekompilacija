@@ -3,15 +3,6 @@
 .source "MacConfig.java"
 
 
-# static fields
-.field public static final HMAC_TYPE_URL:Ljava/lang/String;
-
-.field public static final TINK_1_0_0:Lcom/google/crypto/tink/proto/RegistryConfig;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
-
-
 # direct methods
 .method public static constructor <clinit>()V
     .locals 2
@@ -20,15 +11,7 @@
 
     invoke-direct {v0}, Lcom/google/crypto/tink/mac/HmacKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.HmacKey"
-
-    sput-object v0, Lcom/google/crypto/tink/mac/MacConfig;->HMAC_TYPE_URL:Ljava/lang/String;
-
     invoke-static {}, Lcom/google/crypto/tink/proto/RegistryConfig;->getDefaultInstance()Lcom/google/crypto/tink/proto/RegistryConfig;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/crypto/tink/mac/MacConfig;->TINK_1_0_0:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     :try_start_0
     invoke-static {}, Lcom/google/crypto/tink/mac/MacConfig;->register()V

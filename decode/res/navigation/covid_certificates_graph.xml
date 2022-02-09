@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/covid_certificates_graph" app:startDestination="@id/personOverviewFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="PersonOverviewFragment" android:name="de.rki.coronawarnapp.covidcertificate.person.ui.overview.PersonOverviewFragment" android:id="@id/personOverviewFragment">
+        <action android:id="@id/action_personOverviewFragment_to_covidCertificateOnboardingFragment" app:destination="@id/covidCertificateOnboardingFragment" />
+        <action android:id="@id/action_personOverviewFragment_to_personDetailsFragment" app:destination="@id/personDetailsFragment" />
+        <action android:id="@id/action_personOverviewFragment_to_covPassInfoFragment" app:destination="@id/covPassInfoFragment" />
+    </fragment>
+    <fragment android:name="de.rki.coronawarnapp.covidcertificate.ui.onboarding.CovidCertificateOnboardingFragment" android:id="@id/covidCertificateOnboardingFragment">
+        <deepLink app:uri="cwa://dcc.onboarding/?showBottomNav={showBottomNav}&amp;certIdentifier={certIdentifier}" />
+        <argument android:name="showBottomNav" android:defaultValue="true" app:argType="boolean" />
+        <argument android:name="certIdentifier" android:defaultValue="@null" app:argType="string" app:nullable="true" />
+        <action android:id="@id/action_covidCertificateOnboardingFragment_to_personOverviewFragment" app:destination="@id/personOverviewFragment" app:popUpTo="@id/covidCertificateOnboardingFragment" app:popUpToInclusive="true" />
+        <action android:id="@id/action_covidCertificateOnboardingFragment_to_privacyFragment" app:destination="@id/privacyFragment" />
+    </fragment>
+    <fragment android:label="privacyFragment" android:name="de.rki.coronawarnapp.ui.information.InformationPrivacyFragment" android:id="@id/privacyFragment" />
+    <fragment android:label="CovidCertificateDetailsFragment" android:name="de.rki.coronawarnapp.covidcertificate.test.ui.details.TestCertificateDetailsFragment" android:id="@id/testCertificateDetailsFragment">
+        <deepLink app:uri="cwa://test-certificate/?fromScanner={fromScanner}&amp;certIdentifier={certIdentifier}" />
+        <argument android:name="certIdentifier" app:argType="string" />
+        <argument android:name="fromScanner" android:defaultValue="false" app:argType="boolean" />
+        <action android:id="@id/action_testCertificateDetailsFragment_to_validationStartFragment" app:destination="@id/validationStartFragment" />
+        <action android:id="@id/action_testCertificateDetailsFragment_to_certificatePdfExportInfoFragment" app:destination="@id/certificatePdfExportInfoFragment" />
+        <action android:id="@id/action_testCertificateDetailsFragment_to_covPassInfoFragment" app:destination="@id/covPassInfoFragment" />
+    </fragment>
+    <fragment android:label="person_details_fragment" android:name="de.rki.coronawarnapp.covidcertificate.person.ui.details.PersonDetailsFragment" android:id="@id/personDetailsFragment">
+        <argument android:name="personCode" app:argType="string" />
+        <argument android:name="colorShade" android:defaultValue="COLOR_1" app:argType="de.rki.coronawarnapp.covidcertificate.person.ui.overview.PersonColorShade" />
+        <argument android:name="containerId" android:defaultValue="@null" app:argType="de.rki.coronawarnapp.covidcertificate.common.repository.CertificateContainerId" app:nullable="true" />
+        <action android:id="@id/action_personDetailsFragment_to_vaccinationDetailsFragment" app:destination="@id/vaccinationDetailsFragment" />
+        <action android:id="@id/action_personDetailsFragment_to_testCertificateDetailsFragment" app:destination="@id/testCertificateDetailsFragment" />
+        <action android:id="@id/action_personDetailsFragment_to_recoveryCertificateDetailsFragment" app:destination="@id/recoveryCertificateDetailsFragment" />
+        <action android:id="@id/action_personDetailsFragment_to_validationStartFragment" app:destination="@id/validationStartFragment" />
+        <action android:id="@id/action_personDetailsFragment_to_covPassInfoFragment" app:destination="@id/covPassInfoFragment" />
+    </fragment>
+    <fragment android:label="fragment_vaccination_details" android:name="de.rki.coronawarnapp.covidcertificate.vaccination.ui.details.VaccinationDetailsFragment" android:id="@id/vaccinationDetailsFragment">
+        <deepLink app:uri="cwa://vaccination-certificate/?fromScanner={fromScanner}&amp;certIdentifier={certIdentifier}" />
+        <argument android:name="certIdentifier" app:argType="string" />
+        <argument android:name="fromScanner" android:defaultValue="false" app:argType="boolean" />
+        <action android:id="@id/action_vaccinationDetailsFragment_to_validationStartFragment" app:destination="@id/validationStartFragment" />
+        <action android:id="@id/action_vaccinationDetailsFragment_to_certificatePdfExportInfoFragment" app:destination="@id/certificatePdfExportInfoFragment" />
+        <action android:id="@id/action_vaccinationDetailsFragment_to_covPassInfoFragment" app:destination="@id/covPassInfoFragment" />
+    </fragment>
+    <fragment android:label="RecoveryCertificateDetailsFragment" android:name="de.rki.coronawarnapp.covidcertificate.recovery.ui.details.RecoveryCertificateDetailsFragment" android:id="@id/recoveryCertificateDetailsFragment">
+        <deepLink app:uri="cwa://recovery-certificate/?fromScanner={fromScanner}&amp;certIdentifier={certIdentifier}" />
+        <argument android:name="certIdentifier" app:argType="string" />
+        <argument android:name="fromScanner" android:defaultValue="false" app:argType="boolean" />
+        <action android:id="@id/action_recoveryCertificateDetailsFragment_to_validationStartFragment" app:destination="@id/validationStartFragment" />
+        <action android:id="@id/action_recoveryCertificateDetailsFragment_to_certificatePdfExportInfoFragment" app:destination="@id/certificatePdfExportInfoFragment" />
+        <action android:id="@id/action_recoveryCertificateDetailsFragment_to_covPassInfoFragment" app:destination="@id/covPassInfoFragment" />
+    </fragment>
+    <fragment android:label="ValidationStartFragment" android:name="de.rki.coronawarnapp.covidcertificate.validation.ui.validationstart.ValidationStartFragment" android:id="@id/validationStartFragment">
+        <action android:id="@id/action_validationStartFragment_to_privacyFragment" app:destination="@id/privacyFragment" />
+        <action android:id="@id/action_validationStartFragment_to_validationTimeInfoFragment" app:destination="@id/validationTimeInfoFragment" />
+        <argument android:name="containerId" app:argType="de.rki.coronawarnapp.covidcertificate.common.repository.CertificateContainerId" />
+        <action android:id="@id/action_validationStartFragment_to_dccValidationOpenFragment" app:destination="@id/dccValidationOpenFragment" />
+        <action android:id="@id/action_validationStartFragment_to_dccValidationPassedFragment" app:destination="@id/dccValidationPassedFragment" />
+        <action android:id="@id/action_validationStartFragment_to_dccValidationFailedFragment" app:destination="@id/dccValidationFailedFragment" />
+    </fragment>
+    <fragment android:label="validation_time_info_fragment" android:name="de.rki.coronawarnapp.covidcertificate.validation.ui.datetimeinfo.ValidationTimeInfoFragment" android:id="@id/validationTimeInfoFragment" />
+    <fragment android:label="DccValidationFailedFragment" android:name="de.rki.coronawarnapp.covidcertificate.validation.ui.validationresult.failed.DccValidationFailedFragment" android:id="@id/dccValidationFailedFragment">
+        <argument android:name="validation" app:argType="de.rki.coronawarnapp.covidcertificate.validation.core.DccValidation" />
+        <argument android:name="containerId" app:argType="de.rki.coronawarnapp.covidcertificate.common.repository.CertificateContainerId" />
+    </fragment>
+    <fragment android:label="DccValidationOpenFragment" android:name="de.rki.coronawarnapp.covidcertificate.validation.ui.validationresult.open.DccValidationOpenFragment" android:id="@id/dccValidationOpenFragment">
+        <argument android:name="validation" app:argType="de.rki.coronawarnapp.covidcertificate.validation.core.DccValidation" />
+        <argument android:name="containerId" app:argType="de.rki.coronawarnapp.covidcertificate.common.repository.CertificateContainerId" />
+    </fragment>
+    <fragment android:label="DccValidationPassedFragment" android:name="de.rki.coronawarnapp.covidcertificate.validation.ui.validationresult.passed.DccValidationPassedFragment" android:id="@id/dccValidationPassedFragment">
+        <argument android:name="validation" app:argType="de.rki.coronawarnapp.covidcertificate.validation.core.DccValidation" />
+    </fragment>
+    <fragment android:label="certificate_pdf_export_info_fragment" android:name="de.rki.coronawarnapp.covidcertificate.pdf.ui.CertificatePdfExportInfoFragment" android:id="@id/certificatePdfExportInfoFragment">
+        <argument android:name="containerId" app:argType="de.rki.coronawarnapp.covidcertificate.common.repository.CertificateContainerId" />
+        <action android:id="@id/action_certificatePdfExportInfoFragment_to_certificatePosterFragment" app:destination="@id/certificatePosterFragment" app:popUpTo="@id/certificatePdfExportInfoFragment" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="certificate_poster_fragment" android:name="de.rki.coronawarnapp.covidcertificate.pdf.ui.poster.CertificatePosterFragment" android:id="@id/certificatePosterFragment">
+        <argument android:name="containerId" app:argType="de.rki.coronawarnapp.covidcertificate.common.repository.CertificateContainerId" />
+    </fragment>
+    <fragment android:label="fragment_cov_pass_info" android:name="de.rki.coronawarnapp.covidcertificate.covpass.CovPassInfoFragment" android:id="@id/covPassInfoFragment" />
+</navigation>

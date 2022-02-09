@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lde/rki/coronawarnapp/contactdiary/storage/internal/migrations/ContactDiaryDatabaseMigration1To2;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lde/rki/coronawarnapp/contactdiary/storage/internal/migrations/ContactDiaryDatabaseMigration1To2;-><clinit>()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -61,31 +61,29 @@
 
     check-cast p1, Landroidx/sqlite/db/SupportSQLiteDatabase;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v1, v0, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v1, [Ljava/lang/Object;
 
     const-string v3, "Table \'locations\': Add column \'phoneNumber\'"
 
-    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v1, "ALTER TABLE `locations` ADD COLUMN `phoneNumber` TEXT"
+    const-string v2, "ALTER TABLE `locations` ADD COLUMN `phoneNumber` TEXT"
 
-    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-interface {p1, v2}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    new-array v0, v0, [Ljava/lang/Object;
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v1, v1, [Ljava/lang/Object;
 
     const-string v2, "Table \'locations\': Add column \'emailAddress\'"
 
-    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const-string v0, "ALTER TABLE `locations` ADD COLUMN `emailAddress` TEXT"
 

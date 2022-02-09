@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->deleteAggregatedRiskPerDateResults(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->deleteAggregatedRiskPerDateResults$suspendImpl(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.risk.storage.BaseRiskLevelStorage"
     f = "BaseRiskLevelStorage.kt"
     l = {
-        0xca
+        0xa6
     }
     m = "deleteAggregatedRiskPerDateResults$suspendImpl"
 .end annotation
@@ -34,6 +34,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$deleteAggregatedRiskPerDateResults$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$deleteAggregatedRiskPerDateResults$1;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 

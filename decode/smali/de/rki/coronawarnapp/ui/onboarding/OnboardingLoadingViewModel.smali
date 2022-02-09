@@ -16,14 +16,20 @@
     .end annotation
 .end field
 
+.field public final onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
+
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/main/CWASettings;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/main/CWASettings;Lde/rki/coronawarnapp/storage/OnboardingSettings;)V
     .locals 2
 
     const-string v0, "cwaSettings"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "onboardingSettings"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -32,6 +38,8 @@
     invoke-direct {p0, v0, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingViewModel;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingLoadingViewModel;->onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
 
     new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 

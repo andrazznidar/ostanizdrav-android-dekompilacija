@@ -39,38 +39,6 @@
     return-void
 .end method
 
-.method public static setDelegate(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljavax/inject/Provider<",
-            "TT;>;",
-            "Ljavax/inject/Provider<",
-            "TT;>;)V"
-        }
-    .end annotation
-
-    check-cast p0, Ldagger/internal/DelegateFactory;
-
-    iget-object v0, p0, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
-
-    if-nez v0, :cond_0
-
-    iput-object p1, p0, Ldagger/internal/DelegateFactory;->delegate:Ljavax/inject/Provider;
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw p0
-.end method
-
 
 # virtual methods
 .method public get()Ljava/lang/Object;

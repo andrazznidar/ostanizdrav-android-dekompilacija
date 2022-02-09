@@ -3,24 +3,42 @@
 .source "ViewOverlayApi18.java"
 
 # interfaces
-.implements Landroidx/transition/ViewOverlayImpl;
+.implements Lcom/google/android/play/core/internal/zzct;
 
 
 # instance fields
-.field public final mViewOverlay:Landroid/view/ViewOverlay;
+.field public final mViewOverlay:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
+.method public constructor <init>(Lcom/google/android/play/core/internal/zzct;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Landroid/view/View;->getOverlay()Landroid/view/ViewOverlay;
-
-    move-result-object p1
-
-    iput-object p1, p0, Landroidx/transition/ViewOverlayApi18;->mViewOverlay:Landroid/view/ViewOverlay;
+    iput-object p1, p0, Landroidx/transition/ViewOverlayApi18;->mViewOverlay:Ljava/lang/Object;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public bridge synthetic zza()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Landroidx/transition/ViewOverlayApi18;->mViewOverlay:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/play/core/internal/zzct;
+
+    check-cast v0, Lcom/google/android/play/core/appupdate/zzj;
+
+    invoke-virtual {v0}, Lcom/google/android/play/core/appupdate/zzj;->zzb()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/google/android/play/core/appupdate/zzb;
+
+    invoke-direct {v1, v0}, Lcom/google/android/play/core/appupdate/zzb;-><init>(Landroid/content/Context;)V
+
+    return-object v1
 .end method

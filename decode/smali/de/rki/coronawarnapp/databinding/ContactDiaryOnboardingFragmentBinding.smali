@@ -24,12 +24,62 @@
 
 .field public final contentContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final toolbar:Landroidx/appcompat/widget/Toolbar;
+.field public final toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Landroid/view/View;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Landroid/widget/ImageView;Landroid/widget/Button;Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBinding;Landroid/widget/TextView;Landroid/view/View;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroidx/appcompat/widget/Toolbar;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Landroid/view/View;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Landroid/widget/ImageView;Landroid/widget/Button;Lde/rki/coronawarnapp/databinding/ContactDiaryPrivacyCardBinding;Landroid/widget/TextView;Landroid/view/View;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingRowBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/ScrollView;Lcom/google/android/material/appbar/MaterialToolbar;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "contactDiaryOnboardingBody",
+            "contactDiaryOnboardingFifthSection",
+            "contactDiaryOnboardingFirstDivider",
+            "contactDiaryOnboardingFirstSection",
+            "contactDiaryOnboardingFourthSection",
+            "contactDiaryOnboardingIllustration",
+            "contactDiaryOnboardingNextButton",
+            "contactDiaryOnboardingPrivacyCard",
+            "contactDiaryOnboardingPrivacyInformation",
+            "contactDiaryOnboardingSecondDivider",
+            "contactDiaryOnboardingSecondSection",
+            "contactDiaryOnboardingSixthSection",
+            "contactDiaryOnboardingThirdSection",
+            "contentContainer",
+            "guidelineEnd",
+            "guidelineStart",
+            "onboardingHeadline",
+            "scrollView",
+            "toolbar"
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -75,21 +125,31 @@
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingFragmentBinding;->contentContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    move-object/from16 v1, p21
+    move-object/from16 v1, p22
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingFragmentBinding;->toolbar:Landroidx/appcompat/widget/Toolbar;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     return-void
 .end method
 
 .method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/ContactDiaryOnboardingFragmentBinding;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "view"
+        }
+    .end annotation
 
-    sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
+    sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v1, 0x7f0c002c
+    const v0, 0x7f0d0034
 
-    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+    const/4 v1, 0x0
+
+    invoke-static {v1, p0, v0}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 

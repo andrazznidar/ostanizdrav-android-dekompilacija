@@ -115,7 +115,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -149,7 +149,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -217,7 +217,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -251,7 +251,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -504,15 +504,19 @@
         .end annotation
     .end param
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
+    const/16 p2, 0x4f45
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;I)I
 
     move-result p2
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zza:I
 
-    const/4 v1, 0x1
+    const v1, 0x40001
 
-    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzb:[I
 
@@ -526,13 +530,15 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeIntArray(Landroid/os/Parcel;I[IZ)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzc:I
 
-    const/4 v1, 0x3
+    const v1, 0x40003
 
-    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzd:[I
 
@@ -544,13 +550,15 @@
 
     const/4 v1, 0x4
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeIntArray(Landroid/os/Parcel;I[IZ)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zze:I
 
-    const/4 v1, 0x5
+    const v1, 0x40005
 
-    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzf:[I
 
@@ -562,13 +570,15 @@
 
     const/4 v1, 0x6
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeIntArray(Landroid/os/Parcel;I[IZ)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzg:I
 
-    const/4 v1, 0x7
+    const v1, 0x40007
 
-    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzh:[I
 
@@ -580,13 +590,15 @@
 
     const/16 v1, 0x8
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeIntArray(Landroid/os/Parcel;I[IZ)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
 
     iget v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzi:I
 
-    const/16 v1, 0x9
+    const v1, 0x40009
 
-    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object v0, p0, Lcom/google/android/gms/nearby/exposurenotification/ExposureConfiguration;->zzj:[I
 
@@ -598,9 +610,9 @@
 
     const/16 v1, 0xa
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeIntArray(Landroid/os/Parcel;I[IZ)V
+    invoke-static {p1, v1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeIntArray(Landroid/os/Parcel;I[IZ)V
 
-    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzc(Landroid/os/Parcel;I)V
 
     return-void
 .end method

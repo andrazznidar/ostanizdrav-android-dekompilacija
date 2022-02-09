@@ -49,19 +49,10 @@
 
 .field public final defaultDefault:Ljava/lang/Object;
 
-.field public final type:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class<",
-            "*>;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 14
+    .locals 27
 
     new-instance v6, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
@@ -83,13 +74,11 @@
 
     new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sget-object v10, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     const-class v11, Ljava/lang/Integer;
 
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
 
@@ -99,227 +88,211 @@
 
     move-object v7, v0
 
+    move-object v10, v1
+
     invoke-direct/range {v7 .. v12}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
     sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->INT:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v3, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sget-object v5, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v16, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    const-class v6, Ljava/lang/Long;
+    const-class v17, Ljava/lang/Long;
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v4, 0x0
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v7
+    move-result-object v18
 
-    const-string v3, "LONG"
+    const-string v14, "LONG"
 
-    const/4 v4, 0x2
+    const/4 v15, 0x2
 
-    move-object v2, v0
+    move-object v13, v3
 
-    invoke-direct/range {v2 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-direct/range {v13 .. v18}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->LONG:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    sput-object v3, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->LONG:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v4, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sget-object v11, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    sget-object v10, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    const-class v12, Ljava/lang/Float;
+    const-class v11, Ljava/lang/Float;
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v13
+    move-result-object v12
 
-    const-string v9, "FLOAT"
+    const-string v8, "FLOAT"
 
-    const/4 v10, 0x3
+    const/4 v9, 0x3
 
-    move-object v8, v0
+    move-object v7, v4
 
-    invoke-direct/range {v8 .. v13}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-direct/range {v7 .. v12}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->FLOAT:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    sput-object v4, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->FLOAT:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v5, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sget-object v5, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+    sget-object v16, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
-    const-class v6, Ljava/lang/Double;
+    const-class v17, Ljava/lang/Double;
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v7, 0x0
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v7
+    move-result-object v18
 
-    const-string v3, "DOUBLE"
+    const-string v14, "DOUBLE"
 
-    const/4 v4, 0x4
+    const/4 v15, 0x4
 
-    move-object v2, v0
+    move-object v13, v5
 
-    invoke-direct/range {v2 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-direct/range {v13 .. v18}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->DOUBLE:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    sput-object v5, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->DOUBLE:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v13, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sget-object v11, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    sget-object v10, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    const-class v12, Ljava/lang/Boolean;
+    const-class v11, Ljava/lang/Boolean;
 
-    sget-object v13, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v12, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    const-string v9, "BOOLEAN"
+    const-string v8, "BOOLEAN"
 
-    const/4 v10, 0x5
+    const/4 v9, 0x5
 
-    move-object v8, v0
+    move-object v7, v13
 
-    invoke-direct/range {v8 .. v13}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-direct/range {v7 .. v12}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->BOOLEAN:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    sput-object v13, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->BOOLEAN:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v20, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    const-class v5, Ljava/lang/String;
+    const-class v17, Ljava/lang/String;
 
-    const-class v6, Ljava/lang/String;
+    const-class v18, Ljava/lang/String;
 
-    const-string v3, "STRING"
+    const-string v15, "STRING"
 
-    const/4 v4, 0x6
+    const/16 v16, 0x6
 
-    const-string v7, ""
+    const-string v19, ""
 
-    move-object v2, v0
+    move-object/from16 v14, v20
 
-    invoke-direct/range {v2 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    invoke-direct/range {v14 .. v19}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->STRING:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    sput-object v20, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->STRING:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v14, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+
+    const-class v10, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     const-class v11, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    const-class v12, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v12, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    sget-object v13, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    const-string v8, "BYTE_STRING"
 
-    const-string v9, "BYTE_STRING"
+    const/4 v9, 0x7
 
-    const/4 v10, 0x7
+    move-object v7, v14
 
-    move-object v8, v0
+    invoke-direct/range {v7 .. v12}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    invoke-direct/range {v8 .. v13}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    sput-object v14, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->BYTE_STRING:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->BYTE_STRING:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v15, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    const-class v11, Ljava/lang/Integer;
 
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v8, "ENUM"
 
-    const-class v6, Ljava/lang/Integer;
+    const/16 v9, 0x8
 
-    const-string v3, "ENUM"
+    const/4 v12, 0x0
 
-    const/16 v4, 0x8
+    move-object v7, v15
 
-    const/4 v7, 0x0
+    move-object v10, v1
 
-    move-object v2, v0
+    invoke-direct/range {v7 .. v12}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    invoke-direct/range {v2 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    sput-object v15, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->ENUM:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->ENUM:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    new-instance v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    const-class v24, Ljava/lang/Object;
 
-    const-class v11, Ljava/lang/Object;
+    const-class v25, Ljava/lang/Object;
 
-    const-class v12, Ljava/lang/Object;
+    const-string v22, "MESSAGE"
 
-    const-string v9, "MESSAGE"
+    const/16 v23, 0x9
 
-    const/16 v10, 0x9
+    const/16 v26, 0x0
 
-    const/4 v13, 0x0
+    move-object/from16 v21, v1
 
-    move-object v8, v0
+    invoke-direct/range {v21 .. v26}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    invoke-direct/range {v8 .. v13}, Lcom/google/crypto/tink/shaded/protobuf/JavaType;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
+    sput-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->MESSAGE:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->MESSAGE:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    const/16 v7, 0xa
 
-    const/16 v2, 0xa
+    new-array v7, v7, [Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
-    new-array v2, v2, [Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    aput-object v6, v7, v2
 
-    sget-object v3, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->VOID:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    const/4 v2, 0x1
 
-    aput-object v3, v2, v1
+    aput-object v0, v7, v2
 
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->INT:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    const/4 v0, 0x2
 
-    const/4 v3, 0x1
+    aput-object v3, v7, v0
 
-    aput-object v1, v2, v3
+    const/4 v0, 0x3
 
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->LONG:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    aput-object v4, v7, v0
 
-    const/4 v3, 0x2
+    const/4 v0, 0x4
 
-    aput-object v1, v2, v3
+    aput-object v5, v7, v0
 
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->FLOAT:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    const/4 v0, 0x5
 
-    const/4 v3, 0x3
+    aput-object v13, v7, v0
 
-    aput-object v1, v2, v3
+    const/4 v0, 0x6
 
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->DOUBLE:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    aput-object v20, v7, v0
 
-    const/4 v3, 0x4
+    const/4 v0, 0x7
 
-    aput-object v1, v2, v3
+    aput-object v14, v7, v0
 
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->BOOLEAN:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    const/16 v0, 0x8
 
-    const/4 v3, 0x5
+    aput-object v15, v7, v0
 
-    aput-object v1, v2, v3
+    const/16 v0, 0x9
 
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->STRING:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    aput-object v1, v7, v0
 
-    const/4 v3, 0x6
-
-    aput-object v1, v2, v3
-
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->BYTE_STRING:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
-
-    const/4 v3, 0x7
-
-    aput-object v1, v2, v3
-
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->ENUM:Lcom/google/crypto/tink/shaded/protobuf/JavaType;
-
-    const/16 v3, 0x8
-
-    aput-object v1, v2, v3
-
-    const/16 v1, 0x9
-
-    aput-object v0, v2, v1
-
-    sput-object v2, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->$VALUES:[Lcom/google/crypto/tink/shaded/protobuf/JavaType;
+    sput-object v7, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->$VALUES:[Lcom/google/crypto/tink/shaded/protobuf/JavaType;
 
     return-void
 .end method
@@ -339,8 +312,6 @@
     .end annotation
 
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-object p3, p0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->type:Ljava/lang/Class;
 
     iput-object p4, p0, Lcom/google/crypto/tink/shaded/protobuf/JavaType;->boxedType:Ljava/lang/Class;
 

@@ -18,8 +18,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;",
         "Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
@@ -27,7 +26,7 @@
 # static fields
 .field public static final CIPHERTEXT_SEGMENT_SIZE_FIELD_NUMBER:I = 0x1
 
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;
 
 .field public static final DERIVED_KEY_SIZE_FIELD_NUMBER:I = 0x2
 
@@ -35,7 +34,7 @@
 
 .field public static final HMAC_PARAMS_FIELD_NUMBER:I = 0x4
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -47,13 +46,13 @@
 
 
 # instance fields
-.field public ciphertextSegmentSize_:I
+.field private ciphertextSegmentSize_:I
 
-.field public derivedKeySize_:I
+.field private derivedKeySize_:I
 
-.field public hkdfHashType_:I
+.field private hkdfHashType_:I
 
-.field public hmacParams_:Lcom/google/crypto/tink/proto/HmacParams;
+.field private hmacParams_:Lcom/google/crypto/tink/proto/HmacParams;
 
 
 # direct methods
@@ -73,7 +72,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -228,7 +227,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;->hmacParams_:Lcom/google/crypto/tink/proto/HmacParams;
 
@@ -752,7 +751,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;->hmacParams_:Lcom/google/crypto/tink/proto/HmacParams;
 

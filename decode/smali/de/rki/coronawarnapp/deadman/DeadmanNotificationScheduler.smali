@@ -3,7 +3,21 @@
 .source "DeadmanNotificationScheduler.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nDeadmanNotificationScheduler.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeadmanNotificationScheduler.kt\nde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,111:1\n67#2,3:112\n66#2:115\n76#2:119\n237#3:116\n239#3:118\n106#4:117\n*S KotlinDebug\n*F\n+ 1 DeadmanNotificationScheduler.kt\nde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler\n*L\n32#1:112,3\n32#1:115\n32#1:119\n32#1:116\n32#1:118\n32#1:117\n*E\n"
+.end annotation
+
+
 # instance fields
+.field public final appScope:Lkotlinx/coroutines/CoroutineScope;
+
+.field public final coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+.field public final enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
+
+.field public final onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
+
 .field public final timeCalculation:Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;
 
 .field public final workBuilder:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;
@@ -12,28 +26,52 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;Landroidx/work/WorkManager;Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;)V
+.method public constructor <init>(Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;Landroidx/work/WorkManager;Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;Lde/rki/coronawarnapp/storage/OnboardingSettings;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;)V
     .locals 1
 
-    const-string v0, "timeCalculation"
+    const-string v0, "appScope"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "workManager"
+    const-string/jumbo v0, "timeCalculation"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "workBuilder"
+    const-string/jumbo v0, "workManager"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string/jumbo v0, "workBuilder"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "onboardingSettings"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "enfClient"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "coronaTestRepository"
+
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->timeCalculation:Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;
+    iput-object p1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workManager:Landroidx/work/WorkManager;
+    iput-object p2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->timeCalculation:Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workBuilder:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;
+    iput-object p3, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workManager:Landroidx/work/WorkManager;
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workBuilder:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->onboardingSettings:Lde/rki/coronawarnapp/storage/OnboardingSettings;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
+
+    iput-object p7, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
 
     return-void
 .end method
@@ -41,7 +79,7 @@
 
 # virtual methods
 .method public final scheduleOneTime(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -97,7 +135,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -111,7 +149,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->timeCalculation:Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;
 
@@ -119,7 +157,7 @@
 
     iput v3, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler$scheduleOneTime$1;->label:I
 
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;->getDelay(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/deadman/DeadmanNotificationTimeCalculation;->getDelayInMinutes(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -148,13 +186,29 @@
     return-object p1
 
     :cond_4
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v3, "DeadmanNotification will be scheduled for "
+
+    const-string v4, " minutes in the future"
+
+    invoke-static {v3, v1, v2, v4}, Landroidx/work/impl/utils/futures/AbstractFuture$$ExternalSyntheticOutline0;->m(Ljava/lang/String;JLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    invoke-virtual {p1, v3, v4}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
     iget-object p1, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workManager:Landroidx/work/WorkManager;
 
     sget-object v3, Landroidx/work/ExistingWorkPolicy;->REPLACE:Landroidx/work/ExistingWorkPolicy;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workBuilder:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;
 
-    if-eqz v0, :cond_5
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Landroidx/work/OneTimeWorkRequest$Builder;
 
@@ -172,11 +226,9 @@
 
     sget-object v1, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    const-wide/16 v5, 0x8
 
-    const-wide/16 v4, 0x8
-
-    invoke-virtual {v0, v1, v4, v5, v2}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+    invoke-virtual {v0, v1, v5, v6, v4}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
 
     move-result-object v0
 
@@ -199,76 +251,4 @@
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_5
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final schedulePeriodic()V
-    .locals 7
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workManager:Landroidx/work/WorkManager;
-
-    sget-object v1, Landroidx/work/ExistingPeriodicWorkPolicy;->KEEP:Landroidx/work/ExistingPeriodicWorkPolicy;
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;->workBuilder:Lde/rki/coronawarnapp/deadman/DeadmanNotificationWorkBuilder;
-
-    if-eqz v2, :cond_0
-
-    const/16 v2, 0x3c
-
-    int-to-long v2, v2
-
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
-    new-instance v5, Landroidx/work/PeriodicWorkRequest$Builder;
-
-    const-class v6, Lde/rki/coronawarnapp/deadman/DeadmanNotificationPeriodicWorker;
-
-    invoke-direct {v5, v6, v2, v3, v4}, Landroidx/work/PeriodicWorkRequest$Builder;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v3, 0x1
-
-    invoke-virtual {v5, v3, v4, v2}, Landroidx/work/WorkRequest$Builder;->setInitialDelay(JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/work/PeriodicWorkRequest$Builder;
-
-    sget-object v3, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
-
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v5, 0x8
-
-    invoke-virtual {v2, v3, v5, v6, v4}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Landroidx/work/BackoffPolicy;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/work/PeriodicWorkRequest$Builder;
-
-    invoke-virtual {v2}, Landroidx/work/WorkRequest$Builder;->build()Landroidx/work/WorkRequest;
-
-    move-result-object v2
-
-    const-string v3, "PeriodicWorkRequestBuild\u2026       )\n        .build()"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast v2, Landroidx/work/PeriodicWorkRequest;
-
-    const-string v3, "DeadmanNotificationPeriodicWork"
-
-    invoke-virtual {v0, v3, v1, v2}, Landroidx/work/WorkManager;->enqueueUniquePeriodicWork(Ljava/lang/String;Landroidx/work/ExistingPeriodicWorkPolicy;Landroidx/work/PeriodicWorkRequest;)Landroidx/work/Operation;
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

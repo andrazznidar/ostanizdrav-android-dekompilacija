@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBaseKeyPackageSyncTool.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseKeyPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,110:1\n1517#2:111\n1588#2,3:112\n734#2:115\n825#2,2:116\n1517#2:118\n1588#2,3:119\n1753#2,3:122\n734#2:125\n825#2:126\n1571#2,9:127\n1819#2:136\n1820#2:138\n1580#2:139\n1711#2,3:140\n1571#2,9:143\n1819#2:152\n1820#2:154\n1580#2:155\n1711#2,2:156\n1713#2:161\n826#2:162\n734#2:163\n825#2,2:164\n734#2:166\n825#2,2:167\n1#3:137\n1#3:153\n153#4,3:158\n*E\n*S KotlinDebug\n*F\n+ 1 BaseKeyPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool\n*L\n28#1:111\n28#1,3:112\n29#1:115\n29#1,2:116\n36#1:118\n36#1,3:119\n42#1,3:122\n54#1:125\n54#1:126\n57#1,9:127\n57#1:136\n57#1:138\n57#1:139\n58#1,3:140\n74#1,9:143\n74#1:152\n74#1:154\n74#1:155\n75#1,2:156\n75#1:161\n54#1:162\n94#1:163\n94#1,2:164\n95#1:166\n95#1,2:167\n57#1:137\n74#1:153\n76#1,3:158\n*E\n"
+    value = "SMAP\nBaseKeyPackageSyncTool.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseKeyPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,110:1\n1547#2:111\n1618#2,3:112\n764#2:115\n855#2,2:116\n1547#2:118\n1618#2,3:119\n1783#2,3:122\n764#2:125\n855#2:126\n1601#2,9:127\n1849#2:136\n1850#2:138\n1610#2:139\n1741#2,3:140\n1601#2,9:143\n1849#2:152\n1850#2:154\n1610#2:155\n1741#2,2:156\n1743#2:161\n856#2:162\n764#2:163\n855#2,2:164\n764#2:166\n855#2,2:167\n1#3:137\n1#3:153\n183#4,3:158\n*S KotlinDebug\n*F\n+ 1 BaseKeyPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool\n*L\n28#1:111\n28#1:112,3\n29#1:115\n29#1:116,2\n36#1:118\n36#1:119,3\n42#1:122,3\n54#1:125\n54#1:126\n57#1:127,9\n57#1:136\n57#1:138\n57#1:139\n58#1:140,3\n74#1:143,9\n74#1:152\n74#1:154\n74#1:155\n75#1:156,2\n75#1:161\n54#1:162\n94#1:163\n94#1:164,2\n95#1:166\n95#1:167,2\n57#1:137\n74#1:153\n76#1:158,3\n*E\n"
 .end annotation
 
 
@@ -25,19 +25,7 @@
 
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;Lde/rki/coronawarnapp/storage/DeviceStorage;Ljava/lang/String;)V
-    .locals 1
-
-    const-string v0, "keyCache"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "deviceStorage"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "tag"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -70,13 +58,9 @@
         }
     .end annotation
 
-    const-string v0, "$this$findStaleData"
+    const-string v0, "<this>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "availableData"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -130,16 +114,13 @@
 
     instance-of v7, v5, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
-    if-nez v7, :cond_2
+    if-eqz v7, :cond_2
 
-    goto :goto_2
-
-    :cond_2
     move-object v6, v5
 
-    :goto_2
     check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
+    :cond_2
     if-eqz v6, :cond_1
 
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -157,7 +138,7 @@
 
     if-eqz v4, :cond_4
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -189,13 +170,13 @@
 
     move v3, v5
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_6
-    :goto_3
+    :goto_2
     move v3, v7
 
-    :goto_4
+    :goto_3
     iget-object v4, v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->type:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
     sget-object v8, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->LOCATION_DAY:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
@@ -225,7 +206,7 @@
     move-result-object v4
 
     :cond_9
-    :goto_5
+    :goto_4
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
@@ -240,18 +221,21 @@
 
     instance-of v9, v8, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationHours;
 
-    if-nez v9, :cond_a
+    if-eqz v9, :cond_a
 
-    move-object v8, v6
-
-    :cond_a
     check-cast v8, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationHours;
 
+    goto :goto_5
+
+    :cond_a
+    move-object v8, v6
+
+    :goto_5
     if-eqz v8, :cond_9
 
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_b
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -334,7 +318,7 @@
 
     iget-object v8, v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->hour:Lorg/joda/time/LocalTime;
 
-    invoke-static {v6, v8}, Lkotlin/collections/ArraysKt___ArraysKt;->contains(Ljava/lang/Iterable;Ljava/lang/Object;)Z
+    invoke-static {v6, v8}, Lkotlin/collections/CollectionsKt___CollectionsKt;->contains(Ljava/lang/Iterable;Ljava/lang/Object;)Z
 
     move-result v6
 
@@ -451,7 +435,7 @@
 
     check-cast p2, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;
 
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -465,7 +449,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p3, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->keyCache:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
@@ -521,14 +505,6 @@
 
     move-result v2
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
     if-eqz v2, :cond_4
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -576,11 +552,11 @@
 
     if-nez v4, :cond_7
 
-    iget-object v6, p2, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
+    sget-object v6, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    iget-object v7, p2, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
 
-    move-result-object v6
+    invoke-virtual {v6, v7}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v7, v3, [Ljava/lang/Object;
 
@@ -588,7 +564,7 @@
 
     const-string v1, "Incomplete download, will overwrite: %s"
 
-    invoke-virtual {v6, v1, v7}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, v1, v7}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_7
     if-eqz v2, :cond_8
@@ -598,15 +574,7 @@
     move v5, v3
 
     :cond_8
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
+    if-eqz v5, :cond_6
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -617,7 +585,7 @@
 .end method
 
 .method public final requireStorageSpace$Corona_Warn_App_deviceRelease(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -679,7 +647,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -693,57 +661,41 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     const-wide/16 v5, 0x0
 
-    new-instance p2, Ljava/lang/Long;
-
-    invoke-direct {p2, v5, v6}, Ljava/lang/Long;-><init>(J)V
-
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :goto_1
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationData;
 
-    move-result v5
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationData;->getApproximateSizeInBytes()J
 
-    if-eqz v5, :cond_3
+    move-result-wide v7
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationData;
-
-    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v6
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationData;->getApproximateSizeInBytes()J
-
-    move-result-wide v8
-
-    add-long/2addr v8, v6
-
-    new-instance p2, Ljava/lang/Long;
-
-    invoke-direct {p2, v8, v9}, Ljava/lang/Long;-><init>(J)V
+    add-long/2addr v5, v7
 
     goto :goto_1
 
     :cond_3
-    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-wide v5
+    iget-object v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
-
-    invoke-static {p2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object p2
+    invoke-virtual {p2, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v2, 0x2
 
@@ -759,7 +711,7 @@
 
     const-string p1, "%dB are required for %s"
 
-    invoke-virtual {p2, p1, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, p1, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->deviceStorage:Lde/rki/coronawarnapp/storage/DeviceStorage;
 
@@ -783,19 +735,19 @@
 
     check-cast v0, Lde/rki/coronawarnapp/storage/DeviceStorage$CheckResult;
 
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
     iget-object p1, p1, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v1, p1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object p1
+    new-array p1, v4, [Ljava/lang/Object;
 
-    new-array v1, v4, [Ljava/lang/Object;
-
-    aput-object v0, v1, v3
+    aput-object v0, p1, v3
 
     const-string v0, "Storage check result: %s"
 
-    invoke-virtual {p1, v0, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, p1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p2
 .end method
@@ -869,7 +821,7 @@
 
     if-ne v4, v6, :cond_1
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_5
 
@@ -891,12 +843,12 @@
 
     check-cast v9, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_3
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     invoke-interface/range {p1 .. p1}, Ljava/util/Collection;->isEmpty()Z
 
@@ -904,17 +856,17 @@
 
     if-eqz v1, :cond_4
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    iget-object v2, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
 
-    move-result-object v1
+    invoke-virtual {v1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v2, v7, [Ljava/lang/Object;
 
     const-string v3, "No revoked key packages to delete."
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -925,7 +877,7 @@
 
     move-object/from16 v1, p1
 
-    invoke-static {v1, v5}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v5}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v9
 
@@ -1007,15 +959,7 @@
 
     iget-object v11, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->etag:Ljava/lang/String;
 
-    invoke-static {v4, v11}, Lkotlin/collections/ArraysKt___ArraysKt;->contains(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result v11
-
-    invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {v4, v11}, Lkotlin/collections/CollectionsKt___CollectionsKt;->contains(Ljava/lang/Iterable;Ljava/lang/Object;)Z
 
     move-result v11
 
@@ -1032,26 +976,26 @@
 
     if-eqz v1, :cond_9
 
-    iget-object v1, v9, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    iget-object v2, v9, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
 
-    move-result-object v1
+    invoke-virtual {v1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v2, v7, [Ljava/lang/Object;
 
     const-string v3, "No local cached keys matched the revoked ones."
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_6
 
     :cond_9
-    iget-object v1, v9, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    iget-object v4, v9, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->tag:Ljava/lang/String;
 
-    move-result-object v1
+    invoke-virtual {v1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v4, v8, [Ljava/lang/Object;
 
@@ -1079,7 +1023,7 @@
 
     move/from16 v17, v18
 
-    invoke-static/range {v10 .. v17}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    invoke-static/range {v10 .. v17}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
     move-result-object v10
 
@@ -1087,13 +1031,13 @@
 
     const-string v7, "Deleting revoked cached keys: %s"
 
-    invoke-virtual {v1, v7, v4}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v7, v4}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v1, v9, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->keyCache:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     new-instance v4, Ljava/util/ArrayList;
 
-    invoke-static {v8, v5}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v8, v5}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v5
 

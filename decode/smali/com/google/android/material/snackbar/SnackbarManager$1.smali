@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
-    .locals 4
+    .locals 1
 
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -52,46 +52,30 @@
 
     check-cast p1, Lcom/google/android/material/snackbar/SnackbarManager$SnackbarRecord;
 
-    iget-object v1, v0, Lcom/google/android/material/snackbar/SnackbarManager;->lock:Ljava/lang/Object;
+    iget-object v0, v0, Lcom/google/android/material/snackbar/SnackbarManager;->lock:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v0
 
     if-eqz p1, :cond_1
 
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x2
-
     :try_start_0
-    iget-object v3, p1, Lcom/google/android/material/snackbar/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/android/material/snackbar/SnackbarManager$Callback;
-
-    if-eqz v3, :cond_2
-
-    iget-object v0, v0, Lcom/google/android/material/snackbar/SnackbarManager;->handler:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
-
-    invoke-interface {v3, v2}, Lcom/google/android/material/snackbar/SnackbarManager$Callback;->dismiss(I)V
-
-    :cond_2
-    :goto_0
-    monitor-exit v1
+    monitor-exit v0
 
     const/4 p1, 0x1
 
     return p1
 
+    :cond_1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    throw p1
+
     :catchall_0
     move-exception p1
 
-    monitor-exit v1
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

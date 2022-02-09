@@ -102,17 +102,15 @@
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    iget-object v2, p1, Lcom/journeyapps/barcodescanner/DecoderThread$2;->this$0:Lcom/journeyapps/barcodescanner/DecoderThread;
+    iget-object p1, p1, Lcom/journeyapps/barcodescanner/DecoderThread$2;->this$0:Lcom/journeyapps/barcodescanner/DecoderThread;
 
-    iget-boolean v2, v2, Lcom/journeyapps/barcodescanner/DecoderThread;->running:Z
+    iget-boolean v2, p1, Lcom/journeyapps/barcodescanner/DecoderThread;->running:Z
 
     if-eqz v2, :cond_1
 
-    iget-object p1, p1, Lcom/journeyapps/barcodescanner/DecoderThread$2;->this$0:Lcom/journeyapps/barcodescanner/DecoderThread;
-
     iget-object p1, p1, Lcom/journeyapps/barcodescanner/DecoderThread;->handler:Landroid/os/Handler;
 
-    const v2, 0x7f090570
+    sget v2, Lcom/google/zxing/client/android/R$id;->zxing_decode:I
 
     invoke-virtual {p1, v2, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -123,7 +121,7 @@
     :cond_1
     monitor-exit v0
 
-    goto :goto_0
+    goto :goto_1
 
     :catchall_0
     move-exception p1
@@ -134,6 +132,11 @@
 
     :try_start_2
     throw p1
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_0
 
     :cond_2
     new-instance p1, Ljava/lang/NullPointerException;
@@ -146,9 +149,7 @@
     :try_end_2
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
 
-    :catch_0
-    move-exception p1
-
+    :goto_0
     const-string p2, "CameraManager"
 
     const-string v0, "Camera preview failed"
@@ -159,7 +160,7 @@
 
     invoke-virtual {v1, p1}, Lcom/journeyapps/barcodescanner/DecoderThread$2;->onPreviewError(Ljava/lang/Exception;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
     const-string p1, "CameraManager"
@@ -181,6 +182,6 @@
     invoke-virtual {v1, p1}, Lcom/journeyapps/barcodescanner/DecoderThread$2;->onPreviewError(Ljava/lang/Exception;)V
 
     :cond_4
-    :goto_0
+    :goto_1
     return-void
 .end method

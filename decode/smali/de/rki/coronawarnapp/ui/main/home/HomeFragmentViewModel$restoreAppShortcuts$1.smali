@@ -25,7 +25,7 @@
     c = "de.rki.coronawarnapp.ui.main.home.HomeFragmentViewModel$restoreAppShortcuts$1"
     f = "HomeFragmentViewModel.kt"
     l = {
-        0x12e
+        0x124
     }
     m = "invokeSuspend"
 .end annotation
@@ -40,6 +40,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$restoreAppShortcuts$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$restoreAppShortcuts$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
@@ -66,10 +76,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$restoreAppShortcuts$1;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$restoreAppShortcuts$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
@@ -79,14 +85,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$restoreAppShortcuts$1;
 
@@ -116,9 +120,9 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -130,7 +134,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$restoreAppShortcuts$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
@@ -138,38 +142,27 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$restoreAppShortcuts$1;->label:I
 
-    const/4 v1, 0x0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_4
+    sget-object v1, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
-    sget-object v2, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
+    new-instance v2, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper$restoreAppShortcut$2;
 
-    new-instance v3, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper$restoreAppShortcut$2;
+    const/4 v3, 0x0
 
-    invoke-direct {v3, p1, v1}, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper$restoreAppShortcut$2;-><init>(Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v2, p1, v3}, Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper$restoreAppShortcut$2;-><init>(Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v2, v3, p0}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v1, v2, p0}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
     if-ne p1, v0, :cond_2
 
-    goto :goto_0
-
-    :cond_2
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_0
-    if-ne p1, v0, :cond_3
-
     return-object v0
 
-    :cond_3
-    :goto_1
+    :cond_2
+    :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_4
-    throw v1
 .end method

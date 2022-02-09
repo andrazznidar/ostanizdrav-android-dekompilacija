@@ -40,3 +40,14 @@
         }
     .end annotation
 .end method
+
+.method public abstract getRevokedTraceWarningPackages()Ljava/util/Collection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig$RevokedKeyPackage$TraceWarning;",
+            ">;"
+        }
+    .end annotation
+.end method

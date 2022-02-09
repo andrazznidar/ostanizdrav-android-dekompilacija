@@ -25,6 +25,23 @@
 
 
 # virtual methods
+.method public final nullSafe()Lcom/google/gson/TypeAdapter;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/gson/TypeAdapter<",
+            "TT;>;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/gson/TypeAdapter$1;
+
+    invoke-direct {v0, p0}, Lcom/google/gson/TypeAdapter$1;-><init>(Lcom/google/gson/TypeAdapter;)V
+
+    return-object v0
+.end method
+
 .method public abstract read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

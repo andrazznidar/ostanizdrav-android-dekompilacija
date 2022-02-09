@@ -1,38 +1,44 @@
 .class public final Lcom/google/android/gms/signin/zad;
-.super Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
-        "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
-        "Lcom/google/android/gms/signin/zac;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field public static final zac:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/gms/common/api/Api$AbstractClientBuilder<",
+            "Lcom/google/android/gms/signin/internal/SignInClientImpl;",
+            "Lcom/google/android/gms/signin/SignInOptions;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;-><init>()V
+    new-instance v0, Lcom/google/android/gms/signin/zaa;
+
+    invoke-direct {v0}, Lcom/google/android/gms/signin/zaa;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/signin/zad;->zac:Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+
+    new-instance v0, Lcom/google/android/gms/common/api/Scope;
+
+    const/4 v1, 0x1
+
+    const-string v2, "profile"
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Scope;-><init>(ILjava/lang/String;)V
+
+    new-instance v0, Lcom/google/android/gms/common/api/Scope;
+
+    const-string v2, "email"
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Scope;-><init>(ILjava/lang/String;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final buildClient(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/ClientSettings;Ljava/lang/Object;Lcom/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks;Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;)Lcom/google/android/gms/common/api/Api$Client;
-    .locals 0
-
-    check-cast p4, Lcom/google/android/gms/signin/zac;
-
-    new-instance p1, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {p1}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw p1
 .end method

@@ -4,19 +4,7 @@
 
 
 # static fields
-.field public static final ECDSA_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
-
-.field public static final ECDSA_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
-
-.field public static final ED25519_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
-
-.field public static final ED25519_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
-
 .field public static final LATEST:Lcom/google/crypto/tink/proto/RegistryConfig;
-
-.field public static final RSA_PKCS1_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
-
-.field public static final RSA_PKCS1_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
 
 .field public static final TINK_1_0_0:Lcom/google/crypto/tink/proto/RegistryConfig;
     .annotation runtime Ljava/lang/Deprecated;
@@ -37,49 +25,25 @@
 
     invoke-direct {v0}, Lcom/google/crypto/tink/signature/EcdsaVerifyKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.EcdsaPublicKey"
-
-    sput-object v0, Lcom/google/crypto/tink/signature/SignatureConfig;->ECDSA_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
-
     new-instance v0, Lcom/google/crypto/tink/signature/EcdsaSignKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/signature/EcdsaSignKeyManager;-><init>()V
-
-    const-string v0, "type.googleapis.com/google.crypto.tink.EcdsaPrivateKey"
-
-    sput-object v0, Lcom/google/crypto/tink/signature/SignatureConfig;->ECDSA_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
 
     new-instance v0, Lcom/google/crypto/tink/signature/Ed25519PublicKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/signature/Ed25519PublicKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.Ed25519PublicKey"
-
-    sput-object v0, Lcom/google/crypto/tink/signature/SignatureConfig;->ED25519_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
-
     new-instance v0, Lcom/google/crypto/tink/signature/Ed25519PrivateKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/signature/Ed25519PrivateKeyManager;-><init>()V
-
-    const-string v0, "type.googleapis.com/google.crypto.tink.Ed25519PrivateKey"
-
-    sput-object v0, Lcom/google/crypto/tink/signature/SignatureConfig;->ED25519_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
 
     new-instance v0, Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.RsaSsaPkcs1PrivateKey"
-
-    sput-object v0, Lcom/google/crypto/tink/signature/SignatureConfig;->RSA_PKCS1_PRIVATE_KEY_TYPE_URL:Ljava/lang/String;
-
     new-instance v0, Lcom/google/crypto/tink/signature/RsaSsaPkcs1VerifyKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/signature/RsaSsaPkcs1VerifyKeyManager;-><init>()V
-
-    const-string v0, "type.googleapis.com/google.crypto.tink.RsaSsaPkcs1PublicKey"
-
-    sput-object v0, Lcom/google/crypto/tink/signature/SignatureConfig;->RSA_PKCS1_PUBLIC_KEY_TYPE_URL:Ljava/lang/String;
 
     invoke-static {}, Lcom/google/crypto/tink/proto/RegistryConfig;->getDefaultInstance()Lcom/google/crypto/tink/proto/RegistryConfig;
 

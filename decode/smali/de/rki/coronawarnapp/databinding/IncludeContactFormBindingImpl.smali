@@ -6,12 +6,20 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     const/4 v0, 0x3
 
@@ -65,11 +73,9 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -106,15 +112,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;->informationLegalContactForm:Landroid/widget/TextView;
 
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-static {v1, v2}, Lcom/google/zxing/client/android/R$id;->formatVisibilityLanguageBased(Landroid/content/Context;Ljava/lang/Boolean;)I
+    invoke-static {v1}, Lcom/google/android/gms/internal/nearby/zzfq;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
 
     move-result v1
 
@@ -122,15 +122,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeContactFormBinding;->informationLegalContactFormNonEnDe:Landroid/widget/TextView;
 
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-static {v1, v2}, Lcom/google/zxing/client/android/R$id;->formatVisibilityLanguageBased(Landroid/content/Context;Ljava/lang/Boolean;)I
+    invoke-static {v1}, Lcom/google/android/gms/internal/nearby/zzfq;->formatVisibilityLanguageBased(Ljava/lang/Boolean;)I
 
     move-result v1
 

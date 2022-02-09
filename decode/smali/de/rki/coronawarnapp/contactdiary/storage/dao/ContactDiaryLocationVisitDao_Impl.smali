@@ -46,6 +46,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/room/RoomDatabase;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "__db"
+        }
+    .end annotation
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao;-><init>()V
 
@@ -93,7 +101,16 @@
 
 # virtual methods
 .method public final __fetchRelationshiplocationsAsdeRkiCoronawarnappContactdiaryStorageEntityContactDiaryLocationEntity(Landroidx/collection/LongSparseArray;)V
-    .locals 20
+    .locals 22
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "_map"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -185,7 +202,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "SELECT `locationId`,`locationName`,`phoneNumber`,`emailAddress` FROM `locations` WHERE `locationId` IN ("
+    const-string v4, "SELECT `locationId`,`locationName`,`phoneNumber`,`emailAddress`,`traceLocationID` FROM `locations` WHERE `locationId` IN ("
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -242,7 +259,7 @@
     move-result-object v3
 
     :try_start_0
-    invoke-static {v3, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
     :try_end_0
@@ -258,118 +275,144 @@
 
     :cond_6
     :try_start_1
-    invoke-static {v3, v2}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v2
 
     const-string v7, "locationName"
 
-    invoke-static {v3, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v7}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "phoneNumber"
 
-    invoke-static {v3, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v8}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
     const-string v9, "emailAddress"
 
-    invoke-static {v3, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v9}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
+
+    const-string/jumbo v10, "traceLocationID"
+
+    invoke-static {v3, v10}, Landroidx/room/util/CursorUtil;->getColumnIndex(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v10
 
     :cond_7
     :goto_2
     invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v10
+    move-result v11
 
-    if-eqz v10, :cond_c
+    if-eqz v11, :cond_d
 
     invoke-interface {v3, v4}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v10
+    move-result-wide v11
 
-    invoke-virtual {v0, v10, v11}, Landroidx/collection/LongSparseArray;->containsKey(J)Z
+    invoke-virtual {v0, v11, v12}, Landroidx/collection/LongSparseArray;->containsKey(J)Z
 
-    move-result v12
+    move-result v13
 
-    if-eqz v12, :cond_7
+    if-eqz v13, :cond_7
 
     if-ne v2, v6, :cond_8
 
-    const-wide/16 v12, 0x0
+    const-wide/16 v13, 0x0
 
     :goto_3
-    move-wide v15, v12
+    move-wide/from16 v16, v13
 
     goto :goto_4
 
     :cond_8
     invoke-interface {v3, v2}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v12
+    move-result-wide v13
 
     goto :goto_3
 
     :goto_4
     if-ne v7, v6, :cond_9
 
-    move-object/from16 v17, v5
+    move-object/from16 v18, v5
 
     goto :goto_5
 
     :cond_9
     invoke-interface {v3, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    move-object/from16 v17, v12
+    move-object/from16 v18, v13
 
     :goto_5
     if-ne v8, v6, :cond_a
 
-    move-object/from16 v18, v5
+    move-object/from16 v19, v5
 
     goto :goto_6
 
     :cond_a
     invoke-interface {v3, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    move-object/from16 v18, v12
+    move-object/from16 v19, v13
 
     :goto_6
     if-ne v9, v6, :cond_b
 
-    move-object/from16 v19, v5
+    move-object/from16 v20, v5
 
     goto :goto_7
 
     :cond_b
     invoke-interface {v3, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    move-object/from16 v19, v12
+    move-object/from16 v20, v13
 
     :goto_7
-    new-instance v12, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
+    if-ne v10, v6, :cond_c
 
-    move-object v14, v12
+    move-object/from16 v21, v5
 
-    invoke-direct/range {v14 .. v19}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    goto :goto_8
 
-    invoke-virtual {v0, v10, v11, v12}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
+    :cond_c
+    invoke-interface {v3, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    iget-object v14, v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
+
+    invoke-virtual {v14, v13}, Lde/rki/coronawarnapp/util/database/CommonConverters;->toTraceLocationId(Ljava/lang/String;)Lokio/ByteString;
+
+    move-result-object v13
+
+    move-object/from16 v21, v13
+
+    :goto_8
+    new-instance v13, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;
+
+    move-object v15, v13
+
+    invoke-direct/range {v15 .. v21}, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lokio/ByteString;)V
+
+    invoke-virtual {v0, v11, v12, v13}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_2
 
-    :cond_c
+    :cond_d
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
     return-void
@@ -382,8 +425,61 @@
     throw v0
 .end method
 
+.method public allEntries()Lkotlinx/coroutines/flow/Flow;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "SELECT * FROM locationvisits"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    const-string v2, "locations"
+
+    const-string v3, "locationvisits"
+
+    filled-new-array {v2, v3}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;
+
+    invoke-direct {v3, p0, v0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
+
+    const/4 v0, 0x1
+
+    invoke-static {v1, v0, v2, v3}, Landroidx/room/CoroutinesRoom;->createFlow(Landroidx/room/RoomDatabase;Z[Ljava/lang/String;Ljava/util/concurrent/Callable;)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public delete(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010,
+            0x1010
+        }
+        names = {
+            "entity",
+            "continuation"
+        }
+    .end annotation
 
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;
 
@@ -402,8 +498,213 @@
     return-object p1
 .end method
 
+.method public delete(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "entities",
+            "continuation"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;",
+            ">;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$8;
+
+    invoke-direct {v1, p0, p1}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$8;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;Ljava/util/List;)V
+
+    const/4 p1, 0x1
+
+    invoke-static {v0, p1, v1, p2}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public deleteAll(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "continuation"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$11;
+
+    invoke-direct {v1, p0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$11;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;)V
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2, v1, p1}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public entitiesForDate(Lorg/joda/time/LocalDate;)Lkotlinx/coroutines/flow/Flow;
+    .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "date"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/joda/time/LocalDate;",
+            ")",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "SELECT * FROM locationvisits WHERE date = ?"
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
+
+    invoke-virtual {v2, p1}, Lde/rki/coronawarnapp/util/database/CommonConverters;->fromLocalDate(Lorg/joda/time/LocalDate;)Ljava/lang/String;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {v0, v1}, Landroidx/room/RoomSQLiteQuery;->bindNull(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0, v1, p1}, Landroidx/room/RoomSQLiteQuery;->bindString(ILjava/lang/String;)V
+
+    :goto_0
+    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    const-string v2, "locations"
+
+    const-string v3, "locationvisits"
+
+    filled-new-array {v2, v3}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$14;
+
+    invoke-direct {v3, p0, v0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$14;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
+
+    invoke-static {p1, v1, v2, v3}, Landroidx/room/CoroutinesRoom;->createFlow(Landroidx/room/RoomDatabase;Z[Ljava/lang/String;Ljava/util/concurrent/Callable;)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public entityForId(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "id",
+            "continuation"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitWrapper;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    const-string v0, "SELECT * FROM locationvisits WHERE id = ?"
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1, p1, p2}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    new-instance p2, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$13;
+
+    invoke-direct {p2, p0, v0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$13;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
+
+    invoke-static {p1, v1, p2, p3}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public insert(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010,
+            0x1010
+        }
+        names = {
+            "entity",
+            "continuation"
+        }
+    .end annotation
 
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;
 
@@ -424,6 +725,16 @@
 
 .method public update(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010,
+            0x1010
+        }
+        names = {
+            "entity",
+            "continuation"
+        }
+    .end annotation
 
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationVisitEntity;
 

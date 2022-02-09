@@ -204,20 +204,6 @@
     return-object v0
 .end method
 
-.method public final isInitialized()Z
-    .locals 2
-
-    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->isInitialized(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;Z)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;

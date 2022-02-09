@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/internal/bind/TypeAdapters$28;
+.class Lcom/google/gson/internal/bind/TypeAdapters$28;
 .super Lcom/google/gson/TypeAdapter;
 .source "TypeAdapters.java"
 

@@ -52,61 +52,61 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 9
 
-    const/4 v0, 0x4
+    new-instance v0, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    const-string v1, "DISABLED"
 
-    new-instance v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    const/4 v2, 0x0
 
-    const-string v2, "DISABLED"
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->DISABLED:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->DISABLED:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
     new-instance v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    const-string v2, "INCREASED_RISK_DEFAULT"
+    const-string v3, "INCREASED_RISK_DEFAULT"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->INCREASED_RISK_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    aput-object v1, v0, v3
+    new-instance v3, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    new-instance v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    const-string v5, "INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT"
 
-    const-string v2, "INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT"
+    const/4 v6, 0x2
 
-    const/4 v3, 0x2
+    invoke-direct {v3, v5, v6}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
+    sput-object v3, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    sput-object v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    new-instance v5, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    aput-object v1, v0, v3
+    const-string v7, "LOW_RISK_DEFAULT"
 
-    new-instance v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    const/4 v8, 0x3
 
-    const-string v2, "LOW_RISK_DEFAULT"
+    invoke-direct {v5, v7, v8}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x3
+    sput-object v5, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->LOW_RISK_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;-><init>(Ljava/lang/String;I)V
+    const/4 v7, 0x4
 
-    sput-object v1, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->LOW_RISK_DEFAULT:Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    new-array v7, v7, [Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    aput-object v1, v0, v3
+    aput-object v0, v7, v2
 
-    sput-object v0, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->$VALUES:[Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->$VALUES:[Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
     return-void
 .end method
@@ -143,7 +143,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->$VALUES:[Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/storage/TestSettings$FakeExposureWindowTypes;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

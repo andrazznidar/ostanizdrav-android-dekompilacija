@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/Gson$3;
+.class Lcom/google/gson/Gson$3;
 .super Lcom/google/gson/TypeAdapter;
 .source "Gson.java"
 

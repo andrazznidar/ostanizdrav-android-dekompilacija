@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/safetynet/zzd;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
 
 
 # static fields
@@ -15,13 +16,13 @@
 
 
 # instance fields
-.field public final zzf:J
+.field public final zza:J
 
-.field public final zzg:[Lcom/google/android/gms/safetynet/HarmfulAppsData;
+.field public final zzb:[Lcom/google/android/gms/safetynet/HarmfulAppsData;
 
-.field public final zzh:I
+.field public final zzc:I
 
-.field public final zzi:Z
+.field public final zzd:Z
 
 
 # direct methods
@@ -42,22 +43,22 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput-wide p1, p0, Lcom/google/android/gms/safetynet/zzd;->zzf:J
+    iput-wide p1, p0, Lcom/google/android/gms/safetynet/zzd;->zza:J
 
-    iput-object p3, p0, Lcom/google/android/gms/safetynet/zzd;->zzg:[Lcom/google/android/gms/safetynet/HarmfulAppsData;
+    iput-object p3, p0, Lcom/google/android/gms/safetynet/zzd;->zzb:[Lcom/google/android/gms/safetynet/HarmfulAppsData;
 
-    iput-boolean p5, p0, Lcom/google/android/gms/safetynet/zzd;->zzi:Z
+    iput-boolean p5, p0, Lcom/google/android/gms/safetynet/zzd;->zzd:Z
 
     if-eqz p5, :cond_0
 
-    iput p4, p0, Lcom/google/android/gms/safetynet/zzd;->zzh:I
+    iput p4, p0, Lcom/google/android/gms/safetynet/zzd;->zzc:I
 
     return-void
 
     :cond_0
     const/4 p1, -0x1
 
-    iput p1, p0, Lcom/google/android/gms/safetynet/zzd;->zzh:I
+    iput p1, p0, Lcom/google/android/gms/safetynet/zzd;->zzc:I
 
     return-void
 .end method
@@ -67,37 +68,45 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
+    const/16 v0, 0x4f45
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;I)I
 
     move-result v0
 
-    iget-wide v1, p0, Lcom/google/android/gms/safetynet/zzd;->zzf:J
+    iget-wide v1, p0, Lcom/google/android/gms/safetynet/zzd;->zza:J
 
-    const/4 v3, 0x2
+    const v3, 0x80002
 
-    invoke-static {p1, v3, v1, v2}, Lcom/airbnb/lottie/R$attr;->writeLong(Landroid/os/Parcel;IJ)V
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-object v1, p0, Lcom/google/android/gms/safetynet/zzd;->zzg:[Lcom/google/android/gms/safetynet/HarmfulAppsData;
+    invoke-virtual {p1, v1, v2}, Landroid/os/Parcel;->writeLong(J)V
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
+
+    iget-object v2, p0, Lcom/google/android/gms/safetynet/zzd;->zzb:[Lcom/google/android/gms/safetynet/HarmfulAppsData;
 
     const/4 v3, 0x0
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
 
-    iget p2, p0, Lcom/google/android/gms/safetynet/zzd;->zzh:I
+    iget p2, p0, Lcom/google/android/gms/safetynet/zzd;->zzc:I
 
-    const/4 v1, 0x4
+    const v1, 0x40004
 
-    invoke-static {p1, v1, p2}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-boolean p2, p0, Lcom/google/android/gms/safetynet/zzd;->zzi:Z
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v1, 0x5
+    iget-boolean p2, p0, Lcom/google/android/gms/safetynet/zzd;->zzd:Z
 
-    invoke-static {p1, v1, p2}, Lcom/airbnb/lottie/R$attr;->writeBoolean(Landroid/os/Parcel;IZ)V
+    const v1, 0x40005
 
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzc(Landroid/os/Parcel;I)V
 
     return-void
 .end method

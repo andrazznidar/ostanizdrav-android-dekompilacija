@@ -28,7 +28,7 @@
 
     iget-object v0, p0, Landroidx/navigation/ui/NavigationUI$5;->val$navController:Landroidx/navigation/NavController;
 
-    invoke-static {p1, v0}, Landroidx/core/app/AppOpsManagerCompat;->onNavDestinationSelected(Landroid/view/MenuItem;Landroidx/navigation/NavController;)Z
+    invoke-static {p1, v0}, Landroidx/navigation/ui/NavigationUI;->onNavDestinationSelected(Landroid/view/MenuItem;Landroidx/navigation/NavController;)Z
 
     move-result p1
 

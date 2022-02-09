@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler;
-.super Lcom/google/android/gms/internal/base/zas;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.super Lcom/google/android/gms/internal/base/zap;
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -18,7 +18,7 @@
         "<R::",
         "Lcom/google/android/gms/common/api/Result;",
         ">",
-        "Lcom/google/android/gms/internal/base/zas;"
+        "Lcom/google/android/gms/internal/base/zap;"
     }
 .end annotation
 
@@ -31,14 +31,14 @@
         .end annotation
     .end param
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/base/zas;-><init>(Landroid/os/Looper;)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/base/zap;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
+.method public final handleMessage(Landroid/os/Message;)V
     .locals 2
     .param p1    # Landroid/os/Message;
         .annotation build Landroidx/annotation/RecentlyNonNull;
@@ -57,17 +57,9 @@
 
     const/16 p1, 0x2d
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "Don\'t know how to handle message: "
 
-    invoke-direct {v1, p1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string p1, "Don\'t know how to handle message: "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1, v1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -115,7 +107,7 @@
     :catch_0
     move-exception v0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zaa(Lcom/google/android/gms/common/api/Result;)V
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->zal(Lcom/google/android/gms/common/api/Result;)V
 
     throw v0
 .end method

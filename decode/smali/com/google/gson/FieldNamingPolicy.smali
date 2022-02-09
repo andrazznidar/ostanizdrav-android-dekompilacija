@@ -22,20 +22,10 @@
 
 .field public static final enum IDENTITY:Lcom/google/gson/FieldNamingPolicy;
 
-.field public static final enum LOWER_CASE_WITH_DASHES:Lcom/google/gson/FieldNamingPolicy;
-
-.field public static final enum LOWER_CASE_WITH_DOTS:Lcom/google/gson/FieldNamingPolicy;
-
-.field public static final enum LOWER_CASE_WITH_UNDERSCORES:Lcom/google/gson/FieldNamingPolicy;
-
-.field public static final enum UPPER_CAMEL_CASE:Lcom/google/gson/FieldNamingPolicy;
-
-.field public static final enum UPPER_CAMEL_CASE_WITH_SPACES:Lcom/google/gson/FieldNamingPolicy;
-
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 13
 
     new-instance v0, Lcom/google/gson/FieldNamingPolicy$1;
 
@@ -47,83 +37,63 @@
 
     sput-object v0, Lcom/google/gson/FieldNamingPolicy;->IDENTITY:Lcom/google/gson/FieldNamingPolicy;
 
-    new-instance v0, Lcom/google/gson/FieldNamingPolicy$2;
+    new-instance v1, Lcom/google/gson/FieldNamingPolicy$2;
 
-    const-string v1, "UPPER_CAMEL_CASE"
+    const-string v3, "UPPER_CAMEL_CASE"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Lcom/google/gson/FieldNamingPolicy$2;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lcom/google/gson/FieldNamingPolicy$2;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/FieldNamingPolicy;->UPPER_CAMEL_CASE:Lcom/google/gson/FieldNamingPolicy;
+    new-instance v3, Lcom/google/gson/FieldNamingPolicy$3;
 
-    new-instance v0, Lcom/google/gson/FieldNamingPolicy$3;
+    const-string v5, "UPPER_CAMEL_CASE_WITH_SPACES"
 
-    const-string v1, "UPPER_CAMEL_CASE_WITH_SPACES"
+    const/4 v6, 0x2
 
-    const/4 v4, 0x2
+    invoke-direct {v3, v5, v6}, Lcom/google/gson/FieldNamingPolicy$3;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v1, v4}, Lcom/google/gson/FieldNamingPolicy$3;-><init>(Ljava/lang/String;I)V
+    new-instance v5, Lcom/google/gson/FieldNamingPolicy$4;
 
-    sput-object v0, Lcom/google/gson/FieldNamingPolicy;->UPPER_CAMEL_CASE_WITH_SPACES:Lcom/google/gson/FieldNamingPolicy;
+    const-string v7, "LOWER_CASE_WITH_UNDERSCORES"
 
-    new-instance v0, Lcom/google/gson/FieldNamingPolicy$4;
+    const/4 v8, 0x3
 
-    const-string v1, "LOWER_CASE_WITH_UNDERSCORES"
+    invoke-direct {v5, v7, v8}, Lcom/google/gson/FieldNamingPolicy$4;-><init>(Ljava/lang/String;I)V
 
-    const/4 v5, 0x3
+    new-instance v7, Lcom/google/gson/FieldNamingPolicy$5;
 
-    invoke-direct {v0, v1, v5}, Lcom/google/gson/FieldNamingPolicy$4;-><init>(Ljava/lang/String;I)V
+    const-string v9, "LOWER_CASE_WITH_DASHES"
 
-    sput-object v0, Lcom/google/gson/FieldNamingPolicy;->LOWER_CASE_WITH_UNDERSCORES:Lcom/google/gson/FieldNamingPolicy;
+    const/4 v10, 0x4
 
-    new-instance v0, Lcom/google/gson/FieldNamingPolicy$5;
+    invoke-direct {v7, v9, v10}, Lcom/google/gson/FieldNamingPolicy$5;-><init>(Ljava/lang/String;I)V
 
-    const-string v1, "LOWER_CASE_WITH_DASHES"
+    new-instance v9, Lcom/google/gson/FieldNamingPolicy$6;
 
-    const/4 v6, 0x4
+    const-string v11, "LOWER_CASE_WITH_DOTS"
 
-    invoke-direct {v0, v1, v6}, Lcom/google/gson/FieldNamingPolicy$5;-><init>(Ljava/lang/String;I)V
+    const/4 v12, 0x5
 
-    sput-object v0, Lcom/google/gson/FieldNamingPolicy;->LOWER_CASE_WITH_DASHES:Lcom/google/gson/FieldNamingPolicy;
+    invoke-direct {v9, v11, v12}, Lcom/google/gson/FieldNamingPolicy$6;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/gson/FieldNamingPolicy$6;
+    const/4 v11, 0x6
 
-    const-string v1, "LOWER_CASE_WITH_DOTS"
+    new-array v11, v11, [Lcom/google/gson/FieldNamingPolicy;
 
-    const/4 v7, 0x5
+    aput-object v0, v11, v2
 
-    invoke-direct {v0, v1, v7}, Lcom/google/gson/FieldNamingPolicy$6;-><init>(Ljava/lang/String;I)V
+    aput-object v1, v11, v4
 
-    sput-object v0, Lcom/google/gson/FieldNamingPolicy;->LOWER_CASE_WITH_DOTS:Lcom/google/gson/FieldNamingPolicy;
+    aput-object v3, v11, v6
 
-    const/4 v1, 0x6
+    aput-object v5, v11, v8
 
-    new-array v1, v1, [Lcom/google/gson/FieldNamingPolicy;
+    aput-object v7, v11, v10
 
-    sget-object v8, Lcom/google/gson/FieldNamingPolicy;->IDENTITY:Lcom/google/gson/FieldNamingPolicy;
+    aput-object v9, v11, v12
 
-    aput-object v8, v1, v2
-
-    sget-object v2, Lcom/google/gson/FieldNamingPolicy;->UPPER_CAMEL_CASE:Lcom/google/gson/FieldNamingPolicy;
-
-    aput-object v2, v1, v3
-
-    sget-object v2, Lcom/google/gson/FieldNamingPolicy;->UPPER_CAMEL_CASE_WITH_SPACES:Lcom/google/gson/FieldNamingPolicy;
-
-    aput-object v2, v1, v4
-
-    sget-object v2, Lcom/google/gson/FieldNamingPolicy;->LOWER_CASE_WITH_UNDERSCORES:Lcom/google/gson/FieldNamingPolicy;
-
-    aput-object v2, v1, v5
-
-    sget-object v2, Lcom/google/gson/FieldNamingPolicy;->LOWER_CASE_WITH_DASHES:Lcom/google/gson/FieldNamingPolicy;
-
-    aput-object v2, v1, v6
-
-    aput-object v0, v1, v7
-
-    sput-object v1, Lcom/google/gson/FieldNamingPolicy;->$VALUES:[Lcom/google/gson/FieldNamingPolicy;
+    sput-object v11, Lcom/google/gson/FieldNamingPolicy;->$VALUES:[Lcom/google/gson/FieldNamingPolicy;
 
     return-void
 .end method
@@ -237,7 +207,7 @@
 
     if-nez v3, :cond_2
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline28(C)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcoil/bitmap/SizeStrategy$$ExternalSyntheticOutline0;->m(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

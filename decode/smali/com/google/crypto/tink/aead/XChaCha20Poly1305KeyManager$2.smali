@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public createKey(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x1000
@@ -75,17 +75,17 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/aead/XChaCha20Poly1305KeyManager$2;->this$0:Lcom/google/crypto/tink/aead/XChaCha20Poly1305KeyManager;
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->copyOnWrite()V
 
-    iget-object v1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+    iget-object v0, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->instance:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
 
-    check-cast v1, Lcom/google/crypto/tink/proto/XChaCha20Poly1305Key;
+    check-cast v0, Lcom/google/crypto/tink/proto/XChaCha20Poly1305Key;
 
-    invoke-static {v1, v0}, Lcom/google/crypto/tink/proto/XChaCha20Poly1305Key;->access$100(Lcom/google/crypto/tink/proto/XChaCha20Poly1305Key;I)V
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/crypto/tink/proto/XChaCha20Poly1305Key;->access$100(Lcom/google/crypto/tink/proto/XChaCha20Poly1305Key;I)V
 
     const/16 v0, 0x20
 
@@ -93,7 +93,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    array-length v2, v0
+
+    invoke-static {v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     move-result-object v0
 
@@ -112,11 +116,6 @@
     check-cast p1, Lcom/google/crypto/tink/proto/XChaCha20Poly1305Key;
 
     return-object p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
@@ -147,7 +146,7 @@
     return-object p1
 .end method
 
-.method public validateKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
+.method public bridge synthetic validateKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {

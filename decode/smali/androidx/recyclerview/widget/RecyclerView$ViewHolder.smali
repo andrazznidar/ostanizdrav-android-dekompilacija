@@ -29,6 +29,17 @@
 # instance fields
 .field public final itemView:Landroid/view/View;
 
+.field public mBindingAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/recyclerview/widget/RecyclerView$Adapter<",
+            "+",
+            "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public mFlags:I
 
 .field public mInChangeScrap:Z
@@ -89,7 +100,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -240,7 +251,7 @@
     return-void
 .end method
 
-.method public final getAdapterPosition()I
+.method public final getAbsoluteAdapterPosition()I
     .locals 1
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOwnerRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
@@ -252,11 +263,63 @@
     return v0
 
     :cond_0
-    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapterPositionFor(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
+    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapterPositionInRecyclerView(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
 
     move-result v0
 
     return v0
+.end method
+
+.method public final getAdapterPosition()I
+    .locals 4
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mBindingAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    const/4 v1, -0x1
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOwnerRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v2, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mOwnerRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {v2, p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapterPositionInRecyclerView(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
+
+    move-result v2
+
+    if-ne v2, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v3, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mBindingAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
+
+    if-ne v3, v0, :cond_4
+
+    move v1, v2
+
+    :cond_4
+    :goto_0
+    return v1
 .end method
 
 .method public final getLayoutPosition()I
@@ -413,7 +476,7 @@
 .end method
 
 .method public final isRecyclable()Z
-    .locals 1
+    .locals 2
 
     iget v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
@@ -423,7 +486,9 @@
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-static {v0}, Landroidx/core/view/ViewCompat;->hasTransientState(Landroid/view/View;)Z
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0}, Landroid/view/View;->hasTransientState()Z
 
     move-result v0
 
@@ -708,9 +773,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mIsRecyclableCount:I
-
-    if-nez p1, :cond_3
+    if-nez v1, :cond_3
 
     iget p1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mFlags:I
 
@@ -772,9 +835,9 @@
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "{"
+    const-string/jumbo v2, "{"
 
-    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v2}, Landroidx/constraintlayout/core/PriorityGoalRow$GoalVariableAccessor$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -939,7 +1002,7 @@
 
     const-string v0, " not recyclable("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -997,7 +1060,7 @@
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_e
-    const-string v0, "}"
+    const-string/jumbo v0, "}"
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

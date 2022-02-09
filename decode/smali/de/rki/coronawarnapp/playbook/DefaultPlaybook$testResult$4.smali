@@ -33,7 +33,7 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook$testResult$4"
     f = "DefaultPlaybook.kt"
     l = {
-        0x4c
+        0x4d
     }
     m = "invokeSuspend"
 .end annotation
@@ -48,6 +48,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook$testResult$4;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$testResult$4;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
@@ -60,14 +70,10 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     check-cast p1, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$testResult$4;
 
@@ -97,7 +103,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -111,7 +117,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$testResult$4;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
@@ -119,7 +125,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$testResult$4;->label:I
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/submission/server/SubmissionServer;->submitKeysToServerFake(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/submission/server/SubmissionServer;->submitFakePayload(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

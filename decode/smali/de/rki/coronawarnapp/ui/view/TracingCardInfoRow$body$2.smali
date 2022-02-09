@@ -41,7 +41,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow$body$2;->this$0:Lde/rki/coronawarnapp/ui/view/TracingCardInfoRow;
 
-    const v1, 0x7f0900bd
+    const v1, 0x7f0a0129
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

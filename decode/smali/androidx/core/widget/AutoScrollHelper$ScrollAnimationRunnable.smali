@@ -24,6 +24,14 @@
 # direct methods
 .method public constructor <init>(Landroidx/core/widget/AutoScrollHelper;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1010
+        }
+        names = {
+            "this$0"
+        }
+    .end annotation
 
     iput-object p1, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
 
@@ -35,232 +43,218 @@
 
 # virtual methods
 .method public run()V
-    .locals 17
+    .locals 15
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
 
-    iget-object v1, v0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+    iget-boolean v1, v0, Landroidx/core/widget/AutoScrollHelper;->mAnimating:Z
 
-    iget-boolean v2, v1, Landroidx/core/widget/AutoScrollHelper;->mAnimating:Z
-
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
     return-void
 
     :cond_0
-    iget-boolean v2, v1, Landroidx/core/widget/AutoScrollHelper;->mNeedsReset:Z
+    iget-boolean v1, v0, Landroidx/core/widget/AutoScrollHelper;->mNeedsReset:Z
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    if-eqz v2, :cond_2
-
-    iput-boolean v4, v1, Landroidx/core/widget/AutoScrollHelper;->mNeedsReset:Z
-
-    iget-object v1, v1, Landroidx/core/widget/AutoScrollHelper;->mScroller:Landroidx/core/widget/AutoScrollHelper$ClampedScroller;
+    const/4 v2, 0x0
 
     if-eqz v1, :cond_1
 
+    iput-boolean v2, v0, Landroidx/core/widget/AutoScrollHelper;->mNeedsReset:Z
+
+    iget-object v0, v0, Landroidx/core/widget/AutoScrollHelper;->mScroller:Landroidx/core/widget/AutoScrollHelper$ClampedScroller;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
-    move-result-wide v5
+    move-result-wide v3
 
-    iput-wide v5, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStartTime:J
+    iput-wide v3, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStartTime:J
 
-    const-wide/16 v7, -0x1
+    const-wide/16 v5, -0x1
 
-    iput-wide v7, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
+    iput-wide v5, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
 
-    iput-wide v5, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
+    iput-wide v3, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    iput v2, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopValue:F
+    iput v1, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopValue:F
 
-    iput v4, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaX:I
+    iput v2, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaX:I
 
-    iput v4, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaY:I
+    iput v2, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaY:I
+
+    :cond_1
+    iget-object v0, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+
+    iget-object v0, v0, Landroidx/core/widget/AutoScrollHelper;->mScroller:Landroidx/core/widget/AutoScrollHelper$ClampedScroller;
+
+    iget-wide v3, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v1, v3, v5
+
+    if-lez v1, :cond_2
+
+    invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
+
+    move-result-wide v3
+
+    iget-wide v7, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
+
+    iget v1, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mEffectiveRampDown:I
+
+    int-to-long v9, v1
+
+    add-long/2addr v7, v9
+
+    cmp-long v1, v3, v7
+
+    if-lez v1, :cond_2
+
+    const/4 v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    throw v3
-
     :cond_2
+    move v1, v2
+
     :goto_0
-    iget-object v1, v0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+    if-nez v1, :cond_6
 
-    iget-object v1, v1, Landroidx/core/widget/AutoScrollHelper;->mScroller:Landroidx/core/widget/AutoScrollHelper$ClampedScroller;
+    iget-object v1, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
 
-    iget-wide v5, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
+    invoke-virtual {v1}, Landroidx/core/widget/AutoScrollHelper;->shouldAnimate()Z
 
-    const-wide/16 v7, 0x0
+    move-result v1
 
-    cmp-long v2, v5, v7
-
-    if-lez v2, :cond_3
-
-    invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
-
-    move-result-wide v5
-
-    iget-wide v9, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mStopTime:J
-
-    iget v2, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mEffectiveRampDown:I
-
-    int-to-long v11, v2
-
-    add-long/2addr v9, v11
-
-    cmp-long v2, v5, v9
-
-    if-lez v2, :cond_3
-
-    const/4 v2, 0x1
+    if-nez v1, :cond_3
 
     goto :goto_1
 
     :cond_3
-    move v2, v4
+    iget-object v1, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
 
-    :goto_1
-    if-nez v2, :cond_8
+    iget-boolean v3, v1, Landroidx/core/widget/AutoScrollHelper;->mNeedsCancel:Z
 
-    iget-object v2, v0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+    if-eqz v3, :cond_4
 
-    invoke-virtual {v2}, Landroidx/core/widget/AutoScrollHelper;->shouldAnimate()Z
+    iput-boolean v2, v1, Landroidx/core/widget/AutoScrollHelper;->mNeedsCancel:Z
 
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    iget-object v2, v0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
-
-    iget-boolean v5, v2, Landroidx/core/widget/AutoScrollHelper;->mNeedsCancel:Z
-
-    if-eqz v5, :cond_6
-
-    iput-boolean v4, v2, Landroidx/core/widget/AutoScrollHelper;->mNeedsCancel:Z
-
-    if-eqz v2, :cond_5
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v11
+    move-result-wide v9
 
-    const/4 v13, 0x3
+    const/4 v11, 0x3
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
 
     const/4 v14, 0x0
 
-    const/4 v15, 0x0
+    move-wide v7, v9
 
-    const/16 v16, 0x0
+    invoke-static/range {v7 .. v14}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
-    move-wide v9, v11
-
-    invoke-static/range {v9 .. v16}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
-
-    move-result-object v3
-
-    iget-object v2, v2, Landroidx/core/widget/AutoScrollHelper;->mTarget:Landroid/view/View;
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
-
-    goto :goto_2
-
-    :cond_5
-    throw v3
-
-    :cond_6
-    :goto_2
-    iget-wide v2, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
-
-    cmp-long v2, v2, v7
-
-    if-eqz v2, :cond_7
-
-    invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->getValueAt(J)F
-
-    move-result v4
-
-    const/high16 v5, -0x3f800000    # -4.0f
-
-    mul-float/2addr v5, v4
-
-    mul-float/2addr v5, v4
-
-    const/high16 v6, 0x40800000    # 4.0f
-
-    mul-float/2addr v4, v6
-
-    add-float/2addr v4, v5
-
-    iget-wide v5, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
-
-    sub-long v5, v2, v5
-
-    iput-wide v2, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
-
-    long-to-float v2, v5
-
-    mul-float/2addr v2, v4
-
-    iget v3, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mTargetVelocityX:F
-
-    mul-float/2addr v3, v2
-
-    float-to-int v3, v3
-
-    iput v3, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaX:I
-
-    iget v3, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mTargetVelocityY:F
-
-    mul-float/2addr v2, v3
-
-    float-to-int v2, v2
-
-    iput v2, v1, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaY:I
-
-    iget-object v1, v0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
-
-    check-cast v1, Landroidx/core/widget/ListViewAutoScrollHelper;
-
-    iget-object v1, v1, Landroidx/core/widget/ListViewAutoScrollHelper;->mTarget:Landroid/widget/ListView;
-
-    invoke-virtual {v1, v2}, Landroid/widget/ListView;->scrollListBy(I)V
-
-    iget-object v1, v0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+    move-result-object v2
 
     iget-object v1, v1, Landroidx/core/widget/AutoScrollHelper;->mTarget:Landroid/view/View;
 
-    invoke-static {v1, v0}, Landroidx/core/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    invoke-virtual {v2}, Landroid/view/MotionEvent;->recycle()V
+
+    :cond_4
+    iget-wide v1, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
+
+    cmp-long v1, v1, v5
+
+    if-eqz v1, :cond_5
+
+    invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->getValueAt(J)F
+
+    move-result v3
+
+    const/high16 v4, -0x3f800000    # -4.0f
+
+    mul-float/2addr v4, v3
+
+    mul-float/2addr v4, v3
+
+    const/high16 v5, 0x40800000    # 4.0f
+
+    mul-float/2addr v3, v5
+
+    add-float/2addr v3, v4
+
+    iget-wide v4, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
+
+    sub-long v4, v1, v4
+
+    iput-wide v1, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaTime:J
+
+    long-to-float v1, v4
+
+    mul-float/2addr v1, v3
+
+    iget v2, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mTargetVelocityX:F
+
+    mul-float/2addr v2, v1
+
+    float-to-int v2, v2
+
+    iput v2, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaX:I
+
+    iget v2, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mTargetVelocityY:F
+
+    mul-float/2addr v1, v2
+
+    float-to-int v1, v1
+
+    iput v1, v0, Landroidx/core/widget/AutoScrollHelper$ClampedScroller;->mDeltaY:I
+
+    iget-object v0, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+
+    check-cast v0, Landroidx/core/widget/ListViewAutoScrollHelper;
+
+    iget-object v0, v0, Landroidx/core/widget/ListViewAutoScrollHelper;->mTarget:Landroid/widget/ListView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ListView;->scrollListBy(I)V
+
+    iget-object v0, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+
+    iget-object v0, v0, Landroidx/core/widget/AutoScrollHelper;->mTarget:Landroid/view/View;
+
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     return-void
 
-    :cond_7
-    new-instance v1, Ljava/lang/RuntimeException;
+    :cond_5
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v2, "Cannot compute scroll delta before calling start()"
+    const-string v1, "Cannot compute scroll delta before calling start()"
 
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
-    :cond_8
-    :goto_3
-    iget-object v1, v0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
+    :cond_6
+    :goto_1
+    iget-object v0, p0, Landroidx/core/widget/AutoScrollHelper$ScrollAnimationRunnable;->this$0:Landroidx/core/widget/AutoScrollHelper;
 
-    iput-boolean v4, v1, Landroidx/core/widget/AutoScrollHelper;->mAnimating:Z
+    iput-boolean v2, v0, Landroidx/core/widget/AutoScrollHelper;->mAnimating:Z
 
     return-void
 .end method

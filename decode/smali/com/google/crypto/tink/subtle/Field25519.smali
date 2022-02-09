@@ -891,7 +891,7 @@
 
     move-wide v11, v13
 
-    invoke-static/range {v5 .. v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v5 .. v12}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v2
 
@@ -1189,7 +1189,7 @@
 
     aget-wide v7, p2, v4
 
-    invoke-static/range {v5 .. v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v5 .. v12}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v1
 
@@ -1423,7 +1423,7 @@
 
     aget-wide v7, p2, v18
 
-    invoke-static/range {v5 .. v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v5 .. v12}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v1
 
@@ -2037,7 +2037,7 @@
 
     move-wide v10, v12
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v3
 
@@ -2055,7 +2055,7 @@
 
     aget-wide v6, p1, v3
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v4
 
@@ -2113,7 +2113,7 @@
 
     aget-wide v6, p1, v18
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v4
 
@@ -2149,7 +2149,7 @@
 
     aget-wide v6, p1, v18
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v4
 
@@ -2183,7 +2183,7 @@
 
     aget-wide v6, p1, v20
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v4
 
@@ -2273,7 +2273,7 @@
 
     move-wide v10, v12
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v4
 
@@ -2353,7 +2353,7 @@
 
     move-wide v10, v12
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v4
 
@@ -2419,7 +2419,7 @@
 
     move-wide v10, v12
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v2
 
@@ -2447,7 +2447,7 @@
 
     aget-wide v6, p1, v1
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v2
 
@@ -2465,7 +2465,7 @@
 
     aget-wide v6, p1, v1
 
-    invoke-static/range {v4 .. v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline2(JJJJ)J
+    invoke-static/range {v4 .. v11}, Lcom/google/crypto/tink/subtle/Field25519$$ExternalSyntheticOutline0;->m(JJJJ)J
 
     move-result-wide v2
 

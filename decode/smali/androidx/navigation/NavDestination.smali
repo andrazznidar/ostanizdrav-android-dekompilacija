@@ -55,7 +55,7 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Ljava/util/HashMap;
@@ -140,7 +140,7 @@
 
 # virtual methods
 .method public addInDefaultArgs(Landroid/os/Bundle;)Landroid/os/Bundle;
-    .locals 7
+    .locals 6
 
     if-nez p1, :cond_1
 
@@ -219,76 +219,76 @@
 
     invoke-virtual {v0, p1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    iget-object v1, p0, Landroidx/navigation/NavDestination;->mArguments:Ljava/util/HashMap;
+    iget-object p1, p0, Landroidx/navigation/NavDestination;->mArguments:Ljava/util/HashMap;
+
+    if-eqz p1, :cond_6
+
+    invoke-virtual {p1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
 
     if-eqz v1, :cond_6
 
-    invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    check-cast v1, Ljava/util/Map$Entry;
 
-    move-result-object v1
-
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Ljava/util/Map$Entry;
+    check-cast v2, Landroidx/navigation/NavArgument;
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Landroidx/navigation/NavArgument;
+    check-cast v3, Ljava/lang/String;
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    iget-boolean v4, v2, Landroidx/navigation/NavArgument;->mIsNullable:Z
+
+    const/4 v5, 0x0
+
+    if-nez v4, :cond_4
+
+    invoke-virtual {v0, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v0, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Ljava/lang/String;
-
-    iget-boolean v5, v3, Landroidx/navigation/NavArgument;->mIsNullable:Z
-
-    const/4 v6, 0x0
-
-    if-nez v5, :cond_4
-
-    invoke-virtual {p1, v4}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_4
-
-    invoke-virtual {p1, v4}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    if-nez v5, :cond_4
+    if-nez v4, :cond_4
 
     goto :goto_2
 
     :cond_4
     :try_start_0
-    iget-object v3, v3, Landroidx/navigation/NavArgument;->mType:Landroidx/navigation/NavType;
+    iget-object v2, v2, Landroidx/navigation/NavArgument;->mType:Landroidx/navigation/NavType;
 
-    invoke-virtual {v3, p1, v4}, Landroidx/navigation/NavType;->get(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2, v0, v3}, Landroidx/navigation/NavType;->get(Landroid/os/Bundle;Ljava/lang/String;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
     :catch_0
     :goto_2
-    if-eqz v6, :cond_5
+    if-eqz v5, :cond_5
 
     goto :goto_1
 
@@ -297,23 +297,23 @@
 
     const-string v0, "Wrong argument type for \'"
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "\' in argument bundle. "
+    const-string v2, "\' in argument bundle. "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -454,7 +454,7 @@
     return-object v1
 .end method
 
-.method public matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+.method public matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
     .locals 18
 
     move-object/from16 v6, p0
@@ -489,7 +489,9 @@
 
     check-cast v0, Landroidx/navigation/NavDeepLink;
 
-    iget-object v1, v7, Landroidx/navigation/NavDeepLinkRequest;->mUri:Landroid/net/Uri;
+    iget-object v1, v7, Lorg/slf4j/event/EventRecodingLogger;->logger:Ljava/lang/Object;
+
+    check-cast v1, Landroid/net/Uri;
 
     if-eqz v1, :cond_c
 
@@ -525,10 +527,7 @@
 
     if-nez v5, :cond_2
 
-    :goto_2
-    move-object v5, v8
-
-    goto/16 :goto_5
+    goto :goto_2
 
     :cond_2
     new-instance v5, Landroid/os/Bundle;
@@ -636,7 +635,10 @@
 
     if-nez v13, :cond_7
 
-    goto :goto_2
+    :goto_2
+    move-object v5, v8
+
+    goto :goto_5
 
     :cond_6
     move-object v11, v8
@@ -737,7 +739,9 @@
     const/4 v2, 0x0
 
     :goto_6
-    iget-object v1, v7, Landroidx/navigation/NavDeepLinkRequest;->mAction:Ljava/lang/String;
+    iget-object v1, v7, Lorg/slf4j/event/EventRecodingLogger;->name:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     if-eqz v1, :cond_d
 
@@ -759,7 +763,9 @@
     const/4 v4, 0x0
 
     :goto_7
-    iget-object v1, v7, Landroidx/navigation/NavDeepLinkRequest;->mMimeType:Ljava/lang/String;
+    iget-object v1, v7, Lorg/slf4j/event/EventRecodingLogger;->eventQueue:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
 
     const/4 v3, -0x1
 
@@ -851,7 +857,7 @@
 .end method
 
 .method public onInflate(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+    .locals 2
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -863,7 +869,7 @@
 
     move-result-object p2
 
-    const/4 v0, 0x1
+    sget v0, Landroidx/navigation/common/R$styleable;->Navigator_android_id:I
 
     const/4 v1, 0x0
 
@@ -873,9 +879,9 @@
 
     iput v0, p0, Landroidx/navigation/NavDestination;->mId:I
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    iput-object v2, p0, Landroidx/navigation/NavDestination;->mIdName:Ljava/lang/String;
+    iput-object v1, p0, Landroidx/navigation/NavDestination;->mIdName:Ljava/lang/String;
 
     invoke-static {p1, v0}, Landroidx/navigation/NavDestination;->getDisplayName(Landroid/content/Context;I)Ljava/lang/String;
 
@@ -883,7 +889,9 @@
 
     iput-object p1, p0, Landroidx/navigation/NavDestination;->mIdName:Ljava/lang/String;
 
-    invoke-virtual {p2, v1}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
+    sget p1, Landroidx/navigation/common/R$styleable;->Navigator_android_label:I
+
+    invoke-virtual {p2, p1}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object p1
 
@@ -892,14 +900,6 @@
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
-.end method
-
-.method public supportsActions()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

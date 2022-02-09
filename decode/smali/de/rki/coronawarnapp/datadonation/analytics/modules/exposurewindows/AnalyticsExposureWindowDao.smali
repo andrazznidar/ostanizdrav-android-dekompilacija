@@ -3,6 +3,14 @@
 .source "AnalyticsExposureWindowDatabase.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDao$DefaultImpls;
+    }
+.end annotation
+
+
 # virtual methods
 .method public abstract deleteExposureWindows(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/safetynet/zza;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
 
 
 # static fields
@@ -15,7 +16,7 @@
 
 
 # instance fields
-.field public final zze:Ljava/lang/String;
+.field public final zza:Ljava/lang/String;
 
 
 # direct methods
@@ -36,7 +37,7 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/safetynet/zza;->zze:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/safetynet/zza;->zza:Ljava/lang/String;
 
     return-void
 .end method
@@ -46,19 +47,21 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
+    const/16 p2, 0x4f45
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;I)I
 
     move-result p2
 
-    iget-object v0, p0, Lcom/google/android/gms/safetynet/zza;->zze:Ljava/lang/String;
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/safetynet/zza;->zza:Ljava/lang/String;
 
     const/4 v2, 0x0
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v0, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzc(Landroid/os/Parcel;I)V
 
     return-void
 .end method

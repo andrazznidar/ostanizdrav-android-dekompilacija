@@ -31,15 +31,3 @@
 
     return-void
 .end method
-
-
-# virtual methods
-.method public synthetic lambda$onRotationChanged$0$CameraPreview$4()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/journeyapps/barcodescanner/CameraPreview$4;->this$0:Lcom/journeyapps/barcodescanner/CameraPreview;
-
-    invoke-static {v0}, Lcom/journeyapps/barcodescanner/CameraPreview;->access$600(Lcom/journeyapps/barcodescanner/CameraPreview;)V
-
-    return-void
-.end method

@@ -25,9 +25,8 @@
     c = "de.rki.coronawarnapp.ui.settings.SettingsResetViewModel$deleteAllAppContent$1"
     f = "SettingsResetViewModel.kt"
     l = {
-        0x26,
-        0x29,
-        0x35
+        0x25,
+        0x2a
     }
     m = "invokeSuspend"
 .end annotation
@@ -42,6 +41,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
@@ -68,10 +77,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
@@ -81,14 +86,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;
 
@@ -112,23 +115,19 @@
 
     iget v1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->label:I
 
-    const/4 v2, 0x3
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
-
-    if-eqz v1, :cond_3
-
-    if-eq v1, v4, :cond_2
+    if-eqz v1, :cond_2
 
     if-eq v1, v3, :cond_1
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_3
+    goto :goto_1
 
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -141,64 +140,31 @@
 
     :cond_1
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    :cond_2
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
-    sget-object p1, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
-    iput v4, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->label:I
-
-    invoke-static {p0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncIsEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_4
-
-    return-object v0
-
-    :cond_4
-    :goto_0
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_6
-
-    sget-object p1, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->INSTANCE:Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
     iput v3, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->label:I
 
-    invoke-static {p0}, Lde/rki/coronawarnapp/nearby/InternalExposureNotificationClient;->asyncStop(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lde/rki/coronawarnapp/nearby/modules/tracing/TracingStatusKt;->disableTracingIfEnabled(Lde/rki/coronawarnapp/nearby/modules/tracing/TracingStatus;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
-
-    if-ne p1, v0, :cond_5
-
-    return-object v0
-
-    :cond_5
-    :goto_1
-    sget-object p1, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->INSTANCE:Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;
-
-    invoke-static {}, Lde/rki/coronawarnapp/worker/BackgroundWorkScheduler;->stopWorkScheduler()V
     :try_end_1
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_2
+    if-ne p1, v0, :cond_3
+
+    return-object v0
 
     :catch_0
     move-exception p1
@@ -209,44 +175,10 @@
 
     const/4 v4, 0x0
 
-    invoke-static {p1, v1, v3, v4}, Lcom/google/zxing/client/android/R$id;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v1, v3, v4}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_6
-    :goto_2
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
-
-    const/16 v1, 0x64
-
-    invoke-virtual {p1, v1}, Lde/rki/coronawarnapp/notification/NotificationHelper;->cancelFutureNotifications(I)V
-
-    const/4 p1, 0x0
-
-    new-array v1, p1, [Ljava/lang/Object;
-
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v4, "Future positive test result notifications have been canceled"
-
-    invoke-virtual {v3, v4, v1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object v1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    const/high16 v3, -0x80000000
-
-    invoke-virtual {v1, v3}, Lde/rki/coronawarnapp/storage/LocalData;->setNumberOfRemainingSharePositiveTestResultReminders(I)V
-
-    new-array p1, p1, [Ljava/lang/Object;
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v3, "Positive test result notification counter has been reset"
-
-    invoke-virtual {v1, v3, p1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
+    :cond_3
+    :goto_0
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->dataReset:Lde/rki/coronawarnapp/util/DataReset;
@@ -257,12 +189,12 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_7
+    if-ne p1, v0, :cond_4
 
     return-object v0
 
-    :cond_7
-    :goto_3
+    :cond_4
+    :goto_1
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shortcutsHelper:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
@@ -271,7 +203,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;->this$0:Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->clickEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->clickEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     sget-object v0, Lde/rki/coronawarnapp/ui/settings/SettingsEvents$GoToOnboarding;->INSTANCE:Lde/rki/coronawarnapp/ui/settings/SettingsEvents$GoToOnboarding;
 

@@ -263,12 +263,9 @@
     iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
 
     aput-object v4, v3, v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast p1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {p1, v0, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
 
     iget-object p1, p0, Landroidx/work/impl/WorkerWrapper;->mResult:Landroidx/work/ListenableWorker$Result;
@@ -280,12 +277,9 @@
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
     iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_2
     invoke-virtual {v0, v3, p1}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setOutput(Ljava/lang/String;Landroidx/work/Data;)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -295,21 +289,15 @@
     iget-object p1, p0, Landroidx/work/impl/WorkerWrapper;->mDependencyDao:Landroidx/work/impl/model/DependencyDao;
 
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     check-cast p1, Landroidx/work/impl/model/DependencyDao_Impl;
 
-    :try_start_3
     invoke-virtual {p1, v0}, Landroidx/work/impl/model/DependencyDao_Impl;->getDependentWorkIds(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     check-cast p1, Ljava/util/ArrayList;
 
-    :try_start_4
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -329,12 +317,9 @@
     check-cast v0, Ljava/lang/String;
 
     iget-object v5, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     check-cast v5, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_5
     invoke-virtual {v5, v0}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getState(Ljava/lang/String;)Landroidx/work/WorkInfo$State;
 
     move-result-object v5
@@ -344,12 +329,9 @@
     if-ne v5, v6, :cond_1
 
     iget-object v5, p0, Landroidx/work/impl/WorkerWrapper;->mDependencyDao:Landroidx/work/impl/model/DependencyDao;
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     check-cast v5, Landroidx/work/impl/model/DependencyDao_Impl;
 
-    :try_start_6
     invoke-virtual {v5, v0}, Landroidx/work/impl/model/DependencyDao_Impl;->hasCompletedAllPrerequisites(Ljava/lang/String;)Z
 
     move-result v5
@@ -383,21 +365,15 @@
     new-array v7, v1, [Ljava/lang/String;
 
     aput-object v0, v7, v2
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     check-cast v5, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_7
     invoke-virtual {v5, v6, v7}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
 
     iget-object v5, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     check-cast v5, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_8
     invoke-virtual {v5, v0, v3, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setPeriodStartTime(Ljava/lang/String;J)V
 
     goto :goto_0
@@ -406,8 +382,8 @@
     iget-object p1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object p1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -593,12 +569,9 @@
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v0, v1}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getState(Ljava/lang/String;)Landroidx/work/WorkInfo$State;
 
     move-result-object v0
@@ -610,12 +583,9 @@
     move-result-object v1
 
     iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     check-cast v1, Landroidx/work/impl/model/WorkProgressDao_Impl;
 
-    :try_start_2
     invoke-virtual {v1, v2}, Landroidx/work/impl/model/WorkProgressDao_Impl;->delete(Ljava/lang/String;)V
 
     if-nez v0, :cond_0
@@ -651,8 +621,8 @@
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -732,12 +702,9 @@
     iget-object v5, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
 
     aput-object v5, v3, v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v1, v2, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
@@ -747,32 +714,26 @@
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_2
     invoke-virtual {v1, v2, v3, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setPeriodStartTime(Ljava/lang/String;J)V
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
     iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     const-wide/16 v3, -0x1
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_3
     invoke-virtual {v1, v2, v3, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->markWorkSpecScheduled(Ljava/lang/String;J)I
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -811,12 +772,9 @@
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v1, v2, v3, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setPeriodStartTime(Ljava/lang/String;J)V
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
@@ -830,43 +788,34 @@
     iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
 
     aput-object v4, v3, v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_2
     invoke-virtual {v1, v2, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
     iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_3
     invoke-virtual {v1, v2}, Landroidx/work/impl/model/WorkSpecDao_Impl;->resetWorkSpecRunAttemptCount(Ljava/lang/String;)I
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
     iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     const-wide/16 v3, -0x1
 
     check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_4
     invoke-virtual {v1, v2, v3, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->markWorkSpecScheduled(Ljava/lang/String;J)I
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -909,21 +858,15 @@
     invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->workSpecDao()Landroidx/work/impl/model/WorkSpecDao;
 
     move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v0}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getAllUnfinishedWork()Ljava/util/List;
 
     move-result-object v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     check-cast v0, Ljava/util/ArrayList;
 
-    :try_start_2
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -962,25 +905,19 @@
     iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
 
     aput-object v4, v1, v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_3
     invoke-virtual {v0, v3, v1}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
 
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     const-wide/16 v2, -0x1
 
     check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_4
     invoke-virtual {v0, v1, v2, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->markWorkSpecScheduled(Ljava/lang/String;J)I
 
     :cond_2
@@ -991,8 +928,6 @@
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
 
     if-eqz v0, :cond_3
-
-    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
 
     invoke-virtual {v0}, Landroidx/work/ListenableWorker;->isRunInForeground()Z
 
@@ -1009,10 +944,10 @@
     iget-object v2, v0, Landroidx/work/impl/Processor;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    :try_start_5
+    :try_start_1
     iget-object v3, v0, Landroidx/work/impl/Processor;->mForegroundWorkMap:Ljava/util/Map;
 
     invoke-interface {v3, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1027,10 +962,10 @@
     move-exception p1
 
     monitor-exit v2
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :try_start_6
+    :try_start_2
     throw p1
 
     :cond_3
@@ -1038,8 +973,8 @@
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
@@ -1146,165 +1081,152 @@
 .end method
 
 .method public run()V
-    .locals 18
+    .locals 15
 
-    move-object/from16 v1, p0
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkTagDao:Landroidx/work/impl/model/WorkTagDao;
 
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkTagDao:Landroidx/work/impl/model/WorkTagDao;
-
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
 
     check-cast v0, Landroidx/work/impl/model/WorkTagDao_Impl;
 
-    invoke-virtual {v0, v2}, Landroidx/work/impl/model/WorkTagDao_Impl;->getTagsForWorkSpecId(Ljava/lang/String;)Ljava/util/List;
+    invoke-virtual {v0, v1}, Landroidx/work/impl/model/WorkTagDao_Impl;->getTagsForWorkSpecId(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    iput-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mTags:Ljava/util/List;
+    iput-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mTags:Ljava/util/List;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v3, "Work [ id="
+    const-string v2, "Work [ id="
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v3, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, ", tags={ "
+    const-string v2, ", tags={ "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    move v4, v3
+    move v3, v2
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v4
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    check-cast v5, Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
-    move v4, v6
+    move v3, v5
 
     goto :goto_1
 
     :cond_0
-    const-string v6, ", "
+    const-string v5, ", "
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_1
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
     :cond_1
     const-string v0, " } ]"
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDescription:Ljava/lang/String;
+    iput-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDescription:Ljava/lang/String;
 
     sget-object v0, Landroidx/work/WorkInfo$State;->ENQUEUED:Landroidx/work/WorkInfo$State;
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/work/impl/WorkerWrapper;->tryCheckForInterruptionAndResolve()Z
+    invoke-virtual {p0}, Landroidx/work/impl/WorkerWrapper;->tryCheckForInterruptionAndResolve()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
     :cond_2
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_0
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
 
-    check-cast v2, Landroidx/work/impl/model/WorkSpecDao_Impl;
+    check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
-    invoke-virtual {v2, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getWorkSpec(Ljava/lang/String;)Landroidx/work/impl/model/WorkSpec;
+    invoke-virtual {v1, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getWorkSpec(Ljava/lang/String;)Landroidx/work/impl/model/WorkSpec;
+
+    move-result-object v1
+
+    iput-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    if-nez v1, :cond_3
+
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v0
+
+    sget-object v1, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
+
+    const-string v3, "Didn\'t find WorkSpec for id %s"
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+
+    aput-object v4, v2, v5
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    new-array v3, v5, [Ljava/lang/Throwable;
 
-    if-nez v2, :cond_3
+    invoke-virtual {v0, v1, v2, v3}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+    invoke-virtual {p0, v5}, Landroidx/work/impl/WorkerWrapper;->resolve(Z)V
 
-    move-result-object v0
-
-    sget-object v2, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
-
-    const-string v4, "Didn\'t find WorkSpec for id %s"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    iget-object v5, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-
-    aput-object v5, v3, v6
-
-    invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v6, [Ljava/lang/Throwable;
-
-    invoke-virtual {v0, v2, v3, v4}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-
-    invoke-virtual {v1, v6}, Landroidx/work/impl/WorkerWrapper;->resolve(Z)V
-
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    :goto_2
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
-
-    goto/16 :goto_a
+    goto/16 :goto_4
 
     :cond_3
-    :try_start_2
-    iget-object v4, v2, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+    iget-object v3, v1, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
-    if-eq v4, v0, :cond_4
+    if-eq v3, v0, :cond_4
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/work/impl/WorkerWrapper;->resolveIncorrectStatus()V
+    invoke-virtual {p0}, Landroidx/work/impl/WorkerWrapper;->resolveIncorrectStatus()V
 
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
 
@@ -1312,397 +1234,434 @@
 
     move-result-object v0
 
-    sget-object v2, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
+    sget-object v1, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
 
-    const-string v4, "%s is not in ENQUEUED state. Nothing more to do."
+    const-string v3, "%s is not in ENQUEUED state. Nothing more to do."
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    iget-object v5, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
-    iget-object v5, v5, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
+    iget-object v4, v4, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
 
-    aput-object v5, v3, v6
+    aput-object v4, v2, v5
 
-    invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    new-array v4, v6, [Ljava/lang/Throwable;
+    new-array v3, v5, [Ljava/lang/Throwable;
 
-    invoke-virtual {v0, v2, v3, v4}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1, v2, v3}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+
+    goto :goto_4
+
+    :cond_4
+    invoke-virtual {v1}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-object v3, v1, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+
+    if-ne v3, v0, :cond_5
+
+    iget v1, v1, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
+
+    if-lez v1, :cond_5
+
+    move v1, v2
 
     goto :goto_2
 
-    :cond_4
-    invoke-virtual {v2}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
-
-    move-result v2
-
-    if-nez v2, :cond_6
-
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget-object v4, v2, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
-
-    if-ne v4, v0, :cond_5
-
-    iget v2, v2, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
-
-    if-lez v2, :cond_5
-
-    move v2, v3
-
-    goto :goto_3
-
     :cond_5
-    move v2, v6
+    move v1, v5
 
-    :goto_3
-    if-eqz v2, :cond_8
+    :goto_2
+    if-eqz v1, :cond_8
 
     :cond_6
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
-    iget-wide v7, v2, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+    iget-wide v6, v1, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
 
-    const-wide/16 v9, 0x0
+    const-wide/16 v8, 0x0
 
-    cmp-long v2, v7, v9
+    cmp-long v6, v6, v8
 
-    if-nez v2, :cond_7
+    if-nez v6, :cond_7
 
-    move v2, v3
+    move v6, v2
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
-    move v2, v6
+    move v6, v5
 
-    :goto_4
-    if-nez v2, :cond_8
+    :goto_3
+    if-nez v6, :cond_8
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    invoke-virtual {v1}, Landroidx/work/impl/model/WorkSpec;->calculateNextRunTime()J
 
-    invoke-virtual {v2}, Landroidx/work/impl/model/WorkSpec;->calculateNextRunTime()J
+    move-result-wide v6
 
-    move-result-wide v7
+    cmp-long v1, v3, v6
 
-    cmp-long v2, v4, v7
-
-    if-gez v2, :cond_8
+    if-gez v1, :cond_8
 
     invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
 
     move-result-object v0
 
-    sget-object v2, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
+    sget-object v1, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
 
-    const-string v4, "Delaying execution for %s because it is being executed before schedule."
+    const-string v3, "Delaying execution for %s because it is being executed before schedule."
 
-    new-array v5, v3, [Ljava/lang/Object;
+    new-array v4, v2, [Ljava/lang/Object;
 
-    iget-object v7, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    iget-object v6, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
-    iget-object v7, v7, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
+    iget-object v6, v6, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
 
-    aput-object v7, v5, v6
+    aput-object v6, v4, v5
 
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-array v5, v6, [Ljava/lang/Throwable;
-
-    invoke-virtual {v0, v2, v4, v5}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-
-    invoke-virtual {v1, v3}, Landroidx/work/impl/WorkerWrapper;->resolve(Z)V
-
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-
-    goto/16 :goto_2
-
-    :cond_8
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->endTransaction()V
-
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    invoke-virtual {v2}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9
-
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget-object v2, v2, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
-
-    :goto_5
-    move-object v9, v2
-
-    goto/16 :goto_8
-
-    :cond_9
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mConfiguration:Landroidx/work/Configuration;
-
-    iget-object v2, v2, Landroidx/work/Configuration;->mInputMergerFactory:Landroidx/work/InputMergerFactory;
-
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget-object v4, v4, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    if-eqz v2, :cond_14
-
-    invoke-static {v4}, Landroidx/work/InputMerger;->fromClassName(Ljava/lang/String;)Landroidx/work/InputMerger;
-
-    move-result-object v2
-
-    if-nez v2, :cond_a
-
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
-
-    move-result-object v0
-
-    sget-object v2, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget-object v4, v4, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
-
-    aput-object v4, v3, v6
-
-    const-string v4, "Could not create Input Merger %s"
-
-    invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-array v4, v6, [Ljava/lang/Throwable;
-
-    invoke-virtual {v0, v2, v3, v4}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-
-    invoke-virtual/range {p0 .. p0}, Landroidx/work/impl/WorkerWrapper;->setFailedAndResolve()V
-
-    goto/16 :goto_a
-
-    :cond_a
-    new-instance v4, Ljava/util/ArrayList;
-
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    iget-object v7, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget-object v7, v7, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
-
-    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v7, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
-
-    iget-object v8, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-
-    check-cast v7, Landroidx/work/impl/model/WorkSpecDao_Impl;
-
-    if-eqz v7, :cond_13
-
-    const-string v9, "SELECT output FROM workspec WHERE id IN (SELECT prerequisite_id FROM dependency WHERE work_spec_id=?)"
-
-    invoke-static {v9, v3}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
-
-    move-result-object v9
-
-    if-nez v8, :cond_b
-
-    invoke-virtual {v9, v3}, Landroidx/room/RoomSQLiteQuery;->bindNull(I)V
-
-    goto :goto_6
-
-    :cond_b
-    invoke-virtual {v9, v3, v8}, Landroidx/room/RoomSQLiteQuery;->bindString(ILjava/lang/String;)V
-
-    :goto_6
-    iget-object v8, v7, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-virtual {v8}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
-
-    iget-object v7, v7, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-static {v7, v9, v6, v5}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
-
-    move-result-object v5
-
-    :try_start_3
-    new-instance v7, Ljava/util/ArrayList;
-
-    invoke-interface {v5}, Landroid/database/Cursor;->getCount()I
-
-    move-result v8
-
-    invoke-direct {v7, v8}, Ljava/util/ArrayList;-><init>(I)V
-
-    :goto_7
-    invoke-interface {v5}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_c
-
-    invoke-interface {v5, v6}, Landroid/database/Cursor;->getBlob(I)[B
-
-    move-result-object v8
-
-    invoke-static {v8}, Landroidx/work/Data;->fromByteArray([B)Landroidx/work/Data;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    goto :goto_7
-
-    :cond_c
-    invoke-interface {v5}, Landroid/database/Cursor;->close()V
-
-    invoke-virtual {v9}, Landroidx/room/RoomSQLiteQuery;->release()V
-
-    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    invoke-virtual {v2, v4}, Landroidx/work/InputMerger;->merge(Ljava/util/List;)Landroidx/work/Data;
-
-    move-result-object v2
-
-    goto/16 :goto_5
-
-    :goto_8
-    new-instance v2, Landroidx/work/WorkerParameters;
-
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-
-    invoke-static {v4}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
-
-    move-result-object v8
-
-    iget-object v10, v1, Landroidx/work/impl/WorkerWrapper;->mTags:Ljava/util/List;
-
-    iget-object v11, v1, Landroidx/work/impl/WorkerWrapper;->mRuntimeExtras:Landroidx/work/WorkerParameters$RuntimeExtras;
-
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget v12, v4, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
-
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mConfiguration:Landroidx/work/Configuration;
-
-    iget-object v13, v4, Landroidx/work/Configuration;->mExecutor:Ljava/util/concurrent/Executor;
-
-    iget-object v14, v1, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
-
-    iget-object v15, v4, Landroidx/work/Configuration;->mWorkerFactory:Landroidx/work/WorkerFactory;
-
-    new-instance v4, Landroidx/work/impl/utils/WorkProgressUpdater;
-
-    iget-object v5, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    iget-object v7, v1, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
-
-    invoke-direct {v4, v5, v7}, Landroidx/work/impl/utils/WorkProgressUpdater;-><init>(Landroidx/work/impl/WorkDatabase;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;)V
-
-    new-instance v5, Landroidx/work/impl/utils/WorkForegroundUpdater;
-
-    iget-object v7, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    iget-object v6, v1, Landroidx/work/impl/WorkerWrapper;->mForegroundProcessor:Landroidx/work/impl/foreground/ForegroundProcessor;
-
-    iget-object v3, v1, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
-
-    invoke-direct {v5, v7, v6, v3}, Landroidx/work/impl/utils/WorkForegroundUpdater;-><init>(Landroidx/work/impl/WorkDatabase;Landroidx/work/impl/foreground/ForegroundProcessor;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;)V
-
-    move-object v7, v2
-
-    move-object/from16 v16, v4
-
-    move-object/from16 v17, v5
-
-    invoke-direct/range {v7 .. v17}, Landroidx/work/WorkerParameters;-><init>(Ljava/util/UUID;Landroidx/work/Data;Ljava/util/Collection;Landroidx/work/WorkerParameters$RuntimeExtras;ILjava/util/concurrent/Executor;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;Landroidx/work/WorkerFactory;Landroidx/work/ProgressUpdater;Landroidx/work/impl/utils/WorkForegroundUpdater;)V
-
-    iget-object v3, v1, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
-
-    if-nez v3, :cond_d
-
-    iget-object v3, v1, Landroidx/work/impl/WorkerWrapper;->mConfiguration:Landroidx/work/Configuration;
-
-    iget-object v3, v3, Landroidx/work/Configuration;->mWorkerFactory:Landroidx/work/WorkerFactory;
-
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mAppContext:Landroid/content/Context;
-
-    iget-object v5, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget-object v5, v5, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
-
-    invoke-virtual {v3, v4, v5, v2}, Landroidx/work/WorkerFactory;->createWorkerWithDefaultFallback(Landroid/content/Context;Ljava/lang/String;Landroidx/work/WorkerParameters;)Landroidx/work/ListenableWorker;
-
-    move-result-object v2
-
-    iput-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
-
-    :cond_d
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
-
-    if-nez v2, :cond_e
-
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
-
-    move-result-object v0
-
-    sget-object v2, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
-
-    iget-object v4, v4, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    const-string v4, "Could not create Worker %s"
-
-    invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
     new-array v4, v5, [Ljava/lang/Throwable;
 
-    invoke-virtual {v0, v2, v3, v4}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1, v3, v4}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/work/impl/WorkerWrapper;->setFailedAndResolve()V
+    invoke-virtual {p0, v2}, Landroidx/work/impl/WorkerWrapper;->resolve(Z)V
 
-    goto/16 :goto_a
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+
+    :goto_4
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    goto/16 :goto_b
+
+    :cond_8
+    :try_start_1
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    invoke-virtual {v1}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-object v1, v1, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
+
+    :goto_5
+    move-object v4, v1
+
+    goto/16 :goto_9
+
+    :cond_9
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mConfiguration:Landroidx/work/Configuration;
+
+    iget-object v1, v1, Landroidx/work/Configuration;->mInputMergerFactory:Landroidx/work/InputMergerFactory;
+
+    iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-object v3, v3, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroidx/work/InputMerger;->TAG:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    :try_start_2
+    invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroidx/work/InputMerger;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_6
+
+    :catch_0
+    move-exception v4
+
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v6
+
+    sget-object v7, Landroidx/work/InputMerger;->TAG:Ljava/lang/String;
+
+    const-string v8, "Trouble instantiating + "
+
+    invoke-static {v8, v3}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-array v8, v2, [Ljava/lang/Throwable;
+
+    aput-object v4, v8, v5
+
+    invoke-virtual {v6, v7, v3, v8}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+
+    move-object v4, v1
+
+    :goto_6
+    if-nez v4, :cond_a
+
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v0
+
+    sget-object v1, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-object v3, v3, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
+
+    aput-object v3, v2, v5
+
+    const-string v3, "Could not create Input Merger %s"
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v3, v5, [Ljava/lang/Throwable;
+
+    invoke-virtual {v0, v1, v2, v3}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0}, Landroidx/work/impl/WorkerWrapper;->setFailedAndResolve()V
+
+    goto/16 :goto_b
+
+    :cond_a
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v6, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-object v6, v6, Landroidx/work/impl/model/WorkSpec;->input:Landroidx/work/Data;
+
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v6, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
+
+    iget-object v7, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+
+    check-cast v6, Landroidx/work/impl/model/WorkSpecDao_Impl;
+
+    invoke-static {v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v8, "SELECT output FROM workspec WHERE id IN (SELECT prerequisite_id FROM dependency WHERE work_spec_id=?)"
+
+    invoke-static {v8, v2}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
+
+    move-result-object v8
+
+    if-nez v7, :cond_b
+
+    invoke-virtual {v8, v2}, Landroidx/room/RoomSQLiteQuery;->bindNull(I)V
+
+    goto :goto_7
+
+    :cond_b
+    invoke-virtual {v8, v2, v7}, Landroidx/room/RoomSQLiteQuery;->bindString(ILjava/lang/String;)V
+
+    :goto_7
+    iget-object v2, v6, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    iget-object v2, v6, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-static {v2, v8, v5, v1}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    :try_start_3
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
+
+    move-result v6
+
+    invoke-direct {v2, v6}, Ljava/util/ArrayList;-><init>(I)V
+
+    :goto_8
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_c
+
+    invoke-interface {v1, v5}, Landroid/database/Cursor;->getBlob(I)[B
+
+    move-result-object v6
+
+    invoke-static {v6}, Landroidx/work/Data;->fromByteArray([B)Landroidx/work/Data;
+
+    move-result-object v6
+
+    invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_8
+
+    :cond_c
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v8}, Landroidx/room/RoomSQLiteQuery;->release()V
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    invoke-virtual {v4, v3}, Landroidx/work/InputMerger;->merge(Ljava/util/List;)Landroidx/work/Data;
+
+    move-result-object v1
+
+    goto/16 :goto_5
+
+    :goto_9
+    new-instance v1, Landroidx/work/WorkerParameters;
+
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+
+    move-result-object v3
+
+    iget-object v5, p0, Landroidx/work/impl/WorkerWrapper;->mTags:Ljava/util/List;
+
+    iget-object v6, p0, Landroidx/work/impl/WorkerWrapper;->mRuntimeExtras:Landroidx/work/WorkerParameters$RuntimeExtras;
+
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget v7, v2, Landroidx/work/impl/model/WorkSpec;->runAttemptCount:I
+
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mConfiguration:Landroidx/work/Configuration;
+
+    iget-object v8, v2, Landroidx/work/Configuration;->mExecutor:Ljava/util/concurrent/Executor;
+
+    iget-object v9, p0, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
+
+    iget-object v10, v2, Landroidx/work/Configuration;->mWorkerFactory:Landroidx/work/WorkerFactory;
+
+    new-instance v11, Landroidx/work/impl/utils/WorkProgressUpdater;
+
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+
+    iget-object v12, p0, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
+
+    invoke-direct {v11, v2, v12}, Landroidx/work/impl/utils/WorkProgressUpdater;-><init>(Landroidx/work/impl/WorkDatabase;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;)V
+
+    new-instance v13, Landroidx/work/impl/utils/WorkForegroundUpdater;
+
+    iget-object v14, p0, Landroidx/work/impl/WorkerWrapper;->mForegroundProcessor:Landroidx/work/impl/foreground/ForegroundProcessor;
+
+    invoke-direct {v13, v2, v14, v12}, Landroidx/work/impl/utils/WorkForegroundUpdater;-><init>(Landroidx/work/impl/WorkDatabase;Landroidx/work/impl/foreground/ForegroundProcessor;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;)V
+
+    move-object v2, v1
+
+    move-object v12, v13
+
+    invoke-direct/range {v2 .. v12}, Landroidx/work/WorkerParameters;-><init>(Ljava/util/UUID;Landroidx/work/Data;Ljava/util/Collection;Landroidx/work/WorkerParameters$RuntimeExtras;ILjava/util/concurrent/Executor;Landroidx/work/impl/utils/taskexecutor/TaskExecutor;Landroidx/work/WorkerFactory;Landroidx/work/ProgressUpdater;Landroidx/work/impl/utils/WorkForegroundUpdater;)V
+
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
+
+    if-nez v2, :cond_d
+
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mConfiguration:Landroidx/work/Configuration;
+
+    iget-object v2, v2, Landroidx/work/Configuration;->mWorkerFactory:Landroidx/work/WorkerFactory;
+
+    iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mAppContext:Landroid/content/Context;
+
+    iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-object v4, v4, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
+
+    invoke-virtual {v2, v3, v4, v1}, Landroidx/work/WorkerFactory;->createWorkerWithDefaultFallback(Landroid/content/Context;Ljava/lang/String;Landroidx/work/WorkerParameters;)Landroidx/work/ListenableWorker;
+
+    move-result-object v1
+
+    iput-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
+
+    :cond_d
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorker:Landroidx/work/ListenableWorker;
+
+    if-nez v1, :cond_e
+
+    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
+
+    move-result-object v0
+
+    sget-object v1, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+
+    iget-object v3, v3, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    const-string v3, "Could not create Worker %s"
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v3, v4, [Ljava/lang/Throwable;
+
+    invoke-virtual {v0, v1, v2, v3}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0}, Landroidx/work/impl/WorkerWrapper;->setFailedAndResolve()V
+
+    goto/16 :goto_b
 
     :cond_e
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
-    iget-boolean v3, v2, Landroidx/work/ListenableWorker;->mUsed:Z
+    iget-boolean v3, v1, Landroidx/work/ListenableWorker;->mUsed:Z
 
     if-eqz v3, :cond_f
 
@@ -1710,17 +1669,17 @@
 
     move-result-object v0
 
-    sget-object v2, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
+    sget-object v1, Landroidx/work/impl/WorkerWrapper;->TAG:Ljava/lang/String;
 
     const/4 v3, 0x1
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    iget-object v4, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
     iget-object v4, v4, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
 
-    aput-object v4, v3, v5
+    aput-object v4, v3, v2
 
     const-string v4, "Received an already-used Worker %s; WorkerFactory should return new instances"
 
@@ -1728,168 +1687,151 @@
 
     move-result-object v3
 
-    new-array v4, v5, [Ljava/lang/Throwable;
+    new-array v2, v2, [Ljava/lang/Throwable;
 
-    invoke-virtual {v0, v2, v3, v4}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1, v3, v2}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/work/impl/WorkerWrapper;->setFailedAndResolve()V
+    invoke-virtual {p0}, Landroidx/work/impl/WorkerWrapper;->setFailedAndResolve()V
+
+    goto :goto_b
+
+    :cond_f
+    const/4 v2, 0x1
+
+    iput-boolean v2, v1, Landroidx/work/ListenableWorker;->mUsed:Z
+
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    :try_start_4
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
+
+    iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+
+    check-cast v1, Landroidx/work/impl/model/WorkSpecDao_Impl;
+
+    invoke-virtual {v1, v2}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getState(Ljava/lang/String;)Landroidx/work/WorkInfo$State;
+
+    move-result-object v1
+
+    if-ne v1, v0, :cond_10
+
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
+
+    sget-object v1, Landroidx/work/WorkInfo$State;->RUNNING:Landroidx/work/WorkInfo$State;
+
+    const/4 v2, 0x1
+
+    new-array v3, v2, [Ljava/lang/String;
+
+    iget-object v4, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    aput-object v4, v3, v5
+
+    check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
+
+    invoke-virtual {v0, v1, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
+
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
+
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+
+    check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
+
+    invoke-virtual {v0, v1}, Landroidx/work/impl/model/WorkSpecDao_Impl;->incrementWorkSpecRunAttemptCount(Ljava/lang/String;)I
 
     goto :goto_a
 
-    :cond_f
-    const/4 v3, 0x1
+    :cond_10
+    const/4 v2, 0x0
 
-    iput-boolean v3, v2, Landroidx/work/ListenableWorker;->mUsed:Z
+    :goto_a
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->beginTransaction()V
-
-    :try_start_4
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
-
-    iget-object v3, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    check-cast v2, Landroidx/work/impl/model/WorkSpecDao_Impl;
-
-    :try_start_5
-    invoke-virtual {v2, v3}, Landroidx/work/impl/model/WorkSpecDao_Impl;->getState(Ljava/lang/String;)Landroidx/work/WorkInfo$State;
-
-    move-result-object v2
-
-    if-ne v2, v0, :cond_10
-
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
-
-    sget-object v2, Landroidx/work/WorkInfo$State;->RUNNING:Landroidx/work/WorkInfo$State;
-
-    const/4 v3, 0x1
-
-    new-array v4, v3, [Ljava/lang/String;
-
-    iget-object v5, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-
-    const/4 v6, 0x0
-
-    aput-object v5, v4, v6
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
-
-    :try_start_6
-    invoke-virtual {v0, v2, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setState(Landroidx/work/WorkInfo$State;[Ljava/lang/String;)I
-
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
-
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    check-cast v0, Landroidx/work/impl/model/WorkSpecDao_Impl;
-
-    :try_start_7
-    invoke-virtual {v0, v2}, Landroidx/work/impl/model/WorkSpecDao_Impl;->incrementWorkSpecRunAttemptCount(Ljava/lang/String;)I
-
-    goto :goto_9
-
-    :cond_10
-    const/4 v6, 0x0
-
-    move v3, v6
-
-    :goto_9
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    iget-object v0, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+    iget-object v0, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    if-eqz v3, :cond_12
+    if-eqz v2, :cond_12
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/work/impl/WorkerWrapper;->tryCheckForInterruptionAndResolve()Z
+    invoke-virtual {p0}, Landroidx/work/impl/WorkerWrapper;->tryCheckForInterruptionAndResolve()Z
 
     move-result v0
 
     if-eqz v0, :cond_11
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_11
     new-instance v0, Landroidx/work/impl/utils/futures/SettableFuture;
 
     invoke-direct {v0}, Landroidx/work/impl/utils/futures/SettableFuture;-><init>()V
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
 
-    check-cast v2, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
+    check-cast v1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
 
-    iget-object v2, v2, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mMainThreadExecutor:Ljava/util/concurrent/Executor;
+    iget-object v1, v1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mMainThreadExecutor:Ljava/util/concurrent/Executor;
 
-    new-instance v3, Landroidx/work/impl/WorkerWrapper$1;
+    new-instance v2, Landroidx/work/impl/WorkerWrapper$1;
 
-    invoke-direct {v3, v1, v0}, Landroidx/work/impl/WorkerWrapper$1;-><init>(Landroidx/work/impl/WorkerWrapper;Landroidx/work/impl/utils/futures/SettableFuture;)V
+    invoke-direct {v2, p0, v0}, Landroidx/work/impl/WorkerWrapper$1;-><init>(Landroidx/work/impl/WorkerWrapper;Landroidx/work/impl/utils/futures/SettableFuture;)V
 
-    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDescription:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDescription:Ljava/lang/String;
 
-    new-instance v3, Landroidx/work/impl/WorkerWrapper$2;
+    new-instance v2, Landroidx/work/impl/WorkerWrapper$2;
 
-    invoke-direct {v3, v1, v0, v2}, Landroidx/work/impl/WorkerWrapper$2;-><init>(Landroidx/work/impl/WorkerWrapper;Landroidx/work/impl/utils/futures/SettableFuture;Ljava/lang/String;)V
+    invoke-direct {v2, p0, v0, v1}, Landroidx/work/impl/WorkerWrapper$2;-><init>(Landroidx/work/impl/WorkerWrapper;Landroidx/work/impl/utils/futures/SettableFuture;Ljava/lang/String;)V
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkTaskExecutor:Landroidx/work/impl/utils/taskexecutor/TaskExecutor;
 
-    check-cast v2, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
+    check-cast v1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;
 
-    iget-object v2, v2, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mBackgroundExecutor:Landroidx/work/impl/utils/SerialExecutor;
+    iget-object v1, v1, Landroidx/work/impl/utils/taskexecutor/WorkManagerTaskExecutor;->mBackgroundExecutor:Landroidx/work/impl/utils/SerialExecutor;
 
-    invoke-virtual {v0, v3, v2}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v0, v2, v1}, Landroidx/work/impl/utils/futures/AbstractFuture;->addListener(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_12
-    invoke-virtual/range {p0 .. p0}, Landroidx/work/impl/WorkerWrapper;->resolveIncorrectStatus()V
+    invoke-virtual {p0}, Landroidx/work/impl/WorkerWrapper;->resolveIncorrectStatus()V
 
-    :goto_a
+    :goto_b
     return-void
 
     :catchall_0
     move-exception v0
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw v0
 
     :catchall_1
     move-exception v0
 
-    invoke-interface {v5}, Landroid/database/Cursor;->close()V
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    invoke-virtual {v9}, Landroidx/room/RoomSQLiteQuery;->release()V
+    invoke-virtual {v8}, Landroidx/room/RoomSQLiteQuery;->release()V
 
     throw v0
-
-    :cond_13
-    throw v5
-
-    :cond_14
-    throw v5
 
     :catchall_2
     move-exception v0
 
-    iget-object v2, v1, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
+    iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
-    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw v0
 .end method
@@ -1917,19 +1859,16 @@
     iget-object v2, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecDao:Landroidx/work/impl/model/WorkSpecDao;
 
     iget-object v3, p0, Landroidx/work/impl/WorkerWrapper;->mWorkSpecId:Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v2, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    :try_start_1
     invoke-virtual {v2, v3, v1}, Landroidx/work/impl/model/WorkSpecDao_Impl;->setOutput(Ljava/lang/String;Landroidx/work/Data;)V
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 
     invoke-virtual {v1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v1, p0, Landroidx/work/impl/WorkerWrapper;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
 

@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactDiaryEditPersonsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryEditPersonsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment$onViewCreated$2\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,100:1\n295#2,2:101\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryEditPersonsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment$onViewCreated$2\n*L\n42#1,2:101\n*E\n"
+    value = "SMAP\nContactDiaryEditPersonsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryEditPersonsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment$onViewCreated$2\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,99:1\n296#2,2:100\n*S KotlinDebug\n*F\n+ 1 ContactDiaryEditPersonsFragment.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment$onViewCreated$2\n*L\n42#1:100,2\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment$onViewCreated$2;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment;->access$getBinding$p(Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment;)Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBinding;
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsFragment;->getBinding()Lde/rki/coronawarnapp/databinding/ContactDiaryEditPersonsFragmentBinding;
 
     move-result-object v0
 
@@ -81,7 +83,7 @@
     const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, p1}, Landroidx/constraintlayout/widget/Group;->setVisibility(I)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

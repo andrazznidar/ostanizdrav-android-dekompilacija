@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSafeCollector.common.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt\n*L\n1#1,112:1\n51#2:113\n55#2:117\n72#3,3:114\n*E\n*S KotlinDebug\n*F\n+ 1 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n*L\n51#1,3:114\n*E\n"
+    value = "SMAP\nSafeCollector.common.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt\n*L\n1#1,112:1\n51#2:113\n55#2:117\n72#3,3:114\n*S KotlinDebug\n*F\n+ 1 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n*L\n51#1:114,3\n*E\n"
 .end annotation
 
 
@@ -54,13 +54,15 @@
 
 # virtual methods
 .method public collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;->$this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;
 
-    invoke-direct {v1, p1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;)V
+    iget-object v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+
+    invoke-direct {v1, p1, v2}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
 
     invoke-interface {v0, v1, p2}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 

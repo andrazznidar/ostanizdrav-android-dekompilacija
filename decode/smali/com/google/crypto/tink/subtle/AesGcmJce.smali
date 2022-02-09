@@ -106,7 +106,7 @@
     return-object v0
 
     :catch_0
-    invoke-static {}, Lcom/google/android/material/R$style;->isAndroid()Z
+    invoke-static {}, Lcom/google/crypto/tink/subtle/SubtleUtil;->isAndroid()Z
 
     move-result v0
 
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public decrypt([B[B)[B
-    .locals 5
+    .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x10,
@@ -167,15 +167,15 @@
 
     invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljavax/crypto/Cipher;
+    check-cast v3, Ljavax/crypto/Cipher;
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesGcmJce;->keySpec:Ljavax/crypto/SecretKey;
+    iget-object v5, p0, Lcom/google/crypto/tink/subtle/AesGcmJce;->keySpec:Ljavax/crypto/SecretKey;
 
-    invoke-virtual {v2, v3, v4, v0}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+    invoke-virtual {v3, v4, v5, v0}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
     if-eqz p2, :cond_0
 
@@ -183,9 +183,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/crypto/tink/subtle/AesGcmJce;->localCipher:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -194,9 +192,7 @@
     invoke-virtual {v0, p2}, Ljavax/crypto/Cipher;->updateAAD([B)V
 
     :cond_0
-    sget-object p2, Lcom/google/crypto/tink/subtle/AesGcmJce;->localCipher:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {p2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object p2
 
@@ -277,15 +273,15 @@
 
     invoke-virtual {v3}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Ljavax/crypto/Cipher;
+    check-cast v4, Ljavax/crypto/Cipher;
 
-    iget-object v4, p0, Lcom/google/crypto/tink/subtle/AesGcmJce;->keySpec:Ljavax/crypto/SecretKey;
+    iget-object v5, p0, Lcom/google/crypto/tink/subtle/AesGcmJce;->keySpec:Ljavax/crypto/SecretKey;
 
     const/4 v10, 0x1
 
-    invoke-virtual {v3, v10, v4, v1}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
+    invoke-virtual {v4, v10, v5, v1}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
     if-eqz p2, :cond_0
 
@@ -293,9 +289,7 @@
 
     if-eqz v1, :cond_0
 
-    sget-object v1, Lcom/google/crypto/tink/subtle/AesGcmJce;->localCipher:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -304,9 +298,7 @@
     invoke-virtual {v1, p2}, Ljavax/crypto/Cipher;->updateAAD([B)V
 
     :cond_0
-    sget-object p2, Lcom/google/crypto/tink/subtle/AesGcmJce;->localCipher:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {p2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object p2
 

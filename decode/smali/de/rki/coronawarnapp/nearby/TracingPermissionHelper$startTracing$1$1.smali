@@ -28,14 +28,14 @@
 
 
 # instance fields
-.field public final synthetic this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1;
+.field public final synthetic this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1$1;->this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1;
+    iput-object p1, p0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1$1;->this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
 
     const/4 p1, 0x1
 
@@ -55,11 +55,11 @@
 
     move-result p1
 
-    const-string v0, "TracingPermissionHelper"
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v1, "TracingPermissionHelper"
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -79,13 +79,11 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     if-eqz p1, :cond_0
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1$1;->this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1;->this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
+    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$startTracing$1$1;->this$0:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
 
     iget-object v0, p1, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;->enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 

@@ -18,20 +18,19 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;",
         "Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;
 
 .field public static final MODULUS_SIZE_IN_BITS_FIELD_NUMBER:I = 0x2
 
 .field public static final PARAMS_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -45,11 +44,11 @@
 
 
 # instance fields
-.field public modulusSizeInBits_:I
+.field private modulusSizeInBits_:I
 
-.field public params_:Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;
+.field private params_:Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;
 
-.field public publicExponent_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+.field private publicExponent_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
 
 # direct methods
@@ -69,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -200,7 +199,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;->params_:Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;
 
@@ -672,7 +671,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;->params_:Lcom/google/crypto/tink/proto/RsaSsaPkcs1Params;
 
@@ -690,7 +689,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/RsaSsaPkcs1KeyFormat;->publicExponent_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 

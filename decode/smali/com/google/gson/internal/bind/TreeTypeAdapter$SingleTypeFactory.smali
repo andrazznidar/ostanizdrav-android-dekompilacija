@@ -1,4 +1,4 @@
-.class public final Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
+.class final Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
 .super Ljava/lang/Object;
 .source "TreeTypeAdapter.java"
 
@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;)V
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,9 +91,9 @@
     :goto_0
     iput-object p4, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->serializer:Lcom/google/gson/JsonSerializer;
 
-    instance-of p4, p1, Lcom/google/gson/JsonDeserializer;
+    instance-of v1, p1, Lcom/google/gson/JsonDeserializer;
 
-    if-eqz p4, :cond_1
+    if-eqz v1, :cond_1
 
     check-cast p1, Lcom/google/gson/JsonDeserializer;
 
@@ -104,8 +104,6 @@
 
     :goto_1
     iput-object p1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->deserializer:Lcom/google/gson/JsonDeserializer;
-
-    iget-object p4, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->serializer:Lcom/google/gson/JsonSerializer;
 
     if-nez p4, :cond_3
 
@@ -123,7 +121,7 @@
     const/4 p1, 0x1
 
     :goto_3
-    invoke-static {p1}, Lcom/google/android/material/R$style;->checkArgument(Z)V
+    invoke-static {p1}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
 
     iput-object p2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->exactType:Lcom/google/gson/reflect/TypeToken;
 

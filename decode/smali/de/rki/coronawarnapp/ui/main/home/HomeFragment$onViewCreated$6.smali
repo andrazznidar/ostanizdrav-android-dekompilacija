@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lkotlin/Unit;",
+        "Ljava/lang/Throwable;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -49,23 +49,27 @@
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    check-cast p1, Lkotlin/Unit;
+    check-cast p1, Ljava/lang/Throwable;
 
-    sget-object p1, Lde/rki/coronawarnapp/util/ExternalActionHelper;->INSTANCE:Lde/rki/coronawarnapp/util/ExternalActionHelper;
+    const-string v0, "it"
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$6;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f120189
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$6;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-virtual {p1, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
 
     move-result-object v0
 
-    const-string v1, "getString(R.string.main_about_link)"
+    const-string v1, "requireContext()"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ExternalActionHelper;->openUrl(Landroidx/fragment/app/Fragment;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkotlin/io/ByteStreamsKt;->toErrorDialogBuilder(Ljava/lang/Throwable;Landroid/content/Context;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/appcompat/app/AlertDialog$Builder;->show()Landroidx/appcompat/app/AlertDialog;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

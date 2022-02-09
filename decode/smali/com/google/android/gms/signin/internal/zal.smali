@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/signin/internal/zal;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -11,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/signin/internal/zaj;",
+        "Lcom/google/android/gms/signin/internal/zak;",
         ">;"
     }
 .end annotation
@@ -29,9 +29,9 @@
 
 # virtual methods
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
+    .locals 7
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -39,65 +39,82 @@
 
     const/4 v2, 0x0
 
+    move v3, v2
+
+    move-object v2, v1
+
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v3
+    move-result v4
 
-    if-ge v3, v0, :cond_2
+    if-ge v4, v0, :cond_3
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v3
+    move-result v4
 
-    const v4, 0xffff
+    int-to-char v5, v4
 
-    and-int/2addr v4, v3
+    const/4 v6, 0x1
 
-    const/4 v5, 0x1
+    if-eq v5, v6, :cond_2
 
-    if-eq v4, v5, :cond_1
+    const/4 v6, 0x2
 
-    const/4 v5, 0x2
+    if-eq v5, v6, :cond_1
 
-    if-eq v4, v5, :cond_0
+    const/4 v6, 0x3
 
-    invoke-static {p1, v3}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
+    if-eq v5, v6, :cond_0
+
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :cond_0
-    sget-object v2, Lcom/google/android/gms/common/internal/zat;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v2, Lcom/google/android/gms/common/internal/zav;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v3, v2}, Lcom/airbnb/lottie/R$attr;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v4, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/android/gms/common/internal/zat;
+    check-cast v2, Lcom/google/android/gms/common/internal/zav;
 
     goto :goto_0
 
     :cond_1
-    invoke-static {p1, v3}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    sget-object v1, Lcom/google/android/gms/common/ConnectionResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-result v1
+    invoke-static {p1, v4, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/ConnectionResult;
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    new-instance p1, Lcom/google/android/gms/signin/internal/zaj;
+    move-result v3
 
-    invoke-direct {p1, v1, v2}, Lcom/google/android/gms/signin/internal/zaj;-><init>(ILcom/google/android/gms/common/internal/zat;)V
+    goto :goto_0
+
+    :cond_3
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
+
+    new-instance p1, Lcom/google/android/gms/signin/internal/zak;
+
+    invoke-direct {p1, v3, v1, v2}, Lcom/google/android/gms/signin/internal/zak;-><init>(ILcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/common/internal/zav;)V
 
     return-object p1
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    new-array p1, p1, [Lcom/google/android/gms/signin/internal/zaj;
+    new-array p1, p1, [Lcom/google/android/gms/signin/internal/zak;
 
     return-object p1
 .end method

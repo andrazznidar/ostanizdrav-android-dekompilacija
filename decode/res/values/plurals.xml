@@ -29,12 +29,12 @@
         <item quantity="many">Exposures on %1$d days</item>
     </plurals>
     <plurals name="risk_card_high_risk_encounter_days_body_description">
-        <item quantity="other"></item>
-        <item quantity="zero"></item>
-        <item quantity="one"></item>
-        <item quantity="two"></item>
-        <item quantity="few"></item>
-        <item quantity="many"></item>
+        <item quantity="other">Exposures on %1$d days</item>
+        <item quantity="zero">Exposures on %1$d days</item>
+        <item quantity="one">Exposures on one day</item>
+        <item quantity="two">Exposures on %1$d days</item>
+        <item quantity="few">Exposures on %1$d days</item>
+        <item quantity="many">Exposures on %1$d days</item>
     </plurals>
     <plurals name="risk_card_increased_risk_body_contact_last">
         <item quantity="other"></item>
@@ -53,31 +53,57 @@
         <item quantity="many">Exposures on %1$d days</item>
     </plurals>
     <plurals name="risk_card_low_risk_encounter_days_body_description">
-        <item quantity="other"></item>
-        <item quantity="zero"></item>
-        <item quantity="one"></item>
-        <item quantity="two"></item>
-        <item quantity="few"></item>
-        <item quantity="many"></item>
+        <item quantity="other">Exposures on %1$d days</item>
+        <item quantity="zero">Exposures on %1$d days</item>
+        <item quantity="one">Exposures on one day</item>
+        <item quantity="two">Exposures on %1$d days</item>
+        <item quantity="few">Exposures on %1$d days</item>
+        <item quantity="many">Exposures on %1$d days</item>
     </plurals>
     <plurals name="risk_details_information_body_increased_risk">
-        <item quantity="other">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person with a confirmed SARS-CoV-2 infection.</item>
-        <item quantity="zero"></item>
-        <item quantity="one">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person diagnosed with coronavirus.</item>
-        <item quantity="two">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person with a confirmed SARS-CoV-2 infection.</item>
-        <item quantity="few">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person with a confirmed SARS-CoV-2 infection.</item>
-        <item quantity="many">You have an increased risk of infection because you were last exposed %1$s days ago over a longer period of time and at close proximity to at least one person with a confirmed SARS-CoV-2 infection.</item>
+        <item quantity="other">Your risk of infection is higher because you have been exposed for a long time and in the vicinity of at least one person who was later confirmed to be infected with SARS-CoV-2. You were last exposed %1$ days ago.</item>
+        <item quantity="zero">Your risk of infection is higher because you have been exposed for a long time and in the vicinity of at least one person who was later confirmed to be infected with SARS-CoV-2. You were last exposed %1$ days ago.</item>
+        <item quantity="one">Your risk of infection is higher because you have been exposed for a long time and in the vicinity of at least one person who was later confirmed to be infected with SARS-CoV-2. You were last exposed %1$ day ago.</item>
+        <item quantity="two">Your risk of infection is higher because you have been exposed for a long time and in the vicinity of at least one person who was later confirmed to be infected with SARS-CoV-2. You were last exposed %1$ days ago.</item>
+        <item quantity="few">Your risk of infection is higher because you have been exposed for a long time and in the vicinity of at least one person who was later confirmed to be infected with SARS-CoV-2. You were last exposed %1$ days ago.</item>
+        <item quantity="many">Your risk of infection is higher because you have been exposed for a long time and in the vicinity of at least one person who was later confirmed to be infected with SARS-CoV-2. You were last exposed %1$ days ago.</item>
     </plurals>
     <plurals name="settings_tracing_status_body_active">
-        <item quantity="other">"Exposure logging has been active for %1$s days.
-An exposure check can only be reliable if exposure logging is permanently activated."</item>
-        <item quantity="zero"></item>
-        <item quantity="one">"Exposure logging has been active for one day.
-An exposure check can only be reliable if exposure logging is permanently activated."</item>
-        <item quantity="two">"Exposure logging has been active for %1$s days.
-An exposure check can only be reliable if exposure logging is permanently activated."</item>
-        <item quantity="few">"Exposure logging has been active for %1$s days.
-An exposure check can only be reliable if exposure logging is permanently activated."</item>
-        <item quantity="many"></item>
+        <item quantity="other">"Exposure logging has been active for %1$ days. 
+Exposure verification can only be reliable if logging is permanently activated."</item>
+        <item quantity="zero">"Exposure logging has been active for %1$ days. 
+Exposure verification can only be reliable if logging is permanently activated."</item>
+        <item quantity="one">"Exposure logging has been active for %1$ day. 
+Exposure verification can only be reliable if logging is permanently activated."</item>
+        <item quantity="two">"Exposure logging has been active for %1$ days. 
+Exposure verification can only be reliable if logging is permanently activated."</item>
+        <item quantity="few">"Exposure logging has been active for %1$ days. 
+Exposure verification can only be reliable if logging is permanently activated."</item>
+        <item quantity="many">"Exposure logging has been active for %1$ days. 
+Exposure verification can only be reliable if logging is permanently activated."</item>
+    </plurals>
+    <plurals name="vaccination_certificate_days_unti_immunity">
+        <item quantity="other">You have now received all the currently planned vaccinations.</item>
+        <item quantity="zero">You have now received all the currently planned vaccinations.</item>
+        <item quantity="one">You have now received all the currently planned vaccinations.</item>
+        <item quantity="two">You have now received all the currently planned vaccinations.</item>
+        <item quantity="few">You have now received all the currently planned vaccinations.</item>
+        <item quantity="many">You have now received all the currently planned vaccinations.</item>
+    </plurals>
+    <plurals name="vaccination_certificate_days_until_immunity">
+        <item quantity="other">You have now received all the currently planned vaccinations.</item>
+        <item quantity="zero">You have now received all the currently planned vaccinations.</item>
+        <item quantity="one">You have now received all the currently planned vaccinations.</item>
+        <item quantity="two">You have now received all the currently planned vaccinations.</item>
+        <item quantity="few">You have now received all the currently planned vaccinations.</item>
+        <item quantity="many">You have now received all the currently planned vaccinations.</item>
+    </plurals>
+    <plurals name="vaccination_days_since_last_shot">
+        <item quantity="other">Last vaccination %1$d days ago</item>
+        <item quantity="zero">Last vaccination %1$d days ago</item>
+        <item quantity="one">Last vaccination %1$d day ago</item>
+        <item quantity="two">Last vaccination %1$d days ago</item>
+        <item quantity="few">Last vaccination %1$d days ago</item>
+        <item quantity="many">Last vaccination %1$d days ago</item>
     </plurals>
 </resources>

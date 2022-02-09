@@ -6,8 +6,6 @@
 # instance fields
 .field public bitmap:Landroid/graphics/Bitmap;
 
-.field public final dirName:Ljava/lang/String;
-
 .field public final fileName:Ljava/lang/String;
 
 .field public final height:I
@@ -30,8 +28,6 @@
     iput-object p3, p0, Lcom/airbnb/lottie/LottieImageAsset;->id:Ljava/lang/String;
 
     iput-object p4, p0, Lcom/airbnb/lottie/LottieImageAsset;->fileName:Ljava/lang/String;
-
-    iput-object p5, p0, Lcom/airbnb/lottie/LottieImageAsset;->dirName:Ljava/lang/String;
 
     return-void
 .end method

@@ -35,27 +35,25 @@
 
     sput-object v0, Landroidx/work/ExistingPeriodicWorkPolicy;->REPLACE:Landroidx/work/ExistingPeriodicWorkPolicy;
 
-    new-instance v0, Landroidx/work/ExistingPeriodicWorkPolicy;
+    new-instance v1, Landroidx/work/ExistingPeriodicWorkPolicy;
 
-    const-string v1, "KEEP"
+    const-string v3, "KEEP"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Landroidx/work/ExistingPeriodicWorkPolicy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Landroidx/work/ExistingPeriodicWorkPolicy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroidx/work/ExistingPeriodicWorkPolicy;->KEEP:Landroidx/work/ExistingPeriodicWorkPolicy;
+    sput-object v1, Landroidx/work/ExistingPeriodicWorkPolicy;->KEEP:Landroidx/work/ExistingPeriodicWorkPolicy;
 
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
-    new-array v1, v1, [Landroidx/work/ExistingPeriodicWorkPolicy;
+    new-array v3, v3, [Landroidx/work/ExistingPeriodicWorkPolicy;
 
-    sget-object v4, Landroidx/work/ExistingPeriodicWorkPolicy;->REPLACE:Landroidx/work/ExistingPeriodicWorkPolicy;
+    aput-object v0, v3, v2
 
-    aput-object v4, v1, v2
+    aput-object v1, v3, v4
 
-    aput-object v0, v1, v3
-
-    sput-object v1, Landroidx/work/ExistingPeriodicWorkPolicy;->$VALUES:[Landroidx/work/ExistingPeriodicWorkPolicy;
+    sput-object v3, Landroidx/work/ExistingPeriodicWorkPolicy;->$VALUES:[Landroidx/work/ExistingPeriodicWorkPolicy;
 
     return-void
 .end method

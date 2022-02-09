@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/risk/RiskLevelTask;->areKeyPkgsOutDated(Lorg/joda/time/Instant;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/risk/RiskLevelTask;->areKeyPkgsOutDated$Corona_Warn_App_deviceRelease(Lorg/joda/time/Instant;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelTask"
     f = "RiskLevelTask.kt"
     l = {
-        0x87
+        0x85
     }
-    m = "areKeyPkgsOutDated"
+    m = "areKeyPkgsOutDated$Corona_Warn_App_deviceRelease"
 .end annotation
 
 
@@ -36,6 +36,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskLevelTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask$areKeyPkgsOutDated$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$areKeyPkgsOutDated$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask;
 
@@ -63,7 +73,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/risk/RiskLevelTask;->areKeyPkgsOutDated(Lorg/joda/time/Instant;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/risk/RiskLevelTask;->areKeyPkgsOutDated$Corona_Warn_App_deviceRelease(Lorg/joda/time/Instant;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -22,21 +22,37 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/OnSuccessListener<",
-        "Ljava/util/List<",
-        "Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;",
-        ">;>;"
+        "Lcom/google/android/gms/tasks/OnSuccessListener;"
     }
 .end annotation
 
 
 # instance fields
 .field public final synthetic $cont:Lkotlin/coroutines/Continuation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/coroutines/Continuation<",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;",
+            ">;>;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$1;->$cont:Lkotlin/coroutines/Continuation;
 

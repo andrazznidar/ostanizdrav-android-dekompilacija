@@ -54,10 +54,6 @@
     const/4 v0, 0x0
 
     :try_start_1
-    iget-object v1, p0, Lcom/google/protobuf/LazyFieldLite;->delayedBytes:Lcom/google/protobuf/ByteString;
-
-    if-nez v1, :cond_2
-
     iput-object v0, p0, Lcom/google/protobuf/LazyFieldLite;->value:Lcom/google/protobuf/MessageLite;
 
     sget-object v1, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
@@ -69,11 +65,8 @@
 
     goto :goto_0
 
-    :cond_2
-    :try_start_2
-    throw v0
-
     :catch_0
+    :try_start_2
     iput-object v0, p0, Lcom/google/protobuf/LazyFieldLite;->value:Lcom/google/protobuf/MessageLite;
 
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;

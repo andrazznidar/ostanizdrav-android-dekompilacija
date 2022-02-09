@@ -90,7 +90,7 @@
     :cond_0
     const/4 v2, -0x1
 
-    const-string v3, "status"
+    const-string/jumbo v3, "status"
 
     invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
@@ -186,13 +186,12 @@
 
     move-result v0
 
-    const/4 v2, 0x3
-
-    const/4 v4, 0x2
-
     sparse-switch v0, :sswitch_data_0
 
-    goto :goto_0
+    :goto_0
+    move v1, p2
+
+    goto :goto_1
 
     :sswitch_0
     const-string v0, "android.intent.action.ACTION_POWER_CONNECTED"
@@ -201,9 +200,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_1
 
-    move v3, v4
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x3
 
     goto :goto_1
 
@@ -214,7 +216,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x2
 
     goto :goto_1
 
@@ -225,11 +232,9 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_4
 
-    move v3, v1
-
-    goto :goto_1
+    goto :goto_0
 
     :sswitch_3
     const-string v0, "android.intent.action.ACTION_POWER_DISCONNECTED"
@@ -238,55 +243,49 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_3
 
-    move v3, v2
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    move v3, p2
-
-    :goto_1
-    if-eqz v3, :cond_5
-
-    if-eq v3, v1, :cond_4
-
-    if-eq v3, v4, :cond_3
-
-    if-eq v3, v2, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->setState(Ljava/lang/Object;)V
-
-    goto :goto_2
+    goto :goto_0
 
     :cond_3
+    move v1, v3
+
+    :cond_4
+    :goto_1
+    packed-switch v1, :pswitch_data_0
+
+    goto :goto_2
+
+    :pswitch_0
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->setState(Ljava/lang/Object;)V
 
     goto :goto_2
 
-    :cond_4
+    :pswitch_1
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->setState(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :pswitch_2
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->setState(Ljava/lang/Object;)V
 
     goto :goto_2
 
-    :cond_5
-    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    :pswitch_3
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->setState(Ljava/lang/Object;)V
 
     :goto_2
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -295,4 +294,12 @@
         0x388694fe -> :sswitch_1
         0x3cbf870b -> :sswitch_0
     .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

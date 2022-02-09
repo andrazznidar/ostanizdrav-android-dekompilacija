@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 12
+    .locals 15
 
     iget-object v0, p0, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver$onReceive$dialogInstance$2;->this$0:Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;
 
@@ -70,23 +70,13 @@
 
     iget-object v3, p0, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver$onReceive$dialogInstance$2;->$title:Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver$onReceive$dialogInstance$2;->$detailsTitle:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ":\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver$onReceive$dialogInstance$2;->$detailsTitle:Ljava/lang/String;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver$onReceive$dialogInstance$2;->$stack:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, ":\n"
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v4, v1}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -94,15 +84,17 @@
 
     sget-object v7, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    sget-object v9, L-$$LambdaGroup$ks$2QFsuMG0nf6robN1ABS3cB1KgpY;->INSTANCE$0:L-$$LambdaGroup$ks$2QFsuMG0nf6robN1ABS3cB1KgpY;
+    sget-object v9, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance$1;->INSTANCE:Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance$1;
 
-    sget-object v10, L-$$LambdaGroup$ks$2QFsuMG0nf6robN1ABS3cB1KgpY;->INSTANCE$1:L-$$LambdaGroup$ks$2QFsuMG0nf6robN1ABS3cB1KgpY;
+    sget-object v10, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance$2;->INSTANCE:Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance$2;
+
+    sget-object v11, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance$3;->INSTANCE:Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance$3;
 
     const-string v0, "context"
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "title"
+    const-string/jumbo v1, "title"
 
     invoke-static {v3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -114,9 +106,15 @@
 
     invoke-static {v9, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v11, "negativeButtonFunction"
+    const-string v12, "negativeButtonFunction"
 
-    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v13, "cancelFunction"
+
+    invoke-static {v11, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v14, 0x1
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -126,17 +124,19 @@
 
     invoke-static {v9, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v11, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
 
     const/4 v6, 0x0
 
-    const/4 v8, 0x1
-
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v10}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
+    move v8, v14
+
+    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
 
     invoke-static {v0}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
 

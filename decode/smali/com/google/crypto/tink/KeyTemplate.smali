@@ -3,14 +3,6 @@
 .source "KeyTemplate.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/crypto/tink/KeyTemplate$OutputPrefixType;
-    }
-.end annotation
-
-
 # instance fields
 .field public final kt:Lcom/google/crypto/tink/proto/KeyTemplate;
 
@@ -34,7 +26,7 @@
     return-void
 .end method
 
-.method public static create(Ljava/lang/String;[BLcom/google/crypto/tink/KeyTemplate$OutputPrefixType;)Lcom/google/crypto/tink/KeyTemplate;
+.method public static create(Ljava/lang/String;[BI)Lcom/google/crypto/tink/KeyTemplate;
     .locals 3
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
@@ -63,7 +55,13 @@
 
     invoke-static {v2, p0}, Lcom/google/crypto/tink/proto/KeyTemplate;->access$100(Lcom/google/crypto/tink/proto/KeyTemplate;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    array-length p0, p1
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v2, p0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     move-result-object p0
 
@@ -75,7 +73,7 @@
 
     invoke-static {p1, p0}, Lcom/google/crypto/tink/proto/KeyTemplate;->access$400(Lcom/google/crypto/tink/proto/KeyTemplate;Lcom/google/crypto/tink/shaded/protobuf/ByteString;)V
 
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {p2}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
 
     move-result p0
 

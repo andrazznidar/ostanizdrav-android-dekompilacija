@@ -6,10 +6,6 @@
 .implements Lcom/google/crypto/tink/PublicKeySign;
 
 
-# instance fields
-.field public final hashedPrivateKey:[B
-
-
 # direct methods
 .method public constructor <init>([B)V
     .locals 3
@@ -39,8 +35,6 @@
     invoke-static {p1}, Lcom/google/crypto/tink/subtle/Ed25519;->getHashedScalar([B)[B
 
     move-result-object p1
-
-    iput-object p1, p0, Lcom/google/crypto/tink/subtle/Ed25519Sign;->hashedPrivateKey:[B
 
     invoke-static {p1}, Lcom/google/crypto/tink/subtle/Ed25519;->scalarMultWithBaseToBytes([B)[B
 

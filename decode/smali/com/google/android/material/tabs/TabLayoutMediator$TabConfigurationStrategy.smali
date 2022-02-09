@@ -12,8 +12,3 @@
     accessFlags = 0x609
     name = "TabConfigurationStrategy"
 .end annotation
-
-
-# virtual methods
-.method public abstract onConfigureTab(Lcom/google/android/material/tabs/TabLayout$Tab;I)V
-.end method

@@ -49,13 +49,9 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    iget-object p1, p0, Lcom/google/android/material/textfield/CutoutDrawable;->cutoutPaint:Landroid/graphics/Paint;
-
     const/4 v0, -0x1
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
-
-    iget-object p1, p0, Lcom/google/android/material/textfield/CutoutDrawable;->cutoutPaint:Landroid/graphics/Paint;
 
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
 
@@ -179,15 +175,13 @@
 
     if-nez v1, :cond_0
 
-    iget v0, v0, Landroid/graphics/RectF;->bottom:F
+    iget v1, v0, Landroid/graphics/RectF;->bottom:F
 
-    cmpl-float v0, p4, v0
+    cmpl-float v1, p4, v1
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/material/textfield/CutoutDrawable;->cutoutBounds:Landroid/graphics/RectF;
-
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/RectF;->set(FFFF)V
 
     invoke-virtual {p0}, Lcom/google/android/material/shape/MaterialShapeDrawable;->invalidateSelf()V

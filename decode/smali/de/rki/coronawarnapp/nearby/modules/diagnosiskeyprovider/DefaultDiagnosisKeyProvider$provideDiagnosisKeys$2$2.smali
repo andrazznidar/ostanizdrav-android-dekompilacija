@@ -19,11 +19,28 @@
 
 # instance fields
 .field public final synthetic $cont:Lkotlin/coroutines/Continuation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/coroutines/Continuation<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/lang/Boolean;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DefaultDiagnosisKeyProvider$provideDiagnosisKeys$2$2;->$cont:Lkotlin/coroutines/Continuation;
 
@@ -37,39 +54,27 @@
 .method public final onFailure(Ljava/lang/Exception;)V
     .locals 4
 
-    const-string v0, "it"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Key submission failed because "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "Key submission failed because "
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    new-array v2, v1, [Ljava/lang/Object;
+    new-array v3, v2, [Ljava/lang/Object;
 
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v3, v0, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v3}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     instance-of v0, p1, Lcom/google/android/gms/common/api/ApiException;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
@@ -85,10 +90,10 @@
 
     if-ne v0, v3, :cond_0
 
-    move v1, v2
+    move v2, v1
 
     :cond_0
-    if-ne v1, v2, :cond_1
+    if-ne v2, v1, :cond_1
 
     new-instance v0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/QuotaExceededException;
 
@@ -99,12 +104,12 @@
     goto :goto_0
 
     :cond_1
-    if-nez v1, :cond_2
+    if-nez v2, :cond_2
 
     :goto_0
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DefaultDiagnosisKeyProvider$provideDiagnosisKeys$2$2;->$cont:Lkotlin/coroutines/Continuation;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {p1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p1
 

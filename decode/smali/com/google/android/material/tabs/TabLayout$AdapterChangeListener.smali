@@ -18,8 +18,6 @@
 
 
 # instance fields
-.field public autoRefresh:Z
-
 .field public final synthetic this$0:Lcom/google/android/material/tabs/TabLayout;
 
 
@@ -37,17 +35,15 @@
 
 # virtual methods
 .method public onAdapterChanged(Landroidx/viewpager/widget/ViewPager;Landroidx/viewpager/widget/PagerAdapter;Landroidx/viewpager/widget/PagerAdapter;)V
-    .locals 1
+    .locals 0
 
     iget-object p2, p0, Lcom/google/android/material/tabs/TabLayout$AdapterChangeListener;->this$0:Lcom/google/android/material/tabs/TabLayout;
 
-    iget-object v0, p2, Lcom/google/android/material/tabs/TabLayout;->viewPager:Landroidx/viewpager/widget/ViewPager;
+    iget-object p3, p2, Lcom/google/android/material/tabs/TabLayout;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
-    if-ne v0, p1, :cond_0
+    if-ne p3, p1, :cond_0
 
-    iget-boolean p1, p0, Lcom/google/android/material/tabs/TabLayout$AdapterChangeListener;->autoRefresh:Z
-
-    invoke-virtual {p2, p3, p1}, Lcom/google/android/material/tabs/TabLayout;->setPagerAdapter(Landroidx/viewpager/widget/PagerAdapter;Z)V
+    invoke-virtual {p2}, Lcom/google/android/material/tabs/TabLayout;->removeAllTabs()V
 
     :cond_0
     return-void

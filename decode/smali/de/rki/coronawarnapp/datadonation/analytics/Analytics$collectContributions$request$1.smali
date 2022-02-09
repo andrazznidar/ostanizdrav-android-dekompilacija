@@ -18,12 +18,16 @@
 
 
 # instance fields
+.field public final synthetic $configData:Lde/rki/coronawarnapp/appconfig/ConfigData;
+
 .field public final currentConfig:Lde/rki/coronawarnapp/appconfig/ConfigData;
 
 
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/appconfig/ConfigData;)V
     .locals 0
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/Analytics$collectContributions$request$1;->$configData:Lde/rki/coronawarnapp/appconfig/ConfigData;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

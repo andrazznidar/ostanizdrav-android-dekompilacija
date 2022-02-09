@@ -31,7 +31,7 @@
         }
     .end annotation
 
-    const-string v0, "surveyApi"
+    const-string/jumbo v0, "surveyApi"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

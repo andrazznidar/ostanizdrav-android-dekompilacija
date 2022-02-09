@@ -1,4 +1,4 @@
-.class public Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;
+.class public final Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;
 .super Ljava/lang/Object;
 .source "AdapterHelper.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x19
     name = "UpdateOp"
 .end annotation
 
@@ -53,108 +53,98 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x0
+    instance-of v1, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;
 
-    if-eqz p1, :cond_8
+    const/4 v2, 0x0
 
-    const-class v2, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;
+    if-nez v1, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
+    return v2
 
     :cond_1
     check-cast p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;
 
-    iget v2, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->cmd:I
+    iget v1, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->cmd:I
 
     iget v3, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->cmd:I
 
-    if-eq v2, v3, :cond_2
+    if-eq v1, v3, :cond_2
 
-    return v1
+    return v2
 
     :cond_2
     const/16 v3, 0x8
 
-    if-ne v2, v3, :cond_3
+    if-ne v1, v3, :cond_3
 
-    iget v2, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
+    iget v1, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
     iget v3, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v1, v3
 
-    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
-    move-result v2
+    move-result v1
 
-    if-ne v2, v0, :cond_3
+    if-ne v1, v0, :cond_3
 
-    iget v2, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
+    iget v1, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
     iget v3, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
-    if-ne v2, v3, :cond_3
+    if-ne v1, v3, :cond_3
 
-    iget v2, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
+    iget v1, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
     iget v3, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
-    if-ne v2, v3, :cond_3
+    if-ne v1, v3, :cond_3
 
     return v0
 
     :cond_3
-    iget v2, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
+    iget v1, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
     iget v3, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->itemCount:I
 
-    if-eq v2, v3, :cond_4
+    if-eq v1, v3, :cond_4
 
-    return v1
+    return v2
 
     :cond_4
-    iget v2, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
+    iget v1, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
     iget v3, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->positionStart:I
 
-    if-eq v2, v3, :cond_5
+    if-eq v1, v3, :cond_5
 
-    return v1
+    return v2
 
     :cond_5
-    iget-object v2, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->payload:Ljava/lang/Object;
+    iget-object v1, p0, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->payload:Ljava/lang/Object;
 
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_6
 
     iget-object p1, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->payload:Ljava/lang/Object;
 
-    invoke-virtual {v2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-nez p1, :cond_7
 
-    return v1
+    return v2
 
     :cond_6
     iget-object p1, p1, Landroidx/recyclerview/widget/AdapterHelper$UpdateOp;->payload:Ljava/lang/Object;
 
     if-eqz p1, :cond_7
 
-    return v1
+    return v2
 
     :cond_7
     return v0
-
-    :cond_8
-    :goto_0
-    return v1
 .end method
 
 .method public hashCode()I
@@ -226,7 +216,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v1, "up"
+    const-string/jumbo v1, "up"
 
     goto :goto_0
 

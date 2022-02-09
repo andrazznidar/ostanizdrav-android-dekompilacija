@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDayPackageSyncTool.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DayPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,152:1\n1571#2,9:153\n1819#2:162\n1820#2:164\n1580#2:165\n1517#2:166\n1588#2,3:167\n1517#2:170\n1588#2,3:171\n1328#2:174\n1414#2,2:175\n1517#2:177\n1588#2,3:178\n1416#2,3:181\n1517#2:184\n1588#2,3:185\n1#3:163\n*E\n*S KotlinDebug\n*F\n+ 1 DayPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool\n*L\n51#1,9:153\n51#1:162\n51#1:164\n51#1:165\n84#1:166\n84#1,3:167\n107#1:170\n107#1,3:171\n136#1:174\n136#1,2:175\n137#1:177\n137#1,3:178\n136#1,3:181\n141#1:184\n141#1,3:185\n51#1:163\n*E\n"
+    value = "SMAP\nDayPackageSyncTool.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DayPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,153:1\n1601#2,9:154\n1849#2:163\n1850#2:165\n1610#2:166\n1547#2:167\n1618#2,3:168\n1547#2:171\n1618#2,3:172\n1358#2:175\n1444#2,2:176\n1547#2:178\n1618#2,3:179\n1446#2,3:182\n1547#2:185\n1618#2,3:186\n1#3:164\n*S KotlinDebug\n*F\n+ 1 DayPackageSyncTool.kt\nde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool\n*L\n52#1:154,9\n52#1:163\n52#1:165\n52#1:166\n85#1:167\n85#1:168,3\n108#1:171\n108#1:172,3\n137#1:175\n137#1:176,2\n138#1:178\n138#1:179,3\n137#1:182,3\n142#1:185\n142#1:186,3\n52#1:164\n*E\n"
 .end annotation
 
 
@@ -43,7 +43,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "timeStamper"
+    const-string/jumbo v0, "timeStamper"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public final determineMissingDayPackages$Corona_Warn_App_deviceRelease(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 18
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -139,15 +139,15 @@
 
     const/4 v9, 0x2
 
-    const/4 v10, 0x1
+    const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    const/4 v11, 0x1
 
     const/4 v12, 0x3
 
     if-eqz v5, :cond_4
 
-    if-eq v5, v10, :cond_3
+    if-eq v5, v11, :cond_3
 
     if-eq v5, v9, :cond_2
 
@@ -165,7 +165,7 @@
 
     check-cast v3, Ljava/util/List;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_6
 
@@ -187,15 +187,15 @@
 
     check-cast v5, Ljava/util/List;
 
-    iget-object v13, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$1:Ljava/lang/Object;
+    iget-object v12, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$1:Ljava/lang/Object;
 
-    check-cast v13, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
+    check-cast v12, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iget-object v14, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$0:Ljava/lang/Object;
+    iget-object v13, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$0:Ljava/lang/Object;
 
-    check-cast v14, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
+    check-cast v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_4
 
@@ -206,24 +206,24 @@
 
     check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iget-object v13, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$0:Ljava/lang/Object;
+    iget-object v12, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$0:Ljava/lang/Object;
 
-    check-cast v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
+    check-cast v12, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object v14, v13
+    move-object v13, v12
 
-    move-object/from16 v17, v5
+    move-object/from16 v16, v5
 
     move v5, v1
 
-    move-object/from16 v1, v17
+    move-object/from16 v1, v16
 
     goto :goto_1
 
     :cond_4
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     sget-object v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->LOCATION_DAY:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
@@ -235,7 +235,7 @@
 
     iput-boolean v5, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->Z$0:Z
 
-    iput v10, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->label:I
+    iput v11, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->label:I
 
     invoke-virtual {v0, v1, v2, v3}, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->getDownloadedCachedKeys$Corona_Warn_App_deviceRelease(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -246,132 +246,115 @@
     return-object v4
 
     :cond_5
-    move-object v14, v0
+    move-object v13, v0
 
     :goto_1
     check-cast v2, Ljava/util/List;
 
-    if-nez v5, :cond_9
+    if-nez v5, :cond_8
 
-    if-eqz v14, :cond_8
+    invoke-static {v13}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v5, "cachedDays"
 
     invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v5, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
+    sget-object v5, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/TimeAndDateExtensions;
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    iget-object v5, v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    move-result-object v5
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v13, "$this$toLocalDate"
+    new-instance v5, Lorg/joda/time/Instant;
 
-    invoke-static {v5, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v5}, Lorg/joda/time/Instant;-><init>()V
 
-    sget-object v13, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
-
-    invoke-virtual {v5, v13}, Lorg/joda/time/base/AbstractInstant;->toDateTime(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
+    invoke-static {v5}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toLocalDateUtc(Lorg/joda/time/Instant;)Lorg/joda/time/LocalDate;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
+    invoke-virtual {v5, v11}, Lorg/joda/time/LocalDate;->minusDays(I)Lorg/joda/time/LocalDate;
 
     move-result-object v5
 
-    const-string v13, "this.toDateTime(DateTimeZone.UTC).toLocalDate()"
+    new-instance v12, Ljava/util/ArrayList;
 
-    invoke-static {v5, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v8}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    invoke-virtual {v5, v10}, Lorg/joda/time/LocalDate;->minusDays(I)Lorg/joda/time/LocalDate;
+    move-result v14
 
-    move-result-object v5
-
-    new-instance v13, Ljava/util/ArrayList;
-
-    invoke-static {v2, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v15
-
-    invoke-direct {v13, v15}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v12, v14}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v15
+    move-result-object v14
 
     :goto_2
-    invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v16
+    move-result v15
 
-    if-eqz v16, :cond_6
+    if-eqz v15, :cond_6
 
-    invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v16
+    move-result-object v15
 
-    move-object/from16 v12, v16
+    check-cast v15, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
 
-    check-cast v12, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
+    iget-object v15, v15, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    iget-object v12, v12, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
+    invoke-static {v15}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfoKt;->getPkgDateTime(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Lorg/joda/time/DateTime;
 
-    invoke-virtual {v12}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->toDateTime()Lorg/joda/time/DateTime;
+    move-result-object v15
 
-    move-result-object v12
-
-    invoke-virtual {v13, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const/4 v12, 0x3
+    invoke-virtual {v12, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     :cond_6
-    invoke-static {v13}, Lkotlin/collections/ArraysKt___ArraysKt;->maxOrNull(Ljava/lang/Iterable;)Ljava/lang/Comparable;
+    invoke-static {v12}, Lkotlin/collections/CollectionsKt___CollectionsKt;->maxOrNull(Ljava/lang/Iterable;)Ljava/lang/Comparable;
 
     move-result-object v12
 
     check-cast v12, Lorg/joda/time/DateTime;
 
-    if-eqz v12, :cond_7
+    if-nez v12, :cond_7
 
-    invoke-virtual {v12}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
-
-    move-result-object v12
+    move-object v12, v10
 
     goto :goto_3
 
     :cond_7
-    move-object v12, v11
+    invoke-virtual {v12}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
+
+    move-result-object v12
 
     :goto_3
     invoke-static {v5, v12}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
 
-    xor-int/2addr v5, v10
+    xor-int/2addr v5, v11
 
-    if-nez v5, :cond_9
+    if-nez v5, :cond_8
 
-    invoke-static {v7}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v1
+    invoke-virtual {v1, v7}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v2, v6, [Ljava/lang/Object;
 
     const-string v3, "We don\'t expect new day packages."
 
-    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    return-object v11
+    return-object v10
 
     :cond_8
-    throw v11
+    iget-object v5, v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->keyServer:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
-    :cond_9
-    iget-object v5, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->keyServer:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
-
-    iput-object v14, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$0:Ljava/lang/Object;
+    iput-object v13, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$0:Ljava/lang/Object;
 
     iput-object v1, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$1:Ljava/lang/Object;
 
@@ -381,43 +364,43 @@
 
     iput v9, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->label:I
 
-    if-eqz v5, :cond_15
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v12, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
-    new-instance v13, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;
+    new-instance v14, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;
 
-    invoke-direct {v13, v5, v1, v11}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v14, v5, v1, v10}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v12, v13, v3}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v12, v14, v3}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v5
 
-    if-ne v5, v4, :cond_a
+    if-ne v5, v4, :cond_9
 
     return-object v4
 
-    :cond_a
-    move-object v13, v1
+    :cond_9
+    move-object v12, v1
 
-    move-object/from16 v17, v5
+    move-object/from16 v16, v5
 
     move-object v5, v2
 
-    move-object/from16 v2, v17
+    move-object/from16 v2, v16
 
     :goto_4
     check-cast v2, Ljava/util/Collection;
 
-    new-instance v12, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
+    new-instance v14, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
-    invoke-direct {v12, v1, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Ljava/util/Collection;)V
+    invoke-direct {v14, v1, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Ljava/util/Collection;)V
 
-    invoke-static {v12}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v14}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    invoke-virtual {v14, v5, v1}, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->findStaleData$Corona_Warn_App_deviceRelease(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+    invoke-virtual {v13, v5, v1}, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool;->findStaleData$Corona_Warn_App_deviceRelease(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
 
     move-result-object v1
 
@@ -429,29 +412,29 @@
 
     move-result v15
 
-    xor-int/2addr v15, v10
+    xor-int/2addr v15, v11
 
-    if-eqz v15, :cond_d
+    if-eqz v15, :cond_c
 
-    invoke-static {v7}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v15, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v7
+    invoke-virtual {v15, v7}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v9, v9, [Ljava/lang/Object;
+    new-array v7, v9, [Ljava/lang/Object;
 
-    aput-object v13, v9, v6
+    aput-object v12, v7, v6
 
-    aput-object v1, v9, v10
+    aput-object v1, v7, v11
 
     const-string v6, "Deleting stale days (loation=%s): %s"
 
-    invoke-virtual {v7, v6, v9}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v15, v6, v7}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v6, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->keyCache:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    iget-object v6, v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->keyCache:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     new-instance v7, Ljava/util/ArrayList;
 
-    invoke-static {v1, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v8}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v9
 
@@ -466,7 +449,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_b
+    if-eqz v9, :cond_a
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -480,14 +463,14 @@
 
     goto :goto_5
 
-    :cond_b
+    :cond_a
     iput-object v5, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$0:Ljava/lang/Object;
 
-    iput-object v12, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$1:Ljava/lang/Object;
+    iput-object v14, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$1:Ljava/lang/Object;
 
     iput-object v1, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$2:Ljava/lang/Object;
 
-    iput-object v11, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$3:Ljava/lang/Object;
+    iput-object v10, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$determineMissingDayPackages$1;->L$3:Ljava/lang/Object;
 
     const/4 v2, 0x3
 
@@ -497,32 +480,26 @@
 
     move-result-object v2
 
-    if-ne v2, v4, :cond_c
+    if-ne v2, v4, :cond_b
 
     return-object v4
 
-    :cond_c
+    :cond_b
     move-object v3, v5
 
-    move-object v4, v12
+    move-object v4, v14
 
     :goto_6
     move-object v5, v3
 
-    move-object v12, v4
+    move-object v14, v4
 
-    :cond_d
-    invoke-static {v5, v1}, Lkotlin/collections/ArraysKt___ArraysKt;->minus(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/List;
+    :cond_c
+    invoke-static {v5, v1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->minus(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v1
 
-    if-eqz v12, :cond_14
-
-    const-string v2, "cachedKeys"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v14}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -532,13 +509,13 @@
 
     move-result-object v1
 
-    :cond_e
+    :cond_d
     :goto_7
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_e
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -552,22 +529,22 @@
 
     iget-object v4, v4, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->location:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iget-object v5, v12, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->location:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
+    iget-object v5, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->location:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_d
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
-    :cond_f
+    :cond_e
     new-instance v1, Ljava/util/ArrayList;
 
-    invoke-static {v2, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v2, v8}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v3
 
@@ -582,7 +559,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_f
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -598,8 +575,8 @@
 
     goto :goto_8
 
-    :cond_10
-    iget-object v2, v12, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->dayData:Ljava/util/Collection;
+    :cond_f
+    iget-object v2, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->dayData:Ljava/util/Collection;
 
     new-instance v3, Ljava/util/ArrayList;
 
@@ -609,13 +586,13 @@
 
     move-result-object v2
 
-    :cond_11
+    :cond_10
     :goto_9
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_12
+    if-eqz v4, :cond_11
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -629,42 +606,36 @@
 
     move-result v5
 
-    xor-int/2addr v5, v10
+    xor-int/2addr v5, v11
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_10
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_9
 
-    :cond_12
+    :cond_11
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_12
 
     goto :goto_a
 
-    :cond_13
-    new-instance v11, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
+    :cond_12
+    new-instance v10, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
-    iget-object v1, v12, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->location:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
+    iget-object v1, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->location:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    invoke-direct {v11, v1, v3}, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Ljava/util/Collection;)V
+    invoke-direct {v10, v1, v3}, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Ljava/util/Collection;)V
 
     :goto_a
-    return-object v11
-
-    :cond_14
-    throw v11
-
-    :cond_15
-    throw v11
+    return-object v10
 .end method
 
 .method public final launchDownloads$Corona_Warn_App_deviceRelease(Ljava/util/Collection;Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 18
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -683,297 +654,259 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    instance-of v0, p3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;
 
-    move-object/from16 v1, p3
+    if-eqz v0, :cond_0
 
-    instance-of v2, v1, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;
+    move-object v0, p3
 
-    if-eqz v2, :cond_0
+    check-cast v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;
 
-    move-object v2, v1
+    iget v1, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
 
-    check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;
+    const/high16 v2, -0x80000000
 
-    iget v3, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
+    and-int v3, v1, v2
 
-    const/high16 v4, -0x80000000
+    if-eqz v3, :cond_0
 
-    and-int v5, v3, v4
+    sub-int/2addr v1, v2
 
-    if-eqz v5, :cond_0
-
-    sub-int/2addr v3, v4
-
-    iput v3, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
+    iput v1, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p3}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object v1, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->result:Ljava/lang/Object;
+    iget-object p3, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->result:Ljava/lang/Object;
 
-    sget-object v3, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v4, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
+    iget v2, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    if-eqz v4, :cond_2
+    if-eqz v2, :cond_2
 
-    if-ne v4, v5, :cond_1
+    if-ne v2, v3, :cond_1
 
-    iget-object v4, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$4:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$4:Ljava/lang/Object;
 
-    check-cast v4, Ljava/util/Collection;
+    check-cast p1, Ljava/util/Collection;
 
-    iget-object v6, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$3:Ljava/lang/Object;
+    iget-object p2, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$3:Ljava/lang/Object;
 
-    check-cast v6, Ljava/util/Iterator;
+    check-cast p2, Ljava/util/Iterator;
 
-    iget-object v7, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$2:Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$2:Ljava/lang/Object;
 
-    check-cast v7, Ljava/util/Collection;
+    check-cast v2, Ljava/util/Collection;
 
-    iget-object v8, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$1:Ljava/lang/Object;
+    iget-object v4, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$1:Ljava/lang/Object;
 
-    check-cast v8, Lkotlin/jvm/internal/Ref$ObjectRef;
+    check-cast v4, Lkotlin/jvm/functions/Function3;
 
-    iget-object v9, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$0:Ljava/lang/Object;
+    iget-object v5, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$0:Ljava/lang/Object;
 
-    check-cast v9, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
+    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    move-object v14, v9
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_4
 
     :cond_1
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw p1
 
     :cond_2
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-instance v1, Lkotlin/jvm/internal/Ref$ObjectRef;
+    new-instance p3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$launcher$1;
 
-    invoke-direct {v1}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
+    invoke-direct {p3, p0, p2}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$launcher$1;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig;)V
 
-    new-instance v4, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$launcher$1;
+    new-instance p2, Ljava/util/ArrayList;
 
-    move-object/from16 v6, p2
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {v4, v0, v6}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$launcher$1;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig;)V
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    iput-object v4, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
-
-    new-instance v4, Ljava/util/ArrayList;
-
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface/range {p1 .. p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
+    move-result-object p1
 
     :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v2
 
-    const/16 v8, 0xa
+    const/16 v4, 0xa
 
-    if-eqz v7, :cond_4
+    if-eqz v2, :cond_4
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v2
 
-    check-cast v7, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
+    check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
 
-    iget-object v9, v7, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->dayData:Ljava/util/Collection;
+    iget-object v5, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;->dayData:Ljava/util/Collection;
 
-    new-instance v10, Ljava/util/ArrayList;
+    new-instance v6, Ljava/util/ArrayList;
 
-    invoke-static {v9, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v5, v4}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v8
+    move-result v4
 
-    invoke-direct {v10, v8}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v6, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-interface {v9}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v4
 
     :goto_2
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v9
+    move-result v5
 
-    if-eqz v9, :cond_3
+    if-eqz v5, :cond_3
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v5
 
-    check-cast v9, Lorg/joda/time/LocalDate;
+    check-cast v5, Lorg/joda/time/LocalDate;
 
-    new-instance v11, Lkotlin/Pair;
+    new-instance v7, Lkotlin/Pair;
 
-    invoke-direct {v11, v7, v9}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v7, v2, v5}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {v10, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     :cond_3
-    invoke-static {v4, v10}, Lcom/google/zxing/client/android/R$id;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    invoke-static {p2, v6}, Lkotlin/collections/CollectionsKt__ReversedViewsKt;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
     goto :goto_1
 
     :cond_4
-    const-string v6, "DayPackageSyncTool"
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v2, "DayPackageSyncTool"
+
+    invoke-virtual {p1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v2, v3, [Ljava/lang/Object;
+
+    const/4 v5, 0x0
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    new-instance v7, Ljava/lang/Integer;
+
+    invoke-direct {v7, v6}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v7, v2, v5
+
+    const-string v5, "Launching %d downloads."
+
+    invoke-virtual {p1, v5, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-static {p2, v4}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v2
+
+    invoke-direct {p1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    move-object v5, p0
+
+    move-object v4, p3
+
+    :goto_3
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p3
+
+    if-eqz p3, :cond_6
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Lkotlin/Pair;
+
+    iget-object v2, p3, Lkotlin/Pair;->first:Ljava/lang/Object;
+
+    check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
+
+    iget-object p3, p3, Lkotlin/Pair;->second:Ljava/lang/Object;
+
+    check-cast p3, Lorg/joda/time/LocalDate;
+
+    iget-object v6, v5, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+
+    invoke-interface {v6}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v6
 
-    new-array v7, v5, [Ljava/lang/Object;
+    new-instance v7, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$2$1;
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-direct {v7, v4, v2, p3, v8}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$2$1;-><init>(Lkotlin/jvm/functions/Function3;Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;Lorg/joda/time/LocalDate;Lkotlin/coroutines/Continuation;)V
 
-    move-result v10
+    iput-object v5, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$0:Ljava/lang/Object;
 
-    new-instance v11, Ljava/lang/Integer;
+    iput-object v4, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$1:Ljava/lang/Object;
 
-    invoke-direct {v11, v10}, Ljava/lang/Integer;-><init>(I)V
+    iput-object p1, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$2:Ljava/lang/Object;
 
-    aput-object v11, v7, v9
+    iput-object p2, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$3:Ljava/lang/Object;
 
-    const-string v9, "Launching %d downloads."
+    iput-object p1, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$4:Ljava/lang/Object;
 
-    invoke-virtual {v6, v9, v7}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    iput v3, v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
 
-    new-instance v6, Ljava/util/ArrayList;
+    invoke-static {v6, v7, v0}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-static {v4, v8}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    move-result-object p3
 
-    move-result v7
+    if-ne p3, v1, :cond_5
 
-    invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    move-object v14, v0
-
-    move-object/from16 v17, v6
-
-    move-object v6, v4
-
-    move-object/from16 v4, v17
-
-    :goto_3
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_6
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lkotlin/Pair;
-
-    iget-object v8, v7, Lkotlin/Pair;->first:Ljava/lang/Object;
-
-    check-cast v8, Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;
-
-    iget-object v7, v7, Lkotlin/Pair;->second:Ljava/lang/Object;
-
-    move-object v9, v7
-
-    check-cast v9, Lorg/joda/time/LocalDate;
-
-    iget-object v7, v14, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
-
-    invoke-interface {v7}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
-
-    move-result-object v15
-
-    new-instance v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$$inlined$map$lambda$1;
-
-    const/4 v10, 0x0
-
-    move-object v7, v13
-
-    move-object v11, v14
-
-    move-object v12, v2
-
-    move-object/from16 v16, v13
-
-    move-object v13, v1
-
-    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$$inlined$map$lambda$1;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/download/LocationDays;Lorg/joda/time/LocalDate;Lkotlin/coroutines/Continuation;Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;Lkotlin/coroutines/Continuation;Lkotlin/jvm/internal/Ref$ObjectRef;)V
-
-    iput-object v14, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$0:Ljava/lang/Object;
-
-    iput-object v1, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$1:Ljava/lang/Object;
-
-    iput-object v4, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$2:Ljava/lang/Object;
-
-    iput-object v6, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$3:Ljava/lang/Object;
-
-    iput-object v4, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->L$4:Ljava/lang/Object;
-
-    iput v5, v2, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$launchDownloads$1;->label:I
-
-    move-object/from16 v7, v16
-
-    invoke-static {v15, v7, v2}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    if-ne v7, v3, :cond_5
-
-    return-object v3
+    return-object v1
 
     :cond_5
-    move-object v8, v1
-
-    move-object v1, v7
-
-    move-object v7, v4
+    move-object v2, p1
 
     :goto_4
-    check-cast v1, Lkotlinx/coroutines/Deferred;
+    check-cast p3, Lkotlinx/coroutines/Deferred;
 
-    invoke-interface {v4, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, p3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    move-object v4, v7
-
-    move-object v1, v8
+    move-object p1, v2
 
     goto :goto_3
 
     :cond_6
-    check-cast v4, Ljava/util/List;
+    check-cast p1, Ljava/util/List;
 
-    return-object v4
+    return-object p1
 .end method
 
 .method public final syncMissingDayPackages$Corona_Warn_App_deviceRelease(Ljava/util/List;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -1055,12 +988,12 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_9
 
     :pswitch_1
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_8
 
@@ -1077,7 +1010,7 @@
 
     check-cast v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_7
 
@@ -1103,7 +1036,7 @@
     check-cast v13, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
     :try_start_0
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Lde/rki/coronawarnapp/exception/http/CwaUnknownHostException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1135,7 +1068,7 @@
 
     check-cast v11, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -1150,7 +1083,7 @@
 
     check-cast v10, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v11, v10
 
@@ -1163,19 +1096,19 @@
     goto :goto_1
 
     :pswitch_6
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v2
+    invoke-virtual {v2, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v5, v8, [Ljava/lang/Object;
 
     aput-object v0, v5, v9
 
-    const-string v10, "syncMissingDays(targetLocations=%s)"
+    const-string/jumbo v10, "syncMissingDays(targetLocations=%s)"
 
-    invoke-virtual {v2, v10, v5}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v10, v5}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v2, v1, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool;->configProvider:Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
 
@@ -1353,15 +1286,15 @@
 
     if-eqz v2, :cond_8
 
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v0
+    invoke-virtual {v0, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v2, v9, [Ljava/lang/Object;
 
     const-string v3, "There were no missing day packages."
 
-    invoke-virtual {v0, v3, v2}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool$SyncResult;
 
@@ -1372,9 +1305,9 @@
     return-object v0
 
     :cond_8
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v2
+    invoke-virtual {v2, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v10, v8, [Ljava/lang/Object;
 
@@ -1382,7 +1315,7 @@
 
     const-string v12, "Downloading missing day packages: %s"
 
-    invoke-virtual {v2, v12, v10}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v12, v10}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iput-object v11, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->L$0:Ljava/lang/Object;
 
@@ -1432,9 +1365,9 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v2
+    invoke-virtual {v2, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v5, v8, [Ljava/lang/Object;
 
@@ -1450,7 +1383,7 @@
 
     const-string v7, "Waiting for %d missing day downloads."
 
-    invoke-virtual {v2, v7, v5}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v7, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iput-object v0, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->L$0:Ljava/lang/Object;
 
@@ -1458,7 +1391,7 @@
 
     iput v2, v3, Lde/rki/coronawarnapp/diagnosiskeys/download/DayPackageSyncTool$syncMissingDayPackages$1;->label:I
 
-    invoke-static {v0, v3}, Lcom/google/zxing/client/android/R$id;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, v3}, Lkotlinx/coroutines/AwaitKt;->awaitAll(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1470,13 +1403,13 @@
     :goto_9
     check-cast v2, Ljava/lang/Iterable;
 
-    invoke-static {v2}, Lkotlin/collections/ArraysKt___ArraysKt;->filterNotNull(Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt___CollectionsKt;->filterNotNull(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v2
 
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v3
+    invoke-virtual {v3, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v4, v8, [Ljava/lang/Object;
 
@@ -1496,7 +1429,7 @@
 
     move-object v10, v2
 
-    invoke-static/range {v10 .. v17}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    invoke-static/range {v10 .. v17}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1504,45 +1437,33 @@
 
     const-string v5, "Downloaded keyfile: %s"
 
-    invoke-virtual {v3, v5, v4}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v5, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v3, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object v3
+    move-object v4, v2
 
-    const-string v4, "Download success: "
+    check-cast v4, Ljava/util/ArrayList;
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
-    move-result-object v4
-
-    move-object v5, v2
-
-    check-cast v5, Ljava/util/ArrayList;
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v6
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 v6, 0x2f
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result v5
 
     invoke-interface {v0}, Ljava/util/Collection;->size()I
 
     move-result v6
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v7, "Download success: "
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v10, "/"
 
-    move-result-object v4
+    invoke-static {v7, v5, v10, v6}, Lcom/airbnb/lottie/utils/GammaEvaluator$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
 
     new-array v6, v9, [Ljava/lang/Object;
 
-    invoke-virtual {v3, v4, v6}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v5, v6}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v3, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool$SyncResult;
 
@@ -1550,7 +1471,7 @@
 
     move-result v0
 
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
@@ -1567,15 +1488,15 @@
     return-object v3
 
     :goto_b
-    invoke-static {v6}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v2
+    invoke-virtual {v2, v6}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v3, v9, [Ljava/lang/Object;
 
     const-string v4, "Failed to sync with day index."
 
-    invoke-virtual {v2, v0, v4, v3}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v4, v3}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool$SyncResult;
 
@@ -1584,6 +1505,8 @@
     invoke-direct {v0, v9, v2}, Lde/rki/coronawarnapp/diagnosiskeys/download/BaseKeyPackageSyncTool$SyncResult;-><init>(ZLjava/util/List;)V
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

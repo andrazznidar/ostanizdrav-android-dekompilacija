@@ -21,6 +21,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x0
+        }
+        names = {
+            "this$0",
+            "version"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
 
@@ -33,12 +43,20 @@
 # virtual methods
 .method public createAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
-    const-string v0, "CREATE TABLE IF NOT EXISTS `locations` (`locationId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `locationName` TEXT NOT NULL, `phoneNumber` TEXT, `emailAddress` TEXT)"
+    const-string v0, "CREATE TABLE IF NOT EXISTS `locations` (`locationId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `locationName` TEXT NOT NULL, `phoneNumber` TEXT, `emailAddress` TEXT, `traceLocationID` TEXT)"
 
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v0, "CREATE TABLE IF NOT EXISTS `locationvisits` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date` TEXT NOT NULL, `fkLocationId` INTEGER NOT NULL, `duration` INTEGER, `circumstances` TEXT, FOREIGN KEY(`fkLocationId`) REFERENCES `locations`(`locationId`) ON UPDATE CASCADE ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED)"
+    const-string v0, "CREATE TABLE IF NOT EXISTS `locationvisits` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date` TEXT NOT NULL, `fkLocationId` INTEGER NOT NULL, `duration` INTEGER, `circumstances` TEXT, `checkInID` INTEGER, FOREIGN KEY(`fkLocationId`) REFERENCES `locations`(`locationId`) ON UPDATE CASCADE ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED)"
 
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
@@ -58,11 +76,15 @@
 
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    const-string v0, "CREATE TABLE IF NOT EXISTS `corona_tests` (`id` TEXT NOT NULL, `testType` TEXT NOT NULL, `result` TEXT NOT NULL, `time` TEXT NOT NULL, PRIMARY KEY(`id`))"
+
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
     const-string v0, "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)"
 
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    const-string v0, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \'d702472d6dd506b73ff6a7b340686c9a\')"
+    const-string v0, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \'3ed51cebcbafb1960bf5194f27748e12\')"
 
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
@@ -71,6 +93,14 @@
 
 .method public dropAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     const-string v0, "DROP TABLE IF EXISTS `locations`"
 
@@ -88,103 +118,101 @@
 
     invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
+    const-string v0, "DROP TABLE IF EXISTS `corona_tests`"
+
+    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
+
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;->access$000(Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;)Ljava/util/List;
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    move-result-object p1
+    if-eqz p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
-
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onCreate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;->access$300(Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;)Ljava/util/List;
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    move-result-object p1
+    if-eqz p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
-
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
 
@@ -235,12 +263,28 @@
 
 .method public onPostMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public onPreMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     invoke-static {p1}, Landroidx/room/util/DBUtil;->dropFtsSyncTriggers(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
@@ -248,13 +292,21 @@
 .end method
 
 .method public onValidateSchema(Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/room/RoomOpenHelper$ValidationResult;
-    .locals 39
+    .locals 33
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     move-object/from16 v0, p1
 
     new-instance v1, Ljava/util/HashMap;
 
-    const/4 v2, 0x4
+    const/4 v2, 0x5
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
@@ -266,13 +318,15 @@
 
     const/4 v6, 0x1
 
-    const/4 v7, 0x1
+    const/4 v10, 0x1
 
     const/4 v8, 0x0
 
     const/4 v9, 0x1
 
     move-object v3, v2
+
+    move v7, v10
 
     invoke-direct/range {v3 .. v9}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
@@ -282,93 +336,115 @@
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v5, "locationName"
+    const-string v8, "locationName"
 
-    const-string v6, "TEXT"
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x1
-
-    move-object v4, v2
-
-    invoke-direct/range {v4 .. v10}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v4, "locationName"
-
-    invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const-string v6, "phoneNumber"
-
-    const-string v7, "TEXT"
+    const-string v9, "TEXT"
 
     const/4 v4, 0x0
 
     const/4 v12, 0x0
 
-    const/4 v13, 0x0
+    const/4 v13, 0x1
 
-    const/4 v14, 0x1
+    move-object v7, v2
 
-    move-object v5, v2
+    move v11, v4
 
-    move v8, v4
+    invoke-direct/range {v7 .. v13}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    move v9, v12
-
-    move-object v10, v13
-
-    move v11, v14
-
-    invoke-direct/range {v5 .. v11}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v5, "phoneNumber"
+    const-string v5, "locationName"
 
     invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v9, "emailAddress"
+    const-string v12, "phoneNumber"
 
-    const-string v10, "TEXT"
+    const-string v13, "TEXT"
 
-    move-object v8, v2
+    const/4 v8, 0x0
 
-    move v11, v4
+    const/4 v5, 0x0
 
-    invoke-direct/range {v8 .. v14}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+    move-object v11, v2
+
+    move v14, v4
+
+    move v15, v8
+
+    move-object/from16 v16, v5
+
+    move/from16 v17, v6
+
+    invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v10, "phoneNumber"
+
+    invoke-virtual {v1, v10, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v12, "emailAddress"
+
+    const-string v13, "TEXT"
+
+    move-object v11, v2
+
+    invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
     const-string v4, "emailAddress"
 
+    invoke-virtual {v1, v4, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string/jumbo v6, "traceLocationID"
+
+    const-string v7, "TEXT"
+
+    const/4 v9, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x1
+
+    move-object v5, v2
+
+    move-object v13, v10
+
+    move-object v10, v11
+
+    move v11, v12
+
+    invoke-direct/range {v5 .. v11}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string/jumbo v5, "traceLocationID"
+
     const/4 v6, 0x0
 
-    invoke-static {v1, v4, v2, v6}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v5, v2, v6}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
-    new-instance v7, Ljava/util/HashSet;
+    new-instance v5, Ljava/util/HashSet;
 
-    invoke-direct {v7, v6}, Ljava/util/HashSet;-><init>(I)V
+    invoke-direct {v5, v6}, Ljava/util/HashSet;-><init>(I)V
 
-    new-instance v8, Landroidx/room/util/TableInfo;
+    new-instance v7, Landroidx/room/util/TableInfo;
 
-    const-string v9, "locations"
+    const-string v8, "locations"
 
-    invoke-direct {v8, v9, v1, v2, v7}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
+    invoke-direct {v7, v8, v1, v2, v5}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    invoke-static {v0, v9}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
+    invoke-static {v0, v8}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    invoke-virtual {v8, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    const-string v7, "\n Found:\n"
+    const-string v5, "\n Found:\n"
 
     if-nez v2, :cond_0
 
@@ -376,7 +452,7 @@
 
     const-string v2, "locations(de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryLocationEntity).\n Expected:\n"
 
-    invoke-static {v2, v8, v7, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v7, v5, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -387,87 +463,59 @@
     :cond_0
     new-instance v1, Ljava/util/HashMap;
 
-    const/4 v2, 0x5
+    const/4 v2, 0x6
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const/4 v11, 0x1
+    const/4 v9, 0x1
 
-    const/4 v15, 0x1
+    const/16 v17, 0x1
 
-    const/4 v13, 0x0
+    const/4 v11, 0x0
 
-    const/4 v14, 0x1
+    const/4 v12, 0x1
 
-    const-string v9, "id"
+    const-string v7, "id"
 
-    const-string v10, "INTEGER"
+    const-string v8, "INTEGER"
 
-    move-object v8, v2
+    move-object v6, v2
 
-    move v12, v15
+    move/from16 v10, v17
 
-    invoke-direct/range {v8 .. v14}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+    invoke-direct/range {v6 .. v12}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v8, "id"
+    const-string v6, "id"
 
-    invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x1
-
-    const-string v13, "date"
-
-    const-string v14, "TEXT"
-
-    move-object v12, v2
-
-    invoke-direct/range {v12 .. v18}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v9, "date"
-
-    invoke-virtual {v1, v9, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v6, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const/4 v13, 0x1
-
-    const/16 v17, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x1
-
-    const-string v11, "fkLocationId"
-
-    const-string v12, "INTEGER"
-
-    move-object v10, v2
-
-    move/from16 v14, v17
-
-    invoke-direct/range {v10 .. v16}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v10, "fkLocationId"
-
-    invoke-virtual {v1, v10, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const/16 v21, 0x0
+    const/16 v18, 0x0
 
     const/16 v19, 0x0
 
     const/16 v20, 0x1
 
-    const-string v15, "duration"
+    const-string v15, "date"
+
+    const-string v16, "TEXT"
+
+    move-object v14, v2
+
+    invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v7, "date"
+
+    invoke-virtual {v1, v7, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/16 v21, 0x0
+
+    const-string v15, "fkLocationId"
 
     const-string v16, "INTEGER"
 
@@ -477,43 +525,91 @@
 
     invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v11, "duration"
+    const-string v8, "fkLocationId"
 
-    invoke-virtual {v1, v11, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const/16 v22, 0x0
+    const/4 v9, 0x0
 
     const/16 v23, 0x0
 
     const/16 v24, 0x1
 
-    const-string v19, "circumstances"
+    const-string v19, "duration"
 
-    const-string v20, "TEXT"
+    const-string v20, "INTEGER"
 
     move-object/from16 v18, v2
 
+    move/from16 v22, v9
+
     invoke-direct/range {v18 .. v24}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v11, "circumstances"
+    const-string v10, "duration"
 
-    const/4 v12, 0x1
+    invoke-virtual {v1, v10, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v1, v11, v2, v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v10, 0x0
+
+    const-string v15, "circumstances"
+
+    const-string v16, "TEXT"
+
+    move-object v14, v2
+
+    move/from16 v17, v9
+
+    move/from16 v18, v10
+
+    move-object/from16 v19, v11
+
+    move/from16 v20, v12
+
+    invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v15, "circumstances"
+
+    invoke-virtual {v1, v15, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const-string v16, "checkInID"
+
+    const-string v17, "INTEGER"
+
+    move-object v14, v2
+
+    move-object/from16 v25, v15
+
+    move-object/from16 v15, v16
+
+    move-object/from16 v16, v17
+
+    move/from16 v17, v9
+
+    invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v9, "checkInID"
+
+    const/4 v10, 0x1
+
+    invoke-static {v1, v9, v2, v10}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
-    new-instance v15, Landroidx/room/util/TableInfo$ForeignKey;
+    new-instance v9, Landroidx/room/util/TableInfo$ForeignKey;
 
-    filled-new-array {v10}, [Ljava/lang/String;
+    filled-new-array {v8}, [Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v11
 
-    invoke-static {v13}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v11}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v17
+    move-result-object v18
 
     filled-new-array {v3}, [Ljava/lang/String;
 
@@ -521,57 +617,53 @@
 
     invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v18
+    move-result-object v19
 
-    const-string v14, "locations"
-
-    const-string v3, "CASCADE"
+    const-string v15, "locations"
 
     const-string v16, "CASCADE"
 
-    move-object v13, v15
+    const-string v17, "CASCADE"
 
-    move-object v6, v15
+    move-object v14, v9
 
-    move-object v15, v3
+    invoke-direct/range {v14 .. v19}, Landroidx/room/util/TableInfo$ForeignKey;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
 
-    invoke-direct/range {v13 .. v18}, Landroidx/room/util/TableInfo$ForeignKey;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
-
-    invoke-virtual {v2, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v9}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     new-instance v3, Ljava/util/HashSet;
 
-    invoke-direct {v3, v12}, Ljava/util/HashSet;-><init>(I)V
+    invoke-direct {v3, v10}, Ljava/util/HashSet;-><init>(I)V
 
-    new-instance v6, Landroidx/room/util/TableInfo$Index;
+    new-instance v9, Landroidx/room/util/TableInfo$Index;
 
-    filled-new-array {v10}, [Ljava/lang/String;
+    filled-new-array {v8}, [Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-static {v10}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v8}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v10
+    move-result-object v8
 
-    const-string v13, "index_locationvisits_fkLocationId"
+    const-string v11, "index_locationvisits_fkLocationId"
 
-    const/4 v14, 0x0
+    const/4 v12, 0x0
 
-    invoke-direct {v6, v13, v14, v10}, Landroidx/room/util/TableInfo$Index;-><init>(Ljava/lang/String;ZLjava/util/List;)V
+    invoke-direct {v9, v11, v12, v8}, Landroidx/room/util/TableInfo$Index;-><init>(Ljava/lang/String;ZLjava/util/List;)V
 
-    invoke-virtual {v3, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v9}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    new-instance v6, Landroidx/room/util/TableInfo;
+    new-instance v8, Landroidx/room/util/TableInfo;
 
-    const-string v10, "locationvisits"
+    const-string v9, "locationvisits"
 
-    invoke-direct {v6, v10, v1, v2, v3}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
+    invoke-direct {v8, v9, v1, v2, v3}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    invoke-static {v0, v10}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
+    invoke-static {v0, v9}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    invoke-virtual {v6, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -581,11 +673,13 @@
 
     const-string v2, "locationvisits(de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryLocationVisitEntity).\n Expected:\n"
 
-    invoke-static {v2, v6, v7, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v8, v5, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v14, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
 
     return-object v0
 
@@ -596,126 +690,351 @@
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
 
-    const/4 v3, 0x1
+    const/4 v8, 0x1
 
-    const/16 v24, 0x1
+    const/16 v18, 0x1
+
+    const/16 v31, 0x0
+
+    const/16 v32, 0x1
+
+    const-string v15, "personId"
+
+    const-string v16, "INTEGER"
+
+    move-object v14, v3
+
+    move/from16 v17, v8
+
+    move-object/from16 v19, v31
+
+    move/from16 v20, v32
+
+    invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v9, "personId"
+
+    invoke-virtual {v1, v9, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const/16 v30, 0x0
 
-    const/16 v31, 0x1
+    const-string v15, "fullName"
 
-    const-string v21, "personId"
+    const-string v16, "TEXT"
 
-    const-string v22, "INTEGER"
+    move-object v14, v3
 
-    move-object/from16 v20, v2
+    move/from16 v18, v30
 
-    move/from16 v23, v3
+    invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    move-object/from16 v25, v30
+    const-string v8, "fullName"
 
-    move/from16 v26, v31
+    invoke-virtual {v1, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct/range {v20 .. v26}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v6, "personId"
-
-    invoke-virtual {v1, v6, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
 
     const/16 v29, 0x0
 
-    const-string v21, "fullName"
+    const-string v27, "phoneNumber"
 
-    const-string v22, "TEXT"
+    const-string v28, "TEXT"
 
-    move-object/from16 v20, v2
+    move-object/from16 v26, v3
 
-    move/from16 v24, v29
+    invoke-direct/range {v26 .. v32}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    invoke-direct/range {v20 .. v26}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+    invoke-virtual {v1, v13, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "fullName"
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
 
-    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/16 v17, 0x0
 
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
+    const/16 v18, 0x0
 
-    const/16 v28, 0x0
+    const/16 v19, 0x0
 
-    const-string v26, "phoneNumber"
+    const/16 v20, 0x1
 
-    const-string v27, "TEXT"
+    const-string v15, "emailAddress"
 
-    move-object/from16 v25, v2
+    const-string v16, "TEXT"
 
-    invoke-direct/range {v25 .. v31}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+    move-object v14, v3
 
-    invoke-virtual {v1, v5, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
+    const/4 v8, 0x0
 
-    const/16 v35, 0x0
+    invoke-static {v1, v4, v3, v8}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
-    const/16 v36, 0x0
-
-    const/16 v37, 0x0
-
-    const/16 v38, 0x1
-
-    const-string v33, "emailAddress"
-
-    const-string v34, "TEXT"
-
-    move-object/from16 v32, v2
-
-    invoke-direct/range {v32 .. v38}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v4, v2, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
-
-    move-result-object v2
+    move-result-object v3
 
     new-instance v4, Ljava/util/HashSet;
 
-    invoke-direct {v4, v3}, Ljava/util/HashSet;-><init>(I)V
+    invoke-direct {v4, v8}, Ljava/util/HashSet;-><init>(I)V
 
-    new-instance v5, Landroidx/room/util/TableInfo;
+    new-instance v8, Landroidx/room/util/TableInfo;
 
-    const-string v10, "persons"
+    const-string v11, "persons"
 
-    invoke-direct {v5, v10, v1, v2, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
+    invoke-direct {v8, v11, v1, v3, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    invoke-static {v0, v10}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
+    invoke-static {v0, v11}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v1
 
-    invoke-virtual {v5, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     const-string v2, "persons(de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryPersonEntity).\n Expected:\n"
 
-    invoke-static {v2, v5, v7, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v8, v5, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v3, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
 
     return-object v0
 
     :cond_2
     new-instance v1, Ljava/util/HashMap;
 
-    const/4 v2, 0x7
+    const/4 v3, 0x7
+
+    invoke-direct {v1, v3}, Ljava/util/HashMap;-><init>(I)V
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v4, 0x1
+
+    const/4 v15, 0x1
+
+    const/4 v8, 0x0
+
+    const/16 v23, 0x1
+
+    const-string v12, "id"
+
+    const-string v13, "INTEGER"
+
+    move-object v11, v3
+
+    move v14, v4
+
+    move-object/from16 v16, v8
+
+    move/from16 v17, v23
+
+    invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    invoke-virtual {v1, v6, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
+
+    const/16 v19, 0x1
+
+    const/16 v20, 0x0
+
+    const/16 v21, 0x0
+
+    const/16 v22, 0x1
+
+    const-string v17, "date"
+
+    const-string v18, "TEXT"
+
+    move-object/from16 v16, v3
+
+    invoke-direct/range {v16 .. v22}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    invoke-virtual {v1, v7, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v7, 0x0
+
+    const-string v12, "fkPersonId"
+
+    const-string v13, "INTEGER"
+
+    move-object v11, v3
+
+    move v15, v7
+
+    move-object/from16 v16, v8
+
+    move/from16 v17, v23
+
+    invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v4, "fkPersonId"
+
+    invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v11, 0x0
+
+    const-string v17, "durationClassification"
+
+    const-string v18, "TEXT"
+
+    move-object/from16 v16, v3
+
+    move/from16 v19, v11
+
+    move/from16 v20, v7
+
+    move-object/from16 v21, v8
+
+    move/from16 v22, v23
+
+    invoke-direct/range {v16 .. v22}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v12, "durationClassification"
+
+    invoke-virtual {v1, v12, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
+
+    const-string/jumbo v17, "withMask"
+
+    const-string v18, "INTEGER"
+
+    move-object/from16 v16, v3
+
+    invoke-direct/range {v16 .. v22}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string/jumbo v12, "withMask"
+
+    invoke-virtual {v1, v12, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
+
+    const-string/jumbo v17, "wasOutside"
+
+    const-string v18, "INTEGER"
+
+    move-object/from16 v16, v3
+
+    invoke-direct/range {v16 .. v22}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string/jumbo v12, "wasOutside"
+
+    invoke-virtual {v1, v12, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroidx/room/util/TableInfo$Column;
+
+    const-string v17, "circumstances"
+
+    const-string v18, "TEXT"
+
+    move-object/from16 v16, v3
+
+    invoke-direct/range {v16 .. v22}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    move-object/from16 v7, v25
+
+    invoke-static {v1, v7, v3, v10}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+
+    move-result-object v3
+
+    new-instance v7, Landroidx/room/util/TableInfo$ForeignKey;
+
+    filled-new-array {v4}, [Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v15
+
+    filled-new-array {v9}, [Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v16
+
+    const-string v12, "persons"
+
+    const-string v13, "CASCADE"
+
+    const-string v14, "CASCADE"
+
+    move-object v11, v7
+
+    invoke-direct/range {v11 .. v16}, Landroidx/room/util/TableInfo$ForeignKey;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
+
+    invoke-virtual {v3, v7}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    new-instance v7, Ljava/util/HashSet;
+
+    invoke-direct {v7, v10}, Ljava/util/HashSet;-><init>(I)V
+
+    new-instance v8, Landroidx/room/util/TableInfo$Index;
+
+    filled-new-array {v4}, [Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    const-string v9, "index_personencounters_fkPersonId"
+
+    const/4 v11, 0x0
+
+    invoke-direct {v8, v9, v11, v4}, Landroidx/room/util/TableInfo$Index;-><init>(Ljava/lang/String;ZLjava/util/List;)V
+
+    invoke-virtual {v7, v8}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    new-instance v4, Landroidx/room/util/TableInfo;
+
+    const-string v8, "personencounters"
+
+    invoke-direct {v4, v8, v1, v3, v7}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
+
+    invoke-static {v0, v8}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_3
+
+    new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
+
+    const-string v2, "personencounters(de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryPersonEncounterEntity).\n Expected:\n"
+
+    invoke-static {v2, v4, v5, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
+
+    return-object v0
+
+    :cond_3
+    new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
@@ -723,222 +1042,130 @@
 
     const/4 v3, 0x1
 
-    const/16 v24, 0x1
+    const/4 v15, 0x1
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x1
+    const/4 v7, 0x1
 
-    const-string v21, "id"
+    const-string v12, "id"
 
-    const-string v22, "INTEGER"
+    const-string v13, "TEXT"
 
-    move-object/from16 v20, v2
+    move-object v11, v2
 
-    move/from16 v23, v3
+    move v14, v3
 
-    move-object/from16 v25, v4
+    move-object/from16 v16, v4
 
-    move/from16 v26, v5
+    move/from16 v17, v7
 
-    invoke-direct/range {v20 .. v26}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+    invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    invoke-virtual {v1, v6, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/16 v19, 0x1
+
+    const/16 v20, 0x0
+
+    const/16 v21, 0x0
+
+    const/16 v22, 0x1
+
+    const-string/jumbo v17, "testType"
+
+    const-string v18, "TEXT"
+
+    move-object/from16 v16, v2
+
+    invoke-direct/range {v16 .. v22}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string/jumbo v6, "testType"
+
+    invoke-virtual {v1, v6, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v2, Landroidx/room/util/TableInfo$Column;
+
+    const/4 v6, 0x0
+
+    const-string v12, "result"
+
+    const-string v13, "TEXT"
+
+    move-object v11, v2
+
+    move v15, v6
+
+    move-object/from16 v16, v4
+
+    move/from16 v17, v7
+
+    invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
+
+    const-string v8, "result"
 
     invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const/16 v28, 0x1
+    const-string/jumbo v12, "time"
 
-    const/16 v29, 0x0
+    const-string v13, "TEXT"
 
-    const/16 v30, 0x0
+    move-object v11, v2
 
-    const/16 v31, 0x1
+    invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v26, "date"
+    const-string/jumbo v3, "time"
 
-    const-string v27, "TEXT"
+    const/4 v4, 0x0
 
-    move-object/from16 v25, v2
-
-    invoke-direct/range {v25 .. v31}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    invoke-virtual {v1, v9, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const/4 v8, 0x0
-
-    const-string v21, "fkPersonId"
-
-    const-string v22, "INTEGER"
-
-    move-object/from16 v20, v2
-
-    move/from16 v24, v8
-
-    move-object/from16 v25, v4
-
-    move/from16 v26, v5
-
-    invoke-direct/range {v20 .. v26}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v3, "fkPersonId"
-
-    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const/4 v9, 0x0
-
-    const-string v26, "durationClassification"
-
-    const-string v27, "TEXT"
-
-    move-object/from16 v25, v2
-
-    move/from16 v28, v9
-
-    move/from16 v29, v8
-
-    move-object/from16 v30, v4
-
-    move/from16 v31, v5
-
-    invoke-direct/range {v25 .. v31}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v10, "durationClassification"
-
-    invoke-virtual {v1, v10, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const-string v26, "withMask"
-
-    const-string v27, "INTEGER"
-
-    move-object/from16 v25, v2
-
-    invoke-direct/range {v25 .. v31}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v10, "withMask"
-
-    invoke-virtual {v1, v10, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const-string v26, "wasOutside"
-
-    const-string v27, "INTEGER"
-
-    move-object/from16 v25, v2
-
-    invoke-direct/range {v25 .. v31}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    const-string v10, "wasOutside"
-
-    invoke-virtual {v1, v10, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v2, Landroidx/room/util/TableInfo$Column;
-
-    const-string v26, "circumstances"
-
-    const-string v27, "TEXT"
-
-    move-object/from16 v25, v2
-
-    invoke-direct/range {v25 .. v31}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
-
-    invoke-static {v1, v11, v2, v12}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v3, v2, v4}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
-    new-instance v4, Landroidx/room/util/TableInfo$ForeignKey;
+    new-instance v3, Ljava/util/HashSet;
 
-    filled-new-array {v3}, [Ljava/lang/String;
+    invoke-direct {v3, v4}, Ljava/util/HashSet;-><init>(I)V
 
-    move-result-object v5
+    new-instance v4, Landroidx/room/util/TableInfo;
 
-    invoke-static {v5}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    const-string v6, "corona_tests"
 
-    move-result-object v17
+    invoke-direct {v4, v6, v1, v2, v3}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
-    filled-new-array {v6}, [Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v18
-
-    const-string v14, "persons"
-
-    const-string v15, "CASCADE"
-
-    const-string v16, "CASCADE"
-
-    move-object v13, v4
-
-    invoke-direct/range {v13 .. v18}, Landroidx/room/util/TableInfo$ForeignKey;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
-
-    invoke-virtual {v2, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    new-instance v4, Ljava/util/HashSet;
-
-    invoke-direct {v4, v12}, Ljava/util/HashSet;-><init>(I)V
-
-    new-instance v5, Landroidx/room/util/TableInfo$Index;
-
-    filled-new-array {v3}, [Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v3
-
-    const-string v6, "index_personencounters_fkPersonId"
-
-    const/4 v8, 0x0
-
-    invoke-direct {v5, v6, v8, v3}, Landroidx/room/util/TableInfo$Index;-><init>(Ljava/lang/String;ZLjava/util/List;)V
-
-    invoke-virtual {v4, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    new-instance v3, Landroidx/room/util/TableInfo;
-
-    const-string v5, "personencounters"
-
-    invoke-direct {v3, v5, v1, v2, v4}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
-
-    invoke-static {v0, v5}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
+    invoke-static {v0, v6}, Landroidx/room/util/TableInfo;->read(Landroidx/sqlite/db/SupportSQLiteDatabase;Ljava/lang/String;)Landroidx/room/util/TableInfo;
 
     move-result-object v0
 
-    invoke-virtual {v3, v0}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Landroidx/room/util/TableInfo;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     new-instance v1, Landroidx/room/RoomOpenHelper$ValidationResult;
 
-    const-string v2, "personencounters(de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryPersonEncounterEntity).\n Expected:\n"
+    const-string v2, "corona_tests(de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryCoronaTestEntity).\n Expected:\n"
 
-    invoke-static {v2, v3, v7, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v4, v5, v0}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v8, v0}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2, v0}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
 
     return-object v1
 
-    :cond_3
+    :cond_4
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v12, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
+    invoke-direct {v0, v10, v1}, Landroidx/room/RoomOpenHelper$ValidationResult;-><init>(ZLjava/lang/String;)V
 
     return-object v0
 .end method

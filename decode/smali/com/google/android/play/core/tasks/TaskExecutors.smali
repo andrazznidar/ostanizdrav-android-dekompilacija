@@ -1,28 +1,29 @@
 .class public final Lcom/google/android/play/core/tasks/TaskExecutors;
 .super Ljava/lang/Object;
+.source "com.google.android.play:core@@1.10.1"
 
 
 # static fields
-.field public static final a:Ljava/util/concurrent/Executor;
+.field public static final MAIN_THREAD:Ljava/util/concurrent/Executor;
+
+.field public static final zza:Ljava/util/concurrent/Executor;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Landroid/os/Handler;
+    new-instance v0, Lcom/google/android/play/core/tasks/zzl;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-direct {v0}, Lcom/google/android/play/core/tasks/zzl;-><init>()V
 
-    move-result-object v1
+    sput-object v0, Lcom/google/android/play/core/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    new-instance v0, Lcom/google/android/play/core/tasks/zzk;
 
-    new-instance v0, Lcom/google/android/play/core/tasks/k;
+    invoke-direct {v0}, Lcom/google/android/play/core/tasks/zzk;-><init>()V
 
-    invoke-direct {v0}, Lcom/google/android/play/core/tasks/k;-><init>()V
-
-    sput-object v0, Lcom/google/android/play/core/tasks/TaskExecutors;->a:Ljava/util/concurrent/Executor;
+    sput-object v0, Lcom/google/android/play/core/tasks/TaskExecutors;->zza:Ljava/util/concurrent/Executor;
 
     return-void
 .end method

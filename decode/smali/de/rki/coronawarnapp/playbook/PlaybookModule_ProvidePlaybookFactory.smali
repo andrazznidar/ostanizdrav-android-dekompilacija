@@ -28,16 +28,27 @@
     .end annotation
 .end field
 
-.field public final module:Lde/rki/coronawarnapp/playbook/PlaybookModule;
+.field public final module:Lcom/upokecenter/cbor/CBORInteger;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/playbook/PlaybookModule;Ljavax/inject/Provider;)V
+.method public constructor <init>(Lcom/upokecenter/cbor/CBORInteger;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "module",
+            "defaultPlayBookProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/playbook/PlaybookModule;",
+            "Lcom/upokecenter/cbor/CBORInteger;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
             ">;)V"
@@ -46,7 +57,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lde/rki/coronawarnapp/playbook/PlaybookModule;
+    iput-object p1, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lcom/upokecenter/cbor/CBORInteger;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->defaultPlayBookProvider:Ljavax/inject/Provider;
 
@@ -58,7 +69,7 @@
 .method public get()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lde/rki/coronawarnapp/playbook/PlaybookModule;
+    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->module:Lcom/upokecenter/cbor/CBORInteger;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/PlaybookModule_ProvidePlaybookFactory;->defaultPlayBookProvider:Ljavax/inject/Provider;
 
@@ -68,18 +79,11 @@
 
     check-cast v1, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "defaultPlayBook"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
-
     return-object v1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

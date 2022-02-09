@@ -120,7 +120,7 @@
 
     const/4 v5, 0x1
 
-    invoke-static {p2, v3, v4, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline1(IIII)I
+    invoke-static {p2, v3, v4, v5}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
 
     move-result p2
 
@@ -203,7 +203,9 @@
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/AbstractProtobufList;->ensureIsMutable()V
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     instance-of v0, p1, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;
 
@@ -299,7 +301,7 @@
 
     const/4 v4, 0x1
 
-    invoke-static {v0, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline1(IIII)I
+    invoke-static {v0, v2, v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
 
     move-result v2
 
@@ -479,7 +481,7 @@
 
     const-string v1, ", Size:"
 
-    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, p1, v1}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -677,7 +679,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
-    const-string p2, "toIndex < fromIndex"
+    const-string/jumbo p2, "toIndex < fromIndex"
 
     invoke-direct {p1, p2}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 

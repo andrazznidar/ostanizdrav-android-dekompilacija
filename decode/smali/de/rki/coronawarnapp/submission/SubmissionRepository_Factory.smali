@@ -18,21 +18,11 @@
 
 
 # instance fields
-.field public final analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+.field public final coronaTestRepositoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;",
+            "Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;",
             ">;"
         }
     .end annotation
@@ -43,16 +33,6 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lkotlinx/coroutines/CoroutineScope;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final submissionServiceProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/service/submission/SubmissionService;",
             ">;"
         }
     .end annotation
@@ -78,62 +58,52 @@
     .end annotation
 .end field
 
-.field public final timeStamperProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "scopeProvider",
+            "submissionSettingsProvider",
+            "tekHistoryStorageProvider",
+            "coronaTestRepositoryProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/submission/SubmissionSettings;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/service/submission/SubmissionService;",
-            ">;",
-            "Ljavax/inject/Provider<",
             "Lkotlinx/coroutines/CoroutineScope;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
+            "Lde/rki/coronawarnapp/submission/SubmissionSettings;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;",
+            "Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;",
             ">;)V"
         }
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->submissionSettingsProvider:Ljavax/inject/Provider;
+    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->scopeProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->submissionServiceProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->submissionSettingsProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->scopeProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->tekHistoryStorageProvider:Ljavax/inject/Provider;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->timeStamperProvider:Ljavax/inject/Provider;
-
-    iput-object p5, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->tekHistoryStorageProvider:Ljavax/inject/Provider;
-
-    iput-object p6, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
-
-    iput-object p7, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
+    iput-object p4, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -141,27 +111,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 9
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->submissionSettingsProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lde/rki/coronawarnapp/submission/SubmissionSettings;
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->submissionServiceProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lde/rki/coronawarnapp/service/submission/SubmissionService;
+    .locals 5
 
     iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->scopeProvider:Ljavax/inject/Provider;
 
@@ -169,55 +119,35 @@
 
     move-result-object v0
 
-    move-object v4, v0
+    check-cast v0, Lkotlinx/coroutines/CoroutineScope;
 
-    check-cast v4, Lkotlinx/coroutines/CoroutineScope;
+    iget-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->submissionSettingsProvider:Ljavax/inject/Provider;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->timeStamperProvider:Ljavax/inject/Provider;
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
+    check-cast v1, Lde/rki/coronawarnapp/submission/SubmissionSettings;
 
-    move-object v5, v0
+    iget-object v2, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->tekHistoryStorageProvider:Ljavax/inject/Provider;
 
-    check-cast v5, Lde/rki/coronawarnapp/util/TimeStamper;
+    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->tekHistoryStorageProvider:Ljavax/inject/Provider;
+    move-result-object v2
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    check-cast v2, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;
 
-    move-result-object v0
+    iget-object v3, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
-    move-object v6, v0
+    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    check-cast v6, Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;
+    move-result-object v3
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
+    check-cast v3, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
 
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    new-instance v4, Lde/rki/coronawarnapp/submission/SubmissionRepository;
 
-    move-result-object v0
+    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/submission/SubmissionRepository;-><init>(Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/submission/SubmissionSettings;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;)V
 
-    move-object v7, v0
-
-    check-cast v7, Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionRepository_Factory;->analyticsKeySubmissionCollectorProvider:Ljavax/inject/Provider;
-
-    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;
-
-    new-instance v0, Lde/rki/coronawarnapp/submission/SubmissionRepository;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Lde/rki/coronawarnapp/submission/SubmissionRepository;-><init>(Lde/rki/coronawarnapp/submission/SubmissionSettings;Lde/rki/coronawarnapp/service/submission/SubmissionService;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/submission/data/tekhistory/TEKHistoryStorage;Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;)V
-
-    return-object v0
+    return-object v4
 .end method

@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->toCurveType1(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
+    invoke-static {v0}, Lcom/google/crypto/tink/signature/SigUtil;->toCurveType(Lcom/google/crypto/tink/proto/EllipticCurveType;)Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;
 
     move-result-object v0
 
@@ -85,7 +85,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/android/material/R$style;->getEcPrivateKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B)Ljava/security/interfaces/ECPrivateKey;
+    invoke-static {v0, v1}, Lcom/google/crypto/tink/subtle/EllipticCurves;->getEcPrivateKey(Lcom/google/crypto/tink/subtle/EllipticCurves$CurveType;[B)Ljava/security/interfaces/ECPrivateKey;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v2}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v2
 
@@ -119,11 +119,11 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/material/R$style;->toEcdsaEncoding(Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;)Lcom/google/crypto/tink/subtle/EllipticCurves$EcdsaEncoding;
+    invoke-static {p1}, Lcom/google/crypto/tink/signature/SigUtil;->toEcdsaEncoding(Lcom/google/crypto/tink/proto/EcdsaSignatureEncoding;)I
 
-    move-result-object p1
+    move-result p1
 
-    invoke-direct {v1, v0, v2, p1}, Lcom/google/crypto/tink/subtle/EcdsaSignJce;-><init>(Ljava/security/interfaces/ECPrivateKey;Lcom/google/crypto/tink/subtle/Enums$HashType;Lcom/google/crypto/tink/subtle/EllipticCurves$EcdsaEncoding;)V
+    invoke-direct {v1, v0, v2, p1}, Lcom/google/crypto/tink/subtle/EcdsaSignJce;-><init>(Ljava/security/interfaces/ECPrivateKey;Lcom/google/crypto/tink/subtle/Enums$HashType;I)V
 
     return-object v1
 .end method

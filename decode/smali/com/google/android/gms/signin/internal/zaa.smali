@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/signin/internal/zaa;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Result;
@@ -30,9 +30,9 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/signin/internal/zac;
+    new-instance v0, Lcom/google/android/gms/signin/internal/zab;
 
-    invoke-direct {v0}, Lcom/google/android/gms/signin/internal/zac;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/signin/internal/zab;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/signin/internal/zaa;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -95,31 +95,37 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
+    const/16 v0, 0x4f45
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;I)I
 
     move-result v0
 
     iget v1, p0, Lcom/google/android/gms/signin/internal/zaa;->zaa:I
 
-    const/4 v2, 0x1
+    const v2, 0x40001
 
-    invoke-static {p1, v2, v1}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     iget v1, p0, Lcom/google/android/gms/signin/internal/zaa;->zab:I
 
-    const/4 v2, 0x2
+    const v2, 0x40002
 
-    invoke-static {p1, v2, v1}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-object v1, p0, Lcom/google/android/gms/signin/internal/zaa;->zac:Landroid/content/Intent;
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
+
+    iget-object v2, p0, Lcom/google/android/gms/signin/internal/zaa;->zac:Landroid/content/Intent;
 
     const/4 v3, 0x0
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzc(Landroid/os/Parcel;I)V
 
     return-void
 .end method

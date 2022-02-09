@@ -83,7 +83,7 @@
 
     iget-object p1, p0, Lcom/google/crypto/tink/aead/KmsAeadKeyManager$2;->this$0:Lcom/google/crypto/tink/aead/KmsAeadKeyManager;
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 p1, 0x0
 
@@ -102,11 +102,6 @@
     check-cast p1, Lcom/google/crypto/tink/proto/KmsAeadKey;
 
     return-object p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public parseKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
@@ -137,7 +132,7 @@
     return-object p1
 .end method
 
-.method public validateKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
+.method public bridge synthetic validateKeyFormat(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)V
     .locals 0
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {

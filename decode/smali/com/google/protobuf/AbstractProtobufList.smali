@@ -87,7 +87,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractProtobufList;->ensureIsMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->addAll(Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
 
     move-result p1
 
@@ -230,12 +230,30 @@
     return v1
 .end method
 
+.method public isModifiable()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    return v0
+.end method
+
+.method public final makeImmutable()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+
+    return-void
+.end method
+
 .method public remove(Ljava/lang/Object;)Z
     .locals 0
 
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractProtobufList;->ensureIsMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->remove(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->remove(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -254,7 +272,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractProtobufList;->ensureIsMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->removeAll(Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->removeAll(Ljava/util/Collection;)Z
 
     move-result p1
 
@@ -273,7 +291,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractProtobufList;->ensureIsMutable()V
 
-    invoke-super {p0, p1}, Ljava/util/AbstractList;->retainAll(Ljava/util/Collection;)Z
+    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->retainAll(Ljava/util/Collection;)Z
 
     move-result p1
 

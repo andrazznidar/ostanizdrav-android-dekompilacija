@@ -1,14 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/GmsClientSupervisor;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;
-    }
-.end annotation
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # static fields
@@ -38,14 +30,6 @@
     return-void
 .end method
 
-.method public static getDefaultBindFlags()I
-    .locals 1
-
-    const/16 v0, 0x1081
-
-    return v0
-.end method
-
 
 # virtual methods
 .method public final zza(Ljava/lang/String;Ljava/lang/String;ILandroid/content/ServiceConnection;Ljava/lang/String;Z)V
@@ -67,34 +51,30 @@
         .end annotation
     .end param
 
-    new-instance p5, Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;
+    new-instance p5, Lcom/google/android/gms/common/internal/zzm;
 
-    invoke-direct {p5, p1, p2, p3, p6}, Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;-><init>(Ljava/lang/String;Ljava/lang/String;IZ)V
+    invoke-direct {p5, p1, p2, p3, p6}, Lcom/google/android/gms/common/internal/zzm;-><init>(Ljava/lang/String;Ljava/lang/String;IZ)V
 
     move-object p1, p0
 
-    check-cast p1, Lcom/google/android/gms/common/internal/zzg;
+    check-cast p1, Lcom/google/android/gms/common/internal/zzq;
 
-    const-string p2, "ServiceConnection must not be null"
-
-    invoke-static {p4, p2}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object p2, p1, Lcom/google/android/gms/common/internal/zzg;->zza:Ljava/util/HashMap;
+    iget-object p2, p1, Lcom/google/android/gms/common/internal/zzq;->zza:Ljava/util/HashMap;
 
     monitor-enter p2
 
     :try_start_0
-    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzg;->zza:Ljava/util/HashMap;
+    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzq;->zza:Ljava/util/HashMap;
 
     invoke-virtual {p3, p5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p3
 
-    check-cast p3, Lcom/google/android/gms/common/internal/zzi;
+    check-cast p3, Lcom/google/android/gms/common/internal/zzo;
 
     if-eqz p3, :cond_2
 
-    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzi;->zza:Ljava/util/Map;
+    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzo;->zzb:Ljava/util/Map;
 
     invoke-interface {p6, p4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -102,11 +82,11 @@
 
     if-eqz p6, :cond_1
 
-    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzi;->zza:Ljava/util/Map;
+    iget-object p6, p3, Lcom/google/android/gms/common/internal/zzo;->zzb:Ljava/util/Map;
 
     invoke-interface {p6, p4}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p3, p3, Lcom/google/android/gms/common/internal/zzi;->zza:Ljava/util/Map;
+    iget-object p3, p3, Lcom/google/android/gms/common/internal/zzo;->zzb:Ljava/util/Map;
 
     invoke-interface {p3}, Ljava/util/Map;->isEmpty()Z
 
@@ -114,7 +94,7 @@
 
     if-eqz p3, :cond_0
 
-    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzg;->zzc:Landroid/os/Handler;
+    iget-object p3, p1, Lcom/google/android/gms/common/internal/zzq;->zzc:Landroid/os/Handler;
 
     const/4 p4, 0x0
 
@@ -122,9 +102,9 @@
 
     move-result-object p3
 
-    iget-object p4, p1, Lcom/google/android/gms/common/internal/zzg;->zzc:Landroid/os/Handler;
+    iget-object p4, p1, Lcom/google/android/gms/common/internal/zzq;->zzc:Landroid/os/Handler;
 
-    iget-wide p5, p1, Lcom/google/android/gms/common/internal/zzg;->zze:J
+    iget-wide p5, p1, Lcom/google/android/gms/common/internal/zzq;->zze:J
 
     invoke-virtual {p4, p3, p5, p6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
@@ -205,5 +185,5 @@
     throw p1
 .end method
 
-.method public abstract zza(Lcom/google/android/gms/common/internal/GmsClientSupervisor$zza;Landroid/content/ServiceConnection;Ljava/lang/String;)Z
+.method public abstract zzb(Lcom/google/android/gms/common/internal/zzm;Landroid/content/ServiceConnection;Ljava/lang/String;)Z
 .end method

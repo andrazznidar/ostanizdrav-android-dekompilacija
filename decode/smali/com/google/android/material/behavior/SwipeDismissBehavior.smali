@@ -6,8 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/material/behavior/SwipeDismissBehavior$SettleRunnable;,
-        Lcom/google/android/material/behavior/SwipeDismissBehavior$OnDismissListener;
+        Lcom/google/android/material/behavior/SwipeDismissBehavior$SettleRunnable;
     }
 .end annotation
 
@@ -33,10 +32,6 @@
 
 .field public interceptingEvents:Z
 
-.field public listener:Lcom/google/android/material/behavior/SwipeDismissBehavior$OnDismissListener;
-
-.field public sensitivity:F
-
 .field public swipeDirection:I
 
 .field public viewDragHelper:Landroidx/customview/widget/ViewDragHelper;
@@ -48,21 +43,19 @@
 
     invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;-><init>()V
 
-    const/4 v0, 0x0
+    const/4 v0, 0x2
 
-    iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->sensitivity:F
+    iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->swipeDirection:I
 
-    const/4 v1, 0x2
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    iput v1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->swipeDirection:I
+    iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->dragDismissThreshold:F
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    const/4 v1, 0x0
 
-    iput v1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->dragDismissThreshold:F
+    iput v1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->alphaStartSwipeDistance:F
 
-    iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->alphaStartSwipeDistance:F
-
-    iput v1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->alphaEndSwipeDistance:F
+    iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->alphaEndSwipeDistance:F
 
     new-instance v0, Lcom/google/android/material/behavior/SwipeDismissBehavior$1;
 
@@ -186,7 +179,7 @@
 .end method
 
 .method public onLayoutChild(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -195,9 +188,13 @@
         }
     .end annotation
 
-    invoke-static {p2}, Landroidx/core/view/ViewCompat;->getImportantForAccessibility(Landroid/view/View;)I
+    sget-object p1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p2}, Landroid/view/View;->getImportantForAccessibility()I
 
     move-result p1
+
+    const/4 p3, 0x0
 
     if-nez p1, :cond_0
 
@@ -207,7 +204,9 @@
 
     const/high16 p1, 0x100000
 
-    invoke-static {p2, p1}, Landroidx/core/view/ViewCompat;->removeAccessibilityAction(Landroid/view/View;I)V
+    invoke-static {p1, p2}, Landroidx/core/view/ViewCompat;->removeActionWithId(ILandroid/view/View;)V
+
+    invoke-static {p2, p3}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
 
     invoke-virtual {p0, p2}, Lcom/google/android/material/behavior/SwipeDismissBehavior;->canSwipeDismissView(Landroid/view/View;)Z
 
@@ -217,18 +216,16 @@
 
     sget-object p1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_DISMISS:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    const/4 p3, 0x0
+    const/4 v0, 0x0
 
-    new-instance v0, Lcom/google/android/material/behavior/SwipeDismissBehavior$2;
+    new-instance v1, Lcom/google/android/material/behavior/SwipeDismissBehavior$2;
 
-    invoke-direct {v0, p0}, Lcom/google/android/material/behavior/SwipeDismissBehavior$2;-><init>(Lcom/google/android/material/behavior/SwipeDismissBehavior;)V
+    invoke-direct {v1, p0}, Lcom/google/android/material/behavior/SwipeDismissBehavior$2;-><init>(Lcom/google/android/material/behavior/SwipeDismissBehavior;)V
 
-    invoke-static {p2, p1, p3, v0}, Landroidx/core/view/ViewCompat;->replaceAccessibilityAction(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;Ljava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;)V
+    invoke-static {p2, p1, v0, v1}, Landroidx/core/view/ViewCompat;->replaceAccessibilityAction(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;Ljava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;)V
 
     :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return p3
 .end method
 
 .method public onTouchEvent(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z

@@ -169,12 +169,6 @@
     return p0
 .end method
 
-.method public static fixDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    return-void
-.end method
-
 .method public static getOpticalBounds(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Rect;
     .locals 12
 
@@ -216,7 +210,7 @@
     if-eqz v0, :cond_7
 
     :try_start_0
-    invoke-static {p0}, Landroidx/core/app/AppOpsManagerCompat;->unwrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p0}, Landroidx/core/graphics/drawable/DrawableCompat;->unwrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
@@ -308,7 +302,7 @@
     goto :goto_1
 
     :sswitch_2
-    const-string v8, "top"
+    const-string/jumbo v8, "top"
 
     invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -398,8 +392,6 @@
     sget-object p0, Landroidx/appcompat/widget/DrawableUtils;->INSETS_NONE:Landroid/graphics/Rect;
 
     return-object p0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

@@ -48,11 +48,11 @@
 
     const-string v0, "context"
 
-    const v1, 0x7f120304
+    const v1, 0x7f130486
 
     const-string v2, "context.getString(R.stri\u2026ion_description_inactive)"
 
-    invoke-static {p1, v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline6(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$errorMessage$1$$ExternalSyntheticOutline0;->m(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -66,13 +66,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$this$getDrawableCompat"
+    const-string v0, "<this>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f08011c
+    sget-object v0, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    const v0, 0x7f080198
+
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat$Api21Impl;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -84,11 +86,11 @@
 
     const-string v0, "context"
 
-    const v1, 0x7f12030c
+    const v1, 0x7f13048e
 
     const-string v2, "context.getString(R.stri\u2026_tracing_status_inactive)"
 
-    invoke-static {p1, v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline6(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1, v2}, Lde/rki/coronawarnapp/covidcertificate/common/exception/InvalidHealthCertificateException$errorMessage$1$$ExternalSyntheticOutline0;->m(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

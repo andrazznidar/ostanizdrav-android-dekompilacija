@@ -29,7 +29,7 @@
 
 
 # static fields
-.field public static defaultInstanceMap:Ljava/util/Map;
+.field private static defaultInstanceMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -48,12 +48,12 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->defaultInstanceMap:Ljava/util/Map;
 
@@ -86,15 +86,15 @@
     return-object p0
 .end method
 
-.method public static checkIsLite(Lcom/google/crypto/tink/shaded/protobuf/ExtensionLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
+.method private static checkIsLite(Lcom/google/crypto/tink/shaded/protobuf/ExtensionLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<MessageType:",
             "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage<",
             "TMessageType;TBuilderType;>;BuilderType:",
-            "Ljava/lang/Object<",
-            "TMessageType;TBuilderType;>;T:",
+            "Ljava/lang/Object;",
+            "T:",
             "Ljava/lang/Object;",
             ">(",
             "Lcom/google/crypto/tink/shaded/protobuf/ExtensionLite<",
@@ -104,19 +104,14 @@
         }
     .end annotation
 
-    if-eqz p0, :cond_0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     check-cast p0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     return-object p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
-.method public static checkMessageInitialized(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+.method private static checkMessageInitialized(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -138,13 +133,16 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/AbstractMessageLite;->newUninitializedMessageException()Lcom/google/crypto/tink/shaded/protobuf/UninitializedMessageException;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
@@ -156,12 +154,8 @@
 
     throw v0
 
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
     :cond_1
+    :goto_0
     return-object p0
 .end method
 
@@ -333,7 +327,7 @@
     return-object v0
 .end method
 
-.method public static varargs getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+.method static varargs getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     .locals 2
 
     :try_start_0
@@ -352,7 +346,7 @@
 
     const-string v1, "Generated message class \""
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -381,7 +375,7 @@
     throw v0
 .end method
 
-.method public static varargs invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+.method static varargs invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     :try_start_0
@@ -508,9 +502,11 @@
 .method public static mutableCopy(Lcom/google/crypto/tink/shaded/protobuf/Internal$BooleanList;)Lcom/google/crypto/tink/shaded/protobuf/Internal$BooleanList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;
+
+    iget v0, v0, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -534,9 +530,11 @@
 .method public static mutableCopy(Lcom/google/crypto/tink/shaded/protobuf/Internal$DoubleList;)Lcom/google/crypto/tink/shaded/protobuf/Internal$DoubleList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;
+
+    iget v0, v0, Lcom/google/crypto/tink/shaded/protobuf/DoubleArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -560,9 +558,11 @@
 .method public static mutableCopy(Lcom/google/crypto/tink/shaded/protobuf/Internal$FloatList;)Lcom/google/crypto/tink/shaded/protobuf/Internal$FloatList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;
+
+    iget v0, v0, Lcom/google/crypto/tink/shaded/protobuf/FloatArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -586,9 +586,11 @@
 .method public static mutableCopy(Lcom/google/crypto/tink/shaded/protobuf/Internal$IntList;)Lcom/google/crypto/tink/shaded/protobuf/Internal$IntList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;
+
+    iget v0, v0, Lcom/google/crypto/tink/shaded/protobuf/IntArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -612,9 +614,11 @@
 .method public static mutableCopy(Lcom/google/crypto/tink/shaded/protobuf/Internal$LongList;)Lcom/google/crypto/tink/shaded/protobuf/Internal$LongList;
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-object v0, p0
 
-    move-result v0
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;
+
+    iget v0, v0, Lcom/google/crypto/tink/shaded/protobuf/LongArrayList;->size:I
 
     if-nez v0, :cond_0
 
@@ -1160,7 +1164,7 @@
     return-object p0
 .end method
 
-.method public static parsePartialDelimitedFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;Ljava/io/InputStream;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+.method private static parsePartialDelimitedFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;Ljava/io/InputStream;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1320,7 +1324,7 @@
     throw p1
 .end method
 
-.method public static parsePartialFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;Lcom/google/crypto/tink/shaded/protobuf/ByteString;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+.method private static parsePartialFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;Lcom/google/crypto/tink/shaded/protobuf/ByteString;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1618,7 +1622,7 @@
     throw p1
 .end method
 
-.method public static parsePartialFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;[BLcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+.method private static parsePartialFrom(Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;[BLcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2143,7 +2147,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v1, v0}, Lcom/google/android/material/R$style;->reflectivePrintWithIndent(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
+    invoke-static {p0, v1, v0}, Lcom/google/crypto/tink/shaded/protobuf/MessageLiteToString;->reflectivePrintWithIndent(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;Ljava/lang/StringBuilder;I)V
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

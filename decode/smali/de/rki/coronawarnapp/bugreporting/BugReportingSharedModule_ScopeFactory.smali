@@ -24,6 +24,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "module"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,16 +47,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule_ScopeFactory;->module:Lde/rki/coronawarnapp/bugreporting/BugReportingSharedModule;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLoggerScope;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLoggerScope;
-
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v0, Lde/rki/coronawarnapp/bugreporting/debuglog/internal/DebugLoggerScope;->INSTANCE:Lde/rki/coronawarnapp/bugreporting/debuglog/internal/DebugLoggerScope;
 
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

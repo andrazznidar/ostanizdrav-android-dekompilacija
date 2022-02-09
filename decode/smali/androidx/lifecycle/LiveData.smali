@@ -29,6 +29,8 @@
 # instance fields
 .field public mActiveCount:I
 
+.field public mChangingActiveState:Z
+
 .field public volatile mData:Ljava/lang/Object;
 
 .field public final mDataLock:Ljava/lang/Object;
@@ -70,7 +72,7 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -94,13 +96,11 @@
 
     iput-object v0, p0, Landroidx/lifecycle/LiveData;->mPendingData:Ljava/lang/Object;
 
-    new-instance v0, Landroidx/lifecycle/LiveData$1;
+    new-instance v1, Landroidx/lifecycle/LiveData$1;
 
-    invoke-direct {v0, p0}, Landroidx/lifecycle/LiveData$1;-><init>(Landroidx/lifecycle/LiveData;)V
+    invoke-direct {v1, p0}, Landroidx/lifecycle/LiveData$1;-><init>(Landroidx/lifecycle/LiveData;)V
 
-    iput-object v0, p0, Landroidx/lifecycle/LiveData;->mPostValueRunnable:Ljava/lang/Runnable;
-
-    sget-object v0, Landroidx/lifecycle/LiveData;->NOT_SET:Ljava/lang/Object;
+    iput-object v1, p0, Landroidx/lifecycle/LiveData;->mPostValueRunnable:Ljava/lang/Runnable;
 
     iput-object v0, p0, Landroidx/lifecycle/LiveData;->mData:Ljava/lang/Object;
 
@@ -161,9 +161,7 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Landroidx/arch/core/executor/ArchTaskExecutor;->mDelegate:Landroidx/arch/core/executor/TaskExecutor;
-
-    invoke-virtual {v0}, Landroidx/arch/core/executor/TaskExecutor;->isMainThread()Z
+    invoke-virtual {v0}, Landroidx/arch/core/executor/ArchTaskExecutor;->isMainThread()Z
 
     move-result v0
 
@@ -178,7 +176,7 @@
 
     const-string v2, " on a background thread"
 
-    invoke-static {v1, p0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -377,9 +375,9 @@
 
     move-result-object v0
 
-    check-cast v0, Landroidx/lifecycle/LifecycleRegistry;
+    invoke-virtual {v0}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
 
-    iget-object v0, v0, Landroidx/lifecycle/LifecycleRegistry;->mState:Landroidx/lifecycle/Lifecycle$State;
+    move-result-object v0
 
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->DESTROYED:Landroidx/lifecycle/Lifecycle$State;
 

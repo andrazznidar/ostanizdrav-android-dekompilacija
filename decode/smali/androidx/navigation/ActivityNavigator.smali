@@ -80,13 +80,13 @@
 .end method
 
 .method public navigate(Landroidx/navigation/NavDestination;Landroid/os/Bundle;Landroidx/navigation/NavOptions;Landroidx/navigation/Navigator$Extras;)Landroidx/navigation/NavDestination;
-    .locals 10
+    .locals 9
 
     check-cast p1, Landroidx/navigation/ActivityNavigator$Destination;
 
     iget-object v0, p1, Landroidx/navigation/ActivityNavigator$Destination;->mIntent:Landroid/content/Intent;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_11
 
     new-instance v0, Landroid/content/Intent;
 
@@ -210,227 +210,216 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    if-eqz p2, :cond_3
 
-    if-eqz p2, :cond_4
+    move-object v2, p4
 
-    move-object v3, p4
+    check-cast v2, Landroidx/navigation/ActivityNavigator$Extras;
 
-    check-cast v3, Landroidx/navigation/ActivityNavigator$Extras;
-
-    if-eqz v3, :cond_3
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    goto :goto_1
-
     :cond_3
-    throw v2
+    iget-object v2, p0, Landroidx/navigation/ActivityNavigator;->mContext:Landroid/content/Context;
+
+    instance-of v2, v2, Landroid/app/Activity;
+
+    if-nez v2, :cond_4
+
+    const/high16 v2, 0x10000000
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     :cond_4
-    :goto_1
-    iget-object v3, p0, Landroidx/navigation/ActivityNavigator;->mContext:Landroid/content/Context;
+    if-eqz p3, :cond_5
 
-    instance-of v3, v3, Landroid/app/Activity;
+    iget-boolean v2, p3, Landroidx/navigation/NavOptions;->mSingleTop:Z
 
-    if-nez v3, :cond_5
+    if-eqz v2, :cond_5
 
-    const/high16 v3, 0x10000000
+    const/high16 v2, 0x20000000
 
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     :cond_5
-    if-eqz p3, :cond_6
+    iget-object v2, p0, Landroidx/navigation/ActivityNavigator;->mHostActivity:Landroid/app/Activity;
 
-    iget-boolean v3, p3, Landroidx/navigation/NavOptions;->mSingleTop:Z
+    const-string v3, "android-support-navigation:ActivityNavigator:current"
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
-    const/high16 v3, 0x20000000
+    invoke-virtual {v2}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    move-result-object v2
+
+    if-eqz v2, :cond_6
+
+    invoke-virtual {v2, v3, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    const-string v4, "android-support-navigation:ActivityNavigator:source"
+
+    invoke-virtual {v0, v4, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     :cond_6
-    iget-object v3, p0, Landroidx/navigation/ActivityNavigator;->mHostActivity:Landroid/app/Activity;
+    iget v2, p1, Landroidx/navigation/NavDestination;->mId:I
 
-    const-string v4, "android-support-navigation:ActivityNavigator:current"
+    invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    if-eqz v3, :cond_7
+    iget-object v2, p0, Landroidx/navigation/ActivityNavigator;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v3}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eqz v3, :cond_7
+    const-string/jumbo v3, "when launching "
 
-    invoke-virtual {v3, v4, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    const-string v4, "ActivityNavigator"
 
-    move-result v3
+    const-string v5, "animator"
 
-    if-eqz v3, :cond_7
+    if-eqz p3, :cond_a
 
-    const-string v5, "android-support-navigation:ActivityNavigator:source"
+    iget v6, p3, Landroidx/navigation/NavOptions;->mPopEnterAnim:I
 
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    iget v7, p3, Landroidx/navigation/NavOptions;->mPopExitAnim:I
+
+    if-lez v6, :cond_7
+
+    invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_8
 
     :cond_7
-    iget v3, p1, Landroidx/navigation/NavDestination;->mId:I
+    if-lez v7, :cond_9
 
-    invoke-virtual {v0, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v2, v7}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
 
-    iget-object v3, p0, Landroidx/navigation/ActivityNavigator;->mContext:Landroid/content/Context;
+    move-result-object v8
 
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v8, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    move-result v8
 
-    const-string v4, "when launching "
-
-    const-string v5, "ActivityNavigator"
-
-    const-string v6, "animator"
-
-    if-eqz p3, :cond_b
-
-    iget v7, p3, Landroidx/navigation/NavOptions;->mPopEnterAnim:I
-
-    iget v8, p3, Landroidx/navigation/NavOptions;->mPopExitAnim:I
-
-    if-lez v7, :cond_8
-
-    invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-nez v9, :cond_9
+    if-eqz v8, :cond_9
 
     :cond_8
-    if-lez v8, :cond_a
+    const-string v8, "Activity destinations do not support Animator resource. Ignoring popEnter resource "
 
-    invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
+    invoke-static {v8}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
 
-    move-result v9
+    move-result-object v6
 
-    if-eqz v9, :cond_a
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, " and popExit resource "
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v7}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v4, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
 
     :cond_9
-    const-string v9, "Activity destinations do not support Animator resource. Ignoring popEnter resource "
+    const-string v8, "android-support-navigation:ActivityNavigator:popEnterAnim"
 
-    invoke-static {v9}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v8, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    move-result-object v9
+    const-string v6, "android-support-navigation:ActivityNavigator:popExitAnim"
 
-    invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v7, " and popExit resource "
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v5, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
+    invoke-virtual {v0, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     :cond_a
-    const-string v9, "android-support-navigation:ActivityNavigator:popEnterAnim"
-
-    invoke-virtual {v0, v9, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    const-string v7, "android-support-navigation:ActivityNavigator:popExitAnim"
-
-    invoke-virtual {v0, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    :cond_b
-    :goto_2
-    if-eqz p2, :cond_d
+    :goto_1
+    if-eqz p2, :cond_b
 
     check-cast p4, Landroidx/navigation/ActivityNavigator$Extras;
 
-    if-eqz p4, :cond_c
+    invoke-static {p4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object p2, p0, Landroidx/navigation/ActivityNavigator;->mContext:Landroid/content/Context;
 
     invoke-virtual {p2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_c
-    throw v2
-
-    :cond_d
+    :cond_b
     iget-object p2, p0, Landroidx/navigation/ActivityNavigator;->mContext:Landroid/content/Context;
 
     invoke-virtual {p2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    :goto_3
-    if-eqz p3, :cond_12
+    :goto_2
+    if-eqz p3, :cond_10
 
     iget-object p2, p0, Landroidx/navigation/ActivityNavigator;->mHostActivity:Landroid/app/Activity;
 
-    if-eqz p2, :cond_12
+    if-eqz p2, :cond_10
 
     iget p2, p3, Landroidx/navigation/NavOptions;->mEnterAnim:I
 
     iget p3, p3, Landroidx/navigation/NavOptions;->mExitAnim:I
 
-    if-lez p2, :cond_e
+    if-lez p2, :cond_c
 
-    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
-
-    move-result-object p4
-
-    invoke-virtual {p4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p4
-
-    if-nez p4, :cond_f
-
-    :cond_e
-    if-lez p3, :cond_10
-
-    invoke-virtual {v3, p3}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
+    invoke-virtual {v2, p2}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
 
     move-result-object p4
 
-    invoke-virtual {p4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p4
 
-    if-eqz p4, :cond_10
+    if-nez p4, :cond_d
 
-    :cond_f
+    :cond_c
+    if-lez p3, :cond_e
+
+    invoke-virtual {v2, p3}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {p4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p4
+
+    if-eqz p4, :cond_e
+
+    :cond_d
     const-string p4, "Activity destinations do not support Animator resource. Ignoring enter resource "
 
-    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p4}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p4
 
-    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+    invoke-virtual {v2, p2}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -440,13 +429,13 @@
 
     invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, p3}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+    invoke-virtual {v2, p3}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p4, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -454,16 +443,16 @@
 
     move-result-object p1
 
-    invoke-static {v5, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_10
-    if-gez p2, :cond_11
+    :cond_e
+    if-gez p2, :cond_f
 
-    if-ltz p3, :cond_12
+    if-ltz p3, :cond_10
 
-    :cond_11
+    :cond_f
     invoke-static {p2, v1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
@@ -476,16 +465,18 @@
 
     invoke-virtual {p3, p1, p2}, Landroid/app/Activity;->overridePendingTransition(II)V
 
-    :cond_12
-    :goto_4
-    return-object v2
+    :cond_10
+    :goto_3
+    const/4 p1, 0x0
 
-    :cond_13
+    return-object p1
+
+    :cond_11
     new-instance p2, Ljava/lang/IllegalStateException;
 
     const-string p3, "Destination "
 
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p3
 
@@ -493,7 +484,7 @@
 
     const-string p4, " does not have an Intent set."
 
-    invoke-static {p3, p1, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1, p4}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

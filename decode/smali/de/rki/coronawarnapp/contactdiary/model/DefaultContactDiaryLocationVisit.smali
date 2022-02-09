@@ -7,6 +7,8 @@
 
 
 # instance fields
+.field public final checkInID:Ljava/lang/Long;
+
 .field public final circumstances:Ljava/lang/String;
 
 .field public final contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
@@ -19,7 +21,7 @@
 
 
 # direct methods
-.method public constructor <init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;)V
+.method public constructor <init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;Ljava/lang/Long;)V
     .locals 1
 
     const-string v0, "date"
@@ -42,195 +44,283 @@
 
     iput-object p6, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;I)V
-    .locals 7
-
-    and-int/lit8 p5, p7, 0x1
-
-    if-eqz p5, :cond_0
-
-    const-wide/16 p1, 0x0
-
-    :cond_0
-    move-wide v1, p1
-
-    and-int/lit8 p1, p7, 0x8
-
-    const/4 v5, 0x0
-
-    and-int/lit8 p1, p7, 0x10
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    invoke-direct/range {v0 .. v6}, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;-><init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;)V
+    iput-object p7, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->checkInID:Ljava/lang/Long;
 
     return-void
 .end method
 
-.method public static copy$default(Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;I)Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;
-    .locals 7
+.method public synthetic constructor <init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;Ljava/lang/Long;I)V
+    .locals 10
 
-    and-int/lit8 p3, p7, 0x1
+    and-int/lit8 v0, p8, 0x1
 
-    if-eqz p3, :cond_0
+    if-eqz v0, :cond_0
 
-    iget-wide p1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
+    const-wide/16 v0, 0x0
 
-    :cond_0
-    move-wide v1, p1
-
-    and-int/lit8 p1, p7, 0x2
-
-    const/4 p2, 0x0
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
-
-    move-object v3, p1
+    move-wide v3, v0
 
     goto :goto_0
 
-    :cond_1
-    move-object v3, p2
+    :cond_0
+    move-wide v3, p1
 
     :goto_0
-    and-int/lit8 p1, p7, 0x4
+    and-int/lit8 v0, p8, 0x8
 
-    if-eqz p1, :cond_2
+    const/4 v1, 0x0
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+    if-eqz v0, :cond_1
 
-    move-object v4, p1
+    move-object v7, v1
 
     goto :goto_1
 
-    :cond_2
-    move-object v4, p2
+    :cond_1
+    move-object v7, p5
 
     :goto_1
-    and-int/lit8 p1, p7, 0x8
+    const/4 v8, 0x0
 
-    if-eqz p1, :cond_3
+    and-int/lit8 v0, p8, 0x20
 
-    iget-object p5, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
+    if-eqz v0, :cond_2
 
-    :cond_3
-    move-object v5, p5
+    move-object v9, v1
 
-    and-int/lit8 p1, p7, 0x10
+    goto :goto_2
 
-    if-eqz p1, :cond_4
+    :cond_2
+    move-object/from16 v9, p7
 
-    iget-object p6, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
+    :goto_2
+    move-object v2, p0
 
-    :cond_4
-    move-object v6, p6
+    move-object v5, p3
 
-    if-eqz p0, :cond_5
+    move-object v6, p4
 
-    const-string p0, "date"
+    invoke-direct/range {v2 .. v9}, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;-><init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;Ljava/lang/Long;)V
 
-    invoke-static {v3, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    return-void
+.end method
 
-    const-string p0, "contactDiaryLocation"
-
-    invoke-static {v4, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;
+.method public static copy$default(Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;Ljava/lang/Long;I)Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;
+    .locals 9
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v6}, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;-><init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;)V
+    and-int/lit8 v1, p8, 0x1
 
-    return-object p0
+    if-eqz v1, :cond_0
+
+    iget-wide v1, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
+
+    goto :goto_0
+
+    :cond_0
+    move-wide v1, p1
+
+    :goto_0
+    and-int/lit8 v3, p8, 0x2
+
+    const/4 v4, 0x0
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
+
+    goto :goto_1
+
+    :cond_1
+    move-object v3, v4
+
+    :goto_1
+    and-int/lit8 v5, p8, 0x4
+
+    if-eqz v5, :cond_2
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+
+    goto :goto_2
+
+    :cond_2
+    move-object v5, v4
+
+    :goto_2
+    and-int/lit8 v6, p8, 0x8
+
+    if-eqz v6, :cond_3
+
+    iget-object v6, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
+
+    goto :goto_3
+
+    :cond_3
+    move-object v6, p5
+
+    :goto_3
+    and-int/lit8 v7, p8, 0x10
+
+    if-eqz v7, :cond_4
+
+    iget-object v7, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
+
+    goto :goto_4
+
+    :cond_4
+    move-object v7, p6
+
+    :goto_4
+    and-int/lit8 v8, p8, 0x20
+
+    if-eqz v8, :cond_5
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->checkInID:Ljava/lang/Long;
+
+    goto :goto_5
 
     :cond_5
-    throw p2
+    move-object v0, v4
+
+    :goto_5
+    const-string v4, "date"
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v4, "contactDiaryLocation"
+
+    invoke-static {v5, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v4, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;
+
+    move-object p0, v4
+
+    move-wide p1, v1
+
+    move-object p3, v3
+
+    move-object p4, v5
+
+    move-object p5, v6
+
+    move-object p6, v7
+
+    move-object/from16 p7, v0
+
+    invoke-direct/range {p0 .. p7}, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;-><init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;Lorg/joda/time/Duration;Ljava/lang/String;Ljava/lang/Long;)V
+
+    return-object v4
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;
 
-    iget-wide v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
+    iget-wide v3, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
 
-    iget-wide v2, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
+    iget-wide v5, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
 
-    cmp-long v0, v0, v2
+    cmp-long v1, v3, v5
 
-    if-nez v0, :cond_0
+    if-eqz v1, :cond_2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
+    return v2
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
+    :cond_2
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
 
-    move-result v0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+    if-nez v1, :cond_3
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+    return v2
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_3
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
 
-    move-result v0
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
 
-    if-eqz v0, :cond_0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
+    move-result v1
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
+    if-nez v1, :cond_4
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return v2
 
-    move-result v0
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
+    move-result v1
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->checkInID:Ljava/lang/Long;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->checkInID:Ljava/lang/Long;
+
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_7
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
+    :cond_7
+    return v0
+.end method
 
-    return p1
+.method public getCheckInID()Ljava/lang/Long;
+    .locals 1
 
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->checkInID:Ljava/lang/Long;
 
-    return p1
+    return-object v0
 .end method
 
 .method public getCircumstances()Ljava/lang/String;
@@ -274,132 +364,155 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 4
 
     iget-wide v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
 
-    invoke-static {v0, v1}, L$r8$backportedMethods$utility$Long$1$hashCode;->hashCode(J)I
+    const/16 v2, 0x20
 
-    move-result v0
+    ushr-long v2, v0, v2
+
+    xor-long/2addr v0, v2
+
+    long-to-int v0, v0
 
     mul-int/lit8 v0, v0, 0x1f
 
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
     invoke-virtual {v1}, Lorg/joda/time/LocalDate;->hashCode()I
 
     move-result v1
 
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    move v1, v2
+
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractDuration;->hashCode()I
+
+    move-result v1
 
     :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
 
-    if-eqz v1, :cond_1
+    if-nez v1, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    move v1, v2
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
 
     :goto_1
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->checkInID:Ljava/lang/Long;
 
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v1}, Lorg/joda/time/base/AbstractDuration;->hashCode()I
-
-    move-result v1
+    if-nez v1, :cond_2
 
     goto :goto_2
 
     :cond_2
-    move v1, v2
-
-    :goto_2
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
-
-    if-eqz v1, :cond_3
-
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    :cond_3
+    :goto_2
     add-int/2addr v0, v2
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 9
 
-    const-string v0, "DefaultContactDiaryLocationVisit(id="
+    iget-wide v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
 
-    move-result-object v0
+    iget-object v3, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
 
-    iget-wide v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->id:J
+    iget-object v4, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object v5, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
 
-    const-string v1, ", date="
+    iget-object v6, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->checkInID:Ljava/lang/Long;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->date:Lorg/joda/time/LocalDate;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v8, "DefaultContactDiaryLocationVisit(id="
 
-    const-string v1, ", contactDiaryLocation="
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->contactDiaryLocation:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+    const-string v0, ", date="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", duration="
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", contactDiaryLocation="
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->duration:Lorg/joda/time/Duration;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", circumstances="
+    const-string v0, ", duration="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryLocationVisit;->circumstances:Ljava/lang/String;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v2, ")"
+    const-string v0, ", circumstances="
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", checkInID="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

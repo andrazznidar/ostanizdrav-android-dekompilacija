@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -41,22 +41,16 @@
 
 .field public zac:[Lcom/google/android/gms/common/Feature;
 
-.field public zad:I
-
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/zaci;)V
-    .locals 0
+.method public synthetic constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zad:I
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
 
     return-void
 .end method
@@ -78,6 +72,8 @@
 
     iget-object v0, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zaa:Lcom/google/android/gms/common/api/internal/RemoteCall;
 
+    const/4 v1, 0x0
+
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
@@ -85,22 +81,20 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
-    const-string v1, "execute parameter required"
+    const-string v2, "execute parameter required"
 
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    new-instance v0, Lcom/google/android/gms/common/api/internal/zacj;
+    new-instance v0, Lcom/google/android/gms/common/api/internal/zacr;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
+    iget-object v2, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zac:[Lcom/google/android/gms/common/Feature;
 
-    iget-boolean v2, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
+    iget-boolean v3, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zab:Z
 
-    iget v3, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;->zad:I
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/google/android/gms/common/api/internal/zacj;-><init>(Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;[Lcom/google/android/gms/common/Feature;ZI)V
+    invoke-direct {v0, p0, v2, v3, v1}, Lcom/google/android/gms/common/api/internal/zacr;-><init>(Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;[Lcom/google/android/gms/common/Feature;ZI)V
 
     return-object v0
 .end method

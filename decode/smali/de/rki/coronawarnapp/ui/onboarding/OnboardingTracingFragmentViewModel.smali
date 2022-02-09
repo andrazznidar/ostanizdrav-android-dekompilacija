@@ -19,12 +19,24 @@
     .end annotation
 .end field
 
-.field public final interoperabilityRepository:Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;
+.field public final enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
-.field public final permissionRequestEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+.field public final ensErrorEvents:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde/rki/coronawarnapp/ui/SingleLiveEvent<",
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
+            "Ljava/lang/Throwable;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final interoperabilityRepository:Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;
+
+.field public final permissionRequestEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
             "Lkotlin/jvm/functions/Function1<",
             "Landroid/app/Activity;",
             "Lkotlin/Unit;",
@@ -33,10 +45,10 @@
     .end annotation
 .end field
 
-.field public final routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+.field public final routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde/rki/coronawarnapp/ui/SingleLiveEvent<",
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
             "Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents;",
             ">;"
         }
@@ -44,6 +56,8 @@
 .end field
 
 .field public final tracingPermissionHelper:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
+
+.field public final tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
 
 
 # direct methods
@@ -56,9 +70,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lkotlin/jvm/internal/ClassReference;
-
-    invoke-virtual {v0}, Lkotlin/jvm/internal/ClassReference;->getSimpleName()Ljava/lang/String;
+    invoke-interface {v0}, Lkotlin/reflect/KClass;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -67,20 +79,28 @@
     return-void
 .end method
 
-.method public constructor <init>(Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
-    .locals 4
+.method public constructor <init>(Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/storage/TracingSettings;Lde/rki/coronawarnapp/nearby/ENFClient;)V
+    .locals 2
 
     const-string v0, "interoperabilityRepository"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tracingPermissionHelperFactory"
+    const-string/jumbo v0, "tracingPermissionHelperFactory"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "dispatcherProvider"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "tracingSettings"
+
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "enfClient"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -90,31 +110,41 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->interoperabilityRepository:Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;
 
+    iput-object p4, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
+
     iget-object p1, p1, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;->countryList:Lkotlinx/coroutines/flow/Flow;
 
     invoke-interface {p3}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p3
 
-    const-wide/16 v2, 0x0
+    const-wide/16 p4, 0x0
 
-    invoke-static {p1, p3, v2, v3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {p1, p3, p4, p5, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->countryList:Landroidx/lifecycle/LiveData;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;-><init>()V
+    invoke-direct {p1}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->routeToScreen:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;-><init>()V
+    invoke-direct {p1}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->permissionRequestEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->permissionRequestEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
+
+    new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
+
+    invoke-direct {p1}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel;->ensErrorEvents:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     new-instance p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragmentViewModel$tracingPermissionHelper$1;
 

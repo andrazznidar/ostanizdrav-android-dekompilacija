@@ -23,7 +23,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStatisticsHomeCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatisticsHomeCard.kt\nde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,96:1\n1517#2:97\n1588#2,3:98\n*E\n*S KotlinDebug\n*F\n+ 1 StatisticsHomeCard.kt\nde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$onBindData$1\n*L\n61#1:97\n61#1,3:98\n*E\n"
+    value = "SMAP\nStatisticsHomeCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatisticsHomeCard.kt\nde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,104:1\n798#2,11:105\n1547#2:116\n1618#2,3:117\n*S KotlinDebug\n*F\n+ 1 StatisticsHomeCard.kt\nde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$onBindData$1\n*L\n65#1:105,11\n69#1:116\n69#1:117,3\n*E\n"
 .end annotation
 
 
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     check-cast p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsScrollcontainerBinding;
 
@@ -55,7 +55,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -63,23 +63,60 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "<anonymous parameter 1>"
+    const-string p1, "payloads"
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
+    new-instance p1, Ljava/util/ArrayList;
 
-    const-string p3, "stats:"
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p3
 
+    :cond_0
+    :goto_0
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;
+
+    if-nez p1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    move-object p2, p1
+
+    :goto_1
+    iget-object p1, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
+
     iget-wide v0, p2, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;->stableId:J
 
-    invoke-virtual {p3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string/jumbo p3, "stats:"
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p3, v0, v1}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p3
 
@@ -93,7 +130,7 @@
 
     const/16 v0, 0xa
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v0}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v0
 
@@ -103,30 +140,76 @@
 
     move-result-object p1
 
-    :goto_0
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_6
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/statistics/StatsItem;
+    check-cast v0, Lde/rki/coronawarnapp/statistics/GenericStatsItem;
 
-    new-instance v1, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;
+    instance-of v1, v0, Lde/rki/coronawarnapp/statistics/GlobalStatsItem;
 
-    iget-object v2, p2, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;->onHelpAction:Lkotlin/jvm/functions/Function1;
+    if-eqz v1, :cond_3
 
-    invoke-direct {v1, v0, v2}, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;-><init>(Lde/rki/coronawarnapp/statistics/StatsItem;Lkotlin/jvm/functions/Function1;)V
+    new-instance v1, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;
 
+    check-cast v0, Lde/rki/coronawarnapp/statistics/GlobalStatsItem;
+
+    iget-object v2, p2, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;->onClickListener:Lkotlin/jvm/functions/Function1;
+
+    invoke-direct {v1, v0, v2}, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;-><init>(Lde/rki/coronawarnapp/statistics/GlobalStatsItem;Lkotlin/jvm/functions/Function1;)V
+
+    goto :goto_3
+
+    :cond_3
+    instance-of v1, v0, Lde/rki/coronawarnapp/statistics/AddStatsItem;
+
+    if-eqz v1, :cond_4
+
+    new-instance v1, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/AddLocalStatisticsCardItem;
+
+    check-cast v0, Lde/rki/coronawarnapp/statistics/AddStatsItem;
+
+    iget-object v2, p2, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;->onClickListener:Lkotlin/jvm/functions/Function1;
+
+    invoke-direct {v1, v0, v2}, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/AddLocalStatisticsCardItem;-><init>(Lde/rki/coronawarnapp/statistics/AddStatsItem;Lkotlin/jvm/functions/Function1;)V
+
+    goto :goto_3
+
+    :cond_4
+    instance-of v1, v0, Lde/rki/coronawarnapp/statistics/LocalStatsItem;
+
+    if-eqz v1, :cond_5
+
+    new-instance v1, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/LocalStatisticsCardItem;
+
+    check-cast v0, Lde/rki/coronawarnapp/statistics/LocalStatsItem;
+
+    iget-object v2, p2, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;->onClickListener:Lkotlin/jvm/functions/Function1;
+
+    iget-object v3, p2, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$Item;->onRemoveListener:Lkotlin/jvm/functions/Function1;
+
+    invoke-direct {v1, v0, v2, v3}, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/LocalStatisticsCardItem;-><init>(Lde/rki/coronawarnapp/statistics/LocalStatsItem;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+
+    :goto_3
     invoke-virtual {p3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_2
 
-    :cond_0
+    :cond_5
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p1
+
+    :cond_6
     iget-object p1, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->statisticsCardAdapter$delegate:Lkotlin/Lazy;
@@ -141,7 +224,7 @@
 
     const/4 v0, 0x2
 
-    invoke-static {p1, p3, p2, v0}, Lcom/google/zxing/client/android/R$id;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
+    invoke-static {p1, p3, p2, v0}, Lde/rki/coronawarnapp/util/lists/diffutil/SmartDiffUtilKt;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -19,11 +19,28 @@
 
 # instance fields
 .field public final synthetic $cont:Lkotlin/coroutines/Continuation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/coroutines/Continuation<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$2;->$cont:Lkotlin/coroutines/Continuation;
 
@@ -37,13 +54,9 @@
 .method public final onFailure(Ljava/lang/Exception;)V
     .locals 1
 
-    const-string v0, "it"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$2;->$cont:Lkotlin/coroutines/Continuation;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {p1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object p1
 

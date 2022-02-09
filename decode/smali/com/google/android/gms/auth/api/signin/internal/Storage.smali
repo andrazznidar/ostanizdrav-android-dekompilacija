@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/auth/api/signin/internal/Storage;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # static fields
@@ -53,7 +53,7 @@
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/google/android/gms/auth/api/signin/internal/Storage;
-    .locals 1
+    .locals 2
     .param p0    # Landroid/content/Context;
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
@@ -61,35 +61,41 @@
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
-    invoke-static {p0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "null reference"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     sget-object v0, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zaa:Ljava/util/concurrent/locks/Lock;
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+    move-object v1, v0
+
+    check-cast v1, Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zab:Lcom/google/android/gms/auth/api/signin/internal/Storage;
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zab:Lcom/google/android/gms/auth/api/signin/internal/Storage;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    new-instance v0, Lcom/google/android/gms/auth/api/signin/internal/Storage;
+    new-instance v1, Lcom/google/android/gms/auth/api/signin/internal/Storage;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;-><init>(Landroid/content/Context;)V
 
-    sput-object v0, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zab:Lcom/google/android/gms/auth/api/signin/internal/Storage;
+    sput-object v1, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zab:Lcom/google/android/gms/auth/api/signin/internal/Storage;
 
     :cond_0
     sget-object p0, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zab:Lcom/google/android/gms/auth/api/signin/internal/Storage;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v0, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zaa:Ljava/util/concurrent/locks/Lock;
+    check-cast v0, Ljava/util/concurrent/locks/ReentrantLock;
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     return-object p0
 
@@ -98,7 +104,9 @@
 
     sget-object v0, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zaa:Ljava/util/concurrent/locks/Lock;
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    check-cast v0, Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     throw p0
 .end method
@@ -112,7 +120,7 @@
 
     const-string v0, "defaultGoogleSignInAccount"
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zac(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zab(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -135,9 +143,9 @@
 
     move-result v1
 
-    add-int/lit8 v1, v1, 0x14
-
     new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x14
 
     invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
@@ -155,7 +163,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zac(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zab(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -174,8 +182,14 @@
     return-object v2
 .end method
 
-.method public final zac(Ljava/lang/String;)Ljava/lang/String;
+.method public final zab(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
 
     iget-object v0, p0, Lcom/google/android/gms/auth/api/signin/internal/Storage;->zac:Ljava/util/concurrent/locks/Lock;
 

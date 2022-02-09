@@ -38,6 +38,26 @@
     .end annotation
 .end field
 
+.field public final exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final processLifecycleOwnerProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -48,20 +68,27 @@
     .end annotation
 .end field
 
-.field public final taskControllerProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/task/TaskController;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "contextProvider",
+            "backgroundModeStatusProvider",
+            "processLifecycleOwnerProvider",
+            "exposureWindowRiskWorkSchedulerProvider",
+            "presenceTracingRiskRepositoryProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,13 +96,16 @@
             "Landroid/content/Context;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/task/TaskController;",
-            ">;",
-            "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;",
             ">;",
             "Ljavax/inject/Provider<",
             "Landroidx/lifecycle/LifecycleOwner;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;",
             ">;)V"
         }
     .end annotation
@@ -84,11 +114,13 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->contextProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->taskControllerProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->backgroundModeStatusProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->backgroundModeStatusProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->processLifecycleOwnerProvider:Ljavax/inject/Provider;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->processLifecycleOwnerProvider:Ljavax/inject/Provider;
+    iput-object p4, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -96,7 +128,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 5
+    .locals 7
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->contextProvider:Ljavax/inject/Provider;
 
@@ -104,35 +136,55 @@
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Context;
+    move-object v2, v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->taskControllerProvider:Ljavax/inject/Provider;
+    check-cast v2, Landroid/content/Context;
 
-    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->backgroundModeStatusProvider:Ljavax/inject/Provider;
 
-    move-result-object v1
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/task/TaskController;
+    move-result-object v0
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->backgroundModeStatusProvider:Ljavax/inject/Provider;
+    move-object v3, v0
 
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    check-cast v3, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;
 
-    move-result-object v2
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->processLifecycleOwnerProvider:Ljavax/inject/Provider;
 
-    check-cast v2, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->processLifecycleOwnerProvider:Ljavax/inject/Provider;
+    move-result-object v0
 
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    move-object v4, v0
 
-    move-result-object v3
+    check-cast v4, Landroidx/lifecycle/LifecycleOwner;
 
-    check-cast v3, Landroidx/lifecycle/LifecycleOwner;
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
 
-    new-instance v4, Lde/rki/coronawarnapp/util/WatchdogService;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/util/WatchdogService;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Landroidx/lifecycle/LifecycleOwner;)V
+    move-result-object v0
 
-    return-object v4
+    move-object v5, v0
+
+    check-cast v5, Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/util/WatchdogService_Factory;->presenceTracingRiskRepositoryProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;
+
+    new-instance v0, Lde/rki/coronawarnapp/util/WatchdogService;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/util/WatchdogService;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Landroidx/lifecycle/LifecycleOwner;Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;)V
+
+    return-object v0
 .end method

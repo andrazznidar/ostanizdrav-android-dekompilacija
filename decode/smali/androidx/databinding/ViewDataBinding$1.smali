@@ -1,9 +1,9 @@
-.class public final Landroidx/databinding/ViewDataBinding$1;
+.class public Landroidx/databinding/ViewDataBinding$1;
 .super Ljava/lang/Object;
 .source "ViewDataBinding.java"
 
 # interfaces
-.implements Landroidx/databinding/ViewDataBinding$CreateWeakListener;
+.implements Landroidx/databinding/CreateWeakListener;
 
 
 # annotations
@@ -12,6 +12,6 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation

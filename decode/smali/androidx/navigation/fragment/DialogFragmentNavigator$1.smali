@@ -1,4 +1,4 @@
-.class public Landroidx/navigation/fragment/DialogFragmentNavigator$1;
+.class Landroidx/navigation/fragment/DialogFragmentNavigator$1;
 .super Ljava/lang/Object;
 .source "DialogFragmentNavigator.java"
 

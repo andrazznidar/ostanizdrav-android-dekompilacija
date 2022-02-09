@@ -1,0 +1,20 @@
+.class public interface abstract Lde/rki/coronawarnapp/appconfig/CovidCertificateConfig;
+.super Ljava/lang/Object;
+.source "CovidCertificateConfig.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/appconfig/CovidCertificateConfig$TestCertificate;,
+        Lde/rki/coronawarnapp/appconfig/CovidCertificateConfig$Mapper;
+    }
+.end annotation
+
+
+# virtual methods
+.method public abstract getExpirationThreshold()Lorg/joda/time/Duration;
+.end method
+
+.method public abstract getTestCertificate()Lde/rki/coronawarnapp/appconfig/CovidCertificateConfig$TestCertificate;
+.end method

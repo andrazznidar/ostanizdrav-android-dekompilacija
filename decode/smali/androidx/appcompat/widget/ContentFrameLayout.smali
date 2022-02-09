@@ -165,32 +165,22 @@
 .method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/ContentFrameLayout;->mAttachListener:Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;
 
-    if-eqz v0, :cond_1
-
-    check-cast v0, Landroidx/appcompat/app/AppCompatDelegateImpl$5;
-
     if-eqz v0, :cond_0
 
-    goto :goto_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
 .method public onDetachedFromWindow()V
     .locals 3
 
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/ContentFrameLayout;->mAttachListener:Landroidx/appcompat/widget/ContentFrameLayout$OnAttachListener;
 

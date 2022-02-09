@@ -28,6 +28,14 @@
 # direct methods
 .method public constructor <init>(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "info"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,6 +52,14 @@
 
 .method public static getActionSymbolicName(I)Ljava/lang/String;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "action"
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -64,171 +80,181 @@
     return-object p0
 
     :pswitch_0
-    const-string p0, "ACTION_PAGE_RIGHT"
+    const-string p0, "ACTION_PRESS_AND_HOLD"
 
     return-object p0
 
     :pswitch_1
-    const-string p0, "ACTION_PAGE_LEFT"
+    const-string p0, "ACTION_PAGE_RIGHT"
 
     return-object p0
 
     :pswitch_2
-    const-string p0, "ACTION_PAGE_DOWN"
+    const-string p0, "ACTION_PAGE_LEFT"
 
     return-object p0
 
     :pswitch_3
-    const-string p0, "ACTION_PAGE_UP"
+    const-string p0, "ACTION_PAGE_DOWN"
 
     return-object p0
 
     :pswitch_4
-    const-string p0, "ACTION_HIDE_TOOLTIP"
+    const-string p0, "ACTION_PAGE_UP"
 
     return-object p0
 
     :pswitch_5
-    const-string p0, "ACTION_SHOW_TOOLTIP"
+    const-string p0, "ACTION_HIDE_TOOLTIP"
 
     return-object p0
 
     :pswitch_6
-    const-string p0, "ACTION_SET_PROGRESS"
+    const-string p0, "ACTION_SHOW_TOOLTIP"
 
     return-object p0
 
     :pswitch_7
-    const-string p0, "ACTION_CONTEXT_CLICK"
+    const-string p0, "ACTION_SET_PROGRESS"
 
     return-object p0
 
     :pswitch_8
-    const-string p0, "ACTION_SCROLL_RIGHT"
+    const-string p0, "ACTION_CONTEXT_CLICK"
 
     return-object p0
 
     :pswitch_9
-    const-string p0, "ACTION_SCROLL_DOWN"
+    const-string p0, "ACTION_SCROLL_RIGHT"
 
     return-object p0
 
     :pswitch_a
-    const-string p0, "ACTION_SCROLL_LEFT"
+    const-string p0, "ACTION_SCROLL_DOWN"
 
     return-object p0
 
     :pswitch_b
-    const-string p0, "ACTION_SCROLL_UP"
+    const-string p0, "ACTION_SCROLL_LEFT"
 
     return-object p0
 
     :pswitch_c
-    const-string p0, "ACTION_SCROLL_TO_POSITION"
+    const-string p0, "ACTION_SCROLL_UP"
 
     return-object p0
 
     :pswitch_d
+    const-string p0, "ACTION_SCROLL_TO_POSITION"
+
+    return-object p0
+
+    :pswitch_e
     const-string p0, "ACTION_SHOW_ON_SCREEN"
 
     return-object p0
 
     :sswitch_0
-    const-string p0, "ACTION_MOVE_WINDOW"
+    const-string p0, "ACTION_IME_ENTER"
 
     return-object p0
 
     :sswitch_1
-    const-string p0, "ACTION_SET_TEXT"
+    const-string p0, "ACTION_MOVE_WINDOW"
 
     return-object p0
 
     :sswitch_2
-    const-string p0, "ACTION_COLLAPSE"
+    const-string p0, "ACTION_SET_TEXT"
 
     return-object p0
 
     :sswitch_3
-    const-string p0, "ACTION_EXPAND"
+    const-string p0, "ACTION_COLLAPSE"
 
     return-object p0
 
     :sswitch_4
-    const-string p0, "ACTION_SET_SELECTION"
+    const-string p0, "ACTION_EXPAND"
 
     return-object p0
 
     :sswitch_5
-    const-string p0, "ACTION_CUT"
+    const-string p0, "ACTION_SET_SELECTION"
 
     return-object p0
 
     :sswitch_6
-    const-string p0, "ACTION_PASTE"
+    const-string p0, "ACTION_CUT"
 
     return-object p0
 
     :sswitch_7
-    const-string p0, "ACTION_COPY"
+    const-string p0, "ACTION_PASTE"
 
     return-object p0
 
     :sswitch_8
-    const-string p0, "ACTION_SCROLL_BACKWARD"
+    const-string p0, "ACTION_COPY"
 
     return-object p0
 
     :sswitch_9
-    const-string p0, "ACTION_SCROLL_FORWARD"
+    const-string p0, "ACTION_SCROLL_BACKWARD"
 
     return-object p0
 
     :sswitch_a
-    const-string p0, "ACTION_PREVIOUS_HTML_ELEMENT"
+    const-string p0, "ACTION_SCROLL_FORWARD"
 
     return-object p0
 
     :sswitch_b
-    const-string p0, "ACTION_NEXT_HTML_ELEMENT"
+    const-string p0, "ACTION_PREVIOUS_HTML_ELEMENT"
 
     return-object p0
 
     :sswitch_c
-    const-string p0, "ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY"
+    const-string p0, "ACTION_NEXT_HTML_ELEMENT"
 
     return-object p0
 
     :sswitch_d
-    const-string p0, "ACTION_NEXT_AT_MOVEMENT_GRANULARITY"
+    const-string p0, "ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY"
 
     return-object p0
 
     :sswitch_e
-    const-string p0, "ACTION_CLEAR_ACCESSIBILITY_FOCUS"
+    const-string p0, "ACTION_NEXT_AT_MOVEMENT_GRANULARITY"
 
     return-object p0
 
     :sswitch_f
-    const-string p0, "ACTION_ACCESSIBILITY_FOCUS"
+    const-string p0, "ACTION_CLEAR_ACCESSIBILITY_FOCUS"
 
     return-object p0
 
     :sswitch_10
-    const-string p0, "ACTION_LONG_CLICK"
+    const-string p0, "ACTION_ACCESSIBILITY_FOCUS"
 
     return-object p0
 
     :sswitch_11
-    const-string p0, "ACTION_CLICK"
+    const-string p0, "ACTION_LONG_CLICK"
 
     return-object p0
 
     :sswitch_12
-    const-string p0, "ACTION_CLEAR_SELECTION"
+    const-string p0, "ACTION_CLICK"
 
     return-object p0
 
     :sswitch_13
+    const-string p0, "ACTION_CLEAR_SELECTION"
+
+    return-object p0
+
+    :sswitch_14
     const-string p0, "ACTION_SELECT"
 
     return-object p0
@@ -245,30 +271,32 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x4 -> :sswitch_13
-        0x8 -> :sswitch_12
-        0x10 -> :sswitch_11
-        0x20 -> :sswitch_10
-        0x40 -> :sswitch_f
-        0x80 -> :sswitch_e
-        0x100 -> :sswitch_d
-        0x200 -> :sswitch_c
-        0x400 -> :sswitch_b
-        0x800 -> :sswitch_a
-        0x1000 -> :sswitch_9
-        0x2000 -> :sswitch_8
-        0x4000 -> :sswitch_7
-        0x8000 -> :sswitch_6
-        0x10000 -> :sswitch_5
-        0x20000 -> :sswitch_4
-        0x40000 -> :sswitch_3
-        0x80000 -> :sswitch_2
-        0x200000 -> :sswitch_1
-        0x1020042 -> :sswitch_0
+        0x4 -> :sswitch_14
+        0x8 -> :sswitch_13
+        0x10 -> :sswitch_12
+        0x20 -> :sswitch_11
+        0x40 -> :sswitch_10
+        0x80 -> :sswitch_f
+        0x100 -> :sswitch_e
+        0x200 -> :sswitch_d
+        0x400 -> :sswitch_c
+        0x800 -> :sswitch_b
+        0x1000 -> :sswitch_a
+        0x2000 -> :sswitch_9
+        0x4000 -> :sswitch_8
+        0x8000 -> :sswitch_7
+        0x10000 -> :sswitch_6
+        0x20000 -> :sswitch_5
+        0x40000 -> :sswitch_4
+        0x80000 -> :sswitch_3
+        0x200000 -> :sswitch_2
+        0x1020042 -> :sswitch_1
+        0x1020054 -> :sswitch_0
     .end sparse-switch
 
     :pswitch_data_0
     .packed-switch 0x1020036
+        :pswitch_e
         :pswitch_d
         :pswitch_c
         :pswitch_b
@@ -276,11 +304,11 @@
         :pswitch_9
         :pswitch_8
         :pswitch_7
-        :pswitch_6
     .end packed-switch
 
     :pswitch_data_1
     .packed-switch 0x1020044
+        :pswitch_6
         :pswitch_5
         :pswitch_4
         :pswitch_3
@@ -292,6 +320,14 @@
 
 .method public static getClickableSpans(Ljava/lang/CharSequence;)[Landroid/text/style/ClickableSpan;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "text"
+        }
+    .end annotation
 
     instance-of v0, p0, Landroid/text/Spanned;
 
@@ -327,6 +363,14 @@
 # virtual methods
 .method public addAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "action"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
 
@@ -341,6 +385,14 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "obj"
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -410,6 +462,15 @@
 
 .method public final extrasIntList(Ljava/lang/String;)Ljava/util/List;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "key"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -640,6 +701,16 @@
 
 .method public final setBooleanProperty(IZ)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "property",
+            "value"
+        }
+    .end annotation
 
     invoke-virtual {p0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->getExtras()Landroid/os/Bundle;
 
@@ -677,6 +748,14 @@
 
 .method public setCollectionInfo(Ljava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "collectionInfo"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
 
@@ -701,6 +780,14 @@
 
 .method public setCollectionItemInfo(Ljava/lang/Object;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "collectionItemInfo"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->mInfo:Landroid/view/accessibility/AccessibilityNodeInfo;
 
@@ -717,6 +804,14 @@
 
 .method public setHintText(Ljava/lang/CharSequence;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "hintText"
+        }
+    .end annotation
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1074,21 +1169,13 @@
 
     if-eqz v5, :cond_2
 
-    iget-object v5, v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
-
-    check-cast v5, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-
-    invoke-virtual {v5}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->getLabel()Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v5
 
     if-eqz v5, :cond_2
 
-    iget-object v1, v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->mAction:Ljava/lang/Object;
-
-    check-cast v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-
-    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->getLabel()Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v1
 

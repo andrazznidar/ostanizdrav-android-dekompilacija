@@ -169,17 +169,11 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent;->paint:Landroid/graphics/Paint;
+    invoke-virtual {v0, p3}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    invoke-virtual {p1, p3}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
+    invoke-virtual {v0, p4}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent;->paint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, p4}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
-
-    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent;->paint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, p5}, Landroid/graphics/Paint;->setStrokeMiter(F)V
+    invoke-virtual {v0, p5}, Landroid/graphics/Paint;->setStrokeMiter(F)V
 
     invoke-virtual {p6}, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;->createAnimation()Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
@@ -1326,22 +1320,22 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->INDIVIDUALLY:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
-
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    move-object v3, v2
+    move-object v2, v1
 
     :goto_0
-    if-ltz v1, :cond_1
+    const/4 v3, 0x2
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    if-ltz v0, :cond_1
+
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -1353,21 +1347,21 @@
 
     check-cast v4, Lcom/airbnb/lottie/animation/content/TrimPathContent;
 
-    iget-object v5, v4, Lcom/airbnb/lottie/animation/content/TrimPathContent;->type:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
+    iget v5, v4, Lcom/airbnb/lottie/animation/content/TrimPathContent;->type:I
 
-    if-ne v5, v0, :cond_0
+    if-ne v5, v3, :cond_0
 
-    move-object v3, v4
+    move-object v2, v4
 
     :cond_0
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
     :cond_1
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    iget-object p1, v3, Lcom/airbnb/lottie/animation/content/TrimPathContent;->listeners:Ljava/util/List;
+    iget-object p1, v2, Lcom/airbnb/lottie/animation/content/TrimPathContent;->listeners:Ljava/util/List;
 
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -1378,7 +1372,7 @@
 
     add-int/lit8 p1, p1, -0x1
 
-    move-object v1, v2
+    move-object v0, v1
 
     :goto_1
     if-ltz p1, :cond_7
@@ -1397,20 +1391,20 @@
 
     check-cast v5, Lcom/airbnb/lottie/animation/content/TrimPathContent;
 
-    iget-object v6, v5, Lcom/airbnb/lottie/animation/content/TrimPathContent;->type:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
+    iget v6, v5, Lcom/airbnb/lottie/animation/content/TrimPathContent;->type:I
 
-    if-ne v6, v0, :cond_4
+    if-ne v6, v3, :cond_4
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_3
 
     iget-object v4, p0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent;->pathGroups:Ljava/util/List;
 
-    invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_3
-    new-instance v1, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;
+    new-instance v0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;
 
-    invoke-direct {v1, v5, v2}, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;-><init>(Lcom/airbnb/lottie/animation/content/TrimPathContent;Lcom/airbnb/lottie/animation/content/BaseStrokeContent$1;)V
+    invoke-direct {v0, v5, v1}, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;-><init>(Lcom/airbnb/lottie/animation/content/TrimPathContent;Lcom/airbnb/lottie/animation/content/BaseStrokeContent$1;)V
 
     iget-object v4, v5, Lcom/airbnb/lottie/animation/content/TrimPathContent;->listeners:Ljava/util/List;
 
@@ -1423,14 +1417,14 @@
 
     if-eqz v5, :cond_6
 
-    if-nez v1, :cond_5
+    if-nez v0, :cond_5
 
-    new-instance v1, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;
+    new-instance v0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;
 
-    invoke-direct {v1, v3, v2}, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;-><init>(Lcom/airbnb/lottie/animation/content/TrimPathContent;Lcom/airbnb/lottie/animation/content/BaseStrokeContent$1;)V
+    invoke-direct {v0, v2, v1}, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;-><init>(Lcom/airbnb/lottie/animation/content/TrimPathContent;Lcom/airbnb/lottie/animation/content/BaseStrokeContent$1;)V
 
     :cond_5
-    iget-object v5, v1, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;->paths:Ljava/util/List;
+    iget-object v5, v0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup;->paths:Ljava/util/List;
 
     check-cast v4, Lcom/airbnb/lottie/animation/content/PathContent;
 
@@ -1443,11 +1437,11 @@
     goto :goto_1
 
     :cond_7
-    if-eqz v1, :cond_8
+    if-eqz v0, :cond_8
 
     iget-object p1, p0, Lcom/airbnb/lottie/animation/content/BaseStrokeContent;->pathGroups:Ljava/util/List;
 
-    invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_8
     return-void

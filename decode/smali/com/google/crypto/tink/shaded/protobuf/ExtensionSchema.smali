@@ -38,6 +38,18 @@
 .method public abstract findExtensionByNumber(Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/MessageLite;I)Ljava/lang/Object;
 .end method
 
+.method public abstract getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Object;",
+            ")",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "TT;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getMutableExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -48,6 +60,12 @@
             "TT;>;"
         }
     .end annotation
+.end method
+
+.method public abstract hasExtensions(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Z
+.end method
+
+.method public abstract makeImmutable(Ljava/lang/Object;)V
 .end method
 
 .method public abstract parseExtension(Lcom/google/crypto/tink/shaded/protobuf/Reader;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
@@ -65,6 +83,44 @@
             "TT;>;TUB;",
             "Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema<",
             "TUT;TUB;>;)TUB;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract parseLengthPrefixedMessageSetItem(Lcom/google/crypto/tink/shaded/protobuf/Reader;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/crypto/tink/shaded/protobuf/Reader;",
+            "Ljava/lang/Object;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "TT;>;)V"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+.end method
+
+.method public abstract parseMessageSetItem(Lcom/google/crypto/tink/shaded/protobuf/ByteString;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/crypto/tink/shaded/protobuf/ByteString;",
+            "Ljava/lang/Object;",
+            "Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;",
+            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet<",
+            "TT;>;)V"
         }
     .end annotation
 

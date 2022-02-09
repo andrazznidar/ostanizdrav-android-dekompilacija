@@ -1,6 +1,17 @@
 .class public Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader$ParseException;
 .super Ljava/lang/RuntimeException;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "ParseException"
+.end annotation
 
 
 # direct methods
@@ -31,9 +42,9 @@
 
     move-result v1
 
-    add-int/lit8 v1, v1, 0x29
-
     new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x29
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 

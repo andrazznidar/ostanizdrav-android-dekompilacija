@@ -22,21 +22,37 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/OnSuccessListener<",
-        "Ljava/util/List<",
-        "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
-        ">;>;"
+        "Lcom/google/android/gms/tasks/OnSuccessListener;"
     }
 .end annotation
 
 
 # instance fields
 .field public final synthetic $cont:Lkotlin/coroutines/Continuation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/coroutines/Continuation<",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/util/List<",
+            "Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;",
+            ">;>;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider$getTEKHistoryOnPreV18$2$1;->$cont:Lkotlin/coroutines/Continuation;
 
@@ -48,13 +64,15 @@
 
 # virtual methods
 .method public onSuccess(Ljava/lang/Object;)V
-    .locals 9
+    .locals 10
 
     check-cast p1, Ljava/util/List;
 
+    sget-object v8, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
     const/4 v0, 0x1
 
-    new-array v8, v0, [Ljava/lang/Object;
+    new-array v9, v0, [Ljava/lang/Object;
 
     const-string v0, "it"
 
@@ -76,19 +94,17 @@
 
     move-object v0, p1
 
-    invoke-static/range {v0 .. v7}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    invoke-static/range {v0 .. v7}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    aput-object v0, v8, v1
+    aput-object v0, v9, v1
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v0, "Temporary exposure keys were retrieved: %s"
 
-    const-string v1, "Temporary exposure keys were retrieved: %s"
-
-    invoke-virtual {v0, v1, v8}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v8, v0, v9}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider$getTEKHistoryOnPreV18$2$1;->$cont:Lkotlin/coroutines/Continuation;
 

@@ -96,11 +96,5 @@
     return-void
 .end method
 
-.method public abstract onCreate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-.end method
-
-.method public abstract onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-.end method
-
 .method public abstract onUpgrade(Landroidx/sqlite/db/SupportSQLiteDatabase;II)V
 .end method

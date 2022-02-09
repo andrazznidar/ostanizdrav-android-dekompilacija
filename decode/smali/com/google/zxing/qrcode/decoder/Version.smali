@@ -5278,48 +5278,6 @@
     return-object p0
 .end method
 
-.method public static getProvisionalVersionForDimension(I)Lcom/google/zxing/qrcode/decoder/Version;
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/zxing/FormatException;
-        }
-    .end annotation
-
-    rem-int/lit8 v0, p0, 0x4
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    add-int/lit8 p0, p0, -0x11
-
-    :try_start_0
-    div-int/lit8 p0, p0, 0x4
-
-    invoke-static {p0}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object p0
-
-    throw p0
-
-    :cond_0
-    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
-
-    move-result-object p0
-
-    throw p0
-.end method
-
 .method public static getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
     .locals 1
 

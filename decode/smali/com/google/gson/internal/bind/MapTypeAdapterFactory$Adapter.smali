@@ -1,4 +1,4 @@
-.class public final Lcom/google/gson/internal/bind/MapTypeAdapterFactory$Adapter;
+.class final Lcom/google/gson/internal/bind/MapTypeAdapterFactory$Adapter;
 .super Lcom/google/gson/TypeAdapter;
 .source "MapTypeAdapterFactory.java"
 
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -117,11 +117,11 @@
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
-    const/4 v2, 0x0
-
     if-ne v0, v1, :cond_0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
+
+    const/4 p1, 0x0
 
     goto/16 :goto_4
 
@@ -134,11 +134,11 @@
 
     check-cast v1, Ljava/util/Map;
 
-    sget-object v3, Lcom/google/gson/stream/JsonToken;->BEGIN_ARRAY:Lcom/google/gson/stream/JsonToken;
+    sget-object v2, Lcom/google/gson/stream/JsonToken;->BEGIN_ARRAY:Lcom/google/gson/stream/JsonToken;
 
-    const-string v4, "duplicate key: "
+    const-string v3, "duplicate key: "
 
-    if-ne v0, v3, :cond_3
+    if-ne v0, v2, :cond_3
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
 
@@ -176,7 +176,7 @@
     :cond_1
     new-instance p1, Lcom/google/gson/JsonSyntaxException;
 
-    invoke-static {v4, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v0}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -197,13 +197,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
     sget-object v0, Lcom/google/gson/internal/JsonReaderInternalAccess;->INSTANCE:Lcom/google/gson/internal/JsonReaderInternalAccess;
 
     check-cast v0, Lcom/google/gson/stream/JsonReader$1;
 
-    if-eqz v0, :cond_a
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     instance-of v0, p1, Lcom/google/gson/internal/bind/JsonTreeReader;
 
@@ -213,39 +213,39 @@
 
     check-cast v0, Lcom/google/gson/internal/bind/JsonTreeReader;
 
-    sget-object v3, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
+    sget-object v2, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
 
-    invoke-virtual {v0, v3}, Lcom/google/gson/internal/bind/JsonTreeReader;->expect(Lcom/google/gson/stream/JsonToken;)V
+    invoke-virtual {v0, v2}, Lcom/google/gson/internal/bind/JsonTreeReader;->expect(Lcom/google/gson/stream/JsonToken;)V
 
     invoke-virtual {v0}, Lcom/google/gson/internal/bind/JsonTreeReader;->peekStack()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/util/Iterator;
+    check-cast v2, Ljava/util/Iterator;
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/util/Map$Entry;
+    check-cast v2, Ljava/util/Map$Entry;
 
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v0, v5}, Lcom/google/gson/internal/bind/JsonTreeReader;->push(Ljava/lang/Object;)V
+    invoke-virtual {v0, v4}, Lcom/google/gson/internal/bind/JsonTreeReader;->push(Ljava/lang/Object;)V
 
-    new-instance v5, Lcom/google/gson/JsonPrimitive;
+    new-instance v4, Lcom/google/gson/JsonPrimitive;
 
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
-    invoke-direct {v5, v3}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v2}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v5}, Lcom/google/gson/internal/bind/JsonTreeReader;->push(Ljava/lang/Object;)V
+    invoke-virtual {v0, v4}, Lcom/google/gson/internal/bind/JsonTreeReader;->push(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -259,9 +259,9 @@
     move-result v0
 
     :cond_5
-    const/16 v3, 0xd
+    const/16 v2, 0xd
 
-    if-ne v0, v3, :cond_6
+    if-ne v0, v2, :cond_6
 
     const/16 v0, 0x9
 
@@ -270,9 +270,9 @@
     goto :goto_2
 
     :cond_6
-    const/16 v3, 0xc
+    const/16 v2, 0xc
 
-    if-ne v0, v3, :cond_7
+    if-ne v0, v2, :cond_7
 
     const/16 v0, 0x8
 
@@ -281,9 +281,9 @@
     goto :goto_2
 
     :cond_7
-    const/16 v3, 0xe
+    const/16 v2, 0xe
 
-    if-ne v0, v3, :cond_9
+    if-ne v0, v2, :cond_9
 
     const/16 v0, 0xa
 
@@ -296,24 +296,24 @@
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$Adapter;->valueTypeAdapter:Lcom/google/gson/TypeAdapter;
+    iget-object v2, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$Adapter;->valueTypeAdapter:Lcom/google/gson/TypeAdapter;
 
-    invoke-virtual {v3, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v1, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-nez v3, :cond_8
+    if-nez v2, :cond_8
 
     goto :goto_1
 
     :cond_8
     new-instance p1, Lcom/google/gson/JsonSyntaxException;
 
-    invoke-static {v4, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v0}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -326,7 +326,7 @@
 
     const-string v1, "Expected a name but was "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -351,20 +351,17 @@
     throw v0
 
     :cond_a
-    throw v2
-
-    :cond_b
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endObject()V
 
     :goto_3
-    move-object v2, v1
+    move-object p1, v1
 
     :goto_4
-    return-object v2
+    return-object p1
 .end method
 
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -468,9 +465,7 @@
 
     move-result v4
 
-    const/4 v5, 0x0
-
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -478,17 +473,17 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    iget-object v6, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$Adapter;->keyTypeAdapter:Lcom/google/gson/TypeAdapter;
+    iget-object v5, p0, Lcom/google/gson/internal/bind/MapTypeAdapterFactory$Adapter;->keyTypeAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Lcom/google/gson/TypeAdapter;->toJsonTree(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
-
     move-result-object v6
 
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Lcom/google/gson/TypeAdapter;->toJsonTree(Ljava/lang/Object;)Lcom/google/gson/JsonElement;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -496,13 +491,13 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-eqz v6, :cond_5
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    instance-of v4, v6, Lcom/google/gson/JsonArray;
+    instance-of v4, v5, Lcom/google/gson/JsonArray;
 
     if-nez v4, :cond_4
 
-    instance-of v4, v6, Lcom/google/gson/JsonObject;
+    instance-of v4, v5, Lcom/google/gson/JsonObject;
 
     if-eqz v4, :cond_3
 
@@ -523,10 +518,7 @@
     goto :goto_1
 
     :cond_5
-    throw v5
-
-    :cond_6
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_7
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
 
@@ -535,7 +527,7 @@
     move-result p2
 
     :goto_4
-    if-ge v2, p2, :cond_7
+    if-ge v2, p2, :cond_6
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
 
@@ -563,12 +555,12 @@
 
     goto :goto_4
 
-    :cond_7
+    :cond_6
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
 
     goto :goto_7
 
-    :cond_8
+    :cond_7
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginObject()Lcom/google/gson/stream/JsonWriter;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -576,7 +568,7 @@
     move-result p2
 
     :goto_5
-    if-ge v2, p2, :cond_f
+    if-ge v2, p2, :cond_d
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -584,11 +576,11 @@
 
     check-cast v3, Lcom/google/gson/JsonElement;
 
-    if-eqz v3, :cond_e
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     instance-of v4, v3, Lcom/google/gson/JsonPrimitive;
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_b
 
     invoke-virtual {v3}, Lcom/google/gson/JsonElement;->getAsJsonPrimitive()Lcom/google/gson/JsonPrimitive;
 
@@ -596,9 +588,9 @@
 
     iget-object v4, v3, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
 
-    instance-of v6, v4, Ljava/lang/Number;
+    instance-of v5, v4, Ljava/lang/Number;
 
-    if-eqz v6, :cond_9
+    if-eqz v5, :cond_8
 
     invoke-virtual {v3}, Lcom/google/gson/JsonPrimitive;->getAsNumber()Ljava/lang/Number;
 
@@ -610,10 +602,10 @@
 
     goto :goto_6
 
-    :cond_9
-    instance-of v6, v4, Ljava/lang/Boolean;
+    :cond_8
+    instance-of v5, v4, Ljava/lang/Boolean;
 
-    if-eqz v6, :cond_a
+    if-eqz v5, :cond_9
 
     invoke-virtual {v3}, Lcom/google/gson/JsonPrimitive;->getAsBoolean()Z
 
@@ -625,10 +617,10 @@
 
     goto :goto_6
 
-    :cond_a
+    :cond_9
     instance-of v4, v4, Ljava/lang/String;
 
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_a
 
     invoke-virtual {v3}, Lcom/google/gson/JsonPrimitive;->getAsString()Ljava/lang/String;
 
@@ -636,17 +628,17 @@
 
     goto :goto_6
 
-    :cond_b
+    :cond_a
     new-instance p1, Ljava/lang/AssertionError;
 
     invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
 
     throw p1
 
-    :cond_c
+    :cond_b
     instance-of v3, v3, Lcom/google/gson/JsonNull;
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_c
 
     const-string v3, "null"
 
@@ -665,17 +657,14 @@
 
     goto :goto_5
 
-    :cond_d
+    :cond_c
     new-instance p1, Ljava/lang/AssertionError;
 
     invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
 
     throw p1
 
-    :cond_e
-    throw v5
-
-    :cond_f
+    :cond_d
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endObject()Lcom/google/gson/stream/JsonWriter;
 
     :goto_7

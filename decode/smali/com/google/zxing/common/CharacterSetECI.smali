@@ -16,54 +16,6 @@
 # static fields
 .field public static final synthetic $VALUES:[Lcom/google/zxing/common/CharacterSetECI;
 
-.field public static final enum ASCII:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum Big5:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum Cp1250:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum Cp1251:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum Cp1252:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum Cp1256:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum Cp437:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum EUC_KR:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum GB18030:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_1:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_10:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_11:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_13:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_14:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_15:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_16:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_2:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_3:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_4:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_5:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_6:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_7:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_8:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum ISO8859_9:Lcom/google/zxing/common/CharacterSetECI;
-
 .field public static final NAME_TO_ECI:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -74,12 +26,6 @@
         }
     .end annotation
 .end field
-
-.field public static final enum SJIS:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum UTF8:Lcom/google/zxing/common/CharacterSetECI;
-
-.field public static final enum UnicodeBigUnmarked:Lcom/google/zxing/common/CharacterSetECI;
 
 .field public static final VALUE_TO_ECI:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -101,7 +47,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 16
+    .locals 31
 
     new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
 
@@ -119,583 +65,553 @@
 
     invoke-direct {v0, v5, v3, v2, v4}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->Cp437:Lcom/google/zxing/common/CharacterSetECI;
+    new-instance v2, Lcom/google/zxing/common/CharacterSetECI;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    new-array v4, v1, [I
 
-    new-array v2, v1, [I
+    fill-array-data v4, :array_1
 
-    fill-array-data v2, :array_1
+    const-string v5, "ISO-8859-1"
 
-    const-string v4, "ISO-8859-1"
+    filled-new-array {v5}, [Ljava/lang/String;
 
-    filled-new-array {v4}, [Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v4
+    const-string v6, "ISO8859_1"
 
-    const-string v5, "ISO8859_1"
+    const/4 v7, 0x1
 
-    const/4 v6, 0x1
+    invoke-direct {v2, v6, v7, v4, v5}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
 
-    invoke-direct {v0, v5, v6, v2, v4}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
+    new-instance v4, Lcom/google/zxing/common/CharacterSetECI;
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_1:Lcom/google/zxing/common/CharacterSetECI;
+    const-string v5, "ISO-8859-2"
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    filled-new-array {v5}, [Ljava/lang/String;
 
-    const-string v2, "ISO-8859-2"
+    move-result-object v5
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const-string v6, "ISO8859_2"
 
-    move-result-object v2
+    const/4 v8, 0x4
 
-    const-string v4, "ISO8859_2"
+    invoke-direct {v4, v6, v1, v8, v5}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const/4 v5, 0x4
+    new-instance v5, Lcom/google/zxing/common/CharacterSetECI;
 
-    invoke-direct {v0, v4, v1, v5, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const-string v6, "ISO-8859-3"
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_2:Lcom/google/zxing/common/CharacterSetECI;
+    filled-new-array {v6}, [Ljava/lang/String;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    move-result-object v6
 
-    const-string v2, "ISO-8859-3"
+    const-string v9, "ISO8859_3"
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const/4 v10, 0x3
 
-    move-result-object v2
+    const/4 v11, 0x5
 
-    const-string v4, "ISO8859_3"
+    invoke-direct {v5, v9, v10, v11, v6}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const/4 v7, 0x3
+    new-instance v6, Lcom/google/zxing/common/CharacterSetECI;
 
-    const/4 v8, 0x5
+    const-string v9, "ISO-8859-4"
 
-    invoke-direct {v0, v4, v7, v8, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    filled-new-array {v9}, [Ljava/lang/String;
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_3:Lcom/google/zxing/common/CharacterSetECI;
+    move-result-object v9
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const-string v12, "ISO8859_4"
 
-    const-string v2, "ISO-8859-4"
+    const/4 v13, 0x6
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    invoke-direct {v6, v12, v8, v13, v9}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    move-result-object v2
+    new-instance v9, Lcom/google/zxing/common/CharacterSetECI;
 
-    const-string v4, "ISO8859_4"
+    const-string v12, "ISO-8859-5"
 
-    const/4 v7, 0x6
+    filled-new-array {v12}, [Ljava/lang/String;
 
-    invoke-direct {v0, v4, v5, v7, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    move-result-object v12
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_4:Lcom/google/zxing/common/CharacterSetECI;
+    const-string v14, "ISO8859_5"
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const/4 v15, 0x7
 
-    const-string v2, "ISO-8859-5"
+    invoke-direct {v9, v14, v11, v15, v12}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    new-instance v12, Lcom/google/zxing/common/CharacterSetECI;
 
-    move-result-object v2
+    const-string v14, "ISO-8859-6"
 
-    const-string v4, "ISO8859_5"
+    filled-new-array {v14}, [Ljava/lang/String;
 
-    const/4 v9, 0x7
+    move-result-object v14
 
-    invoke-direct {v0, v4, v8, v9, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const-string v11, "ISO8859_6"
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_5:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v8, 0x8
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    invoke-direct {v12, v11, v13, v8, v14}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const-string v2, "ISO-8859-6"
+    new-instance v11, Lcom/google/zxing/common/CharacterSetECI;
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const-string v14, "ISO-8859-7"
 
-    move-result-object v2
+    filled-new-array {v14}, [Ljava/lang/String;
 
-    const-string v4, "ISO8859_6"
+    move-result-object v14
 
-    const/16 v10, 0x8
+    const-string v13, "ISO8859_7"
 
-    invoke-direct {v0, v4, v7, v10, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const/16 v10, 0x9
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_6:Lcom/google/zxing/common/CharacterSetECI;
+    invoke-direct {v11, v13, v15, v10, v14}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    new-instance v13, Lcom/google/zxing/common/CharacterSetECI;
 
-    const-string v2, "ISO-8859-7"
+    const-string v14, "ISO-8859-8"
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    filled-new-array {v14}, [Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v14
 
-    const-string v4, "ISO8859_7"
+    const-string v15, "ISO8859_8"
 
-    const/16 v11, 0x9
+    const/16 v7, 0xa
 
-    invoke-direct {v0, v4, v9, v11, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    invoke-direct {v13, v15, v8, v7, v14}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_7:Lcom/google/zxing/common/CharacterSetECI;
+    new-instance v14, Lcom/google/zxing/common/CharacterSetECI;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const-string v15, "ISO-8859-9"
 
-    const-string v2, "ISO-8859-8"
+    filled-new-array {v15}, [Ljava/lang/String;
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    move-result-object v15
 
-    move-result-object v2
+    const-string v8, "ISO8859_9"
 
-    const-string v4, "ISO8859_8"
+    const/16 v3, 0xb
 
-    const/16 v12, 0xa
+    invoke-direct {v14, v8, v10, v3, v15}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    invoke-direct {v0, v4, v10, v12, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    new-instance v8, Lcom/google/zxing/common/CharacterSetECI;
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_8:Lcom/google/zxing/common/CharacterSetECI;
+    const-string v10, "ISO-8859-10"
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    const-string v2, "ISO-8859-9"
+    move-result-object v10
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const-string v15, "ISO8859_10"
 
-    move-result-object v2
+    const/16 v1, 0xc
 
-    const-string v4, "ISO8859_9"
+    invoke-direct {v8, v15, v7, v1, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const/16 v13, 0xb
+    new-instance v7, Lcom/google/zxing/common/CharacterSetECI;
 
-    invoke-direct {v0, v4, v11, v13, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const-string v10, "ISO-8859-11"
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_9:Lcom/google/zxing/common/CharacterSetECI;
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    move-result-object v10
 
-    const-string v2, "ISO-8859-10"
+    const-string v15, "ISO8859_11"
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const/16 v1, 0xd
 
-    move-result-object v2
+    invoke-direct {v7, v15, v3, v1, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const-string v4, "ISO8859_10"
+    new-instance v3, Lcom/google/zxing/common/CharacterSetECI;
 
-    const/16 v14, 0xc
+    const-string v10, "ISO-8859-13"
 
-    invoke-direct {v0, v4, v12, v14, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_10:Lcom/google/zxing/common/CharacterSetECI;
+    move-result-object v10
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const-string v15, "ISO8859_13"
 
-    const-string v2, "ISO-8859-11"
+    const/16 v1, 0xf
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    move-object/from16 v16, v7
 
-    move-result-object v2
+    const/16 v7, 0xc
 
-    const-string v4, "ISO8859_11"
+    invoke-direct {v3, v15, v7, v1, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const/16 v15, 0xd
+    new-instance v7, Lcom/google/zxing/common/CharacterSetECI;
 
-    invoke-direct {v0, v4, v13, v15, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const-string v10, "ISO-8859-14"
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_11:Lcom/google/zxing/common/CharacterSetECI;
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    move-result-object v10
 
-    const-string v2, "ISO-8859-13"
+    const-string v15, "ISO8859_14"
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const/16 v1, 0x10
 
-    move-result-object v2
+    move-object/from16 v17, v3
 
-    const-string v4, "ISO8859_13"
+    const/16 v3, 0xd
 
-    const/16 v13, 0xf
+    invoke-direct {v7, v15, v3, v1, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    invoke-direct {v0, v4, v14, v13, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    new-instance v3, Lcom/google/zxing/common/CharacterSetECI;
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_13:Lcom/google/zxing/common/CharacterSetECI;
+    const-string v10, "ISO-8859-15"
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    const-string v2, "ISO-8859-14"
+    move-result-object v10
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const-string v15, "ISO8859_15"
 
-    move-result-object v2
+    const/16 v1, 0xe
 
-    const-string v4, "ISO8859_14"
+    move-object/from16 v18, v7
 
-    const/16 v14, 0x10
+    const/16 v7, 0x11
 
-    invoke-direct {v0, v4, v15, v14, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    invoke-direct {v3, v15, v1, v7, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_14:Lcom/google/zxing/common/CharacterSetECI;
+    new-instance v1, Lcom/google/zxing/common/CharacterSetECI;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const-string v10, "ISO-8859-16"
 
-    const-string v2, "ISO-8859-15"
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    move-result-object v10
 
-    move-result-object v2
+    const-string v15, "ISO8859_16"
 
-    const-string v4, "ISO8859_15"
+    const/16 v7, 0x12
 
-    const/16 v15, 0xe
+    move-object/from16 v19, v3
 
-    const/16 v12, 0x11
+    const/16 v3, 0xf
 
-    invoke-direct {v0, v4, v15, v12, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    invoke-direct {v1, v15, v3, v7, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_15:Lcom/google/zxing/common/CharacterSetECI;
+    new-instance v3, Lcom/google/zxing/common/CharacterSetECI;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const-string v10, "Shift_JIS"
 
-    const-string v2, "ISO-8859-16"
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    move-result-object v10
 
-    move-result-object v2
+    const-string v15, "SJIS"
 
-    const-string v4, "ISO8859_16"
+    const/16 v7, 0x14
 
-    const/16 v15, 0x12
+    move-object/from16 v20, v1
 
-    invoke-direct {v0, v4, v13, v15, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const/16 v1, 0x10
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_16:Lcom/google/zxing/common/CharacterSetECI;
+    invoke-direct {v3, v15, v1, v7, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    new-instance v1, Lcom/google/zxing/common/CharacterSetECI;
 
-    const-string v2, "Shift_JIS"
+    const-string/jumbo v10, "windows-1250"
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v10
 
-    const-string v4, "SJIS"
+    const-string v15, "Cp1250"
 
-    const/16 v13, 0x14
+    const/16 v7, 0x15
 
-    invoke-direct {v0, v4, v14, v13, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    move-object/from16 v21, v3
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->SJIS:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v3, 0x11
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    invoke-direct {v1, v15, v3, v7, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const-string v2, "windows-1250"
+    new-instance v3, Lcom/google/zxing/common/CharacterSetECI;
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const-string/jumbo v10, "windows-1251"
 
-    move-result-object v2
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    const-string v4, "Cp1250"
+    move-result-object v10
 
-    const/16 v14, 0x15
+    const-string v15, "Cp1251"
 
-    invoke-direct {v0, v4, v12, v14, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const/16 v7, 0x16
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->Cp1250:Lcom/google/zxing/common/CharacterSetECI;
+    move-object/from16 v22, v1
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v1, 0x12
 
-    const-string v2, "windows-1251"
+    invoke-direct {v3, v15, v1, v7, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    new-instance v1, Lcom/google/zxing/common/CharacterSetECI;
 
-    move-result-object v2
+    const-string/jumbo v10, "windows-1252"
 
-    const-string v4, "Cp1251"
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    const/16 v12, 0x16
+    move-result-object v10
 
-    invoke-direct {v0, v4, v15, v12, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const-string v15, "Cp1252"
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->Cp1251:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v7, 0x13
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    move-object/from16 v23, v3
 
-    const-string v2, "windows-1252"
+    const/16 v3, 0x17
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    invoke-direct {v1, v15, v7, v3, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    move-result-object v2
+    new-instance v7, Lcom/google/zxing/common/CharacterSetECI;
 
-    const-string v4, "Cp1252"
+    const-string/jumbo v10, "windows-1256"
 
-    const/16 v15, 0x13
+    filled-new-array {v10}, [Ljava/lang/String;
 
-    const/16 v11, 0x17
+    move-result-object v10
 
-    invoke-direct {v0, v4, v15, v11, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    const-string v15, "Cp1256"
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->Cp1252:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v3, 0x18
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    move-object/from16 v24, v1
 
-    const-string v2, "windows-1256"
+    const/16 v1, 0x14
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    invoke-direct {v7, v15, v1, v3, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    move-result-object v2
+    new-instance v1, Lcom/google/zxing/common/CharacterSetECI;
 
-    const-string v4, "Cp1256"
+    const-string v10, "UTF-16BE"
+
+    const-string v15, "UnicodeBig"
+
+    filled-new-array {v10, v15}, [Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v15, "UnicodeBigUnmarked"
+
+    const/16 v3, 0x19
+
+    move-object/from16 v25, v7
+
+    const/16 v7, 0x15
+
+    invoke-direct {v1, v15, v7, v3, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+
+    new-instance v7, Lcom/google/zxing/common/CharacterSetECI;
+
+    const-string v10, "UTF-8"
+
+    filled-new-array {v10}, [Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v15, "UTF8"
+
+    const/16 v3, 0x1a
+
+    move-object/from16 v26, v1
+
+    const/16 v1, 0x16
+
+    invoke-direct {v7, v15, v1, v3, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+
+    new-instance v1, Lcom/google/zxing/common/CharacterSetECI;
+
+    const/4 v10, 0x2
+
+    new-array v15, v10, [I
+
+    fill-array-data v15, :array_2
+
+    const-string v10, "US-ASCII"
+
+    filled-new-array {v10}, [Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v3, "ASCII"
+
+    move-object/from16 v27, v7
+
+    const/16 v7, 0x17
+
+    invoke-direct {v1, v3, v7, v15, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
+
+    new-instance v3, Lcom/google/zxing/common/CharacterSetECI;
+
+    const-string v7, "Big5"
+
+    const/16 v10, 0x1c
 
     const/16 v15, 0x18
 
-    invoke-direct {v0, v4, v13, v15, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    invoke-direct {v3, v7, v15, v10}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->Cp1256:Lcom/google/zxing/common/CharacterSetECI;
+    new-instance v7, Lcom/google/zxing/common/CharacterSetECI;
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    const-string v10, "GB2312"
 
-    const-string v2, "UTF-16BE"
+    const-string v15, "EUC_CN"
 
-    const-string v4, "UnicodeBig"
+    move-object/from16 v28, v3
 
-    filled-new-array {v2, v4}, [Ljava/lang/String;
+    const-string v3, "GBK"
 
-    move-result-object v2
+    filled-new-array {v10, v15, v3}, [Ljava/lang/String;
 
-    const-string v4, "UnicodeBigUnmarked"
+    move-result-object v3
 
-    const/16 v13, 0x19
-
-    invoke-direct {v0, v4, v14, v13, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->UnicodeBigUnmarked:Lcom/google/zxing/common/CharacterSetECI;
-
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
-
-    const-string v2, "UTF-8"
-
-    filled-new-array {v2}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "UTF8"
-
-    const/16 v13, 0x1a
-
-    invoke-direct {v0, v4, v12, v13, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->UTF8:Lcom/google/zxing/common/CharacterSetECI;
-
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
-
-    new-array v2, v1, [I
-
-    fill-array-data v2, :array_2
-
-    const-string v4, "US-ASCII"
-
-    filled-new-array {v4}, [Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v13, "ASCII"
-
-    invoke-direct {v0, v13, v11, v2, v4}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->ASCII:Lcom/google/zxing/common/CharacterSetECI;
-
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
-
-    const-string v2, "Big5"
-
-    const/16 v4, 0x1c
-
-    invoke-direct {v0, v2, v15, v4}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->Big5:Lcom/google/zxing/common/CharacterSetECI;
-
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
-
-    const-string v2, "GB2312"
-
-    const-string v4, "EUC_CN"
-
-    const-string v13, "GBK"
-
-    filled-new-array {v2, v4, v13}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v4, "GB18030"
-
-    const/16 v13, 0x19
+    const-string v10, "GB18030"
 
     const/16 v15, 0x1d
 
-    invoke-direct {v0, v4, v13, v15, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    move-object/from16 v29, v1
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->GB18030:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v1, 0x19
 
-    new-instance v0, Lcom/google/zxing/common/CharacterSetECI;
+    invoke-direct {v7, v10, v1, v15, v3}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    const-string v2, "EUC-KR"
+    new-instance v1, Lcom/google/zxing/common/CharacterSetECI;
 
-    filled-new-array {v2}, [Ljava/lang/String;
+    const-string v3, "EUC-KR"
 
-    move-result-object v2
+    filled-new-array {v3}, [Ljava/lang/String;
 
-    const-string v4, "EUC_KR"
+    move-result-object v3
 
-    const/16 v13, 0x1a
+    const-string v10, "EUC_KR"
 
     const/16 v15, 0x1e
 
-    invoke-direct {v0, v4, v13, v15, v2}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
+    move-object/from16 v30, v7
 
-    sput-object v0, Lcom/google/zxing/common/CharacterSetECI;->EUC_KR:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v7, 0x1a
 
-    const/16 v2, 0x1b
+    invoke-direct {v1, v10, v7, v15, v3}, Lcom/google/zxing/common/CharacterSetECI;-><init>(Ljava/lang/String;II[Ljava/lang/String;)V
 
-    new-array v2, v2, [Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v3, 0x1b
 
-    sget-object v4, Lcom/google/zxing/common/CharacterSetECI;->Cp437:Lcom/google/zxing/common/CharacterSetECI;
+    new-array v3, v3, [Lcom/google/zxing/common/CharacterSetECI;
 
-    aput-object v4, v2, v3
+    const/4 v7, 0x0
 
-    sget-object v4, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_1:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v0, v3, v7
 
-    aput-object v4, v2, v6
+    const/4 v0, 0x1
 
-    sget-object v4, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_2:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v2, v3, v0
 
-    aput-object v4, v2, v1
+    const/4 v0, 0x2
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_3:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v4, v3, v0
 
-    const/4 v4, 0x3
+    const/4 v0, 0x3
 
-    aput-object v1, v2, v4
+    aput-object v5, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_4:Lcom/google/zxing/common/CharacterSetECI;
+    const/4 v0, 0x4
 
-    aput-object v1, v2, v5
+    aput-object v6, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_5:Lcom/google/zxing/common/CharacterSetECI;
+    const/4 v0, 0x5
 
-    aput-object v1, v2, v8
+    aput-object v9, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_6:Lcom/google/zxing/common/CharacterSetECI;
+    const/4 v0, 0x6
 
-    aput-object v1, v2, v7
+    aput-object v12, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_7:Lcom/google/zxing/common/CharacterSetECI;
+    const/4 v0, 0x7
 
-    aput-object v1, v2, v9
+    aput-object v11, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_8:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v0, 0x8
 
-    aput-object v1, v2, v10
+    aput-object v13, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_9:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v0, 0x9
 
-    const/16 v4, 0x9
+    aput-object v14, v3, v0
 
-    aput-object v1, v2, v4
+    const/16 v0, 0xa
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_10:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v8, v3, v0
 
-    const/16 v4, 0xa
+    const/16 v0, 0xb
 
-    aput-object v1, v2, v4
+    aput-object v16, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_11:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v0, 0xc
 
-    const/16 v4, 0xb
+    aput-object v17, v3, v0
 
-    aput-object v1, v2, v4
+    const/16 v0, 0xd
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_13:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v18, v3, v0
 
-    const/16 v4, 0xc
+    const/16 v0, 0xe
 
-    aput-object v1, v2, v4
+    aput-object v19, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_14:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v0, 0xf
 
-    const/16 v4, 0xd
+    aput-object v20, v3, v0
 
-    aput-object v1, v2, v4
+    const/16 v0, 0x10
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_15:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v21, v3, v0
 
-    const/16 v4, 0xe
+    const/16 v0, 0x11
 
-    aput-object v1, v2, v4
+    aput-object v22, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ISO8859_16:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v0, 0x12
 
-    const/16 v4, 0xf
+    aput-object v23, v3, v0
 
-    aput-object v1, v2, v4
+    const/16 v0, 0x13
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->SJIS:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v24, v3, v0
 
-    const/16 v4, 0x10
+    const/16 v0, 0x14
 
-    aput-object v1, v2, v4
+    aput-object v25, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->Cp1250:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v0, 0x15
 
-    const/16 v4, 0x11
+    aput-object v26, v3, v0
 
-    aput-object v1, v2, v4
+    const/16 v0, 0x16
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->Cp1251:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v27, v3, v0
 
-    const/16 v4, 0x12
+    const/16 v0, 0x17
 
-    aput-object v1, v2, v4
+    aput-object v29, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->Cp1252:Lcom/google/zxing/common/CharacterSetECI;
+    const/16 v0, 0x18
 
-    const/16 v4, 0x13
+    aput-object v28, v3, v0
 
-    aput-object v1, v2, v4
+    const/16 v0, 0x19
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->Cp1256:Lcom/google/zxing/common/CharacterSetECI;
+    aput-object v30, v3, v0
 
-    const/16 v4, 0x14
+    const/16 v0, 0x1a
 
-    aput-object v1, v2, v4
+    aput-object v1, v3, v0
 
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->UnicodeBigUnmarked:Lcom/google/zxing/common/CharacterSetECI;
-
-    aput-object v1, v2, v14
-
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->UTF8:Lcom/google/zxing/common/CharacterSetECI;
-
-    aput-object v1, v2, v12
-
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->ASCII:Lcom/google/zxing/common/CharacterSetECI;
-
-    aput-object v1, v2, v11
-
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->Big5:Lcom/google/zxing/common/CharacterSetECI;
-
-    const/16 v4, 0x18
-
-    aput-object v1, v2, v4
-
-    sget-object v1, Lcom/google/zxing/common/CharacterSetECI;->GB18030:Lcom/google/zxing/common/CharacterSetECI;
-
-    const/16 v4, 0x19
-
-    aput-object v1, v2, v4
-
-    const/16 v1, 0x1a
-
-    aput-object v0, v2, v1
-
-    sput-object v2, Lcom/google/zxing/common/CharacterSetECI;->$VALUES:[Lcom/google/zxing/common/CharacterSetECI;
+    sput-object v3, Lcom/google/zxing/common/CharacterSetECI;->$VALUES:[Lcom/google/zxing/common/CharacterSetECI;
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -715,23 +631,23 @@
 
     array-length v1, v0
 
-    move v2, v3
+    move v2, v7
 
     :goto_0
     if-ge v2, v1, :cond_2
 
-    aget-object v4, v0, v2
+    aget-object v3, v0, v2
 
-    iget-object v5, v4, Lcom/google/zxing/common/CharacterSetECI;->values:[I
+    iget-object v4, v3, Lcom/google/zxing/common/CharacterSetECI;->values:[I
 
-    array-length v6, v5
+    array-length v5, v4
 
-    move v7, v3
+    move v6, v7
 
     :goto_1
-    if-ge v7, v6, :cond_0
+    if-ge v6, v5, :cond_0
 
-    aget v8, v5, v7
+    aget v8, v4, v6
 
     sget-object v9, Lcom/google/zxing/common/CharacterSetECI;->VALUE_TO_ECI:Ljava/util/Map;
 
@@ -739,37 +655,43 @@
 
     move-result-object v8
 
-    invoke-interface {v9, v8, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v9, Ljava/util/HashMap;
 
-    add-int/lit8 v7, v7, 0x1
+    invoke-virtual {v9, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
     :cond_0
-    sget-object v5, Lcom/google/zxing/common/CharacterSetECI;->NAME_TO_ECI:Ljava/util/Map;
+    sget-object v4, Lcom/google/zxing/common/CharacterSetECI;->NAME_TO_ECI:Ljava/util/Map;
 
-    invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-interface {v5, v6, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v4, Ljava/util/HashMap;
 
-    iget-object v5, v4, Lcom/google/zxing/common/CharacterSetECI;->otherEncodingNames:[Ljava/lang/String;
+    invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    array-length v6, v5
+    iget-object v4, v3, Lcom/google/zxing/common/CharacterSetECI;->otherEncodingNames:[Ljava/lang/String;
 
-    move v7, v3
+    array-length v5, v4
+
+    move v6, v7
 
     :goto_2
-    if-ge v7, v6, :cond_1
+    if-ge v6, v5, :cond_1
 
-    aget-object v8, v5, v7
+    aget-object v8, v4, v6
 
     sget-object v9, Lcom/google/zxing/common/CharacterSetECI;->NAME_TO_ECI:Ljava/util/Map;
 
-    invoke-interface {v9, v8, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v9, Ljava/util/HashMap;
 
-    add-int/lit8 v7, v7, 0x1
+    invoke-virtual {v9, v8, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
@@ -893,7 +815,9 @@
 
     move-result-object p0
 
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 

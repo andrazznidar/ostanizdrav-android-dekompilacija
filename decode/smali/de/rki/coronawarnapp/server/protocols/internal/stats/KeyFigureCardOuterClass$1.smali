@@ -1,4 +1,4 @@
-.class public synthetic Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$1;
+.class synthetic Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$1;
 .super Ljava/lang/Object;
 .source "KeyFigureCardOuterClass.java"
 

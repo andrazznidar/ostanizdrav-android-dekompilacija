@@ -14,13 +14,82 @@
 .end annotation
 
 
+# static fields
+.field public static final CONSUMED:Landroidx/core/view/WindowInsetsCompat;
+
+
 # instance fields
 .field public final mHost:Landroidx/core/view/WindowInsetsCompat;
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1e
+
+    if-lt v0, v1, :cond_0
+
+    new-instance v0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;
+
+    invoke-direct {v0}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;-><init>()V
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v1, 0x1d
+
+    if-lt v0, v1, :cond_1
+
+    new-instance v0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;
+
+    invoke-direct {v0}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;-><init>()V
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;
+
+    invoke-direct {v0}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;-><init>()V
+
+    :goto_0
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl;->build()Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    iget-object v0, v0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Impl;->consumeDisplayCutout()Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    iget-object v0, v0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat$Impl;->consumeStableInsets()Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/core/view/WindowInsetsCompat;->consumeSystemWindowInsets()Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/core/view/WindowInsetsCompat$Impl;->CONSUMED:Landroidx/core/view/WindowInsetsCompat;
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroidx/core/view/WindowInsetsCompat;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "host"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -55,8 +124,30 @@
     return-object v0
 .end method
 
+.method public copyRootViewBounds(Landroid/view/View;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "rootView"
+        }
+    .end annotation
+
+    return-void
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "o"
+        }
+    .end annotation
 
     const/4 v0, 0x1
 
@@ -245,8 +336,22 @@
 
 .method public inset(IIII)Landroidx/core/view/WindowInsetsCompat;
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "left",
+            "top",
+            "right",
+            "bottom"
+        }
+    .end annotation
 
-    sget-object p1, Landroidx/core/view/WindowInsetsCompat;->CONSUMED:Landroidx/core/view/WindowInsetsCompat;
+    sget-object p1, Landroidx/core/view/WindowInsetsCompat$Impl;->CONSUMED:Landroidx/core/view/WindowInsetsCompat;
 
     return-object p1
 .end method
@@ -265,4 +370,46 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public setOverriddenInsets([Landroidx/core/graphics/Insets;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "insetsTypeMask"
+        }
+    .end annotation
+
+    return-void
+.end method
+
+.method public setRootWindowInsets(Landroidx/core/view/WindowInsetsCompat;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "rootWindowInsets"
+        }
+    .end annotation
+
+    return-void
+.end method
+
+.method public setStableInsets(Landroidx/core/graphics/Insets;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "stableInsets"
+        }
+    .end annotation
+
+    return-void
 .end method

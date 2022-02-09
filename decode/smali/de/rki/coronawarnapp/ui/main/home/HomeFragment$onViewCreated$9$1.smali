@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;
+.field public final synthetic this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
     const/4 p1, 0x0
 
@@ -39,11 +39,11 @@
 .method public invoke()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
+    sget-object v1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->Companion:Lde/rki/coronawarnapp/ui/main/home/HomeFragment$Companion;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->access$getVm$p(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->getViewModel()Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
     move-result-object v0
 

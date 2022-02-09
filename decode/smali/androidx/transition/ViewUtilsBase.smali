@@ -20,19 +20,44 @@
 
 
 # virtual methods
-.method public abstract clearNonTransitionAlpha(Landroid/view/View;)V
+.method public clearNonTransitionAlpha(Landroid/view/View;)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
-.method public abstract getTransitionAlpha(Landroid/view/View;)F
+.method public getTransitionAlpha(Landroid/view/View;)F
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
-.method public abstract saveNonTransitionAlpha(Landroid/view/View;)V
+.method public saveNonTransitionAlpha(Landroid/view/View;)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
-.method public abstract setLeftTopRightBottom(Landroid/view/View;IIII)V
+.method public setLeftTopRightBottom(Landroid/view/View;IIII)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
-.method public abstract setTransitionAlpha(Landroid/view/View;F)V
+.method public setTransitionAlpha(Landroid/view/View;F)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
 .method public setTransitionVisibility(Landroid/view/View;I)V
@@ -96,8 +121,18 @@
     return-void
 .end method
 
-.method public abstract transformMatrixToGlobal(Landroid/view/View;Landroid/graphics/Matrix;)V
+.method public transformMatrixToGlobal(Landroid/view/View;Landroid/graphics/Matrix;)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
-.method public abstract transformMatrixToLocal(Landroid/view/View;Landroid/graphics/Matrix;)V
+.method public transformMatrixToLocal(Landroid/view/View;Landroid/graphics/Matrix;)V
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method

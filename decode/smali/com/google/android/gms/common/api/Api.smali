@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/api/Api;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -50,7 +50,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;Lcom/google/android/gms/common/api/Api$ClientKey;)V
-    .locals 1
+    .locals 0
     .param p1    # Ljava/lang/String;
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
@@ -77,14 +77,6 @@
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v0, "Cannot construct an Api with a null ClientBuilder"
-
-    invoke-static {p2, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v0, "Cannot construct an Api with a null ClientKey"
-
-    invoke-static {p3, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/android/gms/common/api/Api;->zac:Ljava/lang/String;
 

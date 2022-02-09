@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSettingsPrivacyPreservingAnalyticsViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsPrivacyPreservingAnalyticsViewModel.kt\nde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,48:1\n68#2,6:49\n82#2:58\n237#3:55\n239#3:57\n106#4:56\n*E\n*S KotlinDebug\n*F\n+ 1 SettingsPrivacyPreservingAnalyticsViewModel.kt\nde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel\n*L\n23#1,6:49\n23#1:58\n23#1:55\n23#1:57\n23#1:56\n*E\n"
+    value = "SMAP\nSettingsPrivacyPreservingAnalyticsViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsPrivacyPreservingAnalyticsViewModel.kt\nde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,48:1\n87#2,5:49\n86#2:54\n100#2:58\n237#3:55\n239#3:57\n106#4:56\n*S KotlinDebug\n*F\n+ 1 SettingsPrivacyPreservingAnalyticsViewModel.kt\nde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel\n*L\n23#1:49,5\n23#1:54\n23#1:58\n23#1:55\n23#1:57\n23#1:56\n*E\n"
 .end annotation
 
 
@@ -97,9 +97,9 @@
 
     aput-object p2, v0, p3
 
-    new-instance p2, Lde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel$$special$$inlined$combine$1;
+    new-instance p2, Lde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel$special$$inlined$combine$1;
 
-    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel$$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/ui/settings/analytics/SettingsPrivacyPreservingAnalyticsViewModel$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;)V
 
     invoke-interface {p1}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 

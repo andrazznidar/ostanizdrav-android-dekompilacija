@@ -28,3 +28,45 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public abstract addShortcuts(Ljava/util/List;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "shortcuts"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Landroidx/core/content/pm/ShortcutInfoCompat;",
+            ">;)TT;"
+        }
+    .end annotation
+.end method
+
+.method public abstract removeShortcuts(Ljava/util/List;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "shortcutIds"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)TT;"
+        }
+    .end annotation
+.end method

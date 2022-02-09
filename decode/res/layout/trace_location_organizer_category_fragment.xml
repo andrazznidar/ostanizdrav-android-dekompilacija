@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/category_root" android:background="@color/colorSurface" android:layout_width="fill_parent" android:layout_height="fill_parent" android:contentDescription="@string/tracelocation_organizer_category_title" android:transitionName="trace_location_organizer_category"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:title="@string/tracelocation_organizer_category_title" style="@style/CWAToolbar.Close.Transparent" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view_categories" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+</LinearLayout>

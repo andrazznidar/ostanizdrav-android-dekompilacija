@@ -56,13 +56,43 @@
 .method public parseValue(Ljava/lang/String;)Ljava/lang/Object;
     .locals 1
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    const-string v0, "0x"
 
-    const-string v0, "References don\'t support parsing string values."
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    throw p1
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/16 v0, 0x10
+
+    invoke-static {p1, v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    :goto_0
+    return-object p1
 .end method
 
 .method public put(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Object;)V

@@ -152,9 +152,7 @@
 
     new-array v7, v2, [Ljava/lang/String;
 
-    check-cast v1, Ljava/util/AbstractCollection;
-
-    invoke-virtual {v1, v7}, Ljava/util/AbstractCollection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v1, v7}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
 
@@ -330,7 +328,7 @@
     const/4 v4, 0x0
 
     :goto_6
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_1c
 
     invoke-virtual {v2}, Landroidx/work/impl/WorkDatabase;->workSpecDao()Landroidx/work/impl/model/WorkSpecDao;
 
@@ -348,7 +346,7 @@
 
     move-result v14
 
-    if-nez v14, :cond_1d
+    if-nez v14, :cond_1c
 
     sget-object v14, Landroidx/work/ExistingWorkPolicy;->APPEND:Landroidx/work/ExistingWorkPolicy;
 
@@ -397,7 +395,7 @@
     :goto_8
     move-object/from16 v0, p0
 
-    goto/16 :goto_19
+    goto/16 :goto_17
 
     :cond_e
     new-instance v8, Landroidx/work/impl/utils/CancelWorkRunnable$3;
@@ -444,7 +442,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v4, 0x0
+    const/4 v15, 0x0
 
     goto/16 :goto_12
 
@@ -467,7 +465,7 @@
 
     move-result v14
 
-    if-eqz v14, :cond_18
+    if-eqz v14, :cond_17
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -483,9 +481,9 @@
 
     check-cast v4, Landroidx/work/impl/model/DependencyDao_Impl;
 
-    move-object/from16 v21, v3
+    invoke-static {v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v4, :cond_17
+    move-object/from16 v21, v3
 
     const-string v3, "SELECT COUNT(*)>0 FROM dependency WHERE prerequisite_id=?"
 
@@ -517,18 +515,18 @@
 
     const/4 v15, 0x0
 
-    invoke-static {v0, v3, v4, v15}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-static {v0, v3, v15, v4}, Landroidx/room/util/DBUtil;->query(Landroidx/room/RoomDatabase;Landroidx/sqlite/db/SupportSQLiteQuery;ZLandroid/os/CancellationSignal;)Landroid/database/Cursor;
 
-    move-result-object v15
+    move-result-object v4
 
     :try_start_0
-    invoke-interface {v15}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-interface {v4}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
     if-eqz v0, :cond_12
 
-    invoke-interface {v15, v4}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v4, v15}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
     :try_end_0
@@ -541,10 +539,10 @@
     goto :goto_d
 
     :cond_12
-    move v0, v4
+    move v0, v15
 
     :goto_d
-    invoke-interface {v15}, Landroid/database/Cursor;->close()V
+    invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
     invoke-virtual {v3}, Landroidx/room/RoomSQLiteQuery;->release()V
 
@@ -554,36 +552,34 @@
 
     if-ne v0, v11, :cond_13
 
-    const/4 v0, 0x1
+    const/4 v3, 0x1
 
     goto :goto_e
 
     :cond_13
-    move v0, v4
+    move v3, v15
 
     :goto_e
-    and-int v0, v19, v0
+    and-int v3, v19, v3
 
-    iget-object v3, v14, Landroidx/work/impl/model/WorkSpec$IdAndState;->state:Landroidx/work/WorkInfo$State;
-
-    if-ne v3, v13, :cond_14
+    if-ne v0, v13, :cond_14
 
     const/16 v18, 0x1
 
     goto :goto_f
 
     :cond_14
-    if-ne v3, v12, :cond_15
+    if-ne v0, v12, :cond_15
 
     const/16 v17, 0x1
 
     :cond_15
     :goto_f
-    iget-object v3, v14, Landroidx/work/impl/model/WorkSpec$IdAndState;->id:Ljava/lang/String;
+    iget-object v0, v14, Landroidx/work/impl/model/WorkSpec$IdAndState;->id:Ljava/lang/String;
 
-    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move/from16 v19, v0
+    move/from16 v19, v3
 
     :cond_16
     move-object/from16 v4, v20
@@ -597,29 +593,24 @@
     :catchall_0
     move-exception v0
 
-    invoke-interface {v15}, Landroid/database/Cursor;->close()V
+    invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
     invoke-virtual {v3}, Landroidx/room/RoomSQLiteQuery;->release()V
 
     throw v0
 
     :cond_17
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_18
     move/from16 v24, v0
 
-    const/4 v4, 0x0
+    const/4 v15, 0x0
 
-    if-ne v8, v10, :cond_1b
+    if-ne v8, v10, :cond_1a
 
-    if-nez v17, :cond_19
+    if-nez v17, :cond_18
 
-    if-eqz v18, :cond_1b
+    if-eqz v18, :cond_1a
 
-    :cond_19
+    :cond_18
     invoke-virtual {v2}, Landroidx/work/impl/WorkDatabase;->workSpecDao()Landroidx/work/impl/model/WorkSpecDao;
 
     move-result-object v0
@@ -639,32 +630,32 @@
     :goto_10
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_1a
+    if-eqz v4, :cond_19
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    check-cast v5, Landroidx/work/impl/model/WorkSpec$IdAndState;
+    check-cast v4, Landroidx/work/impl/model/WorkSpec$IdAndState;
 
-    iget-object v5, v5, Landroidx/work/impl/model/WorkSpec$IdAndState;->id:Ljava/lang/String;
+    iget-object v4, v4, Landroidx/work/impl/model/WorkSpec$IdAndState;->id:Ljava/lang/String;
 
-    invoke-virtual {v0, v5}, Landroidx/work/impl/model/WorkSpecDao_Impl;->delete(Ljava/lang/String;)V
+    invoke-virtual {v0, v4}, Landroidx/work/impl/model/WorkSpecDao_Impl;->delete(Ljava/lang/String;)V
 
     goto :goto_10
 
-    :cond_1a
+    :cond_19
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v5
 
-    move/from16 v17, v4
+    move/from16 v17, v15
 
     move/from16 v18, v17
 
-    :cond_1b
+    :cond_1a
     invoke-interface {v5, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -675,44 +666,45 @@
 
     array-length v0, v1
 
-    if-lez v0, :cond_1c
+    if-lez v0, :cond_1b
 
     const/4 v3, 0x1
 
     goto :goto_11
 
-    :cond_1c
-    move v3, v4
+    :cond_1b
+    move v3, v15
 
     goto :goto_11
 
-    :cond_1d
+    :cond_1c
     move/from16 v24, v0
 
-    const/4 v4, 0x0
+    const/4 v15, 0x0
 
     :goto_11
-    move v0, v4
+    move v0, v15
 
     :goto_12
     invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
+    move-result-object v4
+
+    :cond_1d
+    :goto_13
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_26
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     move-result-object v5
 
-    :goto_13
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v5, Landroidx/work/WorkRequest;
 
-    move-result v6
-
-    if-eqz v6, :cond_27
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroidx/work/WorkRequest;
-
-    iget-object v8, v6, Landroidx/work/WorkRequest;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
+    iget-object v6, v5, Landroidx/work/WorkRequest;->mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
     if-eqz v3, :cond_20
 
@@ -720,275 +712,258 @@
 
     if-eqz v18, :cond_1e
 
-    iput-object v13, v8, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+    iput-object v13, v6, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
     goto :goto_14
 
     :cond_1e
     if-eqz v17, :cond_1f
 
-    iput-object v12, v8, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+    iput-object v12, v6, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
     goto :goto_14
 
     :cond_1f
-    sget-object v10, Landroidx/work/WorkInfo$State;->BLOCKED:Landroidx/work/WorkInfo$State;
+    sget-object v8, Landroidx/work/WorkInfo$State;->BLOCKED:Landroidx/work/WorkInfo$State;
 
-    iput-object v10, v8, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+    iput-object v8, v6, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
-    :goto_14
-    move-wide/from16 v10, v22
-
-    goto :goto_15
+    goto :goto_14
 
     :cond_20
-    invoke-virtual {v8}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
+    invoke-virtual {v6}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
 
-    move-result v10
+    move-result v8
 
-    if-nez v10, :cond_21
+    if-nez v8, :cond_21
 
     move-wide/from16 v10, v22
 
-    iput-wide v10, v8, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+    iput-wide v10, v6, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
 
-    goto :goto_15
+    goto :goto_14
 
     :cond_21
-    move-wide/from16 v10, v22
+    const-wide/16 v10, 0x0
 
-    const-wide/16 v14, 0x0
+    iput-wide v10, v6, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
 
-    iput-wide v14, v8, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+    :goto_14
+    sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    :goto_15
-    sget v14, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v10, 0x19
 
-    const/16 v15, 0x19
+    if-gt v8, v10, :cond_22
 
-    if-gt v14, v15, :cond_22
-
-    invoke-static {v8}, Landroidx/work/impl/utils/EnqueueRunnable;->tryDelegateConstrainedWorkSpec(Landroidx/work/impl/model/WorkSpec;)V
+    invoke-static {v6}, Landroidx/work/impl/utils/EnqueueRunnable;->tryDelegateConstrainedWorkSpec(Landroidx/work/impl/model/WorkSpec;)V
 
     :cond_22
-    iget-object v14, v8, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
+    iget-object v8, v6, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
-    if-ne v14, v9, :cond_23
+    if-ne v8, v9, :cond_23
 
     const/4 v0, 0x1
 
     :cond_23
     invoke-virtual {v2}, Landroidx/work/impl/WorkDatabase;->workSpecDao()Landroidx/work/impl/model/WorkSpecDao;
 
-    move-result-object v14
+    move-result-object v8
 
-    check-cast v14, Landroidx/work/impl/model/WorkSpecDao_Impl;
+    check-cast v8, Landroidx/work/impl/model/WorkSpecDao_Impl;
 
-    iget-object v15, v14, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v10, v8, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v15}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+    invoke-virtual {v10}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    iget-object v15, v14, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v10, v8, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v15}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    invoke-virtual {v10}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_1
-    iget-object v15, v14, Landroidx/work/impl/model/WorkSpecDao_Impl;->__insertionAdapterOfWorkSpec:Landroidx/room/EntityInsertionAdapter;
+    iget-object v10, v8, Landroidx/work/impl/model/WorkSpecDao_Impl;->__insertionAdapterOfWorkSpec:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v15, v8}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
+    invoke-virtual {v10, v6}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
 
-    iget-object v8, v14, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v6, v8, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v8}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    invoke-virtual {v6}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
-    iget-object v8, v14, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v6, v8, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v8}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {v6}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     if-eqz v3, :cond_24
 
-    array-length v8, v1
+    array-length v6, v1
 
-    move v14, v4
+    move v8, v15
 
-    :goto_16
-    if-ge v14, v8, :cond_24
+    :goto_15
+    if-ge v8, v6, :cond_24
 
-    aget-object v15, v1, v14
+    aget-object v10, v1, v8
 
-    new-instance v4, Landroidx/work/impl/model/Dependency;
+    new-instance v11, Landroidx/work/impl/model/Dependency;
 
-    move/from16 v20, v0
+    invoke-virtual {v5}, Landroidx/work/WorkRequest;->getStringId()Ljava/lang/String;
 
-    invoke-virtual {v6}, Landroidx/work/WorkRequest;->getStringId()Ljava/lang/String;
+    move-result-object v14
 
-    move-result-object v0
-
-    invoke-direct {v4, v0, v15}, Landroidx/work/impl/model/Dependency;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v11, v14, v10}, Landroidx/work/impl/model/Dependency;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Landroidx/work/impl/WorkDatabase;->dependencyDao()Landroidx/work/impl/model/DependencyDao;
 
-    move-result-object v0
+    move-result-object v10
 
-    move-object v15, v0
+    check-cast v10, Landroidx/work/impl/model/DependencyDao_Impl;
 
-    check-cast v15, Landroidx/work/impl/model/DependencyDao_Impl;
+    iget-object v14, v10, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    iget-object v0, v15, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    invoke-virtual {v14}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+    iget-object v14, v10, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    iget-object v0, v15, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    invoke-virtual {v14}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_2
-    iget-object v0, v15, Landroidx/work/impl/model/DependencyDao_Impl;->__insertionAdapterOfDependency:Landroidx/room/EntityInsertionAdapter;
+    iget-object v14, v10, Landroidx/work/impl/model/DependencyDao_Impl;->__insertionAdapterOfDependency:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v0, v4}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
+    invoke-virtual {v14, v11}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
 
-    iget-object v0, v15, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v11, v10, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    invoke-virtual {v11}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    iget-object v0, v15, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v10, v10, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {v10}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v8, v8, 0x1
 
-    move/from16 v0, v20
-
-    const/4 v4, 0x0
-
-    goto :goto_16
+    goto :goto_15
 
     :catchall_1
     move-exception v0
 
-    iget-object v1, v15, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v1, v10, Landroidx/work/impl/model/DependencyDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw v0
 
     :cond_24
-    move/from16 v20, v0
+    iget-object v6, v5, Landroidx/work/WorkRequest;->mTags:Ljava/util/Set;
 
-    iget-object v0, v6, Landroidx/work/WorkRequest;->mTags:Ljava/util/Set;
+    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    move-result-object v6
 
-    move-result-object v0
+    :goto_16
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
-    :goto_17
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move-result v8
 
-    move-result v4
+    if-eqz v8, :cond_25
 
-    if-eqz v4, :cond_25
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/String;
-
-    invoke-virtual {v2}, Landroidx/work/impl/WorkDatabase;->workTagDao()Landroidx/work/impl/model/WorkTagDao;
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v8
 
-    new-instance v14, Landroidx/work/impl/model/WorkTag;
+    check-cast v8, Ljava/lang/String;
 
-    invoke-virtual {v6}, Landroidx/work/WorkRequest;->getStringId()Ljava/lang/String;
+    invoke-virtual {v2}, Landroidx/work/impl/WorkDatabase;->workTagDao()Landroidx/work/impl/model/WorkTagDao;
 
-    move-result-object v15
+    move-result-object v10
 
-    invoke-direct {v14, v4, v15}, Landroidx/work/impl/model/WorkTag;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v11, Landroidx/work/impl/model/WorkTag;
 
-    check-cast v8, Landroidx/work/impl/model/WorkTagDao_Impl;
+    invoke-virtual {v5}, Landroidx/work/WorkRequest;->getStringId()Ljava/lang/String;
 
-    iget-object v4, v8, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    move-result-object v14
 
-    invoke-virtual {v4}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+    invoke-direct {v11, v8, v14}, Landroidx/work/impl/model/WorkTag;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v4, v8, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    check-cast v10, Landroidx/work/impl/model/WorkTagDao_Impl;
 
-    invoke-virtual {v4}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    iget-object v8, v10, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v8}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    iget-object v8, v10, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v8}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_3
-    iget-object v4, v8, Landroidx/work/impl/model/WorkTagDao_Impl;->__insertionAdapterOfWorkTag:Landroidx/room/EntityInsertionAdapter;
+    iget-object v8, v10, Landroidx/work/impl/model/WorkTagDao_Impl;->__insertionAdapterOfWorkTag:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v4, v14}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
+    invoke-virtual {v8, v11}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
 
-    iget-object v4, v8, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v8, v10, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v4}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    invoke-virtual {v8}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    iget-object v4, v8, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v8, v10, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v4}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {v8}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    goto :goto_17
+    goto :goto_16
 
     :catchall_2
     move-exception v0
 
-    iget-object v1, v8, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v1, v10, Landroidx/work/impl/model/WorkTagDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw v0
 
     :cond_25
-    if-eqz v24, :cond_26
+    if-eqz v24, :cond_1d
 
     invoke-virtual {v2}, Landroidx/work/impl/WorkDatabase;->workNameDao()Landroidx/work/impl/model/WorkNameDao;
 
-    move-result-object v0
-
-    new-instance v4, Landroidx/work/impl/model/WorkName;
-
-    invoke-virtual {v6}, Landroidx/work/WorkRequest;->getStringId()Ljava/lang/String;
-
     move-result-object v6
 
-    invoke-direct {v4, v7, v6}, Landroidx/work/impl/model/WorkName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v8, Landroidx/work/impl/model/WorkName;
 
-    move-object v6, v0
+    invoke-virtual {v5}, Landroidx/work/WorkRequest;->getStringId()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v8, v7, v5}, Landroidx/work/impl/model/WorkName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     check-cast v6, Landroidx/work/impl/model/WorkNameDao_Impl;
 
-    iget-object v0, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v5, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+    invoke-virtual {v5}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    iget-object v0, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v5, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    invoke-virtual {v5}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     :try_start_4
-    iget-object v0, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__insertionAdapterOfWorkName:Landroidx/room/EntityInsertionAdapter;
+    iget-object v5, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__insertionAdapterOfWorkName:Landroidx/room/EntityInsertionAdapter;
 
-    invoke-virtual {v0, v4}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
+    invoke-virtual {v5, v8}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Object;)V
 
-    iget-object v0, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v5, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    invoke-virtual {v5}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
-    iget-object v0, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v5, v6, Landroidx/work/impl/model/WorkNameDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {v5}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    goto :goto_18
+    goto/16 :goto_13
 
     :catchall_3
     move-exception v0
@@ -999,33 +974,23 @@
 
     throw v0
 
-    :cond_26
-    :goto_18
-    move-wide/from16 v22, v10
-
-    move/from16 v0, v20
-
-    const/4 v4, 0x0
-
-    goto/16 :goto_13
-
     :catchall_4
     move-exception v0
 
-    iget-object v1, v14, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
+    iget-object v1, v8, Landroidx/work/impl/model/WorkSpecDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw v0
 
-    :cond_27
+    :cond_26
     const/4 v1, 0x1
 
     move v2, v0
 
     goto/16 :goto_8
 
-    :goto_19
+    :goto_17
     iput-boolean v1, v0, Landroidx/work/impl/WorkContinuationImpl;->mEnqueued:Z
 
     or-int v0, v16, v2
@@ -1099,7 +1064,7 @@
     :try_start_0
     iget-object v0, p0, Landroidx/work/impl/utils/EnqueueRunnable;->mWorkContinuation:Landroidx/work/impl/WorkContinuationImpl;
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Ljava/util/HashSet;
 
@@ -1195,11 +1160,6 @@
     move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const/4 v0, 0x0
 
     throw v0
     :try_end_2

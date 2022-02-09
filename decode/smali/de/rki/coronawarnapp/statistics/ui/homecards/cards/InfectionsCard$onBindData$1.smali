@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function3<",
         "Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;",
-        "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;",
+        "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;",
         "Ljava/util/List<",
         "+",
         "Ljava/lang/Object;",
@@ -29,6 +29,10 @@
         "Lkotlin/Unit;",
         ">;"
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nInfectionsCard.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InfectionsCard.kt\nde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,95:1\n798#2,11:96\n*S KotlinDebug\n*F\n+ 1 InfectionsCard.kt\nde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1\n*L\n34#1:96,11\n*E\n"
 .end annotation
 
 
@@ -52,686 +56,578 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 17
+    .locals 11
 
-    move-object/from16 v0, p0
+    check-cast p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;
 
-    move-object/from16 v1, p1
+    check-cast p2, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;
 
-    check-cast v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;
+    check-cast p3, Ljava/util/List;
 
-    move-object/from16 v2, p2
+    const-string v0, "$this$null"
 
-    check-cast v2, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object/from16 v3, p3
+    const-string v0, "orig"
 
-    check-cast v3, Ljava/util/List;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "$receiver"
+    const-string v0, "payloads"
 
-    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "item"
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const-string v4, "<anonymous parameter 1>"
+    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p3
 
-    iget-object v3, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->infoStatistics:Landroid/widget/ImageButton;
+    :cond_0
+    :goto_0
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
-    new-instance v4, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1$1;
+    move-result v1
 
-    invoke-direct {v4, v2}, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1$1;-><init>(Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;)V
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-object v3, v2, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;->stats:Lde/rki/coronawarnapp/statistics/StatsItem;
+    move-result-object v1
 
-    if-eqz v3, :cond_0
+    instance-of v2, v1, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;
 
-    check-cast v3, Lde/rki/coronawarnapp/statistics/InfectionStats;
+    if-eqz v2, :cond_0
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->infectionsContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const-string v5, "infectionsContainer"
+    goto :goto_0
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :cond_1
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt___CollectionsKt;->singleOrNull(Ljava/util/List;)Ljava/lang/Object;
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
+    move-result-object p3
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;->stats:Lde/rki/coronawarnapp/statistics/StatsItem;
+    check-cast p3, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+    if-nez p3, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    move-object p2, p3
+
+    :goto_1
+    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->infoStatistics:Landroid/widget/ImageButton;
+
+    new-instance v0, Lde/rki/coronawarnapp/ui/main/share/MainShareFragment$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p2}, Lde/rki/coronawarnapp/ui/main/share/MainShareFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;)V
+
+    invoke-virtual {p3, v0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object p2, p2, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;->stats:Lde/rki/coronawarnapp/statistics/GlobalStatsItem;
+
+    move-object p3, p2
+
+    check-cast p3, Lde/rki/coronawarnapp/statistics/InfectionStats;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
+
+    iget-object v1, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->infectionsContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v2
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v3
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+    const v7, 0x7f13002d
 
-    move-result-object v7
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+    move-result-object v6
 
-    move-result-object v8
+    const-string v7, "context.getString(R.stri\u2026istics_card_announcement)"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v5, v6}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v6
 
-    const v11, 0x7f12002d
+    const v7, 0x7f1304a1
 
-    invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v6
 
-    const-string v11, "context.getString(R.stri\u2026istics_card_announcement)"
+    const-string v8, "context.getString(R.stri\u2026cs_card_infections_title)"
 
-    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v9, v10}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5, v6}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
-    move-result-object v10
+    move-result-object v6
 
-    const v11, 0x7f120319
+    invoke-static {p2, v6}, Lde/rki/coronawarnapp/util/formatter/FormatterStatisticsKt;->getPrimaryLabel(Lde/rki/coronawarnapp/statistics/GlobalStatsItem;Landroid/content/Context;)Ljava/lang/String;
 
-    invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move-result-object p2
 
-    move-result-object v10
+    invoke-static {v5, p2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v11, "context.getString(R.stri\u2026cs_card_infections_title)"
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
-    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p2
 
-    invoke-static {v9, v10}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    move-result-wide v9
 
-    move-result-object v10
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
 
-    invoke-static {v2, v10}, Lcom/google/zxing/client/android/R$id;->getPrimaryLabel(Lde/rki/coronawarnapp/statistics/StatsItem;Landroid/content/Context;)Ljava/lang/String;
+    move-result v2
 
-    move-result-object v2
+    invoke-static {p2, v9, v10, v2}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
 
-    invoke-static {v9, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p2
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-static {v5, p2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
+    move-result-object p2
 
-    move-result-wide v12
+    const v2, 0x7f13049f
 
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
+    invoke-virtual {p2, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v2, "context.getString(R.stri\u2026fections_secondary_label)"
+
+    invoke-static {p2, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v5, p2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
+
+    move-result-wide v9
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
 
     move-result v6
 
-    invoke-static {v2, v12, v13, v6}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+    invoke-static {p2, v9, v10, v6}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {v5, p2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrend()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;
+
+    move-result-object v3
+
+    const-string/jumbo v6, "sevenDayAverage.trend"
+
+    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p2, v3}, Lde/rki/coronawarnapp/statistics/util/AccessibilityHelperKt;->getContentDescriptionForTrends(Landroid/content/Context;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {v5, p2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    const v3, 0x7f1304a0
+
+    invoke-virtual {p2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v3, "context.getString(R.stri\u2026nfections_tertiary_label)"
+
+    invoke-static {p2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v5, p2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
+
+    move-result-wide v9
+
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
+
+    move-result v4
+
+    invoke-static {p2, v9, v10, v4}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {v5, p2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    const v4, 0x7f13002e
+
+    invoke-virtual {p2, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->primaryLabel:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {p3, v1}, Lde/rki/coronawarnapp/util/formatter/FormatterStatisticsKt;->getPrimaryLabel(Lde/rki/coronawarnapp/statistics/GlobalStatsItem;Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->primaryValue:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
+
+    move-result-wide v4
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
+
+    move-result v9
+
+    invoke-static {v1, v4, v5, v9}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->primaryValue:Landroid/widget/TextView;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {p3, v4}, Lde/rki/coronawarnapp/util/formatter/FormatterStatisticsKt;->getPrimaryLabel(Lde/rki/coronawarnapp/statistics/GlobalStatsItem;Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
+
+    move-result-wide v9
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
+
+    move-result v5
+
+    invoke-static {v4, v9, v10, v5}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->secondaryValue:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
+
+    move-result-wide v4
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
+
+    move-result v9
+
+    invoke-static {v1, v4, v5, v9}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->secondaryValue:Landroid/widget/TextView;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    const v5, 0x7f13049f
+
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v1, v4}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-static {v9, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    move-result-object v4
 
-    move-result-object v2
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
 
-    const v6, 0x7f120317
+    move-result-wide v4
 
-    invoke-virtual {v2, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
-    move-result-object v2
+    move-result-object v9
 
-    const-string v6, "context.getString(R.stri\u2026fections_secondary_label)"
+    invoke-virtual {v9}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v9
 
-    invoke-static {v9, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-static {v2, v4, v5, v9}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
+    invoke-static {v1, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-wide v12
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v10
-
-    invoke-static {v2, v12, v13, v10}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
     move-result-object v2
-
-    invoke-static {v9, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrend()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;
-
-    move-result-object v7
-
-    const-string v10, "sevenDayAverage.trend"
-
-    invoke-static {v7, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v2, v7}, Lcom/google/zxing/client/android/R$id;->getContentDescriptionForTrends(Landroid/content/Context;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v9, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v7, 0x7f120318
 
     invoke-virtual {v2, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v7, "context.getString(R.stri\u2026nfections_tertiary_label)"
+    invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v9, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
-
-    move-result-wide v12
-
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v8
-
-    invoke-static {v2, v12, v13, v8}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v9, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithLineBreak(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v5, 0x7f12002e
-
-    invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "StringBuilder()\n        \u2026_navigation_information))"
-
-    invoke-static {v9, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v9}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->primaryLabel:Landroid/widget/TextView;
-
-    const-string v4, "primaryLabel"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v4, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lcom/google/zxing/client/android/R$id;->getPrimaryLabel(Lde/rki/coronawarnapp/statistics/StatsItem;Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v4}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrend()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->primaryValue:Landroid/widget/TextView;
-
-    const-string v4, "primaryValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
-
-    move-result-wide v8
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v12
-
-    invoke-static {v5, v8, v9, v12}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->primaryValue:Landroid/widget/TextView;
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Lcom/google/zxing/client/android/R$id;->getPrimaryLabel(Lde/rki/coronawarnapp/statistics/StatsItem;Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v8, "$this$appendWithTrailingSpace"
-
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v9, "str"
-
-    invoke-static {v5, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v5, " "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v12, "this.append(str).append(\" \")"
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v13, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v13}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v13
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
-
-    move-result-wide v14
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getNewInfections()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v16
-
-    move-object/from16 p1, v7
-
-    invoke-virtual/range {v16 .. v16}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v7
-
-    invoke-static {v13, v14, v15, v7}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    const v13, 0x7f120319
-
-    invoke-virtual {v7, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->secondaryValue:Landroid/widget/TextView;
-
-    const-string v4, "secondaryValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
-
-    move-result-wide v13
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v15
-
-    invoke-static {v7, v13, v14, v15}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->secondaryValue:Landroid/widget/TextView;
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v7, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    const v13, 0x7f120317
-
-    invoke-virtual {v7, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
-
-    move-result-wide v13
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v7
-
-    invoke-static {v6, v13, v14, v7}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    const v7, 0x7f120319
-
-    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrend()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;
-
-    move-result-object v7
-
-    invoke-static {v7, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v6, v7}, Lcom/google/zxing/client/android/R$id;->getContentDescriptionForTrends(Landroid/content/Context;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->tertiaryValue:Landroid/widget/TextView;
-
-    const-string v4, "tertiaryValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
-
-    move-result-wide v13
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v7
-
-    invoke-static {v6, v13, v14, v7}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->tertiaryValue:Landroid/widget/TextView;
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    const v7, 0x7f120318
-
-    invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    move-object/from16 v7, p1
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v6, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v6}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
-
-    move-result-wide v13
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
-
-    move-result v7
-
-    invoke-static {v6, v13, v14, v7}, Lcom/google/zxing/client/android/R$id;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/cards/InfectionsCard;
-
-    invoke-virtual {v5}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    const v6, 0x7f120319
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->trendArrow:Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+    invoke-static {v2, v4}, Lde/rki/coronawarnapp/statistics/util/AccessibilityHelperKt;->getContentDescriptionForTrends(Landroid/content/Context;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrend()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->tertiaryValue:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
     move-result-object v2
 
-    invoke-static {v2, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+    move-result-wide v4
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
+
+    move-result v2
+
+    invoke-static {v1, v4, v5, v2}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->tertiaryValue:Landroid/widget/TextView;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const v4, 0x7f1304a0
+
+    invoke-virtual {v2, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v1, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrendSemantic()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$TrendSemantic;
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getValue()D
 
-    move-result-object v3
+    move-result-wide v3
 
-    const-string v4, "sevenDayAverage.trendSemantic"
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getTotal()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v5
 
-    invoke-virtual {v1, v2, v3}, Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;->setTrend(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$TrendSemantic;)V
+    invoke-virtual {v5}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getDecimals()I
 
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    move-result v5
 
-    return-object v1
+    invoke-static {v2, v3, v4, v5}, Lde/rki/coronawarnapp/statistics/util/StatisticsNumberValueFormatterKt;->formatStatisticalValue(Landroid/content/Context;DI)Ljava/lang/String;
 
-    :cond_0
-    new-instance v1, Ljava/lang/NullPointerException;
+    move-result-object v2
 
-    const-string v2, "null cannot be cast to non-null type de.rki.coronawarnapp.statistics.InfectionStats"
+    invoke-static {v1, v2}, Lde/rki/coronawarnapp/util/StringBuilderExtension;->appendWithTrailingSpace(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
-    throw v1
+    move-result-object v0
+
+    invoke-virtual {v0, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->trendArrow:Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrend()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;
+
+    move-result-object p2
+
+    invoke-static {p2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/statistics/InfectionStats;->getSevenDayAverage()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure;->getTrendSemantic()Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$TrendSemantic;
+
+    move-result-object p3
+
+    const-string/jumbo v0, "sevenDayAverage.trendSemantic"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2, p3}, Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;->setTrend(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Trend;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$TrendSemantic;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
 .end method

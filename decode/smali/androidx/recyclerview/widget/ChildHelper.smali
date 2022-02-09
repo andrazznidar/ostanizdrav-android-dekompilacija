@@ -93,13 +93,11 @@
 
     iget-object p2, p3, Landroidx/recyclerview/widget/RecyclerView$5;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
-    if-eqz p2, :cond_4
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p3
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->onChildAttachedToWindow()V
 
     iget-object v0, p2, Landroidx/recyclerview/widget/RecyclerView;->mAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
@@ -137,11 +135,6 @@
 
     :cond_3
     return-void
-
-    :cond_4
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public attachViewToParent(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)V
@@ -178,7 +171,7 @@
 
     check-cast p4, Landroidx/recyclerview/widget/RecyclerView$5;
 
-    if-eqz p4, :cond_5
+    invoke-static {p4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
@@ -215,7 +208,7 @@
 
     iget-object p3, p4, Landroidx/recyclerview/widget/RecyclerView$5;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-static {p3, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    invoke-static {p3, p2}, Landroidx/recyclerview/widget/ChildHelper$$ExternalSyntheticOutline0;->m(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -237,11 +230,6 @@
     invoke-static {p4, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView;->access$000(Landroidx/recyclerview/widget/RecyclerView;Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     return-void
-
-    :cond_5
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public detachViewFromParent(I)V
@@ -302,7 +290,7 @@
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$5;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline7(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    invoke-static {v0, v2}, Landroidx/recyclerview/widget/ChildHelper$$ExternalSyntheticOutline0;->m(Landroidx/recyclerview/widget/RecyclerView;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -465,7 +453,7 @@
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$5;
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
@@ -488,7 +476,9 @@
     :cond_0
     iget-object v1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-static {v1}, Landroidx/core/view/ViewCompat;->getImportantForAccessibility(Landroid/view/View;)I
+    sget-object v2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v1}, Landroid/view/View;->getImportantForAccessibility()I
 
     move-result v1
 
@@ -501,11 +491,6 @@
 
     :cond_1
     return-void
-
-    :cond_2
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public indexOfChild(Landroid/view/View;)I
@@ -607,13 +592,13 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/recyclerview/widget/ChildHelper;->mCallback:Landroidx/recyclerview/widget/ChildHelper$Callback;
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$5;
 
-    if-eqz v0, :cond_1
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
@@ -635,10 +620,5 @@
     return p1
 
     :cond_1
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_2
     return v1
 .end method

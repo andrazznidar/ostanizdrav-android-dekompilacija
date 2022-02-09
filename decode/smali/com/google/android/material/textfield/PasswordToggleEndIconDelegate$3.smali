@@ -53,11 +53,11 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
 
-    iget-object p2, p0, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$3;->this$0:Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;
+    new-instance p2, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$3$1;
 
-    iget-object p2, p2, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;->textWatcher:Landroid/text/TextWatcher;
+    invoke-direct {p2, p0, p1}, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$3$1;-><init>(Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$3;Landroid/widget/EditText;)V
 
-    invoke-virtual {p1, p2}, Landroid/widget/EditText;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {p1, p2}, Landroid/widget/EditText;->post(Ljava/lang/Runnable;)Z
 
     :cond_0
     return-void

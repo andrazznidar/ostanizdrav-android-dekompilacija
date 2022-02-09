@@ -24,32 +24,11 @@
 
 
 # virtual methods
-.method public abstract collapseActionView()Z
-.end method
-
 .method public abstract dispatchMenuVisibilityChanged(Z)V
-.end method
-
-.method public abstract getDisplayOptions()I
 .end method
 
 .method public abstract getThemedContext()Landroid/content/Context;
 .end method
 
-.method public abstract onConfigurationChanged(Landroid/content/res/Configuration;)V
-.end method
-
-.method public abstract onKeyShortcut(ILandroid/view/KeyEvent;)Z
-.end method
-
 .method public abstract setDefaultDisplayHomeAsUpEnabled(Z)V
-.end method
-
-.method public abstract setShowHideAnimationEnabled(Z)V
-.end method
-
-.method public abstract setWindowTitle(Ljava/lang/CharSequence;)V
-.end method
-
-.method public abstract startActionMode(Landroidx/appcompat/view/ActionMode$Callback;)Landroidx/appcompat/view/ActionMode;
 .end method

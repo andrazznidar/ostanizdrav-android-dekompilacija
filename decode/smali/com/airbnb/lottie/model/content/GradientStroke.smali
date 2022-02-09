@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final capType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+.field public final capType:I
 
 .field public final dashOffset:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
@@ -15,11 +15,11 @@
 
 .field public final gradientColor:Lcom/airbnb/lottie/model/animatable/AnimatableGradientColorValue;
 
-.field public final gradientType:Lcom/airbnb/lottie/model/content/GradientType;
+.field public final gradientType:I
 
 .field public final hidden:Z
 
-.field public final joinType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+.field public final joinType:I
 
 .field public final lineDashPattern:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -43,20 +43,20 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/airbnb/lottie/model/content/GradientType;Lcom/airbnb/lottie/model/animatable/AnimatableGradientColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;FLjava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
+.method public constructor <init>(Ljava/lang/String;ILcom/airbnb/lottie/model/animatable/AnimatableGradientColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;IIFLjava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Z)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/airbnb/lottie/model/content/GradientType;",
+            "Ljava/lang/Object;",
             "Lcom/airbnb/lottie/model/animatable/AnimatableGradientColorValue;",
             "Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;",
             "Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;",
             "Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;",
             "Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;",
-            "Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;",
-            "Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
             "F",
             "Ljava/util/List<",
             "Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;",
@@ -70,7 +70,7 @@
 
     iput-object p1, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->name:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->gradientType:Lcom/airbnb/lottie/model/content/GradientType;
+    iput p2, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->gradientType:I
 
     iput-object p3, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->gradientColor:Lcom/airbnb/lottie/model/animatable/AnimatableGradientColorValue;
 
@@ -82,9 +82,9 @@
 
     iput-object p7, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->width:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
-    iput-object p8, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->capType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    iput p8, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->capType:I
 
-    iput-object p9, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->joinType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    iput p9, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->joinType:I
 
     iput p10, p0, Lcom/airbnb/lottie/model/content/GradientStroke;->miterLimit:F
 

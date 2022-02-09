@@ -30,62 +30,6 @@
     return-void
 .end method
 
-.method public static fromClassName(Ljava/lang/String;)Landroidx/work/InputMerger;
-    .locals 5
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "className"
-        }
-    .end annotation
-
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/work/InputMerger;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
-
-    move-result-object v1
-
-    sget-object v2, Landroidx/work/InputMerger;->TAG:Ljava/lang/String;
-
-    const-string v3, "Trouble instantiating + "
-
-    invoke-static {v3, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Throwable;
-
-    const/4 v4, 0x0
-
-    aput-object v0, v3, v4
-
-    invoke-virtual {v1, v2, p0, v3}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
 
 # virtual methods
 .method public abstract merge(Ljava/util/List;)Landroidx/work/Data;

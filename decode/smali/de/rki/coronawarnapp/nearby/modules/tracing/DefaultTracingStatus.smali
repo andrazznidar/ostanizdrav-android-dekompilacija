@@ -21,24 +21,32 @@
 
 .field public final scope:Lkotlinx/coroutines/CoroutineScope;
 
+.field public final tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
+
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;Lkotlinx/coroutines/CoroutineScope;)V
-    .locals 3
+.method public constructor <init>(Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;Lde/rki/coronawarnapp/storage/TracingSettings;Lkotlinx/coroutines/CoroutineScope;)V
+    .locals 2
 
     const-string v0, "client"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "scope"
+    const-string/jumbo v0, "tracingSettings"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "scope"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->scope:Lkotlinx/coroutines/CoroutineScope;
+    iput-object p2, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
+
+    iput-object p3, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->scope:Lkotlinx/coroutines/CoroutineScope;
 
     new-instance p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isTracingEnabled$1;
 
@@ -50,7 +58,7 @@
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/flow/SafeFlow;-><init>(Lkotlin/jvm/functions/Function2;)V
 
-    invoke-static {v0}, Lkotlinx/coroutines/flow/FlowKt__DistinctKt;->distinctUntilChanged(Lkotlinx/coroutines/flow/Flow;)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {v0}, Lkotlinx/coroutines/flow/FlowKt;->distinctUntilChanged(Lkotlinx/coroutines/flow/Flow;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
@@ -60,7 +68,7 @@
 
     new-instance v1, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;
 
-    invoke-direct {v1, p1, v0}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {v1, v0, p1}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlin/jvm/functions/Function2;Lkotlinx/coroutines/flow/Flow;)V
 
     new-instance p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isTracingEnabled$3;
 
@@ -86,13 +94,11 @@
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->scope:Lkotlinx/coroutines/CoroutineScope;
+    const-string p1, "DefaultTracingStatus"
 
-    const-string v1, "DefaultTracingStatus"
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
-
-    invoke-static {v0, v1, p1, p2, v2}, Lcom/google/zxing/client/android/R$id;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {v0, p1, p3, p2, v1}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
@@ -101,412 +107,158 @@
     return-void
 .end method
 
+.method public static final access$asyncStart(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
 
-# virtual methods
-.method public final asyncStart(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 11
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Ljava/lang/Void;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    instance-of v1, p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;
-
-    if-eqz v1, :cond_0
-
-    move-object v1, p1
-
-    check-cast v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;
-
-    iget v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->label:I
-
-    const/high16 v3, -0x80000000
-
-    and-int v4, v2, v3
-
-    if-eqz v4, :cond_0
-
-    sub-int/2addr v2, v3
-
-    iput v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->label:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;
-
-    invoke-direct {v1, p0, p1}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;-><init>(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p1, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->result:Ljava/lang/Object;
-
-    iget v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->label:I
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x1
-
-    if-eqz v2, :cond_3
-
-    if-eq v2, v4, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-wide v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->J$0:J
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->L$0:Ljava/lang/Object;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto/16 :goto_3
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    iget-object v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->L$0:Ljava/lang/Object;
-
-    check-cast v2, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    iput-object p0, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->L$0:Ljava/lang/Object;
-
-    iput v4, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->label:I
-
-    new-instance p1, Lkotlin/coroutines/SafeContinuation;
-
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object v2
-
-    invoke-direct {p1, v2}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
-
-    invoke-interface {v2}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->start()Lcom/google/android/gms/tasks/Task;
-
-    move-result-object v2
-
-    new-instance v5, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$1;
-
-    invoke-direct {v5, p1}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v2, v5}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
-
-    new-instance v5, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$2;
-
-    invoke-direct {v5, p1}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v2, v5}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
-
-    invoke-virtual {p1}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
+    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_4
+    invoke-direct {v0, p1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    const-string v2, "frame"
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "DefaultTracingStatus"
 
-    :cond_4
-    if-ne p1, v0, :cond_5
-
-    return-object v0
-
-    :cond_5
-    :goto_1
-    move-object v2, p1
-
-    check-cast v2, Ljava/lang/Void;
-
-    sget-object v2, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/storage/LocalData;->lastNonActiveTracingTimestamp()Ljava/lang/Long;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_a
-
-    invoke-virtual {v2}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v5
-
-    sget-object v2, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->Companion:Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    invoke-virtual {v2, v7}, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository$Companion;->getDateRepository(Landroid/content/Context;)Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;
-
-    move-result-object v2
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v7
-
-    iput-object p1, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->L$0:Ljava/lang/Object;
-
-    iput-wide v5, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->J$0:J
-
-    iput v3, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$1;->label:I
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "Insert Tracing Interval "
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v9, ", "
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v9, 0x0
-
-    new-array v9, v9, [Ljava/lang/Object;
-
-    sget-object v10, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v10, v3, v9}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    cmp-long v3, v7, v5
-
-    if-ltz v3, :cond_9
-
-    iget-object v2, v2, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalRepository;->tracingIntervalDao:Lde/rki/coronawarnapp/storage/tracing/TracingIntervalDao;
-
-    new-instance v3, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalEntity;
-
-    invoke-direct {v3}, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalEntity;-><init>()V
-
-    iput-wide v5, v3, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalEntity;->from:J
-
-    iput-wide v7, v3, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalEntity;->to:J
-
-    check-cast v2, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalDao_Impl;
-
-    iget-object v7, v2, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    new-instance v8, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalDao_Impl$3;
-
-    invoke-direct {v8, v2, v3}, Lde/rki/coronawarnapp/storage/tracing/TracingIntervalDao_Impl$3;-><init>(Lde/rki/coronawarnapp/storage/tracing/TracingIntervalDao_Impl;Lde/rki/coronawarnapp/storage/tracing/TracingIntervalEntity;)V
-
-    invoke-static {v7, v4, v8, v1}, Landroidx/room/CoroutinesRoom;->execute(Landroidx/room/RoomDatabase;ZLjava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-ne v1, v0, :cond_6
-
-    goto :goto_2
-
-    :cond_6
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    :goto_2
-    if-ne v1, v0, :cond_7
-
-    return-object v0
-
-    :cond_7
-    move-object v0, p1
-
-    move-wide v2, v5
-
-    :goto_3
-    new-instance p1, Ljava/util/Date;
-
-    invoke-direct {p1}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sub-long/2addr v4, v2
-
-    const/16 p1, 0x3e8
-
-    int-to-long v1, p1
-
-    div-long/2addr v4, v1
-
-    const-wide/16 v1, 0x3c
-
-    cmp-long p1, v4, v1
-
-    if-ltz p1, :cond_8
-
-    sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v3, 0x7f120272
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-wide/16 v6, 0x0
-
-    invoke-interface {v1, v2, v6, v7}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v1
-
-    add-long/2addr v1, v4
-
-    new-instance v4, Ljava/lang/Long;
-
-    invoke-direct {v4, v1, v2}, Ljava/lang/Long;-><init>(J)V
-
-    const-string v1, "editor"
-
-    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline3(Lde/rki/coronawarnapp/storage/LocalData;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p1
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-interface {p1, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    :cond_8
-    move-object p1, v0
-
-    goto :goto_4
-
-    :cond_9
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "to cannot be before from"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_a
-    :goto_4
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    invoke-virtual {p1, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/storage/LocalData;->lastNonActiveTracingTimestamp(Ljava/lang/Long;)V
+    new-array v1, v1, [Ljava/lang/Object;
 
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    const-string v2, "asyncStart() - enabling tracing..."
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/storage/LocalData;->initialTracingActivationTimestamp()Ljava/lang/Long;
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    move-result-object v0
+    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
-    if-eqz v0, :cond_b
+    invoke-interface {p1}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->start()Lcom/google/android/gms/tasks/Task;
 
-    goto :goto_5
+    move-result-object p1
 
-    :cond_b
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$1;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    move-result-wide v1
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
-    invoke-virtual {v0, v1, v2}, Lde/rki/coronawarnapp/storage/LocalData;->initialTracingActivationTimestamp(J)V
+    move-result-object p1
 
-    :goto_5
-    return-object p1
+    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$2;
+
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStart$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->tracingSettings:Lde/rki/coronawarnapp/storage/TracingSettings;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lde/rki/coronawarnapp/storage/TracingSettings;->setConsentGiven(Z)V
+
+    invoke-virtual {v0}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final asyncStop(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Ljava/lang/Void;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
+.method public static final access$asyncStop(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    instance-of v1, p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;
+    new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    if-eqz v1, :cond_0
+    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-object v1, p1
+    move-result-object p1
 
-    check-cast v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;
+    invoke-direct {v0, p1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    iget v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;->label:I
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const/high16 v3, -0x80000000
+    const-string v1, "DefaultTracingStatus"
 
-    and-int v4, v2, v3
+    invoke-virtual {p1, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    if-eqz v4, :cond_0
+    const/4 v1, 0x0
 
-    sub-int/2addr v2, v3
+    new-array v1, v1, [Ljava/lang/Object;
 
-    iput v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;->label:I
+    const-string v2, "asyncStop() - disabling tracing..."
+
+    invoke-virtual {p1, v2, v1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
+
+    invoke-interface {p0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->stop()Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p0
+
+    new-instance p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$1;
+
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object p0
+
+    new-instance p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$2;
+
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+
+    invoke-virtual {v0}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final access$isEnabledInternal(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 4
+
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    instance-of v0, p1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p1
+
+    check-cast v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;
+
+    iget v1, v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;->label:I
+
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
+
+    if-eqz v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;
+    new-instance v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;
 
-    invoke-direct {v1, p0, p1}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;-><init>(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;-><init>(Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object p1, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;->result:Ljava/lang/Object;
+    iget-object p1, v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;->result:Ljava/lang/Object;
 
-    iget v2, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;->label:I
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;->label:I
 
     const/4 v3, 0x1
 
@@ -514,147 +266,89 @@
 
     if-ne v2, v3, :cond_1
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    :try_start_0
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_1
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw p0
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iput-object p0, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;->L$0:Ljava/lang/Object;
+    :try_start_1
+    iget-object p0, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
-    iput v3, v1, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$1;->label:I
+    invoke-interface {p0}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->isEnabled()Lcom/google/android/gms/tasks/Task;
 
-    new-instance p1, Lkotlin/coroutines/SafeContinuation;
+    move-result-object p0
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    const-string p1, "client.isEnabled"
 
-    move-result-object v2
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p1, v2}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput v3, v0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabledInternal$1;->label:I
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
-
-    invoke-interface {v2}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->stop()Lcom/google/android/gms/tasks/Task;
-
-    move-result-object v2
-
-    new-instance v3, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$1;
-
-    invoke-direct {v3, p1}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
-
-    new-instance v3, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$2;
-
-    invoke-direct {v3, p1}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$asyncStop$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
-
-    invoke-virtual {p1}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
+    invoke-static {p0, v0}, Lkotlinx/coroutines/tasks/TasksKt;->await(Lcom/google/android/gms/tasks/Task;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v1, :cond_3
 
-    const-string v2, "frame"
-
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    goto :goto_2
 
     :cond_3
-    if-ne p1, v0, :cond_4
-
-    return-object v0
-
-    :cond_4
     :goto_1
-    move-object v0, p1
+    const-string/jumbo p0, "{\n        client.isEnabled.await()\n    }"
 
-    check-cast v0, Ljava/lang/Void;
+    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v0, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-wide v1
+    move-result p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    new-instance v3, Ljava/lang/Long;
-
-    invoke-direct {v3, v1, v2}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v0, v3}, Lde/rki/coronawarnapp/storage/LocalData;->lastNonActiveTracingTimestamp(Ljava/lang/Long;)V
-
-    return-object p1
-.end method
-
-.method public final isEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Ljava/lang/Boolean;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
-
-    new-instance v0, Lkotlin/coroutines/SafeContinuation;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
+    :goto_2
+    return-object v1
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
+    :catchall_0
+    move-exception p0
 
-    invoke-interface {v1}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->isEnabled()Lcom/google/android/gms/tasks/Task;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v1
+    const-string v0, "DefaultTracingStatus"
 
-    new-instance v2, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabled$2$1;
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabled$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 v0, 0x0
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-instance v2, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabled$2$2;
+    const-string v1, "Failed to determine tracing status."
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/nearby/modules/tracing/DefaultTracingStatus$isEnabled$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {p1, p0, v1, v0}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
-
-    invoke-virtual {v0}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    if-ne v0, v1, :cond_0
-
-    const-string v1, "frame"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_0
-    return-object v0
+    throw p0
 .end method
 
+
+# virtual methods
 .method public isTracingEnabled()Lkotlinx/coroutines/flow/Flow;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -694,14 +388,6 @@
         }
     .end annotation
 
-    const-string v0, "onSuccess"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "onError"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "onPermissionRequired"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -728,15 +414,15 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
     const/4 v5, 0x3
 
     const/4 v6, 0x0
 
+    const/4 v3, 0x0
+
     move-object v4, v0
 
-    invoke-static/range {v1 .. v6}, Lcom/google/zxing/client/android/R$id;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     return-void
 .end method

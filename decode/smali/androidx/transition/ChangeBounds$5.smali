@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     check-cast p1, Landroid/view/View;

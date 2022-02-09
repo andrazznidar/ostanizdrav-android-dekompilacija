@@ -18,14 +18,14 @@
 
 
 # instance fields
-.field public final synthetic this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;
+.field public final synthetic this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;
 
     const/4 p1, 0x0
 
@@ -39,9 +39,7 @@
 .method public invoke()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;
 
     invoke-static {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;->access$navigateToOnboardingTestFragment(Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;)V
 

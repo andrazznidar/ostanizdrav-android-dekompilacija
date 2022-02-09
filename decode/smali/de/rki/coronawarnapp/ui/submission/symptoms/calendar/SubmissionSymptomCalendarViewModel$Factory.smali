@@ -27,5 +27,5 @@
 
 
 # virtual methods
-.method public abstract create(Lde/rki/coronawarnapp/submission/Symptoms$Indication;)Lde/rki/coronawarnapp/ui/submission/symptoms/calendar/SubmissionSymptomCalendarViewModel;
+.method public abstract create(Lde/rki/coronawarnapp/submission/Symptoms$Indication;Lde/rki/coronawarnapp/coronatest/type/CoronaTest$Type;)Lde/rki/coronawarnapp/ui/submission/symptoms/calendar/SubmissionSymptomCalendarViewModel;
 .end method

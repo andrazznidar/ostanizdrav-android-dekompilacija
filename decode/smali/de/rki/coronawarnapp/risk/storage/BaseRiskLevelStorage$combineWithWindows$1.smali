@@ -4,20 +4,11 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->combineWithWindows(Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.risk.storage.BaseRiskLevelStorage"
     f = "BaseRiskLevelStorage.kt"
     l = {
-        0x2b
+        0x3c
     }
     m = "combineWithWindows"
 .end annotation
@@ -36,6 +27,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
@@ -63,7 +64,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, v0, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->combineWithWindows(Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v0, v0, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->access$combineWithWindows(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

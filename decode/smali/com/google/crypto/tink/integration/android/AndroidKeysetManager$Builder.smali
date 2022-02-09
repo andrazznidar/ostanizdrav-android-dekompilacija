@@ -15,8 +15,6 @@
 
 
 # instance fields
-.field public keyStore:Ljava/security/KeyStore;
-
 .field public keyTemplate:Lcom/google/crypto/tink/KeyTemplate;
 
 .field public keysetManager:Lcom/google/crypto/tink/KeysetManager;
@@ -27,14 +25,12 @@
 
 .field public reader:Lcom/google/crypto/tink/integration/android/SharedPrefKeysetReader;
 
-.field public useKeystore:Z
-
 .field public writer:Lcom/google/crypto/tink/KeysetWriter;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,13 +44,7 @@
 
     iput-object v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKey:Lcom/google/crypto/tink/Aead;
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->useKeystore:Z
-
     iput-object v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->keyTemplate:Lcom/google/crypto/tink/KeyTemplate;
-
-    iput-object v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->keyStore:Ljava/security/KeyStore;
 
     return-void
 .end method
@@ -419,7 +409,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/material/R$style;->encode([B)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/crypto/tink/subtle/Hex;->encode([B)Ljava/lang/String;
 
     move-result-object v1
 
@@ -484,7 +474,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/material/R$style;->encode([B)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/crypto/tink/subtle/Hex;->encode([B)Ljava/lang/String;
 
     move-result-object v1
 
@@ -585,183 +575,141 @@
 .end method
 
 .method public final readOrGenerateNewMasterKey()Lcom/google/crypto/tink/Aead;
-    .locals 6
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/GeneralSecurityException;
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->keyStore:Ljava/security/KeyStore;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
     new-instance v0, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$Builder;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$Builder;-><init>()V
 
-    iget-object v2, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->keyStore:Ljava/security/KeyStore;
+    iget-object v0, v0, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$Builder;->keyStore:Ljava/security/KeyStore;
 
-    if-eqz v2, :cond_0
+    iget-object v1, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
 
-    iput-object v2, v0, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$Builder;->keyStore:Ljava/security/KeyStore;
+    const-string v2, "android-keystore://"
 
-    new-instance v2, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;
+    invoke-static {v2, v1}, Lcom/google/crypto/tink/subtle/Validators;->validateKmsKeyUriAndRemovePrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v2, v0, v1}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;-><init>(Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$Builder;Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient$1;)V
+    move-result-object v1
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/security/KeyStore;->containsAlias(Ljava/lang/String;)Z
 
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "val cannot be null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    new-instance v2, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;
-
-    invoke-direct {v2}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;-><init>()V
-
-    :goto_0
-    iget-object v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
-
-    const-string v3, "android-keystore://"
-
-    invoke-static {v3, v0}, Lcom/google/crypto/tink/subtle/Validators;->validateKmsKeyUriAndRemovePrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v3, v2, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;->keyStore:Ljava/security/KeyStore;
-
-    invoke-virtual {v3, v0}, Ljava/security/KeyStore;->containsAlias(Ljava/lang/String;)Z
-
-    move-result v0
+    move-result v1
 
     const-string v3, "cannot use Android Keystore, it\'ll be disabled"
 
     const-string v4, "AndroidKeysetManager"
 
-    if-nez v0, :cond_2
+    const/4 v5, 0x0
+
+    if-nez v1, :cond_0
 
     :try_start_0
-    iget-object v5, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
 
-    invoke-static {v5}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;->generateNewAeadKey(Ljava/lang/String;)V
+    invoke-static {v6}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;->generateNewAeadKey(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
     invoke-static {v4, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v1
+    return-object v5
 
-    :cond_2
-    :goto_1
+    :cond_0
+    :goto_0
+    const/4 v6, 0x0
+
     :try_start_1
-    iget-object v5, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
+    iget-object v7, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
 
-    invoke-virtual {v2, v5}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreKmsClient;->getAead(Ljava/lang/String;)Lcom/google/crypto/tink/Aead;
+    new-instance v8, Lcom/google/crypto/tink/integration/android/AndroidKeystoreAesGcm;
+
+    invoke-static {v2, v7}, Lcom/google/crypto/tink/subtle/Validators;->validateKmsKeyUriAndRemovePrefix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v8, v2, v0}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreAesGcm;-><init>(Ljava/lang/String;Ljava/security/KeyStore;)V
+
+    const/16 v0, 0xa
+
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/Random;->randBytes(I)[B
 
     move-result-object v0
-    :try_end_1
-    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/security/ProviderException; {:try_start_1 .. :try_end_1} :catch_1
 
-    return-object v0
+    new-array v2, v6, [B
 
-    :catch_1
-    move-exception v2
+    invoke-virtual {v8, v0, v2}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreAesGcm;->encrypt([B[B)[B
 
-    goto :goto_2
+    move-result-object v7
 
-    :catch_2
-    move-exception v2
+    invoke-virtual {v8, v7, v2}, Lcom/google/crypto/tink/integration/android/AndroidKeystoreAesGcm;->decrypt([B[B)[B
 
-    :goto_2
-    if-nez v0, :cond_3
+    move-result-object v2
 
-    invoke-static {v4, v3, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-object v1
-
-    :cond_3
-    new-instance v0, Ljava/security/KeyStoreException;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    iget-object v4, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
-
-    aput-object v4, v1, v3
-
-    const-string v3, "the master key %s exists but is unusable"
-
-    invoke-static {v3, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, v2}, Ljava/security/KeyStoreException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v0
-.end method
-
-.method public withMasterKeyUri(Ljava/lang/String;)Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;
-    .locals 1
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "val"
-        }
-    .end annotation
-
-    const-string v0, "android-keystore://"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-static {v0, v2}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->useKeystore:Z
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
-
-    return-object p0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "cannot call withMasterKeyUri() after calling doNotUseKeystore()"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-object v8
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/security/KeyStoreException;
 
-    const-string v0, "key URI must start with android-keystore://"
+    const-string v2, "cannot use Android Keystore: encryption/decryption of non-empty message and empty aad returns an incorrect result"
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/security/KeyStoreException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v0
+    :try_end_1
+    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/security/ProviderException; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_2
+    move-exception v0
+
+    :goto_1
+    if-nez v1, :cond_2
+
+    invoke-static {v4, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return-object v5
+
+    :cond_2
+    new-instance v1, Ljava/security/KeyStoreException;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iget-object v3, p0, Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;->masterKeyUri:Ljava/lang/String;
+
+    aput-object v3, v2, v6
+
+    const-string/jumbo v3, "the master key %s exists but is unusable"
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Ljava/security/KeyStoreException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
 .end method
 
 .method public withSharedPref(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Lcom/google/crypto/tink/integration/android/AndroidKeysetManager$Builder;

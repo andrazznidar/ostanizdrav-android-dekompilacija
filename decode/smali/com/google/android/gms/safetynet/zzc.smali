@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/gms/safetynet/zzc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -30,7 +31,7 @@
 .method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 7
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -53,9 +54,7 @@
 
     move-result v4
 
-    const v5, 0xffff
-
-    and-int/2addr v5, v4
+    int-to-char v5, v4
 
     const/4 v6, 0x2
 
@@ -69,33 +68,33 @@
 
     if-eq v5, v6, :cond_0
 
-    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
     move-result v3
 
     goto :goto_0
 
     :cond_1
-    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->createByteArray(Landroid/os/Parcel;I)[B
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createByteArray(Landroid/os/Parcel;I)[B
 
     move-result-object v2
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p1, v4}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v1
 
     goto :goto_0
 
     :cond_3
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
     new-instance p1, Lcom/google/android/gms/safetynet/HarmfulAppsData;
 
@@ -104,7 +103,7 @@
     return-object p1
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
     new-array p1, p1, [Lcom/google/android/gms/safetynet/HarmfulAppsData;

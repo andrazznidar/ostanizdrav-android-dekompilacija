@@ -20,12 +20,10 @@
 
 .field public static final enum HARDWARE:Lcom/airbnb/lottie/RenderMode;
 
-.field public static final enum SOFTWARE:Lcom/airbnb/lottie/RenderMode;
-
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     new-instance v0, Lcom/airbnb/lottie/RenderMode;
 
@@ -37,41 +35,35 @@
 
     sput-object v0, Lcom/airbnb/lottie/RenderMode;->AUTOMATIC:Lcom/airbnb/lottie/RenderMode;
 
-    new-instance v0, Lcom/airbnb/lottie/RenderMode;
+    new-instance v1, Lcom/airbnb/lottie/RenderMode;
 
-    const-string v1, "HARDWARE"
+    const-string v3, "HARDWARE"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Lcom/airbnb/lottie/RenderMode;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lcom/airbnb/lottie/RenderMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/airbnb/lottie/RenderMode;->HARDWARE:Lcom/airbnb/lottie/RenderMode;
+    sput-object v1, Lcom/airbnb/lottie/RenderMode;->HARDWARE:Lcom/airbnb/lottie/RenderMode;
 
-    new-instance v0, Lcom/airbnb/lottie/RenderMode;
+    new-instance v3, Lcom/airbnb/lottie/RenderMode;
 
-    const-string v1, "SOFTWARE"
+    const-string v5, "SOFTWARE"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4}, Lcom/airbnb/lottie/RenderMode;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/airbnb/lottie/RenderMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/airbnb/lottie/RenderMode;->SOFTWARE:Lcom/airbnb/lottie/RenderMode;
+    const/4 v5, 0x3
 
-    const/4 v1, 0x3
+    new-array v5, v5, [Lcom/airbnb/lottie/RenderMode;
 
-    new-array v1, v1, [Lcom/airbnb/lottie/RenderMode;
+    aput-object v0, v5, v2
 
-    sget-object v5, Lcom/airbnb/lottie/RenderMode;->AUTOMATIC:Lcom/airbnb/lottie/RenderMode;
+    aput-object v1, v5, v4
 
-    aput-object v5, v1, v2
+    aput-object v3, v5, v6
 
-    sget-object v2, Lcom/airbnb/lottie/RenderMode;->HARDWARE:Lcom/airbnb/lottie/RenderMode;
-
-    aput-object v2, v1, v3
-
-    aput-object v0, v1, v4
-
-    sput-object v1, Lcom/airbnb/lottie/RenderMode;->$VALUES:[Lcom/airbnb/lottie/RenderMode;
+    sput-object v5, Lcom/airbnb/lottie/RenderMode;->$VALUES:[Lcom/airbnb/lottie/RenderMode;
 
     return-void
 .end method

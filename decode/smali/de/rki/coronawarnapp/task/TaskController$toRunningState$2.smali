@@ -38,6 +38,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/task/internal/InternalTaskState;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/task/internal/InternalTaskState;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
 
@@ -64,10 +74,6 @@
         }
     .end annotation
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
@@ -79,114 +85,72 @@
     return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
-
-    invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
-
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     check-cast p1, Lde/rki/coronawarnapp/task/Task$Progress;
 
-    const-string p2, "TaskController"
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-static {p2}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    new-instance v0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;
 
-    move-result-object p2
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, p2}, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;-><init>(Lde/rki/coronawarnapp/task/internal/InternalTaskState;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->getType()Lkotlin/reflect/KClass;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v2, 0x28
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ") Progress: "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    invoke-virtual {p2, p1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    iput-object p1, v0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->L$0:Ljava/lang/Object;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/task/Task$Progress;
 
-    const-string v0, "TaskController"
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v1, "TaskController"
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->getType()Lkotlin/reflect/KClass;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->getType()Lkotlin/reflect/KClass;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v2, 0x28
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v1
 
     iget-object v2, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$2;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
 
     iget-object v2, v2, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v2, ") Progress: "
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v1, "("
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ") Progress: "
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 

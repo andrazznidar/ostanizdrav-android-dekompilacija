@@ -14,11 +14,11 @@
         <item name="materialAlertDialogBodyTextStyle">@style/MaterialAlertDialog.MaterialComponents.Body.Text</item>
     </style>
     <style name="body1" parent="@style/TextAppearance.MaterialComponents.Body1">
-        <item name="android:textColor">@color/colorTextPrimary1</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
         <item name="android:lineHeight">@dimen/line_height_large</item>
     </style>
     <style name="body2" parent="@style/TextAppearance.MaterialComponents.Body2">
-        <item name="android:textColor">@color/colorTextPrimary1</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
         <item name="android:lineHeight">@dimen/line_height_small</item>
     </style>
     <style name="body2Medium" parent="@style/TextAppearance.MaterialComponents.Body2">
@@ -26,7 +26,7 @@
         <item name="android:lineHeight">@dimen/line_height_small</item>
     </style>
     <style name="subtitle" parent="@style/TextAppearance.MaterialComponents.Subtitle1">
-        <item name="android:textColor">@color/colorTextPrimary1</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
         <item name="android:lineHeight">@dimen/line_height_normal</item>
     </style>
     <style name="subtitleMedium" parent="@style/TextAppearance.MaterialComponents.Subtitle1">

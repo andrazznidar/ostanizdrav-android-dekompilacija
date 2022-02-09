@@ -1,27 +1,23 @@
 .class public final Lcom/google/android/gms/common/internal/zzt;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
-# static fields
-.field public static zza:Ljava/lang/Object;
+# instance fields
+.field public final zza:Ljava/lang/String;
 
-.field public static zzb:Z
-
-.field public static zzc:Ljava/lang/String;
-
-.field public static zzd:I
+.field public final zzd:Z
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;IZ)V
+    .locals 0
 
-    new-instance v0, Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/zzt;->zza:Ljava/lang/String;
 
-    sput-object v0, Lcom/google/android/gms/common/internal/zzt;->zza:Ljava/lang/Object;
+    iput-boolean p4, p0, Lcom/google/android/gms/common/internal/zzt;->zzd:Z
 
     return-void
 .end method

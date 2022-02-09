@@ -3,19 +3,11 @@
 .source "CutCornerTreatment.java"
 
 
-# instance fields
-.field public size:F
-
-
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Lcom/google/android/material/shape/CornerTreatment;-><init>()V
-
-    const/high16 v0, -0x40800000    # -1.0f
-
-    iput v0, p0, Lcom/google/android/material/shape/CutCornerTreatment;->size:F
 
     return-void
 .end method

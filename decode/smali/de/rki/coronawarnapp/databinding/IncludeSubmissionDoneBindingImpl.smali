@@ -12,10 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroid/widget/ScrollView;
-
-.field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 .field public final mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
 
@@ -59,7 +55,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09048c
+    const v1, 0x7f0a0703
 
     const/4 v2, 0x5
 
@@ -75,13 +71,23 @@
 
     :array_1
     .array-data 4
-        0x7f0c00aa
-        0x7f0c00b4
+        0x7f0d00f1
+        0x7f0d010a
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -137,8 +143,6 @@
 
     check-cast p1, Landroid/widget/ScrollView;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;->mboundView0:Landroid/widget/ScrollView;
-
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
@@ -148,8 +152,6 @@
     aget-object p1, v0, p1
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
@@ -177,7 +179,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -220,15 +222,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f120382
+    const v2, 0x7f13053b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->mIllustrationDescription:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->setIllustrationDescription(Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBinding;->submissionDoneHeroIllustration:Landroid/widget/ImageView;
 
@@ -240,7 +240,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneBinding;->submissionDoneContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;
@@ -365,6 +365,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

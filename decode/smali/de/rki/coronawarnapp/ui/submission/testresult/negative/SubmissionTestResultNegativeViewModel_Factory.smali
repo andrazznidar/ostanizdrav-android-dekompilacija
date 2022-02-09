@@ -4,6 +4,16 @@
 
 
 # instance fields
+.field public final certificateRepositoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final dispatcherProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -28,7 +38,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;",
+            "Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;",
             ">;"
         }
     .end annotation
@@ -36,8 +46,23 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "dispatcherProvider",
+            "submissionRepositoryProvider",
+            "certificateRepositoryProvider",
+            "testResultAvailableNotificationServiceProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,7 +73,10 @@
             "Lde/rki/coronawarnapp/submission/SubmissionRepository;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;",
+            "Lde/rki/coronawarnapp/covidcertificate/test/core/TestCertificateRepository;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;",
             ">;)V"
         }
     .end annotation
@@ -59,7 +87,9 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/negative/SubmissionTestResultNegativeViewModel_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/ui/submission/testresult/negative/SubmissionTestResultNegativeViewModel_Factory;->testResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/ui/submission/testresult/negative/SubmissionTestResultNegativeViewModel_Factory;->certificateRepositoryProvider:Ljavax/inject/Provider;
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/ui/submission/testresult/negative/SubmissionTestResultNegativeViewModel_Factory;->testResultAvailableNotificationServiceProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

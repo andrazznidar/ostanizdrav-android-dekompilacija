@@ -3,12 +3,12 @@
 .source "TracingStateProvider.kt"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function2;
+.implements Lkotlin/jvm/functions/Function3;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/tracing/states/TracingStateProvider;-><init>(ZLde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/storage/TracingRepository;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;)V
+    value = Lde/rki/coronawarnapp/tracing/states/TracingStateProvider;-><init>(ZLde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/storage/TracingRepository;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lde/rki/coronawarnapp/installTime/InstallTimeProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,8 +19,12 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
-        "Lkotlin/jvm/functions/Function2<",
+        "Lkotlin/jvm/functions/Function3<",
+        "Lkotlinx/coroutines/flow/FlowCollector<",
+        "-",
         "Lde/rki/coronawarnapp/tracing/states/TracingState;",
+        ">;",
+        "Ljava/lang/Throwable;",
         "Lkotlin/coroutines/Continuation<",
         "-",
         "Lkotlin/Unit;",
@@ -38,15 +42,20 @@
 .end annotation
 
 
-# instance fields
-.field public synthetic L$0:Ljava/lang/Object;
-
-
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;",
+            ">;)V"
+        }
+    .end annotation
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     invoke-direct {p0, v0, p1}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
 
@@ -55,65 +64,36 @@
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            "Lkotlin/coroutines/Continuation<",
-            "*>;)",
-            "Lkotlin/coroutines/Continuation<",
-            "Lkotlin/Unit;",
-            ">;"
-        }
-    .end annotation
-
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;
-
-    invoke-direct {v0, p2}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;->L$0:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
-    const-string v0, "completion"
+    check-cast p2, Ljava/lang/Throwable;
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
+    new-instance p1, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;
 
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    check-cast p1, Lde/rki/coronawarnapp/tracing/states/TracingState;
-
-    const/4 p2, 0x1
-
-    new-array p2, p2, [Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    aput-object p1, p2, v0
-
-    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v0, "TracingStateProvider FLOW emission: %s"
-
-    invoke-virtual {p1, v0, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {p1, p3}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;-><init>(Lkotlin/coroutines/Continuation;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string p3, "TracingStateProvider"
+
+    invoke-virtual {p2, p3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const/4 p3, 0x0
+
+    new-array p3, p3, [Ljava/lang/Object;
+
+    const-string v0, "TracingStateProvider FLOW completed."
+
+    invoke-virtual {p2, v0, p3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p1
 .end method
@@ -121,25 +101,21 @@
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;->L$0:Ljava/lang/Object;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    check-cast p1, Lde/rki/coronawarnapp/tracing/states/TracingState;
+    const-string v0, "TracingStateProvider"
 
-    const/4 v0, 0x1
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    const-string v1, "TracingStateProvider FLOW completed."
 
-    aput-object p1, v0, v1
-
-    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v1, "TracingStateProvider FLOW emission: %s"
-
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

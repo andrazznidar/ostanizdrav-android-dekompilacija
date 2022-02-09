@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/GoogleSignatureVerifier;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # static fields
@@ -10,6 +10,10 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .param p1    # Landroid/content/Context;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +22,7 @@
     return-void
 .end method
 
-.method public static varargs zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzd;)Lcom/google/android/gms/common/zzd;
+.method public static final varargs zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzi;)Lcom/google/android/gms/common/zzi;
     .locals 3
 
     iget-object v0, p0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
@@ -45,7 +49,7 @@
     return-object v1
 
     :cond_1
-    new-instance v0, Lcom/google/android/gms/common/zzg;
+    new-instance v0, Lcom/google/android/gms/common/zzj;
 
     iget-object p0, p0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
@@ -57,7 +61,7 @@
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/zzg;-><init>([B)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/zzj;-><init>([B)V
 
     :goto_0
     array-length p0, p1
@@ -66,7 +70,7 @@
 
     aget-object p0, p1, v2
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/zzd;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/zzi;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -85,7 +89,7 @@
     return-object v1
 .end method
 
-.method public static zza(Landroid/content/pm/PackageInfo;Z)Z
+.method public static final zzb(Landroid/content/pm/PackageInfo;Z)Z
     .locals 3
     .param p0    # Landroid/content/pm/PackageInfo;
         .annotation build Landroidx/annotation/RecentlyNonNull;
@@ -104,24 +108,24 @@
 
     if-eqz p1, :cond_0
 
-    sget-object p1, Lcom/google/android/gms/common/zzi;->zza:[Lcom/google/android/gms/common/zzd;
+    sget-object p1, Lcom/google/android/gms/common/zzl;->zza:[Lcom/google/android/gms/common/zzi;
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/GoogleSignatureVerifier;->zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzd;)Lcom/google/android/gms/common/zzd;
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/GoogleSignatureVerifier;->zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzi;)Lcom/google/android/gms/common/zzi;
 
     move-result-object p0
 
     goto :goto_0
 
     :cond_0
-    new-array p1, v1, [Lcom/google/android/gms/common/zzd;
+    new-array p1, v1, [Lcom/google/android/gms/common/zzi;
 
-    sget-object v2, Lcom/google/android/gms/common/zzi;->zza:[Lcom/google/android/gms/common/zzd;
+    sget-object v2, Lcom/google/android/gms/common/zzl;->zza:[Lcom/google/android/gms/common/zzi;
 
     aget-object v2, v2, v0
 
     aput-object v2, p1, v0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/GoogleSignatureVerifier;->zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzd;)Lcom/google/android/gms/common/zzd;
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/GoogleSignatureVerifier;->zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzi;)Lcom/google/android/gms/common/zzi;
 
     move-result-object p0
 

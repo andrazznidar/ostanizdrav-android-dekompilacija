@@ -35,27 +35,25 @@
 
     sput-object v0, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
 
-    new-instance v0, Landroidx/work/BackoffPolicy;
+    new-instance v1, Landroidx/work/BackoffPolicy;
 
-    const-string v1, "LINEAR"
+    const-string v3, "LINEAR"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Landroidx/work/BackoffPolicy;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Landroidx/work/BackoffPolicy;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
+    sput-object v1, Landroidx/work/BackoffPolicy;->LINEAR:Landroidx/work/BackoffPolicy;
 
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
-    new-array v1, v1, [Landroidx/work/BackoffPolicy;
+    new-array v3, v3, [Landroidx/work/BackoffPolicy;
 
-    sget-object v4, Landroidx/work/BackoffPolicy;->EXPONENTIAL:Landroidx/work/BackoffPolicy;
+    aput-object v0, v3, v2
 
-    aput-object v4, v1, v2
+    aput-object v1, v3, v4
 
-    aput-object v0, v1, v3
-
-    sput-object v1, Landroidx/work/BackoffPolicy;->$VALUES:[Landroidx/work/BackoffPolicy;
+    sput-object v3, Landroidx/work/BackoffPolicy;->$VALUES:[Landroidx/work/BackoffPolicy;
 
     return-void
 .end method

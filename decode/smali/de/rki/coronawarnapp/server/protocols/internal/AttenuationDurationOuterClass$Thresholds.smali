@@ -34,11 +34,11 @@
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;
 
 .field public static final LOWER_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -52,12 +52,52 @@
 
 
 # instance fields
-.field public lower_:I
+.field private lower_:I
 
-.field public upper_:I
+.field private upper_:I
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearLower(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->clearLower()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearUpper(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->clearUpper()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetLower(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->setLower(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetUpper(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->setUpper(I)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -72,50 +112,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1400()Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$1500(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->setLower(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1600(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->clearLower()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1700(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->setUpper(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1800(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->clearUpper()V
 
     return-void
 .end method
@@ -585,31 +585,27 @@
 
     if-eqz p1, :cond_7
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_4
 
     :cond_7
-    move p1, v1
+    move v0, v1
 
     :goto_4
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->lower_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->lower_:I
 
     if-eqz v3, :cond_8
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_5
 
     :cond_8
-    move v3, v1
+    move v4, v1
 
     :goto_5
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->lower_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -619,26 +615,22 @@
 
     if-eqz p1, :cond_9
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_6
 
     :cond_9
-    move p1, v1
+    move v0, v1
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->upper_:I
+    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->upper_:I
 
-    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->upper_:I
-
-    if-eqz v3, :cond_a
+    if-eqz p3, :cond_a
 
     move v1, v2
 
     :cond_a
-    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds;->upper_:I
-
-    invoke-interface {p2, p1, v0, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -649,7 +641,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AttenuationDurationOuterClass$Thresholds$Builder-IA;)V
 
     return-object p1
 

@@ -225,45 +225,43 @@
 
     const-wide/high16 v2, -0x8000000000000000L
 
-    and-long/2addr v0, v2
+    and-long/2addr v2, v0
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v0, v0, v2
+    cmp-long v2, v2, v4
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    move v0, v1
+    move v2, v3
 
     goto :goto_0
 
     :cond_1
-    move v0, v2
+    move v2, v4
 
     :goto_0
-    const-wide/16 v3, 0x1
+    const-wide/16 v5, 0x1
 
-    shl-long v5, v3, p1
+    shl-long v7, v5, p1
 
-    sub-long/2addr v5, v3
+    sub-long/2addr v7, v5
 
-    iget-wide v3, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mData:J
+    and-long v5, v0, v7
 
-    and-long v7, v3, v5
+    not-long v7, v7
 
-    not-long v5, v5
+    and-long/2addr v0, v7
 
-    and-long/2addr v3, v5
+    shl-long/2addr v0, v3
 
-    shl-long/2addr v3, v1
+    or-long/2addr v0, v5
 
-    or-long/2addr v3, v7
-
-    iput-wide v3, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mData:J
+    iput-wide v0, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mData:J
 
     if-eqz p2, :cond_2
 
@@ -275,7 +273,7 @@
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->clear(I)V
 
     :goto_1
-    if-nez v0, :cond_3
+    if-nez v2, :cond_3
 
     iget-object p1, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mNext:Landroidx/recyclerview/widget/ChildHelper$Bucket;
 
@@ -286,7 +284,7 @@
 
     iget-object p1, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mNext:Landroidx/recyclerview/widget/ChildHelper$Bucket;
 
-    invoke-virtual {p1, v2, v0}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->insert(IZ)V
+    invoke-virtual {p1, v4, v2}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->insert(IZ)V
 
     :cond_4
     :goto_2
@@ -319,43 +317,41 @@
 
     iget-wide v4, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mData:J
 
-    and-long/2addr v4, v2
+    and-long v6, v4, v2
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v8, 0x0
 
-    cmp-long p1, v4, v6
+    cmp-long p1, v6, v8
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
     if-eqz p1, :cond_1
 
-    move p1, v4
+    move p1, v6
 
     goto :goto_0
 
     :cond_1
-    move p1, v5
+    move p1, v7
 
     :goto_0
-    iget-wide v6, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mData:J
-
     not-long v8, v2
 
-    and-long/2addr v6, v8
+    and-long/2addr v4, v8
 
-    iput-wide v6, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mData:J
+    iput-wide v4, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mData:J
 
     sub-long/2addr v2, v0
 
-    and-long v0, v6, v2
+    and-long v0, v4, v2
 
     not-long v2, v2
 
-    and-long/2addr v2, v6
+    and-long/2addr v2, v4
 
-    invoke-static {v2, v3, v4}, Ljava/lang/Long;->rotateRight(JI)J
+    invoke-static {v2, v3, v6}, Ljava/lang/Long;->rotateRight(JI)J
 
     move-result-wide v2
 
@@ -367,7 +363,7 @@
 
     if-eqz v0, :cond_3
 
-    invoke-virtual {v0, v5}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->get(I)Z
+    invoke-virtual {v0, v7}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->get(I)Z
 
     move-result v0
 
@@ -380,7 +376,7 @@
     :cond_2
     iget-object v0, p0, Landroidx/recyclerview/widget/ChildHelper$Bucket;->mNext:Landroidx/recyclerview/widget/ChildHelper$Bucket;
 
-    invoke-virtual {v0, v5}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->remove(I)Z
+    invoke-virtual {v0, v7}, Landroidx/recyclerview/widget/ChildHelper$Bucket;->remove(I)Z
 
     :cond_3
     return p1
@@ -463,7 +459,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "xx"
+    const-string/jumbo v1, "xx"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSubmissionSettings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionSettings.kt\nde/rki/coronawarnapp/submission/SubmissionSettings\n+ 2 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 3 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n*L\n1#1,89:1\n88#2,4:90\n92#2:97\n93#2:109\n88#2,4:110\n92#2:117\n93#2:129\n99#2,6:136\n88#2,4:142\n92#2:149\n93#2:161\n88#2,4:162\n92#2:169\n93#2:181\n99#2,6:182\n66#3,3:94\n71#3,11:98\n66#3,3:114\n71#3,11:118\n55#3,3:130\n61#3,3:133\n66#3,3:146\n71#3,11:150\n66#3,3:166\n71#3,11:170\n*E\n*S KotlinDebug\n*F\n+ 1 SubmissionSettings.kt\nde/rki/coronawarnapp/submission/SubmissionSettings\n*L\n38#1,4:90\n38#1:97\n38#1:109\n43#1,4:110\n43#1:117\n43#1:129\n55#1,6:136\n65#1,4:142\n65#1:149\n65#1:161\n70#1,4:162\n70#1:169\n70#1:181\n75#1,6:182\n38#1,3:94\n38#1,11:98\n43#1,3:114\n43#1,11:118\n51#1,3:130\n52#1,3:133\n65#1,3:146\n65#1,11:150\n70#1,3:166\n70#1,11:170\n*E\n"
+    value = "SMAP\nSubmissionSettings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionSettings.kt\nde/rki/coronawarnapp/submission/SubmissionSettings\n+ 2 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n+ 3 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 4 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,156:1\n56#2,3:157\n62#2,3:160\n66#2,6:173\n73#2:180\n84#2:181\n66#2,6:187\n73#2:194\n84#2:195\n102#3,6:163\n91#3,4:169\n95#3:179\n96#3:182\n91#3,4:183\n95#3:193\n96#3:196\n102#3,6:197\n39#4,12:203\n39#4,12:215\n39#4,12:227\n39#4,12:239\n39#4,12:251\n39#4,12:263\n*S KotlinDebug\n*F\n+ 1 SubmissionSettings.kt\nde/rki/coronawarnapp/submission/SubmissionSettings\n*L\n77#1:157,3\n78#1:160,3\n91#1:173,6\n91#1:180\n91#1:181\n96#1:187,6\n96#1:194\n96#1:195\n81#1:163,6\n91#1:169,4\n91#1:179\n91#1:182\n96#1:183,4\n96#1:193\n96#1:196\n101#1:197,6\n44#1:203,12\n49#1:215,12\n54#1:227,12\n59#1:239,12\n64#1:251,12\n128#1:263,12\n*E\n"
 .end annotation
 
 
@@ -46,26 +46,6 @@
 
 .field public final gson$delegate:Lkotlin/Lazy;
 
-.field public final hasGivenConsent:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lde/rki/coronawarnapp/util/preferences/FlowPreference<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final hasViewedTestResult:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lde/rki/coronawarnapp/util/preferences/FlowPreference<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public final lastSubmissionUserActivityUTC:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -91,7 +71,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/google/gson/Gson;)V
-    .locals 5
+    .locals 6
 
     const-string v0, "context"
 
@@ -111,129 +91,83 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$gson$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionSettings;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->gson$delegate:Lkotlin/Lazy;
 
-    new-instance p1, Lde/rki/coronawarnapp/submission/SubmissionSettings$prefs$2;
+    new-instance p2, Lde/rki/coronawarnapp/submission/SubmissionSettings$prefs$2;
 
-    invoke-direct {p1, p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$prefs$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionSettings;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$prefs$2;-><init>(Lde/rki/coronawarnapp/submission/SubmissionSettings;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p2}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
-    move-result-object p1
+    move-result-object p2
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->prefs$delegate:Lkotlin/Lazy;
+    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->prefs$delegate:Lkotlin/Lazy;
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object p1
-
-    const-string p2, "prefs"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    new-instance v2, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$1;
-
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
-
-    const-string v3, "key_submission_consent"
-
-    invoke-direct {v1, p1, v3, v2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasGivenConsent:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object p1
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    new-instance v2, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$2;
-
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$2;-><init>(Ljava/lang/Object;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
-
-    const-string v3, "key_submission_result_viewed"
-
-    invoke-direct {v1, p1, v3, v2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->hasViewedTestResult:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    new-instance p1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    new-instance p2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "prefs"
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->gson$delegate:Lkotlin/Lazy;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    check-cast p1, Lkotlin/SynchronizedLazyImpl;
 
-    move-result-object v1
+    invoke-virtual {p1}, Lkotlin/SynchronizedLazyImpl;->getValue()Ljava/lang/Object;
 
-    check-cast v1, Lcom/google/gson/Gson;
+    move-result-object v2
 
-    const-string v2, "gson"
+    check-cast v2, Lcom/google/gson/Gson;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v3, "gson"
 
-    new-instance v3, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$gsonReader$1;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v4, 0x0
+    new-instance v4, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$gsonReader$1;
 
-    invoke-direct {v3, v1, v4}, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$gsonReader$1;-><init>(Lcom/google/gson/Gson;Ljava/lang/Object;)V
+    const/4 v5, 0x0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->gson$delegate:Lkotlin/Lazy;
+    invoke-direct {v4, v5, v2}, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$gsonReader$1;-><init>(Ljava/lang/Object;Lcom/google/gson/Gson;)V
 
-    invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lkotlin/SynchronizedLazyImpl;->getValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, Lcom/google/gson/Gson;
+    check-cast p1, Lcom/google/gson/Gson;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$gsonWriter$1;
+    new-instance v2, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$gsonWriter$1;
 
-    invoke-direct {v2, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$gsonWriter$1;-><init>(Lcom/google/gson/Gson;)V
+    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$gsonWriter$1;-><init>(Lcom/google/gson/Gson;)V
 
-    const-string v1, "submission.symptoms.latest"
+    const-string/jumbo p1, "submission.symptoms.latest"
 
-    invoke-direct {p1, v0, v1, v3, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    invoke-direct {p2, v0, p1, v4, v2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->symptoms:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iput-object p2, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->symptoms:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v0, L-$$LambdaGroup$ks$3O1j3tepST51fXyMEIhTIR_idjE;->INSTANCE$1:L-$$LambdaGroup$ks$3O1j3tepST51fXyMEIhTIR_idjE;
+    sget-object p2, Lde/rki/coronawarnapp/submission/SubmissionSettings$lastSubmissionUserActivityUTC$1;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionSettings$lastSubmissionUserActivityUTC$1;
 
-    sget-object v1, L-$$LambdaGroup$ks$pDeaHoynvl0OQVxOL2oV6KEW2j8;->INSTANCE$1:L-$$LambdaGroup$ks$pDeaHoynvl0OQVxOL2oV6KEW2j8;
+    sget-object v0, Lde/rki/coronawarnapp/submission/SubmissionSettings$lastSubmissionUserActivityUTC$2;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionSettings$lastSubmissionUserActivityUTC$2;
 
     new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    const-string v3, "submission.user.activity.last"
+    const-string/jumbo v3, "submission.user.activity.last"
 
-    invoke-direct {v2, p1, v3, v0, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    invoke-direct {v2, p1, v3, p2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
     iput-object v2, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->lastSubmissionUserActivityUTC:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
@@ -241,29 +175,29 @@
 
     move-result-object p1
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    new-instance v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v2, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$3;
+    new-instance v2, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$createFlowPreference$1;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$3;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, p2}, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
 
-    sget-object v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+    sget-object p2, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
 
-    const-string v3, "submission.auto.enabled"
+    const-string/jumbo v3, "submission.auto.enabled"
 
-    invoke-direct {v1, p1, v3, v2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+    invoke-direct {v0, p1, v3, v2, p2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    iput-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->autoSubmissionEnabled:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iput-object v0, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->autoSubmissionEnabled:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -271,33 +205,31 @@
 
     move-result-object v0
 
-    new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v2, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$4;
+    new-instance v3, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$createFlowPreference$2;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$$special$$inlined$createFlowPreference$4;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, v0}, Lde/rki/coronawarnapp/submission/SubmissionSettings$special$$inlined$createFlowPreference$2;-><init>(Ljava/lang/Object;)V
 
-    sget-object v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+    const-string/jumbo v0, "submission.auto.attempts.count"
 
-    const-string v3, "submission.auto.attempts.count"
+    invoke-direct {v2, p1, v0, v3, p2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    invoke-direct {v1, p1, v3, v2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v1, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->autoSubmissionAttemptsCount:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iput-object v2, p0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->autoSubmissionAttemptsCount:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object p2, L-$$LambdaGroup$ks$3O1j3tepST51fXyMEIhTIR_idjE;->INSTANCE$0:L-$$LambdaGroup$ks$3O1j3tepST51fXyMEIhTIR_idjE;
+    sget-object p2, Lde/rki/coronawarnapp/submission/SubmissionSettings$autoSubmissionAttemptsLast$1;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionSettings$autoSubmissionAttemptsLast$1;
 
-    sget-object v0, L-$$LambdaGroup$ks$pDeaHoynvl0OQVxOL2oV6KEW2j8;->INSTANCE$0:L-$$LambdaGroup$ks$pDeaHoynvl0OQVxOL2oV6KEW2j8;
+    sget-object v0, Lde/rki/coronawarnapp/submission/SubmissionSettings$autoSubmissionAttemptsLast$2;->INSTANCE:Lde/rki/coronawarnapp/submission/SubmissionSettings$autoSubmissionAttemptsLast$2;
 
     new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    const-string v2, "submission.auto.attempts.last"
+    const-string/jumbo v2, "submission.auto.attempts.last"
 
     invoke-direct {v1, p1, v2, p2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
@@ -308,6 +240,68 @@
 
 
 # virtual methods
+.method public final deleteLegacyTestData()V
+    .locals 3
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const-string v2, "deleteLegacyTestData()"
+
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/submission/SubmissionSettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "prefs"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "editor"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "key_submission_result_viewed"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string/jumbo v1, "submission.test.token"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string/jumbo v1, "submission.test.pairedAt"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string/jumbo v1, "submission.test.result.receivedAt"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string/jumbo v1, "submission.allowed"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string/jumbo v1, "submission.successful"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v1, "key_submission_consent"
+
+    invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
 .method public final getPrefs()Landroid/content/SharedPreferences;
     .locals 1
 

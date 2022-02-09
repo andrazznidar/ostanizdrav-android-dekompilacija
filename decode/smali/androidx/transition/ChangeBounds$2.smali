@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     check-cast p1, Landroidx/transition/ChangeBounds$ViewBounds;
@@ -51,7 +51,7 @@
 
     check-cast p2, Landroid/graphics/PointF;
 
-    if-eqz p1, :cond_1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v0, p2, Landroid/graphics/PointF;->x:F
 
@@ -97,9 +97,4 @@
 
     :cond_0
     return-void
-
-    :cond_1
-    const/4 p1, 0x0
-
-    throw p1
 .end method

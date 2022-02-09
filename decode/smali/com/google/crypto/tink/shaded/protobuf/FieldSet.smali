@@ -57,15 +57,17 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v0, 0x10
+    sget v0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->$r8$clinit:I
 
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->newFieldMap(I)Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;
+    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$1;
 
-    move-result-object v0
+    const/16 v1, 0x10
+
+    invoke-direct {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$1;-><init>(I)V
 
     iput-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->fields:Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;
 
@@ -73,13 +75,15 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .locals 0
+    .locals 1
 
-    const/4 p1, 0x0
+    sget p1, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->$r8$clinit:I
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->newFieldMap(I)Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;
+    new-instance p1, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$1;
 
-    move-result-object p1
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$1;-><init>(I)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -192,7 +196,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeSFixed64SizeNoTag()I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     return v1
 
@@ -201,7 +205,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeSFixed32SizeNoTag()I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     return v0
 
@@ -264,7 +268,11 @@
     :cond_1
     check-cast p1, [B
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeByteArraySizeNoTag([B)I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
+    array-length p0, p1
+
+    invoke-static {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p0
 
@@ -286,7 +294,13 @@
     :cond_2
     check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeMessageSizeNoTag(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
+    invoke-interface {p1}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;->getSerializedSize()I
+
+    move-result p0
+
+    invoke-static {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
 
     move-result p0
 
@@ -295,7 +309,9 @@
     :pswitch_8
     check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeGroupSizeNoTag(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
+    invoke-interface {p1}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;->getSerializedSize()I
 
     move-result p0
 
@@ -328,7 +344,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeBoolSizeNoTag()I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     const/4 p0, 0x1
 
@@ -339,7 +355,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeFixed32SizeNoTag()I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     return v0
 
@@ -348,7 +364,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeFixed64SizeNoTag()I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     return v1
 
@@ -396,7 +412,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeFloatSizeNoTag()I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     return v0
 
@@ -405,7 +421,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
 
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeDoubleSizeNoTag()I
+    sget-object p0, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     return v1
 
@@ -668,34 +684,6 @@
     return v3
 .end method
 
-.method public static readPrimitiveField(Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    if-eqz p2, :cond_0
-
-    sget-object p2, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$Utf8Validation;->STRICT:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$Utf8Validation;
-
-    invoke-static {p0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/WireFormat;->readPrimitiveField(Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;Lcom/google/crypto/tink/shaded/protobuf/WireFormat$Utf8Validation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    sget-object p2, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$Utf8Validation;->LOOSE:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$Utf8Validation;
-
-    invoke-static {p0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/WireFormat;->readPrimitiveField(Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;Lcom/google/crypto/tink/shaded/protobuf/WireFormat$Utf8Validation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 
 # virtual methods
 .method public addRepeatedField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
@@ -708,15 +696,19 @@
         }
     .end annotation
 
-    invoke-interface {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->isRepeated()Z
+    move-object v0, p1
 
-    move-result v0
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget-boolean v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated:Z
 
     if-eqz v0, :cond_1
 
-    invoke-interface {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->getLiteType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
+    move-object v0, p1
 
-    move-result-object v0
+    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
+
+    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;
 
     invoke-virtual {p0, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->verifyType(Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;Ljava/lang/Object;)V
 
@@ -1691,7 +1683,9 @@
 .method public final verifyType(Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;Ljava/lang/Object;)V
     .locals 2
 
-    invoke-static {p2}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$FieldType;->javaType:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$JavaType;
 

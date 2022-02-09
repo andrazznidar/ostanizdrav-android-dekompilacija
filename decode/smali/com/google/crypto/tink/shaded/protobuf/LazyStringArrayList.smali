@@ -19,10 +19,6 @@
 .end annotation
 
 
-# static fields
-.field public static final EMPTY_LIST:Lcom/google/crypto/tink/shaded/protobuf/LazyStringArrayList;
-
-
 # instance fields
 .field public final list:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -44,8 +40,6 @@
     const/16 v1, 0xa
 
     invoke-direct {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/LazyStringArrayList;-><init>(I)V
-
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/LazyStringArrayList;->EMPTY_LIST:Lcom/google/crypto/tink/shaded/protobuf/LazyStringArrayList;
 
     const/4 v1, 0x0
 
@@ -87,7 +81,7 @@
 .end method
 
 .method public static asString(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 1
+    .locals 2
 
     instance-of v0, p0, Ljava/lang/String;
 
@@ -113,11 +107,13 @@
     :cond_1
     check-cast p0, [B
 
-    invoke-static {p0}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
+    new-instance v0, Ljava/lang/String;
 
-    move-result-object p0
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
-    return-object p0
+    invoke-direct {v0, p0, v1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+
+    return-object v0
 .end method
 
 
@@ -288,9 +284,11 @@
     :cond_2
     check-cast v0, [B
 
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
+    new-instance v1, Ljava/lang/String;
 
-    move-result-object v1
+    sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-direct {v1, v0, v2}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/Utf8;->processor:Lcom/google/crypto/tink/shaded/protobuf/Utf8$Processor;
 

@@ -28,9 +28,9 @@
 
     iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzfb;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
 
-    iget-object v1, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
+    iget-object v1, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzw;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/tasks/Task;->isComplete()Z
+    invoke-virtual {v1}, Lcom/google/android/gms/tasks/zzw;->isComplete()Z
 
     move-result v1
 

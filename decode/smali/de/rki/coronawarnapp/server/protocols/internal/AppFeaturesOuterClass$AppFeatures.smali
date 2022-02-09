@@ -36,9 +36,9 @@
 # static fields
 .field public static final APP_FEATURES_FIELD_NUMBER:I = 0x1
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -50,7 +50,7 @@
 
 
 # instance fields
-.field public appFeatures_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private appFeatures_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -62,6 +62,95 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAllAppFeatures(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->clearAppFeatures()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->removeAppFeatures(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->setAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->setAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -76,7 +165,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -86,86 +175,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->appFeatures_:Lcom/google/protobuf/Internal$ProtobufList;
-
-    return-void
-.end method
-
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->setAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->setAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$700(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->addAllAppFeatures(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->clearAppFeatures()V
-
-    return-void
-.end method
-
-.method public static synthetic access$900(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->removeAppFeatures(I)V
 
     return-void
 .end method
@@ -212,7 +221,7 @@
 .method private addAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->ensureAppFeaturesIsMutable()V
 
@@ -221,11 +230,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature$Builder;)V
@@ -241,7 +245,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -249,20 +255,17 @@
 .method private addAppFeatures(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->ensureAppFeaturesIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->appFeatures_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private clearAppFeatures()V
@@ -585,7 +588,7 @@
 .method private setAppFeatures(ILde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->ensureAppFeaturesIsMutable()V
 
@@ -594,11 +597,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -697,13 +695,13 @@
     :cond_3
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->appFeatures_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_4
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;->appFeatures_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v0, :cond_4
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -724,7 +722,9 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeature;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
@@ -801,7 +801,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures$Builder-IA;)V
 
     return-object p1
 
@@ -825,8 +825,6 @@
     invoke-direct {p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppFeaturesOuterClass$AppFeatures;-><init>()V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

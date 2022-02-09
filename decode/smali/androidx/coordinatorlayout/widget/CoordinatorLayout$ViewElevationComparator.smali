@@ -44,7 +44,9 @@
 
     check-cast p2, Landroid/view/View;
 
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->getZ(Landroid/view/View;)F
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1}, Landroid/view/View;->getZ()F
 
     move-result p1
 

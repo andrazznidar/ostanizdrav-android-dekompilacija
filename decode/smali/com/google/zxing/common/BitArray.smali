@@ -63,6 +63,128 @@
 
 
 # virtual methods
+.method public appendBit(Z)V
+    .locals 4
+
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {p0, v0}, Lcom/google/zxing/common/BitArray;->ensureCapacity(I)V
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    div-int/lit8 v2, v0, 0x20
+
+    aget v3, p1, v2
+
+    and-int/lit8 v0, v0, 0x1f
+
+    shl-int v0, v1, v0
+
+    or-int/2addr v0, v3
+
+    aput v0, p1, v2
+
+    :cond_0
+    iget p1, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    add-int/2addr p1, v1
+
+    iput p1, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    return-void
+.end method
+
+.method public appendBitArray(Lcom/google/zxing/common/BitArray;)V
+    .locals 3
+
+    iget v0, p1, Lcom/google/zxing/common/BitArray;->size:I
+
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    add-int/2addr v1, v0
+
+    invoke-virtual {p0, v1}, Lcom/google/zxing/common/BitArray;->ensureCapacity(I)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    invoke-virtual {p1, v1}, Lcom/google/zxing/common/BitArray;->get(I)Z
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Lcom/google/zxing/common/BitArray;->appendBit(Z)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public appendBits(II)V
+    .locals 2
+
+    if-ltz p2, :cond_2
+
+    const/16 v0, 0x20
+
+    if-gt p2, v0, :cond_2
+
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    add-int/2addr v0, p2
+
+    invoke-virtual {p0, v0}, Lcom/google/zxing/common/BitArray;->ensureCapacity(I)V
+
+    :goto_0
+    if-lez p2, :cond_1
+
+    add-int/lit8 v0, p2, -0x1
+
+    shr-int v0, p1, v0
+
+    const/4 v1, 0x1
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_1
+    invoke-virtual {p0, v1}, Lcom/google/zxing/common/BitArray;->appendBit(Z)V
+
+    add-int/lit8 p2, p2, -0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "Num bits must be between 0 and 32"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public clone()Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
@@ -86,6 +208,35 @@
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/common/BitArray;-><init>([II)V
 
     return-object v0
+.end method
+
+.method public final ensureCapacity(I)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+
+    array-length v1, v0
+
+    shl-int/lit8 v1, v1, 0x5
+
+    if-le p1, v1, :cond_0
+
+    add-int/lit8 p1, p1, 0x1f
+
+    div-int/lit8 p1, p1, 0x20
+
+    new-array p1, p1, [I
+
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2, p1, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iput-object p1, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+
+    :cond_0
+    return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -289,6 +440,18 @@
 
     :cond_3
     return p1
+.end method
+
+.method public getSizeInBytes()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    add-int/lit8 v0, v0, 0x7
+
+    div-int/lit8 v0, v0, 0x8
+
+    return v0
 .end method
 
 .method public hashCode()I
@@ -588,7 +751,13 @@
 
     iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    div-int/lit8 v2, v1, 0x8
+
+    add-int/2addr v2, v1
+
+    add-int/lit8 v2, v2, 0x1
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const/4 v1, 0x0
 

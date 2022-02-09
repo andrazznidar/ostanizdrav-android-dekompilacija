@@ -51,6 +51,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/task/TaskController;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/task/TaskController;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/task/TaskController$submissionProcessor$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$submissionProcessor$2;->this$0:Lde/rki/coronawarnapp/task/TaskController;
 
@@ -77,10 +87,6 @@
         }
     .end annotation
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/task/TaskController$submissionProcessor$2;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/task/TaskController$submissionProcessor$2;->this$0:Lde/rki/coronawarnapp/task/TaskController;
@@ -92,14 +98,12 @@
     return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
+    check-cast p1, Lde/rki/coronawarnapp/task/TaskRequest;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/task/TaskController$submissionProcessor$2;
 
@@ -131,7 +135,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -145,7 +149,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$submissionProcessor$2;->L$0:Ljava/lang/Object;
 
@@ -155,7 +159,7 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/task/TaskController$submissionProcessor$2;->label:I
 
-    invoke-virtual {v1, p1, p0}, Lde/rki/coronawarnapp/task/TaskController;->initTaskData(Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v1, p1, p0}, Lde/rki/coronawarnapp/task/TaskController;->access$initTaskData(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

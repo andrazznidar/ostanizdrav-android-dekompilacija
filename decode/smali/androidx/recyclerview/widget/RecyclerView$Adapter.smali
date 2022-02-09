@@ -28,6 +28,8 @@
 
 .field public final mObservable:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;
 
+.field public mStateRestorationPolicy:I
+
 
 # direct methods
 .method public constructor <init>()V
@@ -44,6 +46,10 @@
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mHasStableIds:Z
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mStateRestorationPolicy:I
 
     return-void
 .end method
@@ -67,6 +73,20 @@
     const/4 p1, 0x0
 
     return p1
+.end method
+
+.method public final notifyItemChanged(I)V
+    .locals 3
+
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$Adapter;->mObservable:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, p1, v1, v2}, Landroidx/recyclerview/widget/RecyclerView$AdapterDataObservable;->notifyItemRangeChanged(IILjava/lang/Object;)V
+
+    return-void
 .end method
 
 .method public onAttachedToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V

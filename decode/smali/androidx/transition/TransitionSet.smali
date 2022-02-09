@@ -66,6 +66,14 @@
     return-object p0
 .end method
 
+.method public bridge synthetic addTarget(I)Landroidx/transition/Transition;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroidx/transition/TransitionSet;->addTarget(I)Landroidx/transition/TransitionSet;
+
+    return-object p0
+.end method
+
 .method public addTarget(Landroid/view/View;)Landroidx/transition/Transition;
     .locals 2
 
@@ -99,6 +107,49 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    return-object p0
+.end method
+
+.method public addTarget(I)Landroidx/transition/TransitionSet;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    :goto_0
+    iget-object v1, p0, Landroidx/transition/TransitionSet;->mTransitions:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    iget-object v1, p0, Landroidx/transition/TransitionSet;->mTransitions:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/transition/Transition;
+
+    invoke-virtual {v1, p1}, Landroidx/transition/Transition;->addTarget(I)Landroidx/transition/Transition;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Landroidx/transition/Transition;->mTargetIds:Ljava/util/ArrayList;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_1
     return-object p0
 .end method
 
@@ -139,7 +190,7 @@
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Landroidx/transition/Transition;->mPropagation:Landroidx/transition/TransitionPropagation;
 
     invoke-virtual {p1, v0}, Landroidx/transition/Transition;->setPropagation(Landroidx/transition/TransitionPropagation;)V
 
@@ -256,6 +307,8 @@
 
 .method public capturePropagationValues(Landroidx/transition/TransitionValues;)V
     .locals 3
+
+    invoke-super {p0, p1}, Landroidx/transition/Transition;->capturePropagationValues(Landroidx/transition/TransitionValues;)V
 
     iget-object v0, p0, Landroidx/transition/TransitionSet;->mTransitions:Ljava/util/ArrayList;
 
@@ -404,14 +457,14 @@
     return-object v0
 .end method
 
-.method public createAnimators(Landroid/view/ViewGroup;Landroidx/transition/TransitionValuesMaps;Landroidx/transition/TransitionValuesMaps;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method public createAnimators(Landroid/view/ViewGroup;Landroidx/constraintlayout/core/Cache;Landroidx/constraintlayout/core/Cache;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/view/ViewGroup;",
-            "Landroidx/transition/TransitionValuesMaps;",
-            "Landroidx/transition/TransitionValuesMaps;",
+            "Landroidx/constraintlayout/core/Cache;",
+            "Landroidx/constraintlayout/core/Cache;",
             "Ljava/util/ArrayList<",
             "Landroidx/transition/TransitionValues;",
             ">;",
@@ -486,7 +539,7 @@
 
     move-object/from16 v11, p5
 
-    invoke-virtual/range {v6 .. v11}, Landroidx/transition/Transition;->createAnimators(Landroid/view/ViewGroup;Landroidx/transition/TransitionValuesMaps;Landroidx/transition/TransitionValuesMaps;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    invoke-virtual/range {v6 .. v11}, Landroidx/transition/Transition;->createAnimators(Landroid/view/ViewGroup;Landroidx/constraintlayout/core/Cache;Landroidx/constraintlayout/core/Cache;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     add-int/lit8 v4, v4, 0x1
 
@@ -944,7 +997,7 @@
 
     const-string v1, "Invalid parameter for TransitionSet ordering: "
 
-    invoke-static {v1, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1081,7 +1134,7 @@
 
     const-string v2, "\n"
 
-    invoke-static {v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v2}, Landroidx/constraintlayout/core/PriorityGoalRow$GoalVariableAccessor$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

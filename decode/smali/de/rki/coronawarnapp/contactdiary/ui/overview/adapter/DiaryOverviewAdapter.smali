@@ -69,59 +69,61 @@
 
     new-array v1, v1, [Lde/rki/coronawarnapp/util/lists/modular/ModularAdapter$Module;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/lists/modular/mods/StableIdMod;
+    const/4 v2, 0x0
 
-    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
+    new-instance v3, Lde/rki/coronawarnapp/util/lists/modular/mods/StableIdMod;
 
-    move-result-object v3
+    invoke-static {p0}, Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter$DefaultImpls;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
 
-    const/4 v5, 0x2
+    move-result-object v4
 
-    invoke-direct {v2, v3, v4, v5}, Lde/rki/coronawarnapp/util/lists/modular/mods/StableIdMod;-><init>(Ljava/util/List;Lkotlin/jvm/functions/Function1;I)V
+    const/4 v5, 0x0
 
-    const/4 v3, 0x0
+    const/4 v6, 0x2
 
-    aput-object v2, v1, v3
+    invoke-direct {v3, v4, v5, v6}, Lde/rki/coronawarnapp/util/lists/modular/mods/StableIdMod;-><init>(Ljava/util/List;Lkotlin/jvm/functions/Function1;I)V
 
-    new-instance v2, Lde/rki/coronawarnapp/util/lists/modular/mods/DataBinderMod;
+    aput-object v3, v1, v2
 
-    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
+    const/4 v2, 0x1
 
-    move-result-object v6
+    new-instance v3, Lde/rki/coronawarnapp/util/lists/modular/mods/DataBinderMod;
 
-    invoke-direct {v2, v6, v4, v5}, Lde/rki/coronawarnapp/util/lists/modular/mods/DataBinderMod;-><init>(Ljava/util/List;Lkotlin/jvm/functions/Function4;I)V
+    invoke-static {p0}, Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter$DefaultImpls;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
 
-    const/4 v4, 0x1
+    move-result-object v4
 
-    aput-object v2, v1, v4
+    invoke-direct {v3, v4, v5, v6}, Lde/rki/coronawarnapp/util/lists/modular/mods/DataBinderMod;-><init>(Ljava/util/List;Lkotlin/jvm/functions/Function4;I)V
 
-    new-instance v2, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;
-
-    new-instance v6, L-$$LambdaGroup$ks$gkpc8YUEmWqS8NYHGsiyc3LpwRA;
-
-    invoke-direct {v6, v3, p0}, L-$$LambdaGroup$ks$gkpc8YUEmWqS8NYHGsiyc3LpwRA;-><init>(ILjava/lang/Object;)V
-
-    sget-object v3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$2;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$2;
-
-    invoke-direct {v2, v6, v3}, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-
-    aput-object v2, v1, v5
+    aput-object v3, v1, v2
 
     new-instance v2, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;
 
-    new-instance v3, L-$$LambdaGroup$ks$gkpc8YUEmWqS8NYHGsiyc3LpwRA;
+    new-instance v3, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$1;
 
-    invoke-direct {v3, v4, p0}, L-$$LambdaGroup$ks$gkpc8YUEmWqS8NYHGsiyc3LpwRA;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v3, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter;)V
 
-    sget-object v4, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$4;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$4;
+    sget-object v4, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$2;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$2;
 
     invoke-direct {v2, v3, v4}, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 
-    const/4 v3, 0x3
+    aput-object v2, v1, v6
 
-    aput-object v2, v1, v3
+    const/4 v2, 0x3
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    new-instance v3, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;
+
+    new-instance v4, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$3;
+
+    invoke-direct {v4, p0}, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$3;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter;)V
+
+    sget-object v5, Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$4;->INSTANCE:Lde/rki/coronawarnapp/contactdiary/ui/overview/adapter/DiaryOverviewAdapter$4;
+
+    invoke-direct {v3, v4, v5}, Lde/rki/coronawarnapp/util/lists/modular/mods/TypedVHCreatorMod;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
+
+    aput-object v3, v1, v2
+
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
@@ -151,7 +153,7 @@
 .method public getItemCount()I
     .locals 1
 
-    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
+    invoke-static {p0}, Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter$DefaultImpls;->getData(Lde/rki/coronawarnapp/util/lists/diffutil/AsyncDiffUtilAdapter;)Ljava/util/List;
 
     move-result-object v0
 

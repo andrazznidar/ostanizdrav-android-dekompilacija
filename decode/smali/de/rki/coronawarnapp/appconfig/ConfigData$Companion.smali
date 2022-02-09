@@ -36,10 +36,6 @@
 
     move-result-object v0
 
-    const-string v1, "Duration.standardHours(2)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     sput-object v0, Lde/rki/coronawarnapp/appconfig/ConfigData$Companion;->DEVICE_TIME_GRACE_RANGE:Lorg/joda/time/Duration;
 
     return-void

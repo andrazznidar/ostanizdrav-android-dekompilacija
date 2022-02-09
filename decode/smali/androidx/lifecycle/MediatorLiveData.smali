@@ -53,7 +53,18 @@
 
 # virtual methods
 .method public addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
-    .locals 2
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "source",
+            "onChanged"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<S:",
@@ -74,15 +85,15 @@
 
     invoke-virtual {v1, p1, v0}, Landroidx/arch/core/internal/SafeIterableMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v1
 
-    check-cast p1, Landroidx/lifecycle/MediatorLiveData$Source;
+    check-cast v1, Landroidx/lifecycle/MediatorLiveData$Source;
 
-    if-eqz p1, :cond_1
+    if-eqz v1, :cond_1
 
-    iget-object v1, p1, Landroidx/lifecycle/MediatorLiveData$Source;->mObserver:Landroidx/lifecycle/Observer;
+    iget-object v2, v1, Landroidx/lifecycle/MediatorLiveData$Source;->mObserver:Landroidx/lifecycle/Observer;
 
-    if-ne v1, p2, :cond_0
+    if-ne v2, p2, :cond_0
 
     goto :goto_0
 
@@ -97,18 +108,16 @@
 
     :cond_1
     :goto_0
-    if-eqz p1, :cond_2
+    if-eqz v1, :cond_2
 
     return-void
 
     :cond_2
     invoke-virtual {p0}, Landroidx/lifecycle/LiveData;->hasActiveObservers()Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_3
-
-    iget-object p1, v0, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
+    if-eqz p2, :cond_3
 
     invoke-virtual {p1, v0}, Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V
 
@@ -148,9 +157,7 @@
 
     check-cast v1, Landroidx/lifecycle/MediatorLiveData$Source;
 
-    iget-object v2, v1, Landroidx/lifecycle/MediatorLiveData$Source;->mLiveData:Landroidx/lifecycle/LiveData;
-
-    invoke-virtual {v2, v1}, Landroidx/lifecycle/LiveData;->observeForever(Landroidx/lifecycle/Observer;)V
+    invoke-virtual {v1}, Landroidx/lifecycle/MediatorLiveData$Source;->plug()V
 
     goto :goto_0
 

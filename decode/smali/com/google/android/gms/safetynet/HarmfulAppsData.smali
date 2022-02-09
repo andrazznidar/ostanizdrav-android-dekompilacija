@@ -1,9 +1,13 @@
 .class public Lcom/google/android/gms/safetynet/HarmfulAppsData;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
 
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator<",
@@ -18,8 +22,14 @@
 .field public final apkCategory:I
 
 .field public final apkPackageName:Ljava/lang/String;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public final apkSha256:[B
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -37,6 +47,14 @@
 
 .method public constructor <init>(Ljava/lang/String;[BI)V
     .locals 0
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # [B
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
@@ -51,34 +69,42 @@
 
 
 # virtual methods
-.method public writeToParcel(Landroid/os/Parcel;I)V
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
+    .param p1    # Landroid/os/Parcel;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
+    const/16 p2, 0x4f45
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;I)I
 
     move-result p2
 
-    iget-object v0, p0, Lcom/google/android/gms/safetynet/HarmfulAppsData;->apkPackageName:Ljava/lang/String;
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/safetynet/HarmfulAppsData;->apkPackageName:Ljava/lang/String;
 
     const/4 v2, 0x0
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v0, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    iget-object v0, p0, Lcom/google/android/gms/safetynet/HarmfulAppsData;->apkSha256:[B
+    const/4 v0, 0x3
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lcom/google/android/gms/safetynet/HarmfulAppsData;->apkSha256:[B
 
-    invoke-static {p1, v1, v0, v2}, Lcom/airbnb/lottie/R$attr;->writeByteArray(Landroid/os/Parcel;I[BZ)V
+    invoke-static {p1, v0, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeByteArray(Landroid/os/Parcel;I[BZ)V
 
     iget v0, p0, Lcom/google/android/gms/safetynet/HarmfulAppsData;->apkCategory:I
 
-    const/4 v1, 0x4
+    const v1, 0x40004
 
-    invoke-static {p1, v1, v0}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzc(Landroid/os/Parcel;I)V
 
     return-void
 .end method

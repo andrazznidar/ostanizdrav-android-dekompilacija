@@ -31,36 +31,54 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method public static final synthetic $values()[Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+    .locals 3
 
     const/4 v0, 0x2
 
     new-array v0, v0, [Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+    sget-object v1, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->SUCCESSFUL:Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
 
-    const-string v2, "SUCCESSFUL"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v1, v0, v2
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;-><init>(Ljava/lang/String;I)V
+    sget-object v1, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->SKIPPED:Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
 
-    sput-object v1, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->SUCCESSFUL:Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+    const/4 v2, 0x1
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+    return-object v0
+.end method
 
-    const-string v2, "SKIPPED"
+.method public static constructor <clinit>()V
+    .locals 3
 
-    const/4 v3, 0x1
+    new-instance v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;-><init>(Ljava/lang/String;I)V
+    const-string v1, "SUCCESSFUL"
 
-    sput-object v1, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->SKIPPED:Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+    const/4 v2, 0x0
 
-    aput-object v1, v0, v3
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->SUCCESSFUL:Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+
+    new-instance v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+
+    const-string v1, "SKIPPED"
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->SKIPPED:Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+
+    invoke-static {}, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->$values()[Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
+
+    move-result-object v0
 
     sput-object v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->$VALUES:[Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
 
@@ -99,7 +117,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->$VALUES:[Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/submission/task/SubmissionTask$Result$State;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

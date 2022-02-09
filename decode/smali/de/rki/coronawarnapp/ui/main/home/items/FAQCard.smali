@@ -52,11 +52,7 @@
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 1
 
-    const-string v0, "parent"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v0, 0x7f0c0076
+    const v0, 0x7f0d00a7
 
     invoke-direct {p0, v0, p1}, Lde/rki/coronawarnapp/ui/main/home/HomeAdapter$HomeItemVH;-><init>(ILandroid/view/ViewGroup;)V
 
@@ -64,7 +60,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/ui/main/home/items/FAQCard$viewBinding$1;-><init>(Lde/rki/coronawarnapp/ui/main/home/items/FAQCard;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

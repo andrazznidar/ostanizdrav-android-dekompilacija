@@ -655,9 +655,9 @@
     move v10, v11
 
     :goto_3
-    const/16 v14, 0xd
+    const/16 v14, 0xa
 
-    const/16 v15, 0xa
+    const/16 v15, 0xd
 
     if-eq v10, v11, :cond_b
 
@@ -703,7 +703,7 @@
 
     const/4 v8, 0x5
 
-    aput-byte v14, v3, v4
+    aput-byte v15, v3, v4
 
     goto :goto_4
 
@@ -713,7 +713,7 @@
     :goto_4
     add-int/lit8 v10, v8, 0x1
 
-    aput-byte v15, v3, v8
+    aput-byte v14, v3, v8
 
     move-object v8, v5
 
@@ -821,14 +821,14 @@
 
     add-int/lit8 v6, v11, 0x1
 
-    aput-byte v14, v5, v11
+    aput-byte v15, v5, v11
 
     move v11, v6
 
     :cond_c
     add-int/lit8 v10, v11, 0x1
 
-    aput-byte v15, v5, v11
+    aput-byte v14, v5, v11
 
     move v11, v10
 
@@ -883,11 +883,9 @@
 
     shl-int/2addr v0, v4
 
-    iget v1, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
+    sub-int/2addr v6, v7
 
-    sub-int/2addr v1, v7
-
-    iput v1, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
+    iput v6, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
 
     add-int/lit8 v1, v11, 0x1
 
@@ -915,18 +913,11 @@
 
     aput-byte v16, v5, v4
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v4, v0, 0x1
 
     aput-byte v16, v5, v0
 
-    move v11, v1
-
-    goto :goto_9
-
     :cond_10
-    move v11, v4
-
-    :goto_9
     iget-boolean v0, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->doNewline:Z
 
     if-eqz v0, :cond_19
@@ -935,18 +926,16 @@
 
     if-eqz v0, :cond_11
 
-    add-int/lit8 v0, v11, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    aput-byte v14, v5, v11
+    aput-byte v15, v5, v4
 
-    move v11, v0
+    move v4, v0
 
     :cond_11
-    add-int/lit8 v0, v11, 0x1
+    aput-byte v14, v5, v4
 
-    aput-byte v15, v5, v11
-
-    goto/16 :goto_d
+    goto/16 :goto_b
 
     :cond_12
     const/4 v4, 0x2
@@ -965,7 +954,7 @@
 
     move v7, v1
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_13
     add-int/lit8 v1, v12, 0x1
@@ -976,14 +965,12 @@
 
     move v7, v9
 
-    :goto_a
+    :goto_9
     and-int/lit16 v1, v4, 0xff
 
-    shl-int/2addr v1, v15
+    shl-int/2addr v1, v14
 
-    iget v4, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
-
-    if-lez v4, :cond_14
+    if-lez v6, :cond_14
 
     iget-object v0, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tail:[B
 
@@ -993,12 +980,12 @@
 
     move v7, v4
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_14
     aget-byte v0, v0, v12
 
-    :goto_b
+    :goto_a
     and-int/lit16 v0, v0, 0xff
 
     const/4 v4, 0x2
@@ -1007,11 +994,9 @@
 
     or-int/2addr v0, v1
 
-    iget v1, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
+    sub-int/2addr v6, v7
 
-    sub-int/2addr v1, v7
-
-    iput v1, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
+    iput v6, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->tailLen:I
 
     add-int/lit8 v1, v11, 0x1
 
@@ -1049,14 +1034,9 @@
 
     aput-byte v16, v5, v1
 
-    move v11, v0
-
-    goto :goto_c
+    move v1, v0
 
     :cond_15
-    move v11, v1
-
-    :goto_c
     iget-boolean v0, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->doNewline:Z
 
     if-eqz v0, :cond_19
@@ -1065,18 +1045,16 @@
 
     if-eqz v0, :cond_16
 
-    add-int/lit8 v0, v11, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    aput-byte v14, v5, v11
+    aput-byte v15, v5, v1
 
-    move v11, v0
+    move v1, v0
 
     :cond_16
-    add-int/lit8 v0, v11, 0x1
+    aput-byte v14, v5, v1
 
-    aput-byte v15, v5, v11
-
-    goto :goto_d
+    goto :goto_b
 
     :cond_17
     iget-boolean v0, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->doNewline:Z
@@ -1095,21 +1073,15 @@
 
     add-int/lit8 v0, v11, 0x1
 
-    aput-byte v14, v5, v11
+    aput-byte v15, v5, v11
 
     move v11, v0
 
     :cond_18
-    add-int/lit8 v0, v11, 0x1
-
-    aput-byte v15, v5, v11
-
-    :goto_d
-    move v11, v0
+    aput-byte v14, v5, v11
 
     :cond_19
-    iput v11, v2, Lcom/google/crypto/tink/subtle/Base64$Coder;->op:I
-
+    :goto_b
     iput v10, v2, Lcom/google/crypto/tink/subtle/Base64$Encoder;->count:I
 
     iget-object v0, v3, Lcom/google/crypto/tink/subtle/Base64$Coder;->output:[B

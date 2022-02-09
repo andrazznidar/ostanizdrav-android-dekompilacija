@@ -6,22 +6,7 @@
 # static fields
 .field public static final AES_CTR_HMAC_AEAD_TYPE_URL:Ljava/lang/String;
 
-.field public static final AES_EAX_TYPE_URL:Ljava/lang/String;
-
 .field public static final AES_GCM_TYPE_URL:Ljava/lang/String;
-
-.field public static final CHACHA20_POLY1305_TYPE_URL:Ljava/lang/String;
-
-.field public static final KMS_AEAD_TYPE_URL:Ljava/lang/String;
-
-.field public static final KMS_ENVELOPE_AEAD_TYPE_URL:Ljava/lang/String;
-
-.field public static final TINK_1_0_0:Lcom/google/crypto/tink/proto/RegistryConfig;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
-
-.field public static final XCHACHA20_POLY1305_TYPE_URL:Ljava/lang/String;
 
 
 # direct methods
@@ -32,7 +17,7 @@
 
     invoke-direct {v0}, Lcom/google/crypto/tink/aead/AesCtrHmacAeadKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesCtrHmacAeadKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.AesCtrHmacAeadKey"
 
     sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->AES_CTR_HMAC_AEAD_TYPE_URL:Ljava/lang/String;
 
@@ -40,7 +25,7 @@
 
     invoke-direct {v0}, Lcom/google/crypto/tink/aead/AesGcmKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesGcmKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.AesGcmKey"
 
     sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->AES_GCM_TYPE_URL:Ljava/lang/String;
 
@@ -48,47 +33,23 @@
 
     invoke-direct {v0}, Lcom/google/crypto/tink/aead/AesEaxKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesEaxKey"
-
-    sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->AES_EAX_TYPE_URL:Ljava/lang/String;
-
     new-instance v0, Lcom/google/crypto/tink/aead/KmsAeadKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/aead/KmsAeadKeyManager;-><init>()V
-
-    const-string v0, "type.googleapis.com/google.crypto.tink.KmsAeadKey"
-
-    sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->KMS_AEAD_TYPE_URL:Ljava/lang/String;
 
     new-instance v0, Lcom/google/crypto/tink/aead/KmsEnvelopeAeadKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/aead/KmsEnvelopeAeadKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.KmsEnvelopeAeadKey"
-
-    sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->KMS_ENVELOPE_AEAD_TYPE_URL:Ljava/lang/String;
-
     new-instance v0, Lcom/google/crypto/tink/aead/ChaCha20Poly1305KeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/aead/ChaCha20Poly1305KeyManager;-><init>()V
-
-    const-string v0, "type.googleapis.com/google.crypto.tink.ChaCha20Poly1305Key"
-
-    sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->CHACHA20_POLY1305_TYPE_URL:Ljava/lang/String;
 
     new-instance v0, Lcom/google/crypto/tink/aead/XChaCha20Poly1305KeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/aead/XChaCha20Poly1305KeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.XChaCha20Poly1305Key"
-
-    sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->XCHACHA20_POLY1305_TYPE_URL:Ljava/lang/String;
-
     invoke-static {}, Lcom/google/crypto/tink/proto/RegistryConfig;->getDefaultInstance()Lcom/google/crypto/tink/proto/RegistryConfig;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/crypto/tink/aead/AeadConfig;->TINK_1_0_0:Lcom/google/crypto/tink/proto/RegistryConfig;
 
     :try_start_0
     invoke-static {}, Lcom/google/crypto/tink/aead/AeadConfig;->register()V

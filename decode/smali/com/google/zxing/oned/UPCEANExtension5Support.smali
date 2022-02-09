@@ -221,18 +221,20 @@
     :cond_4
     mul-int/2addr v11, v7
 
-    add-int/lit8 v8, v8, -0x1
+    const/4 v10, -0x1
+
+    add-int/2addr v8, v10
 
     :goto_4
     if-ltz v8, :cond_5
 
     invoke-virtual {v4, v8}, Ljava/lang/String;->charAt(I)C
 
-    move-result v10
+    move-result v15
 
-    add-int/lit8 v10, v10, -0x30
+    add-int/lit8 v15, v15, -0x30
 
-    add-int/2addr v11, v10
+    add-int/2addr v11, v15
 
     add-int/lit8 v8, v8, -0x2
 
@@ -257,7 +259,7 @@
 
     if-eq v2, v13, :cond_6
 
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     :cond_6
     invoke-virtual {v1, v3}, Ljava/lang/String;->charAt(I)C
@@ -274,62 +276,95 @@
 
     if-eq v2, v7, :cond_7
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_7
-    const-string v2, "90000"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    sparse-switch v2, :sswitch_data_0
 
-    move-object v2, v4
+    goto :goto_5
 
-    goto :goto_8
-
-    :cond_8
+    :sswitch_0
     const-string v2, "99991"
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-nez v2, :cond_8
 
-    const-string v2, "0.00"
+    goto :goto_5
 
-    goto :goto_8
+    :cond_8
+    move v10, v6
 
-    :cond_9
+    goto :goto_5
+
+    :sswitch_1
     const-string v2, "99990"
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-nez v2, :cond_9
 
-    const-string v2, "Used"
+    goto :goto_5
 
-    goto :goto_8
+    :cond_9
+    move v10, v5
+
+    goto :goto_5
+
+    :sswitch_2
+    const-string v2, "90000"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_a
+
+    goto :goto_5
 
     :cond_a
+    move v10, v3
+
     :goto_5
+    packed-switch v10, :pswitch_data_0
+
+    :goto_6
     const-string v2, ""
 
-    goto :goto_6
+    goto :goto_7
+
+    :pswitch_0
+    const-string v2, "0.00"
+
+    goto :goto_9
+
+    :pswitch_1
+    const-string v2, "Used"
+
+    goto :goto_9
+
+    :pswitch_2
+    move-object v2, v4
+
+    goto :goto_9
 
     :cond_b
     const-string v2, "$"
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_c
-    const-string v2, "\u00a3"
+    const-string/jumbo v2, "\u00a3"
 
-    :goto_6
+    :goto_7
     invoke-virtual {v1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v7
@@ -348,26 +383,24 @@
 
     if-ge v7, v14, :cond_d
 
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    const-string v11, "0"
-
-    invoke-direct {v10, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v7}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v7
 
-    goto :goto_7
+    const-string v10, "0"
+
+    invoke-virtual {v10, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    goto :goto_8
 
     :cond_d
     invoke-static {v7}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v7
 
-    :goto_7
+    :goto_8
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -386,13 +419,13 @@
 
     move-result-object v2
 
-    :goto_8
+    :goto_9
     if-nez v2, :cond_e
 
-    :goto_9
+    :goto_a
     move-object v7, v4
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_e
     new-instance v7, Ljava/util/EnumMap;
@@ -405,7 +438,7 @@
 
     invoke-virtual {v7, v8, v2}, Ljava/util/EnumMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_a
+    :goto_b
     new-instance v2, Lcom/google/zxing/Result;
 
     new-array v6, v6, [Lcom/google/zxing/ResultPoint;
@@ -472,4 +505,20 @@
     sget-object v1, Lcom/google/zxing/NotFoundException;->INSTANCE:Lcom/google/zxing/NotFoundException;
 
     throw v1
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x339c7b9 -> :sswitch_2
+        0x33e01f0 -> :sswitch_1
+        0x33e01f1 -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

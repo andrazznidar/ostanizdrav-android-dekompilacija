@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final ROOT:Ljava/util/Locale;
+.field public static final synthetic $r8$clinit:I
 
 
 # direct methods
@@ -17,17 +17,5 @@
 
     invoke-direct {v0, v1, v1}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    sput-object v0, Landroidx/core/text/TextUtilsCompat;->ROOT:Ljava/util/Locale;
-
     return-void
-.end method
-
-.method public static getLayoutDirectionFromLocale(Ljava/util/Locale;)I
-    .locals 0
-
-    invoke-static {p0}, Landroid/text/TextUtils;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I
-
-    move-result p0
-
-    return p0
 .end method

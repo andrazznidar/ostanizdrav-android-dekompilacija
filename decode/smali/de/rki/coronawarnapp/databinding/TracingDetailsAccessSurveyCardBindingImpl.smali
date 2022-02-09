@@ -21,39 +21,31 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09054b
+    const v1, 0x7f0a0812
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090547
+    const v1, 0x7f0a080e
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09054a
+    const v1, 0x7f0a0811
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090546
+    const v1, 0x7f0a080d
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090548
+    const v1, 0x7f0a080f
 
     const/4 v2, 0x5
 
@@ -64,6 +56,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 13
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -113,7 +115,7 @@
 
     move-object v11, v1
 
-    check-cast v11, Landroidx/appcompat/widget/AppCompatImageView;
+    check-cast v11, Landroid/widget/ImageView;
 
     const/4 v1, 0x1
 
@@ -131,7 +133,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Barrier;Landroid/widget/TextView;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Barrier;Landroid/widget/TextView;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/TextView;)V
 
     const-wide/16 v0, -0x1
 
@@ -141,7 +143,7 @@
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

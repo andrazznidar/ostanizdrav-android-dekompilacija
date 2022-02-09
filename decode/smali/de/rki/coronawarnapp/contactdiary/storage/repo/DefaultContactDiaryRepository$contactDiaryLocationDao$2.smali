@@ -46,54 +46,17 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$contactDiaryLocationDao$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;->access$getContactDiaryDatabase$p(Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;)Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase;
+    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;->access$getContactDiaryDatabase(Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;)Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase;
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase;->locationDao()Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao;
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;->_contactDiaryLocationDao:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao;
+    move-result-object v0
 
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;->_contactDiaryLocationDao:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao;
-
-    goto :goto_0
-
-    :cond_0
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;->_contactDiaryLocationDao:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao_Impl;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;->_contactDiaryLocationDao:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao;
-
-    :cond_1
-    iget-object v1, v0, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryDatabase_Impl;->_contactDiaryLocationDao:Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationDao;
-
-    monitor-exit v0
-
-    move-object v0, v1
-
-    :goto_0
     return-object v0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

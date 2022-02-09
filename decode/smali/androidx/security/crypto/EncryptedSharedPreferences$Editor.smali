@@ -263,17 +263,13 @@
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->BOOLEAN:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
+    invoke-virtual {v1, v0}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    iget v1, v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->mId:I
+    invoke-virtual {v1, p2}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object p2
 
@@ -352,7 +348,7 @@
 
     const-string v0, "Could not encrypt data: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -375,7 +371,7 @@
 
     const-string v0, " is a reserved key for the encryption keyset."
 
-    invoke-static {p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -393,9 +389,7 @@
 
     move-result-object v0
 
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->FLOAT:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
-
-    iget v1, v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->mId:I
+    const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
@@ -419,9 +413,7 @@
 
     move-result-object v0
 
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->INT:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
-
-    iget v1, v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->mId:I
+    const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
@@ -445,9 +437,7 @@
 
     move-result-object v0
 
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->LONG:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
-
-    iget v1, v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->mId:I
+    const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
@@ -484,9 +474,7 @@
 
     move-result-object v1
 
-    sget-object v2, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->STRING:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
-
-    iget v2, v2, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->mId:I
+    const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
@@ -579,9 +567,7 @@
 
     move-result-object p2
 
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->STRING_SET:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
-
-    iget v1, v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->mId:I
+    const/4 v1, 0x1
 
     invoke-virtual {p2, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
@@ -652,7 +638,7 @@
 
     const-string v1, " is a reserved key for the encryption keyset."
 
-    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

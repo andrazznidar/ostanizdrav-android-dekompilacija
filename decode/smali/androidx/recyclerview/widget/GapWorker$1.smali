@@ -1,4 +1,4 @@
-.class public final Landroidx/recyclerview/widget/GapWorker$1;
+.class public Landroidx/recyclerview/widget/GapWorker$1;
 .super Ljava/lang/Object;
 .source "GapWorker.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 5
+    .locals 6
 
     check-cast p1, Landroidx/recyclerview/widget/GapWorker$Task;
 
@@ -52,33 +52,31 @@
 
     if-nez v0, :cond_0
 
-    move v0, v2
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    move v0, v1
+    move v3, v1
 
     :goto_0
-    iget-object v3, p2, Landroidx/recyclerview/widget/GapWorker$Task;->view:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object v4, p2, Landroidx/recyclerview/widget/GapWorker$Task;->view:Landroidx/recyclerview/widget/RecyclerView;
 
-    if-nez v3, :cond_1
+    if-nez v4, :cond_1
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_1
 
     :cond_1
-    move v3, v1
+    move v4, v1
 
     :goto_1
-    const/4 v4, -0x1
+    const/4 v5, -0x1
 
-    if-eq v0, v3, :cond_4
+    if-eq v3, v4, :cond_4
 
-    iget-object p1, p1, Landroidx/recyclerview/widget/GapWorker$Task;->view:Landroidx/recyclerview/widget/RecyclerView;
-
-    if-nez p1, :cond_3
+    if-nez v0, :cond_3
 
     :cond_2
     move v1, v2
@@ -87,7 +85,7 @@
 
     :cond_3
     :goto_2
-    move v1, v4
+    move v1, v5
 
     goto :goto_3
 

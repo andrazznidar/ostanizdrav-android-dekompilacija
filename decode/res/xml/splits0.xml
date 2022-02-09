@@ -2,7 +2,6 @@
 <splits>
     <module name="">
         <language>
-            <entry key="en" split="config.en" />
             <entry key="sl" split="config.sl" />
         </language>
     </module>

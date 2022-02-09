@@ -44,13 +44,9 @@
 
     const-string v1, "context == null"
 
-    invoke-static {p1, v1}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Landroidx/core/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Landroidx/fragment/app/FragmentHostCallback;->mContext:Landroid/content/Context;
-
-    const-string p1, "handler == null"
-
-    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object v0, p0, Landroidx/fragment/app/FragmentHostCallback;->mHandler:Landroid/os/Handler;
 
@@ -59,12 +55,25 @@
 
 
 # virtual methods
-.method public abstract onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
-    .param p2    # Landroid/content/Intent;
-        .annotation build Landroid/annotation/SuppressLint;
-            value = {
-                "UnknownNullness"
-            }
-        .end annotation
-    .end param
+.method public abstract onDump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+.end method
+
+.method public abstract onGetHost()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TE;"
+        }
+    .end annotation
+.end method
+
+.method public abstract onGetLayoutInflater()Landroid/view/LayoutInflater;
+.end method
+
+.method public abstract onShouldSaveFragmentState(Landroidx/fragment/app/Fragment;)Z
+.end method
+
+.method public abstract onShouldShowRequestPermissionRationale(Ljava/lang/String;)Z
+.end method
+
+.method public abstract onSupportInvalidateOptionsMenu()V
 .end method

@@ -1,4 +1,4 @@
-.class public Landroidx/lifecycle/FullLifecycleObserverAdapter;
+.class Landroidx/lifecycle/FullLifecycleObserverAdapter;
 .super Ljava/lang/Object;
 .source "FullLifecycleObserverAdapter.java"
 
@@ -28,11 +28,15 @@
 
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .locals 1
+    .locals 2
+
+    sget-object v0, Landroidx/lifecycle/FullLifecycleObserverAdapter$1;->$SwitchMap$androidx$lifecycle$Lifecycle$Event:[I
 
     invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v0
+    move-result v1
+
+    aget v0, v0, v1
 
     packed-switch v0, :pswitch_data_0
 
@@ -100,7 +104,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x0
+    .packed-switch 0x1
         :pswitch_6
         :pswitch_5
         :pswitch_4

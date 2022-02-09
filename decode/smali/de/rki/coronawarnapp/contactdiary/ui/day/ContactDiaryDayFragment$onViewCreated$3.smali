@@ -51,17 +51,19 @@
 
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$UIState;
 
-    const-string v0, "uiState"
+    const-string/jumbo v0, "uiState"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->access$getBinding$p(Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;)Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->getBinding()Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;
 
     move-result-object v0
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayHeader:Landroidx/appcompat/widget/Toolbar;
+    iget-object v0, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;->contactDiaryDayHeader:Lcom/google/android/material/appbar/MaterialToolbar;
 
     iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayViewModel$UIState;->dayText:Lkotlin/jvm/functions/Function1;
 

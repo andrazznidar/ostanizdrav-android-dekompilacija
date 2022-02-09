@@ -11,14 +11,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactDiaryEditPersonsViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryEditPersonsViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 CoroutineExceptionHandler.kt\nkotlinx/coroutines/CoroutineExceptionHandlerKt\n*L\n1#1,64:1\n47#2:65\n49#2:69\n47#2:70\n49#2:74\n50#3:66\n55#3:68\n50#3:71\n55#3:73\n106#4:67\n106#4:72\n49#5,4:75\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryEditPersonsViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel\n*L\n29#1:65\n29#1:69\n32#1:70\n32#1:74\n29#1:66\n29#1:68\n32#1:71\n32#1:73\n29#1:67\n32#1:72\n35#1,4:75\n*E\n"
+    value = "SMAP\nContactDiaryEditPersonsViewModel.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryEditPersonsViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel\n+ 2 CoroutineExceptionHandler.kt\nkotlinx/coroutines/CoroutineExceptionHandlerKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 5 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,69:1\n49#2,4:70\n47#3:74\n49#3:78\n47#3:79\n49#3:83\n50#4:75\n55#4:77\n50#4:80\n55#4:82\n106#5:76\n106#5:81\n*S KotlinDebug\n*F\n+ 1 ContactDiaryEditPersonsViewModel.kt\nde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel\n*L\n28#1:70,4\n38#1:74\n38#1:78\n41#1:79\n41#1:83\n38#1:75\n38#1:77\n41#1:80\n41#1:82\n38#1:76\n41#1:81\n*E\n"
 .end annotation
 
 
 # instance fields
-.field public final contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
+.field public final appScope:Lkotlinx/coroutines/CoroutineScope;
 
-.field public final coroutineExceptionHandler:Lkotlinx/coroutines/CoroutineExceptionHandler;
+.field public final contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
 
 .field public final isButtonEnabled:Landroidx/lifecycle/LiveData;
     .annotation system Ldalvik/annotation/Signature;
@@ -40,10 +40,10 @@
     .end annotation
 .end field
 
-.field public final navigationEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+.field public final navigationEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde/rki/coronawarnapp/ui/SingleLiveEvent<",
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
             "Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$NavigationEvent;",
             ">;"
         }
@@ -63,94 +63,96 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+.method public constructor <init>(Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
     .locals 5
 
-    const-string v0, "contactDiaryRepository"
+    const-string v0, "appScope"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "dispatcherProvider"
+    const-string v0, "contactDiaryRepository"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "dispatcherProvider"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
     const/4 v1, 0x2
 
-    invoke-direct {p0, p2, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
+    invoke-direct {p0, p3, v0, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Ljava/util/List;I)V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->appScope:Lkotlinx/coroutines/CoroutineScope;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iput-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;-><init>()V
+    sget p1, Lkotlinx/coroutines/CoroutineExceptionHandler;->$r8$clinit:I
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->navigationEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    sget-object p1, Lkotlinx/coroutines/CoroutineExceptionHandler$Key;->$$INSTANCE:Lkotlinx/coroutines/CoroutineExceptionHandler$Key;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
+    new-instance v2, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$special$$inlined$CoroutineExceptionHandler$1;
 
-    invoke-interface {p1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;->getPeople()Lkotlinx/coroutines/flow/Flow;
+    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$special$$inlined$CoroutineExceptionHandler$1;-><init>(Lkotlinx/coroutines/CoroutineExceptionHandler$Key;)V
+
+    iput-object v2, p0, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launchErrorHandler:Lkotlinx/coroutines/CoroutineExceptionHandler;
+
+    new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
+
+    invoke-direct {p1}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->navigationEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
+
+    invoke-interface {p2}, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;->getPeople()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
-    const-wide/16 v2, 0x0
+    const/4 v2, 0x3
 
-    const/4 v4, 0x3
+    const-wide/16 v3, 0x0
 
-    invoke-static {p1, v0, v2, v3, v4}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {p1, v0, v3, v4, v2}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->personsLiveData:Landroidx/lifecycle/LiveData;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
-
-    invoke-interface {p1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;->getPeople()Lkotlinx/coroutines/flow/Flow;
+    invoke-interface {p2}, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;->getPeople()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$$special$$inlined$map$1;
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$special$$inlined$map$1;
 
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    invoke-interface {p2}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {p3}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 
-    invoke-static {v0, p1, v2, v3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {v0, p1, v3, v4, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->isButtonEnabled:Landroidx/lifecycle/LiveData;
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->contactDiaryRepository:Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;
-
-    invoke-interface {p1}, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;->getPeople()Lkotlinx/coroutines/flow/Flow;
+    invoke-interface {p2}, Lde/rki/coronawarnapp/contactdiary/storage/repo/ContactDiaryRepository;->getPeople()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$$special$$inlined$map$2;
+    new-instance p2, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$special$$inlined$map$2;
 
-    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$$special$$inlined$map$2;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {p2, p1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$special$$inlined$map$2;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    invoke-interface {p2}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
+    invoke-interface {p3}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 
-    invoke-static {v0, p1, v2, v3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {p2, p1, v3, v4, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->isListVisible:Landroidx/lifecycle/LiveData;
-
-    new-instance p1, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$$special$$inlined$CoroutineExceptionHandler$1;
-
-    sget-object p2, Lkotlinx/coroutines/CoroutineExceptionHandler;->Key:Lkotlinx/coroutines/CoroutineExceptionHandler$Key;
-
-    invoke-direct {p1, p2}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel$$special$$inlined$CoroutineExceptionHandler$1;-><init>(Lkotlin/coroutines/CoroutineContext$Key;)V
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditPersonsViewModel;->coroutineExceptionHandler:Lkotlinx/coroutines/CoroutineExceptionHandler;
 
     return-void
 .end method

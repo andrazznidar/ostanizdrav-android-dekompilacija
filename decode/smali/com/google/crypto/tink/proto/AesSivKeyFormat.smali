@@ -18,18 +18,17 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/AesSivKeyFormat;",
         "Lcom/google/crypto/tink/proto/AesSivKeyFormat$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/AesSivKeyFormat;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/AesSivKeyFormat;
 
 .field public static final KEY_SIZE_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -41,7 +40,7 @@
 
 
 # instance fields
-.field public keySize_:I
+.field private keySize_:I
 
 
 # direct methods
@@ -61,7 +60,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V

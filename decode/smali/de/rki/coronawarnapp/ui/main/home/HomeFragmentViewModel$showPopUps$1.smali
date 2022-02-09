@@ -24,24 +24,28 @@
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.ui.main.home.HomeFragmentViewModel$showPopUps$1"
     f = "HomeFragmentViewModel.kt"
-    l = {
-        0x67
-    }
+    l = {}
     m = "invokeSuspend"
 .end annotation
 
 
 # instance fields
-.field public L$0:Ljava/lang/Object;
-
-.field public label:I
-
 .field public final synthetic this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
 
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
@@ -68,10 +72,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
@@ -81,14 +81,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;
 
@@ -100,105 +98,74 @@
 
     invoke-virtual {p1, p2}, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
-
-    return-object p1
+    return-object p2
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 2
 
-    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->label:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/LocalData;->getSharedPreferenceInstance()Landroid/content/SharedPreferences;
-
-    move-result-object p1
-
-    invoke-static {}, Lde/rki/coronawarnapp/CoronaWarnApplication;->getAppContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const v3, 0x7f120269
-
-    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v3, 0x0
-
-    invoke-interface {p1, v1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->popupEvents:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->errorResetTool:Lde/rki/coronawarnapp/util/encryptionmigration/EncryptionErrorResetTool;
 
-    sget-object v1, Lde/rki/coronawarnapp/risk/TimeVariables;->INSTANCE:Lde/rki/coronawarnapp/risk/TimeVariables;
+    iget-object p1, p1, Lde/rki/coronawarnapp/util/encryptionmigration/EncryptionErrorResetTool;->prefs$delegate:Lkotlin/Lazy;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->L$0:Ljava/lang/Object;
+    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
-    iput v2, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->label:I
+    move-result-object p1
 
-    invoke-virtual {v1, p0}, Lde/rki/coronawarnapp/risk/TimeVariables;->getActiveTracingDaysInRetentionPeriod(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const-string v0, "<get-prefs>(...)"
 
-    move-result-object v1
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-ne v1, v0, :cond_2
+    check-cast p1, Landroid/content/SharedPreferences;
 
-    return-object v0
+    const-string v0, "ea2850.reset.shownotice"
 
-    :cond_2
-    move-object v0, p1
+    const/4 v1, 0x0
 
-    move-object p1, v1
+    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    :goto_0
-    check-cast p1, Ljava/lang/Number;
+    move-result p1
 
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+    if-eqz p1, :cond_0
 
-    move-result-wide v1
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowTracingExplanation;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->events:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    invoke-direct {p1, v1, v2}, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowTracingExplanation;-><init>(J)V
+    sget-object v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowErrorResetDialog;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowErrorResetDialog;
 
-    invoke-virtual {v0, p1}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
 
-    :cond_3
+    :cond_0
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    const-string/jumbo v0, "tracing.dialog.shown"
+
+    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel$showPopUps$1;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel;->events:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
+
+    sget-object v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowTracingExplanation;->INSTANCE:Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowTracingExplanation;
+
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

@@ -6,165 +6,64 @@
 # static fields
 .field public static final ENABLED_PRESSED_STATE_SET:[I
 
-.field public static final FOCUSED_STATE_SET:[I
-
-.field public static final HOVERED_FOCUSED_STATE_SET:[I
-
-.field public static final HOVERED_STATE_SET:[I
-
-.field public static final LOG_TAG:Ljava/lang/String;
-
 .field public static final PRESSED_STATE_SET:[I
-
-.field public static final SELECTED_FOCUSED_STATE_SET:[I
-
-.field public static final SELECTED_HOVERED_FOCUSED_STATE_SET:[I
-
-.field public static final SELECTED_HOVERED_STATE_SET:[I
 
 .field public static final SELECTED_PRESSED_STATE_SET:[I
 
 .field public static final SELECTED_STATE_SET:[I
 
-.field public static final USE_FRAMEWORK_RIPPLE:Z = true
-
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x1
 
     new-array v1, v0, [I
 
-    const v2, 0x10100a7
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const v3, 0x10100a7
 
-    aput v2, v1, v3
+    aput v3, v1, v2
 
     sput-object v1, Lcom/google/android/material/ripple/RippleUtils;->PRESSED_STATE_SET:[I
 
     const/4 v1, 0x2
 
-    new-array v2, v1, [I
+    new-array v3, v1, [I
 
-    fill-array-data v2, :array_0
+    fill-array-data v3, :array_0
 
-    sput-object v2, Lcom/google/android/material/ripple/RippleUtils;->HOVERED_FOCUSED_STATE_SET:[I
-
-    new-array v2, v0, [I
-
-    const v4, 0x101009c
-
-    aput v4, v2, v3
-
-    sput-object v2, Lcom/google/android/material/ripple/RippleUtils;->FOCUSED_STATE_SET:[I
-
-    new-array v2, v0, [I
-
-    const v4, 0x1010367
-
-    aput v4, v2, v3
-
-    sput-object v2, Lcom/google/android/material/ripple/RippleUtils;->HOVERED_STATE_SET:[I
-
-    new-array v2, v1, [I
-
-    fill-array-data v2, :array_1
-
-    sput-object v2, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_PRESSED_STATE_SET:[I
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [I
-
-    fill-array-data v2, :array_2
-
-    sput-object v2, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_HOVERED_FOCUSED_STATE_SET:[I
-
-    new-array v2, v1, [I
-
-    fill-array-data v2, :array_3
-
-    sput-object v2, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_FOCUSED_STATE_SET:[I
-
-    new-array v2, v1, [I
-
-    fill-array-data v2, :array_4
-
-    sput-object v2, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_HOVERED_STATE_SET:[I
+    sput-object v3, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_PRESSED_STATE_SET:[I
 
     new-array v0, v0, [I
 
-    const v2, 0x10100a1
+    const v3, 0x10100a1
 
-    aput v2, v0, v3
+    aput v3, v0, v2
 
     sput-object v0, Lcom/google/android/material/ripple/RippleUtils;->SELECTED_STATE_SET:[I
 
     new-array v0, v1, [I
 
-    fill-array-data v0, :array_5
+    fill-array-data v0, :array_1
 
     sput-object v0, Lcom/google/android/material/ripple/RippleUtils;->ENABLED_PRESSED_STATE_SET:[I
 
-    const-class v0, Lcom/google/android/material/ripple/RippleUtils;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/material/ripple/RippleUtils;->LOG_TAG:Ljava/lang/String;
-
     return-void
-
-    nop
 
     :array_0
     .array-data 4
-        0x1010367
-        0x101009c
+        0x10100a1
+        0x10100a7
     .end array-data
 
     :array_1
     .array-data 4
-        0x10100a1
-        0x10100a7
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x10100a1
-        0x1010367
-        0x101009c
-    .end array-data
-
-    :array_3
-    .array-data 4
-        0x10100a1
-        0x101009c
-    .end array-data
-
-    :array_4
-    .array-data 4
-        0x10100a1
-        0x1010367
-    .end array-data
-
-    :array_5
-    .array-data 4
         0x101009e
         0x10100a7
     .end array-data
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
 .end method
 
 .method public static convertToRippleDrawableColor(Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
@@ -284,7 +183,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/material/ripple/RippleUtils;->LOG_TAG:Ljava/lang/String;
+    const-string v0, "RippleUtils"
 
     const-string v1, "Use a non-transparent color for the default color as it will be used to finish ripple animations."
 

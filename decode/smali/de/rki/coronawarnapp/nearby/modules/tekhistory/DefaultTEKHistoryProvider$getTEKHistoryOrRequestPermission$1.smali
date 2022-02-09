@@ -18,8 +18,8 @@
     f = "DefaultTEKHistoryProvider.kt"
     l = {
         0x29,
-        0x2c,
-        0x31
+        0x2a,
+        0x2f
     }
     m = "getTEKHistoryOrRequestPermission"
 .end annotation
@@ -42,6 +42,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider$getTEKHistoryOrRequestPermission$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider$getTEKHistoryOrRequestPermission$1;->this$0:Lde/rki/coronawarnapp/nearby/modules/tekhistory/DefaultTEKHistoryProvider;
 

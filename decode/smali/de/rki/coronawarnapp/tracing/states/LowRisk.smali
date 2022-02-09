@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field public final activeTracingDays:I
-
 .field public final allowManualUpdate:Z
+
+.field public final daysSinceInstallation:I
 
 .field public final daysWithEncounters:I
 
 .field public final isInDetailsMode:Z
 
-.field public final lastEncounterAt:Lorg/joda/time/Instant;
+.field public final lastEncounterAt:Lorg/joda/time/LocalDate;
 
 .field public final lastExposureDetectionTime:Lorg/joda/time/Instant;
 
@@ -22,7 +22,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskState;ZLorg/joda/time/Instant;Lorg/joda/time/Instant;ZII)V
+.method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskState;ZLorg/joda/time/Instant;Lorg/joda/time/LocalDate;ZII)V
     .locals 1
 
     const-string v0, "riskState"
@@ -39,13 +39,13 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/Instant;
+    iput-object p4, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/LocalDate;
 
     iput-boolean p5, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
 
     iput p6, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
 
-    iput p7, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->activeTracingDays:I
+    iput p7, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysSinceInstallation:I
 
     if-eqz p5, :cond_0
 
@@ -67,153 +67,98 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
-
-    iget-object v1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
-
-    iget-boolean v1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
-
-    iget-object v1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/Instant;
-
-    iget-object v1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/Instant;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
-
-    iget-boolean v1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
-
-    iget v1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
-
-    if-ne v0, v1, :cond_0
-
-    iget v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->activeTracingDays:I
-
-    iget p1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->activeTracingDays:I
-
-    if-ne v0, p1, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final getRiskContactLast(Landroid/content/Context;)Ljava/lang/String;
-    .locals 5
-
-    const-string v0, "context"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/Instant;
-
-    if-nez v0, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    iget v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
-
-    const v0, 0x7f12028e
-
-    goto :goto_0
-
-    :cond_1
-    const v0, 0x7f12028f
-
-    :goto_0
-    new-array v1, v1, [Ljava/lang/Object;
+    instance-of v1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/Instant;
+    if-nez v1, :cond_1
 
-    const-string v4, "$this$toLocalDate"
+    return v2
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    :cond_1
+    check-cast p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;
 
-    sget-object v4, Lorg/joda/time/DateTimeZone;->UTC:Lorg/joda/time/DateTimeZone;
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    invoke-virtual {v3, v4}, Lorg/joda/time/base/AbstractInstant;->toDateTime(Lorg/joda/time/DateTimeZone;)Lorg/joda/time/DateTime;
+    iget-object v3, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    move-result-object v3
+    if-eq v1, v3, :cond_2
 
-    invoke-virtual {v3}, Lorg/joda/time/DateTime;->toLocalDate()Lorg/joda/time/LocalDate;
+    return v2
 
-    move-result-object v3
+    :cond_2
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
 
-    const-string v4, "this.toDateTime(DateTimeZone.UTC).toLocalDate()"
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eq v1, v3, :cond_3
 
-    invoke-static {}, Lorg/joda/time/format/DateTimeFormat;->mediumDate()Lorg/joda/time/format/DateTimeFormatter;
+    return v2
 
-    move-result-object v4
+    :cond_3
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
 
-    invoke-virtual {v3, v4}, Lorg/joda/time/base/BaseLocal;->toString(Lorg/joda/time/format/DateTimeFormatter;)Ljava/lang/String;
+    iget-object v3, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
 
-    move-result-object v3
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    aput-object v3, v1, v2
+    move-result v1
 
-    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    if-nez v1, :cond_4
 
-    move-result-object p1
+    return v2
 
-    return-object p1
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/LocalDate;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/LocalDate;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
+
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
+
+    if-eq v1, v3, :cond_6
+
+    return v2
+
+    :cond_6
+    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
+
+    iget v3, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
+
+    if-eq v1, v3, :cond_7
+
+    return v2
+
+    :cond_7
+    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysSinceInstallation:I
+
+    iget p1, p1, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysSinceInstallation:I
+
+    if-eq v1, p1, :cond_8
+
+    return v2
+
+    :cond_8
+    return v0
 .end method
 
 .method public hashCode()I
@@ -221,77 +166,72 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_0
+
+    move v1, v2
 
     :cond_0
-    move v0, v1
+    add-int/2addr v0, v1
 
-    :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-boolean v2, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    if-eqz v2, :cond_1
+    if-nez v1, :cond_1
 
-    move v2, v3
+    move v1, v3
+
+    goto :goto_0
 
     :cond_1
-    add-int/2addr v0, v2
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/LocalDate;
 
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
-
-    move-result v2
+    if-nez v1, :cond_2
 
     goto :goto_1
 
     :cond_2
-    move v2, v1
+    invoke-virtual {v1}, Lorg/joda/time/LocalDate;->hashCode()I
+
+    move-result v3
 
     :goto_1
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/Instant;
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {v2}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
-
-    move-result v1
-
-    :cond_3
-    add-int/2addr v0, v1
+    add-int/2addr v0, v3
 
     mul-int/lit8 v0, v0, 0x1f
 
     iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     goto :goto_2
 
-    :cond_4
-    move v3, v1
+    :cond_3
+    move v2, v1
 
     :goto_2
-    add-int/2addr v0, v3
+    add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -301,7 +241,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->activeTracingDays:I
+    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysSinceInstallation:I
 
     add-int/2addr v0, v1
 
@@ -309,67 +249,69 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 9
 
-    const-string v0, "LowRisk(riskState="
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isInDetailsMode="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
     iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
 
-    const-string v1, ", lastExposureDetectionTime="
+    iget-object v3, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/LocalDate;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-boolean v4, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastExposureDetectionTime:Lorg/joda/time/Instant;
+    iget v5, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget v6, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysSinceInstallation:I
 
-    const-string v1, ", lastEncounterAt="
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->lastEncounterAt:Lorg/joda/time/Instant;
+    const-string v8, "LowRisk(riskState="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", allowManualUpdate="
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", isInDetailsMode="
 
-    iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->allowManualUpdate:Z
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", daysWithEncounters="
+    const-string v0, ", lastExposureDetectionTime="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->daysWithEncounters:I
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, ", lastEncounterAt="
 
-    const-string v1, ", activeTracingDays="
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->activeTracingDays:I
+    const-string v0, ", allowManualUpdate="
 
-    const-string v2, ")"
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", daysWithEncounters="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", daysSinceInstallation="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-static {v7, v6, v0}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

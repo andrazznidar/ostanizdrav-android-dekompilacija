@@ -12,6 +12,16 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "attrs"
+        }
+    .end annotation
 
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -20,8 +30,32 @@
 
 
 # virtual methods
+.method public applyLayoutFeaturesInConstraintSet(Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "container"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->applyLayoutFeatures(Landroidx/constraintlayout/widget/ConstraintLayout;)V
+
+    return-void
+.end method
+
 .method public init(Landroid/util/AttributeSet;)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "attrs"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->init(Landroid/util/AttributeSet;)V
 
@@ -50,7 +84,7 @@
 
     move-result v2
 
-    const/4 v3, 0x6
+    sget v3, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_android_visibility:I
 
     const/4 v4, 0x1
 
@@ -61,7 +95,7 @@
     goto :goto_1
 
     :cond_0
-    const/16 v3, 0xd
+    sget v3, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_android_elevation:I
 
     if-ne v2, v3, :cond_1
 
@@ -97,8 +131,6 @@
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
-
-    if-eqz v0, :cond_3
 
     instance-of v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -165,14 +197,34 @@
     return-void
 .end method
 
-.method public onMeasure(Landroidx/constraintlayout/solver/widgets/VirtualLayout;II)V
+.method public onMeasure(Landroidx/constraintlayout/core/widgets/VirtualLayout;II)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "layout",
+            "widthMeasureSpec",
+            "heightMeasureSpec"
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public setElevation(F)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "elevation"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroid/view/View;->setElevation(F)V
 
@@ -183,6 +235,14 @@
 
 .method public setVisibility(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "visibility"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 

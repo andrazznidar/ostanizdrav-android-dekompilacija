@@ -43,7 +43,7 @@
 .method public getKeyType()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.KmsEnvelopeAeadKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.KmsEnvelopeAeadKey"
 
     return-object v0
 .end method

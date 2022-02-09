@@ -1,4 +1,4 @@
-.class public final Landroidx/activity/ImmLeaksCleaner;
+.class final Landroidx/activity/ImmLeaksCleaner;
 .super Ljava/lang/Object;
 .source "ImmLeaksCleaner.java"
 
@@ -23,6 +23,14 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "activity"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,6 +43,16 @@
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "source",
+            "event"
+        }
+    .end annotation
 
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 

@@ -116,7 +116,7 @@
 
     const/4 v4, 0x1
 
-    invoke-static {v0, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline1(IIII)I
+    invoke-static {v0, v2, v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/BooleanArrayList$$ExternalSyntheticOutline0;->m(IIII)I
 
     move-result v0
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractProtobufList;->ensureIsMutable()V
 
-    if-eqz p1, :cond_4
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     instance-of v0, p1, Lcom/google/protobuf/BooleanArrayList;
 
@@ -256,11 +256,6 @@
     new-instance p1, Ljava/lang/OutOfMemoryError;
 
     invoke-direct {p1}, Ljava/lang/OutOfMemoryError;-><init>()V
-
-    throw p1
-
-    :cond_4
-    const/4 p1, 0x0
 
     throw p1
 .end method
@@ -367,7 +362,7 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x1
 
@@ -376,7 +371,7 @@
     :goto_0
     iget v2, p0, Lcom/google/protobuf/BooleanArrayList;->size:I
 
-    if-ge v1, v2, :cond_0
+    if-ge v1, v2, :cond_1
 
     mul-int/lit8 v0, v0, 0x1f
 
@@ -384,17 +379,25 @@
 
     aget-boolean v2, v2, v1
 
-    invoke-static {v2}, Lcom/google/protobuf/Internal;->hashBoolean(Z)I
+    sget-object v3, Lcom/google/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
-    move-result v2
+    if-eqz v2, :cond_0
 
+    const/16 v2, 0x4cf
+
+    goto :goto_1
+
+    :cond_0
+    const/16 v2, 0x4d5
+
+    :goto_1
     add-int/2addr v0, v2
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     return v0
 .end method
 
@@ -405,7 +408,7 @@
 
     const-string v1, ", Size:"
 
-    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline30(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, p1, v1}, Landroidx/appcompat/widget/SuggestionsAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 

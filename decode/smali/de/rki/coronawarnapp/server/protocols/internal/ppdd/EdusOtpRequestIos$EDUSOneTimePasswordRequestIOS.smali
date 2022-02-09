@@ -36,9 +36,9 @@
 # static fields
 .field public static final AUTHENTICATION_FIELD_NUMBER:I = 0x1
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -52,12 +52,84 @@
 
 
 # instance fields
-.field public authentication_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
+.field private authentication_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
 
-.field public payload_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;
+.field private payload_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->clearAuthentication()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->clearPayload()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergeAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->mergeAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mmergePayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->mergePayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -72,82 +144,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->mergeAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->clearAuthentication()V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->setPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$700(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->mergePayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->clearPayload()V
 
     return-void
 .end method
@@ -525,16 +525,11 @@
 .method private setAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->authentication_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword$Builder;)V
@@ -554,16 +549,11 @@
 .method private setPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->payload_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -668,8 +658,6 @@
 
     if-eqz v1, :cond_4
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->payload_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtp$EDUSOneTimePassword;
-
     invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     move-result-object v1
@@ -712,8 +700,6 @@
     iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->authentication_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
 
     if-eqz v1, :cond_6
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS;->authentication_:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;
 
     invoke-virtual {v1}, Lcom/google/protobuf/GeneratedMessageLite;->toBuilder()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -840,7 +826,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/EdusOtpRequestIos$EDUSOneTimePasswordRequestIOS$Builder-IA;)V
 
     return-object p1
 

@@ -195,7 +195,7 @@
 
     if-nez v0, :cond_1
 
-    const v0, 0x7f1301d0
+    sget v0, Landroidx/appcompat/R$style;->Theme_AppCompat_Light:I
 
     iput v0, p0, Landroidx/appcompat/view/ContextThemeWrapper;->mThemeResource:I
 

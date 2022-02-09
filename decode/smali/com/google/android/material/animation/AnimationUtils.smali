@@ -55,7 +55,37 @@
 .method public static lerp(FFF)F
     .locals 0
 
-    invoke-static {p1, p0, p2, p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline0(FFFF)F
+    invoke-static {p1, p0, p2, p0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;->m(FFFF)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static lerp(FFFFF)F
+    .locals 1
+
+    cmpg-float v0, p4, p2
+
+    if-gez v0, :cond_0
+
+    return p0
+
+    :cond_0
+    cmpl-float v0, p4, p3
+
+    if-lez v0, :cond_1
+
+    return p1
+
+    :cond_1
+    sub-float/2addr p4, p2
+
+    sub-float/2addr p3, p2
+
+    div-float/2addr p4, p3
+
+    invoke-static {p0, p1, p4}, Lcom/google/android/material/animation/AnimationUtils;->lerp(FFF)F
 
     move-result p0
 

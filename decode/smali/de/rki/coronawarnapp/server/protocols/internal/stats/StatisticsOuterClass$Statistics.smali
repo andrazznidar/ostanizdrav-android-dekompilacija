@@ -36,11 +36,11 @@
 # static fields
 .field public static final CARDIDSEQUENCE_FIELD_NUMBER:I = 0x1
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
 
 .field public static final KEYFIGURECARDS_FIELD_NUMBER:I = 0x2
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -52,9 +52,9 @@
 
 
 # instance fields
-.field public cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
+.field private cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
 
-.field public keyFigureCards_:Lcom/google/protobuf/Internal$ProtobufList;
+.field private keyFigureCards_:Lcom/google/protobuf/Internal$ProtobufList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$ProtobufList<",
@@ -66,6 +66,136 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addAllCardIdSequence(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addAllKeyFigureCards(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addCardIdSequence(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->clearCardIdSequence()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->clearKeyFigureCards()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mremoveKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->removeKeyFigureCards(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetCardIdSequence(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->setCardIdSequence(II)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->setKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->setKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -80,7 +210,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -96,118 +226,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->keyFigureCards_:Lcom/google/protobuf/Internal$ProtobufList;
-
-    return-void
-.end method
-
-.method public static synthetic access$000()Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$100(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->setCardIdSequence(II)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1000(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1100(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addAllKeyFigureCards(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$1200(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->clearKeyFigureCards()V
-
-    return-void
-.end method
-
-.method public static synthetic access$1300(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->removeKeyFigureCards(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$200(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addCardIdSequence(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addAllCardIdSequence(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$400(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->clearCardIdSequence()V
-
-    return-void
-.end method
-
-.method public static synthetic access$500(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->setKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$600(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->setKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$700(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$800(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$900(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->addKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
 
     return-void
 .end method
@@ -291,7 +309,7 @@
 .method private addKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->ensureKeyFigureCardsIsMutable()V
 
@@ -300,11 +318,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private addKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard$Builder;)V
@@ -320,7 +333,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -328,20 +343,17 @@
 .method private addKeyFigureCards(Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
     .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->ensureKeyFigureCardsIsMutable()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->keyFigureCards_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {v0, p1}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private clearCardIdSequence()V
@@ -721,7 +733,7 @@
 .method private setKeyFigureCards(ILde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;)V
     .locals 1
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->ensureKeyFigureCardsIsMutable()V
 
@@ -730,11 +742,6 @@
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
@@ -841,13 +848,13 @@
     :cond_3
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->keyFigureCards_:Lcom/google/protobuf/Internal$ProtobufList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_4
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->keyFigureCards_:Lcom/google/protobuf/Internal$ProtobufList;
+    if-nez v0, :cond_4
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$ProtobufList;)Lcom/google/protobuf/Internal$ProtobufList;
 
@@ -868,7 +875,9 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigureCard;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/AbstractProtobufList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
@@ -935,13 +944,13 @@
     :cond_8
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_9
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
+    if-nez v0, :cond_9
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$IntList;)Lcom/google/protobuf/Internal$IntList;
 
@@ -1047,7 +1056,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics$Builder-IA;)V
 
     return-object p1
 
@@ -1112,7 +1121,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    check-cast v0, Lcom/google/protobuf/IntArrayList;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/IntArrayList;->size()I
 
     move-result v0
 
@@ -1209,7 +1220,7 @@
 .end method
 
 .method public getSerializedSize()I
-    .locals 4
+    .locals 5
 
     iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
@@ -1229,13 +1240,13 @@
     :goto_0
     iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    move-object v4, v3
 
-    move-result v3
+    check-cast v4, Lcom/google/protobuf/IntArrayList;
 
-    if-ge v1, v3, :cond_1
+    iget v4, v4, Lcom/google/protobuf/IntArrayList;->size:I
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
+    if-ge v1, v4, :cond_1
 
     check-cast v3, Lcom/google/protobuf/IntArrayList;
 
@@ -1320,13 +1331,13 @@
     :goto_0
     iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    move-object v3, v2
 
-    move-result v2
+    check-cast v3, Lcom/google/protobuf/IntArrayList;
 
-    if-ge v1, v2, :cond_0
+    iget v3, v3, Lcom/google/protobuf/IntArrayList;->size:I
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$Statistics;->cardIdSequence_:Lcom/google/protobuf/Internal$IntList;
+    if-ge v1, v3, :cond_0
 
     check-cast v2, Lcom/google/protobuf/IntArrayList;
 

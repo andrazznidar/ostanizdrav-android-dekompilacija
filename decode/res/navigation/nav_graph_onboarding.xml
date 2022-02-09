@@ -32,6 +32,7 @@
     <fragment android:label="NewReleaseInfoFragment" android:name="de.rki.coronawarnapp.release.NewReleaseInfoFragment" android:id="@id/newReleaseInfoFragment">
         <argument android:name="comesFromInfoScreen" android:defaultValue="false" app:argType="boolean" />
         <action android:id="@id/action_newReleaseInfoFragment_to_onboardingDeltaAnalyticsFragment" app:destination="@id/onboardingDeltaAnalyticsFragment" app:popUpTo="@id/loadingFragment" app:popUpToInclusive="false" />
+        <action android:id="@id/action_newReleaseInfoFragment_to_onboardingDeltaNotificationsFragment" app:destination="@id/onboardingDeltaNotificationsFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
     </fragment>
     <fragment android:label="OnboardingDeltaAnalyticsFragment" android:name="de.rki.coronawarnapp.ui.onboarding.OnboardingDeltaAnalyticsFragment" android:id="@id/onboardingDeltaAnalyticsFragment">
         <action android:id="@id/action_onboardingDeltaAnalyticsFragment_to_analyticsUserInputFragment" app:destination="@id/analyticsUserInputFragment" />
@@ -41,4 +42,7 @@
         <action android:id="@id/action_onboardingDeltaInteroperabilityFragment_to_informationTermsFragment" app:destination="@id/informationTermsFragment" />
     </fragment>
     <fragment android:label="@layout/fragment_information_terms" android:name="de.rki.coronawarnapp.ui.information.InformationTermsFragment" android:id="@id/informationTermsFragment" />
+    <fragment android:label="OnboardingDeltaNotificationsFragment" android:name="de.rki.coronawarnapp.ui.onboarding.OnboardingDeltaNotificationsFragment" android:id="@id/onboardingDeltaNotificationsFragment">
+        <action android:id="@id/action_onboardingDeltaNotificationsFragment_to_onboardingDeltaAnalyticsFragment" app:destination="@id/onboardingDeltaAnalyticsFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
+    </fragment>
 </navigation>

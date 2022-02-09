@@ -628,11 +628,11 @@
 .method public final getBlackPointOnSegment(FFFF)Lcom/google/zxing/ResultPoint;
     .locals 5
 
-    invoke-static {p1, p2, p3, p4}, Lcom/google/zxing/client/android/R$id;->distance(FFFF)F
+    invoke-static {p1, p2, p3, p4}, Lcom/google/zxing/common/detector/MathUtils;->distance(FFFF)F
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->round(F)I
+    invoke-static {v0}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
     move-result v0
 
@@ -657,7 +657,7 @@
 
     add-float/2addr v3, p1
 
-    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->round(F)I
+    invoke-static {v3}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
     move-result v3
 
@@ -665,7 +665,7 @@
 
     add-float/2addr v2, p2
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->round(F)I
+    invoke-static {v2}, Lcom/google/zxing/common/detector/MathUtils;->round(F)I
 
     move-result v2
 

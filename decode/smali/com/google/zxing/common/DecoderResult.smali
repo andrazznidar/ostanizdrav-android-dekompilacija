@@ -15,10 +15,6 @@
 
 .field public final ecLevel:Ljava/lang/String;
 
-.field public erasures:Ljava/lang/Integer;
-
-.field public errorsCorrected:Ljava/lang/Integer;
-
 .field public numBits:I
 
 .field public other:Ljava/lang/Object;

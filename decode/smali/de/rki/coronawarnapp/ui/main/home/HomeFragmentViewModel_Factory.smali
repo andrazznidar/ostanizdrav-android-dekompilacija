@@ -24,21 +24,31 @@
     .end annotation
 .end field
 
-.field public final cwaSettingsProvider:Ljavax/inject/Provider;
+.field public final bluetoothSupportProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/main/CWASettings;",
+            "Lde/rki/coronawarnapp/util/bluetooth/BluetoothSupport;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
+.field public final coronaTestRepositoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;",
+            "Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final cwaSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/main/CWASettings;",
             ">;"
         }
     .end annotation
@@ -58,17 +68,37 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/security/EncryptionErrorResetTool;",
+            "Lde/rki/coronawarnapp/util/encryptionmigration/EncryptionErrorResetTool;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
+.field public final localStatisticsConfigStorageProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;",
+            "Lde/rki/coronawarnapp/statistics/local/storage/LocalStatisticsConfigStorage;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final localStatisticsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/statistics/local/source/LocalStatisticsProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final networkStateProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/network/NetworkStateProvider;",
             ">;"
         }
     .end annotation
@@ -94,11 +124,21 @@
     .end annotation
 .end field
 
-.field public final submissionStateProvider:Ljavax/inject/Provider;
+.field public final timeStamperProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/submission/ui/homecards/SubmissionStateProvider;",
+            "Lde/rki/coronawarnapp/util/TimeStamper;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final traceLocationOrganizerSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ui/presencetracing/organizer/TraceLocationOrganizerSettings;",
             ">;"
         }
     .end annotation
@@ -109,6 +149,16 @@
         value = {
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/storage/TracingRepository;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final tracingSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/storage/TracingSettings;",
             ">;"
         }
     .end annotation
@@ -136,16 +186,56 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
-    .locals 0
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "dispatcherProvider",
+            "tracingStatusProvider",
+            "tracingStateProviderFactoryProvider",
+            "coronaTestRepositoryProvider",
+            "statisticsProvider",
+            "localStatisticsProvider",
+            "networkStateProvider",
+            "errorResetToolProvider",
+            "tracingRepositoryProvider",
+            "submissionRepositoryProvider",
+            "cwaSettingsProvider",
+            "appConfigProvider",
+            "appShortcutsHelperProvider",
+            "tracingSettingsProvider",
+            "traceLocationOrganizerSettingsProvider",
+            "timeStamperProvider",
+            "bluetoothSupportProvider",
+            "localStatisticsConfigStorageProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/security/EncryptionErrorResetTool;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/tracing/GeneralTracingStatus;",
@@ -154,13 +244,22 @@
             "Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$Factory;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/submission/ui/homecards/SubmissionStateProvider;",
+            "Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/statistics/local/source/LocalStatisticsProvider;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/network/NetworkStateProvider;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/encryptionmigration/EncryptionErrorResetTool;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/storage/TracingRepository;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/submission/SubmissionRepository;",
@@ -172,44 +271,101 @@
             "Lde/rki/coronawarnapp/appconfig/AppConfigProvider;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationScheduler;",
-            ">;",
-            "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/storage/TracingSettings;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/ui/presencetracing/organizer/TraceLocationOrganizerSettings;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/TimeStamper;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/util/bluetooth/BluetoothSupport;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/statistics/local/storage/LocalStatisticsConfigStorage;",
             ">;)V"
         }
     .end annotation
 
+    move-object v0, p0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->dispatcherProvider:Ljavax/inject/Provider;
+    move-object v1, p1
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->errorResetToolProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->dispatcherProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->tracingStatusProvider:Ljavax/inject/Provider;
+    move-object v1, p2
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->tracingStateProviderFactoryProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->tracingStatusProvider:Ljavax/inject/Provider;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->submissionStateProvider:Ljavax/inject/Provider;
+    move-object v1, p3
 
-    iput-object p6, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->tracingRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->tracingStateProviderFactoryProvider:Ljavax/inject/Provider;
 
-    iput-object p7, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
+    move-object v1, p4
 
-    iput-object p8, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->coronaTestRepositoryProvider:Ljavax/inject/Provider;
 
-    iput-object p9, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->cwaSettingsProvider:Ljavax/inject/Provider;
+    move-object v1, p5
 
-    iput-object p10, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->appConfigProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->statisticsProvider:Ljavax/inject/Provider;
 
-    iput-object p11, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->statisticsProvider:Ljavax/inject/Provider;
+    move-object v1, p6
 
-    iput-object p12, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->deadmanNotificationSchedulerProvider:Ljavax/inject/Provider;
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->localStatisticsProvider:Ljavax/inject/Provider;
 
-    iput-object p13, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->appShortcutsHelperProvider:Ljavax/inject/Provider;
+    move-object v1, p7
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->networkStateProvider:Ljavax/inject/Provider;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->errorResetToolProvider:Ljavax/inject/Provider;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->tracingRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->cwaSettingsProvider:Ljavax/inject/Provider;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->appConfigProvider:Ljavax/inject/Provider;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->appShortcutsHelperProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->tracingSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->traceLocationOrganizerSettingsProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->timeStamperProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->bluetoothSupportProvider:Ljavax/inject/Provider;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragmentViewModel_Factory;->localStatisticsConfigStorageProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

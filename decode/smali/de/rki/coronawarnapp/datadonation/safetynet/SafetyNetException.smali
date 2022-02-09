@@ -22,7 +22,7 @@
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 2
 
-    const-string v0, "type"
+    const-string/jumbo v0, "type"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -45,25 +45,6 @@
     invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;->type:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;I)V
-    .locals 1
-
-    and-int/lit8 p3, p4, 0x2
-
-    const/4 v0, 0x0
-
-    if-eqz p3, :cond_0
-
-    move-object p2, v0
-
-    :cond_0
-    and-int/lit8 p3, p4, 0x4
-
-    invoke-direct {p0, p1, p2, v0}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -92,27 +73,27 @@
     throw p1
 
     :pswitch_0
-    const v0, 0x7f1200ef
+    const v0, 0x7f130155
 
     goto :goto_0
 
     :pswitch_1
-    const v0, 0x7f1200f2
+    const v0, 0x7f130158
 
     goto :goto_0
 
     :pswitch_2
-    const v0, 0x7f1200ec
+    const v0, 0x7f130152
 
     goto :goto_0
 
     :pswitch_3
-    const v0, 0x7f1200ee
+    const v0, 0x7f130154
 
     goto :goto_0
 
     :pswitch_4
-    const v0, 0x7f1200f0
+    const v0, 0x7f130156
 
     :goto_0
     new-instance v1, Lde/rki/coronawarnapp/util/HumanReadableError;

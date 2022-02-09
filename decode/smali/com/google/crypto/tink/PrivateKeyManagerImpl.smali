@@ -2,9 +2,6 @@
 .super Lcom/google/crypto/tink/KeyManagerImpl;
 .source "PrivateKeyManagerImpl.java"
 
-# interfaces
-.implements Lcom/google/crypto/tink/KeyManager;
-
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -17,9 +14,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/MessageLite;",
         ">",
         "Lcom/google/crypto/tink/KeyManagerImpl<",
-        "TPrimitiveT;TKeyProtoT;>;",
-        "Ljava/lang/Object<",
-        "TPrimitiveT;>;"
+        "TPrimitiveT;TKeyProtoT;>;"
     }
 .end annotation
 

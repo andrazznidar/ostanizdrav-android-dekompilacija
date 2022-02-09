@@ -46,15 +46,13 @@
     :try_start_0
     iget-object v0, p0, Lcom/journeyapps/barcodescanner/DecoderThread$2;->this$0:Lcom/journeyapps/barcodescanner/DecoderThread;
 
-    iget-boolean v0, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->running:Z
+    iget-boolean v1, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->running:Z
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/journeyapps/barcodescanner/DecoderThread$2;->this$0:Lcom/journeyapps/barcodescanner/DecoderThread;
+    if-eqz v1, :cond_0
 
     iget-object v0, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->handler:Landroid/os/Handler;
 
-    const v1, 0x7f090574
+    sget v1, Lcom/google/zxing/client/android/R$id;->zxing_preview_failed:I
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 

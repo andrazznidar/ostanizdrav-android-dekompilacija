@@ -13,17 +13,15 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)V
-    .locals 0
+    .locals 1
 
     iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$1;->this$0:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$AbstractByteIterator;-><init>()V
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    iput p1, p0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$1;->position:I
-
-    iget-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$1;->this$0:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    iput v0, p0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$1;->position:I
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->size()I
 

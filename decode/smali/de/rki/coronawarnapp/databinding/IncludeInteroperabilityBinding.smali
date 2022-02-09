@@ -66,6 +66,56 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Barrier;Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageView;Landroid/widget/ScrollView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBinding;Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBinding;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "countryListBarrier",
+            "countryListOverview",
+            "expandedTermsFooter",
+            "interoperabilityFooter",
+            "interoperabilityFooterDescription",
+            "interoperabilityFooterTitle",
+            "interoperabilityHeader",
+            "interoperabilityIllustration",
+            "interoperabilityLayout",
+            "interoperabilityTitleContainer",
+            "labelInteroperabilitySubtitle",
+            "labelInteroperabilitySubtitle2",
+            "labelInteroperabilitySubtitle3",
+            "labelInteroperabilitySubtitle4",
+            "noCountriesDefaultInfoview",
+            "noCountriesRiskdetailsInfoview",
+            "onboardingDeltaExpandedTermsTextLink",
+            "onboardingDeltaExpandedTermsTextPart1",
+            "onboardingDeltaExpandedTermsTextPart2"
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -133,6 +183,15 @@
 
 # virtual methods
 .method public abstract setCountryData(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "countryData"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,31 +203,111 @@
 .end method
 
 .method public abstract setCountryListTitle(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "countryListTitle"
+        }
+    .end annotation
 .end method
 
 .method public abstract setFirstSection(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "firstSection"
+        }
+    .end annotation
 .end method
 
 .method public abstract setFooterDescription(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "footerDescription"
+        }
+    .end annotation
 .end method
 
 .method public abstract setFooterTitle(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "footerTitle"
+        }
+    .end annotation
 .end method
 
 .method public abstract setIsOnboarding(Ljava/lang/Boolean;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "isOnboarding"
+        }
+    .end annotation
 .end method
 
 .method public abstract setIsRiskdetection(Ljava/lang/Boolean;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "isRiskdetection"
+        }
+    .end annotation
 .end method
 
 .method public abstract setSecondSection(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "secondSection"
+        }
+    .end annotation
 .end method
 
 .method public abstract setShowFooter(Ljava/lang/Boolean;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "showFooter"
+        }
+    .end annotation
 .end method
 
 .method public abstract setThirdSection(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "thirdSection"
+        }
+    .end annotation
 .end method
 
 .method public abstract setTitle(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "title"
+        }
+    .end annotation
 .end method

@@ -1,4 +1,4 @@
-.class public Landroidx/databinding/ViewDataBinding$OnStartListener;
+.class Landroidx/databinding/ViewDataBinding$OnStartListener;
 .super Ljava/lang/Object;
 .source "ViewDataBinding.java"
 

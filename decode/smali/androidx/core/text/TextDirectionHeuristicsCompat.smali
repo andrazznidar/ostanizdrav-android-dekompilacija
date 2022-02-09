@@ -56,49 +56,9 @@
 
     new-instance v0, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
-    sget-object v1, Landroidx/core/text/TextDirectionHeuristicsCompat$FirstStrong;->INSTANCE:Landroidx/core/text/TextDirectionHeuristicsCompat$FirstStrong;
-
     invoke-direct {v0, v1, v3}, Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;-><init>(Landroidx/core/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;Z)V
 
     sput-object v0, Landroidx/core/text/TextDirectionHeuristicsCompat;->FIRSTSTRONG_RTL:Landroidx/core/text/TextDirectionHeuristicCompat;
 
     return-void
-.end method
-
-.method public static isRtlTextOrFormat(I)I
-    .locals 2
-
-    const/4 v0, 0x1
-
-    if-eqz p0, :cond_1
-
-    if-eq p0, v0, :cond_0
-
-    const/4 v1, 0x2
-
-    if-eq p0, v1, :cond_0
-
-    packed-switch p0, :pswitch_data_0
-
-    return v1
-
-    :cond_0
-    :pswitch_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    :pswitch_1
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0xe
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
 .end method

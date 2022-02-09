@@ -1,4 +1,4 @@
-.class public final Lcom/google/zxing/common/BitSource;
+.class public Lcom/google/zxing/common/BitSource;
 .super Ljava/lang/Object;
 .source "BitSource.java"
 
@@ -8,7 +8,7 @@
 
 .field public byteOffset:I
 
-.field public final bytes:[B
+.field public bytes:[B
 
 
 # direct methods
@@ -18,6 +18,20 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/zxing/common/BitSource;->bytes:[B
+
+    return-void
+.end method
+
+.method public constructor <init>([BII)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/zxing/common/BitSource;->bytes:[B
+
+    iput p2, p0, Lcom/google/zxing/common/BitSource;->byteOffset:I
+
+    iput p3, p0, Lcom/google/zxing/common/BitSource;->bitOffset:I
 
     return-void
 .end method
@@ -45,7 +59,7 @@
 .end method
 
 .method public readBits(I)I
-    .locals 8
+    .locals 9
 
     if-lez p1, :cond_5
 
@@ -69,54 +83,52 @@
 
     if-lez v0, :cond_2
 
-    rsub-int/lit8 v0, v0, 0x8
+    rsub-int/lit8 v4, v0, 0x8
 
-    if-ge p1, v0, :cond_0
+    if-ge p1, v4, :cond_0
 
-    move v4, p1
+    move v5, p1
 
     goto :goto_0
 
     :cond_0
-    move v4, v0
+    move v5, v4
 
     :goto_0
-    sub-int/2addr v0, v4
+    sub-int/2addr v4, v5
 
-    rsub-int/lit8 v5, v4, 0x8
+    rsub-int/lit8 v6, v5, 0x8
 
-    shr-int v5, v2, v5
+    shr-int v6, v2, v6
 
-    shl-int/2addr v5, v0
+    shl-int/2addr v6, v4
 
-    iget-object v6, p0, Lcom/google/zxing/common/BitSource;->bytes:[B
+    iget-object v7, p0, Lcom/google/zxing/common/BitSource;->bytes:[B
 
-    iget v7, p0, Lcom/google/zxing/common/BitSource;->byteOffset:I
+    iget v8, p0, Lcom/google/zxing/common/BitSource;->byteOffset:I
 
-    aget-byte v6, v6, v7
+    aget-byte v7, v7, v8
 
-    and-int/2addr v5, v6
+    and-int/2addr v6, v7
 
-    shr-int v0, v5, v0
+    shr-int v4, v6, v4
 
-    sub-int/2addr p1, v4
+    sub-int/2addr p1, v5
 
-    iget v5, p0, Lcom/google/zxing/common/BitSource;->bitOffset:I
+    add-int/2addr v0, v5
 
-    add-int/2addr v5, v4
+    iput v0, p0, Lcom/google/zxing/common/BitSource;->bitOffset:I
 
-    iput v5, p0, Lcom/google/zxing/common/BitSource;->bitOffset:I
-
-    if-ne v5, v3, :cond_1
+    if-ne v0, v3, :cond_1
 
     iput v1, p0, Lcom/google/zxing/common/BitSource;->bitOffset:I
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v8, v8, 0x1
 
-    iput v7, p0, Lcom/google/zxing/common/BitSource;->byteOffset:I
+    iput v8, p0, Lcom/google/zxing/common/BitSource;->byteOffset:I
 
     :cond_1
-    move v1, v0
+    move v1, v4
 
     :cond_2
     if-lez p1, :cond_4

@@ -4,9 +4,11 @@
 
 # interfaces
 .implements Landroid/widget/PopupWindow$OnDismissListener;
-.implements Landroid/widget/AdapterView$OnItemClickListener;
-.implements Landroidx/appcompat/view/menu/MenuPresenter;
 .implements Landroid/view/View$OnKeyListener;
+
+
+# static fields
+.field public static final ITEM_LAYOUT:I
 
 
 # instance fields
@@ -52,6 +54,16 @@
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    sget v0, Landroidx/appcompat/R$layout;->abc_popup_menu_item_layout:I
+
+    sput v0, Landroidx/appcompat/view/menu/StandardMenuPopup;->ITEM_LAYOUT:I
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/View;IIZ)V
     .locals 3
 
@@ -81,17 +93,15 @@
 
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object p6
+    move-result-object v0
 
-    new-instance v0, Landroidx/appcompat/view/menu/MenuAdapter;
+    new-instance v1, Landroidx/appcompat/view/menu/MenuAdapter;
 
-    iget-boolean v1, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mOverflowOnly:Z
+    sget v2, Landroidx/appcompat/view/menu/StandardMenuPopup;->ITEM_LAYOUT:I
 
-    const v2, 0x7f0c0013
+    invoke-direct {v1, p2, v0, p6, v2}, Landroidx/appcompat/view/menu/MenuAdapter;-><init>(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/LayoutInflater;ZI)V
 
-    invoke-direct {v0, p2, p6, v1, v2}, Landroidx/appcompat/view/menu/MenuAdapter;-><init>(Landroidx/appcompat/view/menu/MenuBuilder;Landroid/view/LayoutInflater;ZI)V
-
-    iput-object v0, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAdapter:Landroidx/appcompat/view/menu/MenuAdapter;
+    iput-object v1, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAdapter:Landroidx/appcompat/view/menu/MenuAdapter;
 
     iput p4, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupStyleAttr:I
 
@@ -99,41 +109,35 @@
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p4
+    move-result-object p6
 
-    invoke-virtual {p4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {p6}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object p5
+    move-result-object v0
 
-    iget p5, p5, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    div-int/lit8 p5, p5, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    const p6, 0x7f070017
+    sget v1, Landroidx/appcompat/R$dimen;->abc_config_prefDialogWidth:I
 
-    invoke-virtual {p4, p6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {p6, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result p4
+    move-result p6
 
-    invoke-static {p5, p4}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, p6}, Ljava/lang/Math;->max(II)I
 
-    move-result p4
+    move-result p6
 
-    iput p4, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupMaxWidth:I
+    iput p6, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupMaxWidth:I
 
     iput-object p3, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAnchorView:Landroid/view/View;
 
     new-instance p3, Landroidx/appcompat/widget/MenuPopupWindow;
 
-    iget-object p4, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mContext:Landroid/content/Context;
+    const/4 p6, 0x0
 
-    iget p5, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupStyleAttr:I
-
-    iget p6, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopupStyleRes:I
-
-    const/4 v0, 0x0
-
-    invoke-direct {p3, p4, v0, p5, p6}, Landroidx/appcompat/widget/MenuPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    invoke-direct {p3, p1, p6, p4, p5}, Landroidx/appcompat/widget/MenuPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     iput-object p3, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mPopup:Landroidx/appcompat/widget/MenuPopupWindow;
 
@@ -407,7 +411,9 @@
 
     iget-object v5, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAnchorView:Landroid/view/View;
 
-    invoke-static {v5}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    sget-object v6, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v5
 
@@ -563,7 +569,7 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_8
 
     iget-object v0, p0, Landroidx/appcompat/view/menu/StandardMenuPopup;->mAnchorView:Landroid/view/View;
 
@@ -664,7 +670,7 @@
 
     iget-object v4, p0, Landroidx/appcompat/view/menu/MenuPopup;->mEpicenterBounds:Landroid/graphics/Rect;
 
-    if-eqz v0, :cond_8
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-eqz v4, :cond_5
 
@@ -706,7 +712,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0c0012
+    sget v5, Landroidx/appcompat/R$layout;->abc_popup_menu_header_item_layout:I
 
     invoke-virtual {v4, v5, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -749,18 +755,15 @@
     goto :goto_3
 
     :cond_8
-    throw v3
-
-    :cond_9
     :goto_2
     move v1, v2
 
     :goto_3
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_9
 
     return-void
 
-    :cond_a
+    :cond_9
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "StandardMenuPopup cannot be used without an anchor"

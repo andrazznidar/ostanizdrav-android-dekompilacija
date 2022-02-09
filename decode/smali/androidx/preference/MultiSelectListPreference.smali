@@ -7,11 +7,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
 
-    const v0, 0x7f040115
+    sget v0, Landroidx/preference/R$attr;->dialogPreferenceStyle:I
 
     const v1, 0x1010091
 
-    invoke-static {p1, v0, v1}, Landroidx/core/app/AppOpsManagerCompat;->getAttr(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Landroidx/core/content/res/TypedArrayUtils;->getAttr(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -29,11 +29,15 @@
 
     move-result-object p1
 
-    const/4 p2, 0x2
+    sget p2, Landroidx/preference/R$styleable;->MultiSelectListPreference_entries:I
 
-    invoke-static {p1, p2, v1}, Landroidx/core/app/AppOpsManagerCompat;->getTextArray(Landroid/content/res/TypedArray;II)[Ljava/lang/CharSequence;
+    sget v0, Landroidx/preference/R$styleable;->MultiSelectListPreference_android_entries:I
 
-    const/4 p2, 0x3
+    invoke-static {p1, p2, v0}, Landroidx/core/content/res/TypedArrayUtils;->getTextArray(Landroid/content/res/TypedArray;II)[Ljava/lang/CharSequence;
+
+    sget p2, Landroidx/preference/R$styleable;->MultiSelectListPreference_entryValues:I
+
+    sget v0, Landroidx/preference/R$styleable;->MultiSelectListPreference_android_entryValues:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
 
@@ -41,9 +45,7 @@
 
     if-nez p2, :cond_0
 
-    const/4 p2, 0x1
-
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
+    invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
 
     :cond_0
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V

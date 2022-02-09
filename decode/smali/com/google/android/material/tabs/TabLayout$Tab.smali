@@ -21,7 +21,7 @@
 
 .field public icon:Landroid/graphics/drawable/Drawable;
 
-.field public labelVisibilityMode:I
+.field public id:I
 
 .field public parent:Lcom/google/android/material/tabs/TabLayout;
 
@@ -42,9 +42,7 @@
 
     iput v0, p0, Lcom/google/android/material/tabs/TabLayout$Tab;->position:I
 
-    const/4 v0, 0x1
-
-    iput v0, p0, Lcom/google/android/material/tabs/TabLayout$Tab;->labelVisibilityMode:I
+    iput v0, p0, Lcom/google/android/material/tabs/TabLayout$Tab;->id:I
 
     return-void
 .end method

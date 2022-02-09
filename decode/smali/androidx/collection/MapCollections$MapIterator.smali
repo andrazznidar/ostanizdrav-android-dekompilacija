@@ -5,6 +5,8 @@
 # interfaces
 .implements Ljava/util/Iterator;
 .implements Ljava/util/Map$Entry;
+.implements Lj$/util/Iterator;
+.implements Lj$/util/Map$Entry;
 
 
 # annotations
@@ -24,7 +26,9 @@
         "Ljava/util/Map$Entry<",
         "TK;TV;>;>;",
         "Ljava/util/Map$Entry<",
-        "TK;TV;>;"
+        "TK;TV;>;",
+        "Lj$/util/Iterator;",
+        "Lj$/util/Map$Entry;"
     }
 .end annotation
 
@@ -137,6 +141,14 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
 .end method
 
 .method public getKey()Ljava/lang/Object;

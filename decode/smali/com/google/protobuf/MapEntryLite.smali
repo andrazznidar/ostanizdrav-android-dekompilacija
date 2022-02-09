@@ -78,7 +78,7 @@
 .end method
 
 .method public static parseField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;Lcom/google/protobuf/WireFormat$FieldType;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -107,15 +107,17 @@
 
     const/16 v1, 0xa
 
-    const/4 v2, 0x1
-
     if-eq v0, v1, :cond_1
 
     const/16 p1, 0xd
 
     if-eq v0, p1, :cond_0
 
-    invoke-static {p0, p2, v2}, Lcom/google/protobuf/FieldSet;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
+    sget p1, Lcom/google/protobuf/FieldSet;->$r8$clinit:I
+
+    sget-object p1, Lcom/google/protobuf/WireFormat$Utf8Validation;->STRICT:Lcom/google/protobuf/WireFormat$Utf8Validation;
+
+    invoke-static {p0, p2, p1}, Lcom/google/protobuf/WireFormat;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Lcom/google/protobuf/WireFormat$Utf8Validation;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -145,7 +147,7 @@
 
     iget v0, p0, Lcom/google/protobuf/CodedInputStream;->recursionDepth:I
 
-    iget v1, p0, Lcom/google/protobuf/CodedInputStream;->recursionLimit:I
+    const/16 v1, 0x64
 
     if-ge v0, v1, :cond_2
 
@@ -155,7 +157,7 @@
 
     iget v0, p0, Lcom/google/protobuf/CodedInputStream;->recursionDepth:I
 
-    add-int/2addr v0, v2
+    add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/protobuf/CodedInputStream;->recursionDepth:I
 

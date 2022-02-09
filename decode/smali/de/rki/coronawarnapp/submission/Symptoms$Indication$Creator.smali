@@ -1,17 +1,18 @@
 .class public final Lde/rki/coronawarnapp/submission/Symptoms$Indication$Creator;
 .super Ljava/lang/Object;
+.source "Symptoms.kt"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lde/rki/coronawarnapp/submission/Symptoms$Indication;-><clinit>()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x19
     name = "Creator"
 .end annotation
 
@@ -39,23 +40,17 @@
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "in"
+    const-string v0, "parcel"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object p1
 
-    const-class v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
-
-    invoke-static {v0, p1}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-static {p1}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->valueOf(Ljava/lang/String;)Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
     move-result-object p1
-
-    check-cast p1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
     return-object p1
 .end method

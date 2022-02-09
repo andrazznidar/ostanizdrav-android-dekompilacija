@@ -24,21 +24,41 @@
     .end annotation
 .end field
 
-.field public final tracingPermissionHelperFactoryProvider:Ljavax/inject/Provider;
+.field public final enfClientProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;",
+            "Lde/rki/coronawarnapp/nearby/ENFClient;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final tracingRepositoryProvider:Ljavax/inject/Provider;
+.field public final exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/storage/TracingRepository;",
+            "Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final installTimeProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/installTime/InstallTimeProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final tracingPermissionHelperFactoryProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;",
             ">;"
         }
     .end annotation
@@ -56,8 +76,29 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "dispatcherProvider",
+            "tracingStatusProvider",
+            "installTimeProvider",
+            "backgroundStatusProvider",
+            "tracingPermissionHelperFactoryProvider",
+            "exposureWindowRiskWorkSchedulerProvider",
+            "enfClientProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,13 +109,19 @@
             "Lde/rki/coronawarnapp/tracing/GeneralTracingStatus;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/storage/TracingRepository;",
+            "Lde/rki/coronawarnapp/installTime/InstallTimeProvider;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Factory;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/nearby/ENFClient;",
             ">;)V"
         }
     .end annotation
@@ -85,11 +132,15 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel_Factory;->tracingStatusProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel_Factory;->tracingRepositoryProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel_Factory;->installTimeProvider:Ljavax/inject/Provider;
 
     iput-object p4, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel_Factory;->backgroundStatusProvider:Ljavax/inject/Provider;
 
     iput-object p5, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel_Factory;->tracingPermissionHelperFactoryProvider:Ljavax/inject/Provider;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel_Factory;->exposureWindowRiskWorkSchedulerProvider:Ljavax/inject/Provider;
+
+    iput-object p7, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragmentViewModel_Factory;->enfClientProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

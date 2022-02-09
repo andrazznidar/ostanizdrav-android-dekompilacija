@@ -86,17 +86,9 @@
     goto :goto_3
 
     :cond_2
-    new-instance v7, Lcom/google/protobuf/ByteString$LiteralByteString;
-
-    sget-object v8, Lcom/google/protobuf/ByteString;->byteArrayCopier:Lcom/google/protobuf/ByteString$ByteArrayCopier;
-
-    invoke-interface {v8, v4, v5, v6}, Lcom/google/protobuf/ByteString$ByteArrayCopier;->copyFrom([BII)[B
+    invoke-static {v4, v5, v6}, Lcom/google/protobuf/ByteString;->copyFrom([BII)Lcom/google/protobuf/ByteString;
 
     move-result-object v4
-
-    invoke-direct {v7, v4}, Lcom/google/protobuf/ByteString$LiteralByteString;-><init>([B)V
-
-    move-object v4, v7
 
     :goto_3
     if-nez v4, :cond_4
@@ -127,7 +119,19 @@
 
     check-cast v2, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;
 
-    invoke-static {v2, v1}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->access$4900(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;Lcom/google/protobuf/ByteString;)V
+    sget-object v3, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;
+
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget v3, v2, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->bitField0_:I
+
+    or-int/lit8 v3, v3, 0x1
+
+    iput v3, v2, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->bitField0_:I
+
+    iput-object v1, v2, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->keyData_:Lcom/google/protobuf/ByteString;
 
     iget v1, p1, Lcom/google/android/gms/nearby/exposurenotification/TemporaryExposureKey;->zzb:I
 

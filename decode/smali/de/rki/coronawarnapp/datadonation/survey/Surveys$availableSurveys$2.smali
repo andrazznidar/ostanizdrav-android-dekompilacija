@@ -29,7 +29,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSurveys.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Surveys.kt\nde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,129:1\n47#2:130\n49#2:134\n50#3:131\n55#3:133\n106#4:132\n*E\n*S KotlinDebug\n*F\n+ 1 Surveys.kt\nde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2\n*L\n31#1:130\n31#1:134\n31#1:131\n31#1:133\n31#1:132\n*E\n"
+    value = "SMAP\nSurveys.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Surveys.kt\nde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,129:1\n47#2:130\n49#2:134\n50#3:131\n55#3:133\n106#4:132\n*S KotlinDebug\n*F\n+ 1 Surveys.kt\nde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2\n*L\n31#1:130\n31#1:134\n31#1:131\n31#1:133\n31#1:132\n*E\n"
 .end annotation
 
 
@@ -71,7 +71,9 @@
 
     move-result-object v4
 
-    sget-object v0, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
+    sget v0, Lkotlinx/coroutines/Job;->$r8$clinit:I
+
+    sget-object v0, Lkotlinx/coroutines/Job$Key;->$$INSTANCE:Lkotlinx/coroutines/Job$Key;
 
     invoke-interface {v4, v0}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
 
@@ -116,7 +118,7 @@
 
     const/4 v8, 0x0
 
-    invoke-static/range {v3 .. v8}, Lcom/google/zxing/client/android/R$id;->fuse$default(Lkotlinx/coroutines/flow/internal/FusibleFlow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;ILjava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
+    invoke-static/range {v3 .. v8}, Lkotlinx/coroutines/flow/internal/FusibleFlow$DefaultImpls;->fuse$default(Lkotlinx/coroutines/flow/internal/FusibleFlow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;ILjava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object v2
 
@@ -146,24 +148,16 @@
     move-object v2, v0
 
     :goto_1
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2$$special$$inlined$map$1;
+    new-instance v0, Lde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2$invoke$$inlined$map$1;
 
-    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {v0, v2}, Lde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2$invoke$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
     return-object v0
 
     :cond_3
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "Flow context cannot contain job in it. Had "
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Flow context cannot contain job in it. Had "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

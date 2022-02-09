@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/tasks/Task;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.2.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.1"
 
 
 # annotations
@@ -25,8 +25,42 @@
 
 
 # virtual methods
+.method public addOnCanceledListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/zzf;)Lcom/google/android/gms/tasks/Task;
+    .locals 0
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/zzf;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Lcom/google/android/gms/tasks/zzf;",
+            ")",
+            "Lcom/google/android/gms/tasks/Task<",
+            "TTResult;>;"
+        }
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string p2, "addOnCanceledListener is not implemented"
+
+    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 .method public addOnCompleteListener(Lcom/google/android/gms/tasks/OnCompleteListener;)Lcom/google/android/gms/tasks/Task;
     .locals 1
+    .param p1    # Lcom/google/android/gms/tasks/OnCompleteListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,6 +81,10 @@
 .end method
 
 .method public abstract addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+    .param p1    # Lcom/google/android/gms/tasks/OnFailureListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,7 +96,32 @@
     .end annotation
 .end method
 
+.method public abstract addOnFailureListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnFailureListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Lcom/google/android/gms/tasks/OnFailureListener;",
+            ")",
+            "Lcom/google/android/gms/tasks/Task<",
+            "TTResult;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    .param p1    # Lcom/google/android/gms/tasks/OnSuccessListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -70,15 +133,44 @@
     .end annotation
 .end method
 
+.method public abstract addOnSuccessListener(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    .param p1    # Ljava/util/concurrent/Executor;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/google/android/gms/tasks/OnSuccessListener;
+        .annotation build Landroidx/annotation/RecentlyNonNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/Executor;",
+            "Lcom/google/android/gms/tasks/OnSuccessListener<",
+            "-TTResult;>;)",
+            "Lcom/google/android/gms/tasks/Task<",
+            "TTResult;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getException()Ljava/lang/Exception;
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
 .end method
 
 .method public abstract getResult()Ljava/lang/Object;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TTResult;"
         }
     .end annotation
+.end method
+
+.method public abstract isCanceled()Z
 .end method
 
 .method public abstract isComplete()Z

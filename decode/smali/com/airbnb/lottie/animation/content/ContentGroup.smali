@@ -453,7 +453,13 @@
 
     iget-object v3, p0, Lcom/airbnb/lottie/animation/content/ContentGroup;->offScreenPaint:Landroid/graphics/Paint;
 
-    invoke-static {p1, p2, v3}, Lcom/airbnb/lottie/utils/Utils;->saveLayerCompat(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    sget-object v4, Lcom/airbnb/lottie/utils/Utils;->threadLocalPathMeasure:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {p1, p2, v3}, Landroid/graphics/Canvas;->saveLayer(Landroid/graphics/RectF;Landroid/graphics/Paint;)I
+
+    const-string p2, "Utils#saveLayer"
+
+    invoke-static {p2}, Lcom/airbnb/lottie/L;->endSection(Ljava/lang/String;)F
 
     :cond_6
     if-eqz v1, :cond_7

@@ -8,11 +8,28 @@
 
 # instance fields
 .field public final synthetic $cont:Lkotlinx/coroutines/CancellableContinuation;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "Lcom/google/android/gms/safetynet/SafetyNetApi$AttestationResponse;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Lkotlinx/coroutines/CancellableContinuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lcom/google/android/gms/safetynet/SafetyNetApi$AttestationResponse;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$2;->$cont:Lkotlinx/coroutines/CancellableContinuation;
 
@@ -28,15 +45,11 @@
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->ATTESTATION_REQUEST_FAILED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
-    const-string v1, "it"
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v2, "SafetyNetWrapper"
 
-    const-string v1, "SafetyNetWrapper"
-
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v1
+    invoke-virtual {v1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v2, 0x0
 
@@ -44,7 +57,7 @@
 
     const-string v3, "Attestation failed."
 
-    invoke-virtual {v1, p1, v3, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, p1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;
 
@@ -60,7 +73,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$2;->$cont:Lkotlinx/coroutines/CancellableContinuation;
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -102,23 +115,15 @@
     :pswitch_0
     new-instance v1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;
 
-    const-string v3, "Network error ("
-
-    invoke-static {v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
     iget-object v2, v2, Lcom/google/android/gms/common/api/ApiException;->mStatus:Lcom/google/android/gms/common/api/Status;
 
     iget v2, v2, Lcom/google/android/gms/common/api/Status;->zzc:I
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v3, "Network error ("
 
-    const/16 v2, 0x29
+    const-string v4, ")"
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v3, v2, v4}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -127,7 +132,7 @@
     :goto_0
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$2;->$cont:Lkotlinx/coroutines/CancellableContinuation;
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
+    invoke-static {v1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
 
     move-result-object v0
 

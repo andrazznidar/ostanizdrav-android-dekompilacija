@@ -140,7 +140,7 @@
 .end method
 
 .method public prefetch(J)V
-    .locals 12
+    .locals 13
 
     iget-object v0, p0, Landroidx/recyclerview/widget/GapWorker;->mRecyclerViews:Ljava/util/ArrayList;
 
@@ -274,27 +274,25 @@
 
     add-int/lit8 v11, v7, 0x1
 
-    aget v10, v10, v11
+    aget v11, v10, v11
 
-    if-gt v10, v8, :cond_4
+    if-gt v11, v8, :cond_4
 
-    move v11, v4
+    move v12, v4
 
     goto :goto_4
 
     :cond_4
-    move v11, v1
+    move v12, v1
 
     :goto_4
-    iput-boolean v11, v9, Landroidx/recyclerview/widget/GapWorker$Task;->immediate:Z
+    iput-boolean v12, v9, Landroidx/recyclerview/widget/GapWorker$Task;->immediate:Z
 
     iput v8, v9, Landroidx/recyclerview/widget/GapWorker$Task;->viewVelocity:I
 
-    iput v10, v9, Landroidx/recyclerview/widget/GapWorker$Task;->distanceToItem:I
+    iput v11, v9, Landroidx/recyclerview/widget/GapWorker$Task;->distanceToItem:I
 
     iput-object v5, v9, Landroidx/recyclerview/widget/GapWorker$Task;->view:Landroidx/recyclerview/widget/RecyclerView;
-
-    iget-object v10, v6, Landroidx/recyclerview/widget/GapWorker$LayoutPrefetchRegistryImpl;->mPrefetchArray:[I
 
     aget v10, v10, v7
 
@@ -345,9 +343,9 @@
     goto/16 :goto_a
 
     :cond_7
-    iget-boolean v3, v2, Landroidx/recyclerview/widget/GapWorker$Task;->immediate:Z
+    iget-boolean v5, v2, Landroidx/recyclerview/widget/GapWorker$Task;->immediate:Z
 
-    if-eqz v3, :cond_8
+    if-eqz v5, :cond_8
 
     const-wide v5, 0x7fffffffffffffffL
 
@@ -357,8 +355,6 @@
     move-wide v5, p1
 
     :goto_7
-    iget-object v3, v2, Landroidx/recyclerview/widget/GapWorker$Task;->view:Landroidx/recyclerview/widget/RecyclerView;
-
     iget v7, v2, Landroidx/recyclerview/widget/GapWorker$Task;->position:I
 
     invoke-virtual {p0, v3, v7, v5, v6}, Landroidx/recyclerview/widget/GapWorker;->prefetchPositionWithDeadline(Landroidx/recyclerview/widget/RecyclerView;IJ)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -422,7 +418,9 @@
     :try_start_0
     const-string v6, "RV Nested Prefetch"
 
-    invoke-static {v6}, Landroidx/core/os/TraceCompat;->beginSection(Ljava/lang/String;)V
+    sget v7, Landroidx/core/os/TraceCompat;->$r8$clinit:I
+
+    invoke-static {v6}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     iget-object v6, v3, Landroidx/recyclerview/widget/RecyclerView;->mState:Landroidx/recyclerview/widget/RecyclerView$State;
 
@@ -471,7 +469,9 @@
     :catchall_0
     move-exception p1
 
-    invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
+    sget p2, Landroidx/core/os/TraceCompat;->$r8$clinit:I
+
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     throw p1
 
@@ -610,7 +610,9 @@
     :try_start_0
     const-string v2, "RV Prefetch"
 
-    invoke-static {v2}, Landroidx/core/os/TraceCompat;->beginSection(Ljava/lang/String;)V
+    sget v3, Landroidx/core/os/TraceCompat;->$r8$clinit:I
+
+    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroidx/recyclerview/widget/GapWorker;->mRecyclerViews:Ljava/util/ArrayList;
 
@@ -710,7 +712,9 @@
 
     iput-wide v0, p0, Landroidx/recyclerview/widget/GapWorker;->mPostTimeNs:J
 
-    invoke-static {}, Landroidx/core/os/TraceCompat;->endSection()V
+    sget v0, Landroidx/core/os/TraceCompat;->$r8$clinit:I
+
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     throw v2
 .end method

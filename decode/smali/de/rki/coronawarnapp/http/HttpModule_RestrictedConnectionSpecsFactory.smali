@@ -25,6 +25,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/http/HttpModule;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "module"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +48,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/http/HttpModule_RestrictedConnectionSpecsFactory;->module:Lde/rki/coronawarnapp/http/HttpModule;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Lokhttp3/ConnectionSpec$Builder;
 
@@ -184,16 +192,9 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
-
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

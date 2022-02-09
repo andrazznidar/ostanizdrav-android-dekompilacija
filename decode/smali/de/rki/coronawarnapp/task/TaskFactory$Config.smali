@@ -16,7 +16,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lde/rki/coronawarnapp/task/TaskFactory$Config$CollisionBehavior;,
-        Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+        Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;,
+        Lde/rki/coronawarnapp/task/TaskFactory$Config$DefaultImpls;
     }
 .end annotation
 

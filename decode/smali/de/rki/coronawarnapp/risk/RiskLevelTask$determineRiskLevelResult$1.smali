@@ -17,16 +17,20 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelTask"
     f = "RiskLevelTask.kt"
     l = {
-        0x6d,
-        0x75,
-        0x79,
-        0x81
+        0x56,
+        0x57,
+        0x6a,
+        0x72,
+        0x76,
+        0x7e
     }
     m = "determineRiskLevelResult"
 .end annotation
 
 
 # instance fields
+.field public I$0:I
+
 .field public L$0:Ljava/lang/Object;
 
 .field public L$1:Ljava/lang/Object;
@@ -43,6 +47,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskLevelTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask$determineRiskLevelResult$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$determineRiskLevelResult$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask;
 
@@ -67,6 +81,8 @@
     iput p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$determineRiskLevelResult$1;->label:I
 
     iget-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$determineRiskLevelResult$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask;
+
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevelTask;->TAG:Ljava/lang/String;
 
     const/4 v0, 0x0
 

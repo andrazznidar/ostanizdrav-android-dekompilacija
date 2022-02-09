@@ -44,15 +44,13 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Landroidx/lifecycle/ViewModel;-><init>()V
 
     new-instance v0, Landroidx/collection/SparseArrayCompat;
 
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Landroidx/collection/SparseArrayCompat;-><init>(I)V
+    invoke-direct {v0}, Landroidx/collection/SparseArrayCompat;-><init>()V
 
     iput-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
 
@@ -74,45 +72,42 @@
 
     const/4 v2, 0x0
 
-    if-lez v0, :cond_1
+    if-gtz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
-
-    invoke-virtual {v0, v1}, Landroidx/collection/SparseArrayCompat;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/loader/app/LoaderManagerImpl$LoaderInfo;
-
-    if-eqz v0, :cond_0
-
-    throw v2
-
-    :cond_0
-    throw v2
-
-    :cond_1
     iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
 
     iget v3, v0, Landroidx/collection/SparseArrayCompat;->mSize:I
 
     iget-object v4, v0, Landroidx/collection/SparseArrayCompat;->mValues:[Ljava/lang/Object;
 
-    move v5, v1
+    move v5, v2
 
     :goto_0
-    if-ge v5, v3, :cond_2
+    if-ge v5, v3, :cond_0
 
-    aput-object v2, v4, v5
+    aput-object v1, v4, v5
 
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    :cond_2
-    iput v1, v0, Landroidx/collection/SparseArrayCompat;->mSize:I
+    :cond_0
+    iput v2, v0, Landroidx/collection/SparseArrayCompat;->mSize:I
 
-    iput-boolean v1, v0, Landroidx/collection/SparseArrayCompat;->mGarbage:Z
+    iput-boolean v2, v0, Landroidx/collection/SparseArrayCompat;->mGarbage:Z
 
     return-void
+
+    :cond_1
+    iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->mLoaders:Landroidx/collection/SparseArrayCompat;
+
+    invoke-virtual {v0, v2}, Landroidx/collection/SparseArrayCompat;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/loader/app/LoaderManagerImpl$LoaderInfo;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    throw v1
 .end method

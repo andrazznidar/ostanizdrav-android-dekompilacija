@@ -3,14 +3,6 @@
 .source "DocumentData.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/airbnb/lottie/model/DocumentData$Justification;
-    }
-.end annotation
-
-
 # instance fields
 .field public final baselineShift:F
 
@@ -18,7 +10,7 @@
 
 .field public final fontName:Ljava/lang/String;
 
-.field public final justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
+.field public final justification:I
 
 .field public final lineHeight:F
 
@@ -36,7 +28,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;FLcom/airbnb/lottie/model/DocumentData$Justification;IFFIIFZ)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;FIIFFIIFZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +39,7 @@
 
     iput p3, p0, Lcom/airbnb/lottie/model/DocumentData;->size:F
 
-    iput-object p4, p0, Lcom/airbnb/lottie/model/DocumentData;->justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    iput p4, p0, Lcom/airbnb/lottie/model/DocumentData;->justification:I
 
     iput p5, p0, Lcom/airbnb/lottie/model/DocumentData;->tracking:I
 
@@ -81,15 +73,13 @@
 
     iget-object v1, p0, Lcom/airbnb/lottie/model/DocumentData;->fontName:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    const/16 v2, 0x1f
 
-    move-result v1
+    invoke-static {v1, v0, v2}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
 
-    add-int/2addr v1, v0
+    move-result v0
 
-    mul-int/lit8 v1, v1, 0x1f
-
-    int-to-float v0, v1
+    int-to-float v0, v0
 
     iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->size:F
 
@@ -99,9 +89,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/airbnb/lottie/model/DocumentData;->justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    iget v1, p0, Lcom/airbnb/lottie/model/DocumentData;->justification:I
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
 
     move-result v1
 

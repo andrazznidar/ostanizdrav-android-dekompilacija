@@ -15,8 +15,6 @@
 
 
 # instance fields
-.field public op:I
-
 .field public output:[B
 
 

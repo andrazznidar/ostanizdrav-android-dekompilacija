@@ -105,8 +105,6 @@
     .end annotation
 .end field
 
-.field public letFallback:Z
-
 .field public policy:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -134,7 +132,7 @@
 
     sput-object v0, Lcom/google/crypto/tink/subtle/EngineFactory;->logger:Ljava/util/logging/Logger;
 
-    invoke-static {}, Lcom/google/android/material/R$style;->isAndroid()Z
+    invoke-static {}, Lcom/google/crypto/tink/subtle/SubtleUtil;->isAndroid()Z
 
     move-result v0
 
@@ -296,10 +294,6 @@
 
     iput-object p1, p0, Lcom/google/crypto/tink/subtle/EngineFactory;->policy:Ljava/util/List;
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lcom/google/crypto/tink/subtle/EngineFactory;->letFallback:Z
-
     return-void
 .end method
 
@@ -375,10 +369,6 @@
     goto :goto_0
 
     :cond_1
-    iget-boolean v0, p0, Lcom/google/crypto/tink/subtle/EngineFactory;->letFallback:Z
-
-    if-eqz v0, :cond_2
-
     iget-object v0, p0, Lcom/google/crypto/tink/subtle/EngineFactory;->instanceBuilder:Lcom/google/crypto/tink/subtle/EngineWrapper;
 
     invoke-interface {v0, p1, v1}, Lcom/google/crypto/tink/subtle/EngineWrapper;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljava/lang/Object;
@@ -386,13 +376,4 @@
     move-result-object p1
 
     return-object p1
-
-    :cond_2
-    new-instance p1, Ljava/security/GeneralSecurityException;
-
-    const-string v0, "No good Provider found."
-
-    invoke-direct {p1, v0, v2}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p1
 .end method

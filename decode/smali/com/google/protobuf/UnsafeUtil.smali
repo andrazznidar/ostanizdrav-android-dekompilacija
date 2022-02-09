@@ -70,27 +70,21 @@
 
     aput-object v0, v10, v7
 
-    sget-object v11, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v11, v10, v9
 
     invoke-virtual {v1, v8, v10}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     new-array v10, v5, [Ljava/lang/Class;
 
-    sget-object v11, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v11, v10, v7
 
-    sget-object v11, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    sget-object v12, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    aput-object v11, v10, v9
+    aput-object v12, v10, v9
 
     invoke-virtual {v1, v4, v10}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     new-array v10, v9, [Ljava/lang/Class;
-
-    sget-object v11, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     aput-object v11, v10, v7
 
@@ -98,15 +92,9 @@
 
     new-array v10, v2, [Ljava/lang/Class;
 
-    sget-object v11, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v11, v10, v7
 
-    sget-object v11, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
     aput-object v11, v10, v9
-
-    sget-object v11, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     aput-object v11, v10, v5
 
@@ -158,9 +146,7 @@
 
     aput-object v0, v6, v7
 
-    sget-object v10, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v10, v6, v9
+    aput-object v11, v6, v9
 
     sget-object v10, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
@@ -172,9 +158,7 @@
 
     aput-object v0, v4, v7
 
-    sget-object v6, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v6, v4, v9
+    aput-object v11, v4, v9
 
     invoke-virtual {v1, v8, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
@@ -184,21 +168,15 @@
 
     aput-object v0, v4, v7
 
-    sget-object v6, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v6, v4, v9
+    aput-object v11, v4, v9
 
     aput-object v0, v4, v5
 
-    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v0, v4, v2
+    aput-object v11, v4, v2
 
     const/4 v0, 0x4
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v4, v0
+    aput-object v11, v4, v0
 
     invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_1

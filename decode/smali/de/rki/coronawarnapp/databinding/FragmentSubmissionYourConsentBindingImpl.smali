@@ -14,8 +14,6 @@
 
 .field public final mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
-.field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 .field public final mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
 .field public final mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
@@ -23,11 +21,11 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/16 v1, 0x11
+    const/16 v1, 0x12
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -47,37 +45,31 @@
 
     fill-array-data v4, :array_0
 
-    new-array v3, v3, [I
+    new-array v5, v3, [I
 
-    fill-array-data v3, :array_1
+    fill-array-data v5, :array_1
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    invoke-virtual {v0, v5, v1, v4, v3}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
+    invoke-virtual {v0, v6, v1, v4, v5}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
+    const-string v1, "merge_guidelines_card"
 
-    const-string v1, "include_settings_switch_row"
-
-    const-string v3, "merge_guidelines_card"
-
-    filled-new-array {v1, v2, v3}, [Ljava/lang/String;
+    filled-new-array {v2, v1}, [Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x3
+    new-array v2, v3, [I
 
-    new-array v3, v2, [I
+    fill-array-data v2, :array_2
 
-    fill-array-data v3, :array_2
+    new-array v3, v3, [I
 
-    new-array v2, v2, [I
-
-    fill-array-data v2, :array_3
+    fill-array-data v3, :array_3
 
     const/4 v4, 0x1
 
-    invoke-virtual {v0, v4, v1, v3, v2}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
+    invoke-virtual {v0, v4, v1, v2, v3}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
     new-instance v0, Landroid/util/SparseIntArray;
 
@@ -85,237 +77,117 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0904e5
+    const v1, 0x7f0a02be
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904e6
+    const v1, 0x7f0a0751
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904ed
+    const v1, 0x7f0a0752
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904ec
+    const v1, 0x7f0a0759
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904e7
+    const v1, 0x7f0a0758
 
     const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904eb
+    const v1, 0x7f0a0753
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904e9
+    const v1, 0x7f0a0757
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904ea
+    const v1, 0x7f0a0755
 
     const/16 v2, 0xe
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904e8
+    const v1, 0x7f0a0756
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901c9
+    const v1, 0x7f0a0754
 
     const/16 v2, 0x10
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
+    const v1, 0x7f0a0342
+
+    const/16 v2, 0x11
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
     return-void
+
+    nop
 
     :array_0
     .array-data 4
-        0x2
+        0x3
         0x6
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f0c0090
-        0x7f0c00b4
+        0x7f0d00d8
+        0x7f0d010a
     .end array-data
 
     :array_2
     .array-data 4
-        0x3
         0x4
         0x5
     .end array-data
 
     :array_3
     .array-data 4
-        0x7f0c00a0
-        0x7f0c00b4
-        0x7f0c00b3
+        0x7f0d010a
+        0x7f0d0109
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 18
+    .locals 20
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
-    move-object/from16 v2, p0
+    move-object/from16 v3, p0
 
-    move-object/from16 v1, p2
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
-
-    sget-object v3, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const/16 v4, 0x11
-
-    move-object/from16 v15, p1
-
-    invoke-static {v15, v1, v4, v0, v3}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
-
-    move-result-object v17
-
-    const/16 v0, 0x10
-
-    aget-object v0, v17, v0
-
-    move-object v4, v0
-
-    check-cast v4, Landroidx/constraintlayout/widget/Guideline;
-
-    const/4 v0, 0x7
-
-    aget-object v0, v17, v0
-
-    move-object v5, v0
-
-    check-cast v5, Landroid/widget/TextView;
-
-    const/16 v0, 0x8
-
-    aget-object v0, v17, v0
-
-    move-object v6, v0
-
-    check-cast v6, Landroid/widget/LinearLayout;
-
-    const/16 v0, 0xb
-
-    aget-object v0, v17, v0
-
-    move-object v7, v0
-
-    check-cast v7, Lde/rki/coronawarnapp/ui/view/CountryListView;
-
-    const/16 v0, 0xf
-
-    aget-object v0, v17, v0
-
-    move-object v8, v0
-
-    check-cast v8, Landroid/view/View;
-
-    const/16 v0, 0xd
-
-    aget-object v0, v17, v0
-
-    move-object v9, v0
-
-    check-cast v9, Landroid/view/View;
-
-    const/16 v0, 0xe
-
-    aget-object v0, v17, v0
-
-    move-object v10, v0
-
-    check-cast v10, Landroid/widget/TextView;
-
-    const/16 v0, 0xc
-
-    aget-object v0, v17, v0
-
-    move-object v11, v0
-
-    check-cast v11, Landroid/widget/TextView;
-
-    const/16 v0, 0xa
-
-    aget-object v0, v17, v0
-
-    move-object v12, v0
-
-    check-cast v12, Landroid/widget/TextView;
-
-    const/16 v0, 0x9
-
-    aget-object v0, v17, v0
-
-    move-object v13, v0
-
-    check-cast v13, Landroid/widget/TextView;
-
-    const/4 v0, 0x0
-
-    aget-object v0, v17, v0
-
-    move-object v14, v0
-
-    check-cast v14, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    const/4 v0, 0x3
-
-    aget-object v0, v17, v0
-
-    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    move-object v15, v0
-
-    const/4 v0, 0x2
-
-    aget-object v0, v17, v0
-
-    move-object/from16 v16, v0
-
-    check-cast v16, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    const/4 v3, 0x2
+    move-object/from16 v15, p2
 
     move-object/from16 v0, p0
 
@@ -323,7 +195,109 @@
 
     move-object/from16 v2, p2
 
-    invoke-direct/range {v0 .. v16}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/ui/view/CountryListView;Landroid/view/View;Landroid/view/View;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    sget-object v4, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
+
+    sget-object v5, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+
+    const/16 v6, 0x12
+
+    move-object/from16 v7, p1
+
+    invoke-static {v7, v15, v6, v4, v5}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
+
+    move-result-object v18
+
+    const/4 v4, 0x7
+
+    aget-object v4, v18, v4
+
+    check-cast v4, Landroid/view/View;
+
+    const/16 v5, 0x11
+
+    aget-object v5, v18, v5
+
+    check-cast v5, Landroidx/constraintlayout/widget/Guideline;
+
+    const/16 v6, 0x8
+
+    aget-object v6, v18, v6
+
+    check-cast v6, Landroid/widget/TextView;
+
+    const/16 v7, 0x9
+
+    aget-object v7, v18, v7
+
+    check-cast v7, Landroid/widget/LinearLayout;
+
+    const/16 v8, 0xc
+
+    aget-object v8, v18, v8
+
+    check-cast v8, Lde/rki/coronawarnapp/ui/view/CountryListView;
+
+    const/16 v9, 0x10
+
+    aget-object v9, v18, v9
+
+    check-cast v9, Landroid/view/View;
+
+    const/16 v10, 0xe
+
+    aget-object v10, v18, v10
+
+    check-cast v10, Landroid/view/View;
+
+    const/16 v11, 0xf
+
+    aget-object v11, v18, v11
+
+    check-cast v11, Landroid/widget/TextView;
+
+    const/16 v12, 0xd
+
+    aget-object v12, v18, v12
+
+    check-cast v12, Landroid/widget/TextView;
+
+    const/16 v13, 0xb
+
+    aget-object v13, v18, v13
+
+    check-cast v13, Landroid/widget/TextView;
+
+    const/16 v14, 0xa
+
+    aget-object v14, v18, v14
+
+    check-cast v14, Landroid/widget/TextView;
+
+    const/16 v16, 0x0
+
+    aget-object v16, v18, v16
+
+    check-cast v16, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    move-object/from16 v15, v16
+
+    const/16 v16, 0x2
+
+    aget-object v16, v18, v16
+
+    check-cast v16, Lde/rki/coronawarnapp/ui/view/SwitchRowView;
+
+    const/16 v17, 0x3
+
+    aget-object v17, v18, v17
+
+    check-cast v17, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+
+    const/16 v19, 0x1
+
+    move/from16 v3, v19
+
+    invoke-direct/range {v0 .. v17}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/view/View;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/LinearLayout;Lde/rki/coronawarnapp/ui/view/CountryListView;Landroid/view/View;Landroid/view/View;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/ui/view/SwitchRowView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     const-wide/16 v0, -0x1
 
@@ -333,7 +307,7 @@
 
     const/4 v0, 0x6
 
-    aget-object v0, v17, v0
+    aget-object v0, v18, v0
 
     check-cast v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
@@ -346,11 +320,9 @@
     :cond_0
     const/4 v0, 0x1
 
-    aget-object v0, v17, v0
+    aget-object v0, v18, v0
 
     check-cast v0, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    iput-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v1, 0x0
 
@@ -358,7 +330,7 @@
 
     const/4 v0, 0x4
 
-    aget-object v0, v17, v0
+    aget-object v0, v18, v0
 
     check-cast v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
@@ -371,7 +343,7 @@
     :cond_1
     const/4 v0, 0x5
 
-    aget-object v0, v17, v0
+    aget-object v0, v18, v0
 
     check-cast v0, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
@@ -386,21 +358,18 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/ui/view/SwitchRowView;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     if-eqz v0, :cond_3
 
     iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_3
-    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    if-eqz v0, :cond_4
-
-    iput-object v2, v0, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
-
-    :cond_4
-    const v0, 0x7f09015b
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
 
     move-object/from16 v1, p2
 
@@ -429,7 +398,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-wide/16 v4, 0x4
+    const-wide/16 v4, 0x2
 
     and-long/2addr v0, v4
 
@@ -437,56 +406,44 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/ui/view/SwitchRowView;
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setEnabled(Ljava/lang/Boolean;)V
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/ui/view/SwitchRowView;->setSwitchEnabled(Ljava/lang/Boolean;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/ui/view/SwitchRowView;
 
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setShowDivider(Ljava/lang/Boolean;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
-
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f120434
+    const v2, 0x7f130618
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;->setSubtitle(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/ui/view/SwitchRowView;->setTitle(Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f08009f
+    const v2, 0x7f0800d0
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v2, 0x7f120435
+    const v2, 0x7f130619
 
-    invoke-static {v1, v2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline37(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v1, v2, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -551,7 +508,7 @@
     return v1
 
     :cond_1
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -562,7 +519,7 @@
     return v1
 
     :cond_2
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -573,7 +530,7 @@
     return v1
 
     :cond_3
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mboundView12:Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -584,17 +541,6 @@
     return v1
 
     :cond_4
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mboundView0:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
-
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    return v1
-
-    :cond_5
     const/4 v0, 0x0
 
     return v0
@@ -615,7 +561,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x4
+    const-wide/16 v0, 0x2
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;->mDirtyFlags:J
@@ -625,10 +571,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -661,14 +603,18 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentTitle:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
-
-    invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBinding;->submissionYourConsentSwitch:Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

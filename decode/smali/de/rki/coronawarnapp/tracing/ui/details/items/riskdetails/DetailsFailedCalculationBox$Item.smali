@@ -3,7 +3,7 @@
 .source "DetailsFailedCalculationBox.kt"
 
 # interfaces
-.implements Lde/rki/coronawarnapp/tracing/ui/details/items/DetailsItem;
+.implements Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/RiskDetailsStateItem;
 
 
 # annotations
@@ -47,9 +47,9 @@
 .method public getStableId()J
     .locals 2
 
-    const v0, -0x4d9af5c6
+    invoke-static {p0}, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/RiskDetailsStateItem$DefaultImpls;->getStableId(Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/RiskDetailsStateItem;)J
 
-    int-to-long v0, v0
+    move-result-wide v0
 
     return-wide v0
 .end method

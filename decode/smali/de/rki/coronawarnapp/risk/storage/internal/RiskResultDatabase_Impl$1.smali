@@ -21,6 +21,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x0
+        }
+        names = {
+            "this$0",
+            "version"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
 
@@ -33,6 +43,14 @@
 # virtual methods
 .method public createAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `riskresults` (`monotonicId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id` TEXT NOT NULL, `calculatedAt` TEXT NOT NULL, `failureReason` TEXT, `totalRiskLevel` INTEGER, `totalMinimumDistinctEncountersWithLowRisk` INTEGER, `totalMinimumDistinctEncountersWithHighRisk` INTEGER, `mostRecentDateWithLowRisk` TEXT, `mostRecentDateWithHighRisk` TEXT, `numberOfDaysWithLowRisk` INTEGER, `numberOfDaysWithHighRisk` INTEGER)"
 
@@ -67,6 +85,14 @@
 
 .method public dropAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     const-string v0, "DROP TABLE IF EXISTS `riskresults`"
 
@@ -86,101 +112,95 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->access$000(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;)Ljava/util/List;
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    move-result-object p1
+    if-eqz p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
-
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onCreate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object p1, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->access$300(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;)Ljava/util/List;
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    move-result-object p1
+    if-eqz p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
-
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
 
@@ -231,12 +251,28 @@
 
 .method public onPostMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public onPreMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     invoke-static {p1}, Landroidx/room/util/DBUtil;->dropFtsSyncTriggers(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
@@ -245,6 +281,14 @@
 
 .method public onValidateSchema(Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/room/RoomOpenHelper$ValidationResult;
     .locals 26
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     move-object/from16 v0, p1
 
@@ -350,7 +394,7 @@
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v16, "totalRiskLevel"
+    const-string/jumbo v16, "totalRiskLevel"
 
     const-string v17, "INTEGER"
 
@@ -358,13 +402,13 @@
 
     invoke-direct/range {v15 .. v21}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v8, "totalRiskLevel"
+    const-string/jumbo v8, "totalRiskLevel"
 
     invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v16, "totalMinimumDistinctEncountersWithLowRisk"
+    const-string/jumbo v16, "totalMinimumDistinctEncountersWithLowRisk"
 
     const-string v17, "INTEGER"
 
@@ -372,13 +416,13 @@
 
     invoke-direct/range {v15 .. v21}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v8, "totalMinimumDistinctEncountersWithLowRisk"
+    const-string/jumbo v8, "totalMinimumDistinctEncountersWithLowRisk"
 
     invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v16, "totalMinimumDistinctEncountersWithHighRisk"
+    const-string/jumbo v16, "totalMinimumDistinctEncountersWithHighRisk"
 
     const-string v17, "INTEGER"
 
@@ -386,7 +430,7 @@
 
     invoke-direct/range {v15 .. v21}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v8, "totalMinimumDistinctEncountersWithHighRisk"
+    const-string/jumbo v8, "totalMinimumDistinctEncountersWithHighRisk"
 
     invoke-virtual {v1, v8, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -444,7 +488,7 @@
 
     const-string v3, "numberOfDaysWithHighRisk"
 
-    invoke-static {v1, v3, v2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v3, v2, v4}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -474,7 +518,7 @@
 
     const-string v2, "riskresults(de.rki.coronawarnapp.risk.storage.internal.riskresults.PersistedRiskLevelResultDao).\n Expected:\n"
 
-    invoke-static {v2, v5, v3, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v5, v3, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -605,7 +649,7 @@
 
     const-string v5, "reportType"
 
-    invoke-static {v1, v5, v2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v5, v2, v4}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -633,7 +677,7 @@
 
     const-string v2, "exposurewindows(de.rki.coronawarnapp.risk.storage.internal.windows.PersistedExposureWindowDao).\n Expected:\n"
 
-    invoke-static {v2, v7, v3, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v7, v3, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -742,7 +786,7 @@
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v12, "typicalAttenuationDb"
+    const-string/jumbo v12, "typicalAttenuationDb"
 
     const-string v13, "INTEGER"
 
@@ -750,11 +794,11 @@
 
     invoke-direct/range {v11 .. v17}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v7, "typicalAttenuationDb"
+    const-string/jumbo v7, "typicalAttenuationDb"
 
     const/4 v8, 0x1
 
-    invoke-static {v1, v7, v2, v8}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v7, v2, v8}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -828,7 +872,7 @@
 
     const-string v2, "scaninstances(de.rki.coronawarnapp.risk.storage.internal.windows.PersistedExposureWindowDao.PersistedScanInstance).\n Expected:\n"
 
-    invoke-static {v2, v5, v3, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v5, v3, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -925,7 +969,7 @@
 
     const-string v5, "minimumDistinctEncountersWithHighRisk"
 
-    invoke-static {v1, v5, v2, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v5, v2, v4}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -953,7 +997,7 @@
 
     const-string v2, "riskperdate(de.rki.coronawarnapp.risk.storage.internal.riskresults.PersistedAggregatedRiskPerDateResult).\n Expected:\n"
 
-    invoke-static {v2, v6, v3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v6, v3, v0}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v0
 

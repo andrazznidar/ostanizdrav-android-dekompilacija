@@ -33,14 +33,14 @@
 
 
 # instance fields
-.field public final synthetic this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder;
+.field public final synthetic this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder;
+    iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;
 
     const/4 p1, 0x3
 
@@ -60,7 +60,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -68,15 +68,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 1>"
+    const-string v0, "$noName_1"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryEditListItemBinding;->name:Landroid/widget/TextView;
-
-    const-string v0, "name"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;->getFullName()Ljava/lang/String;
 
@@ -86,19 +82,17 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryEditListItemBinding;->itemContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p3, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1$$special$$inlined$apply$lambda$1;
+    iget-object p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;
 
-    invoke-direct {p3, p0, p2}, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1$$special$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;)V
+    new-instance v0, Lde/rki/coronawarnapp/submission/ui/homecards/PcrTestPendingCard$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-direct {v0, p3, p2}, Lde/rki/coronawarnapp/submission/ui/homecards/PcrTestPendingCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;)V
 
-    iget-object p3, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder;
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object p3, p3, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;
+    iget-object v0, p3, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;->getContentDescriptionString:Lkotlin/jvm/functions/Function1;
 
-    iget-object p3, p3, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;->getContentDescriptionString:Lkotlin/jvm/functions/Function1;
-
-    invoke-interface {p3, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -106,13 +100,9 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder$onBindData$1;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder;
+    iget-object p2, p3, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;->clickLabelString:Ljava/lang/String;
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter$ViewHolder;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/contactdiary/ui/edit/adapter/PersonEditAdapter;->clickLabelString:Ljava/lang/String;
-
-    invoke-static {p1, p2}, Lcom/google/zxing/client/android/R$id;->setClickLabel(Landroid/view/View;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt;->setClickLabel(Landroid/view/View;Ljava/lang/String;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

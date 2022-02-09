@@ -4,3 +4,11 @@
 
 # interfaces
 .implements Lde/rki/coronawarnapp/ui/main/home/items/HomeItem;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/tracing/ui/homecards/TracingStateItem$DefaultImpls;
+    }
+.end annotation

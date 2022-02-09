@@ -25,7 +25,7 @@
 
     move-result-object p1
 
-    const/4 p2, 0x0
+    sget p2, Lcom/google/android/material/R$styleable;->SnackbarLayout_android_maxWidth:I
 
     const/4 v0, -0x1
 
@@ -35,7 +35,7 @@
 
     iput p2, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->maxWidth:I
 
-    const/4 p2, 0x7
+    sget p2, Lcom/google/android/material/R$styleable;->SnackbarLayout_maxActionInlineWidth:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -69,9 +69,9 @@
 .method public onFinishInflate()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
-    const v0, 0x7f090407
+    sget v0, Lcom/google/android/material/R$id;->snackbar_text:I
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -81,7 +81,7 @@
 
     iput-object v0, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->messageView:Landroid/widget/TextView;
 
-    const v0, 0x7f090406
+    sget v0, Lcom/google/android/material/R$id;->snackbar_action:I
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0700a1
+    sget v1, Lcom/google/android/material/R$dimen;->design_snackbar_padding_vertical_2lines:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0700a0
+    sget v2, Lcom/google/android/material/R$dimen;->design_snackbar_padding_vertical:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -273,7 +273,9 @@
     :goto_1
     iget-object p1, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->messageView:Landroid/widget/TextView;
 
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->isPaddingRelative(Landroid/view/View;)Z
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1}, Landroid/view/View;->isPaddingRelative()Z
 
     move-result v0
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/header_body" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/date" android:focusable="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/arrow" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/contactDiaryListItem" />
+    <ImageView android:id="@id/arrow" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_tiny" android:layout_marginBottom="@dimen/spacing_tiny" android:scaleType="centerInside" android:importantForAccessibility="no" android:layout_marginEnd="@dimen/spacing_small" android:layout_marginVertical="@dimen/spacing_tiny" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_contact_diary_right_arrow" />
+</androidx.constraintlayout.widget.ConstraintLayout>

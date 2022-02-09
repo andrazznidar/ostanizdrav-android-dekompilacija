@@ -100,9 +100,9 @@
 
     iget-object v1, p0, Landroidx/room/InvalidationTracker$1;->this$0:Landroidx/room/InvalidationTracker;
 
-    iget-object v1, v1, Landroidx/room/InvalidationTracker;->mCleanupStatement:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v1, v1, Landroidx/room/InvalidationTracker;->mCleanupStatement:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
-    invoke-interface {v1}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+    invoke-virtual {v1}, Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;->executeUpdateDelete()I
 
     :cond_1
     return-object v0
@@ -199,13 +199,9 @@
 
     iget-object v4, v4, Landroidx/room/InvalidationTracker;->mDatabase:Landroidx/room/RoomDatabase;
 
-    iget-boolean v4, v4, Landroidx/room/RoomDatabase;->mWriteAheadLoggingEnabled:Z
+    iget-boolean v5, v4, Landroidx/room/RoomDatabase;->mWriteAheadLoggingEnabled:Z
 
-    if-eqz v4, :cond_3
-
-    iget-object v4, p0, Landroidx/room/InvalidationTracker$1;->this$0:Landroidx/room/InvalidationTracker;
-
-    iget-object v4, v4, Landroidx/room/InvalidationTracker;->mDatabase:Landroidx/room/RoomDatabase;
+    if-eqz v5, :cond_3
 
     iget-object v4, v4, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
@@ -328,8 +324,6 @@
     invoke-virtual {v4}, Landroidx/arch/core/internal/SafeIterableMap;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
     :cond_4
     :goto_4
@@ -337,7 +331,6 @@
 
     check-cast v6, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;
 
-    :try_start_a
     invoke-virtual {v6}, Landroidx/arch/core/internal/SafeIterableMap$ListIterator;->hasNext()Z
 
     move-result v7
@@ -425,8 +418,8 @@
     move-exception v1
 
     monitor-exit v0
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_3
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
     throw v1
 

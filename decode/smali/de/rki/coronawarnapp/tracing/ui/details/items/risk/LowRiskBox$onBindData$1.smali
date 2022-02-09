@@ -61,7 +61,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -69,7 +69,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 1>"
+    const-string v0, "$noName_1"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -79,7 +79,7 @@
 
     iget-object p3, p1, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBinding;->updateAction:Landroid/widget/Button;
 
-    const-string v0, "updateAction"
+    const-string/jumbo v0, "updateAction"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -87,9 +87,9 @@
 
     iget-boolean v0, v0, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
 
-    invoke-static {p3, v0}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {p3, v0}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBinding;->detailsIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBinding;->detailsIcon:Landroid/widget/ImageView;
 
     const-string p3, "detailsIcon"
 
@@ -99,7 +99,7 @@
 
     iget-boolean p2, p2, Lde/rki/coronawarnapp/tracing/states/LowRisk;->isInDetailsMode:Z
 
-    invoke-static {p1, p2}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {p1, p2}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

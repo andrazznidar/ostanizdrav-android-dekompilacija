@@ -67,13 +67,9 @@
 
     if-eqz p4, :cond_0
 
-    const p3, 0x7f0c0076
+    const p3, 0x7f0d00a7
 
     :cond_0
-    const-string p4, "parent"
-
-    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string p4, "onItemClickListener"
 
     invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -86,7 +82,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$viewBinding$1;-><init>(Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 

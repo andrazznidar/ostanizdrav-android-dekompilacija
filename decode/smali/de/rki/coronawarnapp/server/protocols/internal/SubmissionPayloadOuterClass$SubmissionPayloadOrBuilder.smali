@@ -18,6 +18,47 @@
 
 
 # virtual methods
+.method public abstract getCheckInProtectedReports(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;
+.end method
+
+.method public abstract getCheckInProtectedReportsCount()I
+.end method
+
+.method public abstract getCheckInProtectedReportsList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getCheckIns(I)Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
+
+.method public abstract getCheckInsCount()I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
+
+.method public abstract getCheckInsList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;",
+            ">;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
+
 .method public abstract getConsentToFederation()Z
 .end method
 
@@ -50,6 +91,9 @@
 .method public abstract getRequestPadding()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getSubmissionType()Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+.end method
+
 .method public abstract getVisitedCountries(I)Ljava/lang/String;
 .end method
 
@@ -77,6 +121,9 @@
 .end method
 
 .method public abstract hasRequestPadding()Z
+.end method
+
+.method public abstract hasSubmissionType()Z
 .end method
 
 .method public abstract synthetic isInitialized()Z

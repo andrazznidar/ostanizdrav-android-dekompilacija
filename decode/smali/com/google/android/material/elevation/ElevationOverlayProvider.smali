@@ -19,27 +19,27 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v0, 0x7f040139
+    sget v0, Lcom/google/android/material/R$attr;->elevationOverlayEnabled:I
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/material/R$style;->resolveBoolean(Landroid/content/Context;IZ)Z
+    invoke-static {p1, v0, v1}, Lcom/google/android/material/resources/MaterialAttributes;->resolveBoolean(Landroid/content/Context;IZ)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/android/material/elevation/ElevationOverlayProvider;->elevationOverlayEnabled:Z
 
-    const v0, 0x7f040138
+    sget v0, Lcom/google/android/material/R$attr;->elevationOverlayColor:I
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/material/R$style;->getColor(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Ldagger/android/AndroidInjection;->getColor(Landroid/content/Context;II)I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/material/elevation/ElevationOverlayProvider;->elevationOverlayColor:I
 
-    const v0, 0x7f0400c9
+    sget v0, Lcom/google/android/material/R$attr;->colorSurface:I
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/material/R$style;->getColor(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Ldagger/android/AndroidInjection;->getColor(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -144,7 +144,7 @@
 
     iget v0, p0, Lcom/google/android/material/elevation/ElevationOverlayProvider;->elevationOverlayColor:I
 
-    invoke-static {p1, v0, v2}, Lcom/google/android/material/R$style;->layer(IIF)I
+    invoke-static {p1, v0, v2}, Ldagger/android/AndroidInjection;->layer(IIF)I
 
     move-result p1
 

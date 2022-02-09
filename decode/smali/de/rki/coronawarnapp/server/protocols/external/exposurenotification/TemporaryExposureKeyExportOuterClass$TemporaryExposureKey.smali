@@ -89,27 +89,6 @@
     return-void
 .end method
 
-.method public static access$4900(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;Lcom/google/protobuf/ByteString;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->bitField0_:I
-
-    or-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->bitField0_:I
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;->keyData_:Lcom/google/protobuf/ByteString;
-
-    return-void
-
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
 
 # virtual methods
 .method public final dynamicMethod(Lcom/google/protobuf/GeneratedMessageLite$MethodToInvoke;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -188,7 +167,7 @@
     :pswitch_1
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;
 
-    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$1;)V
+    invoke-direct {p1, v1}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey$Builder-IA;)V
 
     return-object p1
 
@@ -274,9 +253,9 @@
 
     move-result p1
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/DiagnosisKeyBatchOuterClass$ReportType;->forNumber(I)Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/DiagnosisKeyBatchOuterClass$ReportType;
+    invoke-static {p1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->de$rki$coronawarnapp$server$protocols$external$exposurenotification$DiagnosisKeyBatchOuterClass$ReportType$s$forNumber(I)I
 
-    move-result-object p3
+    move-result p3
 
     if-nez p3, :cond_5
 

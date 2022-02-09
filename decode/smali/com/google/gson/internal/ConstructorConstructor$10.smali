@@ -11,7 +11,8 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/google/gson/internal/ObjectConstructor<",
-        "TT;>;"
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
@@ -31,13 +32,14 @@
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT;"
+            "()",
+            "Ljava/lang/Object;"
         }
     .end annotation
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     return-object v0
 .end method

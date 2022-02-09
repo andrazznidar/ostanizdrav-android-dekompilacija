@@ -52,7 +52,9 @@
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    if-eqz v0, :cond_0
+    const-string v1, "rootView"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast v0, Landroid/widget/ImageView;
 
@@ -61,13 +63,4 @@
     invoke-direct {v1, v0, v0}, Lde/rki/coronawarnapp/databinding/ViewCountryListEntryFlagItemBinding;-><init>(Landroid/widget/ImageView;Landroid/widget/ImageView;)V
 
     return-object v1
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "rootView"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/internal/Excluder$1;
+.class Lcom/google/gson/internal/Excluder$1;
 .super Lcom/google/gson/TypeAdapter;
 .source "Excluder.java"
 

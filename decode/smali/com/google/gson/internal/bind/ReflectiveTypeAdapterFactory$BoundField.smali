@@ -36,3 +36,32 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public abstract read(Lcom/google/gson/stream/JsonReader;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/IllegalAccessException;
+        }
+    .end annotation
+.end method
+
+.method public abstract write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/IllegalAccessException;
+        }
+    .end annotation
+.end method
+
+.method public abstract writeField(Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;,
+            Ljava/lang/IllegalAccessException;
+        }
+    .end annotation
+.end method

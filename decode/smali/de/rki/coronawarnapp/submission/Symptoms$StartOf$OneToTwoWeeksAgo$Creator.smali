@@ -1,17 +1,18 @@
 .class public final Lde/rki/coronawarnapp/submission/Symptoms$StartOf$OneToTwoWeeksAgo$Creator;
 .super Ljava/lang/Object;
+.source "Symptoms.kt"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lde/rki/coronawarnapp/submission/Symptoms$StartOf$OneToTwoWeeksAgo;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lde/rki/coronawarnapp/submission/Symptoms$StartOf$OneToTwoWeeksAgo;-><clinit>()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x19
     name = "Creator"
 .end annotation
 
@@ -39,26 +40,14 @@
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "in"
+    const-string v0, "parcel"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/submission/Symptoms$StartOf$OneToTwoWeeksAgo;
-
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
 
     sget-object p1, Lde/rki/coronawarnapp/submission/Symptoms$StartOf$OneToTwoWeeksAgo;->INSTANCE:Lde/rki/coronawarnapp/submission/Symptoms$StartOf$OneToTwoWeeksAgo;
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
     return-object p1
 .end method
 

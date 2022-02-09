@@ -27,61 +27,61 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 9
 
-    const/4 v0, 0x4
+    new-instance v0, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    const-string v1, "IDLE"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    const/4 v2, 0x0
 
-    const-string v2, "IDLE"
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->IDLE:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->IDLE:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
     new-instance v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    const-string v2, "STARTED"
+    const-string v3, "STARTED"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->STARTED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    aput-object v1, v0, v3
+    new-instance v3, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    const-string v5, "FAILED"
 
-    const-string v2, "FAILED"
+    const/4 v6, 0x2
 
-    const/4 v3, 0x2
+    invoke-direct {v3, v5, v6}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
+    sput-object v3, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->FAILED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    sput-object v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->FAILED:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    new-instance v5, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    aput-object v1, v0, v3
+    const-string v7, "SUCCESS"
 
-    new-instance v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    const/4 v8, 0x3
 
-    const-string v2, "SUCCESS"
+    invoke-direct {v5, v7, v8}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x3
+    sput-object v5, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->SUCCESS:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;-><init>(Ljava/lang/String;I)V
+    const/4 v7, 0x4
 
-    sput-object v1, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->SUCCESS:Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    new-array v7, v7, [Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    aput-object v1, v0, v3
+    aput-object v0, v7, v2
 
-    sput-object v0, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->$VALUES:[Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->$VALUES:[Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
     return-void
 .end method
@@ -118,7 +118,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->$VALUES:[Lde/rki/coronawarnapp/ui/submission/ApiRequestState;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/ui/submission/ApiRequestState;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

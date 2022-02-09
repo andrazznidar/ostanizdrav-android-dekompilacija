@@ -48,7 +48,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    const v0, 0x7f0401ad
+    sget v0, Landroidx/appcompat/R$attr;->imageButtonStyle:I
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/appcompat/widget/AppCompatImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public onCreateDrawableState(I)[I
-    .locals 1
+    .locals 2
 
     iget-boolean v0, p0, Lcom/google/android/material/internal/CheckableImageButton;->checked:Z
 
@@ -86,15 +86,13 @@
 
     sget-object v0, Lcom/google/android/material/internal/CheckableImageButton;->DRAWABLE_STATE_CHECKED:[I
 
-    array-length v0, v0
+    array-length v1, v0
 
-    add-int/2addr p1, v0
+    add-int/2addr p1, v1
 
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->onCreateDrawableState(I)[I
+    invoke-super {p0, p1}, Landroid/widget/ImageView;->onCreateDrawableState(I)[I
 
     move-result-object p1
-
-    sget-object v0, Lcom/google/android/material/internal/CheckableImageButton;->DRAWABLE_STATE_CHECKED:[I
 
     invoke-static {p1, v0}, Landroid/widget/ImageButton;->mergeDrawableStates([I[I)[I
 
@@ -103,7 +101,7 @@
     return-object p1
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->onCreateDrawableState(I)[I
+    invoke-super {p0, p1}, Landroid/widget/ImageView;->onCreateDrawableState(I)[I
 
     move-result-object p1
 
@@ -117,7 +115,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     return-void
 
@@ -126,7 +124,7 @@
 
     iget-object v0, p1, Landroidx/customview/view/AbsSavedState;->mSuperState:Landroid/os/Parcelable;
 
-    invoke-super {p0, v0}, Landroid/widget/ImageButton;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     iget-boolean p1, p1, Lcom/google/android/material/internal/CheckableImageButton$SavedState;->checked:Z
 
@@ -138,7 +136,7 @@
 .method public onSaveInstanceState()Landroid/os/Parcelable;
     .locals 2
 
-    invoke-super {p0}, Landroid/widget/ImageButton;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -208,7 +206,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setPressed(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
     :cond_0
     return-void

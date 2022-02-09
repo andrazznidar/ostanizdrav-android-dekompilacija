@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+    .locals 11
 
     check-cast p1, Lkotlin/Unit;
 
@@ -63,11 +63,11 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v2, 0x7f12040e
+    const v2, 0x7f1305e2
 
-    const v3, 0x7f12040d
+    const v3, 0x7f1305e1
 
-    const v4, 0x7f12040c
+    const v4, 0x7f1305e0
 
     const/4 v5, 0x0
 
@@ -77,11 +77,13 @@
 
     const/4 v8, 0x0
 
-    const/16 v9, 0xf0
+    const/4 v9, 0x0
+
+    const/16 v10, 0x1f0
 
     move-object v0, p1
 
-    invoke-direct/range {v0 .. v9}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+    invoke-direct/range {v0 .. v10}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
 
     invoke-static {p1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
 

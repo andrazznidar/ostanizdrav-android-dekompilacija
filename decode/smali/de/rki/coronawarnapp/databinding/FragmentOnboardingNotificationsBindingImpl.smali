@@ -45,13 +45,11 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c009a
+    const v6, 0x7f0d00e2
 
     aput v6, v4, v5
 
     invoke-virtual {v0, v5, v1, v3, v4}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     const-string v1, "include_button_icon"
 
@@ -67,7 +65,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c008c
+    const v6, 0x7f0d00cf
 
     aput v6, v4, v5
 
@@ -79,47 +77,37 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0901c7
+    const v1, 0x7f0a0340
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0902f7
+    const v1, 0x7f0a04e7
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901d1
+    const v1, 0x7f0a034a
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901c9
+    const v1, 0x7f0a0342
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901cf
+    const v1, 0x7f0a0348
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentOnboardingNotificationsBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901cc
+    const v1, 0x7f0a0345
 
     const/16 v2, 0x9
 
@@ -130,6 +118,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 17
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     move-object/from16 v13, p0
 
@@ -265,7 +263,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const v0, 0x7f09015b
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {v14, v0, v13}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -308,7 +306,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1201fa
+    const v2, 0x7f1302ea
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -324,7 +322,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1201fb
+    const v2, 0x7f1302eb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -340,7 +338,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800d7
+    const v2, 0x7f08012a
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -356,7 +354,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1201fc
+    const v2, 0x7f1302ec
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -372,7 +370,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1201fd
+    const v2, 0x7f1302ed
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -388,7 +386,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f08009f
+    const v2, 0x7f0800d0
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -404,7 +402,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f12001d
+    const v2, 0x7f13001d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -535,6 +533,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

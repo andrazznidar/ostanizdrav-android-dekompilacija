@@ -33,7 +33,7 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook$submit$2"
     f = "DefaultPlaybook.kt"
     l = {
-        0x59
+        0x5a
     }
     m = "invokeSuspend"
 .end annotation
@@ -50,6 +50,17 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
+            "Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook$submit$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$submit$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
@@ -64,14 +75,10 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
     check-cast p1, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$submit$2;
 
@@ -103,7 +110,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -117,11 +124,11 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$submit$2;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->verificationServer:Lde/rki/coronawarnapp/verification/server/VerificationServer;
+    iget-object p1, p1, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;->verificationServer:Lde/rki/coronawarnapp/coronatest/server/VerificationServer;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$submit$2;->$data:Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;
 
@@ -129,17 +136,17 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$submit$2;->label:I
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_3
+    sget-object v2, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
 
-    sget-object v3, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
+    new-instance v3, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveTan$2;
 
-    new-instance v4, Lde/rki/coronawarnapp/verification/server/VerificationServer$retrieveTan$2;
+    const/4 v4, 0x0
 
-    invoke-direct {v4, p1, v1, v2}, Lde/rki/coronawarnapp/verification/server/VerificationServer$retrieveTan$2;-><init>(Lde/rki/coronawarnapp/verification/server/VerificationServer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v1, p1, v4}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveTan$2;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/coronatest/server/VerificationServer;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v3, v4, p0}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v2, v3, p0}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -150,7 +157,4 @@
     :cond_2
     :goto_0
     return-object p1
-
-    :cond_3
-    throw v2
 .end method

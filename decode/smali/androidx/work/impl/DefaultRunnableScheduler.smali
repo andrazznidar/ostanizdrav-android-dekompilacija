@@ -27,7 +27,7 @@
 
     move-result-object v0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     :try_start_0
@@ -77,12 +77,12 @@
 
     check-cast v1, Landroid/os/Handler;
     :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v0
@@ -116,20 +116,33 @@
     throw v0
 
     :catch_1
-    const-string v1, "HandlerCompat"
+    move-exception v1
 
-    const-string v2, "Unable to invoke Handler(Looper, Callback, boolean) constructor"
+    goto :goto_0
 
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    :catch_2
+    move-exception v1
+
+    goto :goto_0
+
+    :catch_3
+    move-exception v1
+
+    :goto_0
+    const-string v2, "HandlerCompat"
+
+    const-string v3, "Unable to invoke Handler(Looper, Callback, boolean) constructor"
+
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    :goto_0
+    :goto_1
     move-object v0, v1
 
-    :goto_1
+    :goto_2
     iput-object v0, p0, Landroidx/work/impl/DefaultRunnableScheduler;->mHandler:Landroid/os/Handler;
 
     return-void

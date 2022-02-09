@@ -55,7 +55,7 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/Analytics;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    invoke-static {p1}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$$ExternalSyntheticOutline1;->m(Lde/rki/coronawarnapp/util/TimeStamper;)Lorg/joda/time/Instant;
 
     move-result-object p1
 

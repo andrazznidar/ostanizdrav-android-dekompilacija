@@ -3,15 +3,29 @@
 .source "BugCensor.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;,
+        Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensoredString;,
+        Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$Companion;
+    }
+.end annotation
+
+
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # virtual methods
-.method public abstract checkLog(Lde/rki/coronawarnapp/bugreporting/debuglog/LogLine;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public abstract checkLog(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/bugreporting/debuglog/LogLine;",
+            "Ljava/lang/String;",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Lde/rki/coronawarnapp/bugreporting/debuglog/LogLine;",
+            "Lde/rki/coronawarnapp/bugreporting/censors/BugCensor$CensorContainer;",
             ">;)",
             "Ljava/lang/Object;"
         }

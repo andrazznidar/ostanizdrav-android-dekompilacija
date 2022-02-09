@@ -1,6 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/api/Api$Client;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$AnyClient;
@@ -23,9 +23,6 @@
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
     .end param
-.end method
-
-.method public abstract disconnect()V
 .end method
 
 .method public abstract disconnect(Ljava/lang/String;)V

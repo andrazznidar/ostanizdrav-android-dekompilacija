@@ -12,13 +12,3 @@
         Landroid/support/v4/os/IResultReceiver$Stub;
     }
 .end annotation
-
-
-# virtual methods
-.method public abstract send(ILandroid/os/Bundle;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method

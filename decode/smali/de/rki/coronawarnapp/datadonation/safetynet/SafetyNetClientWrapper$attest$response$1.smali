@@ -51,6 +51,17 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;[BLkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;",
+            "[B",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$attest$response$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$attest$response$1;->this$0:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;
 
@@ -79,10 +90,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$attest$response$1;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$attest$response$1;->this$0:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;
@@ -94,14 +101,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$attest$response$1;
 
@@ -133,7 +138,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -147,7 +152,7 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$attest$response$1;->this$0:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;
 
@@ -155,17 +160,17 @@
 
     iput v2, p0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$attest$response$1;->label:I
 
-    if-eqz p1, :cond_4
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v3, Lkotlinx/coroutines/CancellableContinuationImpl;
 
-    invoke-static {p0}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p0}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v4
 
     invoke-direct {v3, v4, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    invoke-virtual {v3}, Lkotlinx/coroutines/CancellableContinuationImpl;->setupCancellation()V
+    invoke-virtual {v3}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
     iget-object v2, p1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper;->safetyNetClient:Lcom/google/android/gms/safetynet/SafetyNetClient;
 
@@ -185,11 +190,11 @@
 
     invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v2, v2, Lcom/google/android/gms/common/api/GoogleApi;->zah:Lcom/google/android/gms/common/api/GoogleApiClient;
+    iget-object v2, v2, Lcom/google/android/gms/common/api/GoogleApi;->zai:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-    new-instance v4, Lcom/google/android/gms/internal/safetynet/zzl;
+    new-instance v4, Lcom/google/android/gms/internal/safetynet/zzi;
 
-    invoke-direct {v4, v2, v1, p1}, Lcom/google/android/gms/internal/safetynet/zzl;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;[BLjava/lang/String;)V
+    invoke-direct {v4, v2, v1, p1}, Lcom/google/android/gms/internal/safetynet/zzi;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;[BLjava/lang/String;)V
 
     invoke-virtual {v2, v4}, Lcom/google/android/gms/common/api/GoogleApiClient;->enqueue(Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;)Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
 
@@ -203,31 +208,31 @@
 
     invoke-direct {v2, v1}, Lcom/google/android/gms/common/internal/zaq;-><init>(Lcom/google/android/gms/common/api/Response;)V
 
-    sget-object v1, Lcom/google/android/gms/common/internal/PendingResultUtil;->zaa:Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;
+    sget-object v1, Lcom/google/android/gms/common/internal/PendingResultUtil;->zaa:Lcom/google/android/gms/common/internal/zao;
 
     new-instance v4, Lcom/google/android/gms/tasks/TaskCompletionSource;
 
     invoke-direct {v4}, Lcom/google/android/gms/tasks/TaskCompletionSource;-><init>()V
 
-    new-instance v5, Lcom/google/android/gms/common/internal/zar;
+    new-instance v5, Lcom/google/android/gms/common/internal/zap;
 
-    invoke-direct {v5, p1, v4, v2, v1}, Lcom/google/android/gms/common/internal/zar;-><init>(Lcom/google/android/gms/common/api/PendingResult;Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;Lcom/google/android/gms/common/internal/PendingResultUtil$zaa;)V
+    invoke-direct {v5, p1, v4, v2, v1}, Lcom/google/android/gms/common/internal/zap;-><init>(Lcom/google/android/gms/common/api/PendingResult;Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/common/internal/PendingResultUtil$ResultConverter;Lcom/google/android/gms/common/internal/zao;)V
 
-    invoke-virtual {p1, v5}, Lcom/google/android/gms/common/api/PendingResult;->addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
+    invoke-virtual {p1, v5}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->addStatusListener(Lcom/google/android/gms/common/api/PendingResult$StatusListener;)V
 
-    iget-object p1, v4, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
+    iget-object p1, v4, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzw;
 
     new-instance v1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$1;
 
     invoke-direct {v1, v3}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$1;-><init>(Lkotlinx/coroutines/CancellableContinuation;)V
 
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/zzw;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
     new-instance v1, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$2;
 
     invoke-direct {v1, v3}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$callClient$2$2;-><init>(Lkotlinx/coroutines/CancellableContinuation;)V
 
-    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/zzw;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
 
     invoke-virtual {v3}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
@@ -247,9 +252,4 @@
     :cond_3
     :goto_0
     return-object p1
-
-    :cond_4
-    const/4 p1, 0x0
-
-    throw p1
 .end method

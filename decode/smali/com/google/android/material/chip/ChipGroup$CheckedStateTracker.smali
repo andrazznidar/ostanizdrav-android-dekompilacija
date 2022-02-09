@@ -78,8 +78,6 @@
 
     iput p1, p2, Lcom/google/android/material/chip/ChipGroup;->checkedId:I
 
-    iget-object p1, p2, Lcom/google/android/material/chip/ChipGroup;->onCheckedChangeListener:Lcom/google/android/material/chip/ChipGroup$OnCheckedChangeListener;
-
     return-void
 
     :cond_1

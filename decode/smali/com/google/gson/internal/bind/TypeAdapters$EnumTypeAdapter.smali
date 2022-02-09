@@ -1,4 +1,4 @@
-.class public final Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;
+.class final Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;
 .super Lcom/google/gson/TypeAdapter;
 .source "TypeAdapters.java"
 

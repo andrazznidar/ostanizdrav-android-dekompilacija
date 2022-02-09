@@ -42,17 +42,6 @@
 
 .field public mWorkSpec:Landroidx/work/impl/model/WorkSpec;
 
-.field public mWorkerClass:Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/Class<",
-            "+",
-            "Landroidx/work/ListenableWorker;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;)V
@@ -94,8 +83,6 @@
 
     iput-object v0, p0, Landroidx/work/WorkRequest$Builder;->mId:Ljava/util/UUID;
 
-    iput-object p1, p0, Landroidx/work/WorkRequest$Builder;->mWorkerClass:Ljava/lang/Class;
-
     new-instance v0, Landroidx/work/impl/model/WorkSpec;
 
     iget-object v1, p0, Landroidx/work/WorkRequest$Builder;->mId:Ljava/util/UUID;
@@ -127,36 +114,6 @@
 
 
 # virtual methods
-.method public final addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
-    .locals 1
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0
-        }
-        names = {
-            "tag"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")TB;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Landroidx/work/WorkRequest$Builder;->mTags:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0}, Landroidx/work/WorkRequest$Builder;->getThis()Landroidx/work/WorkRequest$Builder;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method public final build()Landroidx/work/WorkRequest;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;

@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.risk.RiskLevelTask"
     f = "RiskLevelTask.kt"
     l = {
-        0xbf
+        0xbd
     }
     m = "backgroundJobsEnabled"
 .end annotation
@@ -34,6 +34,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskLevelTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/RiskLevelTask$backgroundJobsEnabled$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$backgroundJobsEnabled$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask;
 
@@ -58,6 +68,8 @@
     iput p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$backgroundJobsEnabled$1;->label:I
 
     iget-object p1, p0, Lde/rki/coronawarnapp/risk/RiskLevelTask$backgroundJobsEnabled$1;->this$0:Lde/rki/coronawarnapp/risk/RiskLevelTask;
+
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskLevelTask;->TAG:Ljava/lang/String;
 
     invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/risk/RiskLevelTask;->backgroundJobsEnabled(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 

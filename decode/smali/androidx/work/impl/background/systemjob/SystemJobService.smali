@@ -100,7 +100,7 @@
 .method public onCreate()V
     .locals 4
 
-    invoke-super {p0}, Landroid/app/job/JobService;->onCreate()V
+    invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
     :try_start_0
     invoke-virtual {p0}, Landroid/app/job/JobService;->getApplicationContext()Landroid/content/Context;
@@ -168,7 +168,7 @@
 .method public onDestroy()V
     .locals 1
 
-    invoke-super {p0}, Landroid/app/job/JobService;->onDestroy()V
+    invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
     iget-object v0, p0, Landroidx/work/impl/background/systemjob/SystemJobService;->mWorkManagerImpl:Landroidx/work/impl/WorkManagerImpl;
 
@@ -395,41 +395,43 @@
 
     invoke-virtual {p1}, Landroid/app/job/JobParameters;->getTriggeredContentUris()[Landroid/net/Uri;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_3
 
     invoke-virtual {p1}, Landroid/app/job/JobParameters;->getTriggeredContentUris()[Landroid/net/Uri;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    iput-object v4, v2, Landroidx/work/WorkerParameters$RuntimeExtras;->triggeredContentUris:Ljava/util/List;
 
     :cond_3
     invoke-virtual {p1}, Landroid/app/job/JobParameters;->getTriggeredContentAuthorities()[Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
     invoke-virtual {p1}, Landroid/app/job/JobParameters;->getTriggeredContentAuthorities()[Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    iput-object v4, v2, Landroidx/work/WorkerParameters$RuntimeExtras;->triggeredContentAuthorities:Ljava/util/List;
 
     :cond_4
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
     const/16 v4, 0x1c
 
     if-lt v3, v4, :cond_5
 
     invoke-virtual {p1}, Landroid/app/job/JobParameters;->getNetwork()Landroid/net/Network;
-
-    move-result-object p1
-
-    iput-object p1, v2, Landroidx/work/WorkerParameters$RuntimeExtras;->network:Landroid/net/Network;
 
     :cond_5
     iget-object p1, p0, Landroidx/work/impl/background/systemjob/SystemJobService;->mWorkManagerImpl:Landroidx/work/impl/WorkManagerImpl;

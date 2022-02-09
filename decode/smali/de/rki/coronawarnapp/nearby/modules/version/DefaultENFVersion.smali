@@ -81,7 +81,7 @@
     if-ne v2, v3, :cond_1
 
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -102,7 +102,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
     iput v3, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$getENFClientVersion$1;->label:I
@@ -124,15 +124,15 @@
     goto :goto_3
 
     :goto_2
-    const/4 v0, 0x0
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v1, v1, [Ljava/lang/Object;
 
     const-string v2, "Failed to get ENFClient version."
 
-    invoke-virtual {v1, p1, v2, v0}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v2, v1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     const/4 p1, 0x0
 
@@ -141,7 +141,7 @@
 .end method
 
 .method public final internalGetENFClientVersion(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -155,44 +155,37 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p1}, Lkotlin/coroutines/SafeContinuation;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
+    iget-object p1, p0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion;->client:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
-    invoke-interface {v1}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->getVersion()Lcom/google/android/gms/tasks/Task;
+    invoke-interface {p1}, Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;->getVersion()Lcom/google/android/gms/tasks/Task;
 
-    move-result-object v1
+    move-result-object p1
 
-    new-instance v2, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$1;
+    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$1;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
 
-    new-instance v2, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$2;
+    move-result-object p1
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
+    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$2;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$internalGetENFClientVersion$2$2;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {p1, v1}, Lcom/google/android/gms/tasks/Task;->addOnFailureListener(Lcom/google/android/gms/tasks/OnFailureListener;)Lcom/google/android/gms/tasks/Task;
 
     invoke-virtual {v0}, Lkotlin/coroutines/SafeContinuation;->getOrThrow()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    if-ne v0, v1, :cond_0
-
-    const-string v1, "frame"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_0
-    return-object v0
+    return-object p1
 .end method
 
 .method public isAtLeast(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -250,7 +243,7 @@
 
     iget-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$isAtLeast$1;->J$0:J
 
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -264,7 +257,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iput-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$isAtLeast$1;->J$0:J
 
@@ -282,48 +275,53 @@
     :goto_1
     check-cast p3, Ljava/lang/Long;
 
-    if-eqz p3, :cond_5
+    if-nez p3, :cond_4
 
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    return-object p1
+
+    :cond_4
     invoke-virtual {p3}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v0
 
-    new-instance p3, Ljava/lang/StringBuilder;
+    sget-object p3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v2, "Comparing current ENF client version "
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, "Comparing current ENF client version "
 
-    invoke-virtual {p3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, " with "
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, " with "
 
-    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object p3
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    new-array v4, v2, [Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v5, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v5, p3, v4}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p3, v2, v5}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     cmp-long p1, v0, p1
 
-    if-ltz p1, :cond_4
+    if-ltz p1, :cond_5
 
     goto :goto_2
 
-    :cond_4
-    move v3, v2
+    :cond_5
+    move v3, v4
 
     :goto_2
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -331,15 +329,10 @@
     move-result-object p1
 
     return-object p1
-
-    :cond_5
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    return-object p1
 .end method
 
 .method public requireMinimumVersion(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -394,7 +387,7 @@
     iget-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$requireMinimumVersion$1;->J$0:J
 
     :try_start_0
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -410,7 +403,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
     iput-wide p1, v0, Lde/rki/coronawarnapp/nearby/modules/version/DefaultENFVersion$requireMinimumVersion$1;->J$0:J
@@ -439,36 +432,31 @@
 
     if-ltz p3, :cond_4
 
-    new-instance p3, Ljava/lang/StringBuilder;
+    sget-object p3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v3, "Version requirement satisfied: current="
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p3, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, "Version requirement satisfied: current="
 
-    invoke-virtual {p3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v0, ", required="
 
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
     new-array p2, v2, [Ljava/lang/Object;
 
-    sget-object p3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {p3, p1, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_3
-
-    :catch_0
-    move-exception p1
+    invoke-virtual {p3, p1, p2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -477,19 +465,21 @@
 
     invoke-direct {p3, v0, v1, p1, p2}, Lde/rki/coronawarnapp/nearby/modules/version/OutdatedENFVersionException;-><init>(JJ)V
 
-    const-string p1, "Version requirement not satisfied."
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p2, v2, [Ljava/lang/Object;
+    const-string p2, "Version requirement not satisfied."
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v0, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v0, p3, p1, p2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, p3, p2, v0}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     throw p3
     :try_end_1
     .catch Lcom/google/android/gms/common/api/ApiException; {:try_start_1 .. :try_end_1} :catch_0
 
-    :goto_2
+    :catch_0
+    move-exception p1
+
     iget-object p2, p1, Lcom/google/android/gms/common/api/ApiException;->mStatus:Lcom/google/android/gms/common/api/Status;
 
     iget p2, p2, Lcom/google/android/gms/common/api/Status;->zzc:I
@@ -498,7 +488,7 @@
 
     if-ne p2, p3, :cond_5
 
-    :goto_3
+    :goto_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

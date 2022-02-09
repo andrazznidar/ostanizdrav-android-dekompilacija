@@ -24,7 +24,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDiagnosisKeyServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,113:1\n1517#2:114\n1588#2,3:115\n*E\n*S KotlinDebug\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n*L\n34#1:114\n34#1,3:115\n*E\n"
+    value = "SMAP\nDiagnosisKeyServer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,113:1\n1547#2:114\n1618#2,3:115\n*S KotlinDebug\n*F\n+ 1 DiagnosisKeyServer.kt\nde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2\n*L\n34#1:114\n34#1:115,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -48,6 +48,17 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
@@ -76,10 +87,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
@@ -91,14 +98,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;
 
@@ -130,7 +135,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -144,17 +149,19 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->access$getKeyApi$p(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
+    invoke-static {p1}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->access$getKeyApi(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
 
     move-result-object p1
 
     iget-object v1, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;->$location:Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->identifier:Ljava/lang/String;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->getIdentifier()Ljava/lang/String;
+
+    move-result-object v1
 
     iput v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getDayIndex$2;->label:I
 
@@ -174,7 +181,7 @@
 
     const/16 v1, 0xa
 
-    invoke-static {p1, v1}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v1}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
 

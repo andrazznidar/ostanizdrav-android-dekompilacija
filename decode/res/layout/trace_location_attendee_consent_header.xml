@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="18.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="24.0dip" android:paddingEnd="24.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/trace_location_attendee_consent_header_description" style="@style/subtitleMedium" />
+    <com.google.android.material.button.MaterialButton android:layout_gravity="end|bottom|center" android:id="@id/select_all_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/trace_location_attendee_consent_header_button" style="@style/materialTextButton" />
+</LinearLayout>

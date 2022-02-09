@@ -10,8 +10,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroid/widget/LinearLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -23,63 +21,49 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090362
+    const v1, 0x7f0a05c0
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090363
+    const v1, 0x7f0a05c1
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09035d
+    const v1, 0x7f0a05bb
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09035c
+    const v1, 0x7f0a05ba
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09035f
+    const v1, 0x7f0a05bd
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09035e
+    const v1, 0x7f0a05bc
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090361
+    const v1, 0x7f0a05bf
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090360
+    const v1, 0x7f0a05be
 
     const/16 v2, 0x8
 
@@ -90,6 +74,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     move-object/from16 v12, p0
 
@@ -191,11 +185,9 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    iput-object v0, v12, Lde/rki/coronawarnapp/databinding/TracingDetailsItemBehaviorIncreasedViewBindingImpl;->mboundView0:Landroid/widget/LinearLayout;
-
     invoke-virtual {v0, v14}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
 
-    const v0, 0x7f09015b
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {v13, v0, v12}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

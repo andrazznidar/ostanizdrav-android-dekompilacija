@@ -27,7 +27,11 @@
 
 
 # static fields
-.field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+.field private static final synthetic $VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+.field public static final enum TEST_RESULT_INVALID:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+.field public static final TEST_RESULT_INVALID_VALUE:I = 0x4
 
 .field public static final enum TEST_RESULT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
@@ -41,13 +45,29 @@
 
 .field public static final TEST_RESULT_POSITIVE_VALUE:I = 0x3
 
+.field public static final enum TEST_RESULT_RAT_INVALID:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+.field public static final TEST_RESULT_RAT_INVALID_VALUE:I = 0x8
+
+.field public static final enum TEST_RESULT_RAT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+.field public static final TEST_RESULT_RAT_NEGATIVE_VALUE:I = 0x6
+
+.field public static final enum TEST_RESULT_RAT_PENDING:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+.field public static final TEST_RESULT_RAT_PENDING_VALUE:I = 0x5
+
+.field public static final enum TEST_RESULT_RAT_POSITIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+.field public static final TEST_RESULT_RAT_POSITIVE_VALUE:I = 0x7
+
 .field public static final enum TEST_RESULT_UNKNOWN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
 .field public static final TEST_RESULT_UNKNOWN_VALUE:I
 
 .field public static final enum UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-.field public static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
+.field private static final internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Internal$EnumLiteMap<",
@@ -59,12 +79,12 @@
 
 
 # instance fields
-.field public final value:I
+.field private final value:I
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 8
+    .locals 16
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
@@ -76,71 +96,135 @@
 
     sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_UNKNOWN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    new-instance v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    const-string v1, "TEST_RESULT_PENDING"
+    const-string v3, "TEST_RESULT_PENDING"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_PENDING:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_PENDING:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    new-instance v3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    const-string v1, "TEST_RESULT_NEGATIVE"
+    const-string v5, "TEST_RESULT_NEGATIVE"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    sput-object v3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    new-instance v5, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    const-string v1, "TEST_RESULT_POSITIVE"
+    const-string v7, "TEST_RESULT_POSITIVE"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v8}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_POSITIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    sput-object v5, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_POSITIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    new-instance v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    const-string v1, "UNRECOGNIZED"
+    const-string v9, "TEST_RESULT_INVALID"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    const/4 v7, -0x1
+    invoke-direct {v7, v9, v10, v10}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
 
-    invoke-direct {v0, v1, v6, v7}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
+    sput-object v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_INVALID:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    sput-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    new-instance v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    const/4 v1, 0x5
+    const-string v11, "TEST_RESULT_RAT_PENDING"
 
-    new-array v1, v1, [Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    const/4 v12, 0x5
 
-    sget-object v7, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_UNKNOWN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    invoke-direct {v9, v11, v12, v12}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
 
-    aput-object v7, v1, v2
+    sput-object v9, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_PENDING:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_PENDING:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    new-instance v11, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    aput-object v2, v1, v3
+    const-string v13, "TEST_RESULT_RAT_NEGATIVE"
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    const/4 v14, 0x6
 
-    aput-object v2, v1, v4
+    invoke-direct {v11, v13, v14, v14}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
 
-    sget-object v2, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_POSITIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    sput-object v11, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    aput-object v2, v1, v5
+    new-instance v13, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
-    aput-object v0, v1, v6
+    const-string v15, "TEST_RESULT_RAT_POSITIVE"
 
-    sput-object v1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+    const/4 v14, 0x7
+
+    invoke-direct {v13, v15, v14, v14}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
+
+    sput-object v13, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_POSITIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    new-instance v15, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    const-string v14, "TEST_RESULT_RAT_INVALID"
+
+    const/16 v12, 0x8
+
+    invoke-direct {v15, v14, v12, v12}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
+
+    sput-object v15, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_INVALID:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    new-instance v14, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    const-string v12, "UNRECOGNIZED"
+
+    const/16 v10, 0x9
+
+    const/4 v8, -0x1
+
+    invoke-direct {v14, v12, v10, v8}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;-><init>(Ljava/lang/String;II)V
+
+    sput-object v14, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    const/16 v8, 0xa
+
+    new-array v8, v8, [Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    aput-object v0, v8, v2
+
+    aput-object v1, v8, v4
+
+    aput-object v3, v8, v6
+
+    const/4 v0, 0x3
+
+    aput-object v5, v8, v0
+
+    const/4 v0, 0x4
+
+    aput-object v7, v8, v0
+
+    const/4 v0, 0x5
+
+    aput-object v9, v8, v0
+
+    const/4 v0, 0x6
+
+    aput-object v11, v8, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v8, v0
+
+    const/16 v0, 0x8
+
+    aput-object v15, v8, v0
+
+    aput-object v14, v8, v10
+
+    sput-object v8, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->$VALUES:[Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
     new-instance v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult$1;
 
@@ -151,7 +235,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -167,45 +251,71 @@
 .end method
 
 .method public static forNumber(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
-    .locals 1
+    .locals 0
 
-    if-eqz p0, :cond_3
-
-    const/4 v0, 0x1
-
-    if-eq p0, v0, :cond_2
-
-    const/4 v0, 0x2
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x3
-
-    if-eq p0, v0, :cond_0
+    packed-switch p0, :pswitch_data_0
 
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_0
+    :pswitch_0
+    sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_INVALID:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    return-object p0
+
+    :pswitch_1
+    sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_POSITIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    return-object p0
+
+    :pswitch_2
+    sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    return-object p0
+
+    :pswitch_3
+    sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_RAT_PENDING:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    return-object p0
+
+    :pswitch_4
+    sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_INVALID:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
+
+    return-object p0
+
+    :pswitch_5
     sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_POSITIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
     return-object p0
 
-    :cond_1
+    :pswitch_6
     sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_NEGATIVE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
     return-object p0
 
-    :cond_2
+    :pswitch_7
     sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_PENDING:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
     return-object p0
 
-    :cond_3
+    :pswitch_8
     sget-object p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->TEST_RESULT_UNKNOWN:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;
 
     return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public static internalGetValueMap()Lcom/google/protobuf/Internal$EnumLiteMap;

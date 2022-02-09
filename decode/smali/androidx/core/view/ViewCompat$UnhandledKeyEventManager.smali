@@ -90,33 +90,20 @@
     return-void
 .end method
 
-.method public static at(Landroid/view/View;)Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
-    .locals 2
-
-    const v0, 0x7f090507
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;
-
-    invoke-direct {v1}, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;-><init>()V
-
-    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    :cond_0
-    return-object v1
-.end method
-
 
 # virtual methods
 .method public final dispatchInOrder(Landroid/view/View;Landroid/view/KeyEvent;)Landroid/view/View;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "view",
+            "event"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/ViewCompat$UnhandledKeyEventManager;->mViewsContainingListeners:Ljava/util/WeakHashMap;
 
@@ -183,8 +170,18 @@
 
 .method public final onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "v",
+            "event"
+        }
+    .end annotation
 
-    const v0, 0x7f090508
+    sget v0, Landroidx/core/R$id;->tag_unhandled_key_listeners:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

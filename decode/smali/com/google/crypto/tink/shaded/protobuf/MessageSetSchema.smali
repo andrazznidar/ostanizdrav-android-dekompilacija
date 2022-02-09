@@ -62,13 +62,9 @@
 
     iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    move-object p1, p2
+    invoke-virtual {p2, p3}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->hasExtensions(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)Z
 
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
-
-    if-eqz p1, :cond_0
-
-    instance-of p1, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+    move-result p1
 
     iput-boolean p1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->hasExtensions:Z
 
@@ -77,17 +73,12 @@
     iput-object p3, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->defaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;TT;)Z"
@@ -96,27 +87,17 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    if-eqz v0, :cond_5
+    iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    move-object v2, p1
+    invoke-virtual {v1, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+    move-result-object v1
 
-    iget-object v2, v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    if-eqz v0, :cond_4
-
-    move-object v0, p2
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    invoke-virtual {v2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -129,23 +110,19 @@
     :cond_0
     iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->hasExtensions:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v0, :cond_2
+    move-result-object p1
 
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
+    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    invoke-virtual {v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v0, :cond_1
-
-    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object p2
 
     invoke-virtual {p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->equals(Ljava/lang/Object;)Z
 
@@ -154,25 +131,13 @@
     return p1
 
     :cond_1
-    throw v1
-
-    :cond_2
-    throw v1
-
-    :cond_3
     const/4 p1, 0x1
 
     return p1
-
-    :cond_4
-    throw v1
-
-    :cond_5
-    throw v1
 .end method
 
 .method public getSerializedSize(Ljava/lang/Object;)I
-    .locals 10
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)I"
@@ -181,121 +146,38 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    if-eqz v0, :cond_4
+    invoke-virtual {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getSerializedSizeAsMessageSet(Ljava/lang/Object;)I
 
-    move-object v0, p1
+    move-result v0
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+    add-int/lit8 v0, v0, 0x0
 
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+    iget-boolean v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->hasExtensions:Z
 
-    iget v2, v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->memoizedSerializedSize:I
+    if-eqz v1, :cond_0
 
-    const/4 v3, -0x1
+    iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    const/4 v4, 0x0
+    invoke-virtual {v1, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eq v2, v3, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v2, v4
-
-    move v3, v2
-
-    :goto_0
-    iget v5, v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->count:I
-
-    if-ge v3, v5, :cond_1
-
-    iget-object v5, v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->tags:[I
-
-    aget v5, v5, v3
-
-    const/4 v6, 0x3
-
-    ushr-int/2addr v5, v6
-
-    iget-object v7, v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->objects:[Ljava/lang/Object;
-
-    aget-object v7, v7, v3
-
-    check-cast v7, Lcom/google/crypto/tink/shaded/protobuf/ByteString;
-
-    const/4 v8, 0x1
-
-    invoke-static {v8}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeTagSize(I)I
-
-    move-result v8
-
-    const/4 v9, 0x2
-
-    mul-int/2addr v8, v9
-
-    invoke-static {v9, v5}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeUInt32Size(II)I
-
-    move-result v5
-
-    add-int/2addr v5, v8
-
-    invoke-static {v6, v7}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeBytesSize(ILcom/google/crypto/tink/shaded/protobuf/ByteString;)I
-
-    move-result v6
-
-    add-int/2addr v6, v5
-
-    add-int/2addr v2, v6
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    iput v2, v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->memoizedSerializedSize:I
-
-    :goto_1
-    add-int/2addr v2, v4
-
-    iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->hasExtensions:Z
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
-
-    if-eqz v0, :cond_2
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object p1
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->getMessageSetSerializedSize()I
 
     move-result p1
 
-    add-int/2addr v2, p1
+    add-int/2addr v0, p1
 
-    goto :goto_2
-
-    :cond_2
-    throw v1
-
-    :cond_3
-    :goto_2
-    return v2
-
-    :cond_4
-    throw v1
+    :cond_0
+    return v0
 .end method
 
 .method public hashCode(Ljava/lang/Object;)I
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)I"
@@ -304,35 +186,23 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_2
-
-    move-object v0, p1
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    iget-boolean v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->hasExtensions:Z
+    iget-boolean v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->hasExtensions:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_0
 
-    iget-object v2, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
+    iget-object v1, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v1, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v2, :cond_0
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object p1
 
     mul-int/lit8 v0, v0, 0x35
 
@@ -342,17 +212,8 @@
 
     add-int/2addr v0, p1
 
-    goto :goto_0
-
     :cond_0
-    throw v1
-
-    :cond_1
-    :goto_0
     return v0
-
-    :cond_2
-    throw v1
 .end method
 
 .method public final isInitialized(Ljava/lang/Object;)Z
@@ -365,28 +226,19 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object p1
 
     invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isInitialized()Z
 
     move-result p1
 
     return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public makeImmutable(Ljava/lang/Object;)V
-    .locals 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -395,41 +247,13 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    move-object v0, p1
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->isMutable:Z
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->makeImmutable(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
-
-    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->makeImmutable()V
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->makeImmutable(Ljava/lang/Object;)V
 
     return-void
-
-    :cond_0
-    throw v1
-
-    :cond_1
-    throw v1
 .end method
 
 .method public mergeFrom(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)V
@@ -516,7 +340,7 @@
 .end method
 
 .method public mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;TT;)V"
@@ -525,7 +349,21 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    invoke-static {v0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->mergeUnknownFields(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Ljava/lang/Object;Ljava/lang/Object;)V
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->GENERATED_MESSAGE_CLASS:Ljava/lang/Class;
+
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->merge(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->setToMessage(Ljava/lang/Object;Ljava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->hasExtensions:Z
 
@@ -533,7 +371,21 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    invoke-static {v0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->mergeExtensions(Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getMutableExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
 
     :cond_0
     return-void
@@ -585,7 +437,7 @@
     :goto_0
     if-ge p3, p4, :cond_b
 
-    invoke-static {p2, p3, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {p2, p3, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -631,7 +483,7 @@
 
     move-result-object p3
 
-    invoke-static {p3, p2, v4, p4, p5}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {p3, p2, v4, p4, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
@@ -654,7 +506,7 @@
 
     move-object v7, p5
 
-    invoke-static/range {v2 .. v7}, Lcom/google/android/material/R$style;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static/range {v2 .. v7}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeUnknownField(I[BIILcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
@@ -664,7 +516,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {p3, p2, v4, p4, p5}, Lcom/google/android/material/R$style;->skipField(I[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {p3, p2, v4, p4, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->skipField(I[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result p3
 
@@ -678,7 +530,7 @@
     :goto_2
     if-ge v4, p4, :cond_9
 
-    invoke-static {p2, v4, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {p2, v4, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -711,7 +563,7 @@
 
     move-result-object v6
 
-    invoke-static {v6, p2, v4, p4, p5}, Lcom/google/android/material/R$style;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v6, p2, v4, p4, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeMessageField(Lcom/google/crypto/tink/shaded/protobuf/Schema;[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -726,7 +578,7 @@
     :cond_5
     if-ne v8, v5, :cond_7
 
-    invoke-static {p2, v4, p5}, Lcom/google/android/material/R$style;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {p2, v4, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeBytes([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -739,7 +591,7 @@
     :cond_6
     if-nez v8, :cond_7
 
-    invoke-static {p2, v4, p5}, Lcom/google/android/material/R$style;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {p2, v4, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->decodeVarint32([BILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -768,7 +620,7 @@
     goto :goto_4
 
     :cond_8
-    invoke-static {v6, p2, v4, p4, p5}, Lcom/google/android/material/R$style;->skipField(I[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
+    invoke-static {v6, p2, v4, p4, p5}, Lcom/google/crypto/tink/shaded/protobuf/ArrayDecoders;->skipField(I[BIILcom/google/crypto/tink/shaded/protobuf/ArrayDecoders$Registers;)I
 
     move-result v4
 
@@ -826,7 +678,7 @@
 .end method
 
 .method public final parseMessageSetItemOrUnknownField(Lcom/google/crypto/tink/shaded/protobuf/Reader;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Ljava/lang/Object;)Z
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<UT:",
@@ -875,25 +727,11 @@
 
     invoke-virtual {p3, p2, v2, v0}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->findExtensionByNumber(Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/MessageLite;I)Ljava/lang/Object;
 
-    move-result-object p3
+    move-result-object v0
 
-    if-eqz p3, :cond_0
+    if-eqz v0, :cond_0
 
-    check-cast p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
-
-    iget-object p5, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->messageDefaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
-
-    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p5
-
-    invoke-interface {p1, p5, p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readMessage(Ljava/lang/Class;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iget-object p2, p3, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
-
-    invoke-virtual {p4, p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+    invoke-virtual {p3, p1, v0, p2, p4}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->parseLengthPrefixedMessageSetItem(Lcom/google/crypto/tink/shaded/protobuf/Reader;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
 
     return v1
 
@@ -935,9 +773,9 @@
 
     move-result v4
 
-    const/16 v6, 0x10
+    const/16 v5, 0x10
 
-    if-ne v4, v6, :cond_5
+    if-ne v4, v5, :cond_5
 
     invoke-interface {p1}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readUInt32()I
 
@@ -952,33 +790,13 @@
     goto :goto_0
 
     :cond_5
-    const/16 v6, 0x1a
+    const/16 v5, 0x1a
 
-    if-ne v4, v6, :cond_7
+    if-ne v4, v5, :cond_7
 
     if-eqz v2, :cond_6
 
-    move-object v4, p3
-
-    check-cast v4, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
-
-    move-object v4, v2
-
-    check-cast v4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
-
-    iget-object v5, v4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->messageDefaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    invoke-interface {p1, v5, p2}, Lcom/google/crypto/tink/shaded/protobuf/Reader;->readMessage(Ljava/lang/Class;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    iget-object v4, v4, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
-
-    invoke-virtual {p4, v4, v5}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
+    invoke-virtual {p3, p1, v2, p2, p4}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->parseLengthPrefixedMessageSetItem(Lcom/google/crypto/tink/shaded/protobuf/Reader;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
 
     goto :goto_0
 
@@ -1003,90 +821,24 @@
 
     const/16 v4, 0xc
 
-    if-ne p1, v4, :cond_c
+    if-ne p1, v4, :cond_a
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_9
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_8
 
-    check-cast p3, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
-
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;
-
-    iget-object p1, v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->messageDefaultInstance:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
-
-    invoke-interface {p1}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;->newBuilderForType()Lcom/google/crypto/tink/shaded/protobuf/MessageLite$Builder;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;
-
-    invoke-virtual {p1}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$Builder;->buildPartial()Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    move-result-object p1
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->toByteArray()[B
-
-    move-result-object p3
-
-    invoke-static {p3}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->hasArray()Z
-
-    move-result p5
-
-    if-eqz p5, :cond_9
-
-    new-instance p5, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;
-
-    invoke-direct {p5, p3, v1}, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;-><init>(Ljava/nio/ByteBuffer;Z)V
-
-    sget-object p3, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->INSTANCE:Lcom/google/crypto/tink/shaded/protobuf/Protobuf;
-
-    invoke-virtual {p3, p1}, Lcom/google/crypto/tink/shaded/protobuf/Protobuf;->schemaFor(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/Schema;
-
-    move-result-object p3
-
-    invoke-interface {p3, p1, p5, p2}, Lcom/google/crypto/tink/shaded/protobuf/Schema;->mergeFrom(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Reader;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;)V
-
-    iget-object p2, v2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtensionDescriptor;
-
-    invoke-virtual {p4, p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->setField(Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
-
-    invoke-virtual {p5}, Lcom/google/crypto/tink/shaded/protobuf/BinaryReader$SafeHeapReader;->getFieldNumber()I
-
-    move-result p1
-
-    if-ne p1, v5, :cond_8
+    invoke-virtual {p3, v3, v2, p2, p4}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->parseMessageSetItem(Lcom/google/crypto/tink/shaded/protobuf/ByteString;Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/ExtensionRegistryLite;Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
 
     goto :goto_2
 
     :cond_8
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidEndTag()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
-
-    move-result-object p1
-
-    throw p1
-
-    :cond_9
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Direct buffers not yet supported"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_a
     invoke-virtual {p5, p6, v0, v3}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->addLengthDelimited(Ljava/lang/Object;ILcom/google/crypto/tink/shaded/protobuf/ByteString;)V
 
-    :cond_b
+    :cond_9
     :goto_2
     return v1
 
-    :cond_c
+    :cond_a
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->invalidEndTag()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
     move-result-object p1
@@ -1095,7 +847,7 @@
 .end method
 
 .method public writeTo(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -1112,17 +864,9 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->extensionSchema:Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_7
-
-    move-object v0, p1
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object v0, v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
+    move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->iterator()Ljava/util/Iterator;
 
@@ -1131,86 +875,86 @@
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
     move-result-object v2
 
-    check-cast v2, Ljava/util/Map$Entry;
+    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->getLiteJavaType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$JavaType;
 
     move-result-object v3
 
-    check-cast v3, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;
+    sget-object v4, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$JavaType;->MESSAGE:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$JavaType;
 
-    invoke-interface {v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->getLiteJavaType()Lcom/google/crypto/tink/shaded/protobuf/WireFormat$JavaType;
+    if-ne v3, v4, :cond_1
 
-    move-result-object v4
-
-    sget-object v5, Lcom/google/crypto/tink/shaded/protobuf/WireFormat$JavaType;->MESSAGE:Lcom/google/crypto/tink/shaded/protobuf/WireFormat$JavaType;
-
-    if-ne v4, v5, :cond_1
-
-    invoke-interface {v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->isRepeated()Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    invoke-interface {v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->isPacked()Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    instance-of v4, v2, Lcom/google/crypto/tink/shaded/protobuf/LazyField$LazyEntry;
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->getNumber()I
+    invoke-interface {v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->isRepeated()Z
 
     move-result v3
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/LazyField$LazyEntry;
+    if-nez v3, :cond_1
 
-    iget-object v2, v2, Lcom/google/crypto/tink/shaded/protobuf/LazyField$LazyEntry;->entry:Ljava/util/Map$Entry;
+    invoke-interface {v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->isPacked()Z
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result v3
 
-    move-result-object v2
+    if-nez v3, :cond_1
 
-    check-cast v2, Lcom/google/crypto/tink/shaded/protobuf/LazyField;
+    instance-of v3, v1, Lcom/google/crypto/tink/shaded/protobuf/LazyField$LazyEntry;
 
-    invoke-virtual {v2}, Lcom/google/crypto/tink/shaded/protobuf/LazyFieldLite;->toByteString()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    if-eqz v3, :cond_0
 
-    move-result-object v2
+    invoke-interface {v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->getNumber()I
 
-    move-object v4, p2
+    move-result v2
 
-    check-cast v4, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+    check-cast v1, Lcom/google/crypto/tink/shaded/protobuf/LazyField$LazyEntry;
 
-    invoke-virtual {v4, v3, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessageSetItem(ILjava/lang/Object;)V
+    iget-object v1, v1, Lcom/google/crypto/tink/shaded/protobuf/LazyField$LazyEntry;->entry:Ljava/util/Map$Entry;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/crypto/tink/shaded/protobuf/LazyField;
+
+    invoke-virtual {v1}, Lcom/google/crypto/tink/shaded/protobuf/LazyFieldLite;->toByteString()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    move-result-object v1
+
+    move-object v3, p2
+
+    check-cast v3, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+
+    invoke-virtual {v3, v2, v1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessageSetItem(ILjava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v3}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->getNumber()I
+    invoke-interface {v2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;->getNumber()I
 
-    move-result v3
+    move-result v2
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    move-object v4, p2
+    move-object v3, p2
 
-    check-cast v4, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
+    check-cast v3, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    invoke-virtual {v4, v3, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessageSetItem(ILjava/lang/Object;)V
+    invoke-virtual {v3, v2, v1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessageSetItem(ILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -1226,55 +970,11 @@
     :cond_2
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/MessageSetSchema;->unknownFieldSchema:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;
 
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
+    invoke-virtual {v0, p1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->getFromMessage(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_6
+    move-result-object p1
 
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
+    invoke-virtual {v0, p1, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->writeAsMessageSetTo(Ljava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/Writer;)V
 
-    iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    if-eqz p1, :cond_5
-
-    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
-
-    if-eqz p2, :cond_4
-
-    const/4 v0, 0x0
-
-    :goto_1
-    iget v1, p1, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->count:I
-
-    if-ge v0, v1, :cond_3
-
-    iget-object v1, p1, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->tags:[I
-
-    aget v1, v1, v0
-
-    ushr-int/lit8 v1, v1, 0x3
-
-    iget-object v2, p1, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->objects:[Ljava/lang/Object;
-
-    aget-object v2, v2, v0
-
-    invoke-virtual {p2, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->writeMessageSetItem(ILjava/lang/Object;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_3
     return-void
-
-    :cond_4
-    throw v1
-
-    :cond_5
-    throw v1
-
-    :cond_6
-    throw v1
-
-    :cond_7
-    throw v1
 .end method

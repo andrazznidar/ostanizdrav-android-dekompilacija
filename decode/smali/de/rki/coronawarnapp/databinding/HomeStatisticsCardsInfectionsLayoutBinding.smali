@@ -3,6 +3,10 @@
 .source "HomeStatisticsCardsInfectionsLayoutBinding.java"
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # instance fields
 .field public final infectionsContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
@@ -20,8 +24,50 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/appcompat/widget/AppCompatImageView;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/helper/widget/Flow;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/helper/widget/Flow;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "backgroundImage",
+            "contentBarrier",
+            "flowLayout",
+            "horizontalGuideline",
+            "infectionsContainer",
+            "infoStatistics",
+            "primaryLabel",
+            "primaryValue",
+            "secondaryLabel",
+            "secondaryValue",
+            "subtitle",
+            "tertiaryLabel",
+            "tertiaryValue",
+            "title",
+            "trendArrow"
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -47,29 +93,13 @@
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->secondaryValue:Landroid/widget/TextView;
 
-    move-object/from16 v1, p15
+    move-object/from16 v1, p16
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->tertiaryValue:Landroid/widget/TextView;
 
-    move-object/from16 v1, p17
+    move-object/from16 v1, p18
 
     iput-object v1, v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;->trendArrow:Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;
 
     return-void
-.end method
-
-.method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;
-    .locals 2
-
-    sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
-
-    const v1, 0x7f0c007c
-
-    invoke-static {p0, v1, p1, p2, v0}, Landroidx/databinding/ViewDataBinding;->inflateInternal(Landroid/view/LayoutInflater;ILandroid/view/ViewGroup;ZLjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
-
-    move-result-object p0
-
-    check-cast p0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBinding;
-
-    return-object p0
 .end method

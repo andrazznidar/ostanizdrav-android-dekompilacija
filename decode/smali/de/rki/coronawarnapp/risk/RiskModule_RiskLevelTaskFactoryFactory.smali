@@ -38,6 +38,17 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/RiskModule;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "module",
+            "factoryProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,18 +83,11 @@
 
     check-cast v1, Lde/rki/coronawarnapp/risk/RiskLevelTask$Factory;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "factory"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->checkNotNullFromProvides(Ljava/lang/Object;)Ljava/lang/Object;
-
     return-object v1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

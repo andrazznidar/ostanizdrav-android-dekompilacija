@@ -48,7 +48,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;",
+            "Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;",
             ">;"
         }
     .end annotation
@@ -58,6 +58,23 @@
 # direct methods
 .method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "submissionRepositoryProvider",
+            "autoSubmissionProvider",
+            "testResultAvailableNotificationServiceProvider",
+            "analyticsKeySubmissionCollectorProvider",
+            "dispatcherProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,7 +85,7 @@
             "Lde/rki/coronawarnapp/submission/auto/AutoSubmission;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/TestResultAvailableNotificationService;",
+            "Lde/rki/coronawarnapp/coronatest/type/pcr/notification/PCRTestResultAvailableNotificationService;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionCollector;",

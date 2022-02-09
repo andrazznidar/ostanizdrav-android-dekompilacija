@@ -32,37 +32,37 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
-    const/4 v0, 0x2
+    new-instance v0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
+    const-string v1, "ALREADY_PARTICIPATED_THIS_MONTH"
 
-    new-instance v1, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
+    const/4 v2, 0x0
 
-    const-string v2, "ALREADY_PARTICIPATED_THIS_MONTH"
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->ALREADY_PARTICIPATED_THIS_MONTH:Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->ALREADY_PARTICIPATED_THIS_MONTH:Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
     new-instance v1, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
-    const-string v2, "OTP_NOT_AUTHORIZED"
+    const-string v3, "OTP_NOT_AUTHORIZED"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->OTP_NOT_AUTHORIZED:Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
-    aput-object v1, v0, v3
+    const/4 v3, 0x2
 
-    sput-object v0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->$VALUES:[Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
+    new-array v3, v3, [Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->$VALUES:[Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
     return-void
 .end method
@@ -99,7 +99,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->$VALUES:[Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

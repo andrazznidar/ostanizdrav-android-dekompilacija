@@ -38,6 +38,20 @@
 
 
 # virtual methods
+.method public onIncompleteSelectionChanged()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/material/datepicker/MaterialDatePicker$3;->this$0:Lcom/google/android/material/datepicker/MaterialDatePicker;
+
+    iget-object v0, v0, Lcom/google/android/material/datepicker/MaterialDatePicker;->confirmButton:Landroid/widget/Button;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
+
+    return-void
+.end method
+
 .method public onSelectionChanged(Ljava/lang/Object;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -48,7 +62,9 @@
 
     iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker$3;->this$0:Lcom/google/android/material/datepicker/MaterialDatePicker;
 
-    invoke-static {p1}, Lcom/google/android/material/datepicker/MaterialDatePicker;->access$200(Lcom/google/android/material/datepicker/MaterialDatePicker;)V
+    sget v0, Lcom/google/android/material/datepicker/MaterialDatePicker;->$r8$clinit:I
+
+    invoke-virtual {p1}, Lcom/google/android/material/datepicker/MaterialDatePicker;->updateHeader()V
 
     iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialDatePicker$3;->this$0:Lcom/google/android/material/datepicker/MaterialDatePicker;
 

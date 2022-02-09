@@ -24,6 +24,16 @@
     .end annotation
 .end field
 
+.field public final installTimeProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/installTime/InstallTimeProvider;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final riskLevelStorageProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -56,8 +66,27 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "tracingStatusProvider",
+            "backgroundModeStatusProvider",
+            "tracingRepositoryProvider",
+            "riskLevelStorageProvider",
+            "exposureDetectionTrackerProvider",
+            "installTimeProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,6 +104,9 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/installTime/InstallTimeProvider;",
             ">;)V"
         }
     .end annotation
@@ -90,6 +122,8 @@
     iput-object p4, p0, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider_Factory;->riskLevelStorageProvider:Ljavax/inject/Provider;
 
     iput-object p5, p0, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider_Factory;->exposureDetectionTrackerProvider:Ljavax/inject/Provider;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider_Factory;->installTimeProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

@@ -44,10 +44,6 @@
 
     iput v0, p1, Lcom/google/android/material/tabs/TabLayout$SlidingTabIndicator;->selectedPosition:I
 
-    const/4 v0, 0x0
-
-    iput v0, p1, Lcom/google/android/material/tabs/TabLayout$SlidingTabIndicator;->selectionOffset:F
-
     return-void
 .end method
 

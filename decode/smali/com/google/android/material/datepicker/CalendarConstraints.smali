@@ -32,7 +32,7 @@
 
 .field public final monthSpan:I
 
-.field public final openAt:Lcom/google/android/material/datepicker/Month;
+.field public openAt:Lcom/google/android/material/datepicker/Month;
 
 .field public final start:Lcom/google/android/material/datepicker/Month;
 
@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/material/datepicker/Month;Lcom/google/android/material/datepicker/Month;Lcom/google/android/material/datepicker/Month;Lcom/google/android/material/datepicker/CalendarConstraints$DateValidator;Lcom/google/android/material/datepicker/CalendarConstraints$1;)V
+.method public constructor <init>(Lcom/google/android/material/datepicker/Month;Lcom/google/android/material/datepicker/Month;Lcom/google/android/material/datepicker/CalendarConstraints$DateValidator;Lcom/google/android/material/datepicker/Month;Lcom/google/android/material/datepicker/CalendarConstraints$1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,21 +63,38 @@
 
     iput-object p2, p0, Lcom/google/android/material/datepicker/CalendarConstraints;->end:Lcom/google/android/material/datepicker/Month;
 
-    iput-object p3, p0, Lcom/google/android/material/datepicker/CalendarConstraints;->openAt:Lcom/google/android/material/datepicker/Month;
+    iput-object p4, p0, Lcom/google/android/material/datepicker/CalendarConstraints;->openAt:Lcom/google/android/material/datepicker/Month;
 
-    iput-object p4, p0, Lcom/google/android/material/datepicker/CalendarConstraints;->validator:Lcom/google/android/material/datepicker/CalendarConstraints$DateValidator;
+    iput-object p3, p0, Lcom/google/android/material/datepicker/CalendarConstraints;->validator:Lcom/google/android/material/datepicker/CalendarConstraints$DateValidator;
 
-    iget-object p4, p1, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
+    if-eqz p4, :cond_1
 
-    iget-object p5, p3, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
+    iget-object p3, p1, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    invoke-virtual {p4, p5}, Ljava/util/Calendar;->compareTo(Ljava/util/Calendar;)I
+    iget-object p5, p4, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
-    move-result p4
+    invoke-virtual {p3, p5}, Ljava/util/Calendar;->compareTo(Ljava/util/Calendar;)I
 
-    if-gtz p4, :cond_1
+    move-result p3
 
-    iget-object p3, p3, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
+    if-gtz p3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo p2, "start Month cannot be after current Month"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    if-eqz p4, :cond_3
+
+    iget-object p3, p4, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
     iget-object p4, p2, Lcom/google/android/material/datepicker/Month;->firstOfMonth:Ljava/util/Calendar;
 
@@ -85,8 +102,21 @@
 
     move-result p3
 
-    if-gtz p3, :cond_0
+    if-gtz p3, :cond_2
 
+    goto :goto_1
+
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "current Month cannot be after end Month"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_3
+    :goto_1
     invoke-virtual {p1, p2}, Lcom/google/android/material/datepicker/Month;->monthsUntil(Lcom/google/android/material/datepicker/Month;)I
 
     move-result p3
@@ -106,24 +136,6 @@
     iput p2, p0, Lcom/google/android/material/datepicker/CalendarConstraints;->yearSpan:I
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "current Month cannot be after end Month"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "start Month cannot be after current Month"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
@@ -181,7 +193,7 @@
 
     iget-object v3, p1, Lcom/google/android/material/datepicker/CalendarConstraints;->openAt:Lcom/google/android/material/datepicker/Month;
 
-    invoke-virtual {v1, v3}, Lcom/google/android/material/datepicker/Month;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 

@@ -25,12 +25,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/internal/InternalTaskState;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/task/internal/InternalTaskState;Lde/rki/coronawarnapp/task/TaskController;)V
     .locals 0
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1;->this$0:Lde/rki/coronawarnapp/task/TaskController;
+    iput-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1;->$this_toRunningState:Lde/rki/coronawarnapp/task/internal/InternalTaskState;
+    iput-object p2, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1;->this$0:Lde/rki/coronawarnapp/task/TaskController;
 
     const/4 p1, 0x1
 
@@ -46,11 +46,11 @@
 
     check-cast p1, Ljava/lang/Throwable;
 
-    const-string p1, "TaskController"
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {p1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v0, "TaskController"
 
-    move-result-object p1
+    invoke-virtual {p1, v0}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v0, 0x1
 
@@ -64,27 +64,23 @@
 
     const-string v1, "Task ended: %s"
 
-    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1;->this$0:Lde/rki/coronawarnapp/task/TaskController;
 
     iget-object v0, p1, Lde/rki/coronawarnapp/task/TaskController;->taskScope:Lkotlinx/coroutines/CoroutineScope;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
     new-instance v3, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1$1;
 
-    const/4 p1, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {v3, p0, p1}, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1$1;-><init>(Lde/rki/coronawarnapp/task/TaskController$toRunningState$1;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, p1, v1}, Lde/rki/coronawarnapp/task/TaskController$toRunningState$1$1;-><init>(Lde/rki/coronawarnapp/task/TaskController;Lkotlin/coroutines/Continuation;)V
 
     const/4 v4, 0x3
 
     const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Lcom/google/zxing/client/android/R$id;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
+    invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

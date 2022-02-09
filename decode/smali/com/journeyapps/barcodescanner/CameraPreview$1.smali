@@ -34,8 +34,6 @@
 
     iput-object v0, p1, Lcom/journeyapps/barcodescanner/CameraPreview;->currentSurfaceSize:Lcom/journeyapps/barcodescanner/Size;
 
-    iget-object p1, p0, Lcom/journeyapps/barcodescanner/CameraPreview$1;->this$0:Lcom/journeyapps/barcodescanner/CameraPreview;
-
     invoke-virtual {p1}, Lcom/journeyapps/barcodescanner/CameraPreview;->startPreviewIfReady()V
 
     return-void
@@ -59,8 +57,6 @@
     invoke-direct {v0, p2, p3}, Lcom/journeyapps/barcodescanner/Size;-><init>(II)V
 
     iput-object v0, p1, Lcom/journeyapps/barcodescanner/CameraPreview;->currentSurfaceSize:Lcom/journeyapps/barcodescanner/Size;
-
-    iget-object p1, p0, Lcom/journeyapps/barcodescanner/CameraPreview$1;->this$0:Lcom/journeyapps/barcodescanner/CameraPreview;
 
     invoke-virtual {p1}, Lcom/journeyapps/barcodescanner/CameraPreview;->startPreviewIfReady()V
 

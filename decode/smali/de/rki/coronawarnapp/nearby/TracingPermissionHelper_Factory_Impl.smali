@@ -13,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper_Factory;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,7 +32,15 @@
 
 # virtual methods
 .method public create(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Callback;)Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
-    .locals 3
+    .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "callback"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper_Factory_Impl;->delegateFactory:Lde/rki/coronawarnapp/nearby/TracingPermissionHelper_Factory;
 
@@ -36,6 +52,14 @@
 
     check-cast v1, Lde/rki/coronawarnapp/nearby/ENFClient;
 
+    iget-object v2, v0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper_Factory;->tracingSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lde/rki/coronawarnapp/storage/TracingSettings;
+
     iget-object v0, v0, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper_Factory;->scopeProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
@@ -44,9 +68,9 @@
 
     check-cast v0, Lkotlinx/coroutines/CoroutineScope;
 
-    new-instance v2, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
+    new-instance v3, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;
 
-    invoke-direct {v2, p1, v1, v0}, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;-><init>(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Callback;Lde/rki/coronawarnapp/nearby/ENFClient;Lkotlinx/coroutines/CoroutineScope;)V
+    invoke-direct {v3, p1, v1, v2, v0}, Lde/rki/coronawarnapp/nearby/TracingPermissionHelper;-><init>(Lde/rki/coronawarnapp/nearby/TracingPermissionHelper$Callback;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/storage/TracingSettings;Lkotlinx/coroutines/CoroutineScope;)V
 
-    return-object v2
+    return-object v3
 .end method

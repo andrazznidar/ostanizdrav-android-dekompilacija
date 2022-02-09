@@ -42,6 +42,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;->this$0:Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
 
@@ -68,10 +78,6 @@
         }
     .end annotation
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;->this$0:Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
@@ -83,14 +89,12 @@
     return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
+    check-cast p1, Lde/rki/coronawarnapp/appconfig/ConfigData;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;
 
@@ -122,7 +126,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -136,17 +140,17 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/appconfig/ConfigData;
 
-    const-string v1, "DeviceTimeHandler"
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v3, "DeviceTimeHandler"
 
-    move-result-object v1
+    invoke-virtual {v1, v3}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v3, v2, [Ljava/lang/Object;
 
@@ -166,7 +170,7 @@
 
     const-string v5, "Current device time offset is: %dms"
 
-    invoke-virtual {v1, v5, v3}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v5, v3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-interface {p1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->isDeviceTimeCorrect()Z
 
@@ -176,21 +180,19 @@
 
     new-array p1, v4, [Ljava/lang/Object;
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v0, "Dismissing any notification, device time is correct again."
 
-    const-string v1, "Dismissing any notification, device time is correct again."
-
-    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, p1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;->this$0:Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;->notification:Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;
 
-    iget-object v0, p1, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    iget-object v0, p1, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
     iget p1, p1, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationId:I
 
-    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/notification/NotificationHelper;->cancelCurrentNotification(I)V
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->cancelCurrentNotification(I)V
 
     goto :goto_1
 
@@ -207,22 +209,18 @@
 
     new-array p1, v4, [Ljava/lang/Object;
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v0, "Device time is incorrect, but user has already acknowledged it."
 
-    const-string v1, "Device time is incorrect, but user has already acknowledged it."
-
-    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, p1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_3
     new-array p1, v4, [Ljava/lang/Object;
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
     const-string v3, "Showing notification, device time is incorrect."
 
-    invoke-virtual {v1, v3, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, p1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler$launch$2;->this$0:Lde/rki/coronawarnapp/appconfig/devicetime/DeviceTimeHandler;
 

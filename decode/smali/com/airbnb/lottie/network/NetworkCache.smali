@@ -23,7 +23,7 @@
 
     const-string v0, "lottie_cache_"
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -37,15 +37,17 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string p0, ".temp"
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object p0
+    const-string p2, ".temp"
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object p1, p1, Lcom/airbnb/lottie/network/FileExtension;->extension:Ljava/lang/String;
 
@@ -58,11 +60,6 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
     iget-object p0, p1, Lcom/airbnb/lottie/network/FileExtension;->extension:Ljava/lang/String;
 
     :goto_0
@@ -84,7 +81,7 @@
 
     check-cast v0, Lcom/airbnb/lottie/L$1;
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Ljava/io/File;
 
@@ -117,11 +114,6 @@
 
     :cond_1
     return-object v1
-
-    :cond_2
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public writeTempCacheFile(Ljava/lang/String;Ljava/io/InputStream;Lcom/airbnb/lottie/network/FileExtension;)Ljava/io/File;

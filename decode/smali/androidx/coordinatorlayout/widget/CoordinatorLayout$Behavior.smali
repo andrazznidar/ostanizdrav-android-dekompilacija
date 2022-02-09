@@ -59,36 +59,6 @@
     return p1
 .end method
 
-.method public getScrimColor()I
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;)I"
-        }
-    .end annotation
-
-    const/high16 v0, -0x1000000
-
-    return v0
-.end method
-
-.method public getScrimOpacity()F
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;)F"
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public layoutDependsOn(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -104,22 +74,6 @@
     const/4 p1, 0x0
 
     return p1
-.end method
-
-.method public onApplyWindowInsets(Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;",
-            "Landroidx/core/view/WindowInsetsCompat;",
-            ")",
-            "Landroidx/core/view/WindowInsetsCompat;"
-        }
-    .end annotation
-
-    return-object p1
 .end method
 
 .method public onAttachedToLayoutParams(Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;)V
@@ -213,23 +167,6 @@
     return p1
 .end method
 
-.method public onNestedFling()Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;",
-            "Landroid/view/View;",
-            "FFZ)Z"
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public onNestedPreFling(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;FF)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -247,24 +184,6 @@
     return p1
 .end method
 
-.method public onNestedPreScroll()V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;",
-            "Landroid/view/View;",
-            "II[I)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    return-void
-.end method
-
 .method public onNestedPreScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;II[II)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -275,29 +194,6 @@
             "Landroid/view/View;",
             "II[II)V"
         }
-    .end annotation
-
-    if-nez p7, :cond_0
-
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onNestedPreScroll()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public onNestedScroll()V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;",
-            "Landroid/view/View;",
-            "IIII)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     return-void
@@ -330,30 +226,6 @@
     add-int/2addr p2, p7
 
     aput p2, p9, p1
-
-    if-nez p8, :cond_0
-
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onNestedScroll()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public onNestedScrollAccepted()V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;",
-            "Landroid/view/View;",
-            "Landroid/view/View;",
-            "I)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
     return-void
 .end method
@@ -406,27 +278,6 @@
     return-object p1
 .end method
 
-.method public onStartNestedScroll()Z
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;",
-            "Landroid/view/View;",
-            "Landroid/view/View;",
-            "I)Z"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public onStartNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;II)Z
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -440,36 +291,9 @@
         }
     .end annotation
 
-    if-nez p6, :cond_0
-
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onStartNestedScroll()Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
     const/4 p1, 0x0
 
     return p1
-.end method
-
-.method public onStopNestedScroll()V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroidx/coordinatorlayout/widget/CoordinatorLayout;",
-            "TV;",
-            "Landroid/view/View;",
-            ")V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    return-void
 .end method
 
 .method public onStopNestedScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;I)V
@@ -484,11 +308,6 @@
         }
     .end annotation
 
-    if-nez p4, :cond_0
-
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onStopNestedScroll()V
-
-    :cond_0
     return-void
 .end method
 

@@ -1,103 +1,120 @@
-.class public final Lcom/google/android/gms/common/internal/zzc;
-.super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.class public abstract Lcom/google/android/gms/common/internal/zzc;
+.super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T",
+        "Listener:Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
+# instance fields
+.field public zza:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lcom/google/android/gms/common/internal/zzc;",
-            ">;"
+            "TT",
+            "Listener;"
         }
     .end annotation
 .end field
 
+.field public zzb:Z
 
-# instance fields
-.field public zza:Landroid/os/Bundle;
-
-.field public zzb:[Lcom/google/android/gms/common/Feature;
-
-.field public zzc:Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;
-
-.field public zzd:I
+.field public final synthetic zzd:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/gms/common/internal/zzb;
-
-    invoke-direct {v0}, Lcom/google/android/gms/common/internal/zzb;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/common/internal/zzc;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/common/internal/BaseGmsClient;Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT",
+            "Listener;",
+            ")V"
+        }
+    .end annotation
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zzc;->zzd:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public constructor <init>(Landroid/os/Bundle;[Lcom/google/android/gms/common/Feature;ILcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;)V
-    .locals 0
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/zzc;->zza:Ljava/lang/Object;
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
+    const/4 p1, 0x0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/zzc;->zza:Landroid/os/Bundle;
-
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/zzc;->zzb:[Lcom/google/android/gms/common/Feature;
-
-    iput p3, p0, Lcom/google/android/gms/common/internal/zzc;->zzd:I
-
-    iput-object p4, p0, Lcom/google/android/gms/common/internal/zzc;->zzc:Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;
+    iput-boolean p1, p0, Lcom/google/android/gms/common/internal/zzc;->zzb:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 4
+.method public abstract zzc()V
+.end method
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
+.method public abstract zzd(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT",
+            "Listener;",
+            ")V"
+        }
+    .end annotation
+.end method
 
-    move-result v0
+.method public final zzf()V
+    .locals 2
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzc;->zza:Landroid/os/Bundle;
+    monitor-enter p0
 
-    const/4 v2, 0x1
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    :try_start_0
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/zzc;->zza:Ljava/lang/Object;
 
-    invoke-static {p1, v2, v1, v3}, Lcom/airbnb/lottie/R$attr;->writeBundle(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzc;->zzb:[Lcom/google/android/gms/common/Feature;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zzc;->zzd:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    const/4 v2, 0x2
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzt:Ljava/util/ArrayList;
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeTypedArray(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    monitor-enter v0
 
-    iget v1, p0, Lcom/google/android/gms/common/internal/zzc;->zzd:I
+    :try_start_1
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzc;->zzd:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    const/4 v2, 0x3
+    iget-object v1, v1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzt:Ljava/util/ArrayList;
 
-    invoke-static {p1, v2, v1}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzc;->zzc:Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;
-
-    const/4 v2, 0x4
-
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/airbnb/lottie/R$attr;->writeParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
-
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw v0
 .end method

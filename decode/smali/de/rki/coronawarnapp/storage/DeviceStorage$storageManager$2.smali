@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/storage/DeviceStorage;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/ApiLevel;Lde/rki/coronawarnapp/util/storage/StatsFsProvider;)V
+    value = Lde/rki/coronawarnapp/storage/DeviceStorage;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/storage/StatsFsProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -52,24 +52,17 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/storage/DeviceStorage;->context:Landroid/content/Context;
 
-    const-string v1, "storage"
+    const-string/jumbo v1, "storage"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "null cannot be cast to non-null type android.os.storage.StorageManager"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast v0, Landroid/os/storage/StorageManager;
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type android.os.storage.StorageManager"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

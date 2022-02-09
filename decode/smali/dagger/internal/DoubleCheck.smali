@@ -98,40 +98,7 @@
     :cond_0
     new-instance v0, Ldagger/internal/DoubleCheck;
 
-    if-eqz p0, :cond_1
-
-    invoke-direct {v0, p0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
-
-    return-object v0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public static provider(Ljavax/inject/Provider;)Ljavax/inject/Provider;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<P::",
-            "Ljavax/inject/Provider<",
-            "TT;>;T:",
-            "Ljava/lang/Object;",
-            ">(TP;)",
-            "Ljavax/inject/Provider<",
-            "TT;>;"
-        }
-    .end annotation
-
-    instance-of v0, p0, Ldagger/internal/DoubleCheck;
-
-    if-eqz v0, :cond_0
-
-    return-object p0
-
-    :cond_0
-    new-instance v0, Ldagger/internal/DoubleCheck;
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-direct {v0, p0}, Ldagger/internal/DoubleCheck;-><init>(Ljavax/inject/Provider;)V
 
@@ -215,8 +182,6 @@
 
     :try_start_0
     iget-object v0, p0, Ldagger/internal/DoubleCheck;->instance:Ljava/lang/Object;
-
-    sget-object v1, Ldagger/internal/DoubleCheck;->UNINITIALIZED:Ljava/lang/Object;
 
     if-ne v0, v1, :cond_0
 

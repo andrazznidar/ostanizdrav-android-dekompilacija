@@ -18,7 +18,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 7
 
     const-class v3, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
@@ -43,28 +43,35 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 4
+    .locals 8
 
     iget-object v0, p0, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
+    move-object v1, v0
 
-    const/4 v1, 0x0
+    check-cast v1, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;
 
-    if-eqz v0, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v2, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;
+    new-instance v5, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;Lkotlin/coroutines/Continuation;)V
+    const/4 v0, 0x0
 
-    const/4 v3, 0x1
+    invoke-direct {v5, v1, v0}, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel$deleteAllAppContent$1;-><init>(Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v0, v1, v2, v3, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v6, 0x7
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v1 .. v7}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineExceptionHandler;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
-
-    :cond_0
-    throw v1
 .end method

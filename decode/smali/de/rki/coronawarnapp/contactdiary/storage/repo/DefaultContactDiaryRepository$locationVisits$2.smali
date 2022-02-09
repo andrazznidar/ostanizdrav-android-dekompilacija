@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDefaultContactDiaryRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DefaultContactDiaryRepository.kt\nde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,249:1\n47#2:250\n49#2:254\n50#3:251\n55#3:253\n106#4:252\n*E\n*S KotlinDebug\n*F\n+ 1 DefaultContactDiaryRepository.kt\nde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2\n*L\n97#1:250\n97#1:254\n97#1:251\n97#1:253\n97#1:252\n*E\n"
+    value = "SMAP\nDefaultContactDiaryRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DefaultContactDiaryRepository.kt\nde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,284:1\n47#2:285\n49#2:289\n50#3:286\n55#3:288\n106#4:287\n*S KotlinDebug\n*F\n+ 1 DefaultContactDiaryRepository.kt\nde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2\n*L\n109#1:285\n109#1:289\n109#1:286\n109#1:288\n109#1:287\n*E\n"
 .end annotation
 
 
@@ -54,7 +54,7 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 5
+    .locals 2
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2;->this$0:Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository;
 
@@ -62,46 +62,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x0
-
-    const-string v2, "SELECT * FROM locationvisits"
-
-    invoke-static {v2, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;->__db:Landroidx/room/RoomDatabase;
-
-    const-string v3, "locations"
-
-    const-string v4, "locationvisits"
-
-    filled-new-array {v3, v4}, [Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;
-
-    invoke-direct {v4, v0, v1}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl$12;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
-
-    const/4 v0, 0x1
-
-    invoke-static {v2, v0, v3, v4}, Landroidx/room/CoroutinesRoom;->createFlow(Landroidx/room/RoomDatabase;Z[Ljava/lang/String;Ljava/util/concurrent/Callable;)Lkotlinx/coroutines/flow/Flow;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/contactdiary/storage/dao/ContactDiaryLocationVisitDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object v0
 
-    new-instance v1, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2$$special$$inlined$map$1;
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2$invoke$$inlined$map$1;
 
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/contactdiary/storage/repo/DefaultContactDiaryRepository$locationVisits$2$invoke$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
     return-object v1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

@@ -16,28 +16,3 @@
 
     return-void
 .end method
-
-
-# virtual methods
-.method public final zzb(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/common/api/Status;",
-            "Ljava/util/List<",
-            "Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;",
-            ">;)V"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method

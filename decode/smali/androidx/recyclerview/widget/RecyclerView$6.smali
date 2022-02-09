@@ -313,7 +313,7 @@
 .end method
 
 .method public offsetPositionsForAdd(II)V
-    .locals 7
+    .locals 8
 
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$6;->this$0:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -374,27 +374,29 @@
 
     move-result v3
 
+    move v5, v2
+
     :goto_1
-    if-ge v2, v3, :cond_3
+    if-ge v5, v3, :cond_3
 
-    iget-object v5, v1, Landroidx/recyclerview/widget/RecyclerView$Recycler;->mCachedViews:Ljava/util/ArrayList;
+    iget-object v6, v1, Landroidx/recyclerview/widget/RecyclerView$Recycler;->mCachedViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v6
 
-    check-cast v5, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+    check-cast v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    if-eqz v5, :cond_2
+    if-eqz v6, :cond_2
 
-    iget v6, v5, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
+    iget v7, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->mPosition:I
 
-    if-lt v6, p1, :cond_2
+    if-lt v7, p1, :cond_2
 
-    invoke-virtual {v5, p2, v4}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->offsetPosition(IZ)V
+    invoke-virtual {v6, p2, v2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->offsetPosition(IZ)V
 
     :cond_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 

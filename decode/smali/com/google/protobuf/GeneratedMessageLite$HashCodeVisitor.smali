@@ -43,13 +43,21 @@
 
     mul-int/lit8 p1, p1, 0x35
 
-    invoke-static {p2}, Lcom/google/protobuf/Internal;->hashBoolean(Z)I
+    sget-object p3, Lcom/google/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
-    move-result p3
+    if-eqz p2, :cond_0
 
-    add-int/2addr p3, p1
+    const/16 p3, 0x4cf
 
-    iput p3, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+    goto :goto_0
+
+    :cond_0
+    const/16 p3, 0x4d5
+
+    :goto_0
+    add-int/2addr p1, p3
+
+    iput p1, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
 
     return p2
 .end method
@@ -142,6 +150,24 @@
     iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
 
     return-object p1
+.end method
+
+.method public visitFloat(ZFZF)F
+    .locals 0
+
+    iget p1, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    mul-int/lit8 p1, p1, 0x35
+
+    invoke-static {p2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result p3
+
+    add-int/2addr p3, p1
+
+    iput p3, p0, Lcom/google/protobuf/GeneratedMessageLite$HashCodeVisitor;->hashCode:I
+
+    return p2
 .end method
 
 .method public visitInt(ZIZI)I

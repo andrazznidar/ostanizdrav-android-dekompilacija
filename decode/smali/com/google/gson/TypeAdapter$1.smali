@@ -1,9 +1,18 @@
-.class public Lcom/google/gson/TypeAdapter$1;
+.class Lcom/google/gson/TypeAdapter$1;
 .super Lcom/google/gson/TypeAdapter;
 .source "TypeAdapter.java"
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/gson/TypeAdapter;->nullSafe()Lcom/google/gson/TypeAdapter;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/TypeAdapter<",

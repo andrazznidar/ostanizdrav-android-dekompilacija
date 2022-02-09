@@ -1,5 +1,6 @@
 .class public abstract Lcom/google/android/play/core/assetpacks/AssetPackState;
 .super Ljava/lang/Object;
+.source "com.google.android.play:core@@1.10.1"
 
 
 # direct methods
@@ -11,14 +12,10 @@
     return-void
 .end method
 
-.method public static b(Ljava/lang/String;IIJJDI)Lcom/google/android/play/core/assetpacks/AssetPackState;
-    .locals 11
-    .param p0    # Ljava/lang/String;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
+.method public static zzb(Ljava/lang/String;IIJJDILjava/lang/String;Ljava/lang/String;)Lcom/google/android/play/core/assetpacks/AssetPackState;
+    .locals 13
 
-    new-instance v10, Lcom/google/android/play/core/assetpacks/bh;
+    new-instance v12, Lcom/google/android/play/core/assetpacks/zzbn;
 
     const-wide/high16 v0, 0x4059000000000000L    # 100.0
 
@@ -30,7 +27,7 @@
 
     double-to-int v8, v0
 
-    move-object v0, v10
+    move-object v0, v12
 
     move-object v1, p0
 
@@ -38,19 +35,23 @@
 
     move v3, p2
 
-    move-wide v4, p3
+    move-wide/from16 v4, p3
 
     move-wide/from16 v6, p5
 
     move/from16 v9, p9
 
-    invoke-direct/range {v0 .. v9}, Lcom/google/android/play/core/assetpacks/bh;-><init>(Ljava/lang/String;IIJJII)V
+    move-object/from16 v10, p10
 
-    return-object v10
+    move-object/from16 v11, p11
+
+    invoke-direct/range {v0 .. v11}, Lcom/google/android/play/core/assetpacks/zzbn;-><init>(Ljava/lang/String;IIJJIILjava/lang/String;Ljava/lang/String;)V
+
+    return-object v12
 .end method
 
-.method public static c(Landroid/os/Bundle;Ljava/lang/String;Lcom/google/android/play/core/assetpacks/bz;Lcom/google/android/play/core/assetpacks/az;)Lcom/google/android/play/core/assetpacks/AssetPackState;
-    .locals 17
+.method public static zzc(Landroid/os/Bundle;Ljava/lang/String;Lcom/google/android/play/core/assetpacks/zzcl;Lcom/google/android/play/core/assetpacks/zzdy;Lcom/google/android/play/core/assetpacks/zzbe;)Lcom/google/android/play/core/assetpacks/AssetPackState;
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -58,9 +59,9 @@
 
     move-object/from16 v2, p2
 
-    const-string v3, "status"
+    const-string/jumbo v3, "status"
 
-    invoke-static {v3, v1}, Lcom/google/android/material/R$style;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -68,15 +69,15 @@
 
     move-result v3
 
-    move-object/from16 v4, p3
+    move-object/from16 v4, p4
 
-    invoke-interface {v4, v3, v1}, Lcom/google/android/play/core/assetpacks/az;->a(ILjava/lang/String;)I
+    invoke-interface {v4, v3, v1}, Lcom/google/android/play/core/assetpacks/zzbe;->zza(ILjava/lang/String;)I
 
     move-result v3
 
     const-string v4, "error_code"
 
-    invoke-static {v4, v1}, Lcom/google/android/material/R$style;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -86,7 +87,7 @@
 
     const-string v5, "bytes_downloaded"
 
-    invoke-static {v5, v1}, Lcom/google/android/material/R$style;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -94,9 +95,9 @@
 
     move-result-wide v5
 
-    const-string v7, "total_bytes_to_download"
+    const-string/jumbo v7, "total_bytes_to_download"
 
-    invoke-static {v7, v1}, Lcom/google/android/material/R$style;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -107,33 +108,38 @@
     monitor-enter p2
 
     :try_start_0
-    iget-object v9, v2, Lcom/google/android/play/core/assetpacks/bz;->a:Ljava/util/Map;
+    iget-object v9, v2, Lcom/google/android/play/core/assetpacks/zzcl;->zza:Ljava/util/Map;
 
     invoke-interface {v9, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Ljava/lang/Double;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-nez v9, :cond_0
 
     const-wide/16 v9, 0x0
 
+    monitor-exit p2
+
     goto :goto_0
 
     :cond_0
+    :try_start_1
     invoke-virtual {v9}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v9
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :goto_0
     monitor-exit p2
 
+    :goto_0
     const-string v2, "pack_version"
 
-    invoke-static {v2, v1}, Lcom/google/android/material/R$style;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -143,7 +149,7 @@
 
     const-string v2, "pack_base_version"
 
-    invoke-static {v2, v1}, Lcom/google/android/material/R$style;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -151,35 +157,64 @@
 
     move-result-wide v13
 
-    const/4 v0, 0x4
-
     const/4 v2, 0x1
 
-    if-ne v3, v0, :cond_1
+    const/4 v15, 0x4
 
-    const-wide/16 v15, 0x0
+    if-ne v3, v15, :cond_2
 
-    cmp-long v0, v13, v15
+    const-wide/16 v16, 0x0
 
-    if-eqz v0, :cond_1
+    cmp-long v3, v13, v16
 
-    cmp-long v0, v13, v11
+    if-eqz v3, :cond_1
 
-    if-eqz v0, :cond_1
+    cmp-long v3, v13, v11
 
-    const/4 v0, 0x2
+    if-eqz v3, :cond_1
 
-    move v11, v0
-
-    goto :goto_1
+    const/4 v2, 0x2
 
     :cond_1
     move v11, v2
 
+    goto :goto_1
+
+    :cond_2
+    move v11, v2
+
+    move v15, v3
+
     :goto_1
+    const-string v2, "pack_version_tag"
+
+    invoke-static {v2, v1}, Lkotlinx/coroutines/flow/FlowKt;->zza(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "app_version_code"
+
+    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v12
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v1}, Lcom/google/android/play/core/assetpacks/zzdy;->zza(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v13
+
     move-object/from16 v0, p1
 
-    move v1, v3
+    move v1, v15
 
     move v2, v4
 
@@ -191,7 +226,11 @@
 
     move v9, v11
 
-    invoke-static/range {v0 .. v9}, Lcom/google/android/play/core/assetpacks/AssetPackState;->b(Ljava/lang/String;IIJJDI)Lcom/google/android/play/core/assetpacks/AssetPackState;
+    move-object v10, v12
+
+    move-object v11, v13
+
+    invoke-static/range {v0 .. v11}, Lcom/google/android/play/core/assetpacks/AssetPackState;->zzb(Ljava/lang/String;IIJJDILjava/lang/String;Ljava/lang/String;)Lcom/google/android/play/core/assetpacks/AssetPackState;
 
     move-result-object v0
 
@@ -203,4 +242,33 @@
     monitor-exit p2
 
     throw v0
+.end method
+
+
+# virtual methods
+.method public abstract bytesDownloaded()J
+.end method
+
+.method public abstract errorCode()I
+.end method
+
+.method public abstract name()Ljava/lang/String;
+.end method
+
+.method public abstract status()I
+.end method
+
+.method public abstract totalBytesToDownload()J
+.end method
+
+.method public abstract transferProgressPercentage()I
+.end method
+
+.method public abstract zza()I
+.end method
+
+.method public abstract zzd()Ljava/lang/String;
+.end method
+
+.method public abstract zze()Ljava/lang/String;
 .end method

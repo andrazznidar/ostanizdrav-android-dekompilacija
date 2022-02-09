@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/RootTelemetryConfigManager;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # static fields

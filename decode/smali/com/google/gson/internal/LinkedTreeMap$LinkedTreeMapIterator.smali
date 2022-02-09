@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Iterator;
+.implements Lj$/util/Iterator;
 
 
 # annotations
@@ -23,7 +24,8 @@
         ">",
         "Ljava/lang/Object;",
         "Ljava/util/Iterator<",
-        "TT;>;"
+        "TT;>;",
+        "Lj$/util/Iterator;"
     }
 .end annotation
 
@@ -60,8 +62,6 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p0, Lcom/google/gson/internal/LinkedTreeMap$LinkedTreeMapIterator;->this$0:Lcom/google/gson/internal/LinkedTreeMap;
-
     iget-object v0, p1, Lcom/google/gson/internal/LinkedTreeMap;->header:Lcom/google/gson/internal/LinkedTreeMap$Node;
 
     iget-object v0, v0, Lcom/google/gson/internal/LinkedTreeMap$Node;->next:Lcom/google/gson/internal/LinkedTreeMap$Node;
@@ -81,6 +81,14 @@
 
 
 # virtual methods
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public final hasNext()Z
     .locals 2
 

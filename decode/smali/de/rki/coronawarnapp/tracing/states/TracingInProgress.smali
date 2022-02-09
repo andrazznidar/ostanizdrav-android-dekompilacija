@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTracingState.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingState.kt\nde/rki/coronawarnapp/tracing/states/TracingInProgress\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,277:1\n1#2:278\n*E\n"
+    value = "SMAP\nTracingState.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingState.kt\nde/rki/coronawarnapp/tracing/states/TracingInProgress\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,263:1\n1#2:264\n*E\n"
 .end annotation
 
 
@@ -27,7 +27,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tracingProgress"
+    const-string/jumbo v0, "tracingProgress"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -49,68 +49,71 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+    iget-object v3, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eq v1, v3, :cond_2
 
-    move-result v0
+    return v2
 
-    if-eqz v0, :cond_0
+    :cond_2
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
 
-    iget-boolean v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
 
-    iget-boolean v1, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
+    if-eq v1, v3, :cond_3
 
-    if-ne v0, v1, :cond_0
+    return v2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
+    :cond_3
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
+    iget-object v3, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_4
 
-    iget v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->daysWithEncounters:I
+    return v2
+
+    :cond_4
+    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->daysWithEncounters:I
 
     iget p1, p1, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->daysWithEncounters:I
 
-    if-ne v0, p1, :cond_0
+    if-eq v1, p1, :cond_5
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_5
+    return v0
 .end method
 
 .method public final getContainerColor(Landroid/content/Context;)I
     .locals 2
-
-    const-string v0, "c"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
@@ -128,7 +131,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f06005a
+    const v0, 0x7f060064
 
     goto :goto_0
 
@@ -140,7 +143,7 @@
     throw p1
 
     :cond_1
-    const v0, 0x7f060052
+    const v0, 0x7f06005c
 
     goto :goto_0
 
@@ -149,19 +152,17 @@
 
     if-lez v0, :cond_3
 
-    const v0, 0x7f060056
+    const v0, 0x7f060060
 
     goto :goto_0
 
     :cond_3
-    const v0, 0x7f060054
+    const v0, 0x7f06005e
 
     :goto_0
-    const-string v1, "$this$getColorCompat"
+    sget-object v1, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result p1
 
@@ -169,95 +170,88 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
     mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v2, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
-
-    if-eqz v2, :cond_1
-
-    const/4 v2, 0x1
-
-    :cond_1
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    :cond_2
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->daysWithEncounters:I
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 3
-
-    const-string v0, "TracingInProgress(riskState="
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isInDetailsMode="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_0
 
-    const-string v1, ", tracingProgress="
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
 
     iget-object v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    const-string v1, ", daysWithEncounters="
+    move-result v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-int/2addr v1, v0
 
-    iget v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->daysWithEncounters:I
+    mul-int/lit8 v1, v1, 0x1f
 
-    const-string v2, ")"
+    iget v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->daysWithEncounters:I
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    add-int/2addr v1, v0
+
+    return v1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 6
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
+
+    iget v3, p0, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->daysWithEncounters:I
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "TracingInProgress(riskState="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isInDetailsMode="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", tracingProgress="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", daysWithEncounters="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

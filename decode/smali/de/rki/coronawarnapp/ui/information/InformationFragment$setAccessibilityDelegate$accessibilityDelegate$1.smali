@@ -10,11 +10,6 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/information/InformationFragment;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragment$setAccessibilityDelegate$accessibilityDelegate$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragment;
 
@@ -36,7 +31,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragment$setAccessibilityDelegate$accessibilityDelegate$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragment;
 
-    const v0, 0x7f12013e
+    const v0, 0x7f13020f
 
     invoke-virtual {p1, v0}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
 

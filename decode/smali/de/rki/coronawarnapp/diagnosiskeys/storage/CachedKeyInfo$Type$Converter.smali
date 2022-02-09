@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCachedKeyInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CachedKeyInfo.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type$Converter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,92:1\n1#2:93\n2871#3,12:94\n*E\n*S KotlinDebug\n*F\n+ 1 CachedKeyInfo.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type$Converter\n*L\n78#1,12:94\n*E\n"
+    value = "SMAP\nCachedKeyInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CachedKeyInfo.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type$Converter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,103:1\n1#2:104\n2901#3,12:105\n*S KotlinDebug\n*F\n+ 1 CachedKeyInfo.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type$Converter\n*L\n73#1:105,12\n*E\n"
 .end annotation
 
 
@@ -34,8 +34,11 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_4
+    if-nez p1, :cond_0
 
+    goto :goto_2
+
+    :cond_0
     invoke-static {}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->values()[Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
     move-result-object v1
@@ -47,7 +50,7 @@
     move v4, v3
 
     :goto_0
-    if-ge v3, v2, :cond_2
+    if-ge v3, v2, :cond_3
 
     aget-object v5, v1, v3
 
@@ -57,9 +60,9 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
-    if-nez v4, :cond_0
+    if-nez v4, :cond_1
 
     const/4 v0, 0x1
 
@@ -69,7 +72,7 @@
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Array contains more than one matching element."
@@ -78,18 +81,19 @@
 
     throw p1
 
-    :cond_1
+    :cond_2
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_2
-    if-eqz v4, :cond_3
-
-    goto :goto_2
-
     :cond_3
+    if-eqz v4, :cond_4
+
+    :goto_2
+    return-object v0
+
+    :cond_4
     new-instance p1, Ljava/util/NoSuchElementException;
 
     const-string v0, "Array contains no element matching the predicate."
@@ -97,8 +101,4 @@
     invoke-direct {p1, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    :cond_4
-    :goto_2
-    return-object v0
 .end method

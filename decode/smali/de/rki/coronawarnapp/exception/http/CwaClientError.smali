@@ -9,24 +9,31 @@
 
     invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    const/16 p2, 0x190
+    const/4 p2, 0x0
 
-    if-gt p2, p1, :cond_0
+    const/16 p3, 0x190
 
-    const/16 p2, 0x1f3
+    if-gt p3, p1, :cond_0
 
-    if-lt p2, p1, :cond_0
+    const/16 p3, 0x1f3
+
+    if-gt p1, p3, :cond_0
+
+    const/4 p2, 0x1
+
+    :cond_0
+    if-eqz p2, :cond_1
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     const-string p3, "Invalid HTTP client error code "
 
     const-string v0, " (!= 4xx)"
 
-    invoke-static {p3, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1, v0}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -37,8 +44,6 @@
 
 .method public synthetic constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
     .locals 0
-
-    and-int/lit8 p3, p4, 0x4
 
     const/4 p3, 0x0
 

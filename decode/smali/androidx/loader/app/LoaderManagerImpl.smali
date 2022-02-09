@@ -7,7 +7,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;,
-        Landroidx/loader/app/LoaderManagerImpl$LoaderObserver;,
         Landroidx/loader/app/LoaderManagerImpl$LoaderInfo;
     }
 .end annotation
@@ -188,9 +187,9 @@
 
     iget-object v1, p0, Landroidx/loader/app/LoaderManagerImpl;->mLifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
 
-    invoke-static {v1, v0}, Landroidx/core/app/AppOpsManagerCompat;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
+    invoke-static {v1, v0}, Landroidx/core/util/DebugUtils;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 
-    const-string v1, "}}"
+    const-string/jumbo v1, "}}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

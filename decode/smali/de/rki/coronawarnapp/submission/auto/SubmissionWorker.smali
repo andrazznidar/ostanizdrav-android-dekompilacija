@@ -8,6 +8,36 @@
     value = "SMAP\nSubmissionWorker.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SubmissionWorker.kt\nde/rki/coronawarnapp/submission/auto/SubmissionWorker\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,53:1\n1#2:54\n*E\n"
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0018\u00002\u00020\u0001B%\u0008\u0007\u0012\u0008\u0008\u0001\u0010\u0003\u001a\u00020\u0002\u0012\u0008\u0008\u0001\u0010\u0005\u001a\u00020\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u00a2\u0006\u0004\u0008\u0008\u0010\t\u00a8\u0006\n"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/submission/auto/SubmissionWorker;",
+        "Landroidx/work/CoroutineWorker;",
+        "Landroid/content/Context;",
+        "context",
+        "Landroidx/work/WorkerParameters;",
+        "workerParams",
+        "Lde/rki/coronawarnapp/task/TaskController;",
+        "taskController",
+        "<init>",
+        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Lde/rki/coronawarnapp/task/TaskController;)V",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # instance fields
 .field public final taskController:Lde/rki/coronawarnapp/task/TaskController;
@@ -21,11 +51,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "workerParams"
+    const-string/jumbo v0, "workerParams"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "taskController"
+    const-string/jumbo v0, "taskController"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -96,11 +126,16 @@
     if-ne v2, v5, :cond_1
 
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_2
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -112,12 +147,12 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     :try_start_1
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object p1
+    invoke-virtual {p1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const-string v2, "Attempting background submission of TEKs."
 
@@ -127,6 +162,12 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker;->taskController:Lde/rki/coronawarnapp/task/TaskController;
 
+    new-instance v8, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Arguments;
+
+    invoke-direct {v8, v5}, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Arguments;-><init>(Z)V
+
+    sget-object v11, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->SILENT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+
     new-instance v2, Lde/rki/coronawarnapp/task/common/DefaultTaskRequest;
 
     const-class v6, Lde/rki/coronawarnapp/submission/task/SubmissionTask;
@@ -135,13 +176,7 @@
 
     move-result-object v7
 
-    new-instance v8, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Arguments;
-
-    invoke-direct {v8, v5}, Lde/rki/coronawarnapp/submission/task/SubmissionTask$Arguments;-><init>(Z)V
-
     const/4 v9, 0x0
-
-    sget-object v11, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->SILENT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
     const-string v10, "SubmissionWorker"
 
@@ -153,7 +188,7 @@
 
     iput v5, v0, Lde/rki/coronawarnapp/submission/auto/SubmissionWorker$doWork$1;->label:I
 
-    invoke-static {p1, v2, v0}, Lcom/google/zxing/client/android/R$id;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0}, Lde/rki/coronawarnapp/task/TaskControllerExtensionsKt;->submitBlocking(Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/task/TaskRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -171,9 +206,9 @@
 
     if-nez v0, :cond_4
 
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v0
+    invoke-virtual {v0, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const-string v1, "Submission task completed with: %s"
 
@@ -191,23 +226,17 @@
 
     invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Success;-><init>()V
 
-    const-string v0, "Result.success()"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_2
+    goto :goto_3
 
     :cond_4
     throw v0
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    :catch_0
-    move-exception p1
+    :goto_2
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v0
+    invoke-virtual {v0, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v1, v3, [Ljava/lang/Object;
 
@@ -223,16 +252,12 @@
 
     const-string v3, "TEK Submission failed."
 
-    invoke-static {p1, v0, v3, v1, v2}, Lcom/google/zxing/client/android/R$id;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-static {p1, v0, v3, v1, v2}, Lde/rki/coronawarnapp/exception/reporting/ExceptionReporterKt;->report$default(Ljava/lang/Throwable;Lde/rki/coronawarnapp/exception/ExceptionCategory;Ljava/lang/String;Ljava/lang/String;I)V
 
     new-instance p1, Landroidx/work/ListenableWorker$Result$Retry;
 
     invoke-direct {p1}, Landroidx/work/ListenableWorker$Result$Retry;-><init>()V
 
-    const-string v0, "Result.retry()"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :goto_2
+    :goto_3
     return-object p1
 .end method

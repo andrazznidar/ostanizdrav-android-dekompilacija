@@ -21,11 +21,9 @@
         "<MessageType:",
         "Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<",
         "TMessageType;TBuilderType;>;BuilderType:",
-        "Ljava/lang/Object<",
-        "TMessageType;TBuilderType;>;>",
+        "Ljava/lang/Object;",
+        ">",
         "Lcom/google/protobuf/GeneratedMessageLite<",
-        "TMessageType;TBuilderType;>;",
-        "Ljava/lang/Object<",
         "TMessageType;TBuilderType;>;"
     }
 .end annotation

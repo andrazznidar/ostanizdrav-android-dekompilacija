@@ -1,9 +1,6 @@
 .class public final Lcom/google/android/gms/signin/internal/zaf;
-.super Lcom/google/android/gms/internal/base/zab;
-.source "com.google.android.gms:play-services-base@@17.5.0"
-
-# interfaces
-.implements Lcom/google/android/gms/signin/internal/zag;
+.super Lcom/google/android/gms/internal/base/zaa;
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # direct methods
@@ -12,14 +9,14 @@
 
     const-string v0, "com.google.android.gms.signin.internal.ISignInService"
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/base/zab;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/base/zaa;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final zaa(Lcom/google/android/gms/signin/internal/zaj;Lcom/google/android/gms/signin/internal/zae;)V
+.method public final zag(Lcom/google/android/gms/signin/internal/zai;Lcom/google/android/gms/signin/internal/zae;)V
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -27,17 +24,27 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/base/zab;->zaa()Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/android/gms/internal/base/zad;->zaa(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    iget-object v1, p0, Lcom/google/android/gms/internal/base/zaa;->zab:Ljava/lang/String;
 
-    invoke-interface {p2}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    move-result-object p1
+    sget v1, Lcom/google/android/gms/internal/base/zac;->$r8$clinit:I
 
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/signin/internal/zai;->writeToParcel(Landroid/os/Parcel;I)V
+
+    check-cast p2, Lcom/google/android/gms/internal/base/zab;
+
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     const/16 p1, 0xc
 
@@ -46,11 +53,9 @@
     move-result-object p2
 
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/base/zab;->zaa:Landroid/os/IBinder;
+    iget-object v2, p0, Lcom/google/android/gms/internal/base/zaa;->zaa:Landroid/os/IBinder;
 
-    const/4 v2, 0x0
-
-    invoke-interface {v1, p1, v0, p2, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v2, p1, v0, p2, v1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     invoke-virtual {p2}, Landroid/os/Parcel;->readException()V
     :try_end_0

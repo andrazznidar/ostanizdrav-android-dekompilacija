@@ -56,19 +56,15 @@
 .method public static hashFor(CLjava/lang/String;Ljava/lang/String;)I
     .locals 1
 
-    const/4 v0, 0x0
-
-    add-int/2addr v0, p0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
+    add-int/lit8 p0, p0, 0x0
 
     mul-int/lit8 p0, p0, 0x1f
+
+    const/16 v0, 0x1f
+
+    invoke-static {p1, p0, v0}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
+
+    move-result p0
 
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 

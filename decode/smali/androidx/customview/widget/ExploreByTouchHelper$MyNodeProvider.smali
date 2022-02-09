@@ -209,7 +209,9 @@
     :cond_7
     iget-object p1, v0, Landroidx/customview/widget/ExploreByTouchHelper;->mHost:Landroid/view/View;
 
-    invoke-static {p1, p2, p3}, Landroidx/core/view/ViewCompat;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1, p2, p3}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
 
     move-result p1
 

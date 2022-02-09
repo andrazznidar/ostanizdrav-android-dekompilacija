@@ -48,7 +48,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 14
 
     new-instance v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
@@ -60,85 +60,75 @@
 
     sput-object v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->UNKNOWN_KEYMATERIAL:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    new-instance v1, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    const-string v1, "SYMMETRIC"
+    const-string v3, "SYMMETRIC"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->SYMMETRIC:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    sput-object v1, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->SYMMETRIC:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    new-instance v3, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    const-string v1, "ASYMMETRIC_PRIVATE"
+    const-string v5, "ASYMMETRIC_PRIVATE"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->ASYMMETRIC_PRIVATE:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    sput-object v3, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->ASYMMETRIC_PRIVATE:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    new-instance v5, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    const-string v1, "ASYMMETRIC_PUBLIC"
+    const-string v7, "ASYMMETRIC_PUBLIC"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5, v5}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v8}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->ASYMMETRIC_PUBLIC:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    sput-object v5, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->ASYMMETRIC_PUBLIC:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    new-instance v7, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    const-string v1, "REMOTE"
+    const-string v9, "REMOTE"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v1, v6, v6}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v7, v9, v10, v10}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->REMOTE:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    sput-object v7, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->REMOTE:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    new-instance v9, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    const-string v1, "UNRECOGNIZED"
+    const-string v11, "UNRECOGNIZED"
 
-    const/4 v7, 0x5
+    const/4 v12, 0x5
 
-    const/4 v8, -0x1
+    const/4 v13, -0x1
 
-    invoke-direct {v0, v1, v7, v8}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v9, v11, v12, v13}, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->UNRECOGNIZED:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    sput-object v9, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->UNRECOGNIZED:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    const/4 v1, 0x6
+    const/4 v11, 0x6
 
-    new-array v1, v1, [Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    new-array v11, v11, [Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
-    sget-object v8, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->UNKNOWN_KEYMATERIAL:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    aput-object v0, v11, v2
 
-    aput-object v8, v1, v2
+    aput-object v1, v11, v4
 
-    sget-object v2, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->SYMMETRIC:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    aput-object v3, v11, v6
 
-    aput-object v2, v1, v3
+    aput-object v5, v11, v8
 
-    sget-object v2, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->ASYMMETRIC_PRIVATE:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    aput-object v7, v11, v10
 
-    aput-object v2, v1, v4
+    aput-object v9, v11, v12
 
-    sget-object v2, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->ASYMMETRIC_PUBLIC:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
-
-    aput-object v2, v1, v5
-
-    sget-object v2, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->REMOTE:Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
-
-    aput-object v2, v1, v6
-
-    aput-object v0, v1, v7
-
-    sput-object v1, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->$VALUES:[Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
+    sput-object v11, Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;->$VALUES:[Lcom/google/crypto/tink/proto/KeyData$KeyMaterialType;
 
     return-void
 .end method

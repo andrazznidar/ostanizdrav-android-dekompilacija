@@ -40,3 +40,24 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public addOnSelectionChangedListener(Lcom/google/android/material/datepicker/OnSelectionChangedListener;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/material/datepicker/OnSelectionChangedListener<",
+            "TS;>;)Z"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/material/datepicker/PickerFragment;->onSelectionChangedListeners:Ljava/util/LinkedHashSet;
+
+    invoke-virtual {v0, p1}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method

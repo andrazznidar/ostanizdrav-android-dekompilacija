@@ -7,8 +7,6 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
     .locals 0
 
-    and-int/lit8 p1, p3, 0x1
-
     const/4 p1, 0x0
 
     const/16 p3, 0x255

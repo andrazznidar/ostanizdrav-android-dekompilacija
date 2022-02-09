@@ -38,7 +38,7 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_2
 
     invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
 
@@ -54,9 +54,20 @@
 
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v5, 0x1d
+    const/16 v5, 0x1e
 
     if-lt v4, v5, :cond_0
+
+    new-instance v4, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;
+
+    invoke-direct {v4, p2}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl30;-><init>(Landroidx/core/view/WindowInsetsCompat;)V
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v5, 0x1d
+
+    if-lt v4, v5, :cond_1
 
     new-instance v4, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;
 
@@ -64,7 +75,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     new-instance v4, Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;
 
     invoke-direct {v4, p2}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl20;-><init>(Landroidx/core/view/WindowInsetsCompat;)V
@@ -80,7 +91,7 @@
 
     move-result-object p2
 
-    :cond_1
+    :cond_2
     invoke-static {p1, p2}, Landroidx/core/view/ViewCompat;->onApplyWindowInsets(Landroid/view/View;Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
 
     move-result-object p1

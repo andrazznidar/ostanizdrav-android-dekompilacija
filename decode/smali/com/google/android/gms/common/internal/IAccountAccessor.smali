@@ -1,6 +1,6 @@
 .class public interface abstract Lcom/google/android/gms/common/internal/IAccountAccessor;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 # interfaces
 .implements Landroid/os/IInterface;
@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract zza()Landroid/accounts/Account;
+.method public abstract zzb()Landroid/accounts/Account;
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 

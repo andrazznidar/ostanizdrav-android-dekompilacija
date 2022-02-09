@@ -37,21 +37,3 @@
 
     return-void
 .end method
-
-
-# virtual methods
-.method public newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 1
-
-    iget-object p1, p0, Landroidx/cursoradapter/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    iget p2, p0, Landroidx/cursoradapter/widget/ResourceCursorAdapter;->mLayout:I
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p2, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p1
-
-    return-object p1
-.end method

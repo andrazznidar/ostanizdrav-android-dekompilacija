@@ -16,6 +16,16 @@
 
 .method public static compositeColors(II)I
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "foreground",
+            "background"
+        }
+    .end annotation
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
@@ -80,6 +90,22 @@
 
 .method public static compositeComponent(IIIII)I
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "fgC",
+            "fgA",
+            "bgC",
+            "bgA",
+            "a"
+        }
+    .end annotation
 
     if-nez p4, :cond_0
 
@@ -109,6 +135,16 @@
 
 .method public static setAlphaComponent(II)I
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "color",
+            "alpha"
+        }
+    .end annotation
 
     if-ltz p1, :cond_0
 

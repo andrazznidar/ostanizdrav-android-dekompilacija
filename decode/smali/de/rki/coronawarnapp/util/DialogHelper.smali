@@ -35,7 +35,7 @@
 
     move-result-object v1
 
-    const-string v4, "Pattern.compile(\"[a-z]+://[^ \\\\n]*\")"
+    const-string v4, "compile(\"[a-z]+://[^ \\\\n]*\")"
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -47,7 +47,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0701a1
+    const v4, 0x7f0701ed
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -59,7 +59,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0701a2
+    const v5, 0x7f0701ee
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -85,17 +85,25 @@
 
     invoke-virtual {v5, v1, v4, v1, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    const v1, 0x7f1302f9
+    const v1, 0x7f140322
 
     invoke-virtual {v5, v1}, Landroid/widget/TextView;->setTextAppearance(I)V
 
-    const-string v1, "$this$getColorStateListCompat"
+    sget-object v1, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    const v1, 0x7f06002e
+    move-result-object v1
 
-    invoke-static {v0, v1}, Landroidx/core/content/ContextCompat;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v0
+
+    sget-object v4, Landroidx/core/content/res/ResourcesCompat;->sTempTypedValue:Ljava/lang/ThreadLocal;
+
+    const v4, 0x7f060030
+
+    invoke-virtual {v1, v4, v0}, Landroid/content/res/Resources;->getColorStateList(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
@@ -108,9 +116,9 @@
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;->context:Landroid/content/Context;
 
-    new-instance v1, Landroidx/appcompat/app/AlertDialog$Builder;
+    new-instance v1, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    invoke-direct {v1, v0}, Landroidx/appcompat/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;-><init>(Landroid/content/Context;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;->title:Ljava/lang/String;
 
@@ -124,55 +132,54 @@
 
     iput v0, v2, Landroidx/appcompat/app/AlertController$AlertParams;->mViewLayoutResId:I
 
-    iput-boolean v0, v2, Landroidx/appcompat/app/AlertController$AlertParams;->mViewSpacingSpecified:Z
-
     iget-object v0, p0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;->cancelable:Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
+    goto :goto_0
+
+    :cond_1
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v3
 
-    :cond_1
+    :goto_0
     iget-object v0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
 
     iput-boolean v3, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable:Z
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;->positiveButton:Ljava/lang/String;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;->positiveButton:Ljava/lang/String;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/DialogHelper$showDialog$$inlined$let$lambda$1;
+    new-instance v3, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0, v5}, Lde/rki/coronawarnapp/util/DialogHelper$showDialog$$inlined$let$lambda$1;-><init>(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;Landroid/widget/TextView;)V
+    invoke-direct {v3, p0}, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda1;-><init>(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)V
 
-    iget-object v3, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
+    iput-object v2, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
 
-    iput-object v0, v3, Landroidx/appcompat/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
+    iput-object v3, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    iput-object v2, v3, Landroidx/appcompat/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
+    iget-object v2, p0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;->negativeButton:Ljava/lang/String;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;->negativeButton:Ljava/lang/String;
+    if-eqz v2, :cond_2
 
-    if-eqz v0, :cond_2
+    new-instance v3, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda2;
 
-    new-instance v2, Lde/rki/coronawarnapp/util/DialogHelper$showDialog$$inlined$let$lambda$2;
+    invoke-direct {v3, p0}, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda2;-><init>(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)V
 
-    invoke-direct {v2, p0, v5}, Lde/rki/coronawarnapp/util/DialogHelper$showDialog$$inlined$let$lambda$2;-><init>(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;Landroid/widget/TextView;)V
+    iput-object v2, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    iget-object p0, v1, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
-
-    iput-object v0, p0, Landroidx/appcompat/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
-
-    iput-object v2, p0, Landroidx/appcompat/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
+    iput-object v3, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     :cond_2
-    invoke-virtual {v1}, Landroidx/appcompat/app/AlertDialog$Builder;->create()Landroidx/appcompat/app/AlertDialog;
+    new-instance v2, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, p0}, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)V
+
+    iput-object v2, v0, Landroidx/appcompat/app/AlertController$AlertParams;->mOnCancelListener:Landroid/content/DialogInterface$OnCancelListener;
+
+    invoke-virtual {v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->create()Landroidx/appcompat/app/AlertDialog;
 
     move-result-object p0
-
-    const-string v0, "dialogInstance.context.l\u2026uilder.create()\n        }"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroid/app/Dialog;->show()V
 

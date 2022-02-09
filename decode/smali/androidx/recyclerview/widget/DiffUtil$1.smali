@@ -1,4 +1,4 @@
-.class public final Landroidx/recyclerview/widget/DiffUtil$1;
+.class public Landroidx/recyclerview/widget/DiffUtil$1;
 .super Ljava/lang/Object;
 .source "DiffUtil.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -20,7 +20,7 @@
     value = {
         "Ljava/lang/Object;",
         "Ljava/util/Comparator<",
-        "Landroidx/recyclerview/widget/DiffUtil$Snake;",
+        "Landroidx/recyclerview/widget/DiffUtil$Diagonal;",
         ">;"
     }
 .end annotation
@@ -38,26 +38,17 @@
 
 # virtual methods
 .method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
-    check-cast p1, Landroidx/recyclerview/widget/DiffUtil$Snake;
+    check-cast p1, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
 
-    check-cast p2, Landroidx/recyclerview/widget/DiffUtil$Snake;
+    check-cast p2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
 
-    iget v0, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
+    iget p1, p1, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->x:I
 
-    iget v1, p2, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
+    iget p2, p2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->x:I
 
-    sub-int/2addr v0, v1
+    sub-int/2addr p1, p2
 
-    if-nez v0, :cond_0
-
-    iget p1, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
-
-    iget p2, p2, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
-
-    sub-int v0, p1, p2
-
-    :cond_0
-    return v0
+    return p1
 .end method

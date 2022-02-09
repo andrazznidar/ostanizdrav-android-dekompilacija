@@ -4,17 +4,6 @@
 
 
 # instance fields
-.field public final mIdRecycleCache:Landroidx/collection/SimpleArrayMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroidx/collection/SimpleArrayMap<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public mPreferences:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -42,12 +31,6 @@
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    new-instance v0, Landroidx/collection/SimpleArrayMap;
-
-    invoke-direct {v0}, Landroidx/collection/SimpleArrayMap;-><init>()V
-
-    iput-object v0, p0, Landroidx/preference/PreferenceGroup;->mIdRecycleCache:Landroidx/collection/SimpleArrayMap;
-
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -64,29 +47,31 @@
 
     move-result-object p1
 
-    const/4 p2, 0x2
+    sget p2, Landroidx/preference/R$styleable;->PreferenceGroup_orderingFromXml:I
 
     const/4 p3, 0x1
 
-    invoke-static {p1, p2, p2, p3}, Landroidx/core/app/AppOpsManagerCompat;->getBoolean(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p2, p3}, Landroidx/core/content/res/TypedArrayUtils;->getBoolean(Landroid/content/res/TypedArray;IIZ)Z
 
-    invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget p2, Landroidx/preference/R$styleable;->PreferenceGroup_initialExpandedChildrenCount:I
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result p4
+
+    if-eqz p4, :cond_0
+
+    const p4, 0x7fffffff
+
+    invoke-virtual {p1, p2, p4}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v0
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p2
 
-    if-eqz p2, :cond_0
-
-    const p2, 0x7fffffff
-
-    invoke-virtual {p1, p3, p2}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result p4
-
-    invoke-virtual {p1, p3, p4}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result p4
-
-    if-eq p4, p2, :cond_0
+    if-eq p2, p4, :cond_0
 
     iget-object p2, p0, Landroidx/preference/Preference;->mKey:Ljava/lang/String;
 

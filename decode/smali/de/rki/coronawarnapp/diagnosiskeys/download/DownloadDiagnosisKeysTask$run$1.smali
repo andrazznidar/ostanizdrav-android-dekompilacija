@@ -17,15 +17,12 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.download.DownloadDiagnosisKeysTask"
     f = "DownloadDiagnosisKeysTask.kt"
     l = {
-        0x37,
-        0x43,
-        0x45,
-        0x46,
-        0x49,
-        0x58,
-        0x6b,
-        0x7c,
-        0x80
+        0x38,
+        0x44,
+        0x4a,
+        0x59,
+        0x70,
+        0x77
     }
     m = "run"
 .end annotation
@@ -52,6 +49,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$run$1;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 

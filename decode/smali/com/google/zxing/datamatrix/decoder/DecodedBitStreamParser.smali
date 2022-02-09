@@ -3,14 +3,6 @@
 .source "DecodedBitStreamParser.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
-    }
-.end annotation
-
-
 # static fields
 .field public static final C40_BASIC_SET_CHARS:[C
 

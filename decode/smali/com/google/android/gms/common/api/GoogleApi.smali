@@ -1,6 +1,6 @@
-.class public Lcom/google/android/gms/common/api/GoogleApi;
+.class public abstract Lcom/google/android/gms/common/api/GoogleApi;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -15,19 +15,22 @@
         "<O::",
         "Lcom/google/android/gms/common/api/Api$ApiOptions;",
         ">",
-        "Ljava/lang/Object;",
-        "Ljava/lang/Object<",
-        "TO;>;"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
 # instance fields
-.field public final zaa:Landroid/content/Context;
+.field public final zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
-.field public final zab:Ljava/lang/String;
+.field public final zab:Landroid/content/Context;
 
-.field public final zac:Lcom/google/android/gms/common/api/Api;
+.field public final zac:Ljava/lang/String;
+
+.field public final zad:Lcom/google/android/gms/common/api/Api;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/Api<",
@@ -36,7 +39,7 @@
     .end annotation
 .end field
 
-.field public final zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
+.field public final zae:Lcom/google/android/gms/common/api/Api$ApiOptions;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TO;"
@@ -44,7 +47,7 @@
     .end annotation
 .end field
 
-.field public final zae:Lcom/google/android/gms/common/api/internal/ApiKey;
+.field public final zaf:Lcom/google/android/gms/common/api/internal/ApiKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/android/gms/common/api/internal/ApiKey<",
@@ -53,18 +56,16 @@
     .end annotation
 .end field
 
-.field public final zaf:Landroid/os/Looper;
+.field public final zag:Landroid/os/Looper;
 
-.field public final zag:I
+.field public final zah:I
 
-.field public final zah:Lcom/google/android/gms/common/api/GoogleApiClient;
+.field public final zai:Lcom/google/android/gms/common/api/GoogleApiClient;
     .annotation runtime Lorg/checkerframework/checker/initialization/qual/NotOnlyInitialized;
     .end annotation
 .end field
 
-.field public final zai:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
-
-.field public final zaj:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+.field public final zaj:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
 
 
 # direct methods
@@ -101,279 +102,111 @@
 
     const-string v0, "Null context is not permitted."
 
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "Api must not be null."
 
-    invoke-static {p2, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "Settings must not be null; use Settings.DEFAULT_SETTINGS instead."
 
-    invoke-static {p4, v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p4, v0}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Landroid/content/Context;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/GoogleApi;->zab:Landroid/content/Context;
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-lt v0, v1, :cond_0
-
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v3
-
-    :goto_0
-    if-nez v0, :cond_1
-
-    goto :goto_2
-
-    :cond_1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_2
+    const/4 v2, 0x0
 
-    sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
+    if-lt v0, v1, :cond_0
 
-    const-string v1, "REL"
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    goto :goto_0
 
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    goto/16 :goto_5
-
-    :cond_2
-    sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-ne v0, v2, :cond_3
-
-    sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    const/16 v1, 0x52
-
-    if-lt v0, v1, :cond_3
-
-    sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    const/16 v1, 0x5a
-
-    if-gt v0, v1, :cond_3
-
+    :cond_0
     move v0, v2
 
-    goto :goto_1
+    :goto_0
+    if-eqz v0, :cond_1
 
-    :cond_3
-    move v0, v3
-
-    :goto_1
-    if-nez v0, :cond_4
-
-    :goto_2
-    move v2, v3
-
-    goto :goto_5
-
-    :cond_4
-    sget-object v0, Lcom/airbnb/lottie/R$attr;->zza:Ljava/lang/Boolean;
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    goto :goto_5
-
-    :cond_5
     :try_start_0
-    const-string v0, "google"
-
-    sget-object v1, Landroid/os/Build;->BRAND:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    sget-object v0, Landroid/os/Build;->ID:Ljava/lang/String;
-
-    const-string v1, "RPP1"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_6
-
-    sget-object v0, Landroid/os/Build;->ID:Ljava/lang/String;
-
-    const-string v1, "RPP2"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_6
-
-    sget-object v0, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    const v1, 0x602711
-
-    if-lt v0, v1, :cond_6
-
-    goto :goto_3
-
-    :cond_6
-    move v2, v3
-
-    :goto_3
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/airbnb/lottie/R$attr;->zza:Ljava/lang/Boolean;
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_4
-
-    :catch_0
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    sput-object v0, Lcom/airbnb/lottie/R$attr;->zza:Ljava/lang/Boolean;
-
-    :goto_4
-    sget-object v0, Lcom/airbnb/lottie/R$attr;->zza:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_7
-
-    const-string v0, "PlatformVersion"
-
-    const-string v1, "Build version must be at least 6301457 to support R in gmscore"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_7
-    sget-object v0, Lcom/airbnb/lottie/R$attr;->zza:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    :goto_5
-    if-eqz v2, :cond_8
-
-    :try_start_1
     const-class v0, Landroid/content/Context;
 
     const-string v1, "getAttributionTag"
 
-    new-array v2, v3, [Ljava/lang/Class;
+    new-array v3, v2, [Ljava/lang/Class;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
-    new-array v1, v3, [Ljava/lang/Object;
+    new-array v1, v2, [Ljava/lang/Object;
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
-    :try_end_1
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_6
+    goto :goto_1
 
-    :catch_1
-    :cond_8
+    :catch_0
+    :cond_1
     const/4 p1, 0x0
 
-    :goto_6
-    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zab:Ljava/lang/String;
+    :goto_1
+    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zac:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/GoogleApi;->zac:Lcom/google/android/gms/common/api/Api;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/GoogleApi;->zad:Lcom/google/android/gms/common/api/Api;
 
-    iput-object p3, p0, Lcom/google/android/gms/common/api/GoogleApi;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
+    iput-object p3, p0, Lcom/google/android/gms/common/api/GoogleApi;->zae:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
     iget-object v0, p4, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zab:Landroid/os/Looper;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaf:Landroid/os/Looper;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/GoogleApi;->zag:Landroid/os/Looper;
 
     new-instance v0, Lcom/google/android/gms/common/api/internal/ApiKey;
 
     invoke-direct {v0, p2, p3, p1}, Lcom/google/android/gms/common/api/internal/ApiKey;-><init>(Lcom/google/android/gms/common/api/Api;Lcom/google/android/gms/common/api/Api$ApiOptions;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/api/GoogleApi;->zae:Lcom/google/android/gms/common/api/internal/ApiKey;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaf:Lcom/google/android/gms/common/api/internal/ApiKey;
 
-    new-instance p1, Lcom/google/android/gms/common/api/internal/zabl;
+    new-instance p1, Lcom/google/android/gms/common/api/internal/zabp;
 
-    invoke-direct {p1, p0}, Lcom/google/android/gms/common/api/internal/zabl;-><init>(Lcom/google/android/gms/common/api/GoogleApi;)V
+    invoke-direct {p1, p0}, Lcom/google/android/gms/common/api/internal/zabp;-><init>(Lcom/google/android/gms/common/api/GoogleApi;)V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zah:Lcom/google/android/gms/common/api/GoogleApiClient;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zai:Lcom/google/android/gms/common/api/GoogleApiClient;
 
-    iget-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Landroid/content/Context;
+    iget-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zab:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zaa(Landroid/content/Context;)Lcom/google/android/gms/common/api/internal/GoogleApiManager;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
 
-    iget-object p1, p1, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zan:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object p2, p1, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zan:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
-    move-result p1
+    move-result p2
 
-    iput p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zag:I
+    iput p2, p0, Lcom/google/android/gms/common/api/GoogleApi;->zah:I
 
-    iget-object p1, p4, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zaa:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    iget-object p2, p4, Lcom/google/android/gms/common/api/GoogleApi$Settings;->zaa:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zai:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
-
-    iget-object p1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
 
     iget-object p1, p1, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zat:Landroid/os/Handler;
 
@@ -399,7 +232,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/internal/ClientSettings$Builder;-><init>()V
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zae:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
     instance-of v2, v1, Lcom/google/android/gms/common/api/Api$ApiOptions$HasGoogleSignInAccountOptions;
 
@@ -415,16 +248,14 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v2, v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->zae:Ljava/lang/String;
+    iget-object v1, v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->zaf:Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
     new-instance v2, Landroid/accounts/Account;
-
-    iget-object v1, v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->zae:Ljava/lang/String;
 
     const-string v3, "com.google"
 
@@ -435,7 +266,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zae:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
     instance-of v2, v1, Lcom/google/android/gms/common/api/Api$ApiOptions$HasAccountOptions;
 
@@ -451,11 +282,11 @@
     :goto_0
     iput-object v3, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zaa:Landroid/accounts/Account;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zad:Lcom/google/android/gms/common/api/Api$ApiOptions;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zae:Lcom/google/android/gms/common/api/Api$ApiOptions;
 
     instance-of v2, v1, Lcom/google/android/gms/common/api/Api$ApiOptions$HasGoogleSignInAccountOptions;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     check-cast v1, Lcom/google/android/gms/common/api/Api$ApiOptions$HasGoogleSignInAccountOptions;
 
@@ -463,15 +294,22 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_3
 
-    invoke-virtual {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->getRequestedScopes()Ljava/util/Set;
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v1
 
     goto :goto_1
 
     :cond_3
+    invoke-virtual {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->getRequestedScopes()Ljava/util/Set;
+
+    move-result-object v1
+
+    goto :goto_1
+
+    :cond_4
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v1
@@ -479,20 +317,22 @@
     :goto_1
     iget-object v2, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zab:Landroidx/collection/ArraySet;
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_5
 
     new-instance v2, Landroidx/collection/ArraySet;
 
-    invoke-direct {v2}, Landroidx/collection/ArraySet;-><init>()V
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Landroidx/collection/ArraySet;-><init>(I)V
 
     iput-object v2, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zab:Landroidx/collection/ArraySet;
 
-    :cond_4
+    :cond_5
     iget-object v2, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zab:Landroidx/collection/ArraySet;
 
     invoke-virtual {v2, v1}, Landroidx/collection/ArraySet;->addAll(Ljava/util/Collection;)Z
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zab:Landroid/content/Context;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -502,21 +342,21 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zae:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zad:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/GoogleApi;->zab:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zad:Ljava/lang/String;
+    iput-object v1, v0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zac:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final zaa(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
-    .locals 10
+.method public final zae(ILcom/google/android/gms/common/api/internal/TaskApiCall;)Lcom/google/android/gms/tasks/Task;
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<TResult:",
@@ -535,47 +375,47 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/tasks/TaskCompletionSource;-><init>()V
 
-    iget-object v7, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
+    iget-object v7, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaa:Lcom/google/android/gms/common/api/internal/GoogleApiManager;
 
-    iget-object v8, p0, Lcom/google/android/gms/common/api/GoogleApi;->zai:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
+    iget-object v8, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaj:Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;
 
-    const/4 v1, 0x0
-
-    if-eqz v7, :cond_7
+    invoke-static {v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v3, p2, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zac:I
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_8
 
-    iget-object v4, p0, Lcom/google/android/gms/common/api/GoogleApi;->zae:Lcom/google/android/gms/common/api/internal/ApiKey;
+    iget-object v4, p0, Lcom/google/android/gms/common/api/GoogleApi;->zaf:Lcom/google/android/gms/common/api/internal/ApiKey;
 
-    invoke-virtual {v7}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zad()Z
+    invoke-virtual {v7}, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zam()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    const/4 v2, 0x0
 
-    goto :goto_2
+    if-nez v1, :cond_0
+
+    goto :goto_3
 
     :cond_0
     invoke-static {}, Lcom/google/android/gms/common/internal/RootTelemetryConfigManager;->getInstance()Lcom/google/android/gms/common/internal/RootTelemetryConfigManager;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v2, v2, Lcom/google/android/gms/common/internal/RootTelemetryConfigManager;->zzc:Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;
+    iget-object v1, v1, Lcom/google/android/gms/common/internal/RootTelemetryConfigManager;->zzc:Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;
 
     const/4 v5, 0x1
 
-    if-eqz v2, :cond_4
+    if-eqz v1, :cond_6
 
-    iget-boolean v6, v2, Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;->zzb:Z
+    iget-boolean v6, v1, Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;->zzb:Z
 
     if-nez v6, :cond_1
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_1
-    iget-boolean v2, v2, Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;->zzc:Z
+    iget-boolean v1, v1, Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;->zzc:Z
 
     iget-object v6, v7, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zap:Ljava/util/Map;
 
@@ -583,124 +423,138 @@
 
     move-result-object v6
 
-    check-cast v6, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;
+    check-cast v6, Lcom/google/android/gms/common/api/internal/zabl;
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_5
 
-    iget-object v9, v6, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zac:Lcom/google/android/gms/common/api/Api$Client;
+    iget-object v9, v6, Lcom/google/android/gms/common/api/internal/zabl;->zac:Lcom/google/android/gms/common/api/Api$Client;
 
-    invoke-interface {v9}, Lcom/google/android/gms/common/api/Api$Client;->isConnected()Z
+    instance-of v10, v9, Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    move-result v9
+    if-nez v10, :cond_2
 
-    if-eqz v9, :cond_3
-
-    iget-object v9, v6, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zac:Lcom/google/android/gms/common/api/Api$Client;
-
-    instance-of v9, v9, Lcom/google/android/gms/common/internal/BaseGmsClient;
-
-    if-eqz v9, :cond_3
-
-    invoke-static {v6, v3}, Lcom/google/android/gms/common/api/internal/zabr;->zaa(Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;I)Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;
-
-    move-result-object v2
-
-    if-nez v2, :cond_2
-
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
-    iget v1, v6, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zam:I
+    check-cast v9, Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    add-int/2addr v1, v5
+    iget-object v10, v9, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzD:Lcom/google/android/gms/common/internal/zzi;
 
-    iput v1, v6, Lcom/google/android/gms/common/api/internal/GoogleApiManager$zaa;->zam:I
+    if-eqz v10, :cond_3
 
-    iget-boolean v5, v2, Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;->zzc:Z
+    move v10, v5
 
     goto :goto_0
 
     :cond_3
-    move v5, v2
+    const/4 v10, 0x0
+
+    :goto_0
+    if-eqz v10, :cond_5
+
+    invoke-virtual {v9}, Lcom/google/android/gms/common/internal/BaseGmsClient;->isConnecting()Z
+
+    move-result v10
+
+    if-nez v10, :cond_5
+
+    invoke-static {v6, v9, v3}, Lcom/google/android/gms/common/api/internal/zabx;->zab(Lcom/google/android/gms/common/api/internal/zabl;Lcom/google/android/gms/common/internal/BaseGmsClient;I)Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;
+
+    move-result-object v1
+
+    if-nez v1, :cond_4
+
+    goto :goto_3
 
     :cond_4
-    :goto_0
-    new-instance v9, Lcom/google/android/gms/common/api/internal/zabr;
+    iget v2, v6, Lcom/google/android/gms/common/api/internal/zabl;->zam:I
 
-    if-eqz v5, :cond_5
+    add-int/2addr v2, v5
+
+    iput v2, v6, Lcom/google/android/gms/common/api/internal/zabl;->zam:I
+
+    iget-boolean v5, v1, Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;->zzc:Z
+
+    goto :goto_1
+
+    :cond_5
+    move v5, v1
+
+    :cond_6
+    :goto_1
+    new-instance v9, Lcom/google/android/gms/common/api/internal/zabx;
+
+    if-eqz v5, :cond_7
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_5
+    :cond_7
     const-wide/16 v1, 0x0
 
-    :goto_1
+    :goto_2
     move-wide v5, v1
 
     move-object v1, v9
 
     move-object v2, v7
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/gms/common/api/internal/zabr;-><init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager;ILcom/google/android/gms/common/api/internal/ApiKey;J)V
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/gms/common/api/internal/zabx;-><init>(Lcom/google/android/gms/common/api/internal/GoogleApiManager;ILcom/google/android/gms/common/api/internal/ApiKey;J)V
 
-    :goto_2
-    if-eqz v1, :cond_6
+    move-object v2, v9
 
-    iget-object v2, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
+    :goto_3
+    if-eqz v2, :cond_8
+
+    iget-object v1, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzw;
 
     iget-object v3, v7, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zat:Landroid/os/Handler;
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v4, Lcom/google/android/gms/common/api/internal/zabc;
+    new-instance v4, Lcom/google/android/gms/common/api/internal/zabf;
 
-    invoke-direct {v4, v3}, Lcom/google/android/gms/common/api/internal/zabc;-><init>(Landroid/os/Handler;)V
+    invoke-direct {v4, v3}, Lcom/google/android/gms/common/api/internal/zabf;-><init>(Landroid/os/Handler;)V
 
-    iget-object v3, v2, Lcom/google/android/gms/tasks/zzu;->zzb:Lcom/google/android/gms/tasks/zzq;
+    iget-object v3, v1, Lcom/google/android/gms/tasks/zzw;->zzb:Lcom/google/android/gms/tasks/zzr;
 
-    new-instance v5, Lcom/google/android/gms/tasks/zzi;
+    new-instance v5, Lcom/google/android/gms/tasks/zzj;
 
-    invoke-static {v4}, Lcom/google/android/gms/tasks/zzv;->zza(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+    invoke-direct {v5, v4, v2}, Lcom/google/android/gms/tasks/zzj;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)V
 
-    invoke-direct {v5, v4, v1}, Lcom/google/android/gms/tasks/zzi;-><init>(Ljava/util/concurrent/Executor;Lcom/google/android/gms/tasks/OnCompleteListener;)V
+    invoke-virtual {v3, v5}, Lcom/google/android/gms/tasks/zzr;->zza(Lcom/google/android/gms/tasks/zzq;)V
 
-    invoke-virtual {v3, v5}, Lcom/google/android/gms/tasks/zzq;->zza(Lcom/google/android/gms/tasks/zzr;)V
+    invoke-virtual {v1}, Lcom/google/android/gms/tasks/zzw;->zzi()V
 
-    invoke-virtual {v2}, Lcom/google/android/gms/tasks/zzu;->zze()V
+    :cond_8
+    new-instance v1, Lcom/google/android/gms/common/api/internal/zag;
 
-    :cond_6
-    new-instance v1, Lcom/google/android/gms/common/api/internal/zah;
-
-    invoke-direct {v1, p1, p2, v0, v8}, Lcom/google/android/gms/common/api/internal/zah;-><init>(ILcom/google/android/gms/common/api/internal/TaskApiCall;Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;)V
+    invoke-direct {v1, p1, p2, v0, v8}, Lcom/google/android/gms/common/api/internal/zag;-><init>(ILcom/google/android/gms/common/api/internal/TaskApiCall;Lcom/google/android/gms/tasks/TaskCompletionSource;Lcom/google/android/gms/common/api/internal/ApiExceptionMapper;)V
 
     iget-object p1, v7, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zat:Landroid/os/Handler;
 
-    const/4 p2, 0x4
+    new-instance p2, Lcom/google/android/gms/common/api/internal/zacb;
 
-    new-instance v2, Lcom/google/android/gms/common/api/internal/zabu;
+    iget-object v2, v7, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zao:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iget-object v3, v7, Lcom/google/android/gms/common/api/internal/GoogleApiManager;->zao:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    move-result v2
 
-    move-result v3
+    invoke-direct {p2, v1, v2, p0}, Lcom/google/android/gms/common/api/internal/zacb;-><init>(Lcom/google/android/gms/common/api/internal/zai;ILcom/google/android/gms/common/api/GoogleApi;)V
 
-    invoke-direct {v2, v1, v3, p0}, Lcom/google/android/gms/common/api/internal/zabu;-><init>(Lcom/google/android/gms/common/api/internal/zab;ILcom/google/android/gms/common/api/GoogleApi;)V
+    const/4 v1, 0x4
 
-    invoke-virtual {p1, p2, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p1, v1, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    iget-object p1, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzu;
+    iget-object p1, v0, Lcom/google/android/gms/tasks/TaskCompletionSource;->zza:Lcom/google/android/gms/tasks/zzw;
 
     return-object p1
-
-    :cond_7
-    throw v1
 .end method

@@ -215,7 +215,7 @@
 .method public final loadFeatures()Z
     .locals 7
 
-    const-string v0, "unable to add feature mapper for "
+    const-string/jumbo v0, "unable to add feature mapper for "
 
     const-string v1, "MergedDataBinderMapper"
 

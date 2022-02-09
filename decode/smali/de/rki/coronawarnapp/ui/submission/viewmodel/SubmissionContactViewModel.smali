@@ -4,16 +4,6 @@
 
 
 # instance fields
-.field public final dial:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
-            "Lkotlin/Unit;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public final routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -40,12 +30,6 @@
     invoke-direct {v0}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
 
     iput-object v0, p0, Lde/rki/coronawarnapp/ui/submission/viewmodel/SubmissionContactViewModel;->routeToScreen:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
-
-    new-instance v0, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
-
-    invoke-direct {v0}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
-
-    iput-object v0, p0, Lde/rki/coronawarnapp/ui/submission/viewmodel/SubmissionContactViewModel;->dial:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     return-void
 .end method

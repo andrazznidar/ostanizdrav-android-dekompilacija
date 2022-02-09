@@ -59,7 +59,7 @@
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    const v0, 0x7f0902ba
+    sget v0, Lcom/google/android/material/R$id;->mtrl_internal_children_alpha_tag:I
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getTag(I)Ljava/lang/Object;
 
@@ -93,13 +93,13 @@
 
     move-result p2
 
+    sget v0, Lcom/google/android/material/R$id;->mtrl_internal_children_alpha_tag:I
+
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object v1
 
-    const v1, 0x7f0902ba
-
-    invoke-virtual {p1, v1, v0}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p1, v0, v1}, Landroid/view/ViewGroup;->setTag(ILjava/lang/Object;)V
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 

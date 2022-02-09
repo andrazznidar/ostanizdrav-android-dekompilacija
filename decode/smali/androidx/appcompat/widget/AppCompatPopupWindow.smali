@@ -15,7 +15,7 @@
 
     move-result-object p2
 
-    const/4 p3, 0x2
+    sget p3, Landroidx/appcompat/R$styleable;->PopupWindow_overlapAnchor:I
 
     invoke-virtual {p2, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
@@ -32,26 +32,28 @@
     invoke-virtual {p0, p3}, Landroid/widget/PopupWindow;->setOverlapAnchor(Z)V
 
     :cond_0
-    invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget p3, Landroidx/appcompat/R$styleable;->PopupWindow_android_popupBackground:I
 
-    move-result p3
+    invoke-virtual {p2, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    if-eqz p3, :cond_1
+    move-result p4
 
-    invoke-virtual {p2, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    if-eqz p4, :cond_1
 
-    move-result p3
+    invoke-virtual {p2, p3, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    if-eqz p3, :cond_1
+    move-result p4
 
-    invoke-static {p1, p3}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    if-eqz p4, :cond_1
+
+    invoke-static {p1, p4}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p2, p3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 

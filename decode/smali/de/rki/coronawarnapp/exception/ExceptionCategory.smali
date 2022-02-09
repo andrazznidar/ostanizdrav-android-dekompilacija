@@ -24,98 +24,106 @@
 
 .field public static final enum INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
+.field public static final enum JOB:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+
+.field public static final enum SERVICE:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+
 .field public static final enum UI:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 15
 
-    const/4 v0, 0x7
+    new-instance v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const-string v1, "UI"
 
-    new-instance v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v2, 0x0
 
-    const-string v2, "UI"
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->UI:Lde/rki/coronawarnapp/exception/ExceptionCategory;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->UI:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
     new-instance v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    const-string v2, "SERVICE"
+    const-string v3, "SERVICE"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
 
-    aput-object v1, v0, v3
+    sput-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->SERVICE:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    new-instance v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    new-instance v3, Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    const-string v2, "HTTP"
+    const-string v5, "HTTP"
 
-    const/4 v3, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
 
-    sput-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->HTTP:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    sput-object v3, Lde/rki/coronawarnapp/exception/ExceptionCategory;->HTTP:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    aput-object v1, v0, v3
+    new-instance v5, Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    new-instance v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const-string v7, "INTERNAL"
 
-    const-string v2, "INTERNAL"
+    const/4 v8, 0x3
 
-    const/4 v3, 0x3
+    invoke-direct {v5, v7, v8}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
+    sput-object v5, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    sput-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->INTERNAL:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    new-instance v7, Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    aput-object v1, v0, v3
+    const-string v9, "JOB"
 
-    new-instance v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v10, 0x4
 
-    const-string v2, "JOB"
+    invoke-direct {v7, v9, v10}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x4
+    sput-object v7, Lde/rki/coronawarnapp/exception/ExceptionCategory;->JOB:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
+    new-instance v9, Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    aput-object v1, v0, v3
+    const-string v11, "EXPOSURENOTIFICATION"
 
-    new-instance v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const/4 v12, 0x5
 
-    const-string v2, "EXPOSURENOTIFICATION"
+    invoke-direct {v9, v11, v12}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x5
+    sput-object v9, Lde/rki/coronawarnapp/exception/ExceptionCategory;->EXPOSURENOTIFICATION:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
+    new-instance v11, Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    sput-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->EXPOSURENOTIFICATION:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    const-string v13, "CONNECTIVITY"
 
-    aput-object v1, v0, v3
+    const/4 v14, 0x6
 
-    new-instance v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    invoke-direct {v11, v13, v14}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
 
-    const-string v2, "CONNECTIVITY"
+    sput-object v11, Lde/rki/coronawarnapp/exception/ExceptionCategory;->CONNECTIVITY:Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    const/4 v3, 0x6
+    const/4 v13, 0x7
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/exception/ExceptionCategory;-><init>(Ljava/lang/String;I)V
+    new-array v13, v13, [Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    sput-object v1, Lde/rki/coronawarnapp/exception/ExceptionCategory;->CONNECTIVITY:Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    aput-object v0, v13, v2
 
-    aput-object v1, v0, v3
+    aput-object v1, v13, v4
 
-    sput-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->$VALUES:[Lde/rki/coronawarnapp/exception/ExceptionCategory;
+    aput-object v3, v13, v6
+
+    aput-object v5, v13, v8
+
+    aput-object v7, v13, v10
+
+    aput-object v9, v13, v12
+
+    aput-object v11, v13, v14
+
+    sput-object v13, Lde/rki/coronawarnapp/exception/ExceptionCategory;->$VALUES:[Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
     return-void
 .end method
@@ -152,7 +160,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/exception/ExceptionCategory;->$VALUES:[Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/exception/ExceptionCategory;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

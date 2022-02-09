@@ -72,12 +72,36 @@
 
     iput-object p2, p0, Lcom/airbnb/lottie/animation/content/RepeaterContent;->layer:Lcom/airbnb/lottie/model/layer/BaseLayer;
 
-    iget-object p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->name:Ljava/lang/String;
+    iget p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->$r8$classId:I
 
-    iput-object p1, p0, Lcom/airbnb/lottie/animation/content/RepeaterContent;->name:Ljava/lang/String;
+    packed-switch p1, :pswitch_data_0
 
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p3, Lcom/airbnb/lottie/model/content/Repeater;->name:Ljava/lang/String;
+
+    goto :goto_1
+
+    :goto_0
+    iget-object v0, p3, Lcom/airbnb/lottie/model/content/Repeater;->name:Ljava/lang/String;
+
+    :goto_1
+    iput-object v0, p0, Lcom/airbnb/lottie/animation/content/RepeaterContent;->name:Ljava/lang/String;
+
+    packed-switch p1, :pswitch_data_1
+
+    goto :goto_2
+
+    :pswitch_1
     iget-boolean p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->hidden:Z
 
+    goto :goto_3
+
+    :goto_2
+    iget-boolean p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->hidden:Z
+
+    :goto_3
     iput-boolean p1, p0, Lcom/airbnb/lottie/animation/content/RepeaterContent;->hidden:Z
 
     iget-object p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->copies:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
@@ -90,13 +114,13 @@
 
     invoke-virtual {p2, p1}, Lcom/airbnb/lottie/model/layer/BaseLayer;->addAnimation(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;)V
 
-    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/RepeaterContent;->copies:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
-
     iget-object p1, p1, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->listeners:Ljava/util/List;
 
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->offset:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    iget-object p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->offset:Ljava/lang/Object;
+
+    check-cast p1, Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;->createAnimation()Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
@@ -106,15 +130,15 @@
 
     invoke-virtual {p2, p1}, Lcom/airbnb/lottie/model/layer/BaseLayer;->addAnimation(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;)V
 
-    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/RepeaterContent;->offset:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
-
     iget-object p1, p1, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->listeners:Ljava/util/List;
 
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->transform:Lcom/airbnb/lottie/model/animatable/AnimatableTransform;
+    iget-object p1, p3, Lcom/airbnb/lottie/model/content/Repeater;->transform:Ljava/lang/Object;
 
-    if-eqz p1, :cond_0
+    check-cast p1, Lcom/airbnb/lottie/model/animatable/AnimatableTransform;
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance p3, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;
 
@@ -124,16 +148,19 @@
 
     invoke-virtual {p3, p2}, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->addAnimationsToLayer(Lcom/airbnb/lottie/model/layer/BaseLayer;)V
 
-    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/RepeaterContent;->transform:Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;
-
-    invoke-virtual {p1, p0}, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->addListener(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation$AnimationListener;)V
+    invoke-virtual {p3, p0}, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->addListener(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation$AnimationListener;)V
 
     return-void
 
-    :cond_0
-    const/4 p1, 0x0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 
-    throw p1
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 

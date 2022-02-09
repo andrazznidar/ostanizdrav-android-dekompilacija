@@ -142,16 +142,6 @@
     return-void
 .end method
 
-.method public static of(Lokio/BufferedSource;)Lcom/airbnb/lottie/parser/moshi/JsonReader;
-    .locals 1
-
-    new-instance v0, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;
-
-    invoke-direct {v0, p0}, Lcom/airbnb/lottie/parser/moshi/JsonUtf8Reader;-><init>(Lokio/BufferedSource;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
 .method public abstract beginArray()V
@@ -199,7 +189,7 @@
 
     const/16 v4, 0x24
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline28(C)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcoil/bitmap/SizeStrategy$$ExternalSyntheticOutline0;->m(C)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -384,11 +374,11 @@
     goto :goto_0
 
     :cond_0
-    new-instance p1, Lcom/airbnb/lottie/parser/moshi/JsonDataException;
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     const-string v0, "Nesting too deep at "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -402,7 +392,7 @@
 
     move-result-object v0
 
-    invoke-direct {p1, v0}, Lcom/airbnb/lottie/parser/moshi/JsonDataException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lkotlin/NoWhenBranchMatchedException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
@@ -457,7 +447,7 @@
 
     const-string v1, " at path "
 
-    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v1}, Landroidx/constraintlayout/core/PriorityGoalRow$GoalVariableAccessor$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 

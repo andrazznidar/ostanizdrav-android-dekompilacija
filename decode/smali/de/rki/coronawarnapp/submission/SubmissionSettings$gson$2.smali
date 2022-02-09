@@ -52,7 +52,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/submission/SubmissionSettings;->baseGson:Lcom/google/gson/Gson;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Lcom/google/gson/GsonBuilder;
 
@@ -64,7 +64,7 @@
 
     const/4 v3, 0x0
 
-    const-string v4, "type"
+    const-string/jumbo v4, "type"
 
     invoke-direct {v2, v0, v4, v3}, Lde/rki/coronawarnapp/util/serialization/adapter/RuntimeTypeAdapterFactory;-><init>(Ljava/lang/Class;Ljava/lang/String;Z)V
 
@@ -97,9 +97,4 @@
     move-result-object v0
 
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

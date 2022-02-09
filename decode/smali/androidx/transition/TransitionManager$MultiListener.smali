@@ -165,7 +165,7 @@
 
     iget-object v8, v0, Landroidx/transition/TransitionManager$MultiListener;->mSceneRoot:Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_1b
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v3, Ljava/util/ArrayList;
 
@@ -179,19 +179,23 @@
 
     iput-object v3, v1, Landroidx/transition/Transition;->mEndValuesList:Ljava/util/ArrayList;
 
-    iget-object v3, v1, Landroidx/transition/Transition;->mStartValues:Landroidx/transition/TransitionValuesMaps;
+    iget-object v3, v1, Landroidx/transition/Transition;->mStartValues:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v5, v1, Landroidx/transition/Transition;->mEndValues:Landroidx/transition/TransitionValuesMaps;
+    iget-object v5, v1, Landroidx/transition/Transition;->mEndValues:Landroidx/constraintlayout/core/Cache;
 
     new-instance v7, Landroidx/collection/ArrayMap;
 
-    iget-object v9, v3, Landroidx/transition/TransitionValuesMaps;->mViewValues:Landroidx/collection/ArrayMap;
+    iget-object v9, v3, Landroidx/constraintlayout/core/Cache;->optimizedArrayRowPool:Ljava/lang/Object;
+
+    check-cast v9, Landroidx/collection/ArrayMap;
 
     invoke-direct {v7, v9}, Landroidx/collection/ArrayMap;-><init>(Landroidx/collection/SimpleArrayMap;)V
 
     new-instance v9, Landroidx/collection/ArrayMap;
 
-    iget-object v10, v5, Landroidx/transition/TransitionValuesMaps;->mViewValues:Landroidx/collection/ArrayMap;
+    iget-object v10, v5, Landroidx/constraintlayout/core/Cache;->optimizedArrayRowPool:Ljava/lang/Object;
+
+    check-cast v10, Landroidx/collection/ArrayMap;
 
     invoke-direct {v9, v10}, Landroidx/collection/ArrayMap;-><init>(Landroidx/collection/SimpleArrayMap;)V
 
@@ -226,9 +230,13 @@
     goto :goto_6
 
     :cond_5
-    iget-object v11, v3, Landroidx/transition/TransitionValuesMaps;->mItemIdValues:Landroidx/collection/LongSparseArray;
+    iget-object v11, v3, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
 
-    iget-object v12, v5, Landroidx/transition/TransitionValuesMaps;->mItemIdValues:Landroidx/collection/LongSparseArray;
+    check-cast v11, Landroidx/collection/LongSparseArray;
+
+    iget-object v12, v5, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
+
+    check-cast v12, Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v11}, Landroidx/collection/LongSparseArray;->size()I
 
@@ -330,9 +338,13 @@
     :cond_8
     move-object v2, v3
 
-    iget-object v3, v2, Landroidx/transition/TransitionValuesMaps;->mIdValues:Landroid/util/SparseArray;
+    iget-object v3, v2, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
 
-    iget-object v4, v5, Landroidx/transition/TransitionValuesMaps;->mIdValues:Landroid/util/SparseArray;
+    check-cast v3, Landroid/util/SparseArray;
+
+    iget-object v4, v5, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
+
+    check-cast v4, Landroid/util/SparseArray;
 
     invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
 
@@ -417,9 +429,13 @@
     :cond_a
     move-object v2, v3
 
-    iget-object v0, v2, Landroidx/transition/TransitionValuesMaps;->mNameValues:Landroidx/collection/ArrayMap;
+    iget-object v0, v2, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
 
-    iget-object v3, v5, Landroidx/transition/TransitionValuesMaps;->mNameValues:Landroidx/collection/ArrayMap;
+    check-cast v0, Landroidx/collection/ArrayMap;
+
+    iget-object v3, v5, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
+
+    check-cast v3, Landroidx/collection/ArrayMap;
 
     iget v4, v0, Landroidx/collection/SimpleArrayMap;->mSize:I
 
@@ -649,7 +665,9 @@
 
     iget v2, v0, Landroidx/collection/SimpleArrayMap;->mSize:I
 
-    invoke-static {v8}, Landroidx/transition/ViewUtils;->getWindowId(Landroid/view/View;)Landroidx/transition/WindowIdImpl;
+    sget-object v3, Landroidx/transition/ViewUtils;->IMPL:Landroidx/transition/ViewUtilsBase;
+
+    invoke-virtual {v8}, Landroid/view/View;->getWindowId()Landroid/view/WindowId;
 
     move-result-object v3
 
@@ -658,7 +676,7 @@
     sub-int/2addr v2, v4
 
     :goto_d
-    if-ltz v2, :cond_1a
+    if-ltz v2, :cond_1b
 
     invoke-virtual {v0, v2}, Landroidx/collection/SimpleArrayMap;->keyAt(I)Ljava/lang/Object;
 
@@ -666,9 +684,9 @@
 
     check-cast v4, Landroid/animation/Animator;
 
-    if-eqz v4, :cond_19
-
     const/4 v5, 0x0
+
+    if-eqz v4, :cond_1a
 
     invoke-virtual {v0, v4, v5}, Landroidx/collection/SimpleArrayMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -676,107 +694,127 @@
 
     check-cast v6, Landroidx/transition/Transition$AnimationInfo;
 
-    if-eqz v6, :cond_19
-
-    iget-object v5, v6, Landroidx/transition/Transition$AnimationInfo;->mView:Landroid/view/View;
-
-    if-eqz v5, :cond_19
-
-    iget-object v5, v6, Landroidx/transition/Transition$AnimationInfo;->mWindowId:Landroidx/transition/WindowIdImpl;
-
-    invoke-virtual {v3, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_19
-
-    iget-object v5, v6, Landroidx/transition/Transition$AnimationInfo;->mValues:Landroidx/transition/TransitionValues;
+    if-eqz v6, :cond_1a
 
     iget-object v7, v6, Landroidx/transition/Transition$AnimationInfo;->mView:Landroid/view/View;
 
-    const/4 v9, 0x1
+    if-eqz v7, :cond_1a
 
-    invoke-virtual {v1, v7, v9}, Landroidx/transition/Transition;->getTransitionValues(Landroid/view/View;Z)Landroidx/transition/TransitionValues;
+    iget-object v7, v6, Landroidx/transition/Transition$AnimationInfo;->mWindowId:Landroidx/transition/WindowIdImpl;
 
-    move-result-object v10
+    instance-of v9, v7, Landroidx/transition/WindowIdApi18;
 
-    invoke-virtual {v1, v7, v9}, Landroidx/transition/Transition;->getMatchedTransitionValues(Landroid/view/View;Z)Landroidx/transition/TransitionValues;
+    if-eqz v9, :cond_14
 
-    move-result-object v11
+    check-cast v7, Landroidx/transition/WindowIdApi18;
 
-    if-nez v10, :cond_14
+    iget-object v7, v7, Landroidx/transition/WindowIdApi18;->mWindowId:Landroid/view/WindowId;
 
-    if-nez v11, :cond_14
+    invoke-virtual {v7, v3}, Landroid/view/WindowId;->equals(Ljava/lang/Object;)Z
 
-    iget-object v9, v1, Landroidx/transition/Transition;->mEndValues:Landroidx/transition/TransitionValuesMaps;
+    move-result v7
 
-    iget-object v9, v9, Landroidx/transition/TransitionValuesMaps;->mViewValues:Landroidx/collection/ArrayMap;
+    if-eqz v7, :cond_14
 
-    invoke-virtual {v9, v7}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    move-object v11, v7
-
-    check-cast v11, Landroidx/transition/TransitionValues;
-
-    :cond_14
-    if-nez v10, :cond_15
-
-    if-eqz v11, :cond_16
-
-    :cond_15
-    iget-object v6, v6, Landroidx/transition/Transition$AnimationInfo;->mTransition:Landroidx/transition/Transition;
-
-    invoke-virtual {v6, v5, v11}, Landroidx/transition/Transition;->isTransitionRequired(Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_16
-
-    const/4 v5, 0x1
+    const/4 v7, 0x1
 
     goto :goto_e
 
-    :cond_16
-    const/4 v5, 0x0
+    :cond_14
+    const/4 v7, 0x0
 
     :goto_e
-    if-eqz v5, :cond_19
+    if-eqz v7, :cond_1a
 
-    invoke-virtual {v4}, Landroid/animation/Animator;->isRunning()Z
+    iget-object v7, v6, Landroidx/transition/Transition$AnimationInfo;->mValues:Landroidx/transition/TransitionValues;
 
-    move-result v5
+    iget-object v9, v6, Landroidx/transition/Transition$AnimationInfo;->mView:Landroid/view/View;
 
-    if-nez v5, :cond_18
+    const/4 v10, 0x1
 
-    invoke-virtual {v4}, Landroid/animation/Animator;->isStarted()Z
+    invoke-virtual {v1, v9, v10}, Landroidx/transition/Transition;->getTransitionValues(Landroid/view/View;Z)Landroidx/transition/TransitionValues;
 
-    move-result v5
+    move-result-object v11
 
-    if-eqz v5, :cond_17
+    invoke-virtual {v1, v9, v10}, Landroidx/transition/Transition;->getMatchedTransitionValues(Landroid/view/View;Z)Landroidx/transition/TransitionValues;
+
+    move-result-object v12
+
+    if-nez v11, :cond_15
+
+    if-nez v12, :cond_15
+
+    iget-object v10, v1, Landroidx/transition/Transition;->mEndValues:Landroidx/constraintlayout/core/Cache;
+
+    iget-object v10, v10, Landroidx/constraintlayout/core/Cache;->optimizedArrayRowPool:Ljava/lang/Object;
+
+    check-cast v10, Landroidx/collection/ArrayMap;
+
+    invoke-virtual {v10, v9}, Landroidx/collection/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    move-object v12, v9
+
+    check-cast v12, Landroidx/transition/TransitionValues;
+
+    :cond_15
+    if-nez v11, :cond_16
+
+    if-eqz v12, :cond_17
+
+    :cond_16
+    iget-object v6, v6, Landroidx/transition/Transition$AnimationInfo;->mTransition:Landroidx/transition/Transition;
+
+    invoke-virtual {v6, v7, v12}, Landroidx/transition/Transition;->isTransitionRequired(Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_17
+
+    const/4 v6, 0x1
 
     goto :goto_f
 
     :cond_17
-    invoke-virtual {v0, v4}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v6, 0x0
+
+    :goto_f
+    if-eqz v6, :cond_1a
+
+    invoke-virtual {v4}, Landroid/animation/Animator;->isRunning()Z
+
+    move-result v6
+
+    if-nez v6, :cond_19
+
+    invoke-virtual {v4}, Landroid/animation/Animator;->isStarted()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_18
 
     goto :goto_10
 
     :cond_18
-    :goto_f
-    invoke-virtual {v4}, Landroid/animation/Animator;->cancel()V
+    invoke-virtual {v0, v4}, Landroidx/collection/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_11
 
     :cond_19
     :goto_10
+    invoke-virtual {v4}, Landroid/animation/Animator;->cancel()V
+
+    :cond_1a
+    :goto_11
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_d
 
-    :cond_1a
-    iget-object v9, v1, Landroidx/transition/Transition;->mStartValues:Landroidx/transition/TransitionValuesMaps;
+    :cond_1b
+    iget-object v9, v1, Landroidx/transition/Transition;->mStartValues:Landroidx/constraintlayout/core/Cache;
 
-    iget-object v10, v1, Landroidx/transition/Transition;->mEndValues:Landroidx/transition/TransitionValuesMaps;
+    iget-object v10, v1, Landroidx/transition/Transition;->mEndValues:Landroidx/constraintlayout/core/Cache;
 
     iget-object v11, v1, Landroidx/transition/Transition;->mStartValuesList:Ljava/util/ArrayList;
 
@@ -784,18 +822,13 @@
 
     move-object v7, v1
 
-    invoke-virtual/range {v7 .. v12}, Landroidx/transition/Transition;->createAnimators(Landroid/view/ViewGroup;Landroidx/transition/TransitionValuesMaps;Landroidx/transition/TransitionValuesMaps;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    invoke-virtual/range {v7 .. v12}, Landroidx/transition/Transition;->createAnimators(Landroid/view/ViewGroup;Landroidx/constraintlayout/core/Cache;Landroidx/constraintlayout/core/Cache;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     invoke-virtual {v1}, Landroidx/transition/Transition;->runAnimators()V
 
     const/4 v0, 0x1
 
     return v0
-
-    :cond_1b
-    move-object v0, v4
-
-    throw v0
 .end method
 
 .method public onViewAttachedToWindow(Landroid/view/View;)V

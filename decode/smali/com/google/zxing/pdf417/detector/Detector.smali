@@ -404,9 +404,7 @@
 
     move-result v8
 
-    xor-int/2addr v8, v2
-
-    if-eqz v8, :cond_1
+    if-eq v8, v2, :cond_1
 
     aget v4, p6, v3
 
@@ -446,15 +444,15 @@
 
     add-int/2addr p4, v4
 
-    add-int/lit8 v4, v0, -0x2
+    add-int/lit8 v4, v3, -0x1
 
     invoke-static {p6, v6, p6, v1, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     aput v1, p6, v4
 
-    aput v1, p6, v8
+    aput v1, p6, v3
 
-    add-int/lit8 v3, v3, -0x1
+    move v3, v4
 
     goto :goto_2
 
@@ -501,291 +499,284 @@
 .end method
 
 .method public static findRowsWithPattern(Lcom/google/zxing/common/BitMatrix;IIII[I)[Lcom/google/zxing/ResultPoint;
-    .locals 19
+    .locals 18
 
     move/from16 v0, p1
 
     const/4 v1, 0x4
 
-    new-array v2, v1, [Lcom/google/zxing/ResultPoint;
+    new-array v1, v1, [Lcom/google/zxing/ResultPoint;
 
-    move-object/from16 v10, p5
+    move-object/from16 v9, p5
 
-    array-length v3, v10
+    array-length v2, v9
 
-    new-array v11, v3, [I
+    new-array v10, v2, [I
 
-    move/from16 v12, p3
+    move/from16 v11, p3
 
     :goto_0
-    const/4 v13, 0x0
+    const/4 v12, 0x0
 
-    const/4 v14, 0x1
+    const/4 v13, 0x1
 
-    if-ge v12, v0, :cond_3
+    if-ge v11, v0, :cond_3
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    move-object/from16 v3, p0
+    move-object/from16 v2, p0
 
-    move/from16 v4, p4
+    move/from16 v3, p4
 
-    move v5, v12
+    move v4, v11
 
-    move/from16 v6, p2
+    move/from16 v5, p2
 
-    move-object/from16 v8, p5
+    move-object/from16 v7, p5
 
-    move-object v9, v11
+    move-object v8, v10
 
-    invoke-static/range {v3 .. v9}, Lcom/google/zxing/pdf417/detector/Detector;->findGuardPattern(Lcom/google/zxing/common/BitMatrix;IIIZ[I[I)[I
+    invoke-static/range {v2 .. v8}, Lcom/google/zxing/pdf417/detector/Detector;->findGuardPattern(Lcom/google/zxing/common/BitMatrix;IIIZ[I[I)[I
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    move/from16 v18, v12
+    move/from16 v17, v11
 
-    move-object v12, v3
+    move-object v11, v2
 
-    move/from16 v3, v18
+    move/from16 v2, v17
 
     :goto_1
-    if-lez v3, :cond_1
+    if-lez v2, :cond_1
 
-    add-int/lit8 v15, v3, -0x1
+    add-int/lit8 v14, v2, -0x1
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    move-object/from16 v3, p0
+    move-object/from16 v2, p0
 
-    move/from16 v4, p4
+    move/from16 v3, p4
 
-    move v5, v15
+    move v4, v14
 
-    move/from16 v6, p2
+    move/from16 v5, p2
 
-    move-object/from16 v8, p5
+    move-object/from16 v7, p5
 
-    move-object v9, v11
+    move-object v8, v10
 
-    invoke-static/range {v3 .. v9}, Lcom/google/zxing/pdf417/detector/Detector;->findGuardPattern(Lcom/google/zxing/common/BitMatrix;IIIZ[I[I)[I
+    invoke-static/range {v2 .. v8}, Lcom/google/zxing/pdf417/detector/Detector;->findGuardPattern(Lcom/google/zxing/common/BitMatrix;IIIZ[I[I)[I
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
-    move-object v12, v3
+    move-object v11, v2
 
-    move v3, v15
+    move v2, v14
 
     goto :goto_1
 
     :cond_0
-    add-int/2addr v15, v14
+    add-int/2addr v14, v13
 
     goto :goto_2
 
     :cond_1
-    move v15, v3
+    move v14, v2
 
     :goto_2
-    new-instance v3, Lcom/google/zxing/ResultPoint;
+    new-instance v2, Lcom/google/zxing/ResultPoint;
 
-    aget v4, v12, v13
+    aget v3, v11, v12
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    int-to-float v5, v15
+    int-to-float v4, v14
 
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v2, v3, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    aput-object v3, v2, v13
+    aput-object v2, v1, v12
 
-    new-instance v3, Lcom/google/zxing/ResultPoint;
+    new-instance v2, Lcom/google/zxing/ResultPoint;
 
-    aget v4, v12, v14
+    aget v3, v11, v13
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v2, v3, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    aput-object v3, v2, v14
+    aput-object v2, v1, v13
 
-    move v3, v14
+    move v2, v13
 
-    move v12, v15
+    move v11, v14
 
     goto :goto_3
 
     :cond_2
-    add-int/lit8 v12, v12, 0x5
+    add-int/lit8 v11, v11, 0x5
 
     goto :goto_0
 
     :cond_3
-    move v3, v13
+    move v2, v12
 
     :goto_3
-    add-int/lit8 v4, v12, 0x1
+    add-int/lit8 v3, v11, 0x1
 
-    if-eqz v3, :cond_7
+    if-eqz v2, :cond_7
 
-    const/4 v15, 0x2
+    const/4 v14, 0x2
 
-    new-array v3, v15, [I
+    new-array v2, v14, [I
 
-    aget-object v5, v2, v13
+    aget-object v4, v1, v12
 
-    iget v5, v5, Lcom/google/zxing/ResultPoint;->x:F
+    iget v4, v4, Lcom/google/zxing/ResultPoint;->x:F
 
-    float-to-int v5, v5
+    float-to-int v4, v4
 
-    aput v5, v3, v13
+    aput v4, v2, v12
 
-    aget-object v5, v2, v14
+    aget-object v4, v1, v13
 
-    iget v5, v5, Lcom/google/zxing/ResultPoint;->x:F
+    iget v4, v4, Lcom/google/zxing/ResultPoint;->x:F
 
-    float-to-int v5, v5
+    float-to-int v4, v4
 
-    aput v5, v3, v14
+    aput v4, v2, v13
 
-    move-object/from16 v16, v3
+    move-object v15, v2
 
-    move v9, v4
+    move v8, v3
 
-    move v8, v13
+    move v7, v12
 
     :goto_4
-    if-ge v9, v0, :cond_5
+    if-ge v8, v0, :cond_5
 
-    aget v4, v16, v13
+    aget v3, v15, v12
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    move-object/from16 v3, p0
+    move-object/from16 v2, p0
 
-    move v5, v9
+    move v4, v8
 
-    move/from16 v6, p2
+    move/from16 v5, p2
 
-    move v1, v8
+    move v14, v7
 
-    move-object/from16 v8, p5
+    move-object/from16 v7, p5
 
-    move/from16 v17, v9
+    move/from16 v16, v8
 
-    move-object v9, v11
+    move-object v8, v10
 
-    invoke-static/range {v3 .. v9}, Lcom/google/zxing/pdf417/detector/Detector;->findGuardPattern(Lcom/google/zxing/common/BitMatrix;IIIZ[I[I)[I
+    invoke-static/range {v2 .. v8}, Lcom/google/zxing/pdf417/detector/Detector;->findGuardPattern(Lcom/google/zxing/common/BitMatrix;IIIZ[I[I)[I
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
-    aget v4, v16, v13
+    aget v3, v15, v12
 
-    aget v5, v3, v13
+    aget v4, v2, v12
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v3, v4
 
-    invoke-static {v4}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
-    move-result v4
+    move-result v3
 
-    const/4 v5, 0x5
+    const/4 v4, 0x5
 
-    if-ge v4, v5, :cond_4
+    if-ge v3, v4, :cond_4
 
-    aget v4, v16, v14
+    aget v3, v15, v13
 
-    aget v6, v3, v14
+    aget v5, v2, v13
 
-    sub-int/2addr v4, v6
+    sub-int/2addr v3, v5
 
-    invoke-static {v4}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
-    move-result v4
+    move-result v3
 
-    if-ge v4, v5, :cond_4
+    if-ge v3, v4, :cond_4
 
-    move-object/from16 v16, v3
+    move-object v15, v2
 
-    move v8, v13
+    move v7, v12
 
     goto :goto_5
 
     :cond_4
-    const/16 v3, 0x19
+    const/16 v2, 0x19
 
-    if-gt v1, v3, :cond_6
+    if-gt v14, v2, :cond_6
 
-    add-int/lit8 v8, v1, 0x1
+    add-int/lit8 v7, v14, 0x1
 
     :goto_5
-    add-int/lit8 v9, v17, 0x1
+    add-int/lit8 v8, v16, 0x1
 
-    const/4 v1, 0x4
+    const/4 v14, 0x2
 
     goto :goto_4
 
     :cond_5
-    move v1, v8
+    move v14, v7
 
-    move/from16 v17, v9
+    move/from16 v16, v8
 
     :cond_6
-    add-int/lit8 v8, v1, 0x1
+    add-int/lit8 v7, v14, 0x1
 
-    sub-int v4, v17, v8
+    sub-int v3, v16, v7
 
     new-instance v0, Lcom/google/zxing/ResultPoint;
 
-    aget v1, v16, v13
+    aget v2, v15, v12
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    int-to-float v3, v4
+    int-to-float v4, v3
 
-    invoke-direct {v0, v1, v3}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v0, v2, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    aput-object v0, v2, v15
+    const/4 v2, 0x2
+
+    aput-object v0, v1, v2
 
     const/4 v0, 0x3
 
-    new-instance v1, Lcom/google/zxing/ResultPoint;
+    new-instance v2, Lcom/google/zxing/ResultPoint;
 
-    aget v5, v16, v14
+    aget v5, v15, v13
 
     int-to-float v5, v5
 
-    invoke-direct {v1, v5, v3}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v2, v5, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    aput-object v1, v2, v0
+    aput-object v2, v1, v0
 
     :cond_7
-    sub-int/2addr v4, v12
+    sub-int/2addr v3, v11
 
     const/16 v0, 0xa
 
-    if-ge v4, v0, :cond_8
+    if-ge v3, v0, :cond_8
 
-    const/4 v0, 0x4
+    const/4 v0, 0x0
 
-    :goto_6
-    if-ge v13, v0, :cond_8
-
-    const/4 v1, 0x0
-
-    aput-object v1, v2, v13
-
-    add-int/lit8 v13, v13, 0x1
-
-    goto :goto_6
+    invoke-static {v1, v0}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
 
     :cond_8
-    return-object v2
+    return-object v1
 .end method
 
 .method public static patternMatchVariance([I[IF)F

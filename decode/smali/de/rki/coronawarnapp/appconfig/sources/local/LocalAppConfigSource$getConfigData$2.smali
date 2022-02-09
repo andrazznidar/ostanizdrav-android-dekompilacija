@@ -40,6 +40,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;->this$0:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
 
@@ -66,10 +76,6 @@
         }
     .end annotation
 
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p1, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;->this$0:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
@@ -79,14 +85,12 @@
     return-object p1
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
+    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
-
-    const-string p1, "completion"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance p1, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;
 
@@ -120,7 +124,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -134,11 +138,11 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object p1
+    invoke-virtual {p1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v1, v3, [Ljava/lang/Object;
 
@@ -168,9 +172,9 @@
 
     if-nez p1, :cond_3
 
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object p1
+    invoke-virtual {p1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v1, v3, [Ljava/lang/Object;
 
@@ -182,44 +186,54 @@
 
     :cond_3
     :try_start_0
-    new-instance v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;->this$0:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;->this$0:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
+    iget-object v1, v1, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;->parser:Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;->parser:Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->getRawData()[B
 
-    iget-object v5, p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->rawData:[B
+    move-result-object v2
 
-    invoke-virtual {v2, v5}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;->parse([B)Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
+    invoke-virtual {v1, v2}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;->parse([B)Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
 
     move-result-object v8
 
-    iget-object v6, p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->serverTime:Lorg/joda/time/Instant;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->getServerTime()Lorg/joda/time/Instant;
 
-    iget-object v10, p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->localOffset:Lorg/joda/time/Duration;
+    move-result-object v6
 
-    iget-object v9, p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->etag:Ljava/lang/String;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->getLocalOffset()Lorg/joda/time/Duration;
+
+    move-result-object v10
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->getEtag()Ljava/lang/String;
+
+    move-result-object v9
 
     sget-object v11, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LAST_RETRIEVED:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    iget-object v7, p1, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->cacheValidity:Lorg/joda/time/Duration;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;->getCacheValidity()Lorg/joda/time/Duration;
 
-    move-object v5, v1
+    move-result-object v7
+
+    new-instance p1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+
+    move-object v5, p1
 
     invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v0, v1
+    move-object v0, p1
 
     goto :goto_1
 
     :catch_0
     move-exception p1
 
-    invoke-static {v4}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v1
+    invoke-virtual {v1, v4}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     new-array v2, v3, [Ljava/lang/Object;
 

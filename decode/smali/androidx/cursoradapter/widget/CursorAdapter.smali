@@ -414,7 +414,7 @@
 
     const-string p3, "couldn\'t move cursor to position "
 
-    invoke-static {p3, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p3, p1}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -425,7 +425,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "this should only be called when the cursor is valid"
+    const-string/jumbo p2, "this should only be called when the cursor is valid"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

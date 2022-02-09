@@ -20,6 +20,10 @@
 .end annotation
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # instance fields
 .field public transient asList:Lcom/google/common/collect/ImmutableList;
     .annotation system Ldalvik/annotation/Signature;
@@ -38,74 +42,6 @@
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection;-><init>()V
 
     return-void
-.end method
-
-.method public static chooseTableSize(I)I
-    .locals 5
-
-    const/4 v0, 0x2
-
-    invoke-static {p0, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result p0
-
-    const/4 v0, 0x1
-
-    const v1, 0x2ccccccc
-
-    if-ge p0, v1, :cond_1
-
-    add-int/lit8 v1, p0, -0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->highestOneBit(I)I
-
-    move-result v1
-
-    shl-int/lit8 v0, v1, 0x1
-
-    :goto_0
-    int-to-double v1, v0
-
-    const-wide v3, 0x3fe6666666666666L    # 0.7
-
-    mul-double/2addr v1, v3
-
-    int-to-double v3, p0
-
-    cmpg-double v1, v1, v3
-
-    if-gez v1, :cond_0
-
-    shl-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return v0
-
-    :cond_1
-    const/high16 v1, 0x40000000    # 2.0f
-
-    if-ge p0, v1, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_1
-    if-eqz v0, :cond_3
-
-    return v1
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "collection too large"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
@@ -137,27 +73,6 @@
     move-object v0, v1
 
     :cond_0
-    return-object v0
-.end method
-
-.method public createAsList()Lcom/google/common/collect/ImmutableList;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/ImmutableList<",
-            "TE;>;"
-        }
-    .end annotation
-
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->toArray()[Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/common/collect/ImmutableList;->asImmutableList([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v0
-
     return-object v0
 .end method
 
@@ -219,7 +134,7 @@
 .method public hashCode()I
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/material/R$style;->hashCodeImpl(Ljava/util/Set;)I
+    invoke-static {p0}, Landroidx/lifecycle/LifecycleKt;->hashCodeImpl(Ljava/util/Set;)I
 
     move-result v0
 

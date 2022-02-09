@@ -68,7 +68,7 @@
     return-object p1
 
     :cond_0
-    const-string p1, "uploadDialog"
+    const-string/jumbo p1, "uploadDialog"
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 

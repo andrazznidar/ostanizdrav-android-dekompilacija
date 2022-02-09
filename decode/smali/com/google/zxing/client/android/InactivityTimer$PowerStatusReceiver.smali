@@ -31,16 +31,6 @@
 
 
 # virtual methods
-.method public synthetic lambda$onReceive$0$InactivityTimer$PowerStatusReceiver(Z)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer$PowerStatusReceiver;->this$0:Lcom/google/zxing/client/android/InactivityTimer;
-
-    invoke-static {v0, p1}, Lcom/google/zxing/client/android/InactivityTimer;->access$200(Lcom/google/zxing/client/android/InactivityTimer;Z)V
-
-    return-void
-.end method
-
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
 
@@ -78,9 +68,9 @@
 
     iget-object p2, p2, Lcom/google/zxing/client/android/InactivityTimer;->handler:Landroid/os/Handler;
 
-    new-instance v0, Lcom/google/zxing/client/android/-$$Lambda$InactivityTimer$PowerStatusReceiver$uFSv2YwtgMRA-ZEaRU8FrwqukAo;
+    new-instance v0, Lcom/google/zxing/client/android/AmbientLightManager$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/zxing/client/android/-$$Lambda$InactivityTimer$PowerStatusReceiver$uFSv2YwtgMRA-ZEaRU8FrwqukAo;-><init>(Lcom/google/zxing/client/android/InactivityTimer$PowerStatusReceiver;Z)V
+    invoke-direct {v0, p0, p1}, Lcom/google/zxing/client/android/AmbientLightManager$$ExternalSyntheticLambda0;-><init>(Lcom/google/zxing/client/android/InactivityTimer$PowerStatusReceiver;Z)V
 
     invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

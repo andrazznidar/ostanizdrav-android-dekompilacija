@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public final uploadAnalyticsData(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestAndroid$PPADataRequestAndroid;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +94,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -108,7 +108,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsServer;->api:Ldagger/Lazy;
 
@@ -136,13 +136,7 @@
 
     iget p1, p1, Lokhttp3/Response;->code:I
 
-    new-instance v0, Ljava/lang/Integer;
-
-    invoke-direct {v0, p1}, Ljava/lang/Integer;-><init>(I)V
-
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
-
-    move-result p1
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     new-array v1, v3, [Ljava/lang/Object;
 
@@ -150,99 +144,87 @@
 
     invoke-direct {v2, p1}, Ljava/lang/Integer;-><init>(I)V
 
-    const/4 p1, 0x0
+    const/4 v3, 0x0
 
-    aput-object v2, v1, p1
+    aput-object v2, v1, v3
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v2, "Response code: %d"
 
-    const-string v3, "Response code: %d"
-
-    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
-
-    move-result v0
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const/16 v1, 0xcc
 
-    if-eq v0, v1, :cond_7
+    if-eq p1, v1, :cond_8
 
     const/16 v1, 0x193
 
     const/4 v2, 0x2
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    if-eq v0, v1, :cond_5
+    if-eq p1, v1, :cond_5
 
     const/16 v1, 0x190
 
-    if-eq v0, v1, :cond_5
+    if-eq p1, v1, :cond_5
 
     const/16 v1, 0x191
 
-    if-ne v0, v1, :cond_4
+    if-ne p1, v1, :cond_4
 
     goto :goto_2
 
     :cond_4
-    new-instance p2, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;
+    new-instance p1, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;
 
-    const-string v0, "An unknown error occurred during the request"
+    const-string p2, "An unknown error occurred during the request"
 
-    invoke-direct {p2, v0, v3, v2}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, p2, v4, v2}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
-    new-array p1, p1, [Ljava/lang/Object;
-
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array p2, v3, [Ljava/lang/Object;
 
     const-string v1, "Analytics upload failed due to a unknown error"
 
-    invoke-virtual {v0, p2, v1, p1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v1, p2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    throw p2
+    throw p1
 
     :cond_5
     :goto_2
-    iget-object p2, p2, Lretrofit2/Response;->body:Ljava/lang/Object;
+    iget-object p1, p2, Lretrofit2/Response;->body:Ljava/lang/Object;
 
-    check-cast p2, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsApiV1$DataDonationAnalyticsResponse;
+    check-cast p1, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsApiV1$DataDonationAnalyticsResponse;
 
-    if-eqz p2, :cond_6
+    if-eqz p1, :cond_6
 
-    iget-object p2, p2, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsApiV1$DataDonationAnalyticsResponse;->errorCode:Ljava/lang/String;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/datadonation/analytics/server/DataDonationAnalyticsApiV1$DataDonationAnalyticsResponse;->getErrorCode()Ljava/lang/String;
 
-    if-eqz p2, :cond_6
+    move-result-object p1
 
-    goto :goto_3
+    if-nez p1, :cond_7
 
     :cond_6
-    const-string p2, "Unknown clientside error"
+    const-string p1, "Unknown clientside error"
 
-    :goto_3
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;
+    :cond_7
+    new-instance p2, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;
 
-    invoke-direct {v0, p2, v3, v2}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {p2, p1, v4, v2}, Lde/rki/coronawarnapp/datadonation/analytics/AnalyticsException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
 
-    new-array p1, p1, [Ljava/lang/Object;
-
-    sget-object p2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array p1, v3, [Ljava/lang/Object;
 
     const-string v1, "Analytics upload failed with 40X"
 
-    invoke-virtual {p2, v0, v1, p1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p2, v1, p1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    throw v0
+    throw p2
 
-    :cond_7
-    new-array p1, p1, [Ljava/lang/Object;
+    :cond_8
+    new-array p1, v3, [Ljava/lang/Object;
 
-    sget-object p2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string p2, "Analytics upload completed successfully"
 
-    const-string v0, "Analytics upload completed successfully"
-
-    invoke-virtual {p2, v0, p1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, p2, p1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

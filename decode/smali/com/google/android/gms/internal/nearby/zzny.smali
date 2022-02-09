@@ -35,7 +35,7 @@
 
     const-string v1, "index"
 
-    invoke-static {p1, v0, v1}, Lcom/airbnb/lottie/R$attr;->zzb(IILjava/lang/String;)I
+    invoke-static {p1, v0, v1}, Lcom/google/android/gms/internal/nearby/zznp;->zzb(IILjava/lang/String;)I
 
     iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzny;->zzc:Lcom/google/android/gms/internal/nearby/zznz;
 
@@ -135,7 +135,7 @@
 
     iget v0, p0, Lcom/google/android/gms/internal/nearby/zzny;->zzb:I
 
-    invoke-static {p1, p2, v0}, Lcom/airbnb/lottie/R$attr;->zzd(III)V
+    invoke-static {p1, p2, v0}, Lcom/google/android/gms/internal/nearby/zznp;->zzd(III)V
 
     iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzny;->zzc:Lcom/google/android/gms/internal/nearby/zznz;
 

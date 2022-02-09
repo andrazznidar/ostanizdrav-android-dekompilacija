@@ -12,8 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -43,7 +41,7 @@
 
     new-array v2, v2, [I
 
-    const v5, 0x7f0c00aa
+    const v5, 0x7f0d00f1
 
     aput v5, v2, v4
 
@@ -55,15 +53,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090486
+    const v1, 0x7f0a06fe
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090485
+    const v1, 0x7f0a06fd
 
     const/4 v2, 0x3
 
@@ -74,6 +70,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -129,8 +135,6 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
@@ -142,7 +146,7 @@
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -185,15 +189,13 @@
 
     move-result-object v1
 
-    const v2, 0x7f120382
+    const v2, 0x7f13053b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->mIllustrationDescription:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->setIllustrationDescription(Ljava/lang/String;)V
 
     :cond_0
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBinding;->submissionDoneCardContent:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;
@@ -299,6 +301,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

@@ -63,7 +63,7 @@
         }
     .end annotation
 
-    const-string v0, "taskByDagger"
+    const-string/jumbo v0, "taskByDagger"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

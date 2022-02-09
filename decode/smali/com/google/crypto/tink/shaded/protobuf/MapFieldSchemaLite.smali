@@ -35,7 +35,7 @@
 .end method
 
 .method public forMapMetadata(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/MapEntryLite$Metadata;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,14 +48,11 @@
 
     check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/MapEntryLite;
 
-    const/4 v0, 0x0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_0
+    const/4 p1, 0x0
 
-    return-object v0
-
-    :cond_0
-    throw v0
+    return-object p1
 .end method
 
 .method public forMutableMapData(Ljava/lang/Object;)Ljava/util/Map;
@@ -103,8 +100,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_1
 
+    :goto_0
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p2
@@ -115,22 +118,15 @@
 
     invoke-interface {p2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    const/4 p2, 0x0
-
-    if-eqz p3, :cond_1
+    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeTagSize(I)I
 
-    throw p2
-
-    :cond_1
-    throw p2
-
-    :cond_2
-    :goto_0
     const/4 p1, 0x0
 
-    return p1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    throw p1
 .end method
 
 .method public isImmutable(Ljava/lang/Object;)Z

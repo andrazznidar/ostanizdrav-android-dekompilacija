@@ -2,9 +2,6 @@
 .super Lcom/google/android/gms/internal/nearby/zza;
 .source "com.google.android.gms:play-services-nearby@@18.0.3"
 
-# interfaces
-.implements Landroid/os/IInterface;
-
 
 # direct methods
 .method public constructor <init>(Landroid/os/IBinder;)V

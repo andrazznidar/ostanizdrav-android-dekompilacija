@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     new-instance v0, Lcom/airbnb/lottie/network/FileExtension;
 
@@ -41,29 +41,27 @@
 
     sput-object v0, Lcom/airbnb/lottie/network/FileExtension;->JSON:Lcom/airbnb/lottie/network/FileExtension;
 
-    new-instance v0, Lcom/airbnb/lottie/network/FileExtension;
+    new-instance v1, Lcom/airbnb/lottie/network/FileExtension;
 
-    const-string v1, "ZIP"
+    const-string v3, "ZIP"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const-string v4, ".zip"
+    const-string v5, ".zip"
 
-    invoke-direct {v0, v1, v3, v4}, Lcom/airbnb/lottie/network/FileExtension;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v1, v3, v4, v5}, Lcom/airbnb/lottie/network/FileExtension;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/airbnb/lottie/network/FileExtension;->ZIP:Lcom/airbnb/lottie/network/FileExtension;
+    sput-object v1, Lcom/airbnb/lottie/network/FileExtension;->ZIP:Lcom/airbnb/lottie/network/FileExtension;
 
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
-    new-array v1, v1, [Lcom/airbnb/lottie/network/FileExtension;
+    new-array v3, v3, [Lcom/airbnb/lottie/network/FileExtension;
 
-    sget-object v4, Lcom/airbnb/lottie/network/FileExtension;->JSON:Lcom/airbnb/lottie/network/FileExtension;
+    aput-object v0, v3, v2
 
-    aput-object v4, v1, v2
+    aput-object v1, v3, v4
 
-    aput-object v0, v1, v3
-
-    sput-object v1, Lcom/airbnb/lottie/network/FileExtension;->$VALUES:[Lcom/airbnb/lottie/network/FileExtension;
+    sput-object v3, Lcom/airbnb/lottie/network/FileExtension;->$VALUES:[Lcom/airbnb/lottie/network/FileExtension;
 
     return-void
 .end method

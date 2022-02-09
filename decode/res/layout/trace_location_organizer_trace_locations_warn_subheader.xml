@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_normal" android:layout_marginTop="@dimen/spacing_small" android:layout_marginRight="@dimen/spacing_normal" android:layout_marginBottom="@dimen/spacing_small" android:layout_marginHorizontal="@dimen/spacing_normal" android:layout_marginVertical="@dimen/spacing_small"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/contact_diary_overview_subtitle" android:focusable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/trace_location_organiser_list_subtitle" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/subtitleMedium" />
+</androidx.constraintlayout.widget.ConstraintLayout>

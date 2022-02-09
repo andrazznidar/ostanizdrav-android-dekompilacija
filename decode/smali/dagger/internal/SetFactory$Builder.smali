@@ -88,3 +88,28 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public build()Ldagger/internal/SetFactory;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ldagger/internal/SetFactory<",
+            "TT;>;"
+        }
+    .end annotation
+
+    new-instance v0, Ldagger/internal/SetFactory;
+
+    iget-object v1, p0, Ldagger/internal/SetFactory$Builder;->individualProviders:Ljava/util/List;
+
+    iget-object v2, p0, Ldagger/internal/SetFactory$Builder;->collectionProviders:Ljava/util/List;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Ldagger/internal/SetFactory;-><init>(Ljava/util/List;Ljava/util/List;Ldagger/internal/SetFactory$1;)V
+
+    return-object v0
+.end method

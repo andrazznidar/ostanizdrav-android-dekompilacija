@@ -7,19 +7,13 @@
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 3
 
-    const-string v0, "cause"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->EXTERNAL_NAVIGATION:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-    iget v0, v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->code:I
+    const/16 v0, 0xa
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    const v1, 0x7f120116
+    const v1, 0x7f1301c9
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

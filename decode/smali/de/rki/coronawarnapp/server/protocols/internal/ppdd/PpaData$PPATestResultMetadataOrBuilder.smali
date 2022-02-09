@@ -30,6 +30,18 @@
 .method public abstract getHoursSinceTestRegistration()I
 .end method
 
+.method public abstract getPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()I
+.end method
+
+.method public abstract getPtHoursSinceHighRiskWarningAtTestRegistration()I
+.end method
+
+.method public abstract getPtRiskLevelAtTestRegistration()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+.end method
+
+.method public abstract getPtRiskLevelAtTestRegistrationValue()I
+.end method
+
 .method public abstract getRiskLevelAtTestRegistration()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
 .end method
 

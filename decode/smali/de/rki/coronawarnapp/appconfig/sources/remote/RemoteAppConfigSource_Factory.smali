@@ -38,6 +38,16 @@
     .end annotation
 .end field
 
+.field public final remoteCacheProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lokhttp3/Cache;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final serverProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -60,13 +70,33 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "serverProvider",
+            "remoteCacheProvider",
+            "storageProvider",
+            "parserProvider",
+            "dispatcherProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lokhttp3/Cache;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;",
@@ -84,11 +114,13 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->serverProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->storageProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->remoteCacheProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->parserProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->storageProvider:Ljavax/inject/Provider;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->dispatcherProvider:Ljavax/inject/Provider;
+    iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->parserProvider:Ljavax/inject/Provider;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->dispatcherProvider:Ljavax/inject/Provider;
 
     return-void
 .end method
@@ -96,7 +128,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .locals 5
+    .locals 7
 
     iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->serverProvider:Ljavax/inject/Provider;
 
@@ -104,35 +136,55 @@
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;
+    move-object v2, v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->storageProvider:Ljavax/inject/Provider;
+    check-cast v2, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;
 
-    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->remoteCacheProvider:Ljavax/inject/Provider;
 
-    move-result-object v1
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;
+    move-result-object v0
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->parserProvider:Ljavax/inject/Provider;
+    move-object v3, v0
 
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    check-cast v3, Lokhttp3/Cache;
 
-    move-result-object v2
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->storageProvider:Ljavax/inject/Provider;
 
-    check-cast v2, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->dispatcherProvider:Ljavax/inject/Provider;
+    move-result-object v0
 
-    invoke-interface {v3}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    move-object v4, v0
 
-    move-result-object v3
+    check-cast v4, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;
 
-    check-cast v3, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->parserProvider:Ljavax/inject/Provider;
 
-    new-instance v4, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;-><init>(Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+    move-result-object v0
 
-    return-object v4
+    move-object v5, v0
+
+    check-cast v5, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource_Factory;->dispatcherProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+
+    new-instance v0, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;-><init>(Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;Lokhttp3/Cache;Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
+
+    return-object v0
 .end method

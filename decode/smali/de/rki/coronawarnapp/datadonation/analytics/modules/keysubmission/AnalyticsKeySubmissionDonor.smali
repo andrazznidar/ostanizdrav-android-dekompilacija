@@ -1,4 +1,4 @@
-.class public final Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor;
+.class public abstract Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor;
 .super Ljava/lang/Object;
 .source "AnalyticsKeySubmissionDonor.kt"
 
@@ -14,15 +14,7 @@
 
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;Lde/rki/coronawarnapp/util/TimeStamper;)V
-    .locals 1
-
-    const-string v0, "repository"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "timeStamper"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +28,7 @@
 
 # virtual methods
 .method public beginDonation(Lde/rki/coronawarnapp/datadonation/analytics/modules/DonorModule$Request;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,57 +59,51 @@
 
     move-result-object p1
 
-    const-string p2, "timeSinceTestResultToSubmit"
+    iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor;->repository:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;
 
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor;->repository:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;->getTestResultReceivedAt()J
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;->getTestResultReceivedAt()J
 
     move-result-wide v0
 
     const-wide/16 v2, 0x0
 
-    cmp-long v0, v0, v2
+    cmp-long p2, v0, v2
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    if-lez v0, :cond_0
+    if-lez p2, :cond_0
 
-    move v0, v1
+    move p2, v0
 
     goto :goto_0
 
     :cond_0
-    move v0, v2
+    move p2, v1
 
     :goto_0
-    if-eqz v0, :cond_2
+    if-eqz p2, :cond_2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor;->repository:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;
+    iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor;->repository:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;->getSubmitted()Z
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;->getSubmitted()Z
 
-    move-result v0
+    move-result p2
 
-    if-nez v0, :cond_3
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-nez p2, :cond_3
 
     iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p2
+    new-instance p2, Lorg/joda/time/Instant;
 
-    const/4 v0, -0x1
+    invoke-direct {p2}, Lorg/joda/time/Instant;-><init>()V
 
-    invoke-virtual {p2, p1, v0}, Lorg/joda/time/Instant;->withDurationAdded(Lorg/joda/time/ReadableDuration;I)Lorg/joda/time/Instant;
+    const/4 v2, -0x1
+
+    invoke-virtual {p2, p1, v2}, Lorg/joda/time/Instant;->withDurationAdded(Lorg/joda/time/ReadableDuration;I)Lorg/joda/time/Instant;
 
     move-result-object p1
 
@@ -125,11 +111,11 @@
 
     invoke-virtual {p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionRepository;->getTestResultReceivedAt()J
 
-    move-result-wide v3
+    move-result-wide v2
 
     new-instance p2, Lorg/joda/time/Instant;
 
-    invoke-direct {p2, v3, v4}, Lorg/joda/time/Instant;-><init>(J)V
+    invoke-direct {p2, v2, v3}, Lorg/joda/time/Instant;-><init>(J)V
 
     invoke-virtual {p1, p2}, Lorg/joda/time/base/AbstractInstant;->compareTo(Lorg/joda/time/ReadableInstant;)I
 
@@ -137,12 +123,12 @@
 
     if-lez p1, :cond_1
 
-    move p1, v1
+    move p1, v0
 
     goto :goto_1
 
     :cond_1
-    move p1, v2
+    move p1, v1
 
     :goto_1
     if-eqz p1, :cond_2
@@ -150,11 +136,11 @@
     goto :goto_2
 
     :cond_2
-    move v1, v2
+    move v0, v1
 
     :cond_3
     :goto_2
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
     new-instance p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/AnalyticsKeySubmissionDonor$beginDonation$2;
 
@@ -194,7 +180,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->clearAndNotify(Landroid/content/SharedPreferences;)V
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/preferences/SharedPreferenceExtensionsKt;->clearAndNotify(Landroid/content/SharedPreferences;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

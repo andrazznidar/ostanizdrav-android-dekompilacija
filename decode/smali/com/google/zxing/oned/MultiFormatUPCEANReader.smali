@@ -151,7 +151,7 @@
 
 # virtual methods
 .method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
-    .locals 7
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -191,90 +191,98 @@
     :try_start_0
     invoke-virtual {v6, p1, p2, v1, p3}, Lcom/google/zxing/oned/UPCEANReader;->decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Map;)Lcom/google/zxing/Result;
 
-    move-result-object p1
-    :try_end_0
-    .catch Lcom/google/zxing/ReaderException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v6
 
-    iget-object p2, p1, Lcom/google/zxing/Result;->format:Lcom/google/zxing/BarcodeFormat;
+    iget-object v7, v6, Lcom/google/zxing/Result;->format:Lcom/google/zxing/BarcodeFormat;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
+    sget-object v8, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
 
-    const/4 v2, 0x1
+    const/4 v9, 0x1
 
-    if-ne p2, v1, :cond_0
+    if-ne v7, v8, :cond_0
 
-    iget-object p2, p1, Lcom/google/zxing/Result;->text:Ljava/lang/String;
+    iget-object v7, v6, Lcom/google/zxing/Result;->text:Ljava/lang/String;
 
-    invoke-virtual {p2, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v7, v4}, Ljava/lang/String;->charAt(I)C
 
-    move-result p2
+    move-result v7
 
-    const/16 v1, 0x30
+    const/16 v8, 0x30
 
-    if-ne p2, v1, :cond_0
+    if-ne v7, v8, :cond_0
 
-    move p2, v2
+    move v7, v9
 
     goto :goto_1
 
     :cond_0
-    move p2, v4
+    move v7, v4
 
     :goto_1
     if-nez p3, :cond_1
 
-    const/4 p3, 0x0
+    const/4 v8, 0x0
 
     goto :goto_2
 
     :cond_1
-    sget-object v1, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
+    sget-object v8, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
 
-    invoke-interface {p3, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p3
+    move-result-object v8
 
-    check-cast p3, Ljava/util/Collection;
+    check-cast v8, Ljava/util/Collection;
 
     :goto_2
-    if-eqz p3, :cond_2
+    if-eqz v8, :cond_3
 
-    invoke-interface {p3, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v8, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result p3
+    move-result v8
 
-    if-eqz p3, :cond_3
+    if-eqz v8, :cond_2
+
+    goto :goto_3
 
     :cond_2
-    move v4, v2
+    move v8, v4
+
+    goto :goto_4
 
     :cond_3
-    if-eqz p2, :cond_4
+    :goto_3
+    move v8, v9
 
-    if-eqz v4, :cond_4
+    :goto_4
+    if-eqz v7, :cond_4
 
-    new-instance p2, Lcom/google/zxing/Result;
+    if-eqz v8, :cond_4
 
-    iget-object p3, p1, Lcom/google/zxing/Result;->text:Ljava/lang/String;
+    new-instance v7, Lcom/google/zxing/Result;
 
-    invoke-virtual {p3, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    iget-object v8, v6, Lcom/google/zxing/Result;->text:Ljava/lang/String;
 
-    move-result-object p3
+    invoke-virtual {v8, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    iget-object v1, p1, Lcom/google/zxing/Result;->rawBytes:[B
+    move-result-object v8
 
-    iget-object v2, p1, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
+    iget-object v9, v6, Lcom/google/zxing/Result;->rawBytes:[B
 
-    invoke-direct {p2, p3, v1, v2, v0}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
+    iget-object v10, v6, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
-    iget-object p1, p1, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
+    invoke-direct {v7, v8, v9, v10, v0}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
-    invoke-virtual {p2, p1}, Lcom/google/zxing/Result;->putAllMetadata(Ljava/util/Map;)V
+    iget-object v6, v6, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
-    return-object p2
+    invoke-virtual {v7, v6}, Lcom/google/zxing/Result;->putAllMetadata(Ljava/util/Map;)V
+    :try_end_0
+    .catch Lcom/google/zxing/ReaderException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v7
 
     :cond_4
-    return-object p1
+    return-object v6
 
     :catch_0
     add-int/lit8 v5, v5, 0x1
@@ -301,7 +309,7 @@
 
     aget-object v3, v0, v2
 
-    invoke-interface {v3}, Lcom/google/zxing/Reader;->reset()V
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v2, v2, 0x1
 

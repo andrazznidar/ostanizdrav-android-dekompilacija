@@ -9,7 +9,7 @@
 # annotations
 .annotation build Landroid/annotation/SuppressLint;
     value = {
-        "BanParcelableUsage"
+        "BanParcelableUsage, ParcelClassLoader"
     }
 .end annotation
 

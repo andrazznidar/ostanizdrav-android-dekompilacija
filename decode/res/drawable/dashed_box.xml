@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <corners android:radius="@dimen/radius_card" />
+            <solid android:color="@color/colorSurface2" />
+            <stroke android:width="2.0dip" android:color="@color/dividerColor" android:dashWidth="5.0dip" android:dashGap="5.0dip" />
+            <padding android:left="5.0dip" android:top="5.0dip" android:right="5.0dip" android:bottom="5.0dip" />
+        </shape>
+    </item>
+</layer-list>

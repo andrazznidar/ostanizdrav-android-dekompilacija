@@ -13,7 +13,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nENFClient.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,84:1\n47#2:85\n49#2:89\n47#2:90\n49#2:94\n47#2:95\n49#2:99\n47#2:100\n49#2:104\n50#3:86\n55#3:88\n50#3:91\n55#3:93\n50#3:96\n55#3:98\n50#3:101\n55#3:103\n106#4:87\n106#4:92\n106#4:97\n106#4:102\n*E\n*S KotlinDebug\n*F\n+ 1 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n*L\n67#1:85\n67#1:89\n68#1:90\n68#1:94\n73#1:95\n73#1:99\n76#1:100\n76#1:104\n67#1:86\n67#1:88\n68#1:91\n68#1:93\n73#1:96\n73#1:98\n76#1:101\n76#1:103\n67#1:87\n68#1:92\n73#1:97\n76#1:102\n*E\n"
+    value = "SMAP\nENFClient.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,84:1\n47#2:85\n49#2:89\n47#2:90\n49#2:94\n47#2:95\n49#2:99\n47#2:100\n49#2:104\n50#3:86\n55#3:88\n50#3:91\n55#3:93\n50#3:96\n55#3:98\n50#3:101\n55#3:103\n106#4:87\n106#4:92\n106#4:97\n106#4:102\n*S KotlinDebug\n*F\n+ 1 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n*L\n67#1:85\n67#1:89\n68#1:90\n68#1:94\n73#1:95\n73#1:99\n76#1:100\n76#1:104\n67#1:86\n67#1:88\n68#1:91\n68#1:93\n73#1:96\n73#1:98\n76#1:101\n76#1:103\n67#1:87\n68#1:92\n73#1:97\n76#1:102\n*E\n"
 .end annotation
 
 
@@ -25,6 +25,8 @@
 .field public final exposureDetectionTracker:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
 
 .field public final exposureWindowProvider:Lde/rki/coronawarnapp/nearby/modules/exposurewindow/ExposureWindowProvider;
+
+.field public final googleENFClient:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
 .field public final scanningSupport:Lde/rki/coronawarnapp/nearby/modules/locationless/ScanningSupport;
 
@@ -41,35 +43,37 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "diagnosisKeyProvider"
+    const-string v0, "diagnosisKeyProvider"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "tracingStatus"
+    const-string/jumbo v0, "tracingStatus"
 
-    invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "scanningSupport"
+    const-string v0, "scanningSupport"
 
-    invoke-static {p4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "exposureWindowProvider"
+    const-string v0, "exposureWindowProvider"
 
-    invoke-static {p5, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "exposureDetectionTracker"
+    const-string v0, "exposureDetectionTracker"
 
-    invoke-static {p6, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "enfVersion"
+    const-string v0, "enfVersion"
 
-    invoke-static {p7, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "tekHistoryProvider"
+    const-string/jumbo v0, "tekHistoryProvider"
 
-    invoke-static {p8, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/nearby/ENFClient;->googleENFClient:Lcom/google/android/gms/nearby/exposurenotification/ExposureNotificationClient;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/nearby/ENFClient;->diagnosisKeyProvider:Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DiagnosisKeyProvider;
 
@@ -277,7 +281,7 @@
 .end method
 
 .method public provideDiagnosisKeys(Ljava/util/Collection;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -294,161 +298,86 @@
         }
     .end annotation
 
-    instance-of v0, p3, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    if-eqz v0, :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-object v0, p3
-
-    check-cast v0, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;
-
-    iget v1, v0, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;->label:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;->label:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;
-
-    invoke-direct {v0, p0, p3}, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;-><init>(Lde/rki/coronawarnapp/nearby/ENFClient;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p3, v0, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;->result:Ljava/lang/Object;
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v2, v0, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;->label:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "asyncProvideDiagnosisKeys(keyFiles="
 
-    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/16 v2, 0x29
+    const-string v2, ")"
 
-    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p3
+    move-result-object v1
 
     const/4 v2, 0x0
 
-    new-array v4, v2, [Ljava/lang/Object;
+    new-array v3, v2, [Ljava/lang/Object;
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v5, p3, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v3}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result p3
+    move-result v1
 
-    if-eqz p3, :cond_3
+    if-eqz v1, :cond_0
 
     new-array p1, v2, [Ljava/lang/Object;
 
-    sget-object p2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string p2, "No key files submitted, returning early."
 
-    const-string p3, "No key files submitted, returning early."
+    invoke-virtual {v0, p2, p1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {p2, p3, p1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    goto :goto_2
+    return-object p1
 
-    :cond_3
-    new-array p3, v3, [Ljava/lang/Object;
+    :cond_0
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
-    move-result v4
+    move-result v3
 
-    new-instance v5, Ljava/lang/Integer;
+    new-instance v4, Ljava/lang/Integer;
 
-    invoke-direct {v5, v4}, Ljava/lang/Integer;-><init>(I)V
+    invoke-direct {v4, v3}, Ljava/lang/Integer;-><init>(I)V
 
-    aput-object v5, p3, v2
+    aput-object v4, v1, v2
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v2, "Forwarding %d key files to our DiagnosisKeyProvider."
 
-    const-string v4, "Forwarding %d key files to our DiagnosisKeyProvider."
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v2, v4, p3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object p3, p0, Lde/rki/coronawarnapp/nearby/ENFClient;->exposureDetectionTracker:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
+    iget-object v0, p0, Lde/rki/coronawarnapp/nearby/ENFClient;->exposureDetectionTracker:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;
 
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/util/UUID;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/util/UUID;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v4, "UUID.randomUUID().toString()"
+    const-string v2, "randomUUID().toString()"
 
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {p3, v2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;->trackNewExposureDetection(Ljava/lang/String;)V
+    invoke-interface {v0, v1}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;->trackNewExposureDetection(Ljava/lang/String;)V
 
-    iget-object p3, p0, Lde/rki/coronawarnapp/nearby/ENFClient;->diagnosisKeyProvider:Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DiagnosisKeyProvider;
+    iget-object v0, p0, Lde/rki/coronawarnapp/nearby/ENFClient;->diagnosisKeyProvider:Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DiagnosisKeyProvider;
 
-    iput v3, v0, Lde/rki/coronawarnapp/nearby/ENFClient$provideDiagnosisKeys$1;->label:I
-
-    invoke-interface {p3, p1, p2, v0}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DiagnosisKeyProvider;->provideDiagnosisKeys(Ljava/util/Collection;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p3
-
-    if-ne p3, v1, :cond_4
-
-    return-object v1
-
-    :cond_4
-    :goto_1
-    check-cast p3, Ljava/lang/Boolean;
-
-    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v3
-
-    :goto_2
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v0, p1, p2, p3}, Lde/rki/coronawarnapp/nearby/modules/diagnosiskeyprovider/DiagnosisKeyProvider;->provideDiagnosisKeys(Ljava/util/Collection;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -499,14 +428,6 @@
             ">;)V"
         }
     .end annotation
-
-    const-string v0, "onSuccess"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "onError"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "onPermissionRequired"
 

@@ -3,6 +3,14 @@
 .source "SurveyUrlProvider.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/datadonation/survey/SurveyUrlProvider$WhenMappings;
+    }
+.end annotation
+
+
 # instance fields
 .field public final appConfigProvider:Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
 
@@ -85,7 +93,7 @@
 
     check-cast p2, Ljava/util/UUID;
 
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -99,13 +107,17 @@
     throw p1
 
     :cond_2
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    sget-object p3, Lde/rki/coronawarnapp/datadonation/survey/SurveyUrlProvider$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
 
-    if-nez p1, :cond_5
+    aget p1, p3, p1
+
+    if-ne p1, v3, :cond_5
 
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/survey/SurveyUrlProvider;->appConfigProvider:Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
 
@@ -161,7 +173,7 @@
 
     move-result-object p1
 
-    const-string p2, "httpUrl.newBuilder()\n   \u2026              .toString()"
+    const-string/jumbo p2, "{\n                val su\u2026.toString()\n            }"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

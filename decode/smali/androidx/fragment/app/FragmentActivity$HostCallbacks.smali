@@ -5,6 +5,8 @@
 # interfaces
 .implements Landroidx/lifecycle/ViewModelStoreOwner;
 .implements Landroidx/activity/OnBackPressedDispatcherOwner;
+.implements Landroidx/activity/result/ActivityResultRegistryOwner;
+.implements Landroidx/fragment/app/FragmentOnAttachListener;
 
 
 # annotations
@@ -23,7 +25,9 @@
         "Landroidx/fragment/app/FragmentActivity;",
         ">;",
         "Landroidx/lifecycle/ViewModelStoreOwner;",
-        "Landroidx/activity/OnBackPressedDispatcherOwner;"
+        "Landroidx/activity/OnBackPressedDispatcherOwner;",
+        "Landroidx/activity/result/ActivityResultRegistryOwner;",
+        "Landroidx/fragment/app/FragmentOnAttachListener;"
     }
 .end annotation
 
@@ -45,6 +49,16 @@
 
 
 # virtual methods
+.method public getActivityResultRegistry()Landroidx/activity/result/ActivityResultRegistry;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+
+    iget-object v0, v0, Landroidx/activity/ComponentActivity;->mActivityResultRegistry:Landroidx/activity/result/ActivityResultRegistry;
+
+    return-object v0
+.end method
+
 .method public getLifecycle()Landroidx/lifecycle/Lifecycle;
     .locals 1
 
@@ -77,6 +91,28 @@
     return-object v0
 .end method
 
+.method public onAttachFragment(Landroidx/fragment/app/FragmentManager;Landroidx/fragment/app/Fragment;)V
+    .locals 0
+
+    iget-object p1, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public onDump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    .locals 1
+
+    iget-object p2, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, p1, v0, p3, p4}, Landroidx/fragment/app/FragmentActivity;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public onFindViewById(I)Landroid/view/View;
     .locals 1
 
@@ -87,6 +123,32 @@
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public onGetHost()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+
+    return-object v0
+.end method
+
+.method public onGetLayoutInflater()Landroid/view/LayoutInflater;
+    .locals 2
+
+    iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+
+    invoke-virtual {v0, v1}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public onHasView()Z
@@ -117,56 +179,40 @@
     return v0
 .end method
 
-.method public onStartActivityFromFragment(Landroidx/fragment/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
-    .locals 4
+.method public onShouldSaveFragmentState(Landroidx/fragment/app/Fragment;)Z
+    .locals 0
 
-    iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+    iget-object p1, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Landroidx/fragment/app/FragmentActivity;->mStartedActivityFromFragment:Z
-
-    const/4 v2, -0x1
-
-    const/4 v3, 0x0
-
-    if-ne p3, v2, :cond_0
-
-    :try_start_0
-    invoke-static {v0, p2, v2, p4}, Landroidx/core/app/ActivityCompat;->startActivityForResult(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p3}, Landroidx/fragment/app/FragmentActivity;->checkForValidRequestCode(I)V
-
-    invoke-virtual {v0, p1}, Landroidx/fragment/app/FragmentActivity;->allocateRequestIndex(Landroidx/fragment/app/Fragment;)I
+    invoke-virtual {p1}, Landroid/app/Activity;->isFinishing()Z
 
     move-result p1
 
-    add-int/2addr p1, v1
+    xor-int/lit8 p1, p1, 0x1
 
-    shl-int/lit8 p1, p1, 0x10
+    return p1
+.end method
 
-    const v1, 0xffff
+.method public onShouldShowRequestPermissionRationale(Ljava/lang/String;)Z
+    .locals 2
 
-    and-int/2addr p3, v1
+    iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
 
-    add-int/2addr p1, p3
+    sget v1, Landroidx/core/app/ActivityCompat;->$r8$clinit:I
 
-    invoke-static {v0, p2, p1, p4}, Landroidx/core/app/ActivityCompat;->startActivityForResult(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
 
-    :goto_0
-    iput-boolean v3, v0, Landroidx/fragment/app/FragmentActivity;->mStartedActivityFromFragment:Z
+    move-result p1
+
+    return p1
+.end method
+
+.method public onSupportInvalidateOptionsMenu()V
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/FragmentActivity$HostCallbacks;->this$0:Landroidx/fragment/app/FragmentActivity;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/FragmentActivity;->supportInvalidateOptionsMenu()V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    iput-boolean v3, v0, Landroidx/fragment/app/FragmentActivity;->mStartedActivityFromFragment:Z
-
-    throw p1
 .end method

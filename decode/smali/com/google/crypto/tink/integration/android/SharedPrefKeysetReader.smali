@@ -89,7 +89,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-static {v2}, Lcom/google/android/material/R$style;->decode(Ljava/lang/String;)[B
+    invoke-static {v2}, Lcom/google/crypto/tink/subtle/Hex;->decode(Ljava/lang/String;)[B
 
     move-result-object v0
 

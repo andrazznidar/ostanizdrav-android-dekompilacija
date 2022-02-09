@@ -27,19 +27,6 @@
 .end field
 
 
-# instance fields
-.field public final alphaCache:Ljava/util/WeakHashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/WeakHashMap<",
-            "Landroid/graphics/drawable/Drawable;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
 .method public static constructor <clinit>()V
     .locals 1
@@ -65,8 +52,6 @@
     new-instance v0, Ljava/util/WeakHashMap;
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/material/animation/DrawableAlphaProperty;->alphaCache:Ljava/util/WeakHashMap;
 
     return-void
 .end method

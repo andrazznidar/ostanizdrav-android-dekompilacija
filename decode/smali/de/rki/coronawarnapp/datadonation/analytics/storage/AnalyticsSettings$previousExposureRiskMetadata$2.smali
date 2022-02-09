@@ -67,7 +67,7 @@
 
     check-cast p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$ExposureRiskMetadata;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$createFlowPreference"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -75,14 +75,22 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p3, :cond_0
+    const/4 v0, 0x0
 
+    if-nez p3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {p3}, Lcom/google/protobuf/AbstractMessageLite;->toByteArray()[B
 
     move-result-object p3
 
-    if-eqz p3, :cond_0
+    if-nez p3, :cond_1
 
+    goto :goto_0
+
+    :cond_1
     sget-object v0, Lokio/ByteString;->Companion:Lokio/ByteString$Companion;
 
     const/4 v1, 0x3
@@ -95,15 +103,10 @@
 
     invoke-virtual {p3}, Lokio/ByteString;->base64()Ljava/lang/String;
 
-    move-result-object p3
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p3, 0x0
+    move-result-object v0
 
     :goto_0
-    invoke-interface {p1, p2, p3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -59,6 +59,9 @@
     <dimen name="abc_seekbar_track_background_height_material">2.0dip</dimen>
     <dimen name="abc_seekbar_track_progress_height_material">2.0dip</dimen>
     <dimen name="abc_select_dialog_padding_start_material">20.0dip</dimen>
+    <dimen name="abc_star_big">48.0dip</dimen>
+    <dimen name="abc_star_medium">36.0dip</dimen>
+    <dimen name="abc_star_small">16.0dip</dimen>
     <dimen name="abc_switch_padding">0.0px</dimen>
     <dimen name="abc_text_size_body_1_material">14.0sp</dimen>
     <dimen name="abc_text_size_body_2_material">14.0sp</dimen>
@@ -82,8 +85,11 @@
     <dimen name="appcompat_dialog_background_inset">16.0dip</dimen>
     <dimen name="behavior_bullet_point_size">16.0dip</dimen>
     <dimen name="bullet_point_baseline_offset">8.0sp</dimen>
+    <dimen name="bullet_point_baseline_offset_contact_diary">9.0dip</dimen>
     <dimen name="bullet_point_size">4.0dip</dimen>
+    <dimen name="bullet_point_size_contact_diary">8.0dip</dimen>
     <item type="dimen" name="bullet_point_spacing_after">@dimen/spacing_normal</item>
+    <dimen name="bullet_point_spacing_after_contact_diary">10.0dip</dimen>
     <item type="dimen" name="bullet_point_spacing_before">@dimen/spacing_tiny</item>
     <item type="dimen" name="bullet_point_spacing_between">@dimen/spacing_small</item>
     <dimen name="button_icon">48.0dip</dimen>
@@ -111,6 +117,7 @@
     <item type="dimen" name="circle_large_width">10.0</item>
     <dimen name="circle_small">23.0dip</dimen>
     <item type="dimen" name="circle_small_width">5.0</item>
+    <dimen name="clock_face_margin_start">64.0dip</dimen>
     <dimen name="compat_button_inset_horizontal_material">4.0dip</dimen>
     <dimen name="compat_button_inset_vertical_material">6.0dip</dimen>
     <dimen name="compat_button_padding_horizontal_material">8.0dip</dimen>
@@ -131,6 +138,7 @@
     <dimen name="design_bottom_navigation_icon_size">24.0dip</dimen>
     <dimen name="design_bottom_navigation_item_max_width">96.0dip</dimen>
     <dimen name="design_bottom_navigation_item_min_width">56.0dip</dimen>
+    <dimen name="design_bottom_navigation_label_padding">10.0dip</dimen>
     <dimen name="design_bottom_navigation_margin">8.0dip</dimen>
     <dimen name="design_bottom_navigation_shadow_height">1.0dip</dimen>
     <dimen name="design_bottom_navigation_text_size">12.0sp</dimen>
@@ -161,7 +169,7 @@
     <dimen name="design_snackbar_min_width">-1.0px</dimen>
     <dimen name="design_snackbar_padding_horizontal">12.0dip</dimen>
     <dimen name="design_snackbar_padding_vertical">14.0dip</dimen>
-    <dimen name="design_snackbar_padding_vertical_2lines">24.0dip</dimen>
+    <dimen name="design_snackbar_padding_vertical_2lines">16.0dip</dimen>
     <dimen name="design_snackbar_text_size">14.0sp</dimen>
     <dimen name="design_tab_max_width">264.0dip</dimen>
     <dimen name="design_tab_scrollable_min_width">72.0dip</dimen>
@@ -170,6 +178,7 @@
     <dimen name="design_textinput_caption_translate_y">5.0dip</dimen>
     <item type="dimen" name="disabled_alpha_material_dark">0.3</item>
     <item type="dimen" name="disabled_alpha_material_light">0.26</item>
+    <dimen name="elevation_none">0.0dip</dimen>
     <dimen name="elevation_strong">10.0dip</dimen>
     <dimen name="elevation_weak">4.0dip</dimen>
     <dimen name="fastscroll_default_thickness">8.0dip</dimen>
@@ -221,11 +230,42 @@
     <dimen name="line_height_large">28.0sp</dimen>
     <dimen name="line_height_normal">24.0sp</dimen>
     <dimen name="line_height_small">20.0sp</dimen>
+    <dimen name="list_item_decoration_card_margins">16.0dip</dimen>
+    <dimen name="material_bottom_sheet_max_width">640.0dip</dimen>
+    <dimen name="material_clock_display_padding">24.0dip</dimen>
+    <dimen name="material_clock_face_margin_top">44.0dip</dimen>
+    <dimen name="material_clock_hand_center_dot_radius">4.0dip</dimen>
+    <dimen name="material_clock_hand_padding">4.0dip</dimen>
+    <dimen name="material_clock_hand_stroke_width">2.0dip</dimen>
+    <dimen name="material_clock_number_text_size">15.0dip</dimen>
+    <dimen name="material_clock_period_toggle_height">96.0dip</dimen>
+    <dimen name="material_clock_period_toggle_margin_left">12.0dip</dimen>
+    <dimen name="material_clock_period_toggle_width">52.0dip</dimen>
+    <dimen name="material_clock_size">256.0dip</dimen>
+    <dimen name="material_cursor_inset_bottom">-6.0dip</dimen>
+    <dimen name="material_cursor_inset_top">-12.0dip</dimen>
+    <dimen name="material_cursor_width">2.0dip</dimen>
     <item type="dimen" name="material_emphasis_disabled">0.38</item>
     <item type="dimen" name="material_emphasis_high_type">0.87</item>
     <item type="dimen" name="material_emphasis_medium">0.6</item>
+    <dimen name="material_filled_edittext_font_1_3_padding_bottom">12.0dip</dimen>
+    <dimen name="material_filled_edittext_font_1_3_padding_top">23.0dip</dimen>
+    <dimen name="material_filled_edittext_font_2_0_padding_bottom">8.0dip</dimen>
+    <dimen name="material_filled_edittext_font_2_0_padding_top">32.0dip</dimen>
+    <dimen name="material_font_1_3_box_collapsed_padding_top">4.0dip</dimen>
+    <dimen name="material_font_2_0_box_collapsed_padding_top">8.0dip</dimen>
+    <dimen name="material_helper_text_default_padding_top">4.0dip</dimen>
+    <dimen name="material_helper_text_font_1_3_padding_horizontal">12.0dip</dimen>
+    <dimen name="material_helper_text_font_1_3_padding_top">8.0dip</dimen>
+    <dimen name="material_input_text_to_prefix_suffix_padding">2.0dip</dimen>
     <dimen name="material_text_view_test_line_height">200.0px</dimen>
     <dimen name="material_text_view_test_line_height_override">100.0px</dimen>
+    <dimen name="material_textinput_default_width">245.0dip</dimen>
+    <dimen name="material_textinput_max_width">488.0dip</dimen>
+    <dimen name="material_textinput_min_width">56.0dip</dimen>
+    <dimen name="material_time_picker_minimum_screen_height">560.0dip</dimen>
+    <dimen name="material_time_picker_minimum_screen_width">340.0dip</dimen>
+    <dimen name="material_timepicker_dialog_buttons_margin_top">24.0dip</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_bottom">80.0dip</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_end">24.0dip</dimen>
     <dimen name="mtrl_alert_dialog_background_inset_start">24.0dip</dimen>
@@ -236,6 +276,8 @@
     <dimen name="mtrl_badge_radius">4.0dip</dimen>
     <dimen name="mtrl_badge_text_horizontal_edge_offset">6.0dip</dimen>
     <dimen name="mtrl_badge_text_size">10.0sp</dimen>
+    <dimen name="mtrl_badge_toolbar_action_menu_item_horizontal_offset">12.0dip</dimen>
+    <dimen name="mtrl_badge_toolbar_action_menu_item_vertical_offset">12.0dip</dimen>
     <dimen name="mtrl_badge_with_text_radius">8.0dip</dimen>
     <dimen name="mtrl_bottomappbar_fabOffsetEndMode">60.0dip</dimen>
     <dimen name="mtrl_bottomappbar_fab_bottom_margin">16.0dip</dimen>
@@ -254,17 +296,20 @@
     <dimen name="mtrl_btn_icon_padding">8.0dip</dimen>
     <dimen name="mtrl_btn_inset">6.0dip</dimen>
     <item type="dimen" name="mtrl_btn_letter_spacing">0.07</item>
+    <dimen name="mtrl_btn_max_width">320.0dip</dimen>
     <dimen name="mtrl_btn_padding_bottom">4.0dip</dimen>
     <dimen name="mtrl_btn_padding_left">16.0dip</dimen>
     <dimen name="mtrl_btn_padding_right">16.0dip</dimen>
     <dimen name="mtrl_btn_padding_top">4.0dip</dimen>
     <dimen name="mtrl_btn_pressed_z">6.0dip</dimen>
+    <dimen name="mtrl_btn_snackbar_margin_horizontal">8.0dip</dimen>
     <dimen name="mtrl_btn_stroke_size">1.0dip</dimen>
     <dimen name="mtrl_btn_text_btn_icon_padding">4.0dip</dimen>
     <dimen name="mtrl_btn_text_btn_padding_left">8.0dip</dimen>
     <dimen name="mtrl_btn_text_btn_padding_right">8.0dip</dimen>
     <dimen name="mtrl_btn_text_size">14.0sp</dimen>
     <dimen name="mtrl_btn_z">0.0dip</dimen>
+    <dimen name="mtrl_calendar_action_confirm_button_min_width">64.0dip</dimen>
     <dimen name="mtrl_calendar_action_height">52.0dip</dimen>
     <dimen name="mtrl_calendar_action_padding">8.0dip</dimen>
     <dimen name="mtrl_calendar_bottom_padding">0.0dip</dimen>
@@ -324,13 +369,13 @@
     <dimen name="mtrl_extended_fab_disabled_translation_z">0.0dip</dimen>
     <dimen name="mtrl_extended_fab_elevation">6.0dip</dimen>
     <dimen name="mtrl_extended_fab_end_padding">20.0dip</dimen>
-    <dimen name="mtrl_extended_fab_end_padding_icon">24.0dip</dimen>
+    <dimen name="mtrl_extended_fab_end_padding_icon">20.0dip</dimen>
     <dimen name="mtrl_extended_fab_icon_size">24.0dip</dimen>
-    <dimen name="mtrl_extended_fab_icon_text_spacing">16.0dip</dimen>
+    <dimen name="mtrl_extended_fab_icon_text_spacing">12.0dip</dimen>
     <dimen name="mtrl_extended_fab_min_height">48.0dip</dimen>
     <dimen name="mtrl_extended_fab_min_width">120.0dip</dimen>
     <dimen name="mtrl_extended_fab_start_padding">20.0dip</dimen>
-    <dimen name="mtrl_extended_fab_start_padding_icon">16.0dip</dimen>
+    <dimen name="mtrl_extended_fab_start_padding_icon">12.0dip</dimen>
     <dimen name="mtrl_extended_fab_top_padding">12.0dip</dimen>
     <dimen name="mtrl_extended_fab_translation_z_base">0.0dip</dimen>
     <dimen name="mtrl_extended_fab_translation_z_hovered_focused">2.0dip</dimen>
@@ -349,12 +394,37 @@
     <item type="dimen" name="mtrl_low_ripple_hovered_alpha">0.08</item>
     <item type="dimen" name="mtrl_low_ripple_pressed_alpha">0.24</item>
     <dimen name="mtrl_min_touch_target_size">48.0dip</dimen>
+    <dimen name="mtrl_navigation_bar_item_default_icon_size">24.0dip</dimen>
+    <dimen name="mtrl_navigation_bar_item_default_margin">8.0dip</dimen>
     <dimen name="mtrl_navigation_elevation">0.0dip</dimen>
     <dimen name="mtrl_navigation_item_horizontal_padding">22.0dip</dimen>
     <dimen name="mtrl_navigation_item_icon_padding">14.0dip</dimen>
     <dimen name="mtrl_navigation_item_icon_size">24.0dip</dimen>
     <dimen name="mtrl_navigation_item_shape_horizontal_margin">8.0dip</dimen>
     <dimen name="mtrl_navigation_item_shape_vertical_margin">4.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_active_text_size">14.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_compact_width">56.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_default_width">72.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_elevation">8.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_icon_margin">14.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_icon_size">24.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_margin">8.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_text_bottom_margin">16.0dip</dimen>
+    <dimen name="mtrl_navigation_rail_text_size">12.0dip</dimen>
+    <dimen name="mtrl_progress_circular_inset">4.0dip</dimen>
+    <dimen name="mtrl_progress_circular_inset_extra_small">2.0dip</dimen>
+    <dimen name="mtrl_progress_circular_inset_medium">4.0dip</dimen>
+    <dimen name="mtrl_progress_circular_inset_small">4.0dip</dimen>
+    <dimen name="mtrl_progress_circular_radius">18.0dip</dimen>
+    <dimen name="mtrl_progress_circular_size">40.0dip</dimen>
+    <dimen name="mtrl_progress_circular_size_extra_small">20.0dip</dimen>
+    <dimen name="mtrl_progress_circular_size_medium">40.0dip</dimen>
+    <dimen name="mtrl_progress_circular_size_small">28.0dip</dimen>
+    <dimen name="mtrl_progress_circular_track_thickness_extra_small">2.5dip</dimen>
+    <dimen name="mtrl_progress_circular_track_thickness_medium">4.0dip</dimen>
+    <dimen name="mtrl_progress_circular_track_thickness_small">3.0dip</dimen>
+    <dimen name="mtrl_progress_indicator_full_rounded_corner_radius">2.0dip</dimen>
+    <dimen name="mtrl_progress_track_thickness">4.0dip</dimen>
     <dimen name="mtrl_shape_corner_size_large_component">0.0dip</dimen>
     <dimen name="mtrl_shape_corner_size_medium_component">4.0dip</dimen>
     <dimen name="mtrl_shape_corner_size_small_component">4.0dip</dimen>
@@ -372,6 +442,8 @@
     <dimen name="mtrl_snackbar_background_corner_radius">4.0dip</dimen>
     <item type="dimen" name="mtrl_snackbar_background_overlay_color_alpha">0.8</item>
     <dimen name="mtrl_snackbar_margin">8.0dip</dimen>
+    <dimen name="mtrl_snackbar_message_margin_horizontal">8.0dip</dimen>
+    <dimen name="mtrl_snackbar_padding_horizontal">8.0dip</dimen>
     <dimen name="mtrl_switch_thumb_elevation">4.0dip</dimen>
     <dimen name="mtrl_textinput_box_corner_radius_medium">4.0dip</dimen>
     <dimen name="mtrl_textinput_box_corner_radius_small">0.0dip</dimen>
@@ -413,6 +485,10 @@
     <item type="dimen" name="radius_button">@dimen/spacing_tiny</item>
     <dimen name="radius_card">4.0dip</dimen>
     <item type="dimen" name="radius_info_button">@dimen/spacing_huge</item>
+    <dimen name="scan_qr_code_viewfinder_center_offset">150.0dip</dimen>
+    <dimen name="scan_qr_code_viewfinder_safe_size">400.0dip</dimen>
+    <dimen name="scan_qr_code_viewfinder_size">300.0dip</dimen>
+    <dimen name="spacing_fab_padding">80.0dip</dimen>
     <dimen name="spacing_huge">56.0dip</dimen>
     <dimen name="spacing_large">48.0dip</dimen>
     <dimen name="spacing_medium">32.0dip</dimen>
@@ -424,8 +500,6 @@
     <dimen name="statistics_card_width">300.0dip</dimen>
     <dimen name="submission_country_selection_country_icon_size">40.0dip</dimen>
     <item type="dimen" name="submission_guideline_button">@dimen/spacing_large</item>
-    <dimen name="submission_scan_qr_code_viewfinder_center_offset">120.0dip</dimen>
-    <dimen name="submission_scan_qr_code_viewfinder_size">240.0dip</dimen>
     <dimen name="submission_tan_dash_height">2.0dip</dimen>
     <dimen name="submission_tan_dash_spacing_end">5.0dip</dimen>
     <dimen name="submission_tan_dash_spacing_start">2.0dip</dimen>
@@ -444,7 +518,19 @@
     <dimen name="subtitle_outline_width">2.0dip</dimen>
     <dimen name="subtitle_shadow_offset">2.0dip</dimen>
     <dimen name="subtitle_shadow_radius">2.0dip</dimen>
+    <dimen name="swipe_icon_margin">33.0dip</dimen>
     <dimen name="test_mtrl_calendar_day_cornerSize">52.0dip</dimen>
+    <dimen name="test_navigation_bar_active_item_max_width">168.0dip</dimen>
+    <dimen name="test_navigation_bar_active_item_min_width">96.0dip</dimen>
+    <dimen name="test_navigation_bar_active_text_size">14.0sp</dimen>
+    <dimen name="test_navigation_bar_elevation">8.0dip</dimen>
+    <dimen name="test_navigation_bar_height">56.0dip</dimen>
+    <dimen name="test_navigation_bar_icon_size">24.0dip</dimen>
+    <dimen name="test_navigation_bar_item_max_width">96.0dip</dimen>
+    <dimen name="test_navigation_bar_item_min_width">56.0dip</dimen>
+    <dimen name="test_navigation_bar_label_padding">10.0dip</dimen>
+    <dimen name="test_navigation_bar_shadow_height">1.0dip</dimen>
+    <dimen name="test_navigation_bar_text_size">12.0sp</dimen>
     <dimen name="test_result_card_body_height">120.0dip</dimen>
     <dimen name="test_result_step_progress_line_width">1.0dip</dimen>
     <dimen name="test_result_step_text_width">256.0dip</dimen>

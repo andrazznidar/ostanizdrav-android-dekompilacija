@@ -45,8 +45,6 @@
 .method public constructor <init>(Ljava/util/List;I)V
     .locals 0
 
-    and-int/lit8 p1, p2, 0x1
-
     const/4 p1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

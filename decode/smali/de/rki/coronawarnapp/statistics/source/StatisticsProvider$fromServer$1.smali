@@ -4,20 +4,11 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;->fromServer(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = null
-.end annotation
-
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.statistics.source.StatisticsProvider"
     f = "StatisticsProvider.kt"
     l = {
-        0x48
+        0x4e
     }
     m = "fromServer"
 .end annotation
@@ -36,6 +27,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/statistics/source/StatisticsProvider$fromServer$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider$fromServer$1;->this$0:Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;
 
@@ -61,7 +62,7 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider$fromServer$1;->this$0:Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;->fromServer(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;->access$fromServer(Lde/rki/coronawarnapp/statistics/source/StatisticsProvider;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

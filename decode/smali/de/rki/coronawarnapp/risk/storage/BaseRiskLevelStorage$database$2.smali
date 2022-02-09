@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;Lkotlinx/coroutines/CoroutineScope;)V
+    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/storage/internal/RiskCombinator;Lde/rki/coronawarnapp/util/TimeStamper;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -56,27 +56,27 @@
 
     const-string v2, "riskresults.db"
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v3, "databaseName"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v3, 0x0
+    sget-object v3, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v4, v3, [Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v5, v4, [Ljava/lang/Object;
 
     const-string v6, "Instantiating risk result database."
 
-    invoke-virtual {v5, v6, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v3, v6, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;->context:Landroid/content/Context;
 
-    const-class v4, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+    const-class v3, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
 
-    invoke-static {v0, v4, v2}, Landroidx/navigation/ui/R$anim;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
+    invoke-static {v0, v3, v2}, Landroidx/room/Room;->databaseBuilder(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroidx/room/RoomDatabase$Builder;
 
     move-result-object v0
 
@@ -84,9 +84,9 @@
 
     new-array v2, v2, [Landroidx/room/migration/Migration;
 
-    sget-object v4, Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;->INSTANCE:Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;
+    sget-object v3, Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;->INSTANCE:Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration1To2;
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
     sget-object v3, Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration2To3;->INSTANCE:Lde/rki/coronawarnapp/risk/storage/internal/migrations/RiskResultDatabaseMigration2To3;
 
@@ -98,16 +98,7 @@
 
     move-result-object v0
 
-    const-string v1, "Room\n                .da\u2026\n                .build()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     check-cast v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
 
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

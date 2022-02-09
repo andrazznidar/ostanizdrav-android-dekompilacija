@@ -100,11 +100,11 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 8
+    .locals 6
 
     check-cast p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;
 
-    const-string v0, "viewHolder"
+    const-string/jumbo v0, "viewHolder"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -140,15 +140,7 @@
 
     iget-object v4, p2, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->date:Lorg/joda/time/LocalDate;
 
-    iget-object v5, v4, Lorg/joda/time/LocalDate;->iChronology:Lorg/joda/time/Chronology;
-
-    invoke-virtual {v5}, Lorg/joda/time/Chronology;->dayOfMonth()Lorg/joda/time/DateTimeField;
-
-    move-result-object v5
-
-    iget-wide v6, v4, Lorg/joda/time/LocalDate;->iLocalMillis:J
-
-    invoke-virtual {v5, v6, v7}, Lorg/joda/time/DateTimeField;->get(J)I
+    invoke-virtual {v4}, Lorg/joda/time/LocalDate;->getDayOfMonth()I
 
     move-result v4
 
@@ -194,9 +186,9 @@
 
     iget-object v3, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    new-instance v5, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder$bind$1;
+    new-instance v5, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder$$ExternalSyntheticLambda0;
 
-    invoke-direct {v5, v0, p2}, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder$bind$1;-><init>(Lkotlin/jvm/functions/Function1;Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;)V
+    invoke-direct {v5, v0, p2}, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;)V
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -207,15 +199,17 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const v0, 0x7f080074
+    const v0, 0x7f080097
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f060048
+    const p2, 0x7f06004d
 
-    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    sget-object v0, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+
+    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result p2
 
@@ -226,9 +220,9 @@
     :cond_1
     iget-object v0, p2, Lde/rki/coronawarnapp/ui/calendar/CalendarAdapter$Day;->date:Lorg/joda/time/LocalDate;
 
-    if-eqz v0, :cond_7
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Lorg/joda/time/base/BaseLocal;->compareTo(Lorg/joda/time/ReadablePartial;)I
+    invoke-virtual {v0, v2}, Lorg/joda/time/LocalDate;->compareTo(Lorg/joda/time/ReadablePartial;)I
 
     move-result v0
 
@@ -248,15 +242,17 @@
 
     iget-object p2, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const v0, 0x7f080075
+    const v0, 0x7f080098
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f06004b
+    const p2, 0x7f060050
 
-    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    sget-object v0, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+
+    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result p2
 
@@ -302,9 +298,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f060049
+    const p2, 0x7f06004e
 
-    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    sget-object v0, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+
+    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result p2
 
@@ -320,9 +318,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;->textView:Landroid/widget/TextView;
 
-    const p2, 0x7f060076
+    const p2, 0x7f060083
 
-    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    sget-object v0, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
+
+    invoke-static {v1, p2}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result p2
 
@@ -331,17 +331,12 @@
     :cond_6
     :goto_2
     return-void
-
-    :cond_7
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    const-string p2, "viewGroup"
+    const-string/jumbo p2, "viewGroup"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -353,7 +348,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f0c0048
+    const v0, 0x7f0d006b
 
     const/4 v1, 0x0
 
@@ -363,7 +358,7 @@
 
     new-instance p2, Lde/rki/coronawarnapp/ui/calendar/CalendarDayViewHolder;
 
-    const-string v0, "v"
+    const-string/jumbo v0, "v"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

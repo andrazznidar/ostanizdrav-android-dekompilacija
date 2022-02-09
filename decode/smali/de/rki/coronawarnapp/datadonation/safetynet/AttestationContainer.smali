@@ -20,10 +20,6 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "report"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->ourSalt:[B
@@ -47,32 +43,32 @@
     :cond_0
     const-class v1, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     :goto_0
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    xor-int/2addr v1, v0
-
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2
+    if-nez v1, :cond_2
 
     return v2
 
     :cond_2
-    if-eqz p1, :cond_5
+    const-string v1, "null cannot be cast to non-null type de.rki.coronawarnapp.datadonation.safetynet.AttestationContainer"
+
+    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;
 
@@ -97,23 +93,12 @@
 
     move-result p1
 
-    xor-int/2addr p1, v0
-
-    if-eqz p1, :cond_4
+    if-nez p1, :cond_4
 
     return v2
 
     :cond_4
     return v0
-
-    :cond_5
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.datadonation.safetynet.AttestationContainer"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public getAccessControlProtoBuf()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacAndroid$PPACAndroid;
@@ -151,7 +136,7 @@
 
     move-result-object v0
 
-    const-string v1, "PpacAndroid.PPACAndroid.\u2026sResult\n        }.build()"
+    const-string v1, "newBuilder().apply {\n   \u2026sResult\n        }.build()"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -183,21 +168,33 @@
 .end method
 
 .method public requirePass(Lde/rki/coronawarnapp/appconfig/SafetyNetRequirements;)V
-    .locals 6
+    .locals 5
 
-    const-string v0, "reqs"
+    const-string v0, "requirements"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    const-string v2, "requirePass(%s)"
+
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-interface {p1}, Lde/rki/coronawarnapp/appconfig/SafetyNetRequirements;->getRequireBasicIntegrity()Z
 
     move-result v0
 
-    const/4 v1, 0x4
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    const-string v3, ")."
+    const-string v2, ")."
 
     if-eqz v0, :cond_1
 
@@ -214,21 +211,17 @@
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->BASIC_INTEGRITY_REQUIRED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
+    iget-object v3, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
+
+    iget-object v3, v3, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
+
     const-string v4, "Requirement \'basicIntegrity\' not met ("
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v3, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
-
-    iget-object v5, v5, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
-
-    invoke-static {v4, v5, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p1, v0, v3, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v0, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
@@ -253,21 +246,17 @@
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->CTS_PROFILE_MATCH_REQUIRED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
+    iget-object v3, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
+
+    iget-object v3, v3, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
+
     const-string v4, "Requirement \'ctsProfileMatch\' not met ("
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v3, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
-
-    iget-object v5, v5, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
-
-    invoke-static {v4, v5, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p1, v0, v3, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v0, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
@@ -283,9 +272,9 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->evaluationTypes:Ljava/util/List;
 
-    const-string v4, "BASIC"
+    const-string v3, "BASIC"
 
-    invoke-interface {v0, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -298,21 +287,17 @@
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->EVALUATION_TYPE_BASIC_REQUIRED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
+    iget-object v3, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
+
+    iget-object v3, v3, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
+
     const-string v4, "Evaluation type \'BASIC\' not met ("
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v3, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
-
-    iget-object v5, v5, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
-
-    invoke-static {v4, v5, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p1, v0, v3, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v0, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
@@ -343,21 +328,17 @@
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;->EVALUATION_TYPE_HARDWARE_BACKED_REQUIRED:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;
 
+    iget-object v3, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
+
+    iget-object v3, v3, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
+
     const-string v4, "Evaluation type \'HARDWARE_BACKED\' not met ("
 
-    invoke-static {v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v3, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
-
-    iget-object v5, v5, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;->advice:Ljava/lang/String;
-
-    invoke-static {v4, v5, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p1, v0, v3, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;I)V
+    invoke-direct {p1, v0, v2, v1}, Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException;-><init>(Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetException$Type;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw p1
 
@@ -367,35 +348,37 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
-    const-string v0, "AttestationContainer(ourSalt="
+    iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->ourSalt:[B
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->ourSalt:[B
-
-    invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", report="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/safetynet/AttestationContainer;->report:Lde/rki/coronawarnapp/datadonation/safetynet/SafetyNetClientWrapper$Report;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "AttestationContainer(ourSalt="
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", report="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

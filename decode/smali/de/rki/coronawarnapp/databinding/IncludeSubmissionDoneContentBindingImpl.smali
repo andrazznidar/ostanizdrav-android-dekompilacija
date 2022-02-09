@@ -12,8 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 .field public final mboundView01:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBinding;
 
 .field public final mboundView02:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
@@ -25,7 +23,7 @@
 
     new-instance v0, Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    const/4 v1, 0x7
+    const/16 v1, 0x8
 
     invoke-direct {v0, v1}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;-><init>(I)V
 
@@ -37,11 +35,11 @@
 
     const-string v3, "merge_guidelines_side"
 
-    filled-new-array {v1, v1, v2, v3}, [Ljava/lang/String;
+    filled-new-array {v1, v1, v1, v2, v3}, [Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x4
+    const/4 v2, 0x5
 
     new-array v3, v2, [I
 
@@ -61,23 +59,19 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090493
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090492
+    const v1, 0x7f0a070b
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    return-void
+    const v1, 0x7f0a070a
 
-    nop
+    const/4 v2, 0x7
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    return-void
 
     :array_0
     .array-data 4
@@ -85,31 +79,43 @@
         0x2
         0x3
         0x4
+        0x5
     .end array-data
 
     :array_1
     .array-data 4
-        0x7f0c00a2
-        0x7f0c00a2
-        0x7f0c00ab
-        0x7f0c00b4
+        0x7f0d00e9
+        0x7f0d00e9
+        0x7f0d00e9
+        0x7f0d00f2
+        0x7f0d010a
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 10
+    .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
     sget-object v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/4 v2, 0x7
+    const/16 v2, 0x8
 
     invoke-static {p1, p2, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x2
 
     aget-object v1, v0, v1
 
@@ -117,7 +123,7 @@
 
     check-cast v6, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     aget-object v1, v0, v1
 
@@ -125,15 +131,15 @@
 
     check-cast v7, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x1
 
     aget-object v1, v0, v1
 
     move-object v8, v1
 
-    check-cast v8, Landroid/widget/TextView;
+    check-cast v8, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x7
 
     aget-object v1, v0, v1
 
@@ -141,7 +147,15 @@
 
     check-cast v9, Landroid/widget/TextView;
 
-    const/4 v5, 0x2
+    const/4 v1, 0x6
+
+    aget-object v1, v0, v1
+
+    move-object v10, v1
+
+    check-cast v10, Landroid/widget/TextView;
+
+    const/4 v5, 0x3
 
     move-object v2, p0
 
@@ -149,7 +163,7 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v2 .. v9}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v1, -0x1
 
@@ -161,13 +175,11 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const/4 p1, 0x3
+    const/4 p1, 0x4
 
     aget-object p1, v0, p1
 
@@ -180,7 +192,7 @@
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    const/4 p1, 0x4
+    const/4 p1, 0x5
 
     aget-object p1, v0, p1
 
@@ -207,7 +219,14 @@
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_3
-    const p1, 0x7f09015b
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    if-eqz p1, :cond_4
+
+    iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
+
+    :cond_4
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -234,7 +253,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-wide/16 v4, 0x8
+    const-wide/16 v4, 0x10
 
     and-long/2addr v0, v4
 
@@ -250,7 +269,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120380
+    const v2, 0x7f130539
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -266,7 +285,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f08010f
+    const v2, 0x7f080171
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -282,7 +301,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120383
+    const v2, 0x7f13053c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -298,7 +317,39 @@
 
     move-result-object v1
 
-    const v2, 0x7f080111
+    const v2, 0x7f08018b
+
+    invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f130544
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setBody(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f08011b
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -307,6 +358,10 @@
     invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
+
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
@@ -361,7 +416,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -372,7 +427,7 @@
     return v1
 
     :cond_1
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDoneIsolate:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -383,7 +438,7 @@
     return v1
 
     :cond_2
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDoneIsolate:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -394,7 +449,7 @@
     return v1
 
     :cond_3
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->mboundView02:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->mboundView01:Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -405,6 +460,17 @@
     return v1
 
     :cond_4
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->mboundView02:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
+
+    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    return v1
+
+    :cond_5
     const/4 v0, 0x0
 
     return v0
@@ -425,7 +491,7 @@
 
     monitor-enter p0
 
-    const-wide/16 v0, 0x8
+    const-wide/16 v0, 0x10
 
     :try_start_0
     iput-wide v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;->mDirtyFlags:J
@@ -433,6 +499,10 @@
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 
@@ -465,10 +535,36 @@
     throw v0
 .end method
 
+.method public setIllustrationDescription(Ljava/lang/String;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "IllustrationDescription"
+        }
+    .end annotation
+
+    return-void
+.end method
+
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDonePcrValidation:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
+
+    invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBinding;->submissionDoneContagious:Lde/rki/coronawarnapp/databinding/IncludeSubmissionBehaviourRowBinding;
 

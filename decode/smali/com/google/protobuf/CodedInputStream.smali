@@ -3,14 +3,6 @@
 .source "CodedInputStream.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/protobuf/CodedInputStream$RefillCallback;
-    }
-.end annotation
-
-
 # instance fields
 .field public final buffer:[B
 
@@ -24,60 +16,38 @@
 
 .field public currentLimit:I
 
-.field public enableAliasing:Z
-
 .field public final input:Ljava/io/InputStream;
 
 .field public lastTag:I
 
 .field public recursionDepth:I
 
-.field public recursionLimit:I
-
-.field public refillCallback:Lcom/google/protobuf/CodedInputStream$RefillCallback;
-
-.field public sizeLimit:I
-
 .field public totalBytesRetired:I
 
 
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;I)V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    const v0, 0x7fffffff
 
-    iput-boolean v0, p0, Lcom/google/protobuf/CodedInputStream;->enableAliasing:Z
-
-    const v1, 0x7fffffff
-
-    iput v1, p0, Lcom/google/protobuf/CodedInputStream;->currentLimit:I
-
-    const/16 v1, 0x64
-
-    iput v1, p0, Lcom/google/protobuf/CodedInputStream;->recursionLimit:I
-
-    const/high16 v1, 0x4000000
-
-    iput v1, p0, Lcom/google/protobuf/CodedInputStream;->sizeLimit:I
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lcom/google/protobuf/CodedInputStream;->refillCallback:Lcom/google/protobuf/CodedInputStream$RefillCallback;
+    iput v0, p0, Lcom/google/protobuf/CodedInputStream;->currentLimit:I
 
     new-array p2, p2, [B
 
     iput-object p2, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
 
-    iput v0, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
+    const/4 p2, 0x0
 
-    iput v0, p0, Lcom/google/protobuf/CodedInputStream;->totalBytesRetired:I
+    iput p2, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
+
+    iput p2, p0, Lcom/google/protobuf/CodedInputStream;->totalBytesRetired:I
 
     iput-object p1, p0, Lcom/google/protobuf/CodedInputStream;->input:Ljava/io/InputStream;
 
-    iput-boolean v0, p0, Lcom/google/protobuf/CodedInputStream;->bufferIsImmutable:Z
+    iput-boolean p2, p0, Lcom/google/protobuf/CodedInputStream;->bufferIsImmutable:Z
 
     return-void
 .end method
@@ -87,25 +57,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/protobuf/CodedInputStream;->enableAliasing:Z
-
     const v0, 0x7fffffff
 
     iput v0, p0, Lcom/google/protobuf/CodedInputStream;->currentLimit:I
-
-    const/16 v0, 0x64
-
-    iput v0, p0, Lcom/google/protobuf/CodedInputStream;->recursionLimit:I
-
-    const/high16 v0, 0x4000000
-
-    iput v0, p0, Lcom/google/protobuf/CodedInputStream;->sizeLimit:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/protobuf/CodedInputStream;->refillCallback:Lcom/google/protobuf/CodedInputStream$RefillCallback;
 
     iput-object p1, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
 
@@ -119,7 +73,9 @@
 
     iput p1, p0, Lcom/google/protobuf/CodedInputStream;->totalBytesRetired:I
 
-    iput-object v0, p0, Lcom/google/protobuf/CodedInputStream;->input:Ljava/io/InputStream;
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lcom/google/protobuf/CodedInputStream;->input:Ljava/io/InputStream;
 
     iput-boolean p4, p0, Lcom/google/protobuf/CodedInputStream;->bufferIsImmutable:Z
 
@@ -382,7 +338,7 @@
 .end method
 
 .method public readBytes()Lcom/google/protobuf/ByteString;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -399,44 +355,16 @@
 
     sub-int/2addr v1, v2
 
-    if-gt v0, v1, :cond_1
+    if-gt v0, v1, :cond_0
 
-    if-lez v0, :cond_1
-
-    iget-boolean v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferIsImmutable:Z
-
-    if-eqz v1, :cond_0
-
-    iget-boolean v1, p0, Lcom/google/protobuf/CodedInputStream;->enableAliasing:Z
-
-    if-eqz v1, :cond_0
+    if-lez v0, :cond_0
 
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
 
-    invoke-static {v1, v2, v0}, Lcom/google/protobuf/ByteString;->wrap([BII)Lcom/google/protobuf/ByteString;
+    invoke-static {v1, v2, v0}, Lcom/google/protobuf/ByteString;->copyFrom([BII)Lcom/google/protobuf/ByteString;
 
     move-result-object v1
 
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
-
-    iget v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
-
-    new-instance v3, Lcom/google/protobuf/ByteString$LiteralByteString;
-
-    sget-object v4, Lcom/google/protobuf/ByteString;->byteArrayCopier:Lcom/google/protobuf/ByteString$ByteArrayCopier;
-
-    invoke-interface {v4, v1, v2, v0}, Lcom/google/protobuf/ByteString$ByteArrayCopier;->copyFrom([BII)[B
-
-    move-result-object v1
-
-    invoke-direct {v3, v1}, Lcom/google/protobuf/ByteString$LiteralByteString;-><init>([B)V
-
-    move-object v1, v3
-
-    :goto_0
     iget v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
 
     add-int/2addr v2, v0
@@ -445,23 +373,25 @@
 
     return-object v1
 
-    :cond_1
-    if-nez v0, :cond_2
+    :cond_0
+    if-nez v0, :cond_1
 
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     return-object v0
 
-    :cond_2
+    :cond_1
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedInputStream;->readRawBytesSlowPath(I)[B
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/protobuf/ByteString;->wrap([B)Lcom/google/protobuf/ByteString;
+    sget-object v1, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
-    move-result-object v0
+    new-instance v1, Lcom/google/protobuf/ByteString$LiteralByteString;
 
-    return-object v0
+    invoke-direct {v1, v0}, Lcom/google/protobuf/ByteString$LiteralByteString;-><init>([B)V
+
+    return-object v1
 .end method
 
 .method public readDouble()D
@@ -481,6 +411,25 @@
     move-result-wide v0
 
     return-wide v0
+.end method
+
+.method public readFloat()F
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream;->readRawLittleEndian32()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
@@ -509,7 +458,7 @@
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream;->recursionDepth:I
 
-    iget v2, p0, Lcom/google/protobuf/CodedInputStream;->recursionLimit:I
+    const/16 v2, 0x64
 
     if-ge v1, v2, :cond_0
 
@@ -619,7 +568,7 @@
 
     add-int/2addr v2, p1
 
-    iget v3, p0, Lcom/google/protobuf/CodedInputStream;->sizeLimit:I
+    const/high16 v3, 0x4000000
 
     if-gt v2, v3, :cond_c
 
@@ -1481,21 +1430,19 @@
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
 
-    sub-int/2addr v1, v2
+    sub-int v3, v1, v2
 
-    if-gt v0, v1, :cond_0
+    if-gt v0, v3, :cond_0
 
     if-lez v0, :cond_0
 
     new-instance v1, Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
-
-    iget v3, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
+    iget-object v3, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
 
     sget-object v4, Lcom/google/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v1, v2, v3, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+    invoke-direct {v1, v3, v2, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
 
@@ -1513,8 +1460,6 @@
     return-object v0
 
     :cond_1
-    iget v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
-
     if-gt v0, v1, :cond_2
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedInputStream;->refillBuffer(I)V
@@ -1567,19 +1512,19 @@
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
 
-    sub-int/2addr v2, v1
+    sub-int v3, v2, v1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    if-gt v0, v2, :cond_0
+    if-gt v0, v3, :cond_0
 
     if-lez v0, :cond_0
 
     iget-object v2, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
 
-    add-int v4, v1, v0
+    add-int v3, v1, v0
 
-    iput v4, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
+    iput v3, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
 
     goto :goto_1
 
@@ -1591,9 +1536,7 @@
     return-object v0
 
     :cond_1
-    iget v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
-
-    if-gt v0, v1, :cond_2
+    if-gt v0, v2, :cond_2
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/CodedInputStream;->refillBuffer(I)V
 
@@ -1613,23 +1556,23 @@
     :goto_0
     move-object v2, v1
 
-    move v1, v3
+    move v1, v4
 
     :goto_1
-    add-int v4, v1, v0
+    add-int v3, v1, v0
 
     sget-object v5, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
 
-    invoke-virtual {v5, v3, v2, v1, v4}, Lcom/google/protobuf/Utf8$Processor;->partialIsValidUtf8(I[BII)I
+    invoke-virtual {v5, v4, v2, v1, v3}, Lcom/google/protobuf/Utf8$Processor;->partialIsValidUtf8(I[BII)I
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_3
+    if-nez v3, :cond_3
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     :cond_3
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
     new-instance v3, Ljava/lang/String;
 
@@ -1920,7 +1863,7 @@
 .end method
 
 .method public skipRawBytes(I)V
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1931,9 +1874,9 @@
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
 
-    sub-int/2addr v0, v1
+    sub-int v2, v0, v1
 
-    if-gt p1, v0, :cond_0
+    if-gt p1, v2, :cond_0
 
     if-ltz p1, :cond_0
 
@@ -1946,19 +1889,15 @@
     :cond_0
     if-ltz p1, :cond_3
 
-    iget v0, p0, Lcom/google/protobuf/CodedInputStream;->totalBytesRetired:I
+    iget v2, p0, Lcom/google/protobuf/CodedInputStream;->totalBytesRetired:I
 
-    iget v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
+    add-int v3, v2, v1
 
-    add-int v2, v0, v1
+    add-int/2addr v3, p1
 
-    add-int/2addr v2, p1
+    iget v4, p0, Lcom/google/protobuf/CodedInputStream;->currentLimit:I
 
-    iget v3, p0, Lcom/google/protobuf/CodedInputStream;->currentLimit:I
-
-    if-gt v2, v3, :cond_2
-
-    iget v0, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
+    if-gt v3, v4, :cond_2
 
     sub-int v1, v0, v1
 
@@ -1990,11 +1929,11 @@
     return-void
 
     :cond_2
-    sub-int/2addr v3, v0
+    sub-int/2addr v4, v2
 
-    sub-int/2addr v3, v1
+    sub-int/2addr v4, v1
 
-    invoke-virtual {p0, v3}, Lcom/google/protobuf/CodedInputStream;->skipRawBytes(I)V
+    invoke-virtual {p0, v4}, Lcom/google/protobuf/CodedInputStream;->skipRawBytes(I)V
 
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/protobuf/InvalidProtocolBufferException;
 
@@ -2024,7 +1963,7 @@
 
     iget v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
 
-    if-le v1, v2, :cond_8
+    if-le v1, v2, :cond_7
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream;->totalBytesRetired:I
 
@@ -2032,41 +1971,30 @@
 
     add-int/2addr v1, p1
 
-    iget v0, p0, Lcom/google/protobuf/CodedInputStream;->currentLimit:I
+    iget v3, p0, Lcom/google/protobuf/CodedInputStream;->currentLimit:I
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    if-le v1, v0, :cond_0
+    if-le v1, v3, :cond_0
 
-    return v2
+    return v4
 
     :cond_0
-    iget-object v0, p0, Lcom/google/protobuf/CodedInputStream;->refillCallback:Lcom/google/protobuf/CodedInputStream$RefillCallback;
+    iget-object v1, p0, Lcom/google/protobuf/CodedInputStream;->input:Ljava/io/InputStream;
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_6
 
-    invoke-interface {v0}, Lcom/google/protobuf/CodedInputStream$RefillCallback;->onRefill()V
+    if-lez v0, :cond_2
+
+    if-le v2, v0, :cond_1
+
+    iget-object v1, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
+
+    sub-int/2addr v2, v0
+
+    invoke-static {v1, v0, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     :cond_1
-    iget-object v0, p0, Lcom/google/protobuf/CodedInputStream;->input:Ljava/io/InputStream;
-
-    if-eqz v0, :cond_7
-
-    iget v0, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
-
-    if-lez v0, :cond_3
-
-    iget v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
-
-    if-le v1, v0, :cond_2
-
-    iget-object v3, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
-
-    sub-int/2addr v1, v0
-
-    invoke-static {v3, v0, v3, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_2
     iget v1, p0, Lcom/google/protobuf/CodedInputStream;->totalBytesRetired:I
 
     add-int/2addr v1, v0
@@ -2079,36 +2007,36 @@
 
     iput v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
 
-    iput v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
+    iput v4, p0, Lcom/google/protobuf/CodedInputStream;->bufferPos:I
 
-    :cond_3
+    :cond_2
     iget-object v0, p0, Lcom/google/protobuf/CodedInputStream;->input:Ljava/io/InputStream;
 
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
 
-    iget v3, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
+    iget v2, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
 
-    array-length v4, v1
+    array-length v3, v1
 
-    sub-int/2addr v4, v3
+    sub-int/2addr v3, v2
 
-    invoke-virtual {v0, v1, v3, v4}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v0, v1, v2, v3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     const/4 v1, -0x1
 
-    if-lt v0, v1, :cond_6
+    if-lt v0, v1, :cond_5
 
     iget-object v1, p0, Lcom/google/protobuf/CodedInputStream;->buffer:[B
 
     array-length v1, v1
 
-    if-gt v0, v1, :cond_6
+    if-gt v0, v1, :cond_5
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_6
 
     iget v1, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
 
@@ -2120,23 +2048,23 @@
 
     add-int/2addr v0, p1
 
-    iget v1, p0, Lcom/google/protobuf/CodedInputStream;->sizeLimit:I
+    const/high16 v1, 0x4000000
 
     sub-int/2addr v0, v1
 
-    if-gtz v0, :cond_5
+    if-gtz v0, :cond_4
 
     invoke-virtual {p0}, Lcom/google/protobuf/CodedInputStream;->recomputeBufferSizeAfterLimit()V
 
     iget v0, p0, Lcom/google/protobuf/CodedInputStream;->bufferSize:I
 
-    if-lt v0, p1, :cond_4
+    if-lt v0, p1, :cond_3
 
     const/4 p1, 0x1
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     invoke-virtual {p0, p1}, Lcom/google/protobuf/CodedInputStream;->tryRefillBuffer(I)Z
 
     move-result p1
@@ -2144,7 +2072,7 @@
     :goto_0
     return p1
 
-    :cond_5
+    :cond_4
     new-instance p1, Lcom/google/protobuf/InvalidProtocolBufferException;
 
     const-string v0, "Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit."
@@ -2153,14 +2081,14 @@
 
     throw p1
 
-    :cond_6
+    :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v1, "InputStream#read(byte[]) returned invalid result: "
 
     const-string v2, "\nThe InputStream implementation is buggy."
 
-    invoke-static {v1, v0, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2168,17 +2096,17 @@
 
     throw p1
 
-    :cond_7
-    return v2
+    :cond_6
+    return v4
 
-    :cond_8
+    :cond_7
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "refillBuffer() called when "
 
     const-string v2, " bytes were already available in buffer"
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline11(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

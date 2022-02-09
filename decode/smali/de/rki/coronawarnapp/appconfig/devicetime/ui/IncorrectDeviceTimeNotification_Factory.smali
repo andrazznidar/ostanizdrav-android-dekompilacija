@@ -52,7 +52,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/NotificationHelper;",
+            "Lde/rki/coronawarnapp/notification/GeneralNotifications;",
             ">;"
         }
     .end annotation
@@ -62,6 +62,21 @@
 # direct methods
 .method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "contextProvider",
+            "foregroundStateProvider",
+            "navDeepLinkBuilderProvider",
+            "notificationHelperProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,7 +90,7 @@
             "Landroidx/navigation/NavDeepLinkBuilder;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/NotificationHelper;",
+            "Lde/rki/coronawarnapp/notification/GeneralNotifications;",
             ">;)V"
         }
     .end annotation
@@ -122,11 +137,11 @@
 
     move-result-object v3
 
-    check-cast v3, Lde/rki/coronawarnapp/notification/NotificationHelper;
+    check-cast v3, Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
     new-instance v4, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Ljavax/inject/Provider;Lde/rki/coronawarnapp/notification/NotificationHelper;)V
+    invoke-direct {v4, v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Ljavax/inject/Provider;Lde/rki/coronawarnapp/notification/GeneralNotifications;)V
 
     return-object v4
 .end method

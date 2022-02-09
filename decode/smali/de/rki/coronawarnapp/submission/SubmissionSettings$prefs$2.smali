@@ -54,7 +54,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "submission_localdata"
+    const-string/jumbo v2, "submission_localdata"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 

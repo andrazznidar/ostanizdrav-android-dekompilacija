@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/navigation/Navigator;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,9 +50,7 @@
 
     new-instance p1, Landroidx/collection/SparseArrayCompat;
 
-    const/16 v0, 0xa
-
-    invoke-direct {p1, v0}, Landroidx/collection/SparseArrayCompat;-><init>(I)V
+    invoke-direct {p1}, Landroidx/collection/SparseArrayCompat;-><init>()V
 
     iput-object p1, p0, Landroidx/navigation/NavGraph;->mNodes:Landroidx/collection/SparseArrayCompat;
 
@@ -217,10 +215,10 @@
     return-object v0
 .end method
 
-.method public matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+.method public matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
     .locals 4
 
-    invoke-super {p0, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    invoke-super {p0, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
 
     move-result-object v0
 
@@ -242,7 +240,7 @@
 
     check-cast v2, Landroidx/navigation/NavDestination;
 
-    invoke-virtual {v2, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Landroidx/navigation/NavDeepLinkRequest;)Landroidx/navigation/NavDestination$DeepLinkMatch;
+    invoke-virtual {v2, p1}, Landroidx/navigation/NavDestination;->matchDeepLink(Lorg/slf4j/event/EventRecodingLogger;)Landroidx/navigation/NavDestination$DeepLinkMatch;
 
     move-result-object v2
 
@@ -280,9 +278,11 @@
 
     move-result-object p2
 
-    const/4 v0, 0x0
+    sget v0, Landroidx/navigation/common/R$styleable;->NavGraphNavigator_startDestination:I
 
-    invoke-virtual {p2, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
@@ -393,7 +393,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v2, "{"
+    const-string/jumbo v2, "{"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -403,7 +403,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

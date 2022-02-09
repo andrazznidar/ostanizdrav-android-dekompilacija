@@ -27,10 +27,6 @@
 
 .field public mIcon:Landroid/graphics/drawable/Drawable;
 
-.field public mIconAttrId:I
-
-.field public mIconId:I
-
 .field public final mInflater:Landroid/view/LayoutInflater;
 
 .field public mIsSingleChoice:Z
@@ -63,22 +59,12 @@
 
 .field public mViewLayoutResId:I
 
-.field public mViewSpacingSpecified:Z
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Landroidx/appcompat/app/AlertController$AlertParams;->mIconId:I
-
-    iput v0, p0, Landroidx/appcompat/app/AlertController$AlertParams;->mIconAttrId:I
-
-    iput-boolean v0, p0, Landroidx/appcompat/app/AlertController$AlertParams;->mViewSpacingSpecified:Z
 
     const/4 v0, -0x1
 

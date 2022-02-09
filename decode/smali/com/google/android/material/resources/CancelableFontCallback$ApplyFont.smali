@@ -12,3 +12,8 @@
     accessFlags = 0x609
     name = "ApplyFont"
 .end annotation
+
+
+# virtual methods
+.method public abstract apply(Landroid/graphics/Typeface;)V
+.end method

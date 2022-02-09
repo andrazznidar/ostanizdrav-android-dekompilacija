@@ -11,19 +11,3 @@
 
     return-void
 .end method
-
-
-# virtual methods
-.method public final getNowUTC()Lorg/joda/time/Instant;
-    .locals 2
-
-    new-instance v0, Lorg/joda/time/Instant;
-
-    invoke-direct {v0}, Lorg/joda/time/Instant;-><init>()V
-
-    const-string v1, "Instant.now()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v0
-.end method

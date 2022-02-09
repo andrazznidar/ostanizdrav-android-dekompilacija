@@ -42,41 +42,41 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
-    const/4 v0, 0x2
+    new-instance v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
+    const-string v1, "LOCATION_DAY"
 
-    new-instance v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
+    const/4 v2, 0x0
 
-    const-string v2, "LOCATION_DAY"
+    const-string v3, "country_day"
 
-    const/4 v3, 0x0
+    invoke-direct {v0, v1, v2, v3}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    const-string v4, "country_day"
-
-    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->LOCATION_DAY:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->LOCATION_DAY:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
     new-instance v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
-    const-string v2, "LOCATION_HOUR"
+    const-string v3, "LOCATION_HOUR"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const-string v4, "country_hour"
+    const-string v5, "country_hour"
 
-    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v1, v3, v4, v5}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->LOCATION_HOUR:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
-    aput-object v1, v0, v3
+    const/4 v3, 0x2
 
-    sput-object v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->$VALUES:[Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
+    new-array v3, v3, [Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->$VALUES:[Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
     return-void
 .end method
@@ -117,7 +117,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->$VALUES:[Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

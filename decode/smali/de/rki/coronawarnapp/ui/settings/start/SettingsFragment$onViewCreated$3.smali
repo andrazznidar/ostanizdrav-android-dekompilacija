@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
     check-cast p1, Lde/rki/coronawarnapp/ui/settings/start/SettingsBackgroundState;
 
@@ -57,7 +57,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment;)Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;
+    sget-object v1, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/settings/start/SettingsFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSettingsBinding;
 
     move-result-object v0
 

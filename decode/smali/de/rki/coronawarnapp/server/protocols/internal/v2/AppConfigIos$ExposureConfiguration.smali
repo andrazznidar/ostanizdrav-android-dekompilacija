@@ -39,7 +39,7 @@
 
 .field public static final DAYSSINCELASTEXPOSURETHRESHOLD_FIELD_NUMBER:I = 0x8
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
 
 .field public static final IMMEDIATEDURATIONWEIGHT_FIELD_NUMBER:I = 0x4
 
@@ -55,7 +55,7 @@
 
 .field public static final OTHERDURATIONWEIGHT_FIELD_NUMBER:I = 0x7
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -77,15 +77,15 @@
 
 
 # instance fields
-.field public attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
+.field private attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
 
-.field public bitField0_:I
+.field private bitField0_:I
 
-.field public daysSinceLastExposureThreshold_:I
+.field private daysSinceLastExposureThreshold_:I
 
-.field public immediateDurationWeight_:D
+.field private immediateDurationWeight_:D
 
-.field public infectiousnessForDaysSinceOnsetOfSymptoms_:Lcom/google/protobuf/MapFieldLite;
+.field private infectiousnessForDaysSinceOnsetOfSymptoms_:Lcom/google/protobuf/MapFieldLite;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/MapFieldLite<",
@@ -96,28 +96,288 @@
     .end annotation
 .end field
 
-.field public infectiousnessHighWeight_:D
+.field private infectiousnessHighWeight_:D
 
-.field public infectiousnessStandardWeight_:D
+.field private infectiousnessStandardWeight_:D
 
-.field public mediumDurationWeight_:D
+.field private mediumDurationWeight_:D
 
-.field public nearDurationWeight_:D
+.field private nearDurationWeight_:D
 
-.field public otherDurationWeight_:D
+.field private otherDurationWeight_:D
 
-.field public reportTypeConfirmedClinicalDiagnosisWeight_:D
+.field private reportTypeConfirmedClinicalDiagnosisWeight_:D
 
-.field public reportTypeConfirmedTestWeight_:D
+.field private reportTypeConfirmedTestWeight_:D
 
-.field public reportTypeNoneMap_:I
+.field private reportTypeNoneMap_:I
 
-.field public reportTypeRecursiveWeight_:D
+.field private reportTypeRecursiveWeight_:D
 
-.field public reportTypeSelfReportedWeight_:D
+.field private reportTypeSelfReportedWeight_:D
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllAttenuationDurationThresholds(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->addAllAttenuationDurationThresholds(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAttenuationDurationThresholds(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->addAttenuationDurationThresholds(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAttenuationDurationThresholds(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearAttenuationDurationThresholds()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearDaysSinceLastExposureThreshold(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearDaysSinceLastExposureThreshold()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearImmediateDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearImmediateDurationWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearInfectiousnessHighWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearInfectiousnessHighWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearInfectiousnessStandardWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearInfectiousnessStandardWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMediumDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearMediumDurationWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearNearDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearNearDurationWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearOtherDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearOtherDurationWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeConfirmedClinicalDiagnosisWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeConfirmedClinicalDiagnosisWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeConfirmedTestWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeConfirmedTestWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeNoneMap(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeNoneMap()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeRecursiveWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeRecursiveWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearReportTypeSelfReportedWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeSelfReportedWeight()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mgetMutableInfectiousnessForDaysSinceOnsetOfSymptomsMap(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)Ljava/util/Map;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->getMutableInfectiousnessForDaysSinceOnsetOfSymptomsMap()Ljava/util/Map;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAttenuationDurationThresholds(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setAttenuationDurationThresholds(II)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetDaysSinceLastExposureThreshold(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setDaysSinceLastExposureThreshold(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetImmediateDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setImmediateDurationWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetInfectiousnessHighWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setInfectiousnessHighWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetInfectiousnessStandardWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setInfectiousnessStandardWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMediumDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setMediumDurationWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetNearDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setNearDurationWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetOtherDurationWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setOtherDurationWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeConfirmedClinicalDiagnosisWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeConfirmedClinicalDiagnosisWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeConfirmedTestWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeConfirmedTestWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeNoneMap(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeNoneMap(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeRecursiveWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeRecursiveWeight(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetReportTypeSelfReportedWeight(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeSelfReportedWeight(D)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -132,7 +392,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -146,248 +406,6 @@
     move-result-object v0
 
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
-
-    return-void
-.end method
-
-.method public static synthetic access$4300()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$4400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)Ljava/util/Map;
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->getMutableInfectiousnessForDaysSinceOnsetOfSymptomsMap()Ljava/util/Map;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic access$4500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeNoneMap(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeNoneMap()V
-
-    return-void
-.end method
-
-.method public static synthetic access$4700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setAttenuationDurationThresholds(II)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->addAttenuationDurationThresholds(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$4900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->addAllAttenuationDurationThresholds(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearAttenuationDurationThresholds()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setImmediateDurationWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearImmediateDurationWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setMediumDurationWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearMediumDurationWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setNearDurationWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearNearDurationWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setOtherDurationWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearOtherDurationWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setDaysSinceLastExposureThreshold(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearDaysSinceLastExposureThreshold()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setInfectiousnessStandardWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearInfectiousnessStandardWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setInfectiousnessHighWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearInfectiousnessHighWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeConfirmedTestWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeConfirmedTestWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeConfirmedClinicalDiagnosisWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeConfirmedClinicalDiagnosisWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeSelfReportedWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$7000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeSelfReportedWeight()V
-
-    return-void
-.end method
-
-.method public static synthetic access$7100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->setReportTypeRecursiveWeight(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$7200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->clearReportTypeRecursiveWeight()V
 
     return-void
 .end method
@@ -1287,13 +1305,13 @@
     :sswitch_c
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_5
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
+    if-nez v0, :cond_5
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$IntList;)Lcom/google/protobuf/Internal$IntList;
 
@@ -1328,11 +1346,9 @@
     :sswitch_e
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessForDaysSinceOnsetOfSymptoms_:Lcom/google/protobuf/MapFieldLite;
 
-    iget-boolean p1, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
+    iget-boolean v0, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
 
-    if-nez p1, :cond_6
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessForDaysSinceOnsetOfSymptoms_:Lcom/google/protobuf/MapFieldLite;
+    if-nez v0, :cond_6
 
     invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->mutableCopy()Lcom/google/protobuf/MapFieldLite;
 
@@ -1428,31 +1444,27 @@
 
     if-eqz p1, :cond_8
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_6
 
     :cond_8
-    move p1, v2
+    move v0, v2
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeNoneMap_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeNoneMap_:I
 
     if-eqz v3, :cond_9
 
-    move v3, v1
+    move v4, v1
 
     goto :goto_7
 
     :cond_9
-    move v3, v2
+    move v4, v2
 
     :goto_7
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeNoneMap_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1468,11 +1480,11 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->immediateDurationWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->immediateDurationWeight_:D
 
     const-wide/16 v10, 0x0
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_a
 
@@ -1484,11 +1496,9 @@
     move v4, v2
 
     :goto_8
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->immediateDurationWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->immediateDurationWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->immediateDurationWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_b
 
@@ -1500,8 +1510,6 @@
     move v7, v2
 
     :goto_9
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->immediateDurationWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1510,9 +1518,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->immediateDurationWeight_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->mediumDurationWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->mediumDurationWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_c
 
@@ -1524,11 +1532,9 @@
     move v4, v2
 
     :goto_a
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->mediumDurationWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->mediumDurationWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->mediumDurationWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_d
 
@@ -1540,8 +1546,6 @@
     move v7, v2
 
     :goto_b
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->mediumDurationWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1550,9 +1554,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->mediumDurationWeight_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->nearDurationWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->nearDurationWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_e
 
@@ -1564,11 +1568,9 @@
     move v4, v2
 
     :goto_c
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->nearDurationWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->nearDurationWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->nearDurationWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_f
 
@@ -1580,8 +1582,6 @@
     move v7, v2
 
     :goto_d
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->nearDurationWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1590,9 +1590,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->nearDurationWeight_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->otherDurationWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->otherDurationWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_10
 
@@ -1604,11 +1604,9 @@
     move v4, v2
 
     :goto_e
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->otherDurationWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->otherDurationWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->otherDurationWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_11
 
@@ -1620,8 +1618,6 @@
     move v7, v2
 
     :goto_f
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->otherDurationWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1634,39 +1630,35 @@
 
     if-eqz p1, :cond_12
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_10
 
     :cond_12
-    move p1, v2
+    move v0, v2
 
     :goto_10
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->daysSinceLastExposureThreshold_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->daysSinceLastExposureThreshold_:I
 
     if-eqz v3, :cond_13
 
-    move v3, v1
+    move v4, v1
 
     goto :goto_11
 
     :cond_13
-    move v3, v2
+    move v4, v2
 
     :goto_11
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->daysSinceLastExposureThreshold_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->daysSinceLastExposureThreshold_:I
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessStandardWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessStandardWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_14
 
@@ -1678,11 +1670,9 @@
     move v4, v2
 
     :goto_12
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessStandardWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessStandardWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessStandardWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_15
 
@@ -1694,8 +1684,6 @@
     move v7, v2
 
     :goto_13
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessStandardWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1704,9 +1692,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessStandardWeight_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessHighWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessHighWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_16
 
@@ -1718,11 +1706,9 @@
     move v4, v2
 
     :goto_14
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessHighWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessHighWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessHighWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_17
 
@@ -1734,8 +1720,6 @@
     move v7, v2
 
     :goto_15
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessHighWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1744,9 +1728,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->infectiousnessHighWeight_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedTestWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedTestWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_18
 
@@ -1758,11 +1742,9 @@
     move v4, v2
 
     :goto_16
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedTestWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedTestWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedTestWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_19
 
@@ -1774,8 +1756,6 @@
     move v7, v2
 
     :goto_17
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedTestWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1784,9 +1764,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedTestWeight_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedClinicalDiagnosisWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedClinicalDiagnosisWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_1a
 
@@ -1798,11 +1778,9 @@
     move v4, v2
 
     :goto_18
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedClinicalDiagnosisWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedClinicalDiagnosisWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedClinicalDiagnosisWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_1b
 
@@ -1814,8 +1792,6 @@
     move v7, v2
 
     :goto_19
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedClinicalDiagnosisWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1824,9 +1800,9 @@
 
     iput-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeConfirmedClinicalDiagnosisWeight_:D
 
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeSelfReportedWeight_:D
+    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeSelfReportedWeight_:D
 
-    cmpl-double p1, v3, v10
+    cmpl-double p1, v5, v10
 
     if-eqz p1, :cond_1c
 
@@ -1838,11 +1814,9 @@
     move v4, v2
 
     :goto_1a
-    iget-wide v5, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeSelfReportedWeight_:D
+    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeSelfReportedWeight_:D
 
-    iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeSelfReportedWeight_:D
-
-    cmpl-double p1, v7, v10
+    cmpl-double p1, v8, v10
 
     if-eqz p1, :cond_1d
 
@@ -1854,8 +1828,6 @@
     move v7, v2
 
     :goto_1b
-    iget-wide v8, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeSelfReportedWeight_:D
-
     move-object v3, p2
 
     invoke-interface/range {v3 .. v9}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
@@ -1878,33 +1850,27 @@
     move p1, v2
 
     :goto_1c
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeRecursiveWeight_:D
-
     iget-wide v5, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeRecursiveWeight_:D
 
     cmpl-double v0, v5, v10
 
     if-eqz v0, :cond_1f
 
-    move v5, v1
+    move v7, v1
 
     goto :goto_1d
 
     :cond_1f
-    move v5, v2
+    move v7, v2
 
     :goto_1d
-    iget-wide v6, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->reportTypeRecursiveWeight_:D
-
     move-object v0, p2
 
     move v1, p1
 
     move-wide v2, v3
 
-    move v4, v5
-
-    move-wide v5, v6
+    move v4, v7
 
     invoke-interface/range {v0 .. v6}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
@@ -1930,7 +1896,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration$Builder-IA;)V
 
     return-object p1
 
@@ -2013,7 +1979,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    check-cast v0, Lcom/google/protobuf/IntArrayList;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/IntArrayList;->size()I
 
     move-result v0
 
@@ -2351,13 +2319,13 @@
     :goto_1
     iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    move-object v5, v3
 
-    move-result v3
+    check-cast v5, Lcom/google/protobuf/IntArrayList;
 
-    if-ge v1, v3, :cond_3
+    iget v5, v5, Lcom/google/protobuf/IntArrayList;->size:I
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
+    if-ge v1, v5, :cond_3
 
     check-cast v3, Lcom/google/protobuf/IntArrayList;
 
@@ -2630,23 +2598,23 @@
     :goto_1
     iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_2
-
-    const/4 v1, 0x3
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigIos$ExposureConfiguration;->attenuationDurationThresholds_:Lcom/google/protobuf/Internal$IntList;
+    move-object v2, v1
 
     check-cast v2, Lcom/google/protobuf/IntArrayList;
 
-    invoke-virtual {v2, v0}, Lcom/google/protobuf/IntArrayList;->getInt(I)I
+    iget v2, v2, Lcom/google/protobuf/IntArrayList;->size:I
 
-    move-result v2
+    if-ge v0, v2, :cond_2
 
-    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    const/4 v2, 0x3
+
+    check-cast v1, Lcom/google/protobuf/IntArrayList;
+
+    invoke-virtual {v1, v0}, Lcom/google/protobuf/IntArrayList;->getInt(I)I
+
+    move-result v1
+
+    invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     add-int/lit8 v0, v0, 0x1
 

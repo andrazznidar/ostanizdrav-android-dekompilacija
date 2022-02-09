@@ -12,11 +12,9 @@
 
 .field public final logTable:[I
 
-.field public final modulus:I
+.field public final one:Lcom/google/android/play/core/assetpacks/zzc;
 
-.field public final one:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
-
-.field public final zero:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+.field public final zero:Lcom/google/android/play/core/assetpacks/zzc;
 
 
 # direct methods
@@ -41,8 +39,6 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->modulus:I
-
     new-array v0, p1, [I
 
     iput-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
@@ -51,13 +47,13 @@
 
     iput-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->logTable:[I
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    move v2, v0
+    move v3, v0
 
-    move v3, v1
+    move v2, v1
 
     :goto_0
     if-ge v2, p1, :cond_0
@@ -75,7 +71,7 @@
     goto :goto_0
 
     :cond_0
-    move p2, v0
+    move p2, v1
 
     :goto_1
     add-int/lit8 v2, p1, -0x1
@@ -95,25 +91,25 @@
     goto :goto_1
 
     :cond_1
-    new-instance p1, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    new-instance p1, Lcom/google/android/play/core/assetpacks/zzc;
 
-    new-array p2, v1, [I
+    new-array p2, v0, [I
 
-    aput v0, p2, v0
+    aput v1, p2, v1
 
-    invoke-direct {p1, p0, p2}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
+    invoke-direct {p1, p0, p2}, Lcom/google/android/play/core/assetpacks/zzc;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
 
-    iput-object p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    iput-object p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/android/play/core/assetpacks/zzc;
 
-    new-instance p1, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    new-instance p1, Lcom/google/android/play/core/assetpacks/zzc;
 
-    new-array p2, v1, [I
+    new-array p2, v0, [I
 
-    aput v1, p2, v0
+    aput v0, p2, v1
 
-    invoke-direct {p1, p0, p2}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
+    invoke-direct {p1, p0, p2}, Lcom/google/android/play/core/assetpacks/zzc;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
 
-    iput-object p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->one:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    iput-object p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->one:Lcom/google/android/play/core/assetpacks/zzc;
 
     return-void
 .end method
@@ -125,21 +121,19 @@
 
     add-int/2addr p1, p2
 
-    iget p2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->modulus:I
-
-    rem-int/2addr p1, p2
+    rem-int/lit16 p1, p1, 0x3a1
 
     return p1
 .end method
 
-.method public buildMonomial(II)Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+.method public buildMonomial(II)Lcom/google/android/play/core/assetpacks/zzc;
     .locals 1
 
     if-ltz p1, :cond_1
 
     if-nez p2, :cond_0
 
-    iget-object p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    iget-object p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/android/play/core/assetpacks/zzc;
 
     return-object p1
 
@@ -152,9 +146,9 @@
 
     aput p2, p1, v0
 
-    new-instance p2, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    new-instance p2, Lcom/google/android/play/core/assetpacks/zzc;
 
-    invoke-direct {p2, p0, p1}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
+    invoke-direct {p2, p0, p1}, Lcom/google/android/play/core/assetpacks/zzc;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
 
     return-object p2
 
@@ -167,23 +161,21 @@
 .end method
 
 .method public inverse(I)I
-    .locals 3
+    .locals 2
 
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
 
-    iget v1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->modulus:I
+    iget-object v1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->logTable:[I
 
-    iget-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->logTable:[I
+    aget p1, v1, p1
 
-    aget p1, v2, p1
+    rsub-int p1, p1, 0x3a1
 
-    sub-int/2addr v1, p1
+    add-int/lit8 p1, p1, -0x1
 
-    add-int/lit8 v1, v1, -0x1
-
-    aget p1, v0, v1
+    aget p1, v0, p1
 
     return p1
 
@@ -215,11 +207,7 @@
 
     add-int/2addr p1, p2
 
-    iget p2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->modulus:I
-
-    add-int/lit8 p2, p2, -0x1
-
-    rem-int/2addr p1, p2
+    rem-int/lit16 p1, p1, 0x3a0
 
     aget p1, v0, p1
 
@@ -233,15 +221,13 @@
 .end method
 
 .method public subtract(II)I
-    .locals 1
+    .locals 0
 
-    iget v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->modulus:I
-
-    add-int/2addr p1, v0
+    add-int/lit16 p1, p1, 0x3a1
 
     sub-int/2addr p1, p2
 
-    rem-int/2addr p1, v0
+    rem-int/lit16 p1, p1, 0x3a1
 
     return p1
 .end method

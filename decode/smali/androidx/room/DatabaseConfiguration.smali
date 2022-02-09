@@ -20,7 +20,7 @@
 
 .field public final context:Landroid/content/Context;
 
-.field public final journalMode:Landroidx/room/RoomDatabase$JournalMode;
+.field public final journalMode:I
 
 .field public final mMigrationNotRequiredFrom:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -34,8 +34,6 @@
 
 .field public final migrationContainer:Landroidx/room/RoomDatabase$MigrationContainer;
 
-.field public final multiInstanceInvalidation:Z
-
 .field public final name:Ljava/lang/String;
 
 .field public final queryExecutor:Ljava/util/concurrent/Executor;
@@ -48,7 +46,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;Landroidx/room/RoomDatabase$MigrationContainer;Ljava/util/List;ZLandroidx/room/RoomDatabase$JournalMode;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;ZZZLjava/util/Set;Ljava/lang/String;Ljava/io/File;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroidx/sqlite/db/SupportSQLiteOpenHelper$Factory;Landroidx/room/RoomDatabase$MigrationContainer;Ljava/util/List;ZILjava/util/concurrent/Executor;Ljava/util/concurrent/Executor;ZZZLjava/util/Set;Ljava/lang/String;Ljava/io/File;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -60,7 +58,7 @@
             "Ljava/util/List<",
             "Landroidx/room/RoomDatabase$Callback;",
             ">;Z",
-            "Landroidx/room/RoomDatabase$JournalMode;",
+            "Ljava/lang/Object;",
             "Ljava/util/concurrent/Executor;",
             "Ljava/util/concurrent/Executor;",
             "ZZZ",
@@ -87,13 +85,11 @@
 
     iput-boolean p6, p0, Landroidx/room/DatabaseConfiguration;->allowMainThreadQueries:Z
 
-    iput-object p7, p0, Landroidx/room/DatabaseConfiguration;->journalMode:Landroidx/room/RoomDatabase$JournalMode;
+    iput p7, p0, Landroidx/room/DatabaseConfiguration;->journalMode:I
 
     iput-object p8, p0, Landroidx/room/DatabaseConfiguration;->queryExecutor:Ljava/util/concurrent/Executor;
 
     iput-object p9, p0, Landroidx/room/DatabaseConfiguration;->transactionExecutor:Ljava/util/concurrent/Executor;
-
-    iput-boolean p10, p0, Landroidx/room/DatabaseConfiguration;->multiInstanceInvalidation:Z
 
     iput-boolean p11, p0, Landroidx/room/DatabaseConfiguration;->requireMigration:Z
 

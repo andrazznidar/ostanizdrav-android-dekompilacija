@@ -46,33 +46,27 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 5
+    .locals 3
 
-    new-instance v0, Landroidx/appcompat/app/AlertDialog$Builder;
+    new-instance v0, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog$dialog$2;->this$0:Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog;
 
     iget-object v1, v1, Lde/rki/coronawarnapp/ui/submission/SubmissionBlockingDialog;->context:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Landroidx/appcompat/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;-><init>(Landroid/content/Context;)V
 
-    iget-object v1, v0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    iget-object v2, v0, Landroidx/appcompat/app/AlertDialog$Builder;->P:Landroidx/appcompat/app/AlertController$AlertParams;
 
-    iput-boolean v2, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable:Z
+    iput-boolean v1, v2, Landroidx/appcompat/app/AlertController$AlertParams;->mCancelable:Z
 
-    const v3, 0x7f0c00f7
+    const v1, 0x7f0d0157
 
-    const/4 v4, 0x0
+    invoke-virtual {v0, v1}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setView(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
 
-    iput-object v4, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mView:Landroid/view/View;
-
-    iput v3, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mViewLayoutResId:I
-
-    iput-boolean v2, v1, Landroidx/appcompat/app/AlertController$AlertParams;->mViewSpacingSpecified:Z
-
-    invoke-virtual {v0}, Landroidx/appcompat/app/AlertDialog$Builder;->create()Landroidx/appcompat/app/AlertDialog;
+    invoke-virtual {v0}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->create()Landroidx/appcompat/app/AlertDialog;
 
     move-result-object v0
 

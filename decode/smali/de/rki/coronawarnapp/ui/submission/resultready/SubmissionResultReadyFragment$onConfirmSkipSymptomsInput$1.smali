@@ -7,6 +7,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->onConfirmSkipSymptomsInput()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -37,40 +46,47 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 5
+    .locals 9
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment$onConfirmSkipSymptomsInput$1;->this$0:Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->access$getViewModel$p(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;)Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyFragment;->getViewModel()Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    const-string v3, "Symptom submission was skipped."
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-virtual {v0, v3, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-instance v6, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;
 
-    const-string v4, "Symptom submission was skipped."
+    const/4 v0, 0x0
 
-    invoke-virtual {v3, v4, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {v6, v2, v0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;Lkotlin/coroutines/Continuation;)V
 
-    new-instance v2, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;
+    const/4 v3, 0x0
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$onSkipSymptomsConfirmed$1;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;Lkotlin/coroutines/Continuation;)V
+    const/4 v4, 0x0
 
-    const/4 v3, 0x1
+    const/4 v5, 0x0
 
-    invoke-static {v0, v1, v2, v3, v1}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+    const/4 v7, 0x7
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v2 .. v8}, Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;->launch$default(Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineExceptionHandler;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
-
-    :cond_0
-    throw v1
 .end method

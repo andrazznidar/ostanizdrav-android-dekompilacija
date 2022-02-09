@@ -108,7 +108,7 @@
 .end method
 
 .method public loadFromAttributes(Landroid/util/AttributeSet;I)V
-    .locals 10
+    .locals 9
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
 
@@ -116,84 +116,84 @@
 
     move-result-object v0
 
-    sget-object v1, Landroidx/appcompat/R$styleable;->CompoundButton:[I
+    sget-object v3, Landroidx/appcompat/R$styleable;->CompoundButton:[I
 
-    const/4 v2, 0x0
+    const/4 v8, 0x0
 
-    invoke-static {v0, p1, v1, p2, v2}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
+    invoke-static {v0, p1, v3, p2, v8}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
     move-result-object v0
 
-    iget-object v3, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
+    iget-object v1, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
 
-    invoke-virtual {v3}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v2
 
-    sget-object v5, Landroidx/appcompat/R$styleable;->CompoundButton:[I
+    iget-object v5, v0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
-    iget-object v7, v0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    const/4 v7, 0x0
 
-    const/4 v9, 0x0
+    move-object v4, p1
 
-    move-object v6, p1
+    move v6, p2
 
-    move v8, p2
-
-    invoke-static/range {v3 .. v9}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
-
-    const/4 p1, 0x1
+    invoke-static/range {v1 .. v7}, Landroidx/core/view/ViewCompat;->saveAttributeDataForStyleable(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
     :try_start_0
+    sget p1, Landroidx/appcompat/R$styleable;->CompoundButton_buttonCompat:I
+
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
-    invoke-virtual {v0, p1, v2}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
+    invoke-virtual {v0, p1, v8}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
 
-    move-result p2
+    move-result p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p2, :cond_0
+    if-eqz p1, :cond_0
 
     :try_start_1
-    iget-object v1, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
+    iget-object p2, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
 
-    iget-object v3, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
+    invoke-virtual {p2}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v3}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-static {v1, p1}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v3, p2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    move-result-object p1
 
-    move-result-object p2
-
-    invoke-virtual {v1, p2}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p2, p1}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
     :try_end_1
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :catch_0
     :cond_0
-    move p1, v2
+    move p1, v8
 
     :goto_0
     if-nez p1, :cond_1
 
     :try_start_2
-    invoke-virtual {v0, v2}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
+    sget p1, Landroidx/appcompat/R$styleable;->CompoundButton_android_button:I
 
-    move-result p1
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
-    if-eqz p1, :cond_1
+    move-result p2
 
-    invoke-virtual {v0, v2, v2}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
+    if-eqz p2, :cond_1
+
+    invoke-virtual {v0, p1, v8}, Landroidx/appcompat/widget/TintTypedArray;->getResourceId(II)I
 
     move-result p1
 
@@ -201,9 +201,7 @@
 
     iget-object p2, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
 
-    iget-object v1, p0, Landroidx/appcompat/widget/AppCompatCompoundButtonHelper;->mView:Landroid/widget/CompoundButton;
-
-    invoke-virtual {v1}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+    invoke-virtual {p2}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -214,7 +212,7 @@
     invoke-virtual {p2, p1}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_1
-    const/4 p1, 0x2
+    sget p1, Landroidx/appcompat/R$styleable;->CompoundButton_buttonTint:I
 
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 
@@ -239,7 +237,7 @@
 
     :cond_2
     :goto_1
-    const/4 p1, 0x3
+    sget p1, Landroidx/appcompat/R$styleable;->CompoundButton_buttonTintMode:I
 
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/TintTypedArray;->hasValue(I)Z
 

@@ -260,7 +260,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)TV;"
@@ -269,7 +269,9 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$Entry;->this$0:Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;
 
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->access$300(Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;)V
+    sget v1, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->$r8$clinit:I
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->checkMutable()V
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$Entry;->value:Ljava/lang/Object;
 

@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/internal/bind/TypeAdapters$30;
+.class Lcom/google/gson/internal/bind/TypeAdapters$30;
 .super Ljava/lang/Object;
 .source "TypeAdapters.java"
 
@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -43,39 +43,37 @@
         }
     .end annotation
 
-    iget-object p1, p2, Lcom/google/gson/reflect/TypeToken;->rawType:Ljava/lang/Class;
+    const-class p1, Ljava/lang/Enum;
 
-    const-class p2, Ljava/lang/Enum;
+    iget-object p2, p2, Lcom/google/gson/reflect/TypeToken;->rawType:Ljava/lang/Class;
 
-    invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {p1, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result p2
+    move-result v0
 
-    if-eqz p2, :cond_2
+    if-eqz v0, :cond_2
 
-    const-class p2, Ljava/lang/Enum;
-
-    if-ne p1, p2, :cond_0
+    if-ne p2, p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Class;->isEnum()Z
+    invoke-virtual {p2}, Ljava/lang/Class;->isEnum()Z
 
-    move-result p2
+    move-result p1
 
-    if-nez p2, :cond_1
+    if-nez p1, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+    invoke-virtual {p2}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
-    move-result-object p1
+    move-result-object p2
 
     :cond_1
-    new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;
+    new-instance p1, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;
 
-    invoke-direct {p2, p1}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;-><init>(Ljava/lang/Class;)V
+    invoke-direct {p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;-><init>(Ljava/lang/Class;)V
 
-    return-object p2
+    return-object p1
 
     :cond_2
     :goto_0

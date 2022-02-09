@@ -43,7 +43,7 @@
 
     new-instance v0, Lkotlin/coroutines/SafeContinuation;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {p1}, Lkotlinx/coroutines/flow/FlowKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v1
 
@@ -60,6 +60,8 @@
     invoke-direct {v2, v0}, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/tasks/Task;->addOnSuccessListener(Lcom/google/android/gms/tasks/OnSuccessListener;)Lcom/google/android/gms/tasks/Task;
+
+    move-result-object v1
 
     new-instance v2, Lde/rki/coronawarnapp/nearby/modules/exposurewindow/DefaultExposureWindowProvider$exposureWindows$2$2;
 

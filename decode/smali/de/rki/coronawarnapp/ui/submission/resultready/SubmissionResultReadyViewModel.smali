@@ -57,15 +57,13 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->autoSubmission:Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
 
-    new-instance p1, Landroidx/lifecycle/MediatorLiveData;
+    new-instance v0, Landroidx/lifecycle/MediatorLiveData;
 
-    invoke-direct {p1}, Landroidx/lifecycle/MediatorLiveData;-><init>()V
+    invoke-direct {v0}, Landroidx/lifecycle/MediatorLiveData;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->mediatorShowUploadDialog:Landroidx/lifecycle/MediatorLiveData;
+    iput-object v0, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->mediatorShowUploadDialog:Landroidx/lifecycle/MediatorLiveData;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->autoSubmission:Lde/rki/coronawarnapp/submission/auto/AutoSubmission;
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->isSubmissionRunning:Lkotlinx/coroutines/flow/Flow;
+    iget-object p1, p1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission;->isSubmissionRunning:Lkotlinx/coroutines/flow/Flow;
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getDefault()Lkotlin/coroutines/CoroutineContext;
 
@@ -73,19 +71,17 @@
 
     const-wide/16 v2, 0x0
 
-    invoke-static {v0, p2, v2, v3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
+    invoke-static {p1, p2, v2, v3, v1}, Landroidx/lifecycle/FlowLiveDataConversions;->asLiveData$default(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;JI)Landroidx/lifecycle/LiveData;
 
-    move-result-object p2
+    move-result-object p1
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$1;
+    new-instance p2, Lde/rki/coronawarnapp/ui/main/MainActivity$$ExternalSyntheticLambda9;
 
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel$1;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/main/MainActivity$$ExternalSyntheticLambda9;-><init>(Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;)V
 
-    invoke-virtual {p1, p2, v0}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
+    invoke-virtual {v0, p1, p2}, Landroidx/lifecycle/MediatorLiveData;->addSource(Landroidx/lifecycle/LiveData;Landroidx/lifecycle/Observer;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->mediatorShowUploadDialog:Landroidx/lifecycle/MediatorLiveData;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->showUploadDialog:Landroidx/lifecycle/LiveData;
+    iput-object v0, p0, Lde/rki/coronawarnapp/ui/submission/resultready/SubmissionResultReadyViewModel;->showUploadDialog:Landroidx/lifecycle/LiveData;
 
     new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 

@@ -14,6 +14,18 @@
 # direct methods
 .method public constructor <init>(ILandroidx/core/view/accessibility/AccessibilityNodeInfoCompat;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "originalClickableSpanId",
+            "nodeInfoCompat",
+            "clickableSpanActionId"
+        }
+    .end annotation
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
@@ -30,6 +42,14 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "unused"
+        }
+    .end annotation
 
     new-instance p1, Landroid/os/Bundle;
 

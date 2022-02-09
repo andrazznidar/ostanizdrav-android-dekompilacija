@@ -66,15 +66,15 @@
 
     if-lez v0, :cond_0
 
-    const/4 p1, 0x0
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v0, v0, [Ljava/lang/Object;
 
     const-string v1, "Max retry duration exceeded."
 
-    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const/4 p1, 0x0
 
@@ -95,29 +95,25 @@
 
     mul-double/2addr v2, v0
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->round(D)J
+    invoke-static {v2, v3}, Lkotlin/math/MathKt__MathJVMKt;->roundToLong(D)J
 
     move-result-wide v0
 
     iget-wide v2, p1, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->lastDelay:J
 
-    cmp-long v4, v0, v2
+    cmp-long v2, v0, v2
 
-    if-lez v4, :cond_1
+    if-lez v2, :cond_1
 
-    new-instance p1, Lkotlin/ranges/LongRange;
+    new-instance v2, Lkotlin/ranges/LongRange;
 
-    invoke-direct {p1, v2, v3, v0, v1}, Lkotlin/ranges/LongRange;-><init>(JJ)V
+    iget-wide v3, p1, Lde/rki/coronawarnapp/util/RetryMechanism$Attempt;->lastDelay:J
 
-    sget-object v0, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
+    invoke-direct {v2, v3, v4, v0, v1}, Lkotlin/ranges/LongRange;-><init>(JJ)V
 
-    invoke-static {p1, v0}, Lkotlin/ranges/RangesKt___RangesKt;->random(Lkotlin/ranges/LongRange;Lkotlin/random/Random;)J
+    sget-object p1, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
+
+    invoke-static {v2, p1}, Lkotlin/ranges/RangesKt___RangesKt;->random(Lkotlin/ranges/LongRange;Lkotlin/random/Random;)J
 
     move-result-wide v0
 
@@ -158,13 +154,4 @@
 
     :goto_1
     return-object p1
-
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Cannot round NaN value."
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

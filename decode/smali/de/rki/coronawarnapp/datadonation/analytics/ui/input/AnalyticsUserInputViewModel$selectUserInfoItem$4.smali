@@ -50,7 +50,9 @@
 
     check-cast p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;
 
-    iget p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->districtId:I
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;->getDistrictId()I
+
+    move-result p1
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

@@ -4,10 +4,6 @@
 
 
 # static fields
-.field public static final AES_CTR_HMAC_STREAMINGAEAD_TYPE_URL:Ljava/lang/String;
-
-.field public static final AES_GCM_HKDF_STREAMINGAEAD_TYPE_URL:Ljava/lang/String;
-
 .field public static final LATEST:Lcom/google/crypto/tink/proto/RegistryConfig;
 
 .field public static final TINK_1_1_0:Lcom/google/crypto/tink/proto/RegistryConfig;
@@ -24,17 +20,9 @@
 
     invoke-direct {v0}, Lcom/google/crypto/tink/streamingaead/AesCtrHmacStreamingKeyManager;-><init>()V
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesCtrHmacStreamingKey"
-
-    sput-object v0, Lcom/google/crypto/tink/streamingaead/StreamingAeadConfig;->AES_CTR_HMAC_STREAMINGAEAD_TYPE_URL:Ljava/lang/String;
-
     new-instance v0, Lcom/google/crypto/tink/streamingaead/AesGcmHkdfStreamingKeyManager;
 
     invoke-direct {v0}, Lcom/google/crypto/tink/streamingaead/AesGcmHkdfStreamingKeyManager;-><init>()V
-
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesGcmHkdfStreamingKey"
-
-    sput-object v0, Lcom/google/crypto/tink/streamingaead/StreamingAeadConfig;->AES_GCM_HKDF_STREAMINGAEAD_TYPE_URL:Ljava/lang/String;
 
     invoke-static {}, Lcom/google/crypto/tink/proto/RegistryConfig;->getDefaultInstance()Lcom/google/crypto/tink/proto/RegistryConfig;
 

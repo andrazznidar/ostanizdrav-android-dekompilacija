@@ -48,7 +48,7 @@
 
     const-class v1, Ljava/lang/Float;
 
-    const-string v2, "translationAlpha"
+    const-string/jumbo v2, "translationAlpha"
 
     invoke-direct {v0, v1, v2}, Landroidx/transition/ViewUtils$1;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
@@ -65,16 +65,6 @@
     return-void
 .end method
 
-.method public static getOverlay(Landroid/view/View;)Landroidx/transition/ViewOverlayImpl;
-    .locals 1
-
-    new-instance v0, Landroidx/transition/ViewOverlayApi18;
-
-    invoke-direct {v0, p0}, Landroidx/transition/ViewOverlayApi18;-><init>(Landroid/view/View;)V
-
-    return-object v0
-.end method
-
 .method public static getTransitionAlpha(Landroid/view/View;)F
     .locals 1
 
@@ -85,16 +75,6 @@
     move-result p0
 
     return p0
-.end method
-
-.method public static getWindowId(Landroid/view/View;)Landroidx/transition/WindowIdImpl;
-    .locals 1
-
-    new-instance v0, Landroidx/transition/WindowIdApi18;
-
-    invoke-direct {v0, p0}, Landroidx/transition/WindowIdApi18;-><init>(Landroid/view/View;)V
-
-    return-object v0
 .end method
 
 .method public static setLeftTopRightBottom(Landroid/view/View;IIII)V

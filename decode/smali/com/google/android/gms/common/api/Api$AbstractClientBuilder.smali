@@ -1,6 +1,6 @@
-.class public Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
+.class public abstract Lcom/google/android/gms/common/api/Api$AbstractClientBuilder;
 .super Lcom/google/android/gms/common/api/Api$BaseClientBuilder;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations

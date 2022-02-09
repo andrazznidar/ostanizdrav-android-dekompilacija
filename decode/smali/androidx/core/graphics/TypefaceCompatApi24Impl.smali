@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
     const/4 v0, 0x0
 
@@ -64,17 +64,15 @@
 
     aput-object v6, v5, v7
 
-    const/4 v6, 0x2
+    const/4 v8, 0x2
 
-    const-class v8, Ljava/util/List;
+    const-class v9, Ljava/util/List;
 
-    aput-object v8, v5, v6
+    aput-object v9, v5, v8
 
-    const/4 v6, 0x3
+    const/4 v8, 0x3
 
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v5, v6
+    aput-object v6, v5, v8
 
     const/4 v6, 0x4
 
@@ -164,6 +162,22 @@
 
 .method public static addFontWeightStyle(Ljava/lang/Object;Ljava/nio/ByteBuffer;IIZ)Z
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "family",
+            "buffer",
+            "ttcIndex",
+            "weight",
+            "style"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -227,6 +241,14 @@
 
 .method public static createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "family"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -268,6 +290,20 @@
 # virtual methods
 .method public createFromFontFamilyFilesResourceEntry(Landroid/content/Context;Landroidx/core/content/res/FontResourcesParserCompat$FontFamilyFilesResourceEntry;Landroid/content/res/Resources;I)Landroid/graphics/Typeface;
     .locals 16
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "entry",
+            "resources",
+            "style"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -312,7 +348,7 @@
 
     iget v0, v6, Landroidx/core/content/res/FontResourcesParserCompat$FontFileResourceEntry;->mResourceId:I
 
-    invoke-static/range {p1 .. p1}, Landroidx/core/app/AppOpsManagerCompat;->getTempFile(Landroid/content/Context;)Ljava/io/File;
+    invoke-static/range {p1 .. p1}, Landroidx/core/graphics/TypefaceCompatUtil;->getTempFile(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v7
 
@@ -324,7 +360,7 @@
 
     :cond_1
     :try_start_1
-    invoke-static {v7, v8, v0}, Landroidx/core/app/AppOpsManagerCompat;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
+    invoke-static {v7, v8, v0}, Landroidx/core/graphics/TypefaceCompatUtil;->copyToFile(Ljava/io/File;Landroid/content/res/Resources;I)Z
 
     move-result v0
     :try_end_1
@@ -449,6 +485,20 @@
 
 .method public createFromFontInfo(Landroid/content/Context;Landroid/os/CancellationSignal;[Landroidx/core/provider/FontsContractCompat$FontInfo;I)Landroid/graphics/Typeface;
     .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "cancellationSignal",
+            "fonts",
+            "style"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -499,7 +549,7 @@
 
     if-nez v7, :cond_1
 
-    invoke-static {p1, p2, v6}, Landroidx/core/app/AppOpsManagerCompat;->mmap(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
+    invoke-static {p1, p2, v6}, Landroidx/core/graphics/TypefaceCompatUtil;->mmap(Landroid/content/Context;Landroid/os/CancellationSignal;Landroid/net/Uri;)Ljava/nio/ByteBuffer;
 
     move-result-object v7
 

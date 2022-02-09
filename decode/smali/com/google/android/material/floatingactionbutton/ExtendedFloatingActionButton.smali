@@ -20,7 +20,31 @@
 
 
 # static fields
+.field public static final DEF_STYLE_RES:I
+
 .field public static final HEIGHT:Landroid/util/Property;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Property<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final PADDING_END:Landroid/util/Property;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/util/Property<",
+            "Landroid/view/View;",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final PADDING_START:Landroid/util/Property;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/Property<",
@@ -46,6 +70,8 @@
 # instance fields
 .field public animState:I
 
+.field public animateShowBeforeLayout:Z
+
 .field public final behavior:Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -56,13 +82,21 @@
     .end annotation
 .end field
 
-.field public final changeVisibilityTracker:Lcom/google/android/material/floatingactionbutton/AnimatorTracker;
+.field public final collapsedSize:I
 
 .field public final extendStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+
+.field public extendedPaddingEnd:I
+
+.field public extendedPaddingStart:I
 
 .field public final hideStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
 .field public isExtended:Z
+
+.field public isTransforming:Z
+
+.field public originalTextCsl:Landroid/content/res/ColorStateList;
 
 .field public final showStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
@@ -75,9 +109,13 @@
 
     const-class v0, Ljava/lang/Float;
 
+    sget v1, Lcom/google/android/material/R$style;->Widget_MaterialComponents_ExtendedFloatingActionButton_Icon:I
+
+    sput v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->DEF_STYLE_RES:I
+
     new-instance v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$4;
 
-    const-string v2, "width"
+    const-string/jumbo v2, "width"
 
     invoke-direct {v1, v0, v2}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$4;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
@@ -91,323 +129,197 @@
 
     sput-object v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->HEIGHT:Landroid/util/Property;
 
+    new-instance v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$6;
+
+    const-string v2, "paddingStart"
+
+    invoke-direct {v1, v0, v2}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$6;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+
+    sput-object v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->PADDING_START:Landroid/util/Property;
+
+    new-instance v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$7;
+
+    const-string v2, "paddingEnd"
+
+    invoke-direct {v1, v0, v2}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$7;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+
+    sput-object v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->PADDING_END:Landroid/util/Property;
+
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 12
+    .locals 16
 
-    const v0, 0x7f1302c3
+    move-object/from16 v0, p0
 
-    const v1, 0x7f04015a
+    move-object/from16 v7, p2
 
-    invoke-static {p1, p2, v1, v0}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    sget v8, Lcom/google/android/material/R$attr;->extendedFloatingActionButtonStyle:I
 
-    move-result-object p1
+    sget v9, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->DEF_STYLE_RES:I
 
-    invoke-direct {p0, p1, p2, v1}, Lcom/google/android/material/button/MaterialButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    move-object/from16 v1, p1
 
-    const/4 p1, 0x0
+    invoke-static {v1, v7, v8, v9}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
-    iput p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
+    move-result-object v1
 
-    new-instance v2, Lcom/google/android/material/floatingactionbutton/AnimatorTracker;
+    invoke-direct {v0, v1, v7, v8}, Lcom/google/android/material/button/MaterialButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    invoke-direct {v2}, Lcom/google/android/material/floatingactionbutton/AnimatorTracker;-><init>()V
+    const/4 v10, 0x0
 
-    iput-object v2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->changeVisibilityTracker:Lcom/google/android/material/floatingactionbutton/AnimatorTracker;
+    iput v10, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
 
-    new-instance v3, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ShowStrategy;
+    new-instance v1, Lcom/google/android/play/core/assetpacks/zzv;
 
-    invoke-direct {v3, p0, v2}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ShowStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/floatingactionbutton/AnimatorTracker;)V
+    invoke-direct {v1}, Lcom/google/android/play/core/assetpacks/zzv;-><init>()V
 
-    iput-object v3, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->showStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+    new-instance v11, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ShowStrategy;
 
-    new-instance v2, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;
+    invoke-direct {v11, v0, v1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ShowStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;)V
 
-    iget-object v3, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->changeVisibilityTracker:Lcom/google/android/material/floatingactionbutton/AnimatorTracker;
+    iput-object v11, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->showStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
-    invoke-direct {v2, p0, v3}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/floatingactionbutton/AnimatorTracker;)V
+    new-instance v12, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;
 
-    iput-object v2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->hideStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+    invoke-direct {v12, v0, v1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$HideStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;)V
 
-    const/4 v2, 0x1
+    iput-object v12, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->hideStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
-    iput-boolean v2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isExtended:Z
+    const/4 v13, 0x1
 
-    invoke-virtual {p0}, Landroid/widget/Button;->getContext()Landroid/content/Context;
+    iput-boolean v13, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isExtended:Z
 
-    move-result-object v9
+    iput-boolean v10, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isTransforming:Z
 
-    new-instance v3, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior;
+    iput-boolean v10, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animateShowBeforeLayout:Z
 
-    invoke-direct {v3, v9, p2}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/Button;->getContext()Landroid/content/Context;
 
-    iput-object v3, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->behavior:Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
+    move-result-object v14
 
-    sget-object v5, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton:[I
+    new-instance v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior;
 
-    new-array v8, p1, [I
+    invoke-direct {v1, v14, v7}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const v7, 0x7f1302c3
+    iput-object v1, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->behavior:Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;
 
-    const v6, 0x7f04015a
+    sget-object v3, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton:[I
 
-    move-object v3, v9
+    new-array v6, v10, [I
 
-    move-object v4, p2
+    move-object v1, v14
 
-    invoke-static/range {v3 .. v8}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+    move-object/from16 v2, p2
+
+    move v4, v8
+
+    move v5, v9
+
+    invoke-static/range {v1 .. v6}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+
+    move-result-object v1
+
+    sget v2, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton_showMotionSpec:I
+
+    invoke-static {v14, v1, v2}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
+
+    move-result-object v2
+
+    sget v3, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton_hideMotionSpec:I
+
+    invoke-static {v14, v1, v3}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
 
     move-result-object v3
 
-    const/4 v4, 0x3
+    sget v4, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton_extendMotionSpec:I
 
-    invoke-static {v9, v3, v4}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
+    invoke-static {v14, v1, v4}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
 
     move-result-object v4
 
-    const/4 v5, 0x2
+    sget v5, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton_shrinkMotionSpec:I
 
-    invoke-static {v9, v3, v5}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
+    invoke-static {v14, v1, v5}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
 
     move-result-object v5
 
-    invoke-static {v9, v3, v2}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
+    sget v6, Lcom/google/android/material/R$styleable;->ExtendedFloatingActionButton_collapsedSize:I
 
-    move-result-object v6
+    const/4 v15, -0x1
 
-    const/4 v7, 0x4
+    invoke-virtual {v1, v6, v15}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    invoke-static {v9, v3, v7}, Lcom/google/android/material/animation/MotionSpec;->createFromAttribute(Landroid/content/Context;Landroid/content/res/TypedArray;I)Lcom/google/android/material/animation/MotionSpec;
+    move-result v6
 
-    move-result-object v7
+    iput v6, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->collapsedSize:I
 
-    new-instance v8, Lcom/google/android/material/floatingactionbutton/AnimatorTracker;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingStart()I
 
-    invoke-direct {v8}, Lcom/google/android/material/floatingactionbutton/AnimatorTracker;-><init>()V
+    move-result v6
+
+    iput v6, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendedPaddingStart:I
+
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingEnd()I
+
+    move-result v6
+
+    iput v6, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendedPaddingEnd:I
+
+    new-instance v6, Lcom/google/android/play/core/assetpacks/zzv;
+
+    invoke-direct {v6}, Lcom/google/android/play/core/assetpacks/zzv;-><init>()V
+
+    new-instance v15, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;
+
+    new-instance v10, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$1;
+
+    invoke-direct {v10, v0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$1;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)V
+
+    invoke-direct {v15, v0, v6, v10, v13}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
+
+    iput-object v15, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
     new-instance v10, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;
 
-    new-instance v11, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$1;
+    new-instance v13, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;
 
-    invoke-direct {v11, p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$1;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)V
+    invoke-direct {v13, v0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)V
 
-    invoke-direct {v10, p0, v8, v11, v2}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/floatingactionbutton/AnimatorTracker;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
+    const/4 v7, 0x0
 
-    iput-object v10, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+    invoke-direct {v10, v0, v6, v13, v7}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/play/core/assetpacks/zzv;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
 
-    new-instance v2, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;
+    iput-object v10, v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->shrinkStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
 
-    new-instance v10, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;
+    iput-object v2, v11, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-    invoke-direct {v10, p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)V
+    iput-object v3, v12, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-    invoke-direct {v2, p0, v8, v10, p1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ChangeSizeStrategy;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/floatingactionbutton/AnimatorTracker;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$Size;Z)V
+    iput-object v4, v15, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-    iput-object v2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->shrinkStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+    iput-object v5, v10, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
 
-    iget-object p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->showStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    check-cast p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;
+    sget-object v1, Lcom/google/android/material/shape/ShapeAppearanceModel;->PILL:Lcom/google/android/material/shape/CornerSize;
 
-    iput-object v4, p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
+    move-object/from16 v2, p2
 
-    iget-object p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->hideStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+    invoke-static {v14, v2, v8, v9, v1}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
-    check-cast p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;
+    move-result-object v1
 
-    iput-object v5, p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
+    invoke-virtual {v1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->build()Lcom/google/android/material/shape/ShapeAppearanceModel;
 
-    iget-object p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendStrategy:Lcom/google/android/material/floatingactionbutton/MotionStrategy;
+    move-result-object v1
 
-    check-cast p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;
+    invoke-virtual {v0, v1}, Lcom/google/android/material/button/MaterialButton;->setShapeAppearanceModel(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
 
-    iput-object v6, p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
-
-    iput-object v7, v2, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->motionSpec:Lcom/google/android/material/animation/MotionSpec;
-
-    invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
-
-    sget-object p1, Lcom/google/android/material/shape/ShapeAppearanceModel;->PILL:Lcom/google/android/material/shape/CornerSize;
-
-    invoke-static {v9, p2, v1, v0, p1}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;->build()Lcom/google/android/material/shape/ShapeAppearanceModel;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lcom/google/android/material/button/MaterialButton;->setShapeAppearanceModel(Lcom/google/android/material/shape/ShapeAppearanceModel;)V
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->saveOriginalTextCsl()V
 
     return-void
-.end method
-
-.method public static access$200(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/floatingactionbutton/MotionStrategy;)V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_4
-
-    invoke-interface {p1}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->shouldCancel()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    goto :goto_2
-
-    :cond_0
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {p0}, Landroid/widget/Button;->isInEditMode()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    :goto_0
-    if-nez v1, :cond_2
-
-    invoke-interface {p1}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->performNow()V
-
-    invoke-interface {p1, v0}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->onChange(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$OnChangedCallback;)V
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p0, v2, v2}, Landroid/widget/Button;->measure(II)V
-
-    invoke-interface {p1}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->createAnimator()Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$3;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$3;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/floatingactionbutton/MotionStrategy;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    check-cast p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;
-
-    iget-object p0, p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->listeners:Ljava/util/ArrayList;
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/animation/Animator$AnimatorListener;
-
-    invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
-
-    :goto_2
-    return-void
-
-    :cond_4
-    throw v0
-.end method
-
-.method public static access$700(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)Z
-    .locals 3
-
-    invoke-virtual {p0}, Landroid/widget/Button;->getVisibility()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_0
-
-    iget p0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
-
-    const/4 v0, 0x2
-
-    if-ne p0, v0, :cond_1
-
-    :goto_0
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_0
-    iget p0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
-
-    if-eq p0, v2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    return v1
-.end method
-
-.method public static access$800(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;)Z
-    .locals 3
-
-    invoke-virtual {p0}, Landroid/widget/Button;->getVisibility()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-nez v0, :cond_0
-
-    iget p0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
-
-    if-ne p0, v2, :cond_1
-
-    :goto_0
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_0
-    iget p0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
-
-    const/4 v0, 0x2
-
-    if-eq p0, v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    return v1
 .end method
 
 
@@ -428,10 +340,34 @@
     return-object v0
 .end method
 
+.method public getCollapsedPadding()I
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->getCollapsedSize()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lcom/google/android/material/button/MaterialButton;->getIconSize()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    div-int/lit8 v0, v0, 0x2
+
+    return v0
+.end method
+
 .method public getCollapsedSize()I
     .locals 2
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getPaddingStart(Landroid/view/View;)I
+    iget v0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->collapsedSize:I
+
+    if-gez v0, :cond_0
+
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingStart()I
 
     move-result v0
 
@@ -449,9 +385,10 @@
 
     move-result v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v0, v1
 
-    return v1
+    :cond_0
+    return v0
 .end method
 
 .method public getExtendMotionSpec()Lcom/google/android/material/animation/MotionSpec;
@@ -502,6 +439,41 @@
     return-object v0
 .end method
 
+.method public final isOrWillBeShown()Z
+    .locals 4
+
+    invoke-virtual {p0}, Landroid/widget/Button;->getVisibility()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1
+
+    iget v0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
+
+    const/4 v3, 0x2
+
+    if-ne v0, v3, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    return v1
+
+    :cond_1
+    iget v0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animState:I
+
+    if-eq v0, v2, :cond_2
+
+    move v1, v2
+
+    :cond_2
+    return v1
+.end method
+
 .method public onAttachedToWindow()V
     .locals 1
 
@@ -536,6 +508,127 @@
     invoke-interface {v0}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->performNow()V
 
     :cond_0
+    return-void
+.end method
+
+.method public final performMotion(Lcom/google/android/material/floatingactionbutton/MotionStrategy;Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$OnChangedCallback;)V
+    .locals 1
+
+    invoke-interface {p1}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->shouldCancel()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    return-void
+
+    :cond_0
+    sget-object p2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->isLaidOut()Z
+
+    move-result p2
+
+    const/4 v0, 0x0
+
+    if-nez p2, :cond_1
+
+    invoke-virtual {p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isOrWillBeShown()Z
+
+    move-result p2
+
+    if-nez p2, :cond_2
+
+    iget-boolean p2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animateShowBeforeLayout:Z
+
+    if-eqz p2, :cond_2
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/widget/Button;->isInEditMode()Z
+
+    move-result p2
+
+    if-nez p2, :cond_2
+
+    const/4 p2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    move p2, v0
+
+    :goto_0
+    if-nez p2, :cond_3
+
+    invoke-interface {p1}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->performNow()V
+
+    const/4 p2, 0x0
+
+    invoke-interface {p1, p2}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->onChange(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$OnChangedCallback;)V
+
+    return-void
+
+    :cond_3
+    invoke-virtual {p0, v0, v0}, Landroid/widget/Button;->measure(II)V
+
+    invoke-interface {p1}, Lcom/google/android/material/floatingactionbutton/MotionStrategy;->createAnimator()Landroid/animation/AnimatorSet;
+
+    move-result-object p2
+
+    new-instance v0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$3;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$3;-><init>(Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/floatingactionbutton/MotionStrategy;)V
+
+    invoke-virtual {p2, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    check-cast p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;
+
+    iget-object p1, p1, Lcom/google/android/material/floatingactionbutton/BaseMotionStrategy;->listeners:Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/animation/Animator$AnimatorListener;
+
+    invoke-virtual {p2, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {p2}, Landroid/animation/Animator;->start()V
+
+    return-void
+.end method
+
+.method public final saveOriginalTextCsl()V
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/widget/Button;->getTextColors()Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->originalTextCsl:Landroid/content/res/ColorStateList;
+
+    return-void
+.end method
+
+.method public setAnimateShowBeforeLayout(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->animateShowBeforeLayout:Z
+
     return-void
 .end method
 
@@ -629,6 +722,58 @@
     return-void
 .end method
 
+.method public setPadding(IIII)V
+    .locals 0
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    iget-boolean p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isExtended:Z
+
+    if-eqz p1, :cond_0
+
+    iget-boolean p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isTransforming:Z
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingStart()I
+
+    move-result p1
+
+    iput p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendedPaddingStart:I
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingEnd()I
+
+    move-result p1
+
+    iput p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendedPaddingEnd:I
+
+    :cond_0
+    return-void
+.end method
+
+.method public setPaddingRelative(IIII)V
+    .locals 0
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setPaddingRelative(IIII)V
+
+    iget-boolean p2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isExtended:Z
+
+    if-eqz p2, :cond_0
+
+    iget-boolean p2, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->isTransforming:Z
+
+    if-nez p2, :cond_0
+
+    iput p1, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendedPaddingStart:I
+
+    iput p3, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->extendedPaddingEnd:I
+
+    :cond_0
+    return-void
+.end method
+
 .method public setShowMotionSpec(Lcom/google/android/material/animation/MotionSpec;)V
     .locals 1
 
@@ -681,6 +826,34 @@
     move-result-object p1
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->setShrinkMotionSpec(Lcom/google/android/material/animation/MotionSpec;)V
+
+    return-void
+.end method
+
+.method public setTextColor(I)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    invoke-virtual {p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->saveOriginalTextCsl()V
+
+    return-void
+.end method
+
+.method public setTextColor(Landroid/content/res/ColorStateList;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    invoke-virtual {p0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->saveOriginalTextCsl()V
+
+    return-void
+.end method
+
+.method public silentlyUpdateTextColor(Landroid/content/res/ColorStateList;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     return-void
 .end method

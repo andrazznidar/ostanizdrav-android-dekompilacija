@@ -3,7 +3,7 @@
 .source "DetailsLowRiskBox.kt"
 
 # interfaces
-.implements Lde/rki/coronawarnapp/tracing/ui/details/items/DetailsItem;
+.implements Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/RiskDetailsStateItem;
 
 
 # annotations
@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public final matchedKeyCount:I
+.field public final matchedRiskCount:I
 
 .field public final riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
@@ -35,7 +35,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    iput p2, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedKeyCount:I
+    iput p2, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedRiskCount:I
 
     return-void
 .end method
@@ -43,52 +43,53 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
-
-    iget-object v1, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedKeyCount:I
-
-    iget p1, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedKeyCount:I
-
-    if-ne v0, p1, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    const/4 p1, 0x0
+    instance-of v1, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;
 
-    return p1
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    :goto_0
-    const/4 p1, 0x1
+    check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;
 
-    return p1
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+
+    if-eq v1, v3, :cond_2
+
+    return v2
+
+    :cond_2
+    iget v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedRiskCount:I
+
+    iget p1, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedRiskCount:I
+
+    if-eq v1, p1, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
 .end method
 
 .method public getStableId()J
     .locals 2
 
-    const v0, -0x4d9af5c6
+    invoke-static {p0}, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/RiskDetailsStateItem$DefaultImpls;->getStableId(Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/RiskDetailsStateItem;)J
 
-    int-to-long v0, v0
+    move-result-wide v0
 
     return-wide v0
 .end method
@@ -98,21 +99,13 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedKeyCount:I
+    iget v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedRiskCount:I
 
     add-int/2addr v0, v1
 
@@ -120,27 +113,33 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
-    const-string v0, "Item(riskState="
+    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedRiskCount:I
 
-    move-result-object v0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v3, "Item(riskState="
 
-    const-string v1, ", matchedKeyCount="
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;->matchedKeyCount:I
+    const-string v0, ", matchedRiskCount="
 
-    const-string v2, ")"
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

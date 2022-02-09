@@ -3,12 +3,12 @@
 .source "DebugLogViewModel.kt"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function4;
+.implements Lkotlin/jvm/functions/Function3;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/TimeStamper;Lde/rki/coronawarnapp/util/sharing/FileSharing;Lde/rki/coronawarnapp/nearby/ENFClient;)V
+    value = Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;-><init>(Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/bugreporting/BugReportingSettings;Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,10 +19,9 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
-        "Lkotlin/jvm/functions/Function4<",
-        "Lkotlin/Unit;",
-        "Lkotlin/Unit;",
+        "Lkotlin/jvm/functions/Function3<",
         "Ljava/lang/Boolean;",
+        "Lde/rki/coronawarnapp/bugreporting/debuglog/LogState;",
         "Lkotlin/coroutines/Continuation<",
         "-",
         "Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;",
@@ -41,188 +40,85 @@
 
 
 # instance fields
-.field public synthetic Z$0:Z
+.field public synthetic L$0:Ljava/lang/Object;
 
-.field public final synthetic this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
+.field public synthetic Z$0:Z
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(Lkotlin/coroutines/Continuation;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;",
+            ">;)V"
+        }
+    .end annotation
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
+    const/4 v0, 0x3
 
-    const/4 p1, 0x4
-
-    invoke-direct {p0, p1, p2}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, v0, p1}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lkotlin/Unit;
+    check-cast p1, Ljava/lang/Boolean;
 
-    check-cast p2, Lkotlin/Unit;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    check-cast p3, Ljava/lang/Boolean;
+    move-result p1
 
-    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
+    check-cast p2, Lde/rki/coronawarnapp/bugreporting/debuglog/LogState;
 
-    move-result p3
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    check-cast p4, Lkotlin/coroutines/Continuation;
+    new-instance v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;
 
-    const-string v0, "<anonymous parameter 0>"
+    invoke-direct {v0, p3}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-boolean p1, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->Z$0:Z
 
-    const-string p1, "<anonymous parameter 1>"
+    iput-object p2, v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->L$0:Ljava/lang/Object;
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    const-string p1, "continuation"
-
-    invoke-static {p4, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
-
-    invoke-interface {p4}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
-
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    new-instance p2, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;
-
-    iget-object p4, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;->debugLogger:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
-
-    invoke-virtual {p4}, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;->isLogging()Z
-
-    move-result p4
-
-    iget-object v0, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;->debugLogger:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;->getRunningLog$Corona_Warn_App_deviceRelease()Ljava/io/File;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/io/File;->length()J
-
-    move-result-wide v0
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;->debugLogger:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;->getSharedDirectory()Ljava/io/File;
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object p1
-
-    const-wide/16 v2, 0x0
-
-    if-eqz p1, :cond_0
-
-    array-length v4, p1
-
-    const/4 v5, 0x0
-
-    :goto_0
-    if-ge v5, v4, :cond_0
-
-    aget-object v6, p1, v5
-
-    invoke-virtual {v6}, Ljava/io/File;->length()J
-
-    move-result-wide v6
-
-    add-long/2addr v2, v6
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    add-long/2addr v0, v2
-
-    invoke-direct {p2, p4, p3, v0, v1}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;-><init>(ZZJ)V
-
-    return-object p2
+    return-object p1
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+    .locals 6
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-boolean p1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->Z$0:Z
+    iget-boolean v3, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->Z$0:Z
 
-    new-instance v0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;
+    iget-object p1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->L$0:Ljava/lang/Object;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
+    check-cast p1, Lde/rki/coronawarnapp/bugreporting/debuglog/LogState;
 
-    iget-object v1, v1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;->debugLogger:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
+    iget-boolean v1, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/LogState;->isLogging:Z
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;->isLogging()Z
+    iget-boolean v2, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/LogState;->isLowStorage:Z
 
-    move-result v1
+    iget-wide v4, p1, Lde/rki/coronawarnapp/bugreporting/debuglog/LogState;->logSize:J
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
+    new-instance p1, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;->debugLogger:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
+    move-object v0, p1
 
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;->getRunningLog$Corona_Warn_App_deviceRelease()Ljava/io/File;
+    invoke-direct/range {v0 .. v5}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;-><init>(ZZZJ)V
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/io/File;->length()J
-
-    move-result-wide v2
-
-    iget-object v4, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$state$1;->this$0:Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel;->debugLogger:Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;
-
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/bugreporting/debuglog/DebugLogger;->getSharedDirectory()Ljava/io/File;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v4
-
-    const-wide/16 v5, 0x0
-
-    if-eqz v4, :cond_0
-
-    array-length v7, v4
-
-    const/4 v8, 0x0
-
-    :goto_0
-    if-ge v8, v7, :cond_0
-
-    aget-object v9, v4, v8
-
-    invoke-virtual {v9}, Ljava/io/File;->length()J
-
-    move-result-wide v9
-
-    add-long/2addr v5, v9
-
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    add-long/2addr v2, v5
-
-    invoke-direct {v0, v1, p1, v2, v3}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel$State;-><init>(ZZJ)V
-
-    return-object v0
+    return-object p1
 .end method

@@ -37,13 +37,15 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 10
+    .locals 11
 
     iget-object v0, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$viewBinding$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    if-eqz v0, :cond_2
+    const-string v1, "rootView"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
 
@@ -51,98 +53,81 @@
 
     invoke-direct {v1, v0, v0}, Lde/rki/coronawarnapp/databinding/HomeStatisticsScrollcontainerBinding;-><init>(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView;)V
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsScrollcontainerBinding;->statisticsRecyclerview:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object v2, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$viewBinding$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
+    invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$viewBinding$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
+    iget-object v4, v2, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->statisticsCardAdapter$delegate:Lkotlin/Lazy;
 
-    iget-object v3, v3, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->statisticsCardAdapter$delegate:Lkotlin/Lazy;
+    invoke-interface {v4}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
-    invoke-interface {v3}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    move-result-object v4
 
-    move-result-object v3
+    check-cast v4, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardAdapter;
 
-    check-cast v3, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardAdapter;
+    invoke-virtual {v0, v4}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->getStatisticsLayoutManager()Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$viewBinding$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
+    move-result-object v4
 
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->getStatisticsLayoutManager()Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;
+    invoke-virtual {v0, v4}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    move-result-object v3
+    new-instance v4, Landroidx/recyclerview/widget/DefaultItemAnimator;
 
-    invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+    invoke-direct {v4}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
-    new-instance v3, Landroidx/recyclerview/widget/DefaultItemAnimator;
+    invoke-virtual {v0, v4}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    invoke-direct {v3}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
+    new-instance v4, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardPaddingDecorator;
 
-    invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
+    const v6, 0x7f0701ee
 
-    new-instance v3, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardPaddingDecorator;
+    const v7, 0x7f0701ef
 
-    const v5, 0x7f0701a2
+    const/4 v8, 0x0
 
-    const v8, 0x7f0701a3
+    const v9, 0x7f0701ef
 
-    const/4 v7, 0x0
+    const/4 v10, 0x4
 
-    const v6, 0x7f0701a3
+    move-object v5, v4
 
-    const/4 v9, 0x4
+    invoke-direct/range {v5 .. v10}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardPaddingDecorator;-><init>(IIIII)V
 
-    move-object v4, v3
+    invoke-virtual {v0, v4}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    invoke-direct/range {v4 .. v9}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardPaddingDecorator;-><init>(IIIII)V
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
+    move-result-object v2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$viewBinding$1;->this$0:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
+    const-string v4, "<this>"
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getResources()Landroid/content/res/Resources;
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v0
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    const-string v3, "$this$isPhone"
+    move-result-object v2
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iget v2, v2, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    const/16 v4, 0x258
 
-    move-result-object v0
+    if-ge v2, v4, :cond_0
 
-    iget v0, v0, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
-
-    const/16 v3, 0x258
-
-    if-ge v0, v3, :cond_0
-
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     :cond_0
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    new-instance v0, Landroidx/recyclerview/widget/PagerSnapHelper;
+    new-instance v2, Landroidx/recyclerview/widget/PagerSnapHelper;
 
-    invoke-direct {v0}, Landroidx/recyclerview/widget/PagerSnapHelper;-><init>()V
+    invoke-direct {v2}, Landroidx/recyclerview/widget/PagerSnapHelper;-><init>()V
 
-    iget-object v2, v1, Lde/rki/coronawarnapp/databinding/HomeStatisticsScrollcontainerBinding;->statisticsRecyclerview:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/SnapHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
+    invoke-virtual {v2, v0}, Landroidx/recyclerview/widget/SnapHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
 
     :cond_1
     return-object v1
-
-    :cond_2
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "rootView"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

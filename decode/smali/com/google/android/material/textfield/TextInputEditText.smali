@@ -11,41 +11,51 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 8
+    .locals 10
 
-    const/4 v0, 0x0
+    sget v6, Lcom/google/android/material/R$attr;->editTextStyle:I
 
-    const v1, 0x7f040136
+    const/4 v7, 0x0
 
-    invoke-static {p1, p2, v1, v0}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    invoke-static {p1, p2, v6, v7}, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {p0, v2, p2, v1}, Landroidx/appcompat/widget/AppCompatEditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, v0, p2, v6}, Landroidx/appcompat/widget/AppCompatEditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/material/textfield/TextInputEditText;->parentRect:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/google/android/material/textfield/TextInputEditText;->parentRect:Landroid/graphics/Rect;
 
-    sget-object v4, Lcom/google/android/material/R$styleable;->TextInputEditText:[I
+    sget-object v8, Lcom/google/android/material/R$styleable;->TextInputEditText:[I
 
-    new-array v7, v0, [I
+    sget v9, Lcom/google/android/material/R$style;->Widget_Design_TextInputEditText:I
 
-    const v6, 0x7f130296
+    new-array v5, v7, [I
 
-    const v5, 0x7f040136
+    invoke-static {p1, p2, v6, v9}, Lcom/google/android/material/internal/ThemeEnforcement;->checkCompatibleTheme(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    move-object v2, p1
+    move-object v0, p1
 
-    move-object v3, p2
+    move-object v1, p2
 
-    invoke-static/range {v2 .. v7}, Lcom/google/android/material/internal/ThemeEnforcement;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+    move-object v2, v8
+
+    move v3, v6
+
+    move v4, v9
+
+    invoke-static/range {v0 .. v5}, Lcom/google/android/material/internal/ThemeEnforcement;->checkTextAppearance(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
+
+    invoke-virtual {p1, p2, v8, v6, v9}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget p2, Lcom/google/android/material/R$styleable;->TextInputEditText_textInputLayoutFocusedRectEnabled:I
+
+    invoke-virtual {p1, p2, v7}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p2
 
@@ -116,7 +126,7 @@
 .method public getFocusedRect(Landroid/graphics/Rect;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/widget/EditText;->getFocusedRect(Landroid/graphics/Rect;)V
+    invoke-super {p0, p1}, Landroid/widget/TextView;->getFocusedRect(Landroid/graphics/Rect;)V
 
     invoke-direct {p0}, Lcom/google/android/material/textfield/TextInputEditText;->getTextInputLayout()Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -147,7 +157,7 @@
 .method public getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
     .locals 3
 
-    invoke-super {p0, p1, p2}, Landroid/widget/EditText;->getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
+    invoke-super {p0, p1, p2}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
 
     move-result v0
 
@@ -197,7 +207,7 @@
     return-object v0
 
     :cond_0
-    invoke-super {p0}, Landroid/widget/EditText;->getHint()Ljava/lang/CharSequence;
+    invoke-super {p0}, Landroid/widget/TextView;->getHint()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -207,7 +217,7 @@
 .method public onAttachedToWindow()V
     .locals 2
 
-    invoke-super {p0}, Landroid/widget/EditText;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
 
     invoke-direct {p0}, Lcom/google/android/material/textfield/TextInputEditText;->getTextInputLayout()Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -219,7 +229,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0}, Landroid/widget/EditText;->getHint()Ljava/lang/CharSequence;
+    invoke-super {p0}, Landroid/widget/TextView;->getHint()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -275,7 +285,7 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/EditText;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     invoke-direct {p0}, Lcom/google/android/material/textfield/TextInputEditText;->getTextInputLayout()Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -285,7 +295,7 @@
 .method public requestRectangleOnScreen(Landroid/graphics/Rect;)Z
     .locals 6
 
-    invoke-super {p0, p1}, Landroid/widget/EditText;->requestRectangleOnScreen(Landroid/graphics/Rect;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->requestRectangleOnScreen(Landroid/graphics/Rect;)Z
 
     move-result p1
 
@@ -311,7 +321,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f07013a
+    sget v5, Lcom/google/android/material/R$dimen;->mtrl_edittext_rectangle_top_offset:I
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

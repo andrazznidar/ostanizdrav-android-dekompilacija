@@ -126,9 +126,7 @@
 
     new-instance p1, Ljava/util/ArrayList;
 
-    iget-object p2, p0, Landroidx/work/impl/WorkContinuationImpl;->mWork:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    invoke-interface {p4}, Ljava/util/List;->size()I
 
     move-result p2
 
@@ -340,7 +338,7 @@
 
     iget-object v1, v1, Landroidx/work/impl/WorkContinuationImpl;->mIds:Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v0, v1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_0
 

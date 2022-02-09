@@ -1,9 +1,9 @@
 .class public final Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$5;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "HomeFragment.kt"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -14,6 +14,19 @@
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x19
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Ljava/util/List<",
+        "+",
+        "Lde/rki/coronawarnapp/ui/main/home/items/HomeItem;",
+        ">;",
+        "Lkotlin/Unit;",
+        ">;"
+    }
 .end annotation
 
 
@@ -27,25 +40,35 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 2
+.method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
+    check-cast p1, Ljava/util/List;
 
-    new-instance v0, Landroidx/navigation/ActionOnlyNavDirections;
+    const-string v0, "it"
 
-    const v1, 0x7f090058
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Landroidx/navigation/ActionOnlyNavDirections;-><init>(I)V
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$5;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    iget-object v0, v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->homeAdapter:Lde/rki/coronawarnapp/ui/main/home/HomeAdapter;
 
-    return-void
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    invoke-static {v0, p1, v1, v2}, Lde/rki/coronawarnapp/util/lists/diffutil/SmartDiffUtilKt;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
 .end method

@@ -43,255 +43,6 @@
 
 
 # virtual methods
-.method public onCreate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-    .locals 3
-
-    const-string v0, "SELECT count(*) FROM sqlite_master WHERE name != \'android_metadata\'"
-
-    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    :try_start_0
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v1, :cond_0
-
-    const/4 v2, 0x1
-
-    :cond_0
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    iget-object v0, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
-
-    invoke-virtual {v0, p1}, Landroidx/room/RoomOpenHelper$Delegate;->createAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-
-    if-nez v2, :cond_2
-
-    iget-object v0, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
-
-    invoke-virtual {v0, p1}, Landroidx/room/RoomOpenHelper$Delegate;->onValidateSchema(Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/room/RoomOpenHelper$ValidationResult;
-
-    move-result-object v0
-
-    iget-boolean v1, v0, Landroidx/room/RoomOpenHelper$ValidationResult;->isValid:Z
-
-    if-eqz v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Pre-packaged database has an invalid schema: "
-
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v0, v0, Landroidx/room/RoomOpenHelper$ValidationResult;->expectedFoundMsg:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p0, p1}, Landroidx/room/RoomOpenHelper;->updateIdentity(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-
-    iget-object v0, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
-
-    invoke-virtual {v0, p1}, Landroidx/room/RoomOpenHelper$Delegate;->onCreate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    throw p1
-.end method
-
-.method public onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-    .locals 4
-
-    const-string v0, "SELECT 1 FROM sqlite_master WHERE type = \'table\' AND name=\'room_master_table\'"
-
-    invoke-interface {p1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    :try_start_0
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v2
-
-    :goto_0
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    const/4 v0, 0x0
-
-    if-eqz v1, :cond_3
-
-    new-instance v1, Landroidx/sqlite/db/SimpleSQLiteQuery;
-
-    const-string v3, "SELECT identity_hash FROM room_master_table WHERE id = 42 LIMIT 1"
-
-    invoke-direct {v1, v3}, Landroidx/sqlite/db/SimpleSQLiteQuery;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Landroidx/sqlite/db/SupportSQLiteQuery;)Landroid/database/Cursor;
-
-    move-result-object v1
-
-    :try_start_1
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_1
-
-    :cond_1
-    move-object v2, v0
-
-    :goto_1
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    iget-object v1, p0, Landroidx/room/RoomOpenHelper;->mIdentityHash:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    iget-object v1, p0, Landroidx/room/RoomOpenHelper;->mLegacyHash:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Room cannot verify the data integrity. Looks like you\'ve changed schema but forgot to update the version number. You can simply fix this by increasing the version number."
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_0
-    move-exception p1
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    throw p1
-
-    :cond_3
-    iget-object v1, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
-
-    invoke-virtual {v1, p1}, Landroidx/room/RoomOpenHelper$Delegate;->onValidateSchema(Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/room/RoomOpenHelper$ValidationResult;
-
-    move-result-object v1
-
-    iget-boolean v2, v1, Landroidx/room/RoomOpenHelper$ValidationResult;->isValid:Z
-
-    if-eqz v2, :cond_5
-
-    iget-object v1, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
-
-    invoke-virtual {v1, p1}, Landroidx/room/RoomOpenHelper$Delegate;->onPostMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-
-    invoke-virtual {p0, p1}, Landroidx/room/RoomOpenHelper;->updateIdentity(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-
-    :cond_4
-    :goto_2
-    iget-object v1, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
-
-    invoke-virtual {v1, p1}, Landroidx/room/RoomOpenHelper$Delegate;->onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
-
-    iput-object v0, p0, Landroidx/room/RoomOpenHelper;->mConfiguration:Landroidx/room/DatabaseConfiguration;
-
-    return-void
-
-    :cond_5
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Pre-packaged database has an invalid schema: "
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, v1, Landroidx/room/RoomOpenHelper$ValidationResult;->expectedFoundMsg:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_1
-    move-exception p1
-
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    throw p1
-.end method
-
 .method public onUpgrade(Landroidx/sqlite/db/SupportSQLiteDatabase;II)V
     .locals 11
 
@@ -301,13 +52,11 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
     iget-object v0, v0, Landroidx/room/DatabaseConfiguration;->migrationContainer:Landroidx/room/RoomDatabase$MigrationContainer;
 
-    const/4 v3, 0x0
-
-    if-eqz v0, :cond_d
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-ne p2, p3, :cond_0
 
@@ -320,58 +69,60 @@
     :cond_0
     if-le p3, p2, :cond_1
 
-    move v4, v1
+    move v3, v1
 
     goto :goto_0
 
     :cond_1
-    move v4, v2
+    move v3, v2
 
     :goto_0
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    move v6, p2
+    move v5, p2
 
     :cond_2
-    if-eqz v4, :cond_3
+    if-eqz v3, :cond_3
 
-    if-ge v6, p3, :cond_a
+    if-ge v5, p3, :cond_a
 
     goto :goto_1
 
     :cond_3
-    if-le v6, p3, :cond_a
+    if-le v5, p3, :cond_a
 
     :goto_1
-    iget-object v7, v0, Landroidx/room/RoomDatabase$MigrationContainer;->mMigrations:Ljava/util/HashMap;
+    iget-object v6, v0, Landroidx/room/RoomDatabase$MigrationContainer;->mMigrations:Ljava/util/HashMap;
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    check-cast v7, Ljava/util/TreeMap;
+    invoke-virtual {v6, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v7, :cond_4
+    move-result-object v6
+
+    check-cast v6, Ljava/util/TreeMap;
+
+    const/4 v7, 0x0
+
+    if-nez v6, :cond_4
 
     goto :goto_6
 
     :cond_4
-    if-eqz v4, :cond_5
+    if-eqz v3, :cond_5
 
-    invoke-virtual {v7}, Ljava/util/TreeMap;->descendingKeySet()Ljava/util/NavigableSet;
+    invoke-virtual {v6}, Ljava/util/TreeMap;->descendingKeySet()Ljava/util/NavigableSet;
 
     move-result-object v8
 
     goto :goto_2
 
     :cond_5
-    invoke-virtual {v7}, Ljava/util/TreeMap;->keySet()Ljava/util/Set;
+    invoke-virtual {v6}, Ljava/util/TreeMap;->keySet()Ljava/util/Set;
 
     move-result-object v8
 
@@ -397,18 +148,18 @@
 
     move-result v9
 
-    if-eqz v4, :cond_7
+    if-eqz v3, :cond_7
 
     if-gt v9, p3, :cond_8
 
-    if-le v9, v6, :cond_8
+    if-le v9, v5, :cond_8
 
     goto :goto_3
 
     :cond_7
     if-lt v9, p3, :cond_8
 
-    if-ge v9, v6, :cond_8
+    if-ge v9, v5, :cond_8
 
     :goto_3
     move v10, v1
@@ -423,36 +174,36 @@
 
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v7, v6}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move v7, v1
+    move v6, v1
 
-    move v6, v9
+    move v5, v9
 
     goto :goto_5
 
     :cond_9
-    move v7, v2
+    move v6, v2
 
     :goto_5
-    if-nez v7, :cond_2
-
-    goto :goto_6
-
-    :cond_a
-    move-object v3, v5
+    if-nez v6, :cond_2
 
     :goto_6
-    move-object v0, v3
+    move-object v0, v7
+
+    goto :goto_7
+
+    :cond_a
+    move-object v0, v4
 
     :goto_7
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
     iget-object v2, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
 
@@ -503,7 +254,7 @@
 
     const-string p2, "Migration didn\'t properly handle: "
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -520,23 +271,20 @@
     throw p1
 
     :cond_d
-    throw v3
-
-    :cond_e
     move v1, v2
 
     :goto_9
-    if-nez v1, :cond_10
+    if-nez v1, :cond_f
 
     iget-object v0, p0, Landroidx/room/RoomOpenHelper;->mConfiguration:Landroidx/room/DatabaseConfiguration;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     invoke-virtual {v0, p2, p3}, Landroidx/room/DatabaseConfiguration;->isMigrationRequired(II)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_e
 
     iget-object p2, p0, Landroidx/room/RoomOpenHelper;->mDelegate:Landroidx/room/RoomOpenHelper$Delegate;
 
@@ -548,30 +296,16 @@
 
     goto :goto_a
 
-    :cond_f
+    :cond_e
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "A migration from "
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, " to "
 
-    const-string v1, "A migration from "
+    const-string v2, " was required but not found. Please provide the necessary Migration path via RoomDatabase.Builder.addMigration(Migration ...) or allow for destructive migrations via one of the RoomDatabase.Builder.fallbackToDestructiveMigration* methods."
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p2, " to "
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p2, " was required but not found. Please provide the necessary Migration path via RoomDatabase.Builder.addMigration(Migration ...) or allow for destructive migrations via one of the RoomDatabase.Builder.fallbackToDestructiveMigration* methods."
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p2, v1, p3, v2}, Landroidx/room/RoomOpenHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -579,7 +313,7 @@
 
     throw p1
 
-    :cond_10
+    :cond_f
     :goto_a
     return-void
 .end method

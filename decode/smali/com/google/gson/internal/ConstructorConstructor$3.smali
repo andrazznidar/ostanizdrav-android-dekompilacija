@@ -11,7 +11,8 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/google/gson/internal/ObjectConstructor<",
-        "TT;>;"
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
@@ -37,7 +38,8 @@
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT;"
+            "()",
+            "Ljava/lang/Object;"
         }
     .end annotation
 
@@ -74,7 +76,7 @@
 
     new-instance v3, Ljava/lang/RuntimeException;
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -101,7 +103,7 @@
 
     new-instance v3, Ljava/lang/RuntimeException;
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

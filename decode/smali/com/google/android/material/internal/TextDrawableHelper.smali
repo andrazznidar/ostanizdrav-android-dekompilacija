@@ -114,7 +114,7 @@
 .end method
 
 .method public setTextAppearance(Lcom/google/android/material/resources/TextAppearance;Landroid/content/Context;)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/google/android/material/internal/TextDrawableHelper;->textAppearance:Lcom/google/android/material/resources/TextAppearance;
 
@@ -128,17 +128,7 @@
 
     iget-object v1, p0, Lcom/google/android/material/internal/TextDrawableHelper;->fontCallback:Lcom/google/android/material/resources/TextAppearanceFontCallback;
 
-    invoke-virtual {p1}, Lcom/google/android/material/resources/TextAppearance;->createFallbackFont()V
-
-    iget-object v2, p1, Lcom/google/android/material/resources/TextAppearance;->font:Landroid/graphics/Typeface;
-
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/material/resources/TextAppearance;->updateTextPaintMeasureState(Landroid/text/TextPaint;Landroid/graphics/Typeface;)V
-
-    new-instance v2, Lcom/google/android/material/resources/TextAppearance$2;
-
-    invoke-direct {v2, p1, v0, v1}, Lcom/google/android/material/resources/TextAppearance$2;-><init>(Lcom/google/android/material/resources/TextAppearance;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
-
-    invoke-virtual {p1, p2, v2}, Lcom/google/android/material/resources/TextAppearance;->getFontAsync(Landroid/content/Context;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
+    invoke-virtual {p1, p2, v0, v1}, Lcom/google/android/material/resources/TextAppearance;->updateMeasureState(Landroid/content/Context;Landroid/text/TextPaint;Lcom/google/android/material/resources/TextAppearanceFontCallback;)V
 
     iget-object v0, p0, Lcom/google/android/material/internal/TextDrawableHelper;->delegate:Ljava/lang/ref/WeakReference;
 

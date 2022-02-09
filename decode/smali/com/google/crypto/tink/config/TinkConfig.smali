@@ -3,6 +3,10 @@
 .source "TinkConfig.java"
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # direct methods
 .method public static constructor <clinit>()V
     .locals 3
@@ -126,27 +130,6 @@
     move-result-object v0
 
     check-cast v0, Lcom/google/crypto/tink/proto/RegistryConfig;
-
-    return-void
-.end method
-
-.method public static register()V
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/security/GeneralSecurityException;
-        }
-    .end annotation
-
-    invoke-static {}, Lcom/google/crypto/tink/daead/DeterministicAeadConfig;->register()V
-
-    invoke-static {}, Lcom/google/crypto/tink/hybrid/HybridConfig;->register()V
-
-    invoke-static {}, Lcom/google/crypto/tink/prf/PrfConfig;->register()V
-
-    invoke-static {}, Lcom/google/crypto/tink/signature/SignatureConfig;->register()V
-
-    invoke-static {}, Lcom/google/crypto/tink/streamingaead/StreamingAeadConfig;->register()V
 
     return-void
 .end method

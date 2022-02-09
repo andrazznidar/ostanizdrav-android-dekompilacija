@@ -52,7 +52,7 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;->baseGson:Lcom/google/gson/Gson;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Lcom/google/gson/GsonBuilder;
 
@@ -79,9 +79,4 @@
     move-result-object v0
 
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    throw v0
 .end method

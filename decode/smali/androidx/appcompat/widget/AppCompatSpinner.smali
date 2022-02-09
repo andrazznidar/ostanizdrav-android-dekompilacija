@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 9
+    .locals 8
 
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -87,7 +87,7 @@
 
     iput-object v2, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
-    const/4 v2, 0x4
+    sget v2, Landroidx/appcompat/R$styleable;->Spinner_popupTheme:I
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -178,83 +178,89 @@
     invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
 
     :cond_2
-    const/4 v4, 0x2
-
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
     if-eqz v3, :cond_4
 
-    if-eq v3, v5, :cond_3
+    if-eq v3, v4, :cond_3
 
     goto :goto_3
 
     :cond_3
     new-instance v3, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;
 
-    iget-object v6, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupContext:Landroid/content/Context;
+    iget-object v5, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupContext:Landroid/content/Context;
 
-    invoke-direct {v3, p0, v6, p2, p3}, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;-><init>(Landroidx/appcompat/widget/AppCompatSpinner;Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {v3, p0, v5, p2, p3}, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;-><init>(Landroidx/appcompat/widget/AppCompatSpinner;Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    iget-object v6, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupContext:Landroid/content/Context;
+    iget-object v5, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupContext:Landroid/content/Context;
 
-    sget-object v7, Landroidx/appcompat/R$styleable;->Spinner:[I
+    sget-object v6, Landroidx/appcompat/R$styleable;->Spinner:[I
 
-    invoke-static {v6, p2, v7, p3, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
+    invoke-static {v5, p2, v6, p3, v1}, Landroidx/appcompat/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/appcompat/widget/TintTypedArray;
 
-    move-result-object v6
+    move-result-object v1
 
-    const/4 v7, 0x3
+    sget v5, Landroidx/appcompat/R$styleable;->Spinner_android_dropDownWidth:I
 
-    const/4 v8, -0x2
+    const/4 v6, -0x2
 
-    invoke-virtual {v6, v7, v8}, Landroidx/appcompat/widget/TintTypedArray;->getLayoutDimension(II)I
+    invoke-virtual {v1, v5, v6}, Landroidx/appcompat/widget/TintTypedArray;->getLayoutDimension(II)I
 
-    move-result v7
+    move-result v5
 
-    iput v7, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mDropDownWidth:I
+    iput v5, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mDropDownWidth:I
 
-    invoke-virtual {v6, v5}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    sget v5, Landroidx/appcompat/R$styleable;->Spinner_android_popupBackground:I
 
-    move-result-object v7
+    invoke-virtual {v1, v5}, Landroidx/appcompat/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    iget-object v8, v3, Landroidx/appcompat/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
+    move-result-object v5
 
-    invoke-virtual {v8, v7}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    iget-object v6, v3, Landroidx/appcompat/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v6, v5}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    move-result-object v4
+    sget v5, Landroidx/appcompat/R$styleable;->Spinner_android_prompt:I
 
-    iput-object v4, v3, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->mHintText:Ljava/lang/CharSequence;
+    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    iget-object v4, v6, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    move-result-object v5
 
-    invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
+    iput-object v5, v3, Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;->mHintText:Ljava/lang/CharSequence;
+
+    iget-object v1, v1, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     iput-object v3, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup:Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;
 
-    new-instance v4, Landroidx/appcompat/widget/AppCompatSpinner$1;
+    new-instance v1, Landroidx/appcompat/widget/AppCompatSpinner$1;
 
-    invoke-direct {v4, p0, p0, v3}, Landroidx/appcompat/widget/AppCompatSpinner$1;-><init>(Landroidx/appcompat/widget/AppCompatSpinner;Landroid/view/View;Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;)V
+    invoke-direct {v1, p0, p0, v3}, Landroidx/appcompat/widget/AppCompatSpinner$1;-><init>(Landroidx/appcompat/widget/AppCompatSpinner;Landroid/view/View;Landroidx/appcompat/widget/AppCompatSpinner$DropdownPopup;)V
 
-    iput-object v4, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mForwardingListener:Landroidx/appcompat/widget/ForwardingListener;
+    iput-object v1, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mForwardingListener:Landroidx/appcompat/widget/ForwardingListener;
 
     goto :goto_3
 
     :cond_4
-    new-instance v3, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;
+    new-instance v1, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;
 
-    invoke-direct {v3, p0}, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;-><init>(Landroidx/appcompat/widget/AppCompatSpinner;)V
+    invoke-direct {v1, p0}, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;-><init>(Landroidx/appcompat/widget/AppCompatSpinner;)V
 
-    iput-object v3, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup:Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;
+    iput-object v1, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup:Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;
 
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    sget v3, Landroidx/appcompat/R$styleable;->Spinner_android_prompt:I
 
-    move-result-object v4
+    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->setPromptText(Ljava/lang/CharSequence;)V
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Landroidx/appcompat/widget/AppCompatSpinner$DialogPopup;->setPromptText(Ljava/lang/CharSequence;)V
 
     :goto_3
+    sget v1, Landroidx/appcompat/R$styleable;->Spinner_android_entries:I
+
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -263,11 +269,11 @@
 
     new-instance v3, Landroid/widget/ArrayAdapter;
 
-    const v4, 0x1090008
+    const v5, 0x1090008
 
-    invoke-direct {v3, p1, v4, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
+    invoke-direct {v3, p1, v5, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    const p1, 0x7f0c00f8
+    sget p1, Landroidx/appcompat/R$layout;->support_simple_spinner_dropdown_item:I
 
     invoke-virtual {v3, p1}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
@@ -276,7 +282,7 @@
     :cond_5
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    iput-boolean v5, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupSet:Z
+    iput-boolean v4, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopupSet:Z
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mTempAdapter:Landroid/widget/SpinnerAdapter;
 
@@ -437,7 +443,7 @@
 .method public drawableStateChanged()V
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/Spinner;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -861,7 +867,7 @@
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/Spinner;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     iget-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 
@@ -876,7 +882,7 @@
 .method public setBackgroundResource(I)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/widget/Spinner;->setBackgroundResource(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
 
     iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner;->mBackgroundTintHelper:Landroidx/appcompat/widget/AppCompatBackgroundHelper;
 

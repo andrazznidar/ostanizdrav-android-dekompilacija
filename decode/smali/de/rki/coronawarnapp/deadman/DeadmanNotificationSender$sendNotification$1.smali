@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.deadman.DeadmanNotificationSender"
     f = "DeadmanNotificationSender.kt"
     l = {
-        0x17
+        0x18
     }
     m = "sendNotification"
 .end annotation
@@ -36,6 +36,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender$sendNotification$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender$sendNotification$1;->this$0:Lde/rki/coronawarnapp/deadman/DeadmanNotificationSender;
 

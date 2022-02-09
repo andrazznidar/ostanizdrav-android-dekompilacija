@@ -88,35 +88,33 @@
 
     if-ne v0, v2, :cond_1
 
-    iget v0, p0, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;->previousScrollState:I
+    iget v4, p0, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;->previousScrollState:I
 
-    if-ne v0, v3, :cond_0
+    if-ne v4, v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move v0, v1
+    move v4, v1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    move v0, v3
+    move v4, v3
 
     :goto_1
-    iget v4, p0, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;->scrollState:I
+    if-ne v0, v2, :cond_2
 
-    if-ne v4, v2, :cond_2
+    iget v0, p0, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;->previousScrollState:I
 
-    iget v2, p0, Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;->previousScrollState:I
-
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_3
 
     :cond_2
     move v1, v3
 
     :cond_3
-    invoke-virtual {p3, p1, p2, v0, v1}, Lcom/google/android/material/tabs/TabLayout;->setScrollPosition(IFZZ)V
+    invoke-virtual {p3, p1, p2, v4, v1}, Lcom/google/android/material/tabs/TabLayout;->setScrollPosition(IFZZ)V
 
     :cond_4
     return-void

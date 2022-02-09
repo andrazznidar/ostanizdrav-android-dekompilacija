@@ -13,16 +13,11 @@
 
     invoke-direct {p0}, Lcom/google/gson/JsonElement;-><init>()V
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public constructor <init>(Ljava/lang/Number;)V
@@ -30,16 +25,11 @@
 
     invoke-direct {p0}, Lcom/google/gson/JsonElement;-><init>()V
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
@@ -47,16 +37,11 @@
 
     invoke-direct {p0}, Lcom/google/gson/JsonElement;-><init>()V
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public static isIntegral(Lcom/google/gson/JsonPrimitive;)Z
@@ -126,7 +111,7 @@
 
     if-eq v2, v3, :cond_1
 
-    goto/16 :goto_3
+    goto :goto_3
 
     :cond_1
     check-cast p1, Lcom/google/gson/JsonPrimitive;
@@ -191,15 +176,15 @@
     :cond_5
     iget-object v2, p0, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
 
-    instance-of v2, v2, Ljava/lang/Number;
+    instance-of v3, v2, Ljava/lang/Number;
 
-    if-eqz v2, :cond_8
+    if-eqz v3, :cond_8
 
-    iget-object v2, p1, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
+    iget-object v3, p1, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
 
-    instance-of v2, v2, Ljava/lang/Number;
+    instance-of v3, v3, Ljava/lang/Number;
 
-    if-eqz v2, :cond_8
+    if-eqz v3, :cond_8
 
     invoke-virtual {p0}, Lcom/google/gson/JsonPrimitive;->getAsNumber()Ljava/lang/Number;
 
@@ -243,11 +228,9 @@
     return v0
 
     :cond_8
-    iget-object v0, p0, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
-
     iget-object p1, p1, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -296,21 +279,21 @@
 
     if-eqz v1, :cond_0
 
-    new-instance v0, Lcom/google/gson/internal/LazilyParsedNumber;
+    new-instance v1, Lcom/google/gson/internal/LazilyParsedNumber;
 
-    iget-object v1, p0, Lcom/google/gson/JsonPrimitive;->value:Ljava/lang/Object;
+    check-cast v0, Ljava/lang/String;
 
-    check-cast v1, Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Lcom/google/gson/internal/LazilyParsedNumber;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/google/gson/internal/LazilyParsedNumber;-><init>(Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    check-cast v0, Ljava/lang/Number;
+    move-object v1, v0
+
+    check-cast v1, Ljava/lang/Number;
 
     :goto_0
-    return-object v0
+    return-object v1
 .end method
 
 .method public getAsString()Ljava/lang/String;

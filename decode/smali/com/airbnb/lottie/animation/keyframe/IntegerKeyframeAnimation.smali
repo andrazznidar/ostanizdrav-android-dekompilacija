@@ -127,9 +127,19 @@
     :cond_2
     iget p1, p1, Lcom/airbnb/lottie/value/Keyframe;->endValueInt:I
 
-    invoke-static {v0, p1, p2}, Lcom/airbnb/lottie/utils/MiscUtils;->lerp(IIF)I
+    sget-object v1, Lcom/airbnb/lottie/utils/MiscUtils;->pathFromDataCurrentPoint:Landroid/graphics/PointF;
 
-    move-result p1
+    int-to-float v1, v0
+
+    sub-int/2addr p1, v0
+
+    int-to-float p1, p1
+
+    mul-float/2addr p2, p1
+
+    add-float/2addr p2, v1
+
+    float-to-int p1, p2
 
     return p1
 

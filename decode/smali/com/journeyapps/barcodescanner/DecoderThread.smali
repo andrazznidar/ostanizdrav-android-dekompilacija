@@ -53,7 +53,7 @@
 
     iput-object v0, p0, Lcom/journeyapps/barcodescanner/DecoderThread;->previewCallback:Lcom/journeyapps/barcodescanner/camera/PreviewCallback;
 
-    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
+    invoke-static {}, Lcom/journeyapps/barcodescanner/Util;->validateMainThread()V
 
     iput-object p1, p0, Lcom/journeyapps/barcodescanner/DecoderThread;->cameraInstance:Lcom/journeyapps/barcodescanner/camera/CameraInstance;
 
@@ -75,9 +75,9 @@
 
     iget-object v2, v0, Lcom/journeyapps/barcodescanner/camera/CameraInstance;->mainHandler:Landroid/os/Handler;
 
-    new-instance v3, Lcom/journeyapps/barcodescanner/camera/-$$Lambda$CameraInstance$gcsGqTJo00Z6LtrwOTFaGo630Gw;
+    new-instance v3, Lcoil/bitmap/RealBitmapReferenceCounter$$ExternalSyntheticLambda0;
 
-    invoke-direct {v3, v0, v1}, Lcom/journeyapps/barcodescanner/camera/-$$Lambda$CameraInstance$gcsGqTJo00Z6LtrwOTFaGo630Gw;-><init>(Lcom/journeyapps/barcodescanner/camera/CameraInstance;Lcom/journeyapps/barcodescanner/camera/PreviewCallback;)V
+    invoke-direct {v3, v0, v1}, Lcoil/bitmap/RealBitmapReferenceCounter$$ExternalSyntheticLambda0;-><init>(Lcom/journeyapps/barcodescanner/camera/CameraInstance;Lcom/journeyapps/barcodescanner/camera/PreviewCallback;)V
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

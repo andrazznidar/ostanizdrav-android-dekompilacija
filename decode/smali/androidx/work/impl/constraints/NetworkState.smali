@@ -113,37 +113,27 @@
 
     iget-boolean v0, p0, Landroidx/work/impl/constraints/NetworkState;->mIsConnected:Z
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     iget-boolean v1, p0, Landroidx/work/impl/constraints/NetworkState;->mIsValidated:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     add-int/lit8 v0, v0, 0x10
 
-    :cond_1
+    :cond_0
     iget-boolean v1, p0, Landroidx/work/impl/constraints/NetworkState;->mIsMetered:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     add-int/lit16 v0, v0, 0x100
 
-    :cond_2
+    :cond_1
     iget-boolean v1, p0, Landroidx/work/impl/constraints/NetworkState;->mIsNotRoaming:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     add-int/lit16 v0, v0, 0x1000
 
-    :cond_3
+    :cond_2
     return v0
 .end method
 

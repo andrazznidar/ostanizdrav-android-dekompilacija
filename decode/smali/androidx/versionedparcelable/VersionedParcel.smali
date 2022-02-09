@@ -265,7 +265,7 @@
 
     aput-object v3, v1, v2
 
-    const-string v2, "write"
+    const-string/jumbo v2, "write"
 
     invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
@@ -283,71 +283,19 @@
     return-object v0
 .end method
 
-.method public readBoolean(ZI)Z
-    .locals 0
-
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->readField(I)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    return p1
-
-    :cond_0
-    move-object p1, p0
-
-    check-cast p1, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    iget-object p1, p1, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
+.method public abstract readBoolean()Z
 .end method
 
-.method public readCharSequence(Ljava/lang/CharSequence;I)Ljava/lang/CharSequence;
-    .locals 0
+.method public abstract readByteArray()[B
+.end method
 
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->readField(I)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    return-object p1
-
-    :cond_0
-    move-object p1, p0
-
-    check-cast p1, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    sget-object p2, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
-
-    iget-object p1, p1, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    invoke-interface {p2, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/CharSequence;
-
-    return-object p1
+.method public abstract readCharSequence()Ljava/lang/CharSequence;
 .end method
 
 .method public abstract readField(I)Z
+.end method
+
+.method public abstract readInt()I
 .end method
 
 .method public readInt(II)I
@@ -362,17 +310,21 @@
     return p1
 
     :cond_0
-    move-object p1, p0
-
-    check-cast p1, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    iget-object p1, p1, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readInt()I
 
     move-result p1
 
     return p1
+.end method
+
+.method public abstract readParcelable()Landroid/os/Parcelable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">()TT;"
+        }
+    .end annotation
 .end method
 
 .method public readParcelable(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
@@ -394,23 +346,14 @@
     return-object p1
 
     :cond_0
-    move-object p1, p0
-
-    check-cast p1, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    iget-object p1, p1, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    const-class p2, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    invoke-virtual {p2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+    invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readParcelable()Landroid/os/Parcelable;
 
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public abstract readString()Ljava/lang/String;
 .end method
 
 .method public readVersionedParcelable()Landroidx/versionedparcelable/VersionedParcelable;
@@ -423,13 +366,7 @@
         }
     .end annotation
 
-    move-object v0, p0
-
-    check-cast v0, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    iget-object v0, v0, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -535,38 +472,22 @@
 .method public abstract setOutputField(I)V
 .end method
 
-.method public writeInt(II)V
-    .locals 0
-
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->setOutputField(I)V
-
-    move-object p2, p0
-
-    check-cast p2, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    iget-object p2, p2, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    invoke-virtual {p2, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
+.method public abstract writeBoolean(Z)V
 .end method
 
-.method public writeParcelable(Landroid/os/Parcelable;I)V
-    .locals 1
+.method public abstract writeByteArray([B)V
+.end method
 
-    invoke-virtual {p0, p2}, Landroidx/versionedparcelable/VersionedParcel;->setOutputField(I)V
+.method public abstract writeCharSequence(Ljava/lang/CharSequence;)V
+.end method
 
-    move-object p2, p0
+.method public abstract writeInt(I)V
+.end method
 
-    check-cast p2, Landroidx/versionedparcelable/VersionedParcelParcel;
+.method public abstract writeParcelable(Landroid/os/Parcelable;)V
+.end method
 
-    iget-object p2, p2, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p2, p1, v0}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
-
-    return-void
+.method public abstract writeString(Ljava/lang/String;)V
 .end method
 
 .method public writeVersionedParcelable(Landroidx/versionedparcelable/VersionedParcelable;)V
@@ -576,13 +497,7 @@
 
     if-nez p1, :cond_0
 
-    move-object p1, p0
-
-    check-cast p1, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    iget-object p1, p1, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Landroidx/versionedparcelable/VersionedParcel;->writeString(Ljava/lang/String;)V
 
     return-void
 
@@ -602,13 +517,7 @@
 
     move-result-object v1
 
-    move-object v2, p0
-
-    check-cast v2, Landroidx/versionedparcelable/VersionedParcelParcel;
-
-    iget-object v2, v2, Landroidx/versionedparcelable/VersionedParcelParcel;->mParcel:Landroid/os/Parcel;
-
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Landroidx/versionedparcelable/VersionedParcel;->writeString(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroidx/versionedparcelable/VersionedParcel;->createSubParcel()Landroidx/versionedparcelable/VersionedParcel;
 

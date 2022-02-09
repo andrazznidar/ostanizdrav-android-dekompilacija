@@ -50,7 +50,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
     check-cast p1, Ljava/util/List;
 
@@ -60,7 +60,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;)Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaInteroperabilityBinding;
+    sget-object v1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingDeltaInteroperabilityFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentOnboardingDeltaInteroperabilityBinding;
 
     move-result-object v0
 

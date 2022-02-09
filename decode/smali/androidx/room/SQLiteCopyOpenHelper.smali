@@ -201,7 +201,7 @@
 
     const-string v1, "Failed to create directories for "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -234,7 +234,7 @@
 
     const-string v1, "Failed to move intermediate file ("
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -363,24 +363,16 @@
 
     iget-object v3, p0, Landroidx/room/SQLiteCopyOpenHelper;->mDatabaseConfiguration:Landroidx/room/DatabaseConfiguration;
 
-    if-eqz v3, :cond_1
-
-    iget-boolean v3, v3, Landroidx/room/DatabaseConfiguration;->multiInstanceInvalidation:Z
-
     if-eqz v3, :cond_0
+
+    const/4 v3, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/4 v3, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
     const/4 v3, 0x1
 
-    :goto_1
+    :goto_0
     new-instance v4, Landroidx/room/util/CopyLock;
 
     iget-object v5, p0, Landroidx/room/SQLiteCopyOpenHelper;->mContext:Landroid/content/Context;
@@ -400,7 +392,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     :try_start_1
     new-instance v3, Ljava/io/FileOutputStream;
@@ -420,7 +412,7 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_0
     move-exception v0
@@ -434,8 +426,8 @@
 
     throw v1
 
-    :cond_2
-    :goto_2
+    :cond_1
+    :goto_1
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v3
@@ -444,7 +436,7 @@
 
     const-string v5, "Unable to copy database file."
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_2
 
     :try_start_3
     invoke-virtual {p0, v2}, Landroidx/room/SQLiteCopyOpenHelper;->copyDatabaseFile(Ljava/io/File;)V
@@ -466,18 +458,18 @@
 
     throw v1
 
-    :cond_3
+    :cond_2
     iget-object v3, p0, Landroidx/room/SQLiteCopyOpenHelper;->mDatabaseConfiguration:Landroidx/room/DatabaseConfiguration;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_3
 
     invoke-virtual {v4}, Landroidx/room/util/CopyLock;->unlock()V
 
     return-void
 
-    :cond_4
+    :cond_3
     :try_start_5
     invoke-static {v2}, Landroidx/room/util/DBUtil;->readVersion(Ljava/io/File;)I
 
@@ -491,31 +483,29 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    if-ne v3, v6, :cond_5
+    if-ne v3, v6, :cond_4
+
+    invoke-virtual {v4}, Landroidx/room/util/CopyLock;->unlock()V
+
+    return-void
+
+    :cond_4
+    :try_start_7
+    iget-object v7, p0, Landroidx/room/SQLiteCopyOpenHelper;->mDatabaseConfiguration:Landroidx/room/DatabaseConfiguration;
+
+    invoke-virtual {v7, v3, v6}, Landroidx/room/DatabaseConfiguration;->isMigrationRequired(II)Z
+
+    move-result v3
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+
+    if-eqz v3, :cond_5
 
     invoke-virtual {v4}, Landroidx/room/util/CopyLock;->unlock()V
 
     return-void
 
     :cond_5
-    :try_start_7
-    iget-object v6, p0, Landroidx/room/SQLiteCopyOpenHelper;->mDatabaseConfiguration:Landroidx/room/DatabaseConfiguration;
-
-    iget v7, p0, Landroidx/room/SQLiteCopyOpenHelper;->mDatabaseVersion:I
-
-    invoke-virtual {v6, v3, v7}, Landroidx/room/DatabaseConfiguration;->isMigrationRequired(II)Z
-
-    move-result v3
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    if-eqz v3, :cond_6
-
-    invoke-virtual {v4}, Landroidx/room/util/CopyLock;->unlock()V
-
-    return-void
-
-    :cond_6
     :try_start_8
     iget-object v3, p0, Landroidx/room/SQLiteCopyOpenHelper;->mContext:Landroid/content/Context;
 
@@ -525,7 +515,7 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_6
 
     :try_start_9
     invoke-virtual {p0, v2}, Landroidx/room/SQLiteCopyOpenHelper;->copyDatabaseFile(Ljava/io/File;)V
@@ -533,7 +523,7 @@
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_2
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    goto :goto_3
+    goto :goto_2
 
     :catch_2
     move-exception v1
@@ -541,9 +531,9 @@
     :try_start_a
     invoke-static {v0, v5, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_7
+    :cond_6
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -566,7 +556,7 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_0
 
-    :goto_3
+    :goto_2
     invoke-virtual {v4}, Landroidx/room/util/CopyLock;->unlock()V
 
     return-void

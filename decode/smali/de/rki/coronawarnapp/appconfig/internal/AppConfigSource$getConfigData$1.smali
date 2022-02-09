@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->getConfigData(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->getConfigData(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
     f = "AppConfigSource.kt"
     l = {
         0x1c,
-        0x27
+        0x28
     }
     m = "getConfigData"
 .end annotation
@@ -28,6 +28,8 @@
 .field public L$0:Ljava/lang/Object;
 
 .field public L$1:Ljava/lang/Object;
+
+.field public Z$0:Z
 
 .field public label:I
 
@@ -39,6 +41,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->this$0:Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;
 
@@ -64,7 +76,9 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->this$0:Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;
 
-    invoke-virtual {p1, p0}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->getConfigData(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->getConfigData(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

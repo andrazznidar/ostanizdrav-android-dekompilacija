@@ -25,7 +25,7 @@
 
     instance-of v0, p0, Landroidx/appcompat/widget/TintContextWrapper;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -33,22 +33,12 @@
 
     instance-of v0, v0, Landroidx/appcompat/widget/TintResources;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
-
-    instance-of v0, v0, Landroidx/appcompat/widget/VectorEnabledTintResources;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
+    sget v0, Landroidx/appcompat/widget/VectorEnabledTintResources;->$r8$clinit:I
 
     :cond_0
-    invoke-static {}, Landroidx/appcompat/widget/VectorEnabledTintResources;->shouldBeUsed()Z
-
-    :cond_1
-    :goto_0
     return-object p0
 .end method

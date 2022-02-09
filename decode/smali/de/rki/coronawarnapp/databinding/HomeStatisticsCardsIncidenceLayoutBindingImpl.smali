@@ -21,81 +21,69 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0900b7
+    const v1, 0x7f0a011d
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09053d
+    const v1, 0x7f0a07db
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090331
+    const v1, 0x7f0a075e
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090332
+    const v1, 0x7f0a053f
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0903b5
+    const v1, 0x7f0a0541
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09055a
+    const v1, 0x7f0a061f
 
     const/4 v2, 0x6
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901f1
+    const v1, 0x7f0a0824
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901dc
+    const v1, 0x7f0a0378
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09014b
+    const v1, 0x7f0a035b
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901b6
+    const v1, 0x7f0a0224
 
     const/16 v2, 0xa
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a0327
+
+    const/16 v2, 0xb
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -103,7 +91,17 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 18
+    .locals 19
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     move-object/from16 v15, p0
 
@@ -111,7 +109,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v1, 0xb
+    const/16 v1, 0xc
 
     const/4 v13, 0x0
 
@@ -127,9 +125,9 @@
 
     move-object v4, v1
 
-    check-cast v4, Landroidx/appcompat/widget/AppCompatImageView;
+    check-cast v4, Landroid/widget/ImageView;
 
-    const/16 v1, 0x9
+    const/16 v1, 0xa
 
     aget-object v1, v0, v1
 
@@ -137,7 +135,7 @@
 
     check-cast v5, Landroidx/constraintlayout/widget/Barrier;
 
-    const/16 v1, 0xa
+    const/16 v1, 0xb
 
     aget-object v1, v0, v1
 
@@ -145,7 +143,7 @@
 
     check-cast v6, Landroidx/constraintlayout/helper/widget/Flow;
 
-    const/16 v1, 0x8
+    const/16 v1, 0x9
 
     aget-object v1, v0, v1
 
@@ -161,7 +159,7 @@
 
     check-cast v8, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/4 v1, 0x7
+    const/16 v1, 0x8
 
     aget-object v1, v0, v1
 
@@ -169,7 +167,7 @@
 
     check-cast v9, Landroid/widget/ImageButton;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x4
 
     aget-object v1, v0, v1
 
@@ -177,7 +175,7 @@
 
     check-cast v10, Landroid/widget/TextView;
 
-    const/4 v1, 0x4
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
@@ -185,7 +183,7 @@
 
     check-cast v11, Landroid/widget/TextView;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x6
 
     aget-object v1, v0, v1
 
@@ -193,7 +191,7 @@
 
     check-cast v12, Landroid/widget/TextView;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     aget-object v1, v0, v1
 
@@ -201,13 +199,21 @@
 
     check-cast v16, Landroid/widget/TextView;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x2
+
+    aget-object v1, v0, v1
+
+    move-object/from16 v17, v1
+
+    check-cast v17, Landroid/widget/TextView;
+
+    const/4 v1, 0x7
 
     aget-object v0, v0, v1
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    check-cast v17, Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;
+    check-cast v18, Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;
 
     const/4 v3, 0x0
 
@@ -221,23 +227,27 @@
 
     move-object/from16 v14, v17
 
-    invoke-direct/range {v0 .. v14}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/appcompat/widget/AppCompatImageView;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/helper/widget/Flow;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;)V
+    move-object/from16 v15, v18
+
+    invoke-direct/range {v0 .. v15}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/ImageView;Landroidx/constraintlayout/widget/Barrier;Landroidx/constraintlayout/helper/widget/Flow;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/ImageButton;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Lde/rki/coronawarnapp/statistics/ui/TrendArrowView;)V
 
     const-wide/16 v0, -0x1
 
-    iput-wide v0, v15, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->mDirtyFlags:J
+    move-object/from16 v2, p0
 
-    iget-object v0, v15, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBinding;->incidenceContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iput-wide v0, v2, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->mDirtyFlags:J
+
+    iget-object v0, v2, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBinding;->incidenceContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const v0, 0x7f09015b
+    sget v0, Landroidx/databinding/library/R$id;->dataBinding:I
 
     move-object/from16 v1, p2
 
-    invoke-virtual {v1, v0, v15}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {v1, v0, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     invoke-virtual/range {p0 .. p0}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;->invalidateAll()V
 

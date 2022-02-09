@@ -25,11 +25,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    const v0, 0x7f040115
+    sget v0, Landroidx/preference/R$attr;->dialogPreferenceStyle:I
 
     const v1, 0x1010091
 
-    invoke-static {p1, v0, v1}, Landroidx/core/app/AppOpsManagerCompat;->getAttr(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Landroidx/core/content/res/TypedArrayUtils;->getAttr(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -51,17 +51,19 @@
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    sget v1, Landroidx/preference/R$styleable;->ListPreference_entries:I
 
-    const/4 v2, 0x0
+    sget v2, Landroidx/preference/R$styleable;->ListPreference_android_entries:I
 
-    invoke-static {v0, v1, v2}, Landroidx/core/app/AppOpsManagerCompat;->getTextArray(Landroid/content/res/TypedArray;II)[Ljava/lang/CharSequence;
+    invoke-static {v0, v1, v2}, Landroidx/core/content/res/TypedArrayUtils;->getTextArray(Landroid/content/res/TypedArray;II)[Ljava/lang/CharSequence;
 
     move-result-object v1
 
     iput-object v1, p0, Landroidx/preference/ListPreference;->mEntries:[Ljava/lang/CharSequence;
 
-    const/4 v1, 0x3
+    sget v1, Landroidx/preference/R$styleable;->ListPreference_entryValues:I
+
+    sget v2, Landroidx/preference/R$styleable;->ListPreference_android_entryValues:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
 
@@ -69,16 +71,16 @@
 
     if-nez v1, :cond_0
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
+    invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getTextArray(I)[Ljava/lang/CharSequence;
 
     move-result-object v1
 
     :cond_0
     iput-object v1, p0, Landroidx/preference/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
 
-    const/4 v1, 0x4
+    sget v1, Landroidx/preference/R$styleable;->ListPreference_useSimpleSummaryProvider:I
+
+    const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -116,11 +118,11 @@
 
     move-result-object p1
 
-    const/16 p2, 0x21
+    sget p2, Landroidx/preference/R$styleable;->Preference_summary:I
 
-    const/4 p3, 0x7
+    sget p3, Landroidx/preference/R$styleable;->Preference_android_summary:I
 
-    invoke-static {p1, p2, p3}, Landroidx/core/app/AppOpsManagerCompat;->getString(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Landroidx/core/content/res/TypedArrayUtils;->getString(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 

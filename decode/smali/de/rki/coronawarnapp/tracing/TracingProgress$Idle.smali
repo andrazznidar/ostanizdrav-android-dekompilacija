@@ -40,3 +40,13 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "TracingProgress.Idle"
+
+    return-object v0
+.end method

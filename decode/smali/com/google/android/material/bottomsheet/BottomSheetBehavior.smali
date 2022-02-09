@@ -23,6 +23,10 @@
 .end annotation
 
 
+# static fields
+.field public static final DEF_STYLE_RES:I
+
+
 # instance fields
 .field public activePointerId:I
 
@@ -45,6 +49,8 @@
 .field public draggable:Z
 
 .field public elevation:F
+
+.field public expandHalfwayActionId:I
 
 .field public expandedOffset:I
 
@@ -77,6 +83,10 @@
 
 .field public initialY:I
 
+.field public insetBottom:I
+
+.field public insetTop:I
+
 .field public interpolatorAnimator:Landroid/animation/ValueAnimator;
 
 .field public isShapeExpanded:Z
@@ -84,6 +94,8 @@
 .field public lastNestedScrollDy:I
 
 .field public materialShapeDrawable:Lcom/google/android/material/shape/MaterialShapeDrawable;
+
+.field public maxWidth:I
 
 .field public maximumVelocity:F
 
@@ -98,6 +110,14 @@
         }
     .end annotation
 .end field
+
+.field public paddingBottomSystemWindowInsets:Z
+
+.field public paddingLeftSystemWindowInsets:Z
+
+.field public paddingRightSystemWindowInsets:Z
+
+.field public paddingTopSystemWindowInsets:Z
 
 .field public parentHeight:I
 
@@ -132,8 +152,6 @@
 
 .field public touchingScrollingChild:Z
 
-.field public updateImportantForAccessibilityOnSiblings:Z
-
 .field public velocityTracker:Landroid/view/VelocityTracker;
 
 .field public viewDragHelper:Landroidx/customview/widget/ViewDragHelper;
@@ -149,8 +167,18 @@
 
 
 # direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    sget v0, Lcom/google/android/material/R$style;->Widget_Design_BottomSheet_Modal:I
+
+    sput v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->DEF_STYLE_RES:I
+
+    return-void
+.end method
+
 .method public constructor <init>()V
-    .locals 2
+    .locals 3
 
     invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;-><init>()V
 
@@ -158,25 +186,27 @@
 
     iput v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->saveFlags:I
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
+    iput-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
-    iput-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateImportantForAccessibilityOnSiblings:Z
+    const/4 v1, -0x1
 
-    const/4 v0, 0x0
+    iput v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
 
-    iput-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->settleRunnable:Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SettleRunnable;
+    const/4 v2, 0x0
 
-    const/high16 v0, 0x3f000000    # 0.5f
+    iput-object v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->settleRunnable:Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SettleRunnable;
 
-    iput v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedRatio:F
+    const/high16 v2, 0x3f000000    # 0.5f
 
-    const/high16 v0, -0x40800000    # -1.0f
+    iput v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedRatio:F
 
-    iput v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->elevation:F
+    const/high16 v2, -0x40800000    # -1.0f
 
-    iput-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->draggable:Z
+    iput v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->elevation:F
+
+    iput-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->draggable:Z
 
     const/4 v0, 0x4
 
@@ -188,9 +218,11 @@
 
     iput-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->callbacks:Ljava/util/ArrayList;
 
-    new-instance v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;
+    iput v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandHalfwayActionId:I
 
-    invoke-direct {v0, p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
+    new-instance v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;
+
+    invoke-direct {v0, p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
 
     iput-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->dragCallback:Landroidx/customview/widget/ViewDragHelper$Callback;
 
@@ -198,7 +230,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 9
+    .locals 10
 
     invoke-direct {p0, p1, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -210,312 +242,373 @@
 
     iput-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
-    iput-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateImportantForAccessibilityOnSiblings:Z
+    const/4 v2, -0x1
 
-    const/4 v2, 0x0
+    iput v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
 
-    iput-object v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->settleRunnable:Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SettleRunnable;
+    const/4 v3, 0x0
 
-    const/high16 v3, 0x3f000000    # 0.5f
+    iput-object v3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->settleRunnable:Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SettleRunnable;
 
-    iput v3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedRatio:F
+    const/high16 v4, 0x3f000000    # 0.5f
 
-    const/high16 v4, -0x40800000    # -1.0f
+    iput v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedRatio:F
 
-    iput v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->elevation:F
+    const/high16 v5, -0x40800000    # -1.0f
+
+    iput v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->elevation:F
 
     iput-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->draggable:Z
 
-    const/4 v5, 0x4
+    const/4 v6, 0x4
 
-    iput v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
+    iput v6, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v7, Ljava/util/ArrayList;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v6, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->callbacks:Ljava/util/ArrayList;
+    iput-object v7, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->callbacks:Ljava/util/ArrayList;
 
-    new-instance v6, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;
+    iput v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandHalfwayActionId:I
 
-    invoke-direct {v6, p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
+    new-instance v7, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;
 
-    iput-object v6, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->dragCallback:Landroidx/customview/widget/ViewDragHelper$Callback;
+    invoke-direct {v7, p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
+
+    iput-object v7, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->dragCallback:Landroidx/customview/widget/ViewDragHelper$Callback;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v6
+    move-result-object v7
 
-    const v7, 0x7f07015c
+    sget v8, Lcom/google/android/material/R$dimen;->mtrl_min_touch_target_size:I
 
-    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    iput v6, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->peekHeightGestureInsetBuffer:I
-
-    sget-object v6, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout:[I
-
-    invoke-virtual {p1, p2, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v6
-
-    const/16 v7, 0xb
-
-    invoke-virtual {v6, v7}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v7
 
-    iput-boolean v7, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->shapeThemingEnabled:Z
+    iput v7, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->peekHeightGestureInsetBuffer:I
 
-    invoke-virtual {v6, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget-object v7, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout:[I
 
-    move-result v7
+    invoke-virtual {p1, p2, v7}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    if-eqz v7, :cond_0
+    move-result-object v7
 
-    invoke-static {p1, v6, v1}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    sget v8, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_shapeAppearance:I
 
-    move-result-object v2
+    invoke-virtual {v7, v8}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    invoke-virtual {p0, p1, p2, v7, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->createMaterialShapeDrawable(Landroid/content/Context;Landroid/util/AttributeSet;ZLandroid/content/res/ColorStateList;)V
+    move-result v8
+
+    iput-boolean v8, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->shapeThemingEnabled:Z
+
+    sget v8, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_backgroundTint:I
+
+    invoke-virtual {v7, v8}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_0
+
+    invoke-static {p1, v7, v8}, Lcom/google/android/material/resources/MaterialResources;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+
+    move-result-object v3
+
+    invoke-virtual {p0, p1, p2, v9, v3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->createMaterialShapeDrawable(Landroid/content/Context;Landroid/util/AttributeSet;ZLandroid/content/res/ColorStateList;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1, p2, v7, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->createMaterialShapeDrawable(Landroid/content/Context;Landroid/util/AttributeSet;ZLandroid/content/res/ColorStateList;)V
+    invoke-virtual {p0, p1, p2, v9, v3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->createMaterialShapeDrawable(Landroid/content/Context;Landroid/util/AttributeSet;ZLandroid/content/res/ColorStateList;)V
 
     :goto_0
     const/4 p2, 0x2
 
-    new-array v2, p2, [F
+    new-array p2, p2, [F
 
-    fill-array-data v2, :array_0
+    fill-array-data p2, :array_0
 
-    invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-    move-result-object v2
+    move-result-object p2
 
-    iput-object v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->interpolatorAnimator:Landroid/animation/ValueAnimator;
+    iput-object p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->interpolatorAnimator:Landroid/animation/ValueAnimator;
 
-    const-wide/16 v7, 0x1f4
+    const-wide/16 v8, 0x1f4
 
-    invoke-virtual {v2, v7, v8}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {p2, v8, v9}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    iget-object v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->interpolatorAnimator:Landroid/animation/ValueAnimator;
+    iget-object p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->interpolatorAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v7, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;
+    new-instance v3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$3;
 
-    invoke-direct {v7, p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
+    invoke-direct {v3, p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$3;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
 
-    invoke-virtual {v2, v7}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {p2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    invoke-virtual {v6, v0, v4}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_android_elevation:I
 
-    move-result v2
+    invoke-virtual {v7, p2, v5}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    iput v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->elevation:F
+    move-result p2
 
-    const/4 v2, 0x7
+    iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->elevation:F
 
-    invoke-virtual {v6, v2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_android_maxWidth:I
 
-    move-result-object v4
+    invoke-virtual {v7, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    const/4 v7, -0x1
+    move-result v3
 
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_1
 
-    iget v4, v4, Landroid/util/TypedValue;->data:I
+    invoke-virtual {v7, p2, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    if-ne v4, v7, :cond_1
+    move-result p2
 
-    invoke-virtual {p0, v4}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setPeekHeight(I)V
+    iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    :cond_1
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_peekHeight:I
+
+    invoke-virtual {v7, p2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    iget v3, v3, Landroid/util/TypedValue;->data:I
+
+    if-ne v3, v2, :cond_2
+
+    invoke-virtual {p0, v3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setPeekHeight(I)V
 
     goto :goto_1
 
-    :cond_1
-    invoke-virtual {v6, v2, v7}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    :cond_2
+    invoke-virtual {v7, p2, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v2
+    move-result p2
 
-    invoke-virtual {p0, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setPeekHeight(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setPeekHeight(I)V
 
     :goto_1
-    const/4 v2, 0x6
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_hideable:I
 
-    invoke-virtual {v6, v2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result v4
+    move-result p2
 
-    iget-boolean v7, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
+    iget-boolean v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
 
-    const/4 v8, 0x5
+    if-eq v2, p2, :cond_4
 
-    if-eq v7, v4, :cond_3
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
 
-    iput-boolean v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
+    if-nez p2, :cond_3
 
-    if-nez v4, :cond_2
+    iget p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
-    iget v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
+    const/4 v2, 0x5
 
-    if-ne v4, v8, :cond_2
+    if-ne p2, v2, :cond_3
 
-    invoke-virtual {p0, v5}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setState(I)V
-
-    :cond_2
-    invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateAccessibilityActions()V
+    invoke-virtual {p0, v6}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setState(I)V
 
     :cond_3
-    const/16 v4, 0xa
+    invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateAccessibilityActions()V
 
-    invoke-virtual {v6, v4, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    :cond_4
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_gestureInsetBottomIgnored:I
 
-    move-result v4
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    iput-boolean v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->gestureInsetBottomIgnored:Z
+    move-result p2
 
-    invoke-virtual {v6, v5, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->gestureInsetBottomIgnored:Z
 
-    move-result v4
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_fitToContents:I
 
-    iget-boolean v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
+    invoke-virtual {v7, p2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    const/4 v7, 0x3
+    move-result p2
 
-    if-ne v5, v4, :cond_4
+    iget-boolean v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
+
+    if-ne v2, p2, :cond_5
 
     goto :goto_3
 
-    :cond_4
-    iput-boolean v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
+    :cond_5
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
-    iget-object v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->viewRef:Ljava/lang/ref/WeakReference;
+    iget-object p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->viewRef:Ljava/lang/ref/WeakReference;
 
-    if-eqz v4, :cond_5
+    if-eqz p2, :cond_6
 
     invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->calculateCollapsedOffset()V
 
-    :cond_5
-    iget-boolean v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
+    :cond_6
+    iget-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
-    if-eqz v4, :cond_6
+    if-eqz p2, :cond_7
 
-    iget v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
+    iget p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
-    if-ne v4, v2, :cond_6
+    const/4 v2, 0x6
 
-    move v2, v7
+    if-ne p2, v2, :cond_7
+
+    const/4 p2, 0x3
 
     goto :goto_2
 
-    :cond_6
-    iget v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
+    :cond_7
+    iget p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
     :goto_2
-    invoke-virtual {p0, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setStateInternal(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setStateInternal(I)V
 
     invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateAccessibilityActions()V
 
     :goto_3
-    const/16 v2, 0x9
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_skipCollapsed:I
 
-    invoke-virtual {v6, v2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result v2
+    move-result p2
 
-    iput-boolean v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->skipCollapsed:Z
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->skipCollapsed:Z
 
-    invoke-virtual {v6, p2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_draggable:I
+
+    invoke-virtual {v7, p2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p2
 
     iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->draggable:Z
 
-    const/16 p2, 0x8
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_saveFlags:I
 
-    invoke-virtual {v6, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p2
 
     iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->saveFlags:I
 
-    invoke-virtual {v6, v8, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_halfExpandedRatio:I
+
+    invoke-virtual {v7, p2, v4}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p2
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    cmpg-float v1, p2, v1
+    cmpg-float v2, p2, v2
 
-    if-lez v1, :cond_b
+    if-lez v2, :cond_c
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    cmpl-float v2, p2, v1
+    cmpl-float v3, p2, v2
 
-    if-gez v2, :cond_b
+    if-gez v3, :cond_c
 
     iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedRatio:F
 
-    iget-object v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->viewRef:Ljava/lang/ref/WeakReference;
+    iget-object v3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->viewRef:Ljava/lang/ref/WeakReference;
 
-    if-eqz v2, :cond_7
+    if-eqz v3, :cond_8
 
-    iget v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->parentHeight:I
+    iget v3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->parentHeight:I
 
-    int-to-float v2, v2
+    int-to-float v3, v3
 
-    sub-float/2addr v1, p2
+    sub-float/2addr v2, p2
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v2, v3
 
-    float-to-int p2, v1
+    float-to-int p2, v2
 
     iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedOffset:I
 
-    :cond_7
-    invoke-virtual {v6, v7}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    :cond_8
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_behavior_expandedOffset:I
 
-    move-result-object p2
+    invoke-virtual {v7, p2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
-    const-string v1, "offset must be greater than or equal to 0"
+    move-result-object v2
 
-    if-eqz p2, :cond_9
+    const-string v3, "offset must be greater than or equal to 0"
 
-    iget v2, p2, Landroid/util/TypedValue;->type:I
+    if-eqz v2, :cond_a
 
-    const/16 v3, 0x10
+    iget v4, v2, Landroid/util/TypedValue;->type:I
 
-    if-ne v2, v3, :cond_9
+    const/16 v5, 0x10
 
-    iget p2, p2, Landroid/util/TypedValue;->data:I
+    if-ne v4, v5, :cond_a
 
-    if-ltz p2, :cond_8
+    iget p2, v2, Landroid/util/TypedValue;->data:I
+
+    if-ltz p2, :cond_9
 
     iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandedOffset:I
 
     goto :goto_4
 
-    :cond_8
+    :cond_9
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {p1, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
-    :cond_9
-    invoke-virtual {v6, v7, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
+    :cond_a
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result p2
 
-    if-ltz p2, :cond_a
+    if-ltz p2, :cond_b
 
     iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandedOffset:I
 
     :goto_4
-    invoke-virtual {v6}, Landroid/content/res/TypedArray;->recycle()V
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_paddingBottomSystemWindowInsets:I
+
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingBottomSystemWindowInsets:Z
+
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_paddingLeftSystemWindowInsets:I
+
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingLeftSystemWindowInsets:Z
+
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_paddingRightSystemWindowInsets:I
+
+    invoke-virtual {v7, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingRightSystemWindowInsets:Z
+
+    sget p2, Lcom/google/android/material/R$styleable;->BottomSheetBehavior_Layout_paddingTopSystemWindowInsets:I
+
+    invoke-virtual {v7, p2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingTopSystemWindowInsets:Z
+
+    invoke-virtual {v7}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -531,14 +624,14 @@
 
     return-void
 
-    :cond_a
+    :cond_b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {p1, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
-    :cond_b
+    :cond_c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "ratio must be a float value between 0 and 1"
@@ -546,8 +639,6 @@
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
-
-    nop
 
     :array_0
     .array-data 4
@@ -558,27 +649,6 @@
 
 
 # virtual methods
-.method public final addAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TV;",
-            "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;",
-            "I)V"
-        }
-    .end annotation
-
-    new-instance v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;
-
-    invoke-direct {v0, p0, p3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$5;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;I)V
-
-    const/4 p3, 0x0
-
-    invoke-static {p1, p2, p3, v0}, Landroidx/core/view/ViewCompat;->replaceAccessibilityAction(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;Ljava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;)V
-
-    return-void
-.end method
-
 .method public final calculateCollapsedOffset()V
     .locals 2
 
@@ -644,10 +714,18 @@
 
     move-result v0
 
+    iget v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->insetBottom:I
+
+    add-int/2addr v0, v1
+
     return v0
 
     :cond_0
     iget-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->gestureInsetBottomIgnored:Z
+
+    if-nez v0, :cond_1
+
+    iget-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingBottomSystemWindowInsets:Z
 
     if-nez v0, :cond_1
 
@@ -670,21 +748,33 @@
     :cond_1
     iget v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->peekHeight:I
 
+    iget v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->insetBottom:I
+
+    add-int/2addr v0, v1
+
     return v0
 .end method
 
 .method public final createMaterialShapeDrawable(Landroid/content/Context;Landroid/util/AttributeSet;ZLandroid/content/res/ColorStateList;)V
-    .locals 2
+    .locals 4
 
     iget-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->shapeThemingEnabled:Z
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f040062
+    sget v0, Lcom/google/android/material/R$attr;->bottomSheetStyle:I
 
-    const v1, 0x7f13028f
+    sget v1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->DEF_STYLE_RES:I
 
-    invoke-static {p1, p2, v0, v1}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;II)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
+    new-instance v2, Lcom/google/android/material/shape/AbsoluteCornerSize;
+
+    const/4 v3, 0x0
+
+    int-to-float v3, v3
+
+    invoke-direct {v2, v3}, Lcom/google/android/material/shape/AbsoluteCornerSize;-><init>(F)V
+
+    invoke-static {p1, p2, v0, v1, v2}, Lcom/google/android/material/shape/ShapeAppearanceModel;->builder(Landroid/content/Context;Landroid/util/AttributeSet;IILcom/google/android/material/shape/CornerSize;)Lcom/google/android/material/shape/ShapeAppearanceModel$Builder;
 
     move-result-object p2
 
@@ -847,7 +937,9 @@
 .method public findScrollingChild(Landroid/view/View;)Landroid/view/View;
     .locals 3
 
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->isNestedScrollingEnabled(Landroid/view/View;)Z
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1}, Landroid/view/View;->isNestedScrollingEnabled()Z
 
     move-result v0
 
@@ -895,7 +987,7 @@
 .end method
 
 .method public getExpandedOffset()I
-    .locals 1
+    .locals 2
 
     iget-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
@@ -903,12 +995,28 @@
 
     iget v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContentsOffset:I
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     iget v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandedOffset:I
 
+    iget-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingTopSystemWindowInsets:Z
+
+    if-eqz v1, :cond_1
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    iget v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->insetTop:I
+
     :goto_0
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    :goto_1
     return v0
 .end method
 
@@ -1218,7 +1326,9 @@
         }
     .end annotation
 
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->getFitsSystemWindows(Landroid/view/View;)Z
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1}, Landroid/view/View;->getFitsSystemWindows()Z
 
     move-result v0
 
@@ -1243,13 +1353,13 @@
 
     const/4 v4, 0x0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_9
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v5, 0x7f070088
+    sget v5, Lcom/google/android/material/R$dimen;->design_bottom_sheet_peek_height_min:I
 
     invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1271,13 +1381,38 @@
 
     if-nez v0, :cond_1
 
-    new-instance v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$3;
+    move v0, v1
 
-    invoke-direct {v0, p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$3;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
-
-    invoke-static {p2, v0}, Lcom/google/android/material/R$style;->doOnApplyWindowInsets(Landroid/view/View;Lcom/google/android/material/internal/ViewUtils$OnApplyWindowInsetsListener;)V
+    goto :goto_0
 
     :cond_1
+    move v0, v4
+
+    :goto_0
+    iget-boolean v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingBottomSystemWindowInsets:Z
+
+    if-nez v5, :cond_2
+
+    iget-boolean v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingLeftSystemWindowInsets:Z
+
+    if-nez v5, :cond_2
+
+    iget-boolean v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingRightSystemWindowInsets:Z
+
+    if-nez v5, :cond_2
+
+    if-nez v0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    new-instance v5, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;
+
+    invoke-direct {v5, p0, v0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$4;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;Z)V
+
+    invoke-static {p2, v5}, Lcom/google/android/material/internal/ViewUtils;->doOnApplyWindowInsets(Landroid/view/View;Lcom/google/android/material/internal/ViewUtils$OnApplyWindowInsetsListener;)V
+
+    :goto_1
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -1286,18 +1421,18 @@
 
     iget-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->shapeThemingEnabled:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->materialShapeDrawable:Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    :cond_2
+    :cond_3
     iget-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->materialShapeDrawable:Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->elevation:F
 
@@ -1305,58 +1440,85 @@
 
     cmpl-float v6, v5, v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     invoke-virtual {p2}, Landroid/view/View;->getElevation()F
 
     move-result v5
 
-    :cond_3
+    :cond_4
     invoke-virtual {v0, v5}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setElevation(F)V
 
     iget v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
-    if-ne v0, v2, :cond_4
+    if-ne v0, v2, :cond_5
 
     move v0, v1
 
-    goto :goto_0
+    goto :goto_2
 
-    :cond_4
+    :cond_5
     move v0, v4
 
-    :goto_0
+    :goto_2
     iput-boolean v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->isShapeExpanded:Z
 
     iget-object v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->materialShapeDrawable:Lcom/google/android/material/shape/MaterialShapeDrawable;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     const/4 v0, 0x0
 
-    goto :goto_1
-
-    :cond_5
-    move v0, v3
-
-    :goto_1
-    invoke-virtual {v5, v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setInterpolation(F)V
+    goto :goto_3
 
     :cond_6
+    move v0, v3
+
+    :goto_3
+    invoke-virtual {v5, v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setInterpolation(F)V
+
+    :cond_7
     invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateAccessibilityActions()V
 
     invoke-virtual {p2}, Landroid/view/View;->getImportantForAccessibility()I
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_8
 
     invoke-virtual {p2, v1}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    :cond_7
+    :cond_8
+    invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    iget v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    if-le v0, v5, :cond_9
+
+    const/4 v0, -0x1
+
+    if-eq v5, v0, :cond_9
+
+    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    iget v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    iput v5, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    new-instance v5, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$1;
+
+    invoke-direct {v5, p0, p2, v0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$1;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    invoke-virtual {p2, v5}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    :cond_9
     iget-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->viewDragHelper:Landroidx/customview/widget/ViewDragHelper;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_a
 
     iget-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->dragCallback:Landroidx/customview/widget/ViewDragHelper$Callback;
 
@@ -1370,7 +1532,7 @@
 
     iput-object v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->viewDragHelper:Landroidx/customview/widget/ViewDragHelper;
 
-    :cond_8
+    :cond_a
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
 
     move-result v0
@@ -1396,6 +1558,29 @@
     iput p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->childHeight:I
 
     iget p3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->parentHeight:I
+
+    sub-int p1, p3, p1
+
+    iget v5, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->insetTop:I
+
+    if-ge p1, v5, :cond_c
+
+    iget-boolean p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->paddingTopSystemWindowInsets:Z
+
+    if-eqz p1, :cond_b
+
+    iput p3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->childHeight:I
+
+    goto :goto_4
+
+    :cond_b
+    sub-int p1, p3, v5
+
+    iput p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->childHeight:I
+
+    :cond_c
+    :goto_4
+    iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->childHeight:I
 
     sub-int/2addr p3, p1
 
@@ -1423,7 +1608,7 @@
 
     iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
-    if-ne p1, v2, :cond_9
+    if-ne p1, v2, :cond_d
 
     invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->getExpandedOffset()I
 
@@ -1431,55 +1616,53 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    goto :goto_2
+    goto :goto_5
 
-    :cond_9
+    :cond_d
     const/4 p3, 0x6
 
-    if-ne p1, p3, :cond_a
+    if-ne p1, p3, :cond_e
 
     iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->halfExpandedOffset:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    goto :goto_2
+    goto :goto_5
 
-    :cond_a
+    :cond_e
     iget-boolean p3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_f
 
     const/4 p3, 0x5
 
-    if-ne p1, p3, :cond_b
+    if-ne p1, p3, :cond_f
 
     iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->parentHeight:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    goto :goto_2
+    goto :goto_5
 
-    :cond_b
-    iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
-
+    :cond_f
     const/4 p3, 0x4
 
-    if-ne p1, p3, :cond_c
+    if-ne p1, p3, :cond_10
 
     iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->collapsedOffset:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    goto :goto_2
+    goto :goto_5
 
-    :cond_c
-    if-eq p1, v1, :cond_d
+    :cond_10
+    if-eq p1, v1, :cond_11
 
     const/4 p3, 0x2
 
-    if-ne p1, p3, :cond_e
+    if-ne p1, p3, :cond_12
 
-    :cond_d
+    :cond_11
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
 
     move-result p1
@@ -1488,8 +1671,8 @@
 
     invoke-virtual {p2, v0}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    :cond_e
-    :goto_2
+    :cond_12
+    :goto_5
     new-instance p1, Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0, p2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->findScrollingChild(Landroid/view/View;)Landroid/view/View;
@@ -1517,8 +1700,6 @@
 
     iget-object p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->nestedScrollingChildRef:Ljava/lang/ref/WeakReference;
 
-    const/4 p2, 0x0
-
     if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -1529,18 +1710,23 @@
 
     iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
-    const/4 p3, 0x3
+    const/4 p2, 0x3
 
-    if-ne p1, p3, :cond_0
+    if-ne p1, p2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p2, 0x1
+    const/4 p1, 0x1
+
+    goto :goto_1
 
     :cond_1
     :goto_0
-    return p2
+    const/4 p1, 0x0
+
+    :goto_1
+    return p1
 .end method
 
 .method public onNestedPreScroll(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;II[II)V
@@ -1609,7 +1795,9 @@
 
     neg-int p3, p3
 
-    invoke-static {p2, p3}, Landroidx/core/view/ViewCompat;->offsetTopAndBottom(Landroid/view/View;I)V
+    sget-object p4, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p2, p3}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     const/4 p3, 0x3
 
@@ -1629,7 +1817,9 @@
 
     neg-int p3, p5
 
-    invoke-static {p2, p3}, Landroidx/core/view/ViewCompat;->offsetTopAndBottom(Landroid/view/View;I)V
+    sget-object p4, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p2, p3}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setStateInternal(I)V
 
@@ -1665,7 +1855,9 @@
 
     neg-int p3, p3
 
-    invoke-static {p2, p3}, Landroidx/core/view/ViewCompat;->offsetTopAndBottom(Landroid/view/View;I)V
+    sget-object p4, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p2, p3}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     const/4 p3, 0x4
 
@@ -1686,7 +1878,9 @@
 
     neg-int p3, p5
 
-    invoke-static {p2, p3}, Landroidx/core/view/ViewCompat;->offsetTopAndBottom(Landroid/view/View;I)V
+    sget-object p4, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p2, p3}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setStateInternal(I)V
 
@@ -1721,7 +1915,7 @@
 .end method
 
 .method public onRestoreInstanceState(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/os/Parcelable;)V
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1736,11 +1930,11 @@
 
     iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->saveFlags:I
 
-    const/4 p2, 0x4
+    const/4 p2, 0x1
 
     const/4 v0, 0x2
 
-    const/4 v1, 0x1
+    const/4 v1, 0x4
 
     if-nez p1, :cond_0
 
@@ -1751,46 +1945,40 @@
 
     if-eq p1, v2, :cond_1
 
-    and-int/2addr p1, v1
+    and-int/lit8 v3, p1, 0x1
 
-    if-ne p1, v1, :cond_2
+    if-ne v3, p2, :cond_2
 
     :cond_1
-    iget p1, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->peekHeight:I
+    iget v3, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->peekHeight:I
 
-    iput p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->peekHeight:I
+    iput v3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->peekHeight:I
 
     :cond_2
-    iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->saveFlags:I
-
     if-eq p1, v2, :cond_3
 
-    and-int/2addr p1, v0
+    and-int/lit8 v3, p1, 0x2
 
-    if-ne p1, v0, :cond_4
+    if-ne v3, v0, :cond_4
 
     :cond_3
-    iget-boolean p1, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->fitToContents:Z
+    iget-boolean v3, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->fitToContents:Z
 
-    iput-boolean p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
+    iput-boolean v3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
     :cond_4
-    iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->saveFlags:I
-
     if-eq p1, v2, :cond_5
 
-    and-int/2addr p1, p2
+    and-int/lit8 v3, p1, 0x4
 
-    if-ne p1, p2, :cond_6
+    if-ne v3, v1, :cond_6
 
     :cond_5
-    iget-boolean p1, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->hideable:Z
+    iget-boolean v3, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->hideable:Z
 
-    iput-boolean p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
+    iput-boolean v3, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
 
     :cond_6
-    iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->saveFlags:I
-
     if-eq p1, v2, :cond_7
 
     const/16 v2, 0x8
@@ -1808,7 +1996,7 @@
     :goto_0
     iget p1, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SavedState;->state:I
 
-    if-eq p1, v1, :cond_a
+    if-eq p1, p2, :cond_a
 
     if-ne p1, v0, :cond_9
 
@@ -1821,7 +2009,7 @@
 
     :cond_a
     :goto_1
-    iput p2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
+    iput v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
     :goto_2
     return-void
@@ -1952,7 +2140,9 @@
     goto/16 :goto_1
 
     :cond_3
-    iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandedOffset:I
+    invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->getExpandedOffset()I
+
+    move-result p1
 
     goto/16 :goto_3
 
@@ -2052,7 +2242,9 @@
 
     if-ge p1, p3, :cond_9
 
-    iget p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandedOffset:I
+    invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->getExpandedOffset()I
+
+    move-result p1
 
     goto :goto_3
 
@@ -2273,6 +2465,27 @@
     xor-int/2addr p1, v1
 
     return p1
+.end method
+
+.method public final replaceAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TV;",
+            "Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;",
+            "I)V"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$6;
+
+    invoke-direct {v0, p0, p3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$6;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;I)V
+
+    const/4 p3, 0x0
+
+    invoke-static {p1, p2, p3, v0}, Landroidx/core/view/ViewCompat;->replaceAccessibilityAction(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;Ljava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;)V
+
+    return-void
 .end method
 
 .method public setPeekHeight(I)V
@@ -2537,7 +2750,7 @@
 
     const-string v0, "Illegal state argument: "
 
-    invoke-static {v0, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline10(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p2}, Landroidx/appcompat/widget/AppCompatTextHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2574,15 +2787,17 @@
 
     if-eqz v1, :cond_1
 
-    invoke-static {v0}, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
+    sget-object v1, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    new-instance v1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$1;
+    new-instance v1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;
 
-    invoke-direct {v1, p0, v0, p1}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$1;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;Landroid/view/View;I)V
+    invoke-direct {v1, p0, v0, p1}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$2;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;Landroid/view/View;I)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
@@ -2753,7 +2968,9 @@
 
     iput p2, p3, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SettleRunnable;->targetState:I
 
-    invoke-static {p1, p3}, Landroidx/core/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
+    sget-object p2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1, p3}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
     iget-object p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->settleRunnable:Lcom/google/android/material/bottomsheet/BottomSheetBehavior$SettleRunnable;
 
@@ -2774,7 +2991,7 @@
 .end method
 
 .method public final updateAccessibilityActions()V
-    .locals 5
+    .locals 14
 
     iget-object v0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->viewRef:Ljava/lang/ref/WeakReference;
 
@@ -2796,85 +3013,261 @@
     :cond_1
     const/high16 v1, 0x80000
 
-    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->removeAccessibilityAction(Landroid/view/View;I)V
+    invoke-static {v1, v0}, Landroidx/core/view/ViewCompat;->removeActionWithId(ILandroid/view/View;)V
 
-    const/high16 v1, 0x40000
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->removeAccessibilityAction(Landroid/view/View;I)V
+    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
 
-    const/high16 v1, 0x100000
+    const/high16 v2, 0x40000
 
-    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->removeAccessibilityAction(Landroid/view/View;I)V
+    invoke-static {v2, v0}, Landroidx/core/view/ViewCompat;->removeActionWithId(ILandroid/view/View;)V
 
+    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
+
+    const/high16 v2, 0x100000
+
+    invoke-static {v2, v0}, Landroidx/core/view/ViewCompat;->removeActionWithId(ILandroid/view/View;)V
+
+    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
+
+    iget v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandHalfwayActionId:I
+
+    const/4 v3, -0x1
+
+    if-eq v2, v3, :cond_2
+
+    invoke-static {v2, v0}, Landroidx/core/view/ViewCompat;->removeActionWithId(ILandroid/view/View;)V
+
+    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->notifyViewAccessibilityStateChangedIfNeeded(Landroid/view/View;I)V
+
+    :cond_2
+    iget-boolean v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
+
+    const/4 v4, 0x6
+
+    if-nez v2, :cond_a
+
+    iget v2, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
+
+    if-eq v2, v4, :cond_a
+
+    sget v2, Lcom/google/android/material/R$string;->bottomsheet_action_expand_halfway:I
+
+    invoke-virtual {v0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    new-instance v10, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$6;
+
+    invoke-direct {v10, p0, v4}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior$6;-><init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;I)V
+
+    invoke-static {v0}, Landroidx/core/view/ViewCompat;->getActionList(Landroid/view/View;)Ljava/util/List;
+
+    move-result-object v2
+
+    move v5, v1
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    if-ge v5, v6, :cond_4
+
+    invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
+
+    invoke-virtual {v6}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getLabel()Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-static {v9, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
+
+    invoke-virtual {v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getId()I
+
+    move-result v1
+
+    goto :goto_4
+
+    :cond_3
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    move v6, v1
+
+    move v5, v3
+
+    :goto_1
+    sget-object v7, Landroidx/core/view/ViewCompat;->ACCESSIBILITY_ACTIONS_RESOURCE_IDS:[I
+
+    array-length v8, v7
+
+    if-ge v6, v8, :cond_8
+
+    if-ne v5, v3, :cond_8
+
+    aget v7, v7, v6
+
+    const/4 v8, 0x1
+
+    move v11, v1
+
+    move v12, v8
+
+    :goto_2
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v13
+
+    if-ge v11, v13, :cond_6
+
+    invoke-interface {v2, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
+
+    invoke-virtual {v13}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->getId()I
+
+    move-result v13
+
+    if-eq v13, v7, :cond_5
+
+    move v13, v8
+
+    goto :goto_3
+
+    :cond_5
+    move v13, v1
+
+    :goto_3
+    and-int/2addr v12, v13
+
+    add-int/lit8 v11, v11, 0x1
+
+    goto :goto_2
+
+    :cond_6
+    if-eqz v12, :cond_7
+
+    move v5, v7
+
+    :cond_7
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_1
+
+    :cond_8
+    move v1, v5
+
+    :goto_4
+    if-eq v1, v3, :cond_9
+
+    new-instance v2, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
+
+    const/4 v7, 0x0
+
+    const/4 v11, 0x0
+
+    move-object v6, v2
+
+    move v8, v1
+
+    invoke-direct/range {v6 .. v11}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;-><init>(Ljava/lang/Object;ILjava/lang/CharSequence;Landroidx/core/view/accessibility/AccessibilityViewCommand;Ljava/lang/Class;)V
+
+    invoke-static {v0, v2}, Landroidx/core/view/ViewCompat;->addAccessibilityAction(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)V
+
+    :cond_9
+    iput v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->expandHalfwayActionId:I
+
+    :cond_a
     iget-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideable:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_b
 
     iget v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
     const/4 v2, 0x5
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v2, :cond_b
 
     sget-object v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_DISMISS:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->addAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->replaceAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
 
-    :cond_2
+    :cond_b
     iget v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->state:I
 
-    const/4 v2, 0x6
+    const/4 v2, 0x4
 
-    const/4 v3, 0x4
+    const/4 v3, 0x3
 
-    const/4 v4, 0x3
+    if-eq v1, v3, :cond_f
 
-    if-eq v1, v4, :cond_6
+    if-eq v1, v2, :cond_d
 
-    if-eq v1, v3, :cond_4
+    if-eq v1, v4, :cond_c
 
-    if-eq v1, v2, :cond_3
+    goto :goto_5
 
-    goto :goto_0
-
-    :cond_3
+    :cond_c
     sget-object v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_COLLAPSE:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    invoke-virtual {p0, v0, v1, v3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->addAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->replaceAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
 
     sget-object v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_EXPAND:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    invoke-virtual {p0, v0, v1, v4}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->addAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
+    invoke-virtual {p0, v0, v1, v3}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->replaceAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
 
-    goto :goto_0
+    goto :goto_5
 
-    :cond_4
+    :cond_d
     iget-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_e
 
-    move v2, v4
+    move v4, v3
 
-    :cond_5
+    :cond_e
     sget-object v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_EXPAND:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->addAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
+    invoke-virtual {p0, v0, v1, v4}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->replaceAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
 
-    goto :goto_0
+    goto :goto_5
 
-    :cond_6
+    :cond_f
     iget-boolean v1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->fitToContents:Z
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_10
 
-    move v2, v3
+    move v4, v2
 
-    :cond_7
+    :cond_10
     sget-object v1, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->ACTION_COLLAPSE:Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->addAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
+    invoke-virtual {p0, v0, v1, v4}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->replaceAccessibilityActionForState(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;I)V
 
-    :goto_0
+    :goto_5
     return-void
 .end method
 
@@ -3019,7 +3412,7 @@
     const/4 v2, 0x0
 
     :goto_1
-    if-ge v2, v1, :cond_7
+    if-ge v2, v1, :cond_6
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -3050,59 +3443,20 @@
 
     invoke-interface {v4, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateImportantForAccessibilityOnSiblings:Z
-
-    if-eqz v4, :cond_6
-
-    const/4 v4, 0x4
-
-    invoke-static {v3, v4}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
-
-    goto :goto_2
-
     :cond_5
-    iget-boolean v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->updateImportantForAccessibilityOnSiblings:Z
-
-    if-eqz v4, :cond_6
-
-    iget-object v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->importantForAccessibilityMap:Ljava/util/Map;
-
-    if-eqz v4, :cond_6
-
-    invoke-interface {v4, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_6
-
-    iget-object v4, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->importantForAccessibilityMap:Ljava/util/Map;
-
-    invoke-interface {v4, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Integer;
-
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    invoke-static {v3, v4}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
-
-    :cond_6
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    :cond_7
-    if-nez p1, :cond_8
+    :cond_6
+    if-nez p1, :cond_7
 
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->importantForAccessibilityMap:Ljava/util/Map;
 
-    :cond_8
+    :cond_7
     return-void
 .end method
 

@@ -27,7 +27,7 @@
 
 
 # instance fields
-.field public final defaultInstance:Lcom/google/protobuf/GeneratedMessageLite;
+.field private final defaultInstance:Lcom/google/protobuf/GeneratedMessageLite;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TMessageType;"

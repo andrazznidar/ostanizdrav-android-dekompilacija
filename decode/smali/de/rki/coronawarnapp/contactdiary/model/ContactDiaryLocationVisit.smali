@@ -4,6 +4,9 @@
 
 
 # virtual methods
+.method public abstract getCheckInID()Ljava/lang/Long;
+.end method
+
 .method public abstract getCircumstances()Ljava/lang/String;
 .end method
 

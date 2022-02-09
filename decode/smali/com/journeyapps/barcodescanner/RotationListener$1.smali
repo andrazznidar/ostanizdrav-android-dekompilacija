@@ -55,9 +55,9 @@
 
     iget-object v0, v0, Lcom/journeyapps/barcodescanner/CameraPreview;->stateHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/journeyapps/barcodescanner/-$$Lambda$CameraPreview$4$lsWSkk8IGGrXrI_yHwpwH8oo3j8;
+    new-instance v1, Lcom/journeyapps/barcodescanner/CameraPreview$4$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p1}, Lcom/journeyapps/barcodescanner/-$$Lambda$CameraPreview$4$lsWSkk8IGGrXrI_yHwpwH8oo3j8;-><init>(Lcom/journeyapps/barcodescanner/CameraPreview$4;)V
+    invoke-direct {v1, p1}, Lcom/journeyapps/barcodescanner/CameraPreview$4$$ExternalSyntheticLambda0;-><init>(Lcom/journeyapps/barcodescanner/CameraPreview$4;)V
 
     const-wide/16 v2, 0xfa
 

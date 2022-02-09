@@ -76,31 +76,31 @@
 
     sput-object v0, Lcom/google/crypto/tink/Registry;->logger:Ljava/util/logging/Logger;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     sput-object v0, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     sput-object v0, Lcom/google/crypto/tink/Registry;->keyDeriverMap:Ljava/util/concurrent/ConcurrentMap;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     sput-object v0, Lcom/google/crypto/tink/Registry;->newKeyAllowedMap:Ljava/util/concurrent/ConcurrentMap;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     sput-object v0, Lcom/google/crypto/tink/Registry;->primitiveWrapperMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -152,13 +152,17 @@
     :try_start_0
     sget-object v1, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v1, p0}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    move-object v2, v1
 
-    move-result v1
+    check-cast v2, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v2, p0}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
     monitor-exit v0
 
@@ -166,9 +170,9 @@
 
     :cond_0
     :try_start_1
-    sget-object v1, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
+    check-cast v1, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-interface {v1, p0}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p0}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -188,7 +192,9 @@
 
     sget-object p1, Lcom/google/crypto/tink/Registry;->newKeyAllowedMap:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {p1, p0}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p1, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {p1, p0}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -253,7 +259,7 @@
 
     new-instance p2, Ljava/security/GeneralSecurityException;
 
-    const-string v2, "typeUrl (%s) is already registered with %s, cannot be re-registered with %s"
+    const-string/jumbo v2, "typeUrl (%s) is already registered with %s, cannot be re-registered with %s"
 
     const/4 v3, 0x3
 
@@ -325,15 +331,19 @@
     :try_start_0
     sget-object v1, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v1, p0}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    move-object v2, v1
 
-    move-result v1
+    check-cast v2, Lj$/util/concurrent/ConcurrentHashMap;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v2, p0}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
-    sget-object v1, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
+    move-result v2
 
-    invoke-interface {v1, p0}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v2, :cond_0
+
+    check-cast v1, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v1, p0}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -378,7 +388,7 @@
 .end method
 
 .method public static getPrimitive(Ljava/lang/String;[BLjava/lang/Class;)Ljava/lang/Object;
-    .locals 0
+    .locals 2
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -410,7 +420,13 @@
         }
     .end annotation
 
-    invoke-static {p1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+
+    array-length v0, p1
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, v1, v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->copyFrom([BII)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     move-result-object p1
 
@@ -495,7 +511,7 @@
 
     const-string v0, "Primitive type "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -579,333 +595,6 @@
     throw p1
 .end method
 
-.method public static getPrimitives(Lcom/google/crypto/tink/KeysetHandle;Ljava/lang/Class;)Lcom/google/crypto/tink/PrimitiveSet;
-    .locals 12
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0
-        }
-        names = {
-            "keysetHandle",
-            "primitiveClass"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<P:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lcom/google/crypto/tink/KeysetHandle;",
-            "Ljava/lang/Class<",
-            "TP;>;)",
-            "Lcom/google/crypto/tink/PrimitiveSet<",
-            "TP;>;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/security/GeneralSecurityException;
-        }
-    .end annotation
-
-    if-eqz p1, :cond_a
-
-    sget-object v0, Lcom/google/crypto/tink/proto/KeyStatusType;->ENABLED:Lcom/google/crypto/tink/proto/KeyStatusType;
-
-    iget-object v1, p0, Lcom/google/crypto/tink/KeysetHandle;->keyset:Lcom/google/crypto/tink/proto/Keyset;
-
-    invoke-static {v1}, Lcom/google/crypto/tink/Util;->validateKeyset(Lcom/google/crypto/tink/proto/Keyset;)V
-
-    new-instance v1, Lcom/google/crypto/tink/PrimitiveSet;
-
-    invoke-direct {v1, p1}, Lcom/google/crypto/tink/PrimitiveSet;-><init>(Ljava/lang/Class;)V
-
-    iget-object v2, p0, Lcom/google/crypto/tink/KeysetHandle;->keyset:Lcom/google/crypto/tink/proto/Keyset;
-
-    invoke-virtual {v2}, Lcom/google/crypto/tink/proto/Keyset;->getKeyList()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_0
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_9
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/crypto/tink/proto/Keyset$Key;
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
-
-    move-result-object v4
-
-    if-ne v4, v0, :cond_0
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyData()Lcom/google/crypto/tink/proto/KeyData;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/google/crypto/tink/proto/KeyData;->getTypeUrl()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyData()Lcom/google/crypto/tink/proto/KeyData;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/KeyData;->getValue()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
-
-    move-result-object v5
-
-    invoke-static {v4, v5, p1}, Lcom/google/crypto/tink/Registry;->getPrimitiveInternal(Ljava/lang/String;Lcom/google/crypto/tink/shaded/protobuf/ByteString;Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
-
-    move-result-object v4
-
-    if-ne v4, v0, :cond_8
-
-    new-instance v4, Lcom/google/crypto/tink/PrimitiveSet$Entry;
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getOutputPrefixType()Lcom/google/crypto/tink/proto/OutputPrefixType;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v5
-
-    const/4 v6, 0x5
-
-    const/4 v8, 0x1
-
-    if-eq v5, v8, :cond_4
-
-    const/4 v8, 0x2
-
-    if-eq v5, v8, :cond_3
-
-    const/4 v8, 0x3
-
-    if-eq v5, v8, :cond_2
-
-    const/4 v8, 0x4
-
-    if-ne v5, v8, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/security/GeneralSecurityException;
-
-    const-string p1, "unknown output prefix type"
-
-    invoke-direct {p0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    sget-object v5, Lcom/google/crypto/tink/CryptoFormat;->RAW_PREFIX:[B
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    invoke-static {v6}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object v5
-
-    goto :goto_2
-
-    :cond_4
-    invoke-static {v6}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v8}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object v5
-
-    :goto_2
-    move-object v8, v5
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getStatus()Lcom/google/crypto/tink/proto/KeyStatusType;
-
-    move-result-object v9
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getOutputPrefixType()Lcom/google/crypto/tink/proto/OutputPrefixType;
-
-    move-result-object v10
-
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
-
-    move-result v11
-
-    move-object v6, v4
-
-    invoke-direct/range {v6 .. v11}, Lcom/google/crypto/tink/PrimitiveSet$Entry;-><init>(Ljava/lang/Object;[BLcom/google/crypto/tink/proto/KeyStatusType;Lcom/google/crypto/tink/proto/OutputPrefixType;I)V
-
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Ljava/lang/String;
-
-    invoke-virtual {v4}, Lcom/google/crypto/tink/PrimitiveSet$Entry;->getIdentifier()[B
-
-    move-result-object v7
-
-    sget-object v8, Lcom/google/crypto/tink/PrimitiveSet;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-direct {v6, v7, v8}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
-
-    iget-object v7, v1, Lcom/google/crypto/tink/PrimitiveSet;->primitives:Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-static {v5}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v5
-
-    invoke-interface {v7, v6, v5}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/util/List;
-
-    if-eqz v5, :cond_5
-
-    new-instance v7, Ljava/util/ArrayList;
-
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {v7, v5}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    invoke-virtual {v7, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v5, v1, Lcom/google/crypto/tink/PrimitiveSet;->primitives:Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-static {v7}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v7
-
-    invoke-interface {v5, v6, v7}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_5
-    invoke-virtual {v3}, Lcom/google/crypto/tink/proto/Keyset$Key;->getKeyId()I
-
-    move-result v3
-
-    iget-object v5, p0, Lcom/google/crypto/tink/KeysetHandle;->keyset:Lcom/google/crypto/tink/proto/Keyset;
-
-    invoke-virtual {v5}, Lcom/google/crypto/tink/proto/Keyset;->getPrimaryKeyId()I
-
-    move-result v5
-
-    if-ne v3, v5, :cond_0
-
-    iget-object v3, v4, Lcom/google/crypto/tink/PrimitiveSet$Entry;->status:Lcom/google/crypto/tink/proto/KeyStatusType;
-
-    if-ne v3, v0, :cond_7
-
-    invoke-virtual {v4}, Lcom/google/crypto/tink/PrimitiveSet$Entry;->getIdentifier()[B
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Lcom/google/crypto/tink/PrimitiveSet;->getPrimitive([B)Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_6
-
-    iput-object v4, v1, Lcom/google/crypto/tink/PrimitiveSet;->primary:Lcom/google/crypto/tink/PrimitiveSet$Entry;
-
-    goto/16 :goto_0
-
-    :cond_6
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "the primary entry cannot be set to an entry which is not held by this primitive set"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_7
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "the primary entry has to be ENABLED"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_8
-    new-instance p0, Ljava/security/GeneralSecurityException;
-
-    const-string p1, "only ENABLED key is allowed"
-
-    invoke-direct {p0, p1}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_9
-    return-object v1
-
-    :cond_a
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
 .method public static declared-synchronized newKey(Lcom/google/crypto/tink/proto/KeyTemplate;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
     .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
@@ -946,7 +635,9 @@
 
     move-result-object v3
 
-    invoke-interface {v2, v3}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v2, v3}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -961,24 +652,21 @@
     invoke-virtual {p0}, Lcom/google/crypto/tink/proto/KeyTemplate;->getValue()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v1, Lcom/google/crypto/tink/KeyManagerImpl;
 
-    :try_start_1
     invoke-virtual {v1, p0}, Lcom/google/crypto/tink/KeyManagerImpl;->newKey(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 
     move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v0
 
     return-object p0
 
     :cond_0
-    :try_start_2
+    :try_start_1
     new-instance v1, Ljava/security/GeneralSecurityException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1002,8 +690,8 @@
     invoke-direct {v1, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
     throw v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
     move-exception p0
@@ -1053,7 +741,9 @@
 
     move-result-object v3
 
-    invoke-interface {v2, v3}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v2, v3}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1068,24 +758,21 @@
     invoke-virtual {p0}, Lcom/google/crypto/tink/proto/KeyTemplate;->getValue()Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
     move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     check-cast v1, Lcom/google/crypto/tink/KeyManagerImpl;
 
-    :try_start_1
     invoke-virtual {v1, p0}, Lcom/google/crypto/tink/KeyManagerImpl;->newKeyData(Lcom/google/crypto/tink/shaded/protobuf/ByteString;)Lcom/google/crypto/tink/proto/KeyData;
 
     move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v0
 
     return-object p0
 
     :cond_0
-    :try_start_2
+    :try_start_1
     new-instance v1, Ljava/security/GeneralSecurityException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1109,8 +796,8 @@
     invoke-direct {v1, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
     throw v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
     move-exception p0
@@ -1190,58 +877,64 @@
 
     sget-object v3, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v3, v1}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    move-object v5, v3
 
-    move-result v3
+    check-cast v5, Lj$/util/concurrent/ConcurrentHashMap;
 
-    if-eqz v3, :cond_1
-
-    sget-object v3, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-interface {v3, v1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/crypto/tink/Registry$KeyManagerContainer;
-
-    invoke-interface {v3}, Lcom/google/crypto/tink/Registry$KeyManagerContainer;->publicKeyManagerClassOrNull()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v1}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_1
+
+    move-object v5, v3
+
+    check-cast v5, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v5, v1}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/crypto/tink/Registry$KeyManagerContainer;
+
+    invoke-interface {v5}, Lcom/google/crypto/tink/Registry$KeyManagerContainer;->publicKeyManagerClassOrNull()Ljava/lang/Class;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
 
     goto :goto_0
 
     :cond_0
     sget-object p2, Lcom/google/crypto/tink/Registry;->logger:Ljava/util/logging/Logger;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v6, "Attempted overwrite of a registered key manager for key type "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, " with inconsistent public key type "
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1267,7 +960,7 @@
 
     const/4 p0, 0x1
 
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1295,44 +988,52 @@
 
     :cond_1
     :goto_0
-    sget-object v3, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
+    move-object v4, v3
 
-    invoke-interface {v3, v1}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    check-cast v4, Lj$/util/concurrent/ConcurrentHashMap;
 
-    move-result v3
+    invoke-virtual {v4, v1}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
-    if-eqz v3, :cond_2
+    move-result v4
 
-    sget-object v3, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
+    if-eqz v4, :cond_2
 
-    invoke-interface {v3, v1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v4, v3
 
-    move-result-object v3
+    check-cast v4, Lj$/util/concurrent/ConcurrentHashMap;
 
-    check-cast v3, Lcom/google/crypto/tink/Registry$KeyManagerContainer;
+    invoke-virtual {v4, v1}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v3}, Lcom/google/crypto/tink/Registry$KeyManagerContainer;->publicKeyManagerClassOrNull()Ljava/lang/Class;
+    move-result-object v4
 
-    move-result-object v3
+    check-cast v4, Lcom/google/crypto/tink/Registry$KeyManagerContainer;
 
-    if-nez v3, :cond_3
+    invoke-interface {v4}, Lcom/google/crypto/tink/Registry$KeyManagerContainer;->publicKeyManagerClassOrNull()Ljava/lang/Class;
+
+    move-result-object v4
+
+    if-nez v4, :cond_3
 
     :cond_2
-    sget-object v3, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
-
     new-instance v4, Lcom/google/crypto/tink/Registry$3;
 
     invoke-direct {v4, p0, p1}, Lcom/google/crypto/tink/Registry$3;-><init>(Lcom/google/crypto/tink/PrivateKeyTypeManager;Lcom/google/crypto/tink/KeyTypeManager;)V
 
-    invoke-interface {v3, v1, v4}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v5, v3
 
-    sget-object v3, Lcom/google/crypto/tink/Registry;->keyDeriverMap:Ljava/util/concurrent/ConcurrentMap;
+    check-cast v5, Lj$/util/concurrent/ConcurrentHashMap;
 
-    new-instance v4, Lcom/google/crypto/tink/Registry$4;
+    invoke-virtual {v5, v1, v4}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v4, p0}, Lcom/google/crypto/tink/Registry$4;-><init>(Lcom/google/crypto/tink/KeyTypeManager;)V
+    sget-object v4, Lcom/google/crypto/tink/Registry;->keyDeriverMap:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v3, v1, v4}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v5, Lcom/google/crypto/tink/Registry$4;
+
+    invoke-direct {v5, p0}, Lcom/google/crypto/tink/Registry$4;-><init>(Lcom/google/crypto/tink/KeyTypeManager;)V
+
+    check-cast v4, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v4, v1, v5}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_3
     sget-object p0, Lcom/google/crypto/tink/Registry;->newKeyAllowedMap:Ljava/util/concurrent/ConcurrentMap;
@@ -1341,30 +1042,36 @@
 
     move-result-object p2
 
-    invoke-interface {p0, v1, p2}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v4, p0
 
-    sget-object p0, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
+    check-cast v4, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-interface {p0, v2}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result p0
+    move-object p2, v3
 
-    if-nez p0, :cond_4
+    check-cast p2, Lj$/util/concurrent/ConcurrentHashMap;
 
-    sget-object p0, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
+    invoke-virtual {p2, v2}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_4
 
     new-instance p2, Lcom/google/crypto/tink/Registry$2;
 
     invoke-direct {p2, p1}, Lcom/google/crypto/tink/Registry$2;-><init>(Lcom/google/crypto/tink/KeyTypeManager;)V
 
-    invoke-interface {p0, v2, p2}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v3, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v3, v2, p2}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_4
-    sget-object p0, Lcom/google/crypto/tink/Registry;->newKeyAllowedMap:Ljava/util/concurrent/ConcurrentMap;
-
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-interface {p0, v2, p1}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p0, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {p0, v2, p1}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1438,19 +1145,23 @@
 
     sget-object v2, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v2, v1}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    move-object v3, v2
 
-    move-result v2
+    check-cast v3, Lj$/util/concurrent/ConcurrentHashMap;
 
-    if-nez v2, :cond_0
+    invoke-virtual {v3, v1}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
-    sget-object v2, Lcom/google/crypto/tink/Registry;->keyManagerMap:Ljava/util/concurrent/ConcurrentMap;
+    move-result v3
+
+    if-nez v3, :cond_0
 
     new-instance v3, Lcom/google/crypto/tink/Registry$2;
 
     invoke-direct {v3, p0}, Lcom/google/crypto/tink/Registry$2;-><init>(Lcom/google/crypto/tink/KeyTypeManager;)V
 
-    invoke-interface {v2, v1, v3}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v2, v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v2, Lcom/google/crypto/tink/Registry;->keyDeriverMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -1458,7 +1169,9 @@
 
     invoke-direct {v3, p0}, Lcom/google/crypto/tink/Registry$4;-><init>(Lcom/google/crypto/tink/KeyTypeManager;)V
 
-    invoke-interface {v2, v1, v3}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v2, v1, v3}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     sget-object p0, Lcom/google/crypto/tink/Registry;->newKeyAllowedMap:Ljava/util/concurrent/ConcurrentMap;
@@ -1467,7 +1180,9 @@
 
     move-result-object p1
 
-    invoke-interface {p0, v1, p1}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p0, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {p0, v1, p1}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1521,38 +1236,44 @@
 
     sget-object v2, Lcom/google/crypto/tink/Registry;->primitiveWrapperMap:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v2, v1}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
+    move-object v3, v2
 
-    move-result v2
+    check-cast v3, Lj$/util/concurrent/ConcurrentHashMap;
 
-    if-eqz v2, :cond_1
-
-    sget-object v2, Lcom/google/crypto/tink/Registry;->primitiveWrapperMap:Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-interface {v2, v1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/crypto/tink/PrimitiveWrapper;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
+
+    move-object v3, v2
+
+    check-cast v3, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v3, v1}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/crypto/tink/PrimitiveWrapper;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
 
     goto :goto_0
 
     :cond_0
-    sget-object v3, Lcom/google/crypto/tink/Registry;->logger:Ljava/util/logging/Logger;
+    sget-object v2, Lcom/google/crypto/tink/Registry;->logger:Ljava/util/logging/Logger;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1568,9 +1289,9 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/util/logging/Logger;->warning(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/util/logging/Logger;->warning(Ljava/lang/String;)V
 
-    new-instance v3, Ljava/security/GeneralSecurityException;
+    new-instance v2, Ljava/security/GeneralSecurityException;
 
     const-string v4, "SetWrapper for primitive (%s) is already registered to be %s, cannot be re-registered with %s"
 
@@ -1588,15 +1309,15 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    aput-object v2, v5, v1
+    aput-object v3, v5, v1
 
     const/4 v1, 0x2
 
@@ -1614,15 +1335,15 @@
 
     move-result-object p0
 
-    invoke-direct {v3, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, p0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v2
 
     :cond_1
     :goto_0
-    sget-object v2, Lcom/google/crypto/tink/Registry;->primitiveWrapperMap:Ljava/util/concurrent/ConcurrentMap;
+    check-cast v2, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-interface {v2, v1, p0}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, p0}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

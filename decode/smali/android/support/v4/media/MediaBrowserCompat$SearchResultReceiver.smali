@@ -1,4 +1,4 @@
-.class public Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;
+.class Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;
 .super Landroid/support/v4/os/ResultReceiver;
 .source "MediaBrowserCompat.java"
 

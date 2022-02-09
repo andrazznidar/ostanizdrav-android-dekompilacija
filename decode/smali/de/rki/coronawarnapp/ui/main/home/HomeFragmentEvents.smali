@@ -8,9 +8,21 @@
     value = {
         Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowTracingExplanation;,
         Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowErrorResetDialog;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToStatisticsExplanation;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToFederalStateSelection;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToRiskDetailsFragment;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToSettingsTracingFragment;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToSubmissionDispatcher;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$OpenFAQUrl;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToRapidTestResultNegativeFragment;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToPcrTestResultNegativeFragment;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToTestResultKeysSharedFragment;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$OpenIncompatibleUrl;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$OpenTraceLocationOrganizerGraph;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToTestResultPendingFragment;,
         Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowDeleteTestDialog;,
-        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$ShowReactivateRiskCheckDialog;,
-        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToStatisticsExplanation;
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToTestResultAvailableFragment;,
+        Lde/rki/coronawarnapp/ui/main/home/HomeFragmentEvents$GoToTestResultPositiveFragment;
     }
 .end annotation
 

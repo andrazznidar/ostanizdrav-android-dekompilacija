@@ -12,21 +12,3 @@
         "Ljava/lang/Object;"
     }
 .end annotation
-
-
-# virtual methods
-.method public abstract onScaleChanged(Landroid/view/View;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
-.end method
-
-.method public abstract onTranslationChanged(Landroid/view/View;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)V"
-        }
-    .end annotation
-.end method

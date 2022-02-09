@@ -3,17 +3,6 @@
 .source "PagerSnapHelper.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroidx/recyclerview/widget/PagerSnapHelper;->createSnapScroller(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Landroidx/recyclerview/widget/LinearSmoothScroller;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
-.end annotation
-
-
 # instance fields
 .field public final synthetic this$0:Landroidx/recyclerview/widget/PagerSnapHelper;
 
@@ -62,7 +51,7 @@
 .end method
 
 .method public onTargetFound(Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView$State;Landroidx/recyclerview/widget/RecyclerView$SmoothScroller$Action;)V
-    .locals 2
+    .locals 4
 
     iget-object p2, p0, Landroidx/recyclerview/widget/PagerSnapHelper$1;->this$0:Landroidx/recyclerview/widget/PagerSnapHelper;
 
@@ -96,9 +85,21 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/LinearSmoothScroller;->calculateTimeForDeceleration(I)I
+    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/PagerSnapHelper$1;->calculateTimeForScrolling(I)I
 
     move-result v0
+
+    int-to-double v0, v0
+
+    const-wide v2, 0x3fd57a786c22680aL    # 0.3356
+
+    div-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v0
+
+    double-to-int v0, v0
 
     if-lez v0, :cond_0
 

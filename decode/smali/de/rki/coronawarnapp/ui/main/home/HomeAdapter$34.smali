@@ -21,7 +21,7 @@
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
         "Landroid/view/ViewGroup;",
-        "Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;",
+        "Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestSubmissionDoneCard;",
         ">;"
     }
 .end annotation
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 1
 
     check-cast p1, Landroid/view/ViewGroup;
 
@@ -65,13 +65,9 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;
+    new-instance v0, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestSubmissionDoneCard;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x2
-
-    invoke-direct {v0, p1, v1, v2}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;-><init>(Landroid/view/ViewGroup;II)V
+    invoke-direct {v0, p1}, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestSubmissionDoneCard;-><init>(Landroid/view/ViewGroup;)V
 
     return-object v0
 .end method

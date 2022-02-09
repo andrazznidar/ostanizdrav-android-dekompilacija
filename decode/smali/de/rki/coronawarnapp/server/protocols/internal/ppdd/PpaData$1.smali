@@ -1,4 +1,4 @@
-.class public synthetic Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$1;
+.class synthetic Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$1;
 .super Ljava/lang/Object;
 .source "PpaData.java"
 

@@ -91,7 +91,7 @@
     return-object v0
 .end method
 
-.method public getSyntax()Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;
+.method public getSyntax$enumunboxing$()I
     .locals 2
 
     iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/RawMessageInfo;->flags:I
@@ -102,15 +102,13 @@
 
     if-ne v0, v1, :cond_0
 
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;->PROTO2:Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;
-
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;->PROTO3:Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;
+    const/4 v1, 0x2
 
     :goto_0
-    return-object v0
+    return v1
 .end method
 
 .method public isMessageSetWireFormat()Z

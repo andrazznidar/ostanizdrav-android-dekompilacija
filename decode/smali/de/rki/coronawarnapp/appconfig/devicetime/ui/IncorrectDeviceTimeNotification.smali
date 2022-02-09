@@ -18,13 +18,13 @@
     .end annotation
 .end field
 
-.field public final notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+.field public final notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
 .field public final notificationId:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Ljavax/inject/Provider;Lde/rki/coronawarnapp/notification/NotificationHelper;)V
+.method public constructor <init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/ForegroundState;Ljavax/inject/Provider;Lde/rki/coronawarnapp/notification/GeneralNotifications;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -34,7 +34,7 @@
             "Ljavax/inject/Provider<",
             "Landroidx/navigation/NavDeepLinkBuilder;",
             ">;",
-            "Lde/rki/coronawarnapp/notification/NotificationHelper;",
+            "Lde/rki/coronawarnapp/notification/GeneralNotifications;",
             ")V"
         }
     .end annotation
@@ -63,7 +63,7 @@
 
     iput-object p3, p0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->navDeepLinkBuilderProvider:Ljavax/inject/Provider;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    iput-object p4, p0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
     const/16 p1, 0x8c
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final show(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,7 +131,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -145,7 +145,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->foregroundState:Lde/rki/coronawarnapp/util/device/ForegroundState;
 
@@ -157,7 +157,7 @@
 
     iput v3, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification$show$1;->label:I
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -177,15 +177,15 @@
 
     if-eqz p1, :cond_4
 
-    const/4 p1, 0x0
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v0, v0, [Ljava/lang/Object;
 
     const-string v1, "Not showing notification as app is in the foreground."
 
-    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -200,7 +200,7 @@
 
     check-cast p1, Landroidx/navigation/NavDeepLinkBuilder;
 
-    const v1, 0x7f0f0001
+    const v1, 0x7f100002
 
     invoke-virtual {p1, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setGraph(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -208,7 +208,7 @@
 
     invoke-virtual {p1, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setComponentName(Ljava/lang/Class;)Landroidx/navigation/NavDeepLinkBuilder;
 
-    const v1, 0x7f090267
+    const v1, 0x7f0a040e
 
     invoke-virtual {p1, v1}, Landroidx/navigation/NavDeepLinkBuilder;->setDestination(I)Landroidx/navigation/NavDeepLinkBuilder;
 
@@ -220,53 +220,51 @@
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/notification/NotificationHelper;->getBaseBuilder()Landroidx/core/app/NotificationCompat$Builder;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->newBaseBuilder()Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object v1
 
-    new-instance v2, Landroidx/core/app/NotificationCompat$BigTextStyle;
-
-    invoke-direct {v2}, Landroidx/core/app/NotificationCompat$BigTextStyle;-><init>()V
-
-    iget-object v3, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->context:Landroid/content/Context;
-
-    const v4, 0x7f120109
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroidx/core/app/NotificationCompat$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$BigTextStyle;
-
-    invoke-virtual {v1, v2}, Landroidx/core/app/NotificationCompat$Builder;->setStyle(Landroidx/core/app/NotificationCompat$Style;)Landroidx/core/app/NotificationCompat$Builder;
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->context:Landroid/content/Context;
-
-    const v3, 0x7f12010b
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
-
     iput-object p1, v1, Landroidx/core/app/NotificationCompat$Builder;->mContentIntent:Landroid/app/PendingIntent;
+
+    iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->context:Landroid/content/Context;
+
+    const v2, 0x7f1301a4
+
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+
+    iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->context:Landroid/content/Context;
+
+    const v2, 0x7f1301a2
+
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v2, "context.getString(R.stri\u2026me_incorrect_dialog_body)"
+
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v1, p1}, Lcom/google/android/gms/internal/nearby/zznn;->setContentTextExpandable(Landroidx/core/app/NotificationCompat$Builder;Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-virtual {v1}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
 
     move-result-object p1
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/NotificationHelper;
+    const-string v1, "notificationHelper.newBa\u2026_body))\n        }.build()"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationHelper:Lde/rki/coronawarnapp/notification/GeneralNotifications;
 
     iget v0, v0, Lde/rki/coronawarnapp/appconfig/devicetime/ui/IncorrectDeviceTimeNotification;->notificationId:I
 
-    const-string v2, "notification"
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v0, p1}, Lde/rki/coronawarnapp/notification/NotificationHelper;->sendNotification(ILandroid/app/Notification;)V
+    invoke-virtual {v1, v0, p1}, Lde/rki/coronawarnapp/notification/GeneralNotifications;->sendNotification(ILandroid/app/Notification;)V
 
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 

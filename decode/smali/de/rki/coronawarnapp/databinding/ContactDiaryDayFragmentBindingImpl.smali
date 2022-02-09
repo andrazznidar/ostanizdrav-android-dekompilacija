@@ -21,31 +21,25 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09010b
+    const v1, 0x7f0a01e7
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09010c
+    const v1, 0x7f0a01e8
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09010d
+    const v1, 0x7f0a01e9
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09010a
+    const v1, 0x7f0a01e6
 
     const/4 v2, 0x4
 
@@ -56,6 +50,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 12
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -81,7 +85,7 @@
 
     move-object v8, v1
 
-    check-cast v8, Landroidx/appcompat/widget/Toolbar;
+    check-cast v8, Lcom/google/android/material/appbar/MaterialToolbar;
 
     const/4 v1, 0x2
 
@@ -115,7 +119,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Landroidx/appcompat/widget/Toolbar;Lcom/google/android/material/tabs/TabLayout;Landroidx/viewpager2/widget/ViewPager2;Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/ContactDiaryDayFragmentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;Lcom/google/android/material/appbar/MaterialToolbar;Lcom/google/android/material/tabs/TabLayout;Landroidx/viewpager2/widget/ViewPager2;Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
     const-wide/16 v0, -0x1
 
@@ -125,7 +129,7 @@
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

@@ -1,253 +1,161 @@
 .class public final Lcom/google/android/gms/common/internal/zze;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Landroid/content/ServiceConnection;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/common/internal/GetServiceRequest;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public final synthetic zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+.field public final zzb:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/common/internal/BaseGmsClient;I)V
     .locals 0
 
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p2, p0, Lcom/google/android/gms/common/internal/zze;->zzb:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 19
+.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 3
 
-    move-object/from16 v0, p1
+    if-nez p2, :cond_0
 
-    invoke-static/range {p1 .. p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    move-result v1
+    const/16 p2, 0x10
 
-    const/4 v2, 0x0
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzc(Lcom/google/android/gms/common/internal/BaseGmsClient;I)V
 
-    const/4 v3, 0x0
-
-    move v5, v2
-
-    move v6, v5
-
-    move v7, v6
-
-    move v15, v7
-
-    move/from16 v16, v15
-
-    move/from16 v17, v16
-
-    move-object v8, v3
-
-    move-object v9, v8
-
-    move-object v10, v9
-
-    move-object v11, v10
-
-    move-object v12, v11
-
-    move-object v13, v12
-
-    move-object v14, v13
-
-    move-object/from16 v18, v14
-
-    :goto_0
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v2
-
-    if-ge v2, v1, :cond_0
-
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    const v3, 0xffff
-
-    and-int/2addr v3, v2
-
-    packed-switch v3, :pswitch_data_0
-
-    :pswitch_0
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v18
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readBoolean(Landroid/os/Parcel;I)Z
-
-    move-result v17
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v16
-
-    goto :goto_0
-
-    :pswitch_4
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readBoolean(Landroid/os/Parcel;I)Z
-
-    move-result v15
-
-    goto :goto_0
-
-    :pswitch_5
-    sget-object v3, Lcom/google/android/gms/common/Feature;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {v0, v2, v3}, Lcom/airbnb/lottie/R$attr;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v14, v2
-
-    check-cast v14, [Lcom/google/android/gms/common/Feature;
-
-    goto :goto_0
-
-    :pswitch_6
-    sget-object v3, Lcom/google/android/gms/common/Feature;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {v0, v2, v3}, Lcom/airbnb/lottie/R$attr;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v13, v2
-
-    check-cast v13, [Lcom/google/android/gms/common/Feature;
-
-    goto :goto_0
-
-    :pswitch_7
-    sget-object v3, Landroid/accounts/Account;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {v0, v2, v3}, Lcom/airbnb/lottie/R$attr;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    move-object v12, v2
-
-    check-cast v12, Landroid/accounts/Account;
-
-    goto :goto_0
-
-    :pswitch_8
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createBundle(Landroid/os/Parcel;I)Landroid/os/Bundle;
-
-    move-result-object v11
-
-    goto :goto_0
-
-    :pswitch_9
-    sget-object v3, Lcom/google/android/gms/common/api/Scope;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {v0, v2, v3}, Lcom/airbnb/lottie/R$attr;->createTypedArray(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v10, v2
-
-    check-cast v10, [Lcom/google/android/gms/common/api/Scope;
-
-    goto :goto_0
-
-    :pswitch_a
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readIBinder(Landroid/os/Parcel;I)Landroid/os/IBinder;
-
-    move-result-object v9
-
-    goto :goto_0
-
-    :pswitch_b
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v8
-
-    goto :goto_0
-
-    :pswitch_c
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v7
-
-    goto :goto_0
-
-    :pswitch_d
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v6
-
-    goto :goto_0
-
-    :pswitch_e
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v5
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    new-instance v0, Lcom/google/android/gms/common/internal/GetServiceRequest;
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzq:Ljava/lang/Object;
 
-    move-object v4, v0
+    monitor-enter p1
 
-    invoke-direct/range {v4 .. v18}, Lcom/google/android/gms/common/internal/GetServiceRequest;-><init>(IIILjava/lang/String;Landroid/os/IBinder;[Lcom/google/android/gms/common/api/Scope;Landroid/os/Bundle;Landroid/accounts/Account;[Lcom/google/android/gms/common/Feature;[Lcom/google/android/gms/common/Feature;ZIZLjava/lang/String;)V
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    return-object v0
+    const-string v1, "com.google.android.gms.common.internal.IGmsServiceBroker"
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    invoke-interface {p2, v1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    instance-of v2, v1, Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    if-eqz v2, :cond_1
+
+    check-cast v1, Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v1, Lcom/google/android/gms/common/internal/zzab;
+
+    invoke-direct {v1, p2}, Lcom/google/android/gms/common/internal/zzab;-><init>(Landroid/os/IBinder;)V
+
+    :goto_0
+    iput-object v1, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzr:Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    const/4 p2, 0x0
+
+    iget v0, p0, Lcom/google/android/gms/common/internal/zze;->zzb:I
+
+    iget-object v1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzb:Landroid/os/Handler;
+
+    new-instance v2, Lcom/google/android/gms/common/internal/zzg;
+
+    invoke-direct {v2, p1, p2}, Lcom/google/android/gms/common/internal/zzg;-><init>(Lcom/google/android/gms/common/internal/BaseGmsClient;I)V
+
+    const/4 p1, 0x7
+
+    const/4 p2, -0x1
+
+    invoke-virtual {v1, p1, v0, p2, v2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception p2
+
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p2
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
+.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 3
 
-    new-array p1, p1, [Lcom/google/android/gms/common/internal/GetServiceRequest;
+    iget-object p1, p0, Lcom/google/android/gms/common/internal/zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    return-object p1
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzq:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzr:Lcom/google/android/gms/common/internal/IGmsServiceBroker;
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzb:Landroid/os/Handler;
+
+    const/4 v0, 0x6
+
+    iget v1, p0, Lcom/google/android/gms/common/internal/zze;->zzb:I
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

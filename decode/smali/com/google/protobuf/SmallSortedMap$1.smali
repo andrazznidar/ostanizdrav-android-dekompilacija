@@ -4,19 +4,10 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/protobuf/SmallSortedMap;->newFieldMap(I)Lcom/google/protobuf/SmallSortedMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/protobuf/SmallSortedMap<",
-        "TFieldDescriptorType;",
+        "Lcom/google/protobuf/FieldSet$FieldDescriptorLite;",
         "Ljava/lang/Object;",
         ">;"
     }
@@ -145,7 +136,7 @@
 
     check-cast p1, Lcom/google/protobuf/FieldSet$FieldDescriptorLite;
 
-    invoke-super {p0, p1, p2}, Lcom/google/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/SmallSortedMap;->put(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

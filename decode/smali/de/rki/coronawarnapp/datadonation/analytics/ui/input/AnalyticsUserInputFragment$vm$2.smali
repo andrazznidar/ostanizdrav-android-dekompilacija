@@ -57,7 +57,7 @@
     return-object v0
 
     :cond_0
-    const-string v0, "viewModelFactory"
+    const-string/jumbo v0, "viewModelFactory"
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 

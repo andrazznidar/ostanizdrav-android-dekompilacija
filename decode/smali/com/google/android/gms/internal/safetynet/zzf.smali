@@ -1,28 +1,16 @@
 .class public abstract Lcom/google/android/gms/internal/safetynet/zzf;
-.super Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;
+.super Lcom/google/android/gms/internal/safetynet/zzb;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<R::",
-        "Lcom/google/android/gms/common/api/Result;",
-        ">",
-        "Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl<",
-        "TR;",
-        "Lcom/google/android/gms/internal/safetynet/zzx;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Lcom/google/android/gms/internal/safetynet/zzg;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/GoogleApiClient;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    sget-object v0, Lcom/google/android/gms/safetynet/SafetyNet;->API:Lcom/google/android/gms/common/api/Api;
-
-    invoke-direct {p0, v0, p1}, Lcom/google/android/gms/common/api/internal/BaseImplementation$ApiMethodImpl;-><init>(Lcom/google/android/gms/common/api/Api;Lcom/google/android/gms/common/api/GoogleApiClient;)V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/safetynet/zzb;-><init>()V
 
     return-void
 .end method

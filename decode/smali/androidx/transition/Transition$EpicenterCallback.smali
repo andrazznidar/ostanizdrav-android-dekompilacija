@@ -22,3 +22,8 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public abstract onGetEpicenter(Landroidx/transition/Transition;)Landroid/graphics/Rect;
+.end method

@@ -137,7 +137,7 @@
 
     aput-object v2, v4, p2
 
-    invoke-static {v4}, Lcom/google/android/material/R$style;->concat([[B)[B
+    invoke-static {v4}, Lcom/google/crypto/tink/subtle/Bytes;->concat([[B)[B
 
     move-result-object p2
 
@@ -235,7 +235,7 @@
 
     aput-object v1, v3, v4
 
-    invoke-static {v3}, Lcom/google/android/material/R$style;->concat([[B)[B
+    invoke-static {v3}, Lcom/google/crypto/tink/subtle/Bytes;->concat([[B)[B
 
     move-result-object v1
 
@@ -249,7 +249,7 @@
 
     aput-object v1, v2, p2
 
-    invoke-static {v2}, Lcom/google/android/material/R$style;->concat([[B)[B
+    invoke-static {v2}, Lcom/google/crypto/tink/subtle/Bytes;->concat([[B)[B
 
     move-result-object p1
 

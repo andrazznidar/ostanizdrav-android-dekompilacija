@@ -50,7 +50,17 @@
     move p3, p4
 
     :cond_0
-    invoke-interface {p0, p1, p3}, Lcom/google/android/gms/internal/nearby/zzcn;->zzb(Lcom/google/android/gms/common/api/Status;Z)V
+    move-object p2, p0
+
+    check-cast p2, Lcom/google/android/gms/internal/nearby/zzap;
+
+    invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p3
+
+    iget-object p2, p2, Lcom/google/android/gms/internal/nearby/zzap;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-static {p1, p3, p2}, Lcom/google/android/gms/common/api/internal/TaskUtil;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
 
     return p4
 

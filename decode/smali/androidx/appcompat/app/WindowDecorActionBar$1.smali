@@ -96,7 +96,9 @@
 
     if-eqz p1, :cond_2
 
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->requestApplyInsets(Landroid/view/View;)V
+    sget-object v0, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1}, Landroid/view/View;->requestApplyInsets()V
 
     :cond_2
     return-void

@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;
 
@@ -57,7 +57,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment;->access$getBinding$p(Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment;)Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBinding;
+    sget-object v1, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment;->Companion:Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment$Companion;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/tracing/ui/settings/SettingsTracingFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBinding;
 
     move-result-object v0
 

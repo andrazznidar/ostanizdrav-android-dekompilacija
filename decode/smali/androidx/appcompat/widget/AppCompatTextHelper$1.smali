@@ -50,7 +50,7 @@
 .end method
 
 .method public onFontRetrieved(Landroid/graphics/Typeface;)V
-    .locals 3
+    .locals 4
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -89,7 +89,7 @@
 
     iget-boolean v2, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mAsyncFontPending:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     iput-object p1, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mFontTypeface:Landroid/graphics/Typeface;
 
@@ -99,12 +99,32 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
+    sget-object v2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget v2, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mStyle:I
+
+    new-instance v3, Landroidx/appcompat/widget/AppCompatTextHelper$2;
+
+    invoke-direct {v3, v0, v1, p1, v2}, Landroidx/appcompat/widget/AppCompatTextHelper$2;-><init>(Landroidx/appcompat/widget/AppCompatTextHelper;Landroid/widget/TextView;Landroid/graphics/Typeface;I)V
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_1
+
+    :cond_2
     iget v0, v0, Landroidx/appcompat/widget/AppCompatTextHelper;->mStyle:I
 
     invoke-virtual {v1, p1, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
 
-    :cond_2
+    :cond_3
+    :goto_1
     return-void
 .end method

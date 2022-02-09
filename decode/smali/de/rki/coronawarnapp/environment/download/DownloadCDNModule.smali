@@ -1,5 +1,5 @@
 .class public final Lde/rki/coronawarnapp/environment/download/DownloadCDNModule;
-.super Lde/rki/coronawarnapp/environment/BaseEnvironmentModule;
+.super Lde/rki/coronawarnapp/task/internal/TaskModule;
 .source "DownloadCDNModule.kt"
 
 
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
@@ -96,9 +96,11 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Lde/rki/coronawarnapp/environment/BaseEnvironmentModule;-><init>()V
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lde/rki/coronawarnapp/task/internal/TaskModule;-><init>(I)V
 
     return-void
 .end method

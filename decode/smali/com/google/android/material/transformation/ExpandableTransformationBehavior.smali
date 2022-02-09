@@ -43,22 +43,20 @@
 
     if-eqz v0, :cond_0
 
-    move v0, v1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/google/android/material/transformation/ExpandableTransformationBehavior;->currentAnimation:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     :cond_1
-    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/android/material/transformation/ExpandableTransformationBehavior;->onCreateExpandedStateChangeAnimation(Landroid/view/View;Landroid/view/View;ZZ)Landroid/animation/AnimatorSet;
+    invoke-virtual {p0, p1, p2, p3, v2}, Lcom/google/android/material/transformation/ExpandableTransformationBehavior;->onCreateExpandedStateChangeAnimation(Landroid/view/View;Landroid/view/View;ZZ)Landroid/animation/AnimatorSet;
 
     move-result-object p1
 

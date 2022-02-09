@@ -12,6 +12,14 @@
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Landroidx/transition/Visibility;-><init>()V
+
+    return-void
+.end method
+
 .method public constructor <init>(I)V
     .locals 1
 
@@ -104,6 +112,54 @@
     invoke-virtual {p0, p3}, Landroidx/transition/Transition;->addListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;
 
     return-object p2
+.end method
+
+.method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;
+    .locals 1
+
+    const/4 p1, 0x0
+
+    if-eqz p3, :cond_0
+
+    iget-object p3, p3, Landroidx/transition/TransitionValues;->values:Ljava/util/Map;
+
+    const-string p4, "android:fade:transitionAlpha"
+
+    invoke-interface {p3, p4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Ljava/lang/Float;
+
+    if-eqz p3, :cond_0
+
+    invoke-virtual {p3}, Ljava/lang/Float;->floatValue()F
+
+    move-result p3
+
+    goto :goto_0
+
+    :cond_0
+    move p3, p1
+
+    :goto_0
+    const/high16 p4, 0x3f800000    # 1.0f
+
+    cmpl-float v0, p3, p4
+
+    if-nez v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move p1, p3
+
+    :goto_1
+    invoke-virtual {p0, p2, p1, p4}, Landroidx/transition/Fade;->createAnimation(Landroid/view/View;FF)Landroid/animation/Animator;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroidx/transition/TransitionValues;Landroidx/transition/TransitionValues;)Landroid/animation/Animator;

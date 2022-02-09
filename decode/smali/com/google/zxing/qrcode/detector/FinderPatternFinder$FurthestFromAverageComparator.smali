@@ -72,26 +72,9 @@
 
     move-result p1
 
-    cmpg-float v0, p2, p1
+    invoke-static {p2, p1}, Ljava/lang/Float;->compare(FF)I
 
-    if-gez v0, :cond_0
+    move-result p1
 
-    const/4 p1, -0x1
-
-    goto :goto_0
-
-    :cond_0
-    cmpl-float p1, p2, p1
-
-    if-nez p1, :cond_1
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, 0x1
-
-    :goto_0
     return p1
 .end method

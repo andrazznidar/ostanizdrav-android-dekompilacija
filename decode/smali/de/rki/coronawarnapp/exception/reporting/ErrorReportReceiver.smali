@@ -9,11 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
-    .locals 1
-
-    const-string v0, "activity"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -25,7 +21,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 24
+    .locals 25
 
     move-object/from16 v0, p2
 
@@ -47,14 +43,11 @@
 
     const-string v3, ""
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     move-object v1, v3
 
-    :goto_0
+    :cond_0
     invoke-static {v1}, Lde/rki/coronawarnapp/exception/ExceptionCategory;->valueOf(Ljava/lang/String;)Lde/rki/coronawarnapp/exception/ExceptionCategory;
 
     move-result-object v1
@@ -65,7 +58,7 @@
 
     move-result-object v4
 
-    const-string v5, "suffix"
+    const-string/jumbo v5, "suffix"
 
     invoke-virtual {v0, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
@@ -77,26 +70,23 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_1
+    if-nez v6, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
-    const v7, 0x7f12011d
+    const v7, 0x7f1301d1
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    const-string v7, "context.resources.getStr\u2026text_unknown_error_cause)"
+    :cond_1
+    const-string v7, "intent.getStringExtra(Re\u2026text_unknown_error_cause)"
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_1
     const-string v7, "res-id"
 
     invoke-virtual {v0, v7}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
@@ -124,7 +114,7 @@
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_2
-    const-string v7, "stack"
+    const-string/jumbo v7, "stack"
 
     invoke-virtual {v0, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
@@ -134,7 +124,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f12011a
+    const v8, 0x7f1301cd
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -148,7 +138,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f120118
+    const v8, 0x7f1301cb
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -162,7 +152,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f120117
+    const v9, 0x7f1301ca
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -176,7 +166,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f120119
+    const v9, 0x7f1301cc
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -186,64 +176,64 @@
 
     invoke-static {v11, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v13, "api-exception-code"
+    const-string v9, "api-exception-code"
 
-    invoke-virtual {v0, v13}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_3
-
-    sget-object v14, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->REPORTED_EXCEPTION_UNKNOWN_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-    iget v14, v14, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->code:I
-
-    invoke-virtual {v0, v13, v14}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0, v9}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
     move-result v13
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    const/16 v14, 0x232a
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz v13, :cond_3
 
-    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9, v14}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    const/16 v6, 0x23
+    move-result v9
 
-    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, "#"
+
+    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     :cond_3
-    const-string v13, "title"
+    const-string/jumbo v9, "title"
 
-    invoke-virtual {v0, v13}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v9}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
-    if-eqz v14, :cond_5
+    if-eqz v13, :cond_5
 
-    invoke-virtual {v0, v13}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v9}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    goto :goto_2
+    goto :goto_0
 
     :cond_4
     move-object v0, v3
 
-    goto :goto_2
+    goto :goto_0
 
     :cond_5
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
+
+    const v9, 0x7f1301cc
 
     invoke-virtual {v2, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -253,25 +243,19 @@
 
     sget-object v8, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    const-string v9, "Locale.ROOT"
-
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v2, v8}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v8, "(this as java.lang.String).toUpperCase(locale)"
+    const-string v8, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
 
     invoke-static {v2, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v8, Lde/rki/coronawarnapp/exception/reporting/ReportingConstants;->INSTANCE:Lde/rki/coronawarnapp/exception/reporting/ReportingConstants;
+    const-string v8, "code"
 
-    sget v8, Lde/rki/coronawarnapp/exception/reporting/ReportingConstants;->ERROR_REPORT_UNKNOWN_ERROR:I
+    const/16 v9, 0x232a
 
-    const-string v9, "code"
-
-    invoke-virtual {v0, v9, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0, v8, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -287,9 +271,9 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/16 v0, 0xa
+    const-string v0, "\n"
 
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -297,69 +281,61 @@
 
     move-result-object v0
 
-    :goto_2
-    new-instance v2, Ljava/lang/StringBuilder;
+    :goto_0
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    if-nez v4, :cond_6
 
-    const/16 v8, 0x5b
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x5d
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    if-eqz v4, :cond_6
-
-    goto :goto_3
-
-    :cond_6
     move-object v4, v3
 
-    :goto_3
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_6
+    if-nez v5, :cond_7
 
-    const/16 v1, 0x20
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v5, :cond_7
-
-    move-object v3, v5
+    goto :goto_1
 
     :cond_7
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object v3, v5
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_1
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "["
+
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, "]"
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " "
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v5, v6, v3}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v4, v3, [Ljava/lang/Object;
 
-    sget-object v3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v3, v1, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v1, v4}, Ltimber/log/Timber$Forest;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-boolean v1, Lde/rki/coronawarnapp/CoronaWarnApplication;->isAppInForeground:Z
 
     if-nez v1, :cond_8
 
-    const/4 v0, 0x0
+    new-array v0, v3, [Ljava/lang/Object;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const-string v1, "Not displaying error dialog, not in foreground."
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v2, "Not displaying error dialog, not in foreground."
-
-    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v1, v0}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 
@@ -386,7 +362,9 @@
 
     invoke-direct/range {v8 .. v13}, Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver$onReceive$dialogInstance$2;-><init>(Lde/rki/coronawarnapp/exception/reporting/ErrorReportReceiver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    const/16 v23, 0x40
+    const/16 v23, 0x0
+
+    const/16 v24, 0x240
 
     move-object v13, v1
 
@@ -400,7 +378,7 @@
 
     move-object/from16 v18, v3
 
-    invoke-direct/range {v13 .. v23}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+    invoke-direct/range {v13 .. v24}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
 
     invoke-static {v1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
 

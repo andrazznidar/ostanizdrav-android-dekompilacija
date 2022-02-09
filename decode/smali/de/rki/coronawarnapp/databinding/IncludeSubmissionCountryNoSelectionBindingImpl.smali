@@ -6,8 +6,6 @@
 # static fields
 .field public static final sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-.field public static final sViewsWithIds:Landroid/util/SparseIntArray;
-
 
 # instance fields
 .field public mDirtyFlags:J
@@ -37,37 +35,43 @@
 
     new-array v3, v2, [I
 
-    const/4 v4, 0x2
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x2
 
-    aput v4, v3, v5
+    aput v5, v3, v4
 
     new-array v2, v2, [I
 
-    const v4, 0x7f0c00b4
+    const v5, 0x7f0d010a
 
-    aput v4, v2, v5
+    aput v5, v2, v4
 
-    invoke-virtual {v0, v5, v1, v3, v2}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+    invoke-virtual {v0, v4, v1, v3, v2}, Landroidx/databinding/ViewDataBinding$IncludedLayouts;->setIncludes(I[Ljava/lang/String;[I[I)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 8
+    .locals 9
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
-    sget-object v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    const/4 v2, 0x0
 
-    invoke-static {p1, p2, v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
+    invoke-static {p1, p2, v1, v0, v2}, Landroidx/databinding/ViewDataBinding;->mapBindings(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILandroidx/databinding/ViewDataBinding$IncludedLayouts;Landroid/util/SparseIntArray;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -75,31 +79,31 @@
 
     aget-object v1, v0, v1
 
-    move-object v6, v1
+    move-object v7, v1
 
-    check-cast v6, Landroidx/constraintlayout/widget/ConstraintLayout;
+    check-cast v7, Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v1, 0x1
 
     aget-object v1, v0, v1
 
-    move-object v7, v1
+    move-object v8, v1
 
-    check-cast v7, Landroid/widget/TextView;
+    check-cast v8, Landroid/widget/TextView;
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    move-object v2, p0
+    move-object v3, p0
 
-    move-object v3, p1
+    move-object v4, p1
 
-    move-object v4, p2
+    move-object v5, p2
 
-    invoke-direct/range {v2 .. v7}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v8}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;)V
 
-    const-wide/16 v1, -0x1
+    const-wide/16 v3, -0x1
 
-    iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;->mDirtyFlags:J
+    iput-wide v3, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBindingImpl;->mDirtyFlags:J
 
     const/4 p1, 0x2
 
@@ -116,15 +120,13 @@
     :cond_0
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;->submissionCountryNoSelectionContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;->submissionCountryNoSelectionHeader:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -177,37 +179,35 @@
 
     invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    const v3, 0x7f060070
+    const v5, 0x7f06007c
 
-    const v5, 0x7f060071
+    const v6, 0x7f060057
 
-    invoke-static {v1, v2, v3, v5}, Lcom/google/zxing/client/android/R$id;->formatColor(Landroid/content/Context;ZII)I
+    invoke-static {v1, v3, v5, v6}, Lcom/google/android/gms/internal/nearby/zzfc;->formatColor(Landroid/content/Context;ZII)I
 
     move-result v1
 
-    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    iget-object v3, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "context"
+    const-string v5, "context"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v2
 
-    move-result v3
+    const v4, 0x7f060085
 
-    const v4, 0x7f060078
+    const v5, 0x7f060036
 
-    const v5, 0x7f060033
-
-    invoke-static {v2, v3, v4, v5}, Lcom/google/zxing/client/android/R$id;->formatColor(Landroid/content/Context;ZII)I
+    invoke-static {v3, v2, v4, v5}, Lcom/google/android/gms/internal/nearby/zzfc;->formatColor(Landroid/content/Context;ZII)I
 
     move-result v2
 
@@ -348,6 +348,14 @@
 
 .method public setActive(Ljava/lang/Boolean;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "Active"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -372,7 +380,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 
@@ -389,6 +397,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

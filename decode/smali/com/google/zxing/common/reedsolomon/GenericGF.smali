@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
@@ -73,39 +73,37 @@
 
     sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
+    new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    const/16 v1, 0x13
+    const/16 v2, 0x13
 
-    const/16 v2, 0x10
+    const/16 v4, 0x10
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
+    invoke-direct {v1, v2, v4, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_PARAM:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_PARAM:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
+    new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    const/16 v1, 0x11d
+    const/16 v2, 0x11d
 
-    const/16 v2, 0x100
+    const/16 v4, 0x100
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    invoke-direct {v0, v1, v2, v4}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
+    invoke-direct {v1, v2, v4, v5}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->QR_CODE_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->QR_CODE_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGF;
+    new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    const/16 v1, 0x12d
+    const/16 v2, 0x12d
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
+    invoke-direct {v1, v2, v4, v3}, Lcom/google/zxing/common/reedsolomon/GenericGF;-><init>(III)V
 
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->DATA_MATRIX_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->DATA_MATRIX_FIELD_256:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
-    sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
-
-    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sput-object v1, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     sput-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->MAXICODE_FIELD_64:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
@@ -203,14 +201,6 @@
     iput-object p1, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     return-void
-.end method
-
-.method public static addOrSubtract(II)I
-    .locals 0
-
-    xor-int/2addr p0, p1
-
-    return p0
 .end method
 
 
@@ -316,7 +306,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -338,13 +328,9 @@
 
     iget v1, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/16 v2, 0x29
 
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroidx/core/graphics/Insets$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
 
     move-result-object v0
 

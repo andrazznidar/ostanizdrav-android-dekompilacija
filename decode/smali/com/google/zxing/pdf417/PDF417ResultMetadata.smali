@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public fileId:Ljava/lang/String;
+.field public lastSegment:Z
 
 
 # direct methods

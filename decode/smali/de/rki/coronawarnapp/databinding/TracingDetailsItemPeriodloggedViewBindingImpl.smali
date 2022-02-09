@@ -10,9 +10,7 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
-.field public final mboundView2:Landroid/widget/TextView;
+.field public final mboundView1:Landroid/widget/TextView;
 
 
 # direct methods
@@ -25,41 +23,21 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090371
+    const v1, 0x7f0a05d0
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a05d1
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090370
+    const v1, 0x7f0a05ce
 
     const/4 v2, 0x4
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090372
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09036f
-
-    const/4 v2, 0x6
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901df
-
-    const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -67,11 +45,21 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 13
+    .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/16 v1, 0x8
+    const/4 v1, 0x5
 
     const/4 v2, 0x0
 
@@ -79,53 +67,29 @@
 
     move-result-object v0
 
-    const/4 v1, 0x7
+    const/4 v1, 0x4
 
     aget-object v1, v0, v1
 
     move-object v7, v1
 
-    check-cast v7, Landroidx/constraintlayout/widget/ConstraintLayout;
+    check-cast v7, Landroid/widget/TextView;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x2
 
     aget-object v1, v0, v1
 
     move-object v8, v1
 
-    check-cast v8, Lde/rki/coronawarnapp/ui/view/CircleProgress;
+    check-cast v8, Landroid/widget/TextView;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x3
 
     aget-object v1, v0, v1
 
     move-object v9, v1
 
     check-cast v9, Landroid/widget/TextView;
-
-    const/4 v1, 0x4
-
-    aget-object v1, v0, v1
-
-    move-object v10, v1
-
-    check-cast v10, Landroid/widget/TextView;
-
-    const/4 v1, 0x3
-
-    aget-object v1, v0, v1
-
-    move-object v11, v1
-
-    check-cast v11, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    const/4 v1, 0x5
-
-    aget-object v1, v0, v1
-
-    move-object v12, v1
-
-    check-cast v12, Landroid/widget/TextView;
 
     const/4 v6, 0x0
 
@@ -135,7 +99,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/ConstraintLayout;Lde/rki/coronawarnapp/ui/view/CircleProgress;Landroid/widget/TextView;Landroid/widget/TextView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v3, -0x1
 
@@ -147,25 +111,19 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const/4 p1, 0x2
+    const/4 p1, 0x1
 
     aget-object p1, v0, p1
 
     check-cast p1, Landroid/widget/TextView;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->mboundView2:Landroid/widget/TextView;
+    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->mboundView1:Landroid/widget/TextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBinding;->riskDetailsInvestigationPeriodCircleProgress:Lde/rki/coronawarnapp/ui/view/CircleProgress;
-
-    invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
-
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -202,8 +160,6 @@
 
     cmp-long v0, v0, v2
 
-    const/4 v1, 0x0
-
     if-eqz v0, :cond_0
 
     if-eqz v5, :cond_0
@@ -214,43 +170,16 @@
 
     move-result-object v1
 
-    invoke-virtual {v5, v1}, Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;->getRiskActiveTracingDaysInRetentionPeriodLogged(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v5, v1}, Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;->getInstallTimePeriodLogged(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v4
 
-    iget v1, v5, Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;->activeTracingDaysInRetentionPeriod:I
-
-    iget-object v2, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v5, v2}, Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;->getProgressColor(Landroid/content/Context;)I
-
-    move-result v2
-
-    goto :goto_0
-
     :cond_0
-    move v2, v1
-
-    :goto_0
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->mboundView2:Landroid/widget/TextView;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBindingImpl;->mboundView1:Landroid/widget/TextView;
 
-    invoke-static {v0, v4}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBinding;->riskDetailsInvestigationPeriodCircleProgress:Lde/rki/coronawarnapp/ui/view/CircleProgress;
-
-    int-to-float v1, v1
-
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/ui/view/CircleProgress;->setProgress(F)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBinding;->riskDetailsInvestigationPeriodCircleProgress:Lde/rki/coronawarnapp/ui/view/CircleProgress;
-
-    invoke-virtual {v0, v2}, Lde/rki/coronawarnapp/ui/view/CircleProgress;->setProgressColor(I)V
+    invoke-static {v0, v4}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     :cond_1
     return-void
@@ -334,6 +263,14 @@
 
 .method public setLoggedPeriod(Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "LoggedPeriod"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsItemPeriodloggedViewBinding;->mLoggedPeriod:Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;
 
@@ -352,11 +289,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x23
+    const/16 p1, 0x22
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

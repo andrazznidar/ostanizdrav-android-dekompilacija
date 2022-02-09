@@ -36,6 +36,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer$downloadAppConfig$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer$downloadAppConfig$1;->this$0:Lde/rki/coronawarnapp/appconfig/sources/remote/AppConfigServer;
 

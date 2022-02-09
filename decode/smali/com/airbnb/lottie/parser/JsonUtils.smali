@@ -11,9 +11,9 @@
 .method public static constructor <clinit>()V
     .locals 2
 
-    const-string v0, "x"
+    const-string/jumbo v0, "x"
 
-    const-string v1, "y"
+    const-string/jumbo v1, "y"
 
     filled-new-array {v0, v1}, [Ljava/lang/String;
 
@@ -152,7 +152,7 @@
 
     const-string v0, "Unknown point starts with "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

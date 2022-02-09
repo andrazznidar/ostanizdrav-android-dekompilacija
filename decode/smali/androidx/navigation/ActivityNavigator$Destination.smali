@@ -55,7 +55,7 @@
 
     move-result-object p2
 
-    const/4 v0, 0x4
+    sget v0, Landroidx/navigation/R$styleable;->ActivityNavigator_targetPackage:I
 
     invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -89,42 +89,44 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    const/4 v0, 0x0
+    sget v0, Landroidx/navigation/R$styleable;->ActivityNavigator_android_name:I
 
     invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
+    const/4 v1, 0x0
 
-    move-result v0
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
 
     const/16 v2, 0x2e
 
-    if-ne v0, v2, :cond_2
+    if-ne v1, v2, :cond_2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     :cond_2
-    new-instance v0, Landroid/content/ComponentName;
+    new-instance v1, Landroid/content/ComponentName;
 
-    invoke-direct {v0, p1, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {v1, p1, v0}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     iget-object p1, p0, Landroidx/navigation/ActivityNavigator$Destination;->mIntent:Landroid/content/Intent;
 
@@ -139,10 +141,10 @@
     :cond_3
     iget-object p1, p0, Landroidx/navigation/ActivityNavigator$Destination;->mIntent:Landroid/content/Intent;
 
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     :cond_4
-    const/4 p1, 0x1
+    sget p1, Landroidx/navigation/R$styleable;->ActivityNavigator_action:I
 
     invoke-virtual {p2, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -163,7 +165,7 @@
 
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    const/4 p1, 0x2
+    sget p1, Landroidx/navigation/R$styleable;->ActivityNavigator_data:I
 
     invoke-virtual {p2, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -191,7 +193,7 @@
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
     :cond_7
-    const/4 p1, 0x3
+    sget p1, Landroidx/navigation/R$styleable;->ActivityNavigator_dataPattern:I
 
     invoke-virtual {p2, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -202,14 +204,6 @@
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
-.end method
-
-.method public supportsActions()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public toString()Ljava/lang/String;

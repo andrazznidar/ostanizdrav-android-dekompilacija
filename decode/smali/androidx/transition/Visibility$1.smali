@@ -37,7 +37,7 @@
 
     iget-object v0, p0, Landroidx/transition/Visibility$1;->val$startView:Landroid/view/View;
 
-    const v1, 0x7f09039f
+    sget v1, Landroidx/transition/R$id;->save_overlay_view:I
 
     const/4 v2, 0x0
 

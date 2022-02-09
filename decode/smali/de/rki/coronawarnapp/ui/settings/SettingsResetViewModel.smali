@@ -8,10 +8,10 @@
 
 
 # instance fields
-.field public final clickEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+.field public final clickEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lde/rki/coronawarnapp/ui/SingleLiveEvent<",
+            "Lde/rki/coronawarnapp/util/ui/SingleLiveEvent<",
             "Lde/rki/coronawarnapp/ui/settings/SettingsEvents;",
             ">;"
         }
@@ -20,7 +20,7 @@
 
 .field public final dataReset:Lde/rki/coronawarnapp/util/DataReset;
 
-.field public final shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
+.field public final enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
 .field public final shortcutsHelper:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
 
@@ -35,9 +35,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lkotlin/jvm/internal/ClassReference;
-
-    invoke-virtual {v0}, Lkotlin/jvm/internal/ClassReference;->getSimpleName()Ljava/lang/String;
+    invoke-interface {v0}, Lkotlin/reflect/KClass;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -46,7 +44,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/DataReset;Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/util/DataReset;Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;Lde/rki/coronawarnapp/nearby/ENFClient;)V
     .locals 2
 
     const-string v0, "dispatcherProvider"
@@ -57,11 +55,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "shareTestResultNotificationService"
+    const-string/jumbo v0, "shortcutsHelper"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "shortcutsHelper"
+    const-string v0, "enfClient"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -73,15 +71,15 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->dataReset:Lde/rki/coronawarnapp/util/DataReset;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shareTestResultNotificationService:Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;
+    iput-object p3, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shortcutsHelper:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->shortcutsHelper:Lde/rki/coronawarnapp/util/shortcuts/AppShortcutsHelper;
+    iput-object p4, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
-    new-instance p1, Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    new-instance p1, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
-    invoke-direct {p1}, Lde/rki/coronawarnapp/ui/SingleLiveEvent;-><init>()V
+    invoke-direct {p1}, Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;-><init>()V
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->clickEvent:Lde/rki/coronawarnapp/ui/SingleLiveEvent;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/settings/SettingsResetViewModel;->clickEvent:Lde/rki/coronawarnapp/util/ui/SingleLiveEvent;
 
     return-void
 .end method

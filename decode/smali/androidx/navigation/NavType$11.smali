@@ -49,7 +49,7 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "string[]"
+    const-string/jumbo v0, "string[]"
 
     return-object v0
 .end method

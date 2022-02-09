@@ -20,9 +20,5 @@
 .method public report(Ljava/lang/Throwable;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    const-string p2, "throwable"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     return-void
 .end method

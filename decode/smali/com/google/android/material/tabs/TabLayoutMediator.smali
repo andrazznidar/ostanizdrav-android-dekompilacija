@@ -26,16 +26,6 @@
 
 .field public attached:Z
 
-.field public final autoRefresh:Z
-
-.field public onPageChangeCallback:Lcom/google/android/material/tabs/TabLayoutMediator$TabLayoutOnPageChangeCallback;
-
-.field public onTabSelectedListener:Lcom/google/android/material/tabs/TabLayout$OnTabSelectedListener;
-
-.field public pagerAdapterObserver:Landroidx/recyclerview/widget/RecyclerView$AdapterDataObserver;
-
-.field public final smoothScroll:Z
-
 .field public final tabConfigurationStrategy:Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;
 
 .field public final tabLayout:Lcom/google/android/material/tabs/TabLayout;
@@ -53,12 +43,6 @@
 
     iput-object p2, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->autoRefresh:Z
-
-    iput-boolean p1, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->smoothScroll:Z
-
     iput-object p3, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabConfigurationStrategy:Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;
 
     return-void
@@ -67,7 +51,7 @@
 
 # virtual methods
 .method public populateTabsFromPagerAdapter()V
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
@@ -75,7 +59,7 @@
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemCount()I
 
@@ -86,7 +70,7 @@
     move v2, v1
 
     :goto_0
-    if-ge v2, v0, :cond_0
+    if-ge v2, v0, :cond_1
 
     iget-object v3, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
@@ -96,7 +80,45 @@
 
     iget-object v4, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabConfigurationStrategy:Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;
 
-    invoke-interface {v4, v3, v2}, Lcom/google/android/material/tabs/TabLayoutMediator$TabConfigurationStrategy;->onConfigureTab(Lcom/google/android/material/tabs/TabLayout$Tab;I)V
+    check-cast v4, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda6;
+
+    iget-object v4, v4, Lde/rki/coronawarnapp/qrcode/ui/QrCodeScannerFragment$$ExternalSyntheticLambda6;->f$0:Ljava/lang/Object;
+
+    check-cast v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;
+
+    sget-object v5, Lde/rki/coronawarnapp/contactdiary/ui/day/ContactDiaryDayFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const-string v5, "$adapter"
+
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v5, "tab"
+
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v4, v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayFragmentsAdapter;->tabs:Ljava/util/List;
+
+    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;
+
+    iget v4, v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/ContactDiaryDayTab;->tabNameResource:I
+
+    iget-object v5, v3, Lcom/google/android/material/tabs/TabLayout$Tab;->parent:Lcom/google/android/material/tabs/TabLayout;
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v5}, Landroid/widget/HorizontalScrollView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/google/android/material/tabs/TabLayout$Tab;->setText(Ljava/lang/CharSequence;)Lcom/google/android/material/tabs/TabLayout$Tab;
 
     iget-object v4, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
@@ -107,7 +129,16 @@
     goto :goto_0
 
     :cond_0
-    if-lez v0, :cond_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Tab not attached to a TabLayout"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    if-lez v0, :cond_2
 
     iget-object v0, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
@@ -135,7 +166,7 @@
 
     move-result v2
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v2, :cond_2
 
     iget-object v2, p0, Lcom/google/android/material/tabs/TabLayoutMediator;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
 
@@ -145,6 +176,6 @@
 
     invoke-virtual {v2, v0, v1}, Lcom/google/android/material/tabs/TabLayout;->selectTab(Lcom/google/android/material/tabs/TabLayout$Tab;Z)V
 
-    :cond_1
+    :cond_2
     return-void
 .end method

@@ -7,20 +7,21 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/airbnb/lottie/value/LottieValueCallback<",
-        "TT;>;"
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
 
 # instance fields
-.field public final synthetic val$callback:Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
+.field public final synthetic val$callback:Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;
 
 
 # direct methods
-.method public constructor <init>(Lcom/airbnb/lottie/LottieAnimationView;Lcom/airbnb/lottie/value/SimpleLottieValueCallback;)V
+.method public constructor <init>(Lcom/airbnb/lottie/LottieAnimationView;Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;)V
     .locals 0
 
-    iput-object p2, p0, Lcom/airbnb/lottie/LottieAnimationView$6;->val$callback:Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
+    iput-object p2, p0, Lcom/airbnb/lottie/LottieAnimationView$6;->val$callback:Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;
 
     invoke-direct {p0}, Lcom/airbnb/lottie/value/LottieValueCallback;-><init>()V
 
@@ -30,20 +31,30 @@
 
 # virtual methods
 .method public getValue(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/airbnb/lottie/value/LottieFrameInfo<",
-            "TT;>;)TT;"
+            "Ljava/lang/Object;",
+            ">;)",
+            "Ljava/lang/Object;"
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/airbnb/lottie/LottieAnimationView$6;->val$callback:Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
+    iget-object p1, p0, Lcom/airbnb/lottie/LottieAnimationView$6;->val$callback:Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;
 
-    invoke-interface {v0, p1}, Lcom/airbnb/lottie/value/SimpleLottieValueCallback;->getValue(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Object;
+    iget-object p1, p1, Lde/rki/coronawarnapp/util/DataBindingAdaptersKt$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Integer;
 
-    move-result-object p1
+    new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    return-object p1
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v0, p1, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    return-object v0
 .end method

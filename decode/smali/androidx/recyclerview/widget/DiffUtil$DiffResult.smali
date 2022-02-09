@@ -19,6 +19,16 @@
 
 .field public final mDetectMoves:Z
 
+.field public final mDiagonals:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Landroidx/recyclerview/widget/DiffUtil$Diagonal;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final mNewItemStatuses:[I
 
 .field public final mNewListSize:I
@@ -27,45 +37,33 @@
 
 .field public final mOldListSize:I
 
-.field public final mSnakes:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Landroidx/recyclerview/widget/DiffUtil$Snake;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
 .method public constructor <init>(Landroidx/recyclerview/widget/DiffUtil$Callback;Ljava/util/List;[I[IZ)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroidx/recyclerview/widget/DiffUtil$Callback;",
             "Ljava/util/List<",
-            "Landroidx/recyclerview/widget/DiffUtil$Snake;",
+            "Landroidx/recyclerview/widget/DiffUtil$Diagonal;",
             ">;[I[IZ)V"
         }
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
+    iput-object p2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mDiagonals:Ljava/util/List;
 
     iput-object p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
 
     iput-object p4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
 
-    const/4 p2, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {p3, p2}, Ljava/util/Arrays;->fill([II)V
+    invoke-static {p3, v0}, Ljava/util/Arrays;->fill([II)V
 
-    iget-object p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
-
-    invoke-static {p3, p2}, Ljava/util/Arrays;->fill([II)V
+    invoke-static {p4, v0}, Ljava/util/Arrays;->fill([II)V
 
     iput-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
@@ -93,454 +91,334 @@
 
     iput-boolean p5, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mDetectMoves:Z
 
-    iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
+    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    move-result p4
 
-    move-result p1
+    if-eqz p4, :cond_0
 
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x0
+    const/4 p4, 0x0
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
+    invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object p4
+
+    check-cast p4, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
+
+    :goto_0
+    if-eqz p4, :cond_1
+
+    iget p5, p4, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->x:I
+
+    if-nez p5, :cond_1
+
+    iget p4, p4, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->y:I
+
+    if-eqz p4, :cond_2
+
+    :cond_1
+    new-instance p4, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
+
+    invoke-direct {p4, v0, v0, v0}, Landroidx/recyclerview/widget/DiffUtil$Diagonal;-><init>(III)V
+
+    invoke-interface {p2, v0, p4}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    :cond_2
+    new-instance p4, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
+
+    invoke-direct {p4, p3, p1, v0}, Landroidx/recyclerview/widget/DiffUtil$Diagonal;-><init>(III)V
+
+    invoke-interface {p2, p4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    check-cast p1, Landroidx/recyclerview/widget/DiffUtil$Snake;
+    :cond_3
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    :goto_0
-    if-eqz p1, :cond_1
+    move-result p2
 
-    iget p3, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
+    if-eqz p2, :cond_5
 
-    if-nez p3, :cond_1
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget p1, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
+    move-result-object p2
 
-    if-eqz p1, :cond_2
+    check-cast p2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
 
-    :cond_1
-    new-instance p1, Landroidx/recyclerview/widget/DiffUtil$Snake;
+    move p3, v0
 
-    invoke-direct {p1}, Landroidx/recyclerview/widget/DiffUtil$Snake;-><init>()V
+    :goto_1
+    iget p4, p2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->size:I
 
-    iput p2, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
+    if-ge p3, p4, :cond_3
 
-    iput p2, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
+    iget p4, p2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->x:I
 
-    iput-boolean p2, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->removal:Z
+    add-int/2addr p4, p3
 
-    iput p2, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->size:I
+    iget p5, p2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->y:I
 
-    iput-boolean p2, p1, Landroidx/recyclerview/widget/DiffUtil$Snake;->reverse:Z
+    add-int/2addr p5, p3
 
-    iget-object p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
+    iget-object v1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
-    invoke-interface {p3, p2, p1}, Ljava/util/List;->add(ILjava/lang/Object;)V
+    invoke-virtual {v1, p4, p5}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
 
-    :cond_2
-    iget p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldListSize:I
+    move-result v1
 
-    iget p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewListSize:I
+    if-eqz v1, :cond_4
 
-    iget-object p4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
+    const/4 v1, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v1, 0x2
+
+    :goto_2
+    iget-object v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
+
+    shl-int/lit8 v3, p5, 0x4
+
+    or-int/2addr v3, v1
+
+    aput v3, v2, p4
+
+    iget-object v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
+
+    shl-int/lit8 p4, p4, 0x4
+
+    or-int/2addr p4, v1
+
+    aput p4, v2, p5
+
+    add-int/lit8 p3, p3, 0x1
+
+    goto :goto_1
+
+    :cond_5
+    iget-boolean p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mDetectMoves:Z
+
+    if-eqz p1, :cond_b
+
+    iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mDiagonals:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    move p2, v0
+
+    :goto_3
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p3
+
+    if-eqz p3, :cond_b
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
+
+    :goto_4
+    iget p4, p3, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->x:I
+
+    if-ge p2, p4, :cond_a
+
+    iget-object p4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
+
+    aget p4, p4, p2
+
+    if-nez p4, :cond_9
+
+    iget-object p4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mDiagonals:Ljava/util/List;
 
     invoke-interface {p4}, Ljava/util/List;->size()I
 
     move-result p4
 
-    const/4 p5, 0x1
+    move p5, v0
 
-    sub-int/2addr p4, p5
-
-    :goto_1
-    if-ltz p4, :cond_9
-
-    iget-object v0, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
-
-    invoke-interface {v0, p4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/recyclerview/widget/DiffUtil$Snake;
-
-    iget v1, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
-
-    iget v2, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->size:I
-
-    add-int/2addr v1, v2
-
-    iget v3, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
-
-    add-int/2addr v3, v2
-
-    iget-boolean v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mDetectMoves:Z
-
-    if-eqz v2, :cond_6
-
-    :goto_2
-    if-le p1, v1, :cond_4
-
-    iget-object v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
-
-    add-int/lit8 v4, p1, -0x1
-
-    aget v2, v2, v4
-
-    if-eqz v2, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    invoke-virtual {p0, p1, p3, p4, p2}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->findMatchingItem(IIIZ)Z
-
-    :goto_3
-    move p1, v4
-
-    goto :goto_2
-
-    :cond_4
-    :goto_4
-    if-le p3, v3, :cond_6
-
-    iget-object v1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
-
-    add-int/lit8 v2, p3, -0x1
-
-    aget v1, v1, v2
-
-    if-eqz v1, :cond_5
-
-    goto :goto_5
-
-    :cond_5
-    invoke-virtual {p0, p1, p3, p4, p5}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->findMatchingItem(IIIZ)Z
+    move v1, p5
 
     :goto_5
-    move p3, v2
+    if-ge p5, p4, :cond_9
 
-    goto :goto_4
+    iget-object v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mDiagonals:Ljava/util/List;
 
-    :cond_6
-    move p1, p2
+    invoke-interface {v2, p5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;
 
     :goto_6
-    iget p3, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->size:I
+    iget v3, v2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->y:I
 
-    if-ge p1, p3, :cond_8
-
-    iget p3, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
-
-    add-int/2addr p3, p1
-
-    iget v1, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
-
-    add-int/2addr v1, p1
-
-    iget-object v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
-
-    invoke-virtual {v2, p3, v1}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7
-
-    move v2, p5
-
-    goto :goto_7
-
-    :cond_7
-    const/4 v2, 0x2
-
-    :goto_7
-    iget-object v3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
-
-    shl-int/lit8 v4, v1, 0x5
-
-    or-int/2addr v4, v2
-
-    aput v4, v3, p3
+    if-ge v1, v3, :cond_8
 
     iget-object v3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
 
-    shl-int/lit8 p3, p3, 0x5
+    aget v3, v3, v1
 
-    or-int/2addr p3, v2
+    if-nez v3, :cond_7
 
-    aput p3, v3, v1
+    iget-object v3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
-    add-int/lit8 p1, p1, 0x1
+    invoke-virtual {v3, p2, v1}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areItemsTheSame(II)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    iget-object p4, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
+
+    invoke-virtual {p4, p2, v1}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
+
+    move-result p4
+
+    if-eqz p4, :cond_6
+
+    const/16 p4, 0x8
+
+    goto :goto_7
+
+    :cond_6
+    const/4 p4, 0x4
+
+    :goto_7
+    iget-object p5, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
+
+    shl-int/lit8 v2, v1, 0x4
+
+    or-int/2addr v2, p4
+
+    aput v2, p5, p2
+
+    iget-object p5, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
+
+    shl-int/lit8 v2, p2, 0x4
+
+    or-int/2addr p4, v2
+
+    aput p4, p5, v1
+
+    goto :goto_8
+
+    :cond_7
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_6
 
     :cond_8
-    iget p1, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
+    iget v1, v2, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->size:I
 
-    iget p3, v0, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
+    add-int/2addr v1, v3
 
-    add-int/lit8 p4, p4, -0x1
+    add-int/lit8 p5, p5, 0x1
 
-    goto :goto_1
+    goto :goto_5
 
     :cond_9
+    :goto_8
+    add-int/lit8 p2, p2, 0x1
+
+    goto :goto_4
+
+    :cond_a
+    iget p2, p3, Landroidx/recyclerview/widget/DiffUtil$Diagonal;->size:I
+
+    add-int/2addr p2, p4
+
+    goto :goto_3
+
+    :cond_b
     return-void
 .end method
 
-.method public static removePostponedUpdate(Ljava/util/List;IZ)Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
-    .locals 5
+.method public static getPostponedUpdate(Ljava/util/Collection;IZ)Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/List<",
+            "Ljava/util/Collection<",
             "Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;",
             ">;IZ)",
             "Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;"
         }
     .end annotation
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_1
 
-    sub-int/2addr v0, v1
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
+
+    iget v1, v0, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->posInOwnerList:I
+
+    if-ne v1, p1, :cond_0
+
+    iget-boolean v1, v0, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->removal:Z
+
+    if-ne v1, p2, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
 
     :goto_0
-    if-ltz v0, :cond_3
-
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
-
-    iget v3, v2, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->posInOwnerList:I
-
-    if-ne v3, p1, :cond_2
-
-    iget-boolean v3, v2, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->removal:Z
-
-    if-ne v3, p2, :cond_2
-
-    invoke-interface {p0, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    :goto_1
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-ge v0, p1, :cond_1
+    if-eqz p1, :cond_3
 
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;
 
-    iget v3, p1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
-
-    if-eqz p2, :cond_0
-
-    move v4, v1
-
-    goto :goto_2
-
-    :cond_0
-    const/4 v4, -0x1
-
-    :goto_2
-    add-int/2addr v3, v4
-
-    iput v3, p1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    return-object v2
-
-    :cond_2
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
-
-    :cond_3
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public final findMatchingItem(IIIZ)Z
-    .locals 8
-
-    if-eqz p4, :cond_0
-
-    add-int/lit8 p2, p2, -0x1
-
-    move v1, p1
-
-    move v0, p2
-
-    goto :goto_0
-
-    :cond_0
-    add-int/lit8 v0, p1, -0x1
-
-    move v1, v0
-
-    :goto_0
-    if-ltz p3, :cond_7
-
-    iget-object v2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mSnakes:Ljava/util/List;
-
-    invoke-interface {v2, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/recyclerview/widget/DiffUtil$Snake;
-
-    iget v3, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
-
-    iget v4, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->size:I
-
-    add-int/2addr v3, v4
-
-    iget v5, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
-
-    add-int/2addr v5, v4
-
-    const/16 v4, 0x8
-
-    const/4 v6, 0x4
-
-    const/4 v7, 0x1
-
-    if-eqz p4, :cond_3
-
-    sub-int/2addr v1, v7
-
-    :goto_1
-    if-lt v1, v3, :cond_6
-
-    iget-object p2, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
-
-    invoke-virtual {p2, v1, v0}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areItemsTheSame(II)Z
-
-    move-result p2
-
     if-eqz p2, :cond_2
 
-    iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
+    iget v1, p1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
 
-    invoke-virtual {p1, v1, v0}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    move v4, v6
-
-    :goto_2
-    iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
-
-    shl-int/lit8 p2, v1, 0x5
-
-    or-int/lit8 p2, p2, 0x10
-
-    aput p2, p1, v0
-
-    iget-object p1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
-
-    shl-int/lit8 p2, v0, 0x5
-
-    or-int/2addr p2, v4
-
-    aput p2, p1, v1
-
-    return v7
-
-    :cond_2
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_1
-
-    :cond_3
-    sub-int/2addr p2, v7
-
-    :goto_3
-    if-lt p2, v5, :cond_6
-
-    iget-object v1, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
-
-    invoke-virtual {v1, v0, p2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areItemsTheSame(II)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    iget-object p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mCallback:Landroidx/recyclerview/widget/DiffUtil$Callback;
-
-    invoke-virtual {p3, v0, p2}, Landroidx/recyclerview/widget/DiffUtil$Callback;->areContentsTheSame(II)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_4
-
-    goto :goto_4
-
-    :cond_4
-    move v4, v6
-
-    :goto_4
-    iget-object p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mOldItemStatuses:[I
-
-    sub-int/2addr p1, v7
-
-    shl-int/lit8 p4, p2, 0x5
-
-    or-int/lit8 p4, p4, 0x10
-
-    aput p4, p3, p1
-
-    iget-object p3, p0, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->mNewItemStatuses:[I
-
-    shl-int/lit8 p1, p1, 0x5
-
-    or-int/2addr p1, v4
-
-    aput p1, p3, p2
-
-    return v7
-
-    :cond_5
-    add-int/lit8 p2, p2, -0x1
-
-    goto :goto_3
-
-    :cond_6
-    iget v1, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->x:I
-
-    iget p2, v2, Landroidx/recyclerview/widget/DiffUtil$Snake;->y:I
-
-    add-int/lit8 p3, p3, -0x1
+    iput v1, p1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
 
     goto :goto_0
 
-    :cond_7
-    const/4 p1, 0x0
+    :cond_2
+    iget v1, p1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
 
-    return p1
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p1, Landroidx/recyclerview/widget/DiffUtil$PostponedUpdate;->currentPos:I
+
+    goto :goto_0
+
+    :cond_3
+    return-object v0
 .end method

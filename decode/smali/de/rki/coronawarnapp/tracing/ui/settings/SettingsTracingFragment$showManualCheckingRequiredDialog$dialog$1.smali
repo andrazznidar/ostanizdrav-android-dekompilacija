@@ -46,7 +46,7 @@
 
 
 # virtual methods
-.method public invoke()Ljava/lang/Object;
+.method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

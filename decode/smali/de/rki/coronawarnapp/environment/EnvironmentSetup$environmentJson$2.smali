@@ -52,11 +52,9 @@
 
     iget-object v0, v0, Lde/rki/coronawarnapp/environment/EnvironmentSetup;->gson:Lcom/google/gson/Gson;
 
-    sget-object v1, Lde/rki/coronawarnapp/environment/BuildConfigWrap;->INSTANCE:Lde/rki/coronawarnapp/environment/BuildConfigWrap;
-
     const-class v1, Lcom/google/gson/JsonObject;
 
-    const-string v2, "{  \"PROD\": {    \"USE_EUR_KEY_PKGS\": true,    \"DATA_DONATION_CDN_URL\": \"\",    \"SAFETYNET_API_KEY\": \"placeholder\",    \"SUBMISSION_CDN_URL\": \"https://submission.cwa.gov.si\",    \"DOWNLOAD_CDN_URL\": \"https://svc90.cwa.gov.si\",    \"VERIFICATION_CDN_URL\": \"https://verification.cwa.gov.si\",    \"PUB_KEYS_SIGNATURE_VERIFICATION\": \"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2NDY84ATX4/2DW6yROcT/s+JrbrR/7TQHfd1zqeyTCKvajWHOBaOtvUgYqES/woCec0loqiaE/9hwhL1VwaSjQ==\"  }}"
+    const-string/jumbo v2, "{  \"PROD\": {    \"USE_EUR_KEY_PKGS\": true,    \"SUBMISSION_CDN_URL\": \"https://submission.cwa.gov.si\",    \"DOWNLOAD_CDN_URL\": \"https://svc90.cwa.gov.si\",    \"VERIFICATION_CDN_URL\": \"https://verification.cwa.gov.si\",    \"PUB_KEYS_SIGNATURE_VERIFICATION\": \"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE2NDY84ATX4/2DW6yROcT/s+JrbrR/7TQHfd1zqeyTCKvajWHOBaOtvUgYqES/woCec0loqiaE/9hwhL1VwaSjQ==\",    \"DATA_DONATION_CDN_URL\": \"https://data.cwa.secure.si/\",    \"LOG_UPLOAD_SERVER_URL\": \"\",    \"SAFETYNET_API_KEY\": \"placeholder\",    \"CROWD_NOTIFIER_PUBLIC_KEY\": \"\",    \"DCC_SERVER_URL\": \"\"  },  \"DEV\": {    \"USE_EUR_KEY_PKGS\": true,    \"SUBMISSION_CDN_URL\": \"https://submission-test.cwa.gov.si\",    \"DOWNLOAD_CDN_URL\": \"https://svc90-test.secure.si\",    \"VERIFICATION_CDN_URL\": \"https://verification-test.cwa.gov.si\",    \"PUB_KEYS_SIGNATURE_VERIFICATION\": \"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9/HUs+ssvOdmv+BZPjubaUiYOWYTd5iRMopbdBzpEPXbyQBSmOFesVJ7y3GTU/1ql9FuIrqB7YBkhZZExPEqEw==\",    \"DATA_DONATION_CDN_URL\": \"https://data-test.cwa.secure.si/\",    \"LOG_UPLOAD_SERVER_URL\": \"\",    \"SAFETYNET_API_KEY\": \"placeholder\",    \"CROWD_NOTIFIER_PUBLIC_KEY\": \"\",    \"DCC_SERVER_URL\": \"\"  }}"
 
     invoke-virtual {v0, v2, v1}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
@@ -64,19 +62,19 @@
 
     check-cast v0, Lcom/google/gson/JsonObject;
 
-    const/4 v1, 0x1
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    new-array v2, v2, [Ljava/lang/Object;
 
-    aput-object v0, v1, v2
+    const/4 v3, 0x0
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v0, v2, v3
 
     const-string v3, "Parsed test environment: %s"
 
-    invoke-virtual {v2, v3, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v0
 .end method

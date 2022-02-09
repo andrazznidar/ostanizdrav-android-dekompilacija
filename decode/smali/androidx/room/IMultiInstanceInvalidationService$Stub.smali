@@ -3,24 +3,7 @@
 .source "IMultiInstanceInvalidationService.java"
 
 # interfaces
-.implements Landroidx/room/IMultiInstanceInvalidationService;
-
-
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroidx/room/IMultiInstanceInvalidationService;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Stub"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroidx/room/IMultiInstanceInvalidationService$Stub$Proxy;
-    }
-.end annotation
+.implements Landroid/os/IInterface;
 
 
 # direct methods
@@ -34,40 +17,6 @@
     invoke-virtual {p0, p0, v0}, Landroid/os/Binder;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
-.end method
-
-.method public static asInterface(Landroid/os/IBinder;)Landroidx/room/IMultiInstanceInvalidationService;
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "androidx.room.IMultiInstanceInvalidationService"
-
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    instance-of v1, v0, Landroidx/room/IMultiInstanceInvalidationService;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Landroidx/room/IMultiInstanceInvalidationService;
-
-    return-object v0
-
-    :cond_1
-    new-instance v0, Landroidx/room/IMultiInstanceInvalidationService$Stub$Proxy;
-
-    invoke-direct {v0, p0}, Landroidx/room/IMultiInstanceInvalidationService$Stub$Proxy;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
 .end method
 
 
@@ -126,7 +75,11 @@
 
     move-result-object p2
 
-    invoke-interface {p0, p1, p2}, Landroidx/room/IMultiInstanceInvalidationService;->broadcastInvalidation(I[Ljava/lang/String;)V
+    move-object p3, p0
+
+    check-cast p3, Landroidx/room/MultiInstanceInvalidationService$2;
+
+    invoke-virtual {p3, p1, p2}, Landroidx/room/MultiInstanceInvalidationService$2;->broadcastInvalidation(I[Ljava/lang/String;)V
 
     return v0
 
@@ -145,7 +98,11 @@
 
     move-result p2
 
-    invoke-interface {p0, p1, p2}, Landroidx/room/IMultiInstanceInvalidationService;->unregisterCallback(Landroidx/room/IMultiInstanceInvalidationCallback;I)V
+    move-object p4, p0
+
+    check-cast p4, Landroidx/room/MultiInstanceInvalidationService$2;
+
+    invoke-virtual {p4, p1, p2}, Landroidx/room/MultiInstanceInvalidationService$2;->unregisterCallback(Landroidx/room/IMultiInstanceInvalidationCallback;I)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
@@ -166,7 +123,11 @@
 
     move-result-object p2
 
-    invoke-interface {p0, p1, p2}, Landroidx/room/IMultiInstanceInvalidationService;->registerCallback(Landroidx/room/IMultiInstanceInvalidationCallback;Ljava/lang/String;)I
+    move-object p4, p0
+
+    check-cast p4, Landroidx/room/MultiInstanceInvalidationService$2;
+
+    invoke-virtual {p4, p1, p2}, Landroidx/room/MultiInstanceInvalidationService$2;->registerCallback(Landroidx/room/IMultiInstanceInvalidationCallback;Ljava/lang/String;)I
 
     move-result p1
 

@@ -65,7 +65,9 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    sget p2, Landroidx/appcompat/R$styleable;->ActionMenuItemView_android_minWidth:I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result p2
 
@@ -139,22 +141,10 @@
 
     invoke-virtual {p0, p2}, Landroidx/appcompat/view/menu/ActionMenuItemView;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-interface {p0}, Landroidx/appcompat/view/menu/MenuView$ItemView;->prefersCondensedTitle()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
     invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuItemImpl;->getTitleCondensed()Ljava/lang/CharSequence;
 
     move-result-object p2
 
-    goto :goto_0
-
-    :cond_0
-    iget-object p2, p1, Landroidx/appcompat/view/menu/MenuItemImpl;->mTitle:Ljava/lang/CharSequence;
-
-    :goto_0
     invoke-virtual {p0, p2}, Landroidx/appcompat/view/menu/ActionMenuItemView;->setTitle(Ljava/lang/CharSequence;)V
 
     iget p2, p1, Landroidx/appcompat/view/menu/MenuItemImpl;->mId:I
@@ -165,16 +155,16 @@
 
     move-result p2
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_0
 
     const/4 p2, 0x0
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_1
+    :cond_0
     const/16 p2, 0x8
 
-    :goto_1
+    :goto_0
     invoke-virtual {p0, p2}, Landroid/widget/TextView;->setVisibility(I)V
 
     invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuItemImpl;->isEnabled()Z
@@ -187,11 +177,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     iget-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItemView;->mForwardingListener:Landroidx/appcompat/widget/ForwardingListener;
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_1
 
     new-instance p1, Landroidx/appcompat/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;
 
@@ -199,7 +189,7 @@
 
     iput-object p1, p0, Landroidx/appcompat/view/menu/ActionMenuItemView;->mForwardingListener:Landroidx/appcompat/widget/ForwardingListener;
 
-    :cond_2
+    :cond_1
     return-void
 .end method
 
@@ -432,14 +422,6 @@
     return p1
 .end method
 
-.method public prefersCondensedTitle()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method public setCheckable(Z)V
     .locals 0
 
@@ -467,7 +449,11 @@
 
     iget-object p1, p1, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemActionRequestChanged()V
+    const/4 v0, 0x1
+
+    iput-boolean v0, p1, Landroidx/appcompat/view/menu/MenuBuilder;->mIsActionItemsStale:Z
+
+    invoke-virtual {p1, v0}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
 
     :cond_0
     return-void
@@ -507,8 +493,6 @@
     move v0, v2
 
     :cond_0
-    iget v2, p0, Landroidx/appcompat/view/menu/ActionMenuItemView;->mMaxIconSize:I
-
     if-le v1, v2, :cond_1
 
     int-to-float v3, v2
@@ -523,12 +507,15 @@
 
     float-to-int v0, v0
 
-    move v1, v2
+    goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v2, v1
 
-    invoke-virtual {p1, v2, v2, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    :goto_0
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v1, v1, v0, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     :cond_2
     const/4 v0, 0x0
@@ -747,12 +734,12 @@
     iget-object v1, v0, Landroidx/appcompat/view/menu/MenuItemImpl;->mTitle:Ljava/lang/CharSequence;
 
     :goto_5
-    invoke-static {p0, v1}, Landroidx/appcompat/R$string;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, v1}, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     goto :goto_6
 
     :cond_7
-    invoke-static {p0, v2}, Landroidx/appcompat/R$string;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, v2}, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     :goto_6
     return-void

@@ -3,6 +3,17 @@
 .source "FontResourcesParserCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/core/content/res/FontResourcesParserCompat;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "FontFileResourceEntry"
+.end annotation
+
+
 # instance fields
 .field public final mFileName:Ljava/lang/String;
 
@@ -20,6 +31,24 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;IZLjava/lang/String;II)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "fileName",
+            "weight",
+            "italic",
+            "variationSettings",
+            "ttcIndex",
+            "resourceId"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

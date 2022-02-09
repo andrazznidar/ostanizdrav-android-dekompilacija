@@ -440,7 +440,7 @@
 
     invoke-direct/range {v0 .. v10}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$1;-><init>(Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;Ljava/lang/String;ZZLjava/lang/reflect/Field;ZLcom/google/gson/TypeAdapter;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Z)V
 
-    invoke-virtual {v14, v13, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v14, v13, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -758,9 +758,9 @@
 
     if-nez v0, :cond_9
 
-    new-instance v0, Lcom/google/gson/FieldAttributes;
+    new-instance v0, Lokhttp3/ConnectionPool;
 
-    invoke-direct {v0, p1}, Lcom/google/gson/FieldAttributes;-><init>(Ljava/lang/reflect/Field;)V
+    invoke-direct {v0, p1}, Lokhttp3/ConnectionPool;-><init>(Ljava/lang/reflect/Field;)V
 
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -779,7 +779,7 @@
 
     check-cast p2, Lcom/google/gson/ExclusionStrategy;
 
-    invoke-interface {p2, v0}, Lcom/google/gson/ExclusionStrategy;->shouldSkipField(Lcom/google/gson/FieldAttributes;)Z
+    invoke-interface {p2, v0}, Lcom/google/gson/ExclusionStrategy;->shouldSkipField(Lokhttp3/ConnectionPool;)Z
 
     move-result p2
 

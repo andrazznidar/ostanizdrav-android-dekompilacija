@@ -18,8 +18,6 @@
 
 .field public static final enum DEFAULT:Lcom/google/gson/LongSerializationPolicy;
 
-.field public static final enum STRING:Lcom/google/gson/LongSerializationPolicy;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -35,27 +33,23 @@
 
     sput-object v0, Lcom/google/gson/LongSerializationPolicy;->DEFAULT:Lcom/google/gson/LongSerializationPolicy;
 
-    new-instance v0, Lcom/google/gson/LongSerializationPolicy$2;
+    new-instance v1, Lcom/google/gson/LongSerializationPolicy$2;
 
-    const-string v1, "STRING"
+    const-string v3, "STRING"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Lcom/google/gson/LongSerializationPolicy$2;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lcom/google/gson/LongSerializationPolicy$2;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/LongSerializationPolicy;->STRING:Lcom/google/gson/LongSerializationPolicy;
+    const/4 v3, 0x2
 
-    const/4 v1, 0x2
+    new-array v3, v3, [Lcom/google/gson/LongSerializationPolicy;
 
-    new-array v1, v1, [Lcom/google/gson/LongSerializationPolicy;
+    aput-object v0, v3, v2
 
-    sget-object v4, Lcom/google/gson/LongSerializationPolicy;->DEFAULT:Lcom/google/gson/LongSerializationPolicy;
+    aput-object v1, v3, v4
 
-    aput-object v4, v1, v2
-
-    aput-object v0, v1, v3
-
-    sput-object v1, Lcom/google/gson/LongSerializationPolicy;->$VALUES:[Lcom/google/gson/LongSerializationPolicy;
+    sput-object v3, Lcom/google/gson/LongSerializationPolicy;->$VALUES:[Lcom/google/gson/LongSerializationPolicy;
 
     return-void
 .end method

@@ -28,3 +28,13 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public onGetEpicenter(Landroidx/transition/Transition;)Landroid/graphics/Rect;
+    .locals 0
+
+    iget-object p1, p0, Landroidx/transition/FragmentTransitionSupport$1;->val$epicenter:Landroid/graphics/Rect;
+
+    return-object p1
+.end method

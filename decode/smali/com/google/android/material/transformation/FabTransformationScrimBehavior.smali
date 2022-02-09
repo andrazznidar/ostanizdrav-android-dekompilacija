@@ -69,23 +69,26 @@
 
 
 # virtual methods
-.method public final createScrimAnimation(Landroid/view/View;ZZLjava/util/List;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "ZZ",
-            "Ljava/util/List<",
-            "Landroid/animation/Animator;",
-            ">;",
-            "Ljava/util/List<",
-            "Landroid/animation/Animator$AnimatorListener;",
-            ">;)V"
-        }
-    .end annotation
+.method public layoutDependsOn(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
+    .locals 0
 
-    if-eqz p2, :cond_0
+    instance-of p1, p3, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
+
+    return p1
+.end method
+
+.method public onCreateExpandedStateChangeAnimation(Landroid/view/View;Landroid/view/View;ZZ)Landroid/animation/AnimatorSet;
+    .locals 4
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    if-eqz p3, :cond_0
 
     iget-object v0, p0, Lcom/google/android/material/transformation/FabTransformationScrimBehavior;->expandTiming:Lcom/google/android/material/animation/MotionTiming;
 
@@ -101,72 +104,48 @@
 
     const/4 v3, 0x1
 
-    if-eqz p2, :cond_2
+    if-eqz p3, :cond_2
 
-    if-nez p3, :cond_1
+    if-nez p4, :cond_1
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p2, v1}, Landroid/view/View;->setAlpha(F)V
 
     :cond_1
-    sget-object p2, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    sget-object p4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    new-array p3, v3, [F
+    new-array v1, v3, [F
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    aput v1, p3, v2
+    aput v3, v1, v2
 
-    invoke-static {p1, p2, p3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {p2, p4, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object p1
+    move-result-object p4
 
     goto :goto_1
 
     :cond_2
-    sget-object p2, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    sget-object p4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    new-array p3, v3, [F
+    new-array v3, v3, [F
 
-    aput v1, p3, v2
+    aput v1, v3, v2
 
-    invoke-static {p1, p2, p3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {p2, p4, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object p1
+    move-result-object p4
 
     :goto_1
-    invoke-virtual {v0, p1}, Lcom/google/android/material/animation/MotionTiming;->apply(Landroid/animation/Animator;)V
+    invoke-virtual {v0, p4}, Lcom/google/android/material/animation/MotionTiming;->apply(Landroid/animation/Animator;)V
 
-    invoke-interface {p4, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public layoutDependsOn(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
-    .locals 0
-
-    instance-of p1, p3, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
-
-    return p1
-.end method
-
-.method public onCreateExpandedStateChangeAnimation(Landroid/view/View;Landroid/view/View;ZZ)Landroid/animation/AnimatorSet;
-    .locals 1
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {p0, p2, p3, p4, p1}, Lcom/google/android/material/transformation/FabTransformationScrimBehavior;->createScrimAnimation(Landroid/view/View;ZZLjava/util/List;)V
+    invoke-virtual {p1, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     new-instance p4, Landroid/animation/AnimatorSet;
 
     invoke-direct {p4}, Landroid/animation/AnimatorSet;-><init>()V
 
-    invoke-static {p4, p1}, Lcom/google/android/material/R$style;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
+    invoke-static {p4, p1}, Lcom/google/android/material/animation/AnimatorSetCompat;->playTogether(Landroid/animation/AnimatorSet;Ljava/util/List;)V
 
     new-instance p1, Lcom/google/android/material/transformation/FabTransformationScrimBehavior$1;
 

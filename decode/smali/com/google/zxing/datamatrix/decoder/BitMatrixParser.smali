@@ -30,85 +30,106 @@
 
     const/16 v3, 0x8
 
-    if-lt v2, v3, :cond_6
+    if-lt v2, v3, :cond_9
 
     const/16 v3, 0x90
 
-    if-gt v2, v3, :cond_6
+    if-gt v2, v3, :cond_9
 
     and-int/lit8 v3, v2, 0x1
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_9
 
     iget v3, v1, Lcom/google/zxing/common/BitMatrix;->width:I
 
-    invoke-static {v2, v3}, Lcom/google/zxing/datamatrix/decoder/Version;->getVersionForDimensions(II)Lcom/google/zxing/datamatrix/decoder/Version;
+    sget-object v4, Lcom/google/zxing/datamatrix/decoder/Version;->VERSIONS:[Lcom/google/zxing/datamatrix/decoder/Version;
 
-    move-result-object v2
+    and-int/lit8 v4, v2, 0x1
 
-    iput-object v2, v0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->version:Lcom/google/zxing/datamatrix/decoder/Version;
+    if-nez v4, :cond_8
 
-    iget v3, v2, Lcom/google/zxing/datamatrix/decoder/Version;->symbolSizeRows:I
+    and-int/lit8 v4, v3, 0x1
 
-    iget v4, v2, Lcom/google/zxing/datamatrix/decoder/Version;->symbolSizeColumns:I
+    if-nez v4, :cond_8
 
-    iget v5, v1, Lcom/google/zxing/common/BitMatrix;->height:I
+    sget-object v4, Lcom/google/zxing/datamatrix/decoder/Version;->VERSIONS:[Lcom/google/zxing/datamatrix/decoder/Version;
 
-    if-ne v5, v3, :cond_5
-
-    iget v5, v2, Lcom/google/zxing/datamatrix/decoder/Version;->dataRegionSizeRows:I
-
-    iget v2, v2, Lcom/google/zxing/datamatrix/decoder/Version;->dataRegionSizeColumns:I
-
-    div-int/2addr v3, v5
-
-    div-int/2addr v4, v2
-
-    mul-int v6, v3, v5
-
-    mul-int v7, v4, v2
-
-    new-instance v8, Lcom/google/zxing/common/BitMatrix;
-
-    invoke-direct {v8, v7, v6}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
+    array-length v5, v4
 
     const/4 v7, 0x0
 
     :goto_0
-    if-ge v7, v3, :cond_4
+    if-ge v7, v5, :cond_7
 
-    mul-int v9, v7, v5
+    aget-object v8, v4, v7
 
-    const/4 v10, 0x0
+    iget v9, v8, Lcom/google/zxing/datamatrix/decoder/Version;->symbolSizeRows:I
+
+    if-ne v9, v2, :cond_6
+
+    iget v10, v8, Lcom/google/zxing/datamatrix/decoder/Version;->symbolSizeColumns:I
+
+    if-ne v10, v3, :cond_6
+
+    iput-object v8, v0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->version:Lcom/google/zxing/datamatrix/decoder/Version;
+
+    iget v2, v1, Lcom/google/zxing/common/BitMatrix;->height:I
+
+    if-ne v2, v9, :cond_5
+
+    iget v2, v8, Lcom/google/zxing/datamatrix/decoder/Version;->dataRegionSizeRows:I
+
+    iget v3, v8, Lcom/google/zxing/datamatrix/decoder/Version;->dataRegionSizeColumns:I
+
+    div-int/2addr v9, v2
+
+    div-int/2addr v10, v3
+
+    mul-int v4, v9, v2
+
+    mul-int v5, v10, v3
+
+    new-instance v7, Lcom/google/zxing/common/BitMatrix;
+
+    invoke-direct {v7, v5, v4}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
+
+    const/4 v4, 0x0
 
     :goto_1
-    if-ge v10, v4, :cond_3
+    if-ge v4, v9, :cond_4
 
-    mul-int v11, v10, v2
+    mul-int v5, v4, v2
+
+    const/4 v8, 0x0
+
+    :goto_2
+    if-ge v8, v10, :cond_3
+
+    mul-int v11, v8, v3
 
     const/4 v12, 0x0
 
-    :goto_2
-    if-ge v12, v5, :cond_2
+    :goto_3
+    if-ge v12, v2, :cond_2
 
-    add-int/lit8 v13, v5, 0x2
+    add-int/lit8 v13, v2, 0x2
 
-    mul-int/2addr v13, v7
+    mul-int/2addr v13, v4
 
     add-int/lit8 v13, v13, 0x1
 
     add-int/2addr v13, v12
 
-    add-int v14, v9, v12
+    add-int v14, v5, v12
 
     const/4 v15, 0x0
 
-    :goto_3
-    if-ge v15, v2, :cond_1
+    :goto_4
+    if-ge v15, v3, :cond_1
 
-    add-int/lit8 v16, v2, 0x2
+    add-int/lit8 v16, v3, 0x2
 
-    mul-int v16, v16, v10
+    mul-int v16, v16, v8
 
     add-int/lit8 v16, v16, 0x1
 
@@ -122,36 +143,36 @@
 
     add-int v6, v11, v15
 
-    invoke-virtual {v8, v6, v14}, Lcom/google/zxing/common/BitMatrix;->set(II)V
+    invoke-virtual {v7, v6, v14}, Lcom/google/zxing/common/BitMatrix;->set(II)V
 
     :cond_0
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_1
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    :cond_3
-    add-int/lit8 v7, v7, 0x1
-
-    goto :goto_0
-
     :cond_4
-    iput-object v8, v0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->mappingBitMatrix:Lcom/google/zxing/common/BitMatrix;
+    iput-object v7, v0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->mappingBitMatrix:Lcom/google/zxing/common/BitMatrix;
 
     new-instance v1, Lcom/google/zxing/common/BitMatrix;
 
-    iget v2, v8, Lcom/google/zxing/common/BitMatrix;->width:I
+    iget v2, v7, Lcom/google/zxing/common/BitMatrix;->width:I
 
-    iget v3, v8, Lcom/google/zxing/common/BitMatrix;->height:I
+    iget v3, v7, Lcom/google/zxing/common/BitMatrix;->height:I
 
     invoke-direct {v1, v2, v3}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
@@ -162,13 +183,32 @@
     :cond_5
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "Dimension of bitMarix must match the version size"
+    const-string v2, "Dimension of bitMatrix must match the version size"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
     :cond_6
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_0
+
+    :cond_7
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v1
+
+    throw v1
+
+    :cond_8
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v1
+
+    throw v1
+
+    :cond_9
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
     move-result-object v1

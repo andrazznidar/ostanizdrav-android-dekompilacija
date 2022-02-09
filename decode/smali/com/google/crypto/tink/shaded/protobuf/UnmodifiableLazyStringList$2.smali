@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Iterator;
+.implements Lj$/util/Iterator;
 
 
 # annotations
@@ -21,7 +22,8 @@
         "Ljava/lang/Object;",
         "Ljava/util/Iterator<",
         "Ljava/lang/String;",
-        ">;"
+        ">;",
+        "Lj$/util/Iterator;"
     }
 .end annotation
 
@@ -37,18 +39,12 @@
     .end annotation
 .end field
 
-.field public final synthetic this$0:Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;
-
 
 # direct methods
 .method public constructor <init>(Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList$2;->this$0:Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList$2;->this$0:Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;
 
     iget-object p1, p1, Lcom/google/crypto/tink/shaded/protobuf/UnmodifiableLazyStringList;->list:Lcom/google/crypto/tink/shaded/protobuf/LazyStringList;
 
@@ -63,6 +59,14 @@
 
 
 # virtual methods
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public hasNext()Z
     .locals 1
 

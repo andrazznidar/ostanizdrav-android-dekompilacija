@@ -71,39 +71,35 @@
     add-int/lit8 v0, v0, -0x1
 
     :cond_0
-    sget-object v1, Lcom/google/protobuf/RopeByteString;->minLengthByDepth:[I
-
     add-int/lit8 v2, v0, 0x1
 
-    aget v1, v1, v2
+    aget v2, v1, v2
 
-    iget-object v2, p0, Lcom/google/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/Stack;
+    iget-object v3, p0, Lcom/google/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/Stack;
 
-    invoke-virtual {v2}, Ljava/util/Stack;->isEmpty()Z
+    invoke-virtual {v3}, Ljava/util/Stack;->isEmpty()Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_5
+    if-nez v3, :cond_5
 
-    iget-object v2, p0, Lcom/google/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/Stack;
+    iget-object v3, p0, Lcom/google/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/Stack;
 
-    invoke-virtual {v2}, Ljava/util/Stack;->peek()Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/util/Stack;->peek()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lcom/google/protobuf/ByteString;
+    check-cast v3, Lcom/google/protobuf/ByteString;
 
-    invoke-virtual {v2}, Lcom/google/protobuf/ByteString;->size()I
+    invoke-virtual {v3}, Lcom/google/protobuf/ByteString;->size()I
 
-    move-result v2
+    move-result v3
 
-    if-lt v2, v1, :cond_1
+    if-lt v3, v2, :cond_1
 
     goto/16 :goto_2
 
     :cond_1
-    sget-object v1, Lcom/google/protobuf/RopeByteString;->minLengthByDepth:[I
-
     aget v0, v1, v0
 
     iget-object v1, p0, Lcom/google/protobuf/RopeByteString$Balancer;->prefixesStack:Ljava/util/Stack;
@@ -184,8 +180,6 @@
     add-int/lit8 p1, p1, -0x1
 
     :cond_3
-    sget-object v1, Lcom/google/protobuf/RopeByteString;->minLengthByDepth:[I
-
     add-int/lit8 p1, p1, 0x1
 
     aget p1, v1, p1
@@ -258,7 +252,7 @@
 
     const-string v1, "Has a new type of ByteString been created? Found "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

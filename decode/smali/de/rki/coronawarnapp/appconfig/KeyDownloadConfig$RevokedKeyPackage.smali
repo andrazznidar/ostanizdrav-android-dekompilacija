@@ -13,6 +13,12 @@
     name = "RevokedKeyPackage"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/appconfig/KeyDownloadConfig$RevokedKeyPackage$TraceWarning;
+    }
+.end annotation
+
 
 # virtual methods
 .method public abstract getEtag()Ljava/lang/String;

@@ -42,13 +42,13 @@
 
 .field public static final DAYSSINCEEXPOSURETHRESHOLD_FIELD_NUMBER:I = 0x3
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
 
 .field public static final INFECTIOUSNESSWEIGHTS_FIELD_NUMBER:I = 0x4
 
 .field public static final MINIMUMWINDOWSCORE_FIELD_NUMBER:I = 0x5
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -62,15 +62,15 @@
 
 
 # instance fields
-.field public attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
+.field private attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
 
-.field public attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
+.field private attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
 
-.field public bitField0_:I
+.field private bitField0_:I
 
-.field public daysSinceExposureThreshold_:I
+.field private daysSinceExposureThreshold_:I
 
-.field public infectiousnessWeights_:Lcom/google/protobuf/MapFieldLite;
+.field private infectiousnessWeights_:Lcom/google/protobuf/MapFieldLite;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/MapFieldLite<",
@@ -81,9 +81,9 @@
     .end annotation
 .end field
 
-.field public minimumWindowScore_:D
+.field private minimumWindowScore_:D
 
-.field public reportTypeWeights_:Lcom/google/protobuf/MapFieldLite;
+.field private reportTypeWeights_:Lcom/google/protobuf/MapFieldLite;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/MapFieldLite<",
@@ -96,6 +96,166 @@
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$maddAllAttenuationBucketThresholdDb(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Ljava/lang/Integer;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAllAttenuationBucketThresholdDb(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAllAttenuationBucketWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/Iterable<",
+            "+",
+            "Ljava/lang/Double;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAllAttenuationBucketWeights(Ljava/lang/Iterable;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAttenuationBucketThresholdDb(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAttenuationBucketThresholdDb(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$maddAttenuationBucketWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAttenuationBucketWeights(D)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAttenuationBucketThresholdDb(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearAttenuationBucketThresholdDb()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearAttenuationBucketWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearAttenuationBucketWeights()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearDaysSinceExposureThreshold(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearDaysSinceExposureThreshold()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearMinimumWindowScore(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearMinimumWindowScore()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mgetMutableInfectiousnessWeightsMap(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Double;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->getMutableInfectiousnessWeightsMap()Ljava/util/Map;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static bridge synthetic -$$Nest$mgetMutableReportTypeWeightsMap(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Double;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->getMutableReportTypeWeightsMap()Ljava/util/Map;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAttenuationBucketThresholdDb(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setAttenuationBucketThresholdDb(II)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetAttenuationBucketWeights(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;ID)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setAttenuationBucketWeights(ID)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetDaysSinceExposureThreshold(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setDaysSinceExposureThreshold(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetMinimumWindowScore(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setMinimumWindowScore(D)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -110,7 +270,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
@@ -134,130 +294,6 @@
     iput-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
 
     return-void
-.end method
-
-.method public static synthetic access$5000()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$5100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setAttenuationBucketThresholdDb(II)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAttenuationBucketThresholdDb(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAllAttenuationBucketThresholdDb(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearAttenuationBucketThresholdDb()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5500(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;ID)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setAttenuationBucketWeights(ID)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5600(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAttenuationBucketWeights(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5700(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->addAllAttenuationBucketWeights(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$5800(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearAttenuationBucketWeights()V
-
-    return-void
-.end method
-
-.method public static synthetic access$5900(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setDaysSinceExposureThreshold(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6000(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearDaysSinceExposureThreshold()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6100(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->getMutableInfectiousnessWeightsMap()Ljava/util/Map;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic access$6200(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;D)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->setMinimumWindowScore(D)V
-
-    return-void
-.end method
-
-.method public static synthetic access$6300(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->clearMinimumWindowScore()V
-
-    return-void
-.end method
-
-.method public static synthetic access$6400(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;)Ljava/util/Map;
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->getMutableReportTypeWeightsMap()Ljava/util/Map;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 .method private addAllAttenuationBucketThresholdDb(Ljava/lang/Iterable;)V
@@ -1050,24 +1086,19 @@
 
     iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    iget-object v4, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
-
-    div-int/lit8 p1, p1, 0x8
-    :try_end_1
-    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    add-int/2addr v3, p1
+    move-object v4, v3
 
     check-cast v4, Lcom/google/protobuf/DoubleArrayList;
 
-    :try_start_2
-    invoke-virtual {v4, v3}, Lcom/google/protobuf/DoubleArrayList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$DoubleList;
+    iget v4, v4, Lcom/google/protobuf/DoubleArrayList;->size:I
+
+    div-int/lit8 p1, p1, 0x8
+
+    add-int/2addr v4, p1
+
+    check-cast v3, Lcom/google/protobuf/DoubleArrayList;
+
+    invoke-virtual {v3, v4}, Lcom/google/protobuf/DoubleArrayList;->mutableCopyWithCapacity(I)Lcom/google/protobuf/Internal$DoubleList;
 
     move-result-object p1
 
@@ -1105,13 +1136,13 @@
     :cond_6
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_7
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
+    if-nez v0, :cond_7
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$DoubleList;)Lcom/google/protobuf/Internal$DoubleList;
 
@@ -1137,11 +1168,9 @@
     :cond_8
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->reportTypeWeights_:Lcom/google/protobuf/MapFieldLite;
 
-    iget-boolean p1, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
+    iget-boolean v0, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
 
-    if-nez p1, :cond_9
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->reportTypeWeights_:Lcom/google/protobuf/MapFieldLite;
+    if-nez v0, :cond_9
 
     invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->mutableCopy()Lcom/google/protobuf/MapFieldLite;
 
@@ -1170,11 +1199,9 @@
     :cond_b
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->infectiousnessWeights_:Lcom/google/protobuf/MapFieldLite;
 
-    iget-boolean p1, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
+    iget-boolean v0, p1, Lcom/google/protobuf/MapFieldLite;->isMutable:Z
 
-    if-nez p1, :cond_c
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->infectiousnessWeights_:Lcom/google/protobuf/MapFieldLite;
+    if-nez v0, :cond_c
 
     invoke-virtual {p1}, Lcom/google/protobuf/MapFieldLite;->mutableCopy()Lcom/google/protobuf/MapFieldLite;
 
@@ -1263,13 +1290,13 @@
     :cond_11
     iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
 
-    check-cast p1, Lcom/google/protobuf/AbstractProtobufList;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
+    check-cast v0, Lcom/google/protobuf/AbstractProtobufList;
 
-    if-nez p1, :cond_12
+    iget-boolean v0, v0, Lcom/google/protobuf/AbstractProtobufList;->isMutable:Z
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
+    if-nez v0, :cond_12
 
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy(Lcom/google/protobuf/Internal$IntList;)Lcom/google/protobuf/Internal$IntList;
 
@@ -1289,10 +1316,10 @@
     iget v3, p1, Lcom/google/protobuf/IntArrayList;->size:I
 
     invoke-virtual {p1, v3, v0}, Lcom/google/protobuf/IntArrayList;->addInt(II)V
-    :try_end_2
-    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_1
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_1
+    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     goto/16 :goto_1
 
@@ -1310,7 +1337,7 @@
     :catch_0
     move-exception p1
 
-    :try_start_3
+    :try_start_2
     new-instance p2, Ljava/lang/RuntimeException;
 
     new-instance p3, Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -1333,8 +1360,8 @@
     invoke-direct {p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw p2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     :goto_5
     throw p1
@@ -1374,31 +1401,27 @@
 
     if-eqz p1, :cond_15
 
-    move p1, v1
+    move v0, v1
 
     goto :goto_6
 
     :cond_15
-    move p1, v2
+    move v0, v2
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->daysSinceExposureThreshold_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->daysSinceExposureThreshold_:I
 
     if-eqz v3, :cond_16
 
-    move v3, v1
+    move v4, v1
 
     goto :goto_7
 
     :cond_16
-    move v3, v2
+    move v4, v2
 
     :goto_7
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->daysSinceExposureThreshold_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -1432,8 +1455,6 @@
     move p1, v2
 
     :goto_8
-    iget-wide v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->minimumWindowScore_:D
-
     iget-wide v7, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->minimumWindowScore_:D
 
     cmpl-double v0, v7, v5
@@ -1448,8 +1469,6 @@
     move v5, v2
 
     :goto_9
-    iget-wide v6, p3, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->minimumWindowScore_:D
-
     move-object v0, p2
 
     move v1, p1
@@ -1458,7 +1477,7 @@
 
     move v4, v5
 
-    move-wide v5, v6
+    move-wide v5, v7
 
     invoke-interface/range {v0 .. v6}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitDouble(ZDZD)D
 
@@ -1496,7 +1515,7 @@
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig$Builder-IA;)V
 
     return-object p1
 
@@ -1535,8 +1554,6 @@
 
     return-object p1
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_6
@@ -1571,7 +1588,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    check-cast v0, Lcom/google/protobuf/IntArrayList;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/IntArrayList;->size()I
 
     move-result v0
 
@@ -1615,7 +1634,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    check-cast v0, Lcom/google/protobuf/DoubleArrayList;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/DoubleArrayList;->size()I
 
     move-result v0
 
@@ -1945,13 +1966,13 @@
     :goto_0
     iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    move-object v4, v3
 
-    move-result v3
+    check-cast v4, Lcom/google/protobuf/IntArrayList;
 
-    if-ge v1, v3, :cond_1
+    iget v4, v4, Lcom/google/protobuf/IntArrayList;->size:I
 
-    iget-object v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
+    if-ge v1, v4, :cond_1
 
     check-cast v3, Lcom/google/protobuf/IntArrayList;
 
@@ -2160,13 +2181,13 @@
     :goto_0
     iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    move-object v3, v2
 
-    move-result v2
+    check-cast v3, Lcom/google/protobuf/IntArrayList;
 
-    if-ge v1, v2, :cond_0
+    iget v3, v3, Lcom/google/protobuf/IntArrayList;->size:I
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketThresholdDb_:Lcom/google/protobuf/Internal$IntList;
+    if-ge v1, v3, :cond_0
 
     check-cast v2, Lcom/google/protobuf/IntArrayList;
 
@@ -2186,23 +2207,23 @@
     :goto_1
     iget-object v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DailySummariesConfig;->attenuationBucketWeights_:Lcom/google/protobuf/Internal$DoubleList;
+    move-object v2, v1
 
     check-cast v2, Lcom/google/protobuf/DoubleArrayList;
 
-    invoke-virtual {v2, v0}, Lcom/google/protobuf/DoubleArrayList;->getDouble(I)D
+    iget v2, v2, Lcom/google/protobuf/DoubleArrayList;->size:I
 
-    move-result-wide v2
+    if-ge v0, v2, :cond_1
 
-    invoke-virtual {p1, v1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeDouble(ID)V
+    const/4 v2, 0x2
+
+    check-cast v1, Lcom/google/protobuf/DoubleArrayList;
+
+    invoke-virtual {v1, v0}, Lcom/google/protobuf/DoubleArrayList;->getDouble(I)D
+
+    move-result-wide v3
+
+    invoke-virtual {p1, v2, v3, v4}, Lcom/google/protobuf/CodedOutputStream;->writeDouble(ID)V
 
     add-int/lit8 v0, v0, 0x1
 

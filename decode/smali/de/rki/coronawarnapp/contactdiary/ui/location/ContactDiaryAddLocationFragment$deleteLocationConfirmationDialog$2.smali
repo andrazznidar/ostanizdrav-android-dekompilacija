@@ -46,9 +46,9 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 11
+    .locals 12
 
-    new-instance v10, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
+    new-instance v11, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
 
     iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment$deleteLocationConfirmationDialog$2;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment;
 
@@ -60,7 +60,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v0, 0x7f120079
+    const v0, 0x7f1300b8
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -68,23 +68,27 @@
 
     new-instance v7, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment$deleteLocationConfirmationDialog$2$1;
 
-    invoke-direct {v7, p0}, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment$deleteLocationConfirmationDialog$2$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment$deleteLocationConfirmationDialog$2;)V
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment$deleteLocationConfirmationDialog$2;->this$0:Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment;
 
-    const v2, 0x7f12007c
+    invoke-direct {v7, v0}, Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment$deleteLocationConfirmationDialog$2$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/location/ContactDiaryAddLocationFragment;)V
 
-    const v3, 0x7f12007d
+    const v2, 0x7f1300bc
 
-    const v4, 0x7f12007a
+    const v3, 0x7f1300bb
+
+    const v4, 0x7f1300b9
 
     const/4 v6, 0x0
 
     const/4 v8, 0x0
 
-    const/16 v9, 0xa0
+    const/4 v9, 0x0
 
-    move-object v0, v10
+    const/16 v10, 0x1a0
 
-    invoke-direct/range {v0 .. v9}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+    move-object v0, v11
 
-    return-object v10
+    invoke-direct/range {v0 .. v10}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+
+    return-object v11
 .end method

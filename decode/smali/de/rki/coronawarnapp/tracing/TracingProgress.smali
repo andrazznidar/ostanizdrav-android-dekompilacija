@@ -8,7 +8,7 @@
     value = {
         Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;,
         Lde/rki/coronawarnapp/tracing/TracingProgress$Downloading;,
-        Lde/rki/coronawarnapp/tracing/TracingProgress$ENFIsCalculating;
+        Lde/rki/coronawarnapp/tracing/TracingProgress$IsCalculating;
     }
 .end annotation
 

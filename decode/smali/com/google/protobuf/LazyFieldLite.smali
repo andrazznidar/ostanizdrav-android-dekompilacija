@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field public delayedBytes:Lcom/google/protobuf/ByteString;
-
 .field public volatile memoizedBytes:Lcom/google/protobuf/ByteString;
 
 .field public volatile value:Lcom/google/protobuf/MessageLite;

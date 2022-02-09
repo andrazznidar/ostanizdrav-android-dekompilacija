@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/internal/bind/TypeAdapters$27;
+.class Lcom/google/gson/internal/bind/TypeAdapters$27;
 .super Lcom/google/gson/TypeAdapter;
 .source "TypeAdapters.java"
 
@@ -90,7 +90,7 @@
 
     move-result v1
 
-    const-string v8, "year"
+    const-string/jumbo v8, "year"
 
     invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -199,7 +199,7 @@
     :cond_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginObject()Lcom/google/gson/stream/JsonWriter;
 
-    const-string v0, "year"
+    const-string/jumbo v0, "year"
 
     invoke-virtual {p1, v0}, Lcom/google/gson/stream/JsonWriter;->name(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 

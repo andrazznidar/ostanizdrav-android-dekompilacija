@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
-    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->access$2000()Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->-$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
 
     move-result-object v0
 
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$1;)V
+.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder-IA;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion$Builder;-><init>()V
@@ -59,7 +59,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->access$2200(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->-$$Nest$mclearMajor(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;)V
 
     return-object p0
 .end method
@@ -73,7 +73,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->access$2400(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->-$$Nest$mclearMinor(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;)V
 
     return-object p0
 .end method
@@ -87,7 +87,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->access$2600(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->-$$Nest$mclearPatch(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;)V
 
     return-object p0
 .end method
@@ -143,7 +143,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->access$2100(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;I)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->-$$Nest$msetMajor(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;I)V
 
     return-object p0
 .end method
@@ -157,7 +157,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->access$2300(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;I)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->-$$Nest$msetMinor(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;I)V
 
     return-object p0
 .end method
@@ -171,7 +171,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->access$2500(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;I)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;->-$$Nest$msetPatch(Lde/rki/coronawarnapp/server/protocols/internal/AppVersionConfig$SemanticVersion;I)V
 
     return-object p0
 .end method

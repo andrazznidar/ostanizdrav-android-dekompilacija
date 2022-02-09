@@ -354,12 +354,6 @@
     return p1
 .end method
 
-.method public setCallback(Landroidx/appcompat/view/menu/MenuPresenter$Callback;)V
-    .locals 0
-
-    return-void
-.end method
-
 .method public updateMenuView(Z)V
     .locals 4
 

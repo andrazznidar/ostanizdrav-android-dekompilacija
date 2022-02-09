@@ -43,7 +43,7 @@
 
     move-result-object p1
 
-    const/4 p2, 0x1
+    sget p2, Lcom/google/android/material/R$styleable;->FlowLayout_lineSpacing:I
 
     invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -51,7 +51,9 @@
 
     iput p2, p0, Lcom/google/android/material/internal/FlowLayout;->lineSpacing:I
 
-    invoke-virtual {p1, p3, p3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    sget p2, Lcom/google/android/material/R$styleable;->FlowLayout_itemSpacing:I
+
+    invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result p2
 
@@ -97,7 +99,7 @@
 .end method
 
 .method public onLayout(ZIIII)V
-    .locals 10
+    .locals 9
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -116,7 +118,9 @@
 
     iput p1, p0, Lcom/google/android/material/internal/FlowLayout;->rowCount:I
 
-    invoke-static {p0}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    sget-object p5, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result p5
 
@@ -189,17 +193,17 @@
 
     const/16 v6, 0x8
 
-    const v7, 0x7f09039a
-
     if-ne v5, v6, :cond_4
 
-    const/4 v5, -0x1
+    sget v5, Lcom/google/android/material/R$id;->row_index_key:I
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v6, -0x1
 
-    move-result-object v5
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v4, v7, v5}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    move-result-object v6
+
+    invoke-virtual {v4, v5, v6}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     goto :goto_6
 
@@ -230,19 +234,19 @@
     move v6, v5
 
     :goto_4
-    add-int v8, v3, v6
+    add-int v7, v3, v6
 
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v9
+    move-result v8
 
-    add-int/2addr v9, v8
+    add-int/2addr v8, v7
 
-    iget-boolean v8, p0, Lcom/google/android/material/internal/FlowLayout;->singleLine:Z
+    iget-boolean v7, p0, Lcom/google/android/material/internal/FlowLayout;->singleLine:Z
 
-    if-nez v8, :cond_6
+    if-nez v7, :cond_6
 
-    if-le v9, p4, :cond_6
+    if-le v8, p4, :cond_6
 
     iget p2, p0, Lcom/google/android/material/internal/FlowLayout;->lineSpacing:I
 
@@ -257,15 +261,17 @@
     move v3, v0
 
     :cond_6
-    iget v2, p0, Lcom/google/android/material/internal/FlowLayout;->rowCount:I
+    sget v2, Lcom/google/android/material/R$id;->row_index_key:I
 
-    sub-int/2addr v2, p1
+    iget v7, p0, Lcom/google/android/material/internal/FlowLayout;->rowCount:I
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    sub-int/2addr v7, p1
 
-    move-result-object v2
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v4, v7, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    move-result-object v7
+
+    invoke-virtual {v4, v2, v7}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     add-int v2, v3, v6
 

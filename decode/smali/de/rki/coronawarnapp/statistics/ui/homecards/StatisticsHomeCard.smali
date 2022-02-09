@@ -66,20 +66,16 @@
 
     if-eqz p3, :cond_0
 
-    const p2, 0x7f0c007f
+    const p2, 0x7f0d00b9
 
     :cond_0
-    const-string p3, "parent"
-
-    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-direct {p0, p2, p1}, Lde/rki/coronawarnapp/ui/main/home/HomeAdapter$HomeItemVH;-><init>(ILandroid/view/ViewGroup;)V
 
     new-instance p1, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$statisticsLayoutManager$2;
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$statisticsLayoutManager$2;-><init>(Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -87,7 +83,7 @@
 
     sget-object p1, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$statisticsCardAdapter$2;->INSTANCE:Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$statisticsCardAdapter$2;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -97,7 +93,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard$viewBinding$1;-><init>(Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -189,33 +185,81 @@
 .end method
 
 .method public restoreState(Landroid/os/Parcelable;)V
-    .locals 2
+    .locals 3
 
-    const-string v0, "state"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz p1, :cond_1
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->getStatisticsLayoutManager()Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     instance-of v1, p1, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2
 
     check-cast p1, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;
 
     iput-object p1, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingSavedState:Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->requestLayout()V
+    iget v1, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->mPendingScrollPosition:I
+
+    const/4 v2, -0x1
+
+    if-eq v1, v2, :cond_0
+
+    iput v2, p1, Landroidx/recyclerview/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     :cond_0
-    return-void
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->requestLayout()V
+
+    goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    iget-object p1, p0, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->viewBinding:Lkotlin/Lazy;
 
-    throw p1
+    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsScrollcontainerBinding;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/HomeStatisticsScrollcontainerBinding;->rootView:Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    const v1, 0x7f0701f1
+
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsHomeCard;->getStatisticsLayoutManager()Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsLayoutManager;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    sub-int/2addr v0, p1
+
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-virtual {v1, v2, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
+
+    :cond_2
+    :goto_0
+    return-void
 .end method

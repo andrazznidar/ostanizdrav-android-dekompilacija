@@ -70,19 +70,11 @@
     move-wide v3, p1
 
     :goto_0
-    and-int/lit8 v0, p9, 0x8
-
     const/4 v7, 0x0
-
-    and-int/lit8 v0, p9, 0x10
 
     const/4 v8, 0x0
 
-    and-int/lit8 v0, p9, 0x20
-
     const/4 v9, 0x0
-
-    and-int/lit8 v0, p9, 0x40
 
     const/4 v10, 0x0
 
@@ -98,7 +90,7 @@
 .end method
 
 .method public static copy$default(Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;I)Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;
-    .locals 10
+    .locals 9
 
     move-object v0, p0
 
@@ -132,191 +124,197 @@
 
     if-eqz v5, :cond_2
 
-    iget-object v5, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
+    iget-object v4, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
+
+    :cond_2
+    and-int/lit8 v5, p9, 0x8
+
+    if-eqz v5, :cond_3
+
+    iget-object v5, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
     goto :goto_2
 
-    :cond_2
-    move-object v5, v4
+    :cond_3
+    move-object v5, p5
 
     :goto_2
-    and-int/lit8 v6, p9, 0x8
+    and-int/lit8 v6, p9, 0x10
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_4
 
-    iget-object v6, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    iget-object v6, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
 
     goto :goto_3
 
-    :cond_3
-    move-object v6, p5
+    :cond_4
+    move-object v6, p6
 
     :goto_3
-    and-int/lit8 v7, p9, 0x10
+    and-int/lit8 v7, p9, 0x20
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
-    iget-object v7, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
+    iget-object v7, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
 
     goto :goto_4
 
-    :cond_4
-    move-object/from16 v7, p6
+    :cond_5
+    move-object/from16 v7, p7
 
     :goto_4
-    and-int/lit8 v8, p9, 0x20
+    and-int/lit8 v8, p9, 0x40
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_6
 
-    iget-object v8, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
+    iget-object v0, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
 
     goto :goto_5
 
-    :cond_5
-    move-object/from16 v8, p7
+    :cond_6
+    move-object/from16 v0, p8
 
     :goto_5
-    and-int/lit8 v9, p9, 0x40
+    const-string v8, "date"
 
-    if-eqz v9, :cond_6
+    invoke-static {v3, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v9, v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
+    const-string v8, "contactDiaryPerson"
 
-    goto :goto_6
+    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_6
-    move-object/from16 v9, p8
+    new-instance v8, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;
 
-    :goto_6
-    if-eqz v0, :cond_7
-
-    const-string v0, "date"
-
-    invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "contactDiaryPerson"
-
-    invoke-static {v5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;
-
-    move-object p0, v0
+    move-object p0, v8
 
     move-wide p1, v1
 
     move-object p3, v3
 
-    move-object p4, v5
+    move-object p4, v4
 
-    move-object p5, v6
+    move-object p5, v5
 
-    move-object/from16 p6, v7
+    move-object p6, v6
 
-    move-object/from16 p7, v8
+    move-object/from16 p7, v7
 
-    move-object/from16 p8, v9
+    move-object/from16 p8, v0
 
     invoke-direct/range {p0 .. p8}, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;-><init>(JLorg/joda/time/LocalDate;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;)V
 
-    return-object v0
-
-    :cond_7
-    throw v4
+    return-object v8
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;
 
-    iget-wide v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->id:J
+    iget-wide v3, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->id:J
 
-    iget-wide v2, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->id:J
+    iget-wide v5, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->id:J
 
-    cmp-long v0, v0, v2
+    cmp-long v1, v3, v5
 
-    if-nez v0, :cond_0
+    if-eqz v1, :cond_2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->date:Lorg/joda/time/LocalDate;
+    return v2
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->date:Lorg/joda/time/LocalDate;
+    :cond_2
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->date:Lorg/joda/time/LocalDate;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->date:Lorg/joda/time/LocalDate;
 
-    move-result v0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
+    if-nez v1, :cond_3
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
+    return v2
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_3
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
 
-    move-result v0
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
 
-    if-eqz v0, :cond_0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    move-result v1
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    if-nez v1, :cond_4
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return v2
 
-    move-result v0
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
+    if-eq v1, v3, :cond_5
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
+    return v2
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
 
-    move-result v0
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
+    move-result v1
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
+    if-nez v1, :cond_6
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return v2
 
-    move-result v0
+    :cond_6
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_8
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_8
+    return v0
 .end method
 
 .method public getCircumstances()Ljava/lang/String;
@@ -376,184 +374,175 @@
 .end method
 
 .method public hashCode()I
-    .locals 3
+    .locals 4
 
     iget-wide v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->id:J
 
-    invoke-static {v0, v1}, L$r8$backportedMethods$utility$Long$1$hashCode;->hashCode(J)I
+    const/16 v2, 0x20
 
-    move-result v0
+    ushr-long v2, v0, v2
+
+    xor-long/2addr v0, v2
+
+    long-to-int v0, v0
 
     mul-int/lit8 v0, v0, 0x1f
 
     iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->date:Lorg/joda/time/LocalDate;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
     invoke-virtual {v1}, Lorg/joda/time/LocalDate;->hashCode()I
 
     move-result v1
 
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    move v1, v2
+
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+
+    move-result v1
 
     :goto_0
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_1
+    if-nez v1, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    move v1, v2
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
 
     :goto_1
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_2
+    if-nez v1, :cond_2
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
+    move v1, v2
 
     goto :goto_2
 
     :cond_2
-    move v1, v2
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
 
     :goto_2
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
+    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
 
-    if-eqz v1, :cond_3
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
+    if-nez v1, :cond_3
 
     goto :goto_3
 
     :cond_3
-    move v1, v2
-
-    :goto_3
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    goto :goto_4
-
-    :cond_4
-    move v1, v2
-
-    :goto_4
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
-
-    if-eqz v1, :cond_5
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    :cond_5
+    :goto_3
     add-int/2addr v0, v2
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 10
 
-    const-string v0, "DefaultContactDiaryPersonEncounter(id="
+    iget-wide v0, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->id:J
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->date:Lorg/joda/time/LocalDate;
 
-    move-result-object v0
+    iget-object v3, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
 
-    iget-wide v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->id:J
+    iget-object v4, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object v5, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
 
-    const-string v1, ", date="
+    iget-object v6, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v7, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->date:Lorg/joda/time/LocalDate;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, ", contactDiaryPerson="
+    const-string v9, "DefaultContactDiaryPersonEncounter(id="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->contactDiaryPerson:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPerson;
+    invoke-virtual {v8, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, ", date="
 
-    const-string v1, ", durationClassification="
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->durationClassification:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    const-string v0, ", contactDiaryPerson="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", withMask="
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", durationClassification="
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->withMask:Ljava/lang/Boolean;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", wasOutside="
+    const-string v0, ", withMask="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->wasOutside:Ljava/lang/Boolean;
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, ", wasOutside="
 
-    const-string v1, ", circumstances="
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/contactdiary/model/DefaultContactDiaryPersonEncounter;->circumstances:Ljava/lang/String;
+    const-string v0, ", circumstances="
 
-    const-string v2, ")"
+    const-string v1, ")"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v0, v7, v1}, Landroidx/fragment/app/BackStackRecord$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

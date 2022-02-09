@@ -44,8 +44,6 @@
 
     iget-object v0, p0, Landroidx/transition/Fade$1;->val$view:Landroid/view/View;
 
-    sget-object v1, Landroidx/transition/ViewUtils;->IMPL:Landroidx/transition/ViewUtilsBase;
-
     invoke-virtual {v1, v0}, Landroidx/transition/ViewUtilsBase;->clearNonTransitionAlpha(Landroid/view/View;)V
 
     invoke-virtual {p1, p0}, Landroidx/transition/Transition;->removeListener(Landroidx/transition/Transition$TransitionListener;)Landroidx/transition/Transition;

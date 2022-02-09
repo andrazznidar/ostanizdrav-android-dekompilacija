@@ -12,7 +12,8 @@
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
         "Lkotlin/jvm/functions/Function2<",
         "Landroidx/lifecycle/LiveDataScope<",
-        "TT;>;",
+        "Ljava/lang/Object;",
+        ">;",
         "Lkotlin/coroutines/Continuation<",
         "-",
         "Lkotlin/Unit;",
@@ -23,14 +24,14 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFlowLiveData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowLiveData.kt\nandroidx/lifecycle/FlowLiveDataConversions$asLiveData$1\n+ 2 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt\n*L\n1#1,138:1\n73#2,3:139\n*E\n*S KotlinDebug\n*F\n+ 1 FlowLiveData.kt\nandroidx/lifecycle/FlowLiveDataConversions$asLiveData$1\n*L\n70#1,3:139\n*E\n"
+    value = "SMAP\nFlowLiveData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowLiveData.kt\nandroidx/lifecycle/FlowLiveDataConversions$asLiveData$1\n+ 2 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt\n*L\n1#1,148:1\n72#2,3:149\n*E\n*S KotlinDebug\n*F\n+ 1 FlowLiveData.kt\nandroidx/lifecycle/FlowLiveDataConversions$asLiveData$1\n*L\n75#1,3:149\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "androidx.lifecycle.FlowLiveDataConversions$asLiveData$1"
     f = "FlowLiveData.kt"
     l = {
-        0x8b
+        0x95
     }
     m = "invokeSuspend"
 .end annotation
@@ -39,13 +40,9 @@
 # instance fields
 .field public final synthetic $this_asLiveData:Lkotlinx/coroutines/flow/Flow;
 
-.field public L$0:Ljava/lang/Object;
-
-.field public L$1:Ljava/lang/Object;
+.field public synthetic L$0:Ljava/lang/Object;
 
 .field public label:I
-
-.field public p$:Landroidx/lifecycle/LiveDataScope;
 
 
 # direct methods
@@ -79,7 +76,7 @@
 
     const-string v0, "completion"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;
 
@@ -87,9 +84,7 @@
 
     invoke-direct {v0, v1, p2}, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Landroidx/lifecycle/LiveDataScope;
-
-    iput-object p1, v0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->p$:Landroidx/lifecycle/LiveDataScope;
+    iput-object p1, v0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->L$0:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -101,7 +96,7 @@
 
     const-string v0, "completion"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;
 
@@ -109,9 +104,7 @@
 
     invoke-direct {v0, v1, p2}, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Landroidx/lifecycle/LiveDataScope;
-
-    iput-object p1, v0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->p$:Landroidx/lifecycle/LiveDataScope;
+    iput-object p1, v0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->L$0:Ljava/lang/Object;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -135,15 +128,7 @@
 
     if-ne v1, v2, :cond_0
 
-    iget-object v0, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->L$1:Ljava/lang/Object;
-
-    check-cast v0, Lkotlinx/coroutines/flow/Flow;
-
-    iget-object v0, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/lifecycle/LiveDataScope;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -157,19 +142,17 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->p$:Landroidx/lifecycle/LiveDataScope;
+    iget-object p1, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->L$0:Ljava/lang/Object;
+
+    check-cast p1, Landroidx/lifecycle/LiveDataScope;
 
     iget-object v1, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->$this_asLiveData:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v3, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1$invokeSuspend$$inlined$collect$1;
 
     invoke-direct {v3, p1}, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1$invokeSuspend$$inlined$collect$1;-><init>(Landroidx/lifecycle/LiveDataScope;)V
-
-    iput-object p1, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->L$0:Ljava/lang/Object;
-
-    iput-object v1, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->L$1:Ljava/lang/Object;
 
     iput v2, p0, Landroidx/lifecycle/FlowLiveDataConversions$asLiveData$1;->label:I
 

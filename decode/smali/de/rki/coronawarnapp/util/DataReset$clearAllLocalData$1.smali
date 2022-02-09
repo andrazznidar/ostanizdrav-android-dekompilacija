@@ -17,13 +17,23 @@
     c = "de.rki.coronawarnapp.util.DataReset"
     f = "DataReset.kt"
     l = {
-        0x5f,
-        0x43,
-        0x46,
-        0x47,
-        0x48,
-        0x4b,
-        0x52
+        0x98,
+        0x60,
+        0x63,
+        0x64,
+        0x65,
+        0x66,
+        0x69,
+        0x75,
+        0x7c,
+        0x7e,
+        0x7f,
+        0x82,
+        0x84,
+        0x85,
+        0x86,
+        0x8b,
+        0x8d
     }
     m = "clearAllLocalData"
 .end annotation
@@ -44,6 +54,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/util/DataReset;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/util/DataReset;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/util/DataReset$clearAllLocalData$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/util/DataReset$clearAllLocalData$1;->this$0:Lde/rki/coronawarnapp/util/DataReset;
 

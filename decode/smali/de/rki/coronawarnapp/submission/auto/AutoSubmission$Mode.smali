@@ -34,49 +34,49 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 7
 
-    const/4 v0, 0x3
+    new-instance v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
+    const-string v1, "DISABLED"
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
+    const/4 v2, 0x0
 
-    const-string v2, "DISABLED"
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->DISABLED:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->DISABLED:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
     new-instance v1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
-    const-string v2, "MONITOR"
+    const-string v3, "MONITOR"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->MONITOR:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
-    aput-object v1, v0, v3
+    new-instance v3, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
+    const-string v5, "SUBMIT_ASAP"
 
-    const-string v2, "SUBMIT_ASAP"
+    const/4 v6, 0x2
 
-    const/4 v3, 0x2
+    invoke-direct {v3, v5, v6}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;-><init>(Ljava/lang/String;I)V
+    sput-object v3, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->SUBMIT_ASAP:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
-    sput-object v1, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->SUBMIT_ASAP:Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
+    const/4 v5, 0x3
 
-    aput-object v1, v0, v3
+    new-array v5, v5, [Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
-    sput-object v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->$VALUES:[Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->$VALUES:[Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
     return-void
 .end method
@@ -113,7 +113,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->$VALUES:[Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/submission/auto/AutoSubmission$Mode;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

@@ -35,61 +35,33 @@
 
 # virtual methods
 .method public onFontRetrievalFailed(I)V
-    .locals 0
+    .locals 1
 
     iget-object p1, p0, Lcom/google/android/material/resources/CancelableFontCallback;->fallbackFont:Landroid/graphics/Typeface;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/material/resources/CancelableFontCallback;->updateIfNotCancelled(Landroid/graphics/Typeface;)V
+    iget-boolean v0, p0, Lcom/google/android/material/resources/CancelableFontCallback;->cancelled:Z
 
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/material/resources/CancelableFontCallback;->applyFont:Lcom/google/android/material/resources/CancelableFontCallback$ApplyFont;
+
+    invoke-interface {v0, p1}, Lcom/google/android/material/resources/CancelableFontCallback$ApplyFont;->apply(Landroid/graphics/Typeface;)V
+
+    :cond_0
     return-void
 .end method
 
 .method public onFontRetrieved(Landroid/graphics/Typeface;Z)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/material/resources/CancelableFontCallback;->updateIfNotCancelled(Landroid/graphics/Typeface;)V
+    iget-boolean p2, p0, Lcom/google/android/material/resources/CancelableFontCallback;->cancelled:Z
 
-    return-void
-.end method
+    if-nez p2, :cond_0
 
-.method public final updateIfNotCancelled(Landroid/graphics/Typeface;)V
-    .locals 3
+    iget-object p2, p0, Lcom/google/android/material/resources/CancelableFontCallback;->applyFont:Lcom/google/android/material/resources/CancelableFontCallback$ApplyFont;
 
-    iget-boolean v0, p0, Lcom/google/android/material/resources/CancelableFontCallback;->cancelled:Z
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lcom/google/android/material/resources/CancelableFontCallback;->applyFont:Lcom/google/android/material/resources/CancelableFontCallback$ApplyFont;
-
-    check-cast v0, Lcom/google/android/material/internal/CollapsingTextHelper$1;
-
-    iget-object v0, v0, Lcom/google/android/material/internal/CollapsingTextHelper$1;->this$0:Lcom/google/android/material/internal/CollapsingTextHelper;
-
-    iget-object v1, v0, Lcom/google/android/material/internal/CollapsingTextHelper;->collapsedFontCallback:Lcom/google/android/material/resources/CancelableFontCallback;
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_0
-
-    iput-boolean v2, v1, Lcom/google/android/material/resources/CancelableFontCallback;->cancelled:Z
+    invoke-interface {p2, p1}, Lcom/google/android/material/resources/CancelableFontCallback$ApplyFont;->apply(Landroid/graphics/Typeface;)V
 
     :cond_0
-    iget-object v1, v0, Lcom/google/android/material/internal/CollapsingTextHelper;->collapsedTypeface:Landroid/graphics/Typeface;
-
-    if-eq v1, p1, :cond_1
-
-    iput-object p1, v0, Lcom/google/android/material/internal/CollapsingTextHelper;->collapsedTypeface:Landroid/graphics/Typeface;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_0
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v0}, Lcom/google/android/material/internal/CollapsingTextHelper;->recalculate()V
-
-    :cond_2
     return-void
 .end method

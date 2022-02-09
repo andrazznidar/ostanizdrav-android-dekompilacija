@@ -30,6 +30,14 @@
 
 .method public generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "attrs"
+        }
+    .end annotation
 
     new-instance v0, Landroidx/constraintlayout/widget/Constraints$LayoutParams;
 
@@ -44,6 +52,14 @@
 
 .method public generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "p"
+        }
+    .end annotation
 
     new-instance v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;
 
@@ -68,7 +84,7 @@
     :cond_0
     iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->myConstraintSet:Landroidx/constraintlayout/widget/ConstraintSet;
 
-    if-eqz v0, :cond_6
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -81,7 +97,7 @@
     const/4 v2, 0x0
 
     :goto_0
-    if-ge v2, v1, :cond_5
+    if-ge v2, v1, :cond_6
 
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -155,9 +171,14 @@
 
     check-cast v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;
 
+    if-nez v6, :cond_4
+
+    goto :goto_2
+
+    :cond_4
     instance-of v7, v3, Landroidx/constraintlayout/widget/ConstraintHelper;
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     check-cast v3, Landroidx/constraintlayout/widget/ConstraintHelper;
 
@@ -165,7 +186,7 @@
 
     instance-of v7, v3, Landroidx/constraintlayout/widget/Barrier;
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     iget-object v7, v6, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->layout:Landroidx/constraintlayout/widget/ConstraintSet$Layout;
 
@@ -197,26 +218,38 @@
 
     iput v3, v7, Landroidx/constraintlayout/widget/ConstraintSet$Layout;->mBarrierMargin:I
 
-    :cond_4
+    :cond_5
     invoke-virtual {v6, v5, v4}, Landroidx/constraintlayout/widget/ConstraintSet$Constraint;->fillFromConstraints(ILandroidx/constraintlayout/widget/Constraints$LayoutParams;)V
 
+    :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_5
+    :cond_6
     iget-object v0, p0, Landroidx/constraintlayout/widget/Constraints;->myConstraintSet:Landroidx/constraintlayout/widget/ConstraintSet;
 
     return-object v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public onLayout(ZIIII)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "changed",
+            "l",
+            "t",
+            "r",
+            "b"
+        }
+    .end annotation
 
     return-void
 .end method

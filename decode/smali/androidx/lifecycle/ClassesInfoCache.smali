@@ -1,4 +1,4 @@
-.class public Landroidx/lifecycle/ClassesInfoCache;
+.class public final Landroidx/lifecycle/ClassesInfoCache;
 .super Ljava/lang/Object;
 .source "ClassesInfoCache.java"
 
@@ -422,7 +422,7 @@
 
     const-string v1, "Method "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

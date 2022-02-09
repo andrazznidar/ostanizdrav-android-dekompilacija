@@ -13,10 +13,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCoroutineLiveData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CoroutineLiveData.kt\nandroidx/lifecycle/BlockRunner\n*L\n1#1,459:1\n*E\n"
-.end annotation
-
 
 # instance fields
 .field public final block:Lkotlin/jvm/functions/Function2;
@@ -65,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/lifecycle/CoroutineLiveData;Lkotlin/jvm/functions/Function2;JLkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function0;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,22 +83,6 @@
             ">;)V"
         }
     .end annotation
-
-    const-string v0, "liveData"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "block"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "scope"
-
-    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "onDone"
-
-    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

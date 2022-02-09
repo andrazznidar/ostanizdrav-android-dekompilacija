@@ -203,7 +203,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v3}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v3
 
@@ -265,7 +265,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {p1}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object p1
 
@@ -276,11 +276,9 @@
 
     invoke-virtual {v2, p1}, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1SignJce;->sign([B)[B
 
-    move-result-object p1
+    move-result-object v0
 
-    sget-object v0, Lcom/google/crypto/tink/signature/RsaSsaPkcs1SignKeyManager;->TEST_MESSAGE:[B
-
-    invoke-virtual {v1, p1, v0}, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1VerifyJce;->verify([B[B)V
+    invoke-virtual {v1, v0, p1}, Lcom/google/crypto/tink/subtle/RsaSsaPkcs1VerifyJce;->verify([B[B)V
     :try_end_0
     .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 

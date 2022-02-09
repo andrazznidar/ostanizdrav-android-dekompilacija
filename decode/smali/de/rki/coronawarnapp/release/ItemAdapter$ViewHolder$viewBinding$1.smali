@@ -46,15 +46,25 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Lde/rki/coronawarnapp/release/ItemAdapter$ViewHolder$viewBinding$1;->this$0:Lde/rki/coronawarnapp/release/ItemAdapter$ViewHolder;
 
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;->bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;
+    sget v1, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;->$r8$clinit:I
+
+    sget-object v1, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
+
+    const v1, 0x7f0d0128
+
+    const/4 v2, 0x0
+
+    invoke-static {v2, v0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBinding;
 
     return-object v0
 .end method

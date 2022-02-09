@@ -8,7 +8,8 @@
     value = {
         Lde/rki/coronawarnapp/datadonation/survey/Surveys$ConsentResult;,
         Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;,
-        Lde/rki/coronawarnapp/datadonation/survey/Surveys$Survey;
+        Lde/rki/coronawarnapp/datadonation/survey/Surveys$Survey;,
+        Lde/rki/coronawarnapp/datadonation/survey/Surveys$WhenMappings;
     }
 .end annotation
 
@@ -41,7 +42,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "surveyServer"
+    const-string/jumbo v0, "surveyServer"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -53,11 +54,11 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "urlProvider"
+    const-string/jumbo v0, "urlProvider"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "timeStamper"
+    const-string/jumbo v0, "timeStamper"
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -79,7 +80,7 @@
 
     invoke-direct {p1, p0, p5}, Lde/rki/coronawarnapp/datadonation/survey/Surveys$availableSurveys$2;-><init>(Lde/rki/coronawarnapp/datadonation/survey/Surveys;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -144,7 +145,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -158,13 +159,17 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    sget-object p2, Lde/rki/coronawarnapp/datadonation/survey/Surveys$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
-    move-result p2
+    move-result v2
 
-    if-nez p2, :cond_6
+    aget p2, p2, v2
+
+    if-ne p2, v3, :cond_6
 
     iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->oneTimePasswordRepo:Lde/rki/coronawarnapp/datadonation/storage/OTPRepository;
 
@@ -172,19 +177,24 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_5
+    if-nez p2, :cond_3
 
+    sget-object p1, Lde/rki/coronawarnapp/datadonation/survey/Surveys$ConsentResult$Needed;->INSTANCE:Lde/rki/coronawarnapp/datadonation/survey/Surveys$ConsentResult$Needed;
+
+    return-object p1
+
+    :cond_3
     invoke-virtual {p2}, Lde/rki/coronawarnapp/datadonation/OTPAuthorizationResult;->getAuthorized()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     invoke-virtual {p2}, Lde/rki/coronawarnapp/datadonation/OTPAuthorizationResult;->getInvalidated()Z
 
     move-result v2
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_5
 
     iget-object v2, p0, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->urlProvider:Lde/rki/coronawarnapp/datadonation/survey/SurveyUrlProvider;
 
@@ -198,22 +208,17 @@
 
     move-result-object p2
 
-    if-ne p2, v1, :cond_3
+    if-ne p2, v1, :cond_4
 
     return-object v1
 
-    :cond_3
+    :cond_4
     :goto_1
     check-cast p2, Ljava/lang/String;
 
     new-instance p1, Lde/rki/coronawarnapp/datadonation/survey/Surveys$ConsentResult$AlreadyGiven;
 
     invoke-direct {p1, p2}, Lde/rki/coronawarnapp/datadonation/survey/Surveys$ConsentResult$AlreadyGiven;-><init>(Ljava/lang/String;)V
-
-    return-object p1
-
-    :cond_4
-    sget-object p1, Lde/rki/coronawarnapp/datadonation/survey/Surveys$ConsentResult$Needed;->INSTANCE:Lde/rki/coronawarnapp/datadonation/survey/Surveys$ConsentResult$Needed;
 
     return-object p1
 
@@ -308,9 +313,9 @@
 
     check-cast v2, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -338,13 +343,13 @@
 
     check-cast v11, Lde/rki/coronawarnapp/datadonation/survey/Surveys;
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v13, v5
 
     move-object v5, v11
 
-    goto/16 :goto_6
+    goto/16 :goto_5
 
     :cond_3
     iget-object v4, v2, Lde/rki/coronawarnapp/datadonation/survey/Surveys$requestDetails$1;->L$4:Ljava/lang/Object;
@@ -367,9 +372,9 @@
 
     check-cast v13, Lde/rki/coronawarnapp/datadonation/survey/Surveys;
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     :cond_4
     iget-object v4, v2, Lde/rki/coronawarnapp/datadonation/survey/Surveys$requestDetails$1;->L$1:Ljava/lang/Object;
@@ -380,12 +385,12 @@
 
     check-cast v11, Lde/rki/coronawarnapp/datadonation/survey/Surveys;
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_5
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object v0, v1, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->appConfigProvider:Lde/rki/coronawarnapp/appconfig/AppConfigProvider;
 
@@ -415,21 +420,23 @@
 
     move-result-object v12
 
-    new-array v0, v10, [Ljava/lang/Object;
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object v12, v0, v6
+    new-array v13, v10, [Ljava/lang/Object;
 
-    sget-object v13, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v12, v13, v6
 
     const-string v14, "Requested survey: %s"
 
-    invoke-virtual {v13, v14, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v14, v13}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v0, v11, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v13
+    new-instance v13, Lorg/joda/time/Instant;
+
+    invoke-direct {v13}, Lorg/joda/time/Instant;-><init>()V
 
     iget-object v0, v11, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->oneTimePasswordRepo:Lde/rki/coronawarnapp/datadonation/storage/OTPRepository;
 
@@ -437,13 +444,16 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-nez v0, :cond_7
 
+    goto :goto_2
+
+    :cond_7
     invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/OTPAuthorizationResult;->getAuthorized()Z
 
     move-result v14
 
-    if-eqz v14, :cond_8
+    if-eqz v14, :cond_9
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/OTPAuthorizationResult;->getRedeemedAt()Lorg/joda/time/Instant;
 
@@ -481,11 +491,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_8
 
     goto :goto_2
 
-    :cond_7
+    :cond_8
     new-instance v0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException;
 
     sget-object v2, Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;->ALREADY_PARTICIPATED_THIS_MONTH:Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
@@ -496,13 +506,13 @@
 
     throw v0
 
-    :cond_8
+    :cond_9
     :goto_2
     iget-object v0, v11, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->oneTimePasswordRepo:Lde/rki/coronawarnapp/datadonation/storage/OTPRepository;
 
     iget-object v0, v0, Lde/rki/coronawarnapp/datadonation/storage/OTPRepository;->surveySettings:Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;
 
-    if-eqz v0, :cond_13
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_0
     invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;->getPreferences()Landroid/content/SharedPreferences;
@@ -515,7 +525,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_b
+    if-eqz v10, :cond_c
 
     iget-object v0, v0, Lde/rki/coronawarnapp/datadonation/survey/SurveySettings;->gson:Lcom/google/gson/Gson;
 
@@ -535,18 +545,18 @@
 
     const-string v14, "Required value was null."
 
-    if-eqz v10, :cond_a
+    if-eqz v10, :cond_b
 
     :try_start_1
     invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/OneTimePassword;->getTime()Lorg/joda/time/Instant;
 
     move-result-object v10
 
-    if-eqz v10, :cond_9
+    if-eqz v10, :cond_a
 
     goto :goto_3
 
-    :cond_9
+    :cond_a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v14}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -557,7 +567,7 @@
 
     throw v0
 
-    :cond_a
+    :cond_b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v14}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -573,26 +583,23 @@
     :catchall_0
     move-exception v0
 
-    new-array v10, v6, [Ljava/lang/Object;
+    sget-object v10, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v14, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v14, v6, [Ljava/lang/Object;
 
     const-string v15, "failed to parse OTP from preferences"
 
-    invoke-virtual {v14, v0, v15, v10}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v10, v0, v15, v14}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :cond_b
+    :cond_c
     move-object v0, v9
 
     :goto_3
-    if-eqz v0, :cond_c
+    if-nez v0, :cond_d
 
-    goto :goto_4
-
-    :cond_c
     iget-object v0, v11, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->oneTimePasswordRepo:Lde/rki/coronawarnapp/datadonation/storage/OTPRepository;
 
-    if-eqz v0, :cond_12
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v10, Lde/rki/coronawarnapp/datadonation/OneTimePassword;
 
@@ -608,7 +615,7 @@
 
     move-object v0, v10
 
-    :goto_4
+    :cond_d
     iget-object v10, v11, Lde/rki/coronawarnapp/datadonation/survey/Surveys;->deviceAttestation:Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation;
 
     new-instance v14, Lde/rki/coronawarnapp/datadonation/survey/Surveys$requestDetails$attestationResult$1;
@@ -631,11 +638,11 @@
 
     move-result-object v5
 
-    if-ne v5, v3, :cond_d
+    if-ne v5, v3, :cond_e
 
     return-object v3
 
-    :cond_d
+    :cond_e
     move-object/from16 v17, v4
 
     move-object v4, v0
@@ -650,7 +657,7 @@
 
     move-object/from16 v12, v17
 
-    :goto_5
+    :goto_4
     check-cast v0, Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation$Result;
 
     invoke-interface {v11}, Lde/rki/coronawarnapp/appconfig/SurveyConfig;->getSafetyNetRequirements()Lde/rki/coronawarnapp/appconfig/SafetyNetRequirements;
@@ -681,17 +688,17 @@
 
     new-instance v11, Lde/rki/coronawarnapp/datadonation/survey/server/SurveyServer$authOTP$2;
 
-    invoke-direct {v11, v10, v4, v0, v9}, Lde/rki/coronawarnapp/datadonation/survey/server/SurveyServer$authOTP$2;-><init>(Lde/rki/coronawarnapp/datadonation/survey/server/SurveyServer;Lde/rki/coronawarnapp/datadonation/OneTimePassword;Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation$Result;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v11, v4, v0, v10, v9}, Lde/rki/coronawarnapp/datadonation/survey/server/SurveyServer$authOTP$2;-><init>(Lde/rki/coronawarnapp/datadonation/OneTimePassword;Lde/rki/coronawarnapp/datadonation/safetynet/DeviceAttestation$Result;Lde/rki/coronawarnapp/datadonation/survey/server/SurveyServer;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v8, v11, v2}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v8, v11, v2}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-ne v0, v3, :cond_e
+    if-ne v0, v3, :cond_f
 
     return-object v3
 
-    :cond_e
+    :cond_f
     move-object v8, v12
 
     move-object/from16 v17, v13
@@ -700,10 +707,12 @@
 
     move-object/from16 v5, v17
 
-    :goto_6
+    :goto_5
     check-cast v0, Lde/rki/coronawarnapp/datadonation/survey/server/SurveyApiV1$DataDonationResponse;
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/datadonation/survey/server/SurveyApiV1$DataDonationResponse;->errorCode:Ljava/lang/String;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/datadonation/survey/server/SurveyApiV1$DataDonationResponse;->getErrorCode()Ljava/lang/String;
+
+    move-result-object v0
 
     new-instance v15, Lde/rki/coronawarnapp/datadonation/OTPAuthorizationResult;
 
@@ -711,16 +720,16 @@
 
     move-result-object v11
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
     const/4 v12, 0x1
 
-    goto :goto_7
+    goto :goto_6
 
-    :cond_f
+    :cond_10
     move v12, v6
 
-    :goto_7
+    :goto_6
     const/4 v14, 0x0
 
     const/16 v6, 0x8
@@ -749,7 +758,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_11
+    if-eqz v6, :cond_12
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;->HIGH_RISK_ENCOUNTER:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
@@ -775,18 +784,18 @@
 
     move-result-object v2
 
-    if-ne v2, v3, :cond_10
+    if-ne v2, v3, :cond_11
 
     return-object v3
 
-    :cond_10
+    :cond_11
     move-object/from16 v17, v2
 
     move-object v2, v0
 
     move-object/from16 v0, v17
 
-    :goto_8
+    :goto_7
     check-cast v0, Ljava/lang/String;
 
     new-instance v3, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Survey;
@@ -795,7 +804,7 @@
 
     return-object v3
 
-    :cond_11
+    :cond_12
     const/4 v6, 0x4
 
     new-instance v2, Lde/rki/coronawarnapp/datadonation/survey/SurveyException;
@@ -805,10 +814,4 @@
     invoke-direct {v2, v3, v0, v9, v6}, Lde/rki/coronawarnapp/datadonation/survey/SurveyException;-><init>(Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;Ljava/lang/String;Ljava/lang/Throwable;I)V
 
     throw v2
-
-    :cond_12
-    throw v9
-
-    :cond_13
-    throw v9
 .end method

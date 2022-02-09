@@ -68,7 +68,7 @@
 .end method
 
 .method public static getNameForNavigator(Ljava/lang/Class;)Ljava/lang/String;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,41 +84,39 @@
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
-    const-class v0, Landroidx/navigation/Navigator$Name;
+    const-class v1, Landroidx/navigation/Navigator$Name;
 
-    invoke-virtual {p0, v0}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {p0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroidx/navigation/Navigator$Name;
+    check-cast v1, Landroidx/navigation/Navigator$Name;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-interface {v0}, Landroidx/navigation/Navigator$Name;->value()Ljava/lang/String;
+    invoke-interface {v1}, Landroidx/navigation/Navigator$Name;->value()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    invoke-static {v0}, Landroidx/navigation/NavigatorProvider;->validateName(Ljava/lang/String;)Z
+    invoke-static {v1}, Landroidx/navigation/NavigatorProvider;->validateName(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    sget-object v1, Landroidx/navigation/NavigatorProvider;->sAnnotationNames:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
@@ -127,7 +125,7 @@
 
     const-string v1, "No @Navigator.Name annotation found for "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -147,7 +145,7 @@
 
     :cond_2
     :goto_1
-    return-object v0
+    return-object v1
 .end method
 
 .method public static validateName(Ljava/lang/String;)Z
@@ -261,7 +259,7 @@
 
     const-string v2, "\". You must call NavController.addNavigator() for each navigation type."
 
-    invoke-static {v1, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -148,15 +148,7 @@
 
     const-string p1, " and "
 
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p3, p1, v1, p0, p2}, Landroidx/room/InvalidationTracker$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -232,7 +224,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->smear(I)I
+    invoke-static {v0}, Landroidx/fragment/app/ViewKt;->smear(I)I
 
     move-result v0
 
@@ -286,7 +278,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->smear(I)I
+    invoke-static {v0}, Landroidx/fragment/app/ViewKt;->smear(I)I
 
     move-result v0
 
@@ -334,7 +326,7 @@
 
     move-result v6
 
-    invoke-static {v6}, Lcom/google/android/material/R$style;->smear(I)I
+    invoke-static {v6}, Landroidx/fragment/app/ViewKt;->smear(I)I
 
     move-result v6
 

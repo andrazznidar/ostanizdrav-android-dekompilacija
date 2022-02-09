@@ -30,7 +30,9 @@
 
     invoke-direct {p0, v0}, Lcom/google/protobuf/CodedOutputStream;-><init>(Lcom/google/protobuf/CodedOutputStream$1;)V
 
-    if-eqz p1, :cond_1
+    const-string v0, "buffer"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     or-int v0, p2, p3
 
@@ -94,15 +96,6 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "buffer"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
@@ -379,8 +372,6 @@
 
     aput-byte v3, v0, v1
 
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
-
     add-int/lit8 v1, v2, 0x1
 
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->position:I
@@ -393,8 +384,6 @@
 
     aput-byte v3, v0, v2
 
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
-
     add-int/lit8 v2, v1, 0x1
 
     iput v2, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->position:I
@@ -406,8 +395,6 @@
     int-to-byte v3, v3
 
     aput-byte v3, v0, v1
-
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
 
     add-int/lit8 v1, v2, 0x1
 
@@ -517,8 +504,6 @@
 
     aput-byte v3, v0, v1
 
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
-
     add-int/lit8 v1, v2, 0x1
 
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->position:I
@@ -534,8 +519,6 @@
     int-to-byte v3, v3
 
     aput-byte v3, v0, v2
-
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
 
     add-int/lit8 v2, v1, 0x1
 
@@ -553,8 +536,6 @@
 
     aput-byte v3, v0, v1
 
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
-
     add-int/lit8 v1, v2, 0x1
 
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->position:I
@@ -570,8 +551,6 @@
     int-to-byte v3, v3
 
     aput-byte v3, v0, v2
-
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
 
     add-int/lit8 v2, v1, 0x1
 
@@ -589,8 +568,6 @@
 
     aput-byte v3, v0, v1
 
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
-
     add-int/lit8 v1, v2, 0x1
 
     iput v1, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->position:I
@@ -607,8 +584,6 @@
 
     aput-byte v3, v0, v2
 
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
-
     add-int/lit8 v2, v1, 0x1
 
     iput v2, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->position:I
@@ -624,8 +599,6 @@
     int-to-byte v3, v3
 
     aput-byte v3, v0, v1
-
-    iget-object v0, p0, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->buffer:[B
 
     add-int/lit8 v1, v2, 0x1
 

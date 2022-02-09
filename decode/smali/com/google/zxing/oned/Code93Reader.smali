@@ -335,11 +335,9 @@
 
     move-result v10
 
-    xor-int/2addr v10, v8
-
     const/4 v11, 0x1
 
-    if-eqz v10, :cond_0
+    if-eq v10, v8, :cond_0
 
     aget v10, v5, v9
 
@@ -347,7 +345,7 @@
 
     aput v10, v5, v9
 
-    move/from16 v12, p1
+    move/from16 v10, p1
 
     goto/16 :goto_a
 
@@ -358,15 +356,15 @@
 
     invoke-static {v5}, Lcom/google/zxing/oned/Code93Reader;->toPattern([I)I
 
-    move-result v12
+    move-result v10
 
-    sget v13, Lcom/google/zxing/oned/Code93Reader;->ASTERISK_ENCODING:I
+    sget v12, Lcom/google/zxing/oned/Code93Reader;->ASTERISK_ENCODING:I
 
-    const/4 v14, 0x2
+    const/4 v13, 0x2
 
-    if-ne v12, v13, :cond_15
+    if-ne v10, v12, :cond_15
 
-    new-array v2, v14, [I
+    new-array v2, v13, [I
 
     aput v7, v2, v3
 
@@ -425,9 +423,9 @@
     :goto_3
     if-ge v10, v9, :cond_1
 
-    aget v13, v6, v10
+    aget v14, v6, v10
 
-    add-int/2addr v12, v13
+    add-int/2addr v12, v14
 
     add-int/lit8 v10, v10, 0x1
 
@@ -459,9 +457,9 @@
     :goto_4
     if-ge v10, v8, :cond_2
 
-    aget v13, v6, v10
+    aget v14, v6, v10
 
-    add-int/2addr v12, v13
+    add-int/2addr v12, v14
 
     add-int/lit8 v10, v10, 0x1
 
@@ -480,7 +478,7 @@
 
     move-result v1
 
-    if-lt v1, v14, :cond_f
+    if-lt v1, v13, :cond_f
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->length()I
 
@@ -502,7 +500,7 @@
 
     move-result v1
 
-    sub-int/2addr v1, v14
+    sub-int/2addr v1, v13
 
     invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
@@ -543,7 +541,7 @@
 
     const/16 v10, 0x4f
 
-    const/16 v13, 0x5a
+    const/16 v14, 0x5a
 
     const/16 v15, 0x41
 
@@ -556,7 +554,7 @@
     :pswitch_0
     if-lt v9, v15, :cond_3
 
-    if-gt v9, v13, :cond_3
+    if-gt v9, v14, :cond_3
 
     add-int/lit8 v9, v9, 0x20
 
@@ -579,7 +577,7 @@
     goto :goto_6
 
     :cond_4
-    if-ne v9, v13, :cond_5
+    if-ne v9, v14, :cond_5
 
     const/16 v8, 0x3a
 
@@ -645,7 +643,7 @@
 
     if-lt v9, v8, :cond_a
 
-    if-gt v9, v13, :cond_a
+    if-gt v9, v14, :cond_a
 
     const/16 v8, 0x7f
 
@@ -661,7 +659,7 @@
     :pswitch_3
     if-lt v9, v15, :cond_b
 
-    if-gt v9, v13, :cond_b
+    if-gt v9, v14, :cond_b
 
     add-int/lit8 v9, v9, -0x40
 
@@ -726,13 +724,13 @@
 
     const/4 v5, 0x0
 
-    new-array v7, v14, [Lcom/google/zxing/ResultPoint;
+    new-array v7, v13, [Lcom/google/zxing/ResultPoint;
 
     new-instance v8, Lcom/google/zxing/ResultPoint;
 
-    move/from16 v12, p1
+    move/from16 v10, p1
 
-    int-to-float v9, v12
+    int-to-float v9, v10
 
     invoke-direct {v8, v2, v9}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
@@ -761,14 +759,14 @@
     throw v1
 
     :cond_11
-    move/from16 v12, p1
+    move/from16 v10, p1
 
     move v4, v9
 
     goto/16 :goto_1
 
     :cond_12
-    move/from16 v12, p1
+    move/from16 v10, p1
 
     add-int/lit8 v9, v9, 0x1
 
@@ -785,30 +783,30 @@
     throw v1
 
     :cond_15
-    move/from16 v12, p1
+    move/from16 v10, p1
 
-    aget v13, v5, v3
+    aget v12, v5, v3
 
-    aget v15, v5, v11
+    aget v14, v5, v11
 
-    add-int/2addr v13, v15
+    add-int/2addr v12, v14
 
-    add-int/2addr v7, v13
+    add-int/2addr v7, v12
 
-    add-int/lit8 v13, v6, -0x2
+    add-int/lit8 v12, v9, -0x1
 
-    invoke-static {v5, v14, v5, v3, v13}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v5, v13, v5, v3, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    aput v3, v5, v13
+    aput v3, v5, v12
 
-    aput v3, v5, v10
+    aput v3, v5, v9
 
-    add-int/lit8 v9, v9, -0x1
+    move v9, v12
 
     goto :goto_9
 
     :cond_16
-    move/from16 v12, p1
+    move/from16 v10, p1
 
     add-int/lit8 v9, v9, 0x1
 

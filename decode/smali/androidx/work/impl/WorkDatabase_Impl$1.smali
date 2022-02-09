@@ -156,47 +156,38 @@
 
     iget-object p1, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
 
-    invoke-static {p1}, Landroidx/work/impl/WorkDatabase_Impl;->access$000(Landroidx/work/impl/WorkDatabase_Impl;)Ljava/util/List;
+    sget v0, Landroidx/work/impl/WorkDatabase_Impl;->$r8$clinit:I
 
-    move-result-object p1
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
@@ -213,47 +204,38 @@
 
     iget-object p1, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
 
-    invoke-static {p1}, Landroidx/work/impl/WorkDatabase_Impl;->access$300(Landroidx/work/impl/WorkDatabase_Impl;)Ljava/util/List;
+    sget v0, Landroidx/work/impl/WorkDatabase_Impl;->$r8$clinit:I
 
-    move-result-object p1
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
@@ -270,7 +252,9 @@
 
     iget-object v0, p0, Landroidx/work/impl/WorkDatabase_Impl$1;->this$0:Landroidx/work/impl/WorkDatabase_Impl;
 
-    invoke-static {v0, p1}, Landroidx/work/impl/WorkDatabase_Impl;->access$602(Landroidx/work/impl/WorkDatabase_Impl;Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/sqlite/db/SupportSQLiteDatabase;
+    sget v1, Landroidx/work/impl/WorkDatabase_Impl;->$r8$clinit:I
+
+    iput-object p1, v0, Landroidx/room/RoomDatabase;->mDatabase:Landroidx/sqlite/db/SupportSQLiteDatabase;
 
     const-string v0, "PRAGMA foreign_keys = ON"
 
@@ -366,7 +350,7 @@
 
     new-instance v10, Landroidx/room/util/TableInfo$Column;
 
-    const-string v4, "work_spec_id"
+    const-string/jumbo v4, "work_spec_id"
 
     const-string v5, "TEXT"
 
@@ -382,7 +366,7 @@
 
     invoke-direct/range {v3 .. v9}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v3, "work_spec_id"
+    const-string/jumbo v3, "work_spec_id"
 
     invoke-virtual {v1, v3, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -406,7 +390,7 @@
 
     const-string v5, "prerequisite_id"
 
-    invoke-static {v1, v5, v4, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v5, v4, v2}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v4
 
@@ -532,7 +516,7 @@
 
     const-string v2, "Dependency(androidx.work.impl.model.Dependency).\n Expected:\n"
 
-    invoke-static {v2, v5, v6, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v5, v6, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -583,7 +567,7 @@
 
     const/16 v25, 0x1
 
-    const-string v20, "state"
+    const-string/jumbo v20, "state"
 
     const-string v21, "INTEGER"
 
@@ -591,7 +575,7 @@
 
     invoke-direct/range {v19 .. v25}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v9, "state"
+    const-string/jumbo v9, "state"
 
     invoke-virtual {v1, v9, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -599,7 +583,7 @@
 
     const/4 v9, 0x0
 
-    const-string v15, "worker_class_name"
+    const-string/jumbo v15, "worker_class_name"
 
     const-string v16, "TEXT"
 
@@ -613,7 +597,7 @@
 
     invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v5, "worker_class_name"
+    const-string/jumbo v5, "worker_class_name"
 
     invoke-virtual {v1, v5, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -889,7 +873,7 @@
 
     new-instance v4, Landroidx/room/util/TableInfo$Column;
 
-    const-string v20, "trigger_content_update_delay"
+    const-string/jumbo v20, "trigger_content_update_delay"
 
     const-string v21, "INTEGER"
 
@@ -897,13 +881,13 @@
 
     invoke-direct/range {v19 .. v25}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v14, "trigger_content_update_delay"
+    const-string/jumbo v14, "trigger_content_update_delay"
 
     invoke-virtual {v1, v14, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v4, Landroidx/room/util/TableInfo$Column;
 
-    const-string v20, "trigger_max_content_delay"
+    const-string/jumbo v20, "trigger_max_content_delay"
 
     const-string v21, "INTEGER"
 
@@ -911,7 +895,7 @@
 
     invoke-direct/range {v19 .. v25}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v5, "trigger_max_content_delay"
+    const-string/jumbo v5, "trigger_max_content_delay"
 
     invoke-virtual {v1, v5, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -929,7 +913,7 @@
 
     const-string v5, "content_uri_triggers"
 
-    invoke-static {v1, v5, v4, v10}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v5, v4, v10}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v4
 
@@ -989,7 +973,7 @@
 
     const-string v2, "WorkSpec(androidx.work.impl.model.WorkSpec).\n Expected:\n"
 
-    invoke-static {v2, v7, v6, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v7, v6, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1012,7 +996,7 @@
 
     const/4 v8, 0x1
 
-    const-string v15, "tag"
+    const-string/jumbo v15, "tag"
 
     const-string v16, "TEXT"
 
@@ -1026,7 +1010,7 @@
 
     invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v9, "tag"
+    const-string/jumbo v9, "tag"
 
     invoke-virtual {v1, v9, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1034,7 +1018,7 @@
 
     const/16 v18, 0x2
 
-    const-string v15, "work_spec_id"
+    const-string/jumbo v15, "work_spec_id"
 
     const-string v16, "TEXT"
 
@@ -1042,7 +1026,7 @@
 
     invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    invoke-static {v1, v3, v4, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v3, v4, v5}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v4
 
@@ -1116,7 +1100,7 @@
 
     const-string v2, "WorkTag(androidx.work.impl.model.WorkTag).\n Expected:\n"
 
-    invoke-static {v2, v8, v6, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v8, v6, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1139,7 +1123,7 @@
 
     const/16 v20, 0x1
 
-    const-string v15, "work_spec_id"
+    const-string/jumbo v15, "work_spec_id"
 
     const-string v16, "TEXT"
 
@@ -1159,7 +1143,7 @@
 
     const/16 v27, 0x1
 
-    const-string v22, "system_id"
+    const-string/jumbo v22, "system_id"
 
     const-string v23, "INTEGER"
 
@@ -1167,9 +1151,9 @@
 
     invoke-direct/range {v21 .. v27}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v7, "system_id"
+    const-string/jumbo v7, "system_id"
 
-    invoke-static {v1, v7, v4, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v7, v4, v5}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v4
 
@@ -1227,7 +1211,7 @@
 
     const-string v2, "SystemIdInfo(androidx.work.impl.model.SystemIdInfo).\n Expected:\n"
 
-    invoke-static {v2, v8, v6, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v8, v6, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1272,7 +1256,7 @@
 
     const/16 v18, 0x2
 
-    const-string v15, "work_spec_id"
+    const-string/jumbo v15, "work_spec_id"
 
     const-string v16, "TEXT"
 
@@ -1280,7 +1264,7 @@
 
     invoke-direct/range {v14 .. v20}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    invoke-static {v1, v3, v4, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v3, v4, v5}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v4
 
@@ -1354,7 +1338,7 @@
 
     const-string v2, "WorkName(androidx.work.impl.model.WorkName).\n Expected:\n"
 
-    invoke-static {v2, v8, v6, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v8, v6, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1377,7 +1361,7 @@
 
     const/16 v20, 0x1
 
-    const-string v15, "work_spec_id"
+    const-string/jumbo v15, "work_spec_id"
 
     const-string v16, "TEXT"
 
@@ -1407,7 +1391,7 @@
 
     const-string v7, "progress"
 
-    invoke-static {v1, v7, v4, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v7, v4, v5}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v4
 
@@ -1465,7 +1449,7 @@
 
     const-string v2, "WorkProgress(androidx.work.impl.model.WorkProgress).\n Expected:\n"
 
-    invoke-static {v2, v7, v6, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v7, v6, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1520,7 +1504,7 @@
 
     const-string v3, "long_value"
 
-    invoke-static {v1, v3, v2, v10}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v3, v2, v10}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -1548,7 +1532,7 @@
 
     const-string v2, "Preference(androidx.work.impl.model.Preference).\n Expected:\n"
 
-    invoke-static {v2, v4, v6, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v4, v6, v0}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v0
 

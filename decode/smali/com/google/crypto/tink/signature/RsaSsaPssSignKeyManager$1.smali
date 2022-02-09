@@ -203,7 +203,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v4}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v4
 
@@ -211,7 +211,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v5}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v5
 
@@ -269,7 +269,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v1}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v1
 
@@ -277,7 +277,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcom/google/android/material/R$style;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
+    invoke-static {v4}, Lcom/google/crypto/tink/signature/SigUtil;->toHashType(Lcom/google/crypto/tink/proto/HashType;)Lcom/google/crypto/tink/subtle/Enums$HashType;
 
     move-result-object v4
 
@@ -292,11 +292,9 @@
 
     invoke-virtual {v3, p1}, Lcom/google/crypto/tink/subtle/RsaSsaPssSignJce;->sign([B)[B
 
-    move-result-object p1
+    move-result-object v1
 
-    sget-object v1, Lcom/google/crypto/tink/signature/RsaSsaPssSignKeyManager;->TEST_MESSAGE:[B
-
-    invoke-virtual {v0, p1, v1}, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->verify([B[B)V
+    invoke-virtual {v0, v1, p1}, Lcom/google/crypto/tink/subtle/RsaSsaPssVerifyJce;->verify([B[B)V
     :try_end_0
     .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 

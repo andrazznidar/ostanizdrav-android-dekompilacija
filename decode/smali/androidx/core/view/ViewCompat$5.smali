@@ -16,6 +16,18 @@
 # direct methods
 .method public constructor <init>(ILjava/lang/Class;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "tagKey",
+            "type",
+            "frameworkMinimumSdk"
+        }
+    .end annotation
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/core/view/ViewCompat$AccessibilityViewProperty;-><init>(ILjava/lang/Class;I)V
 
@@ -26,6 +38,14 @@
 # virtual methods
 .method public frameworkGet(Landroid/view/View;)Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "view"
+        }
+    .end annotation
 
     invoke-virtual {p1}, Landroid/view/View;->isAccessibilityHeading()Z
 
@@ -40,6 +60,16 @@
 
 .method public frameworkSet(Landroid/view/View;Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000,
+            0x1000
+        }
+        names = {
+            "view",
+            "value"
+        }
+    .end annotation
 
     check-cast p2, Ljava/lang/Boolean;
 
@@ -54,6 +84,16 @@
 
 .method public shouldUpdate(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000,
+            0x1000
+        }
+        names = {
+            "oldValue",
+            "newValue"
+        }
+    .end annotation
 
     check-cast p1, Ljava/lang/Boolean;
 

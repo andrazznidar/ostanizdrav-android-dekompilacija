@@ -257,8 +257,6 @@
 
     invoke-static {v0, v2, p0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    sget-object v0, Lcom/google/crypto/tink/subtle/ChaCha20Base;->SIGMA:[I
-
     array-length v0, v0
 
     const/16 v1, 0x8
@@ -290,23 +288,23 @@
 
     if-ge v2, v3, :cond_0
 
-    const/4 v4, 0x4
+    const/16 v4, 0x8
 
-    const/16 v5, 0x8
+    const/16 v5, 0xc
 
-    const/16 v6, 0xc
+    const/4 v6, 0x4
 
-    invoke-static {v0, v1, v4, v5, v6}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
+    invoke-static {v0, v1, v6, v4, v5}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
 
-    const/4 v7, 0x1
+    const/4 v7, 0x5
 
-    const/4 v8, 0x5
+    const/16 v8, 0xd
 
-    const/16 v9, 0x9
+    const/4 v9, 0x1
 
-    const/16 v10, 0xd
+    const/16 v10, 0x9
 
-    invoke-static {v0, v7, v8, v9, v10}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
+    invoke-static {v0, v9, v7, v10, v8}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
 
     const/4 v11, 0x2
 
@@ -320,17 +318,17 @@
 
     const/4 v15, 0x7
 
-    const/16 v4, 0xb
+    const/16 v6, 0xb
 
-    const/16 v9, 0xf
+    const/16 v10, 0xf
 
-    invoke-static {v0, v14, v15, v4, v9}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
+    invoke-static {v0, v14, v15, v6, v10}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
 
-    invoke-static {v0, v1, v8, v3, v9}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
+    invoke-static {v0, v1, v7, v3, v10}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
 
-    invoke-static {v0, v7, v12, v4, v6}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
+    invoke-static {v0, v9, v12, v6, v5}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
 
-    invoke-static {v0, v11, v15, v5, v10}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
+    invoke-static {v0, v11, v15, v4, v8}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->quarterRound([IIIII)V
 
     const/16 v3, 0x9
 
@@ -733,12 +731,12 @@
 
     rem-int/lit8 v4, v0, 0x40
 
-    invoke-static {p2, p3, v3, v4}, Lcom/google/android/material/R$style;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
+    invoke-static {p2, p3, v3, v4}, Lcom/google/crypto/tink/subtle/Bytes;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
 
     goto :goto_1
 
     :cond_0
-    invoke-static {p2, p3, v3, v5}, Lcom/google/android/material/R$style;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
+    invoke-static {p2, p3, v3, v5}, Lcom/google/crypto/tink/subtle/Bytes;->xor(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)V
 
     :goto_1
     add-int/lit8 v2, v2, 0x1

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactDiaryPreferences.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryPreferences.kt\nde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences\n+ 2 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 3 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n*L\n1#1,29:1\n88#2,4:30\n92#2:37\n93#2:49\n66#3,3:34\n71#3,11:38\n*E\n*S KotlinDebug\n*F\n+ 1 ContactDiaryPreferences.kt\nde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences\n*L\n20#1,4:30\n20#1:37\n20#1:49\n20#1,3:34\n20#1,11:38\n*E\n"
+    value = "SMAP\nContactDiaryPreferences.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactDiaryPreferences.kt\nde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences\n+ 2 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 3 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n*L\n1#1,29:1\n91#2,4:30\n95#2:40\n96#2:43\n66#3,6:34\n73#3:41\n84#3:42\n*S KotlinDebug\n*F\n+ 1 ContactDiaryPreferences.kt\nde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences\n*L\n20#1:30,4\n20#1:40\n20#1:43\n20#1:34,6\n20#1:41\n20#1:42\n*E\n"
 .end annotation
 
 
@@ -41,7 +41,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$prefs$2;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -67,9 +67,9 @@
 
     new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v2, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$$special$$inlined$createFlowPreference$1;
+    new-instance v2, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$1;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/contactdiary/storage/ContactDiaryPreferences$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
 
     sget-object v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
 

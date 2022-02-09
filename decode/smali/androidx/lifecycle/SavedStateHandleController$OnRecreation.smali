@@ -30,10 +30,18 @@
 # virtual methods
 .method public onRecreated(Landroidx/savedstate/SavedStateRegistryOwner;)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "owner"
+        }
+    .end annotation
 
     instance-of v0, p1, Landroidx/lifecycle/ViewModelStoreOwner;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     move-object v0, p1
 
@@ -47,7 +55,7 @@
 
     move-result-object v1
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Ljava/util/HashSet;
 
@@ -117,11 +125,6 @@
     return-void
 
     :cond_2
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_3
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Internal error: OnRecreation should be registered only on componentsthat implement ViewModelStoreOwner"

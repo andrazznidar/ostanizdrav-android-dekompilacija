@@ -1,5 +1,5 @@
 .class public Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;
-.super Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;
+.super Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;
 .source "IncludeSubmissionPositiveOtherWarningBindingImpl.java"
 
 
@@ -11,10 +11,6 @@
 
 # instance fields
 .field public mDirtyFlags:J
-
-.field public final mboundView0:Landroid/widget/ScrollView;
-
-.field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
 .field public final mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
@@ -65,15 +61,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09049a
+    const v1, 0x7f0a0714
 
     const/16 v2, 0x9
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09049d
+    const v1, 0x7f0a0717
 
     const/16 v2, 0xa
 
@@ -91,15 +85,25 @@
 
     :array_1
     .array-data 4
-        0x7f0c008a
-        0x7f0c009b
-        0x7f0c00b4
-        0x7f0c00b3
+        0x7f0d00cd
+        0x7f0d00e3
+        0x7f0d010a
+        0x7f0d0109
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 13
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -175,13 +179,15 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v2 .. v12}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/ui/view/CountryListView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/Include16YearsBinding;Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;)V
+    invoke-direct/range {v2 .. v12}, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/ui/view/CountryListView;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/Include16YearsBinding;Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;Landroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;)V
 
     const-wide/16 v1, -0x1
 
     iput-wide v1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mDirtyFlags:J
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->countryList:Lde/rki/coronawarnapp/ui/view/CountryListView;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->container:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/ui/view/CountryListView;
 
     const/4 v1, 0x0
 
@@ -193,8 +199,6 @@
 
     check-cast p1, Landroid/widget/ScrollView;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mboundView0:Landroid/widget/ScrollView;
-
     invoke-virtual {p1, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
 
     const/4 p1, 0x1
@@ -202,8 +206,6 @@
     aget-object p1, v0, p1
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
@@ -233,29 +235,33 @@
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionCountryHeaderDescription:Landroid/widget/TextView;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingHeadline:Landroid/widget/TextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracing:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
 
     if-eqz p1, :cond_2
 
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_2
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->toolbar:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
 
     if-eqz p1, :cond_3
 
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_3
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeroIllustration:Landroid/widget/ImageView;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainHeaderLogo:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -292,7 +298,9 @@
 
     if-eqz v5, :cond_0
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->countryList:Lde/rki/coronawarnapp/ui/view/CountryListView;
+    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->container:Ljava/lang/Object;
+
+    check-cast v5, Lde/rki/coronawarnapp/ui/view/CountryListView;
 
     invoke-virtual {v5, v4}, Lde/rki/coronawarnapp/ui/view/CountryListView;->setCountryList(Ljava/util/List;)V
 
@@ -305,40 +313,44 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionCountryHeaderDescription:Landroid/widget/TextView;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracingHeadline:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f1203a3
+    const v2, 0x7f13055e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v1}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherWarningHeroIllustration:Landroid/widget/ImageView;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainHeaderLogo:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f1203af
+    const v2, 0x7f130574
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/zxing/client/android/R$id;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/nearby/connection/zzq;->setCWAContentDescription(Landroid/widget/ImageView;Ljava/lang/String;)V
 
     :cond_1
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracing:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->toolbar:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -388,7 +400,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracing:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -399,7 +413,9 @@
     return v1
 
     :cond_1
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->toolbar:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -461,11 +477,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracing:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->toolbar:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -494,14 +514,26 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveLocationCard16Years:Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->mainTracing:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/Include16YearsBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBinding;->submissionPositiveOtherPrivacy:Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBinding;->toolbar:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

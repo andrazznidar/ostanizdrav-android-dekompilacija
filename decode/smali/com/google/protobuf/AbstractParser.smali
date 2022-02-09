@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public final checkMessageInitialized(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/MessageLite;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TMessageType;)TMessageType;"
@@ -60,50 +60,49 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     invoke-interface {p1}, Lcom/google/protobuf/MessageLiteOrBuilder;->isInitialized()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     instance-of v0, p1, Lcom/google/protobuf/AbstractMessageLite;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lcom/google/protobuf/AbstractMessageLite;
+    move-object v0, p1
 
-    invoke-virtual {p1}, Lcom/google/protobuf/AbstractMessageLite;->newUninitializedMessageException()Lcom/google/protobuf/UninitializedMessageException;
+    check-cast v0, Lcom/google/protobuf/AbstractMessageLite;
 
-    move-result-object p1
+    invoke-virtual {v0}, Lcom/google/protobuf/AbstractMessageLite;->newUninitializedMessageException()Lcom/google/protobuf/UninitializedMessageException;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    new-instance p1, Lcom/google/protobuf/UninitializedMessageException;
+    new-instance v0, Lcom/google/protobuf/UninitializedMessageException;
 
-    invoke-direct {p1}, Lcom/google/protobuf/UninitializedMessageException;-><init>()V
+    invoke-direct {v0}, Lcom/google/protobuf/UninitializedMessageException;-><init>()V
 
     :goto_0
-    if-eqz p1, :cond_1
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lcom/google/protobuf/InvalidProtocolBufferException;
+    new-instance v1, Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    invoke-virtual {p1}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-direct {v0, p1}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    iput-object p1, v1, Lcom/google/protobuf/InvalidProtocolBufferException;->unfinishedMessage:Lcom/google/protobuf/MessageLite;
+
+    throw v1
 
     :cond_1
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_2
     return-object p1
 .end method
 
@@ -128,11 +127,15 @@
 
     move-result-object p1
 
-    invoke-interface {p0, p1, p2}, Lcom/google/protobuf/Parser;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
+    move-object v0, p0
+
+    check-cast v0, Lcom/google/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;
+
+    iget-object v0, v0, Lcom/google/protobuf/GeneratedMessageLite$DefaultInstanceBasedParser;->defaultInstance:Lcom/google/protobuf/GeneratedMessageLite;
+
+    invoke-static {v0, p1, p2}, Lcom/google/protobuf/GeneratedMessageLite;->parsePartialFrom(Lcom/google/protobuf/GeneratedMessageLite;Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object p2
-
-    check-cast p2, Lcom/google/protobuf/MessageLite;
 
     const/4 v0, 0x0
 

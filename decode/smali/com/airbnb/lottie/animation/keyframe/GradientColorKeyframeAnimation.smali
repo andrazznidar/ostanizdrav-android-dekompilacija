@@ -82,7 +82,7 @@
 
     check-cast p1, Lcom/airbnb/lottie/model/content/GradientColor;
 
-    if-eqz v0, :cond_2
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v2, v1, Lcom/airbnb/lottie/model/content/GradientColor;->colors:[I
 
@@ -129,7 +129,7 @@
 
     aget v5, v5, v2
 
-    invoke-static {p2, v4, v5}, Lcom/airbnb/lottie/R$attr;->evaluate(FII)I
+    invoke-static {p2, v4, v5}, Lcom/airbnb/lottie/utils/GammaEvaluator;->evaluate(FII)I
 
     move-result v4
 
@@ -149,7 +149,7 @@
 
     const-string v0, "Cannot interpolate between gradients. Lengths vary ("
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -169,16 +169,11 @@
 
     const-string v1, ")"
 
-    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline20(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Landroidx/constraintlayout/core/widgets/ConstraintWidget$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p2
-
-    :cond_2
-    const/4 p1, 0x0
-
-    throw p1
 .end method

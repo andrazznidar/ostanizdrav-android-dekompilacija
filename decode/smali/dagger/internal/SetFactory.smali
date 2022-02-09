@@ -158,7 +158,7 @@
     :cond_0
     new-instance v2, Ljava/util/HashSet;
 
-    invoke-static {v0}, Lcom/google/zxing/client/android/R$id;->calculateInitialCapacity(I)I
+    invoke-static {v0}, Lkotlin/collections/ArraysUtilJVM;->calculateInitialCapacity(I)I
 
     move-result v0
 
@@ -187,7 +187,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v2, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -224,7 +224,7 @@
 
     move-result-object v5
 
-    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v2, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 

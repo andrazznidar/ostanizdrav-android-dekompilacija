@@ -1,5 +1,10 @@
-.class public Lcom/google/android/gms/internal/safetynet/zzc;
+.class public final Lcom/google/android/gms/internal/safetynet/zzc;
 .super Ljava/lang/Object;
+.source "com.google.android.gms:play-services-safetynet@@17.0.1"
+
+
+# static fields
+.field public static final synthetic $r8$clinit:I
 
 
 # direct methods
@@ -52,24 +57,4 @@
     check-cast p0, Landroid/os/Parcelable;
 
     return-object p0
-.end method
-
-.method public static zza(Landroid/os/Parcel;Landroid/os/IInterface;)V
-    .locals 0
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    return-void
 .end method

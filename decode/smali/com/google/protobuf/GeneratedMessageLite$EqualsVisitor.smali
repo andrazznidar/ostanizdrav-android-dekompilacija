@@ -157,6 +157,23 @@
     throw p1
 .end method
 
+.method public visitFloat(ZFZF)F
+    .locals 0
+
+    if-ne p1, p3, :cond_0
+
+    cmpl-float p1, p2, p4
+
+    if-nez p1, :cond_0
+
+    return p2
+
+    :cond_0
+    sget-object p1, Lcom/google/protobuf/GeneratedMessageLite$EqualsVisitor;->NOT_EQUALS:Lcom/google/protobuf/GeneratedMessageLite$EqualsVisitor$NotEqualsException;
+
+    throw p1
+.end method
+
 .method public visitInt(ZIZI)I
     .locals 0
 

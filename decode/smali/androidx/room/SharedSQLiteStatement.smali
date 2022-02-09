@@ -8,7 +8,7 @@
 
 .field public final mLock:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public volatile mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+.field public volatile mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
 
 # direct methods
@@ -32,7 +32,7 @@
 
 
 # virtual methods
-.method public acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+.method public acquire()Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
     .locals 3
 
     iget-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mDatabase:Landroidx/room/RoomDatabase;
@@ -51,32 +51,9 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Landroidx/room/SharedSQLiteStatement;->createNewStatement()Landroidx/sqlite/db/SupportSQLiteStatement;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
-
-    :cond_0
-    iget-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Landroidx/room/SharedSQLiteStatement;->createNewStatement()Landroidx/sqlite/db/SupportSQLiteStatement;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public final createNewStatement()Landroidx/sqlite/db/SupportSQLiteStatement;
-    .locals 2
 
     invoke-virtual {p0}, Landroidx/room/SharedSQLiteStatement;->createQuery()Ljava/lang/String;
 
@@ -84,30 +61,39 @@
 
     iget-object v1, p0, Landroidx/room/SharedSQLiteStatement;->mDatabase:Landroidx/room/RoomDatabase;
 
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
-
-    invoke-virtual {v1}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
-
-    iget-object v1, v1, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
-
-    invoke-interface {v1}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Landroidx/sqlite/db/SupportSQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-virtual {v1, v0}, Landroidx/room/RoomDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object v0
 
+    iput-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
+
+    :cond_0
+    iget-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Landroidx/room/SharedSQLiteStatement;->createQuery()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/room/SharedSQLiteStatement;->mDatabase:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v1, v0}, Landroidx/room/RoomDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
+
+    move-result-object v0
+
+    :goto_0
     return-object v0
 .end method
 
 .method public abstract createQuery()Ljava/lang/String;
 .end method
 
-.method public release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+.method public release(Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iget-object v0, p0, Landroidx/room/SharedSQLiteStatement;->mStmt:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     if-ne p1, v0, :cond_0
 

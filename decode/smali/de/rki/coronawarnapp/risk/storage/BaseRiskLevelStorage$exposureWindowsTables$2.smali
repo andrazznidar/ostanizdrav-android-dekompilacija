@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;Lkotlinx/coroutines/CoroutineScope;)V
+    value = Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;-><init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/storage/internal/RiskCombinator;Lde/rki/coronawarnapp/util/TimeStamper;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -46,54 +46,17 @@
 
 # virtual methods
 .method public invoke()Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$exposureWindowsTables$2;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->access$getDatabase$p(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getDatabase()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;->exposureWindows()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+    move-result-object v0
 
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
-
-    goto :goto_0
-
-    :cond_0
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl;
-
-    invoke-direct {v1, v0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabaseExposureWindowsDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
-
-    iput-object v1, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
-
-    :cond_1
-    iget-object v1, v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase_Impl;->_exposureWindowsDao:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
-
-    monitor-exit v0
-
-    move-object v0, v1
-
-    :goto_0
     return-object v0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

@@ -11,35 +11,35 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_0
+    const/high16 v1, 0x1010000
+
+    const/4 v2, 0x0
+
+    aput v1, v0, v2
+
+    sget v1, Lcom/google/android/material/R$attr;->theme:I
+
+    const/4 v3, 0x1
+
+    aput v1, v0, v3
 
     sput-object v0, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->ANDROID_THEME_OVERLAY_ATTRS:[I
 
-    const/4 v0, 0x1
+    new-array v0, v3, [I
 
-    new-array v0, v0, [I
+    sget v1, Lcom/google/android/material/R$attr;->materialThemeOverlay:I
 
-    const/4 v1, 0x0
-
-    const v2, 0x7f040250
-
-    aput v2, v0, v1
+    aput v1, v0, v2
 
     sput-object v0, Lcom/google/android/material/theme/overlay/MaterialThemeOverlay;->MATERIAL_THEME_OVERLAY_ATTR:[I
 
     return-void
-
-    :array_0
-    .array-data 4
-        0x1010000
-        0x7f040366
-    .end array-data
 .end method
 
 .method public static wrap(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;

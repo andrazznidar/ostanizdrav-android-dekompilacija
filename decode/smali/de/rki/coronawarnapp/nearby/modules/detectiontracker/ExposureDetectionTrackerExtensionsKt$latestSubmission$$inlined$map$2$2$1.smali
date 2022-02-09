@@ -16,7 +16,7 @@
     c = "de.rki.coronawarnapp.nearby.modules.detectiontracker.ExposureDetectionTrackerExtensionsKt$latestSubmission$$inlined$map$2$2"
     f = "ExposureDetectionTrackerExtensions.kt"
     l = {
-        0x95
+        0x89
     }
     m = "emit"
 .end annotation

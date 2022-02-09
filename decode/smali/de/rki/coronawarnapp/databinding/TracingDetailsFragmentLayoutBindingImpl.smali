@@ -21,7 +21,7 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090341
+    const v1, 0x7f0a059a
 
     const/4 v2, 0x5
 
@@ -32,6 +32,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 13
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -89,7 +99,7 @@
 
     move-object v12, v0
 
-    check-cast v12, Landroidx/appcompat/widget/Toolbar;
+    check-cast v12, Lcom/google/android/material/appbar/MaterialToolbar;
 
     const/4 v6, 0x0
 
@@ -99,7 +109,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/recyclerview/widget/RecyclerView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/Button;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/Toolbar;)V
+    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/recyclerview/widget/RecyclerView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/Button;Landroid/widget/Button;Landroidx/constraintlayout/widget/ConstraintLayout;Lcom/google/android/material/appbar/MaterialToolbar;)V
 
     const-wide/16 v0, -0x1
 
@@ -121,11 +131,11 @@
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->toolbar:Landroidx/appcompat/widget/Toolbar;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -139,97 +149,93 @@
 .method public executeBindings()V
     .locals 12
 
-    sget-object v0, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;->TRACING_INACTIVE:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
-
     monitor-enter p0
 
     :try_start_0
-    iget-wide v1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBindingImpl;->mDirtyFlags:J
+    iget-wide v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBindingImpl;->mDirtyFlags:J
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v2, 0x0
 
-    iput-wide v3, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBindingImpl;->mDirtyFlags:J
+    iput-wide v2, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBindingImpl;->mDirtyFlags:J
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    iget-object v6, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->mTracingDetailsState:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;
+    iget-object v5, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->mTracingDetailsState:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;
 
-    const-wide/16 v7, 0x3
+    const-wide/16 v6, 0x3
 
-    and-long/2addr v1, v7
+    and-long/2addr v0, v6
 
-    cmp-long v1, v1, v3
+    cmp-long v0, v0, v2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    if-eqz v1, :cond_d
+    if-eqz v0, :cond_d
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    if-eqz v6, :cond_b
+    if-eqz v5, :cond_b
 
-    iget-object v4, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
+    iget-object v3, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    if-ne v4, v0, :cond_0
+    sget-object v4, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;->TRACING_INACTIVE:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    move v4, v3
+    if-ne v3, v4, :cond_0
+
+    move v6, v2
 
     goto :goto_0
 
     :cond_0
-    move v4, v2
+    move v6, v1
 
     :goto_0
-    if-nez v4, :cond_3
+    if-nez v6, :cond_3
 
-    iget-object v4, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
+    if-eq v3, v4, :cond_1
 
-    if-eq v4, v0, :cond_1
+    iget-boolean v6, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->isManualKeyRetrievalEnabled:Z
 
-    iget-boolean v4, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->isManualKeyRetrievalEnabled:Z
+    if-eqz v6, :cond_1
 
-    if-eqz v4, :cond_1
-
-    move v4, v3
+    move v6, v2
 
     goto :goto_1
 
     :cond_1
-    move v4, v2
+    move v6, v1
 
     :goto_1
-    if-eqz v4, :cond_2
+    if-eqz v6, :cond_2
 
     goto :goto_2
 
     :cond_2
-    move v4, v2
+    move v6, v1
 
     goto :goto_3
 
     :cond_3
     :goto_2
-    move v4, v3
+    move v6, v2
 
     :goto_3
-    iget-object v5, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
+    if-eq v3, v4, :cond_4
 
-    if-eq v5, v0, :cond_4
+    iget-boolean v3, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->isManualKeyRetrievalEnabled:Z
 
-    iget-boolean v5, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->isManualKeyRetrievalEnabled:Z
+    if-eqz v3, :cond_4
 
-    if-eqz v5, :cond_4
-
-    move v5, v3
+    move v3, v2
 
     goto :goto_4
 
     :cond_4
-    move v5, v2
+    move v3, v1
 
     :goto_4
     iget-object v7, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
@@ -242,32 +248,32 @@
 
     invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v8, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+    iget-object v8, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
     sget-object v9, Lde/rki/coronawarnapp/risk/RiskState;->CALCULATION_FAILED:Lde/rki/coronawarnapp/risk/RiskState;
 
     if-ne v8, v9, :cond_5
 
-    const v8, 0x7f120288
+    const v8, 0x7f1303e4
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const-string v8, "c.getString(R.string.ris\u2026_internet_restart_button)"
+    const-string/jumbo v8, "{\n        c.getString(R.\u2026net_restart_button)\n    }"
 
     invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_5
 
     :cond_5
-    const v8, 0x7f120285
+    const v8, 0x7f1303e1
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const-string v8, "c.getString(R.string.risk_card_button_update)"
+    const-string/jumbo v8, "{\n        c.getString(R.\u2026card_button_update)\n    }"
 
     invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -282,22 +288,22 @@
 
     invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v9, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
+    iget-object v9, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    const v10, 0x7f06005a
+    const v10, 0x7f060064
 
-    if-ne v9, v0, :cond_6
+    if-ne v9, v4, :cond_6
 
     goto :goto_6
 
     :cond_6
-    iget-object v9, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+    iget-object v9, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
     sget-object v11, Lde/rki/coronawarnapp/risk/RiskState;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskState;
 
     if-ne v9, v11, :cond_7
 
-    const v10, 0x7f060052
+    const v10, 0x7f06005c
 
     goto :goto_6
 
@@ -306,39 +312,37 @@
 
     if-ne v9, v11, :cond_9
 
-    iget v9, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->daysWithEncounters:I
+    iget v9, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->daysWithEncounters:I
 
     if-lez v9, :cond_8
 
-    const v10, 0x7f060056
+    const v10, 0x7f060060
 
     goto :goto_6
 
     :cond_8
-    const v10, 0x7f060054
+    const v10, 0x7f06005e
 
     :cond_9
     :goto_6
-    const-string v9, "$this$getColorCompat"
+    sget-object v9, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v8, v10}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    invoke-static {v8, v10}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result v8
 
-    iget-boolean v9, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->isManualKeyRetrievalEnabled:Z
+    iget-boolean v9, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->isManualKeyRetrievalEnabled:Z
 
-    iget-object v10, v6, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
+    iget-object v10, v5, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->tracingStatus:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    if-ne v10, v0, :cond_a
+    if-ne v10, v4, :cond_a
 
-    move v0, v3
+    move v4, v2
 
     goto :goto_7
 
     :cond_a
-    move v0, v2
+    move v4, v1
 
     :goto_7
     iget-object v10, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
@@ -347,70 +351,73 @@
 
     move-result-object v10
 
-    invoke-virtual {v6, v10}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->getStableTextColor(Landroid/content/Context;)I
+    invoke-virtual {v5, v10}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;->getStableTextColor(Landroid/content/Context;)I
 
     move-result v10
 
     goto :goto_8
 
     :cond_b
-    move v0, v2
+    move v3, v1
 
-    move v4, v0
+    move v6, v3
 
-    move v8, v4
+    move v8, v6
 
     move v9, v8
 
     move v10, v9
 
-    move-object v7, v5
+    move-object v7, v4
 
-    move v5, v10
+    move v4, v10
 
     :goto_8
-    if-nez v6, :cond_c
+    if-nez v5, :cond_c
 
-    move v2, v3
-
-    :cond_c
-    xor-int/2addr v4, v3
-
-    xor-int/2addr v5, v3
-
-    xor-int/2addr v0, v3
-
-    move v3, v2
-
-    move v2, v4
+    move v5, v2
 
     goto :goto_9
 
+    :cond_c
+    move v5, v1
+
+    :goto_9
+    xor-int/2addr v6, v2
+
+    xor-int/2addr v3, v2
+
+    xor-int/2addr v2, v4
+
+    move-object v4, v7
+
+    goto :goto_a
+
     :cond_d
-    move v0, v2
+    move v2, v1
 
-    move v3, v0
+    move v3, v2
 
-    move v8, v3
+    move v5, v3
+
+    move v6, v5
+
+    move v8, v6
 
     move v9, v8
 
     move v10, v9
 
-    move-object v7, v5
+    :goto_a
+    if-eqz v0, :cond_f
 
-    move v5, v10
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsButton:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    :goto_9
-    if-eqz v1, :cond_e
+    invoke-static {v0, v6}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsButton:Landroidx/constraintlayout/widget/ConstraintLayout;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsButtonEnableTracing:Landroid/widget/Button;
 
-    invoke-static {v1, v2}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsButtonEnableTracing:Landroid/widget/Button;
-
-    invoke-static {v1, v0}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v2}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsButtonUpdate:Landroid/widget/Button;
 
@@ -418,17 +425,26 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsButtonUpdate:Landroid/widget/Button;
 
-    invoke-static {v0, v7}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+    invoke-static {v0, v4}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsButtonUpdate:Landroid/widget/Button;
 
-    invoke-static {v0, v5}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, v3}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->riskDetailsContainer:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-static {v0, v3}, Lcom/google/zxing/client/android/R$id;->setInvisible(Landroid/view/View;Z)V
+    const-string v2, "<this>"
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->toolbar:Landroidx/appcompat/widget/Toolbar;
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz v5, :cond_e
+
+    const/4 v1, 0x4
+
+    :cond_e
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     invoke-virtual {v0, v10}, Landroidx/appcompat/widget/Toolbar;->setTitleTextColor(I)V
 
@@ -436,9 +452,9 @@
 
     const/16 v1, 0x15
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_f
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->toolbar:Landroidx/appcompat/widget/Toolbar;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     invoke-static {v8}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
@@ -446,7 +462,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_e
+    :cond_f
     return-void
 
     :catchall_0
@@ -528,6 +544,14 @@
 
 .method public setTracingDetailsState(Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "TracingDetailsState"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingDetailsFragmentLayoutBinding;->mTracingDetailsState:Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsState;
 
@@ -546,11 +570,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x32
+    const/16 p1, 0x30
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

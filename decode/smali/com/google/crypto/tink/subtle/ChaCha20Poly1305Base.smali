@@ -244,11 +244,11 @@
 
     move-result-object p2
 
-    invoke-static {v3, p2}, Lcom/google/android/material/R$style;->computeMac([B[B)[B
+    invoke-static {v3, p2}, Lcom/google/crypto/tink/subtle/Poly1305;->computeMac([B[B)[B
 
     move-result-object p2
 
-    invoke-static {p2, v1}, Lcom/google/android/material/R$style;->equal([B[B)Z
+    invoke-static {p2, v1}, Lcom/google/crypto/tink/subtle/Bytes;->equal([B[B)Z
 
     move-result p2
     :try_end_0
@@ -421,7 +421,7 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Lcom/google/android/material/R$style;->computeMac([B[B)[B
+    invoke-static {v1, p1}, Lcom/google/crypto/tink/subtle/Poly1305;->computeMac([B[B)[B
 
     move-result-object p1
 

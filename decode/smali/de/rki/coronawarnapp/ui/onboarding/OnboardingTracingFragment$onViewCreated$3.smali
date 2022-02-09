@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+    .locals 12
 
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents;
 
@@ -78,13 +78,13 @@
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const v3, 0x7f12023b
+    const v3, 0x7f13032b
 
-    const v4, 0x7f120238
+    const v4, 0x7f130328
 
-    const v5, 0x7f12023a
+    const v5, 0x7f13032a
 
-    const v0, 0x7f120239
+    const v0, 0x7f130329
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -94,15 +94,19 @@
 
     new-instance v8, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3$1;
 
-    invoke-direct {v8, p0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3$1;-><init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;)V
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;
+
+    invoke-direct {v8, v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3$1;-><init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;)V
 
     const/4 v9, 0x0
 
-    const/16 v10, 0x80
+    const/4 v10, 0x0
+
+    const/16 v11, 0x180
 
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v10}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+    invoke-direct/range {v1 .. v11}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;IIILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
 
     invoke-static {p1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
 
@@ -111,7 +115,7 @@
     :cond_1
     instance-of p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingNavigationEvents$NavigateToOnboardingPrivacy;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment$onViewCreated$3;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingTracingFragment;
 
@@ -119,26 +123,13 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_2
-
     check-cast p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
     iget-object p1, p1, Landroidx/activity/ComponentActivity;->mOnBackPressedDispatcher:Landroidx/activity/OnBackPressedDispatcher;
 
     invoke-virtual {p1}, Landroidx/activity/OnBackPressedDispatcher;->onBackPressed()V
 
-    goto :goto_0
-
     :cond_2
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "null cannot be cast to non-null type de.rki.coronawarnapp.ui.onboarding.OnboardingActivity"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
     :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

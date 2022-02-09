@@ -4,16 +4,6 @@
 
 
 # instance fields
-.field public final analyticsSettingsProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public final appSettingsProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -36,8 +26,19 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "dispatcherProvider",
+            "appSettingsProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,9 +47,6 @@
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/main/CWASettings;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;",
             ">;)V"
         }
     .end annotation
@@ -58,8 +56,6 @@
     iput-object p1, p0, Lde/rki/coronawarnapp/release/NewReleaseInfoViewModel_Factory;->dispatcherProvider:Ljavax/inject/Provider;
 
     iput-object p2, p0, Lde/rki/coronawarnapp/release/NewReleaseInfoViewModel_Factory;->appSettingsProvider:Ljavax/inject/Provider;
-
-    iput-object p3, p0, Lde/rki/coronawarnapp/release/NewReleaseInfoViewModel_Factory;->analyticsSettingsProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

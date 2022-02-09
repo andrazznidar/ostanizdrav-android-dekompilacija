@@ -45,29 +45,29 @@
 
     array-length v0, p1
 
-    const/4 v1, 0x3
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x3
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
     const/16 v0, 0x10
 
     new-array v0, v0, [I
 
-    iget-object v1, p0, Lcom/google/crypto/tink/subtle/ChaCha20Base;->key:[I
+    iget-object v2, p0, Lcom/google/crypto/tink/subtle/ChaCha20Base;->key:[I
 
-    invoke-static {v0, v1}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->setSigmaAndKey([I[I)V
+    invoke-static {v0, v2}, Lcom/google/crypto/tink/subtle/ChaCha20Base;->setSigmaAndKey([I[I)V
 
-    const/16 v1, 0xc
+    const/16 v2, 0xc
 
-    aput p2, v0, v1
+    aput p2, v0, v2
 
     const/16 p2, 0xd
 
-    array-length v1, p1
+    array-length v2, p1
 
-    invoke-static {p1, v2, v0, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v1, v0, p2, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v0
 
@@ -86,7 +86,7 @@
 
     move-result-object p1
 
-    aput-object p1, v0, v2
+    aput-object p1, v0, v1
 
     const-string p1, "ChaCha20 uses 96-bit nonces, but got a %d-bit nonce"
 

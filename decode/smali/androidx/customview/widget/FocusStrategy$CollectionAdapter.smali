@@ -4,6 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/customview/widget/FocusStrategy;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "CollectionAdapter"
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",

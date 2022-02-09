@@ -26,9 +26,7 @@
 
     iput v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStreamReader;->nextTag:I
 
-    const-string v0, "input"
-
-    invoke-static {p1, v0}, Lcom/google/crypto/tink/shaded/protobuf/Internal;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/Internal;->UTF_8:Ljava/nio/charset/Charset;
 
     iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStreamReader;->input:Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;
 
@@ -2265,6 +2263,8 @@
     invoke-virtual {p2, p1}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream;->pushLimit(I)I
 
     const/4 p1, 0x0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     throw p1
 .end method

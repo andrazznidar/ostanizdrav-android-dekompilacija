@@ -13,13 +13,12 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Ljava/util/Comparator<",
-        "TT;>;"
+        "Ljava/util/Comparator;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareByDescending$1\n+ 2 ExposureKeyHistoryCalculations.kt\nde/rki/coronawarnapp/submission/task/ExposureKeyHistoryCalculations\n*L\n1#1,319:1\n64#2:320\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareByDescending$1\n+ 2 ExposureKeyHistoryCalculations.kt\nde/rki/coronawarnapp/submission/task/ExposureKeyHistoryCalculations\n*L\n1#1,320:1\n64#2:321\n*E\n"
 .end annotation
 
 
@@ -58,7 +57,7 @@
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Lcom/google/zxing/client/android/R$id;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+    invoke-static {p2, p1}, Lkotlin/comparisons/ComparisonsKt__ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result p1
 

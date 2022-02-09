@@ -365,17 +365,15 @@
 
     if-ge v1, v3, :cond_0
 
-    aget v2, v2, v1
+    aget v3, v2, v1
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
-
     array-length v3, v2
 
     if-ne v1, v3, :cond_1

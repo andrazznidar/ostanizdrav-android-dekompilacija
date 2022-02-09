@@ -13,6 +13,14 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "delegateFactory"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,9 +32,19 @@
 
 # virtual methods
 .method public create()Lde/rki/coronawarnapp/util/viewmodel/CWAViewModel;
-    .locals 4
+    .locals 9
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory_Impl;->delegateFactory:Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->dispatcherProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v3, v1
+
+    check-cast v3, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
     iget-object v1, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->updateCheckerProvider:Ljavax/inject/Provider;
 
@@ -34,27 +52,55 @@
 
     move-result-object v1
 
-    check-cast v1, Lde/rki/coronawarnapp/update/UpdateChecker;
+    move-object v4, v1
 
-    iget-object v2, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->dispatcherProvider:Ljavax/inject/Provider;
+    check-cast v4, Lde/rki/coronawarnapp/update/UpdateChecker;
 
-    invoke-interface {v2}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->cwaSettingsProvider:Ljavax/inject/Provider;
 
-    move-result-object v2
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
-    check-cast v2, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+    move-result-object v1
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->cwaSettingsProvider:Ljavax/inject/Provider;
+    move-object v5, v1
+
+    check-cast v5, Lde/rki/coronawarnapp/main/CWASettings;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->onboardingSettingsProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lde/rki/coronawarnapp/storage/OnboardingSettings;
+
+    iget-object v1, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->rootDetectionCheckProvider:Ljavax/inject/Provider;
+
+    invoke-interface {v1}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Lde/rki/coronawarnapp/rootdetection/RootDetectionCheck;
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel_Factory;->appUpdateManagerProvider:Ljavax/inject/Provider;
 
     invoke-interface {v0}, Ljavax/inject/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/main/CWASettings;
+    move-object v8, v0
 
-    new-instance v3, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;
+    check-cast v8, Lcom/google/android/play/core/appupdate/AppUpdateManager;
 
-    invoke-direct {v3, v1, v2, v0}, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;-><init>(Lde/rki/coronawarnapp/update/UpdateChecker;Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/main/CWASettings;)V
+    new-instance v0, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;
 
-    return-object v3
+    move-object v2, v0
+
+    invoke-direct/range {v2 .. v8}, Lde/rki/coronawarnapp/ui/launcher/LauncherActivityViewModel;-><init>(Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;Lde/rki/coronawarnapp/update/UpdateChecker;Lde/rki/coronawarnapp/main/CWASettings;Lde/rki/coronawarnapp/storage/OnboardingSettings;Lde/rki/coronawarnapp/rootdetection/RootDetectionCheck;Lcom/google/android/play/core/appupdate/AppUpdateManager;)V
+
+    return-object v0
 .end method

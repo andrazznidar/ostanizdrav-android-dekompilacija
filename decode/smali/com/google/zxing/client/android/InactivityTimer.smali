@@ -56,37 +56,6 @@
     return-void
 .end method
 
-.method public static access$200(Lcom/google/zxing/client/android/InactivityTimer;Z)V
-    .locals 2
-
-    iput-boolean p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->onBattery:Z
-
-    iget-boolean p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->registered:Z
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->handler:Landroid/os/Handler;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
-
-    iget-boolean p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->onBattery:Z
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->handler:Landroid/os/Handler;
-
-    iget-object p0, p0, Lcom/google/zxing/client/android/InactivityTimer;->callback:Ljava/lang/Runnable;
-
-    const-wide/32 v0, 0x493e0
-
-    invoke-virtual {p1, p0, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    :cond_0
-    return-void
-.end method
-
 
 # virtual methods
 .method public cancel()V

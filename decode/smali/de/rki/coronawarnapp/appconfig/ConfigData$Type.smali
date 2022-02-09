@@ -34,49 +34,49 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 7
 
-    const/4 v0, 0x3
+    new-instance v0, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    const-string v1, "FROM_SERVER"
 
-    new-instance v1, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    const/4 v2, 0x0
 
-    const-string v2, "FROM_SERVER"
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->FROM_SERVER:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->FROM_SERVER:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
     new-instance v1, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    const-string v2, "LAST_RETRIEVED"
+    const-string v3, "LAST_RETRIEVED"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LAST_RETRIEVED:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    aput-object v1, v0, v3
+    new-instance v3, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    new-instance v1, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    const-string v5, "LOCAL_DEFAULT"
 
-    const-string v2, "LOCAL_DEFAULT"
+    const/4 v6, 0x2
 
-    const/4 v3, 0x2
+    invoke-direct {v3, v5, v6}, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;-><init>(Ljava/lang/String;I)V
+    sput-object v3, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LOCAL_DEFAULT:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    sput-object v1, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LOCAL_DEFAULT:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    const/4 v5, 0x3
 
-    aput-object v1, v0, v3
+    new-array v5, v5, [Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    sput-object v0, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->$VALUES:[Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->$VALUES:[Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
     return-void
 .end method
@@ -113,7 +113,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->$VALUES:[Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

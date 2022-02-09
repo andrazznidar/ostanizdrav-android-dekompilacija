@@ -18,20 +18,19 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/HmacKeyFormat;",
         "Lcom/google/crypto/tink/proto/HmacKeyFormat$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/HmacKeyFormat;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/HmacKeyFormat;
 
 .field public static final KEY_SIZE_FIELD_NUMBER:I = 0x2
 
 .field public static final PARAMS_FIELD_NUMBER:I = 0x1
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -45,11 +44,11 @@
 
 
 # instance fields
-.field public keySize_:I
+.field private keySize_:I
 
-.field public params_:Lcom/google/crypto/tink/proto/HmacParams;
+.field private params_:Lcom/google/crypto/tink/proto/HmacParams;
 
-.field public version_:I
+.field private version_:I
 
 
 # direct methods
@@ -69,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -190,7 +189,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/HmacKeyFormat;->params_:Lcom/google/crypto/tink/proto/HmacParams;
 
@@ -662,7 +661,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/HmacKeyFormat;->params_:Lcom/google/crypto/tink/proto/HmacParams;
 
@@ -790,7 +789,7 @@
 
     const/4 p2, 0x2
 
-    const-string p3, "version_"
+    const-string/jumbo p3, "version_"
 
     aput-object p3, p1, p2
 
@@ -817,6 +816,8 @@
     invoke-direct {p1}, Lcom/google/crypto/tink/proto/HmacKeyFormat;-><init>()V
 
     return-object p1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

@@ -8,8 +8,6 @@
 
 .field public final invalidDay:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
-.field public final rangeFill:Landroid/graphics/Paint;
-
 .field public final selectedDay:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
 .field public final selectedYear:Lcom/google/android/material/datepicker/CalendarItemStyle;
@@ -27,15 +25,15 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v0, Lcom/google/android/material/datepicker/MaterialCalendar;
+    sget v0, Lcom/google/android/material/R$attr;->materialCalendarStyle:I
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    const-class v1, Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    move-result-object v0
+    invoke-virtual {v1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
-    const v1, 0x7f04024d
+    move-result-object v1
 
-    invoke-static {p1, v1, v0}, Lcom/google/android/material/R$style;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
+    invoke-static {p1, v0, v1}, Lcom/google/android/material/resources/MaterialAttributes;->resolveOrThrow(Landroid/content/Context;ILjava/lang/String;)I
 
     move-result v0
 
@@ -45,7 +43,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x3
+    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendar_dayStyle:I
 
     const/4 v2, 0x0
 
@@ -59,7 +57,7 @@
 
     iput-object v1, p0, Lcom/google/android/material/datepicker/CalendarStyle;->day:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
-    const/4 v1, 0x1
+    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendar_dayInvalidStyle:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -71,7 +69,7 @@
 
     iput-object v1, p0, Lcom/google/android/material/datepicker/CalendarStyle;->invalidDay:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
-    const/4 v1, 0x2
+    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendar_daySelectedStyle:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -83,7 +81,7 @@
 
     iput-object v1, p0, Lcom/google/android/material/datepicker/CalendarStyle;->selectedDay:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
-    const/4 v1, 0x4
+    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendar_dayTodayStyle:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -95,13 +93,13 @@
 
     iput-object v1, p0, Lcom/google/android/material/datepicker/CalendarStyle;->todayDay:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
-    const/4 v1, 0x5
+    sget v1, Lcom/google/android/material/R$styleable;->MaterialCalendar_rangeFillColor:I
 
-    invoke-static {p1, v0, v1}, Lcom/google/android/material/R$style;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {p1, v0, v1}, Lcom/google/android/material/resources/MaterialResources;->getColorStateList(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
-    const/4 v3, 0x7
+    sget v3, Lcom/google/android/material/R$styleable;->MaterialCalendar_yearStyle:I
 
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -113,7 +111,7 @@
 
     iput-object v3, p0, Lcom/google/android/material/datepicker/CalendarStyle;->year:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
-    const/4 v3, 0x6
+    sget v3, Lcom/google/android/material/R$styleable;->MaterialCalendar_yearSelectedStyle:I
 
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -125,7 +123,7 @@
 
     iput-object v3, p0, Lcom/google/android/material/datepicker/CalendarStyle;->selectedYear:Lcom/google/android/material/datepicker/CalendarItemStyle;
 
-    const/16 v3, 0x8
+    sget v3, Lcom/google/android/material/R$styleable;->MaterialCalendar_yearTodayStyle:I
 
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -140,8 +138,6 @@
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/material/datepicker/CalendarStyle;->rangeFill:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 

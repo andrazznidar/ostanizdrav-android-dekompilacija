@@ -43,11 +43,7 @@
 # instance fields
 .field public final synthetic $value:Ljava/lang/Object;
 
-.field public L$0:Ljava/lang/Object;
-
 .field public label:I
-
-.field public p$:Lkotlinx/coroutines/CoroutineScope;
 
 .field public final synthetic this$0:Landroidx/lifecycle/LiveDataScopeImpl;
 
@@ -70,7 +66,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -83,49 +79,41 @@
         }
     .end annotation
 
-    const-string v0, "completion"
+    const-string p1, "completion"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;
+    new-instance p1, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;
 
-    iget-object v1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->this$0:Landroidx/lifecycle/LiveDataScopeImpl;
+    iget-object v0, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->this$0:Landroidx/lifecycle/LiveDataScopeImpl;
 
-    iget-object v2, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->$value:Ljava/lang/Object;
+    iget-object v1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->$value:Ljava/lang/Object;
 
-    invoke-direct {v0, v1, v2, p2}, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;-><init>(Landroidx/lifecycle/LiveDataScopeImpl;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, v1, p2}, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;-><init>(Landroidx/lifecycle/LiveDataScopeImpl;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
-
-    iput-object p1, v0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->p$:Lkotlinx/coroutines/CoroutineScope;
-
-    return-object v0
+    return-object p1
 .end method
 
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const-string v0, "completion"
+    const-string p1, "completion"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;
+    new-instance p1, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;
 
-    iget-object v1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->this$0:Landroidx/lifecycle/LiveDataScopeImpl;
+    iget-object v0, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->this$0:Landroidx/lifecycle/LiveDataScopeImpl;
 
-    iget-object v2, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->$value:Ljava/lang/Object;
+    iget-object v1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->$value:Ljava/lang/Object;
 
-    invoke-direct {v0, v1, v2, p2}, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;-><init>(Landroidx/lifecycle/LiveDataScopeImpl;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, v1, p2}, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;-><init>(Landroidx/lifecycle/LiveDataScopeImpl;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Lkotlinx/coroutines/CoroutineScope;
+    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    iput-object p1, v0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->p$:Lkotlinx/coroutines/CoroutineScope;
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-virtual {v0, p1}, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -145,11 +133,7 @@
 
     if-ne v1, v2, :cond_0
 
-    iget-object v0, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Lkotlinx/coroutines/CoroutineScope;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -163,19 +147,15 @@
     throw p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->p$:Lkotlinx/coroutines/CoroutineScope;
+    iget-object p1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->this$0:Landroidx/lifecycle/LiveDataScopeImpl;
 
-    iget-object v1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->this$0:Landroidx/lifecycle/LiveDataScopeImpl;
-
-    iget-object v1, v1, Landroidx/lifecycle/LiveDataScopeImpl;->target:Landroidx/lifecycle/CoroutineLiveData;
-
-    iput-object p1, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->L$0:Ljava/lang/Object;
+    iget-object p1, p1, Landroidx/lifecycle/LiveDataScopeImpl;->target:Landroidx/lifecycle/CoroutineLiveData;
 
     iput v2, p0, Landroidx/lifecycle/LiveDataScopeImpl$emit$2;->label:I
 
-    invoke-virtual {v1, p0}, Landroidx/lifecycle/CoroutineLiveData;->clearSource$lifecycle_livedata_ktx_release(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Landroidx/lifecycle/CoroutineLiveData;->clearSource$lifecycle_livedata_ktx_release(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

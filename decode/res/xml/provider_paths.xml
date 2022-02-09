@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
     <cache-path name="share" path="share/" />
-    <cache-path name="shared_logs" path="debuglog/shared/" />
+    <cache-path name="shared_logs" path="debuglog_snapshots/" />
+    <cache-path name="Poster" path="poster/" />
+    <cache-path name="export" path="export/" />
 </paths>

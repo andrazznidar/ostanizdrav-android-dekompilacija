@@ -114,6 +114,42 @@
     return-void
 .end method
 
+.method public static newFactoryWithMatchRawType(Lcom/google/gson/reflect/TypeToken;Ljava/lang/Object;)Lcom/google/gson/TypeAdapterFactory;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/gson/reflect/TypeToken<",
+            "*>;",
+            "Ljava/lang/Object;",
+            ")",
+            "Lcom/google/gson/TypeAdapterFactory;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/gson/reflect/TypeToken;->type:Ljava/lang/reflect/Type;
+
+    iget-object v1, p0, Lcom/google/gson/reflect/TypeToken;->rawType:Ljava/lang/Class;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    new-instance v1, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, p0, v0, v2}, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;-><init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;)V
+
+    return-object v1
+.end method
+
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
@@ -163,19 +199,19 @@
     return-object p1
 
     :cond_1
-    invoke-static {p1}, Lcom/google/android/material/R$style;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    invoke-static {p1}, Lcom/google/gson/internal/Streams;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_3
+    instance-of v0, p1, Lcom/google/gson/JsonNull;
 
-    instance-of v1, p1, Lcom/google/gson/JsonNull;
+    if-eqz v0, :cond_2
 
-    if-eqz v1, :cond_2
+    const/4 p1, 0x0
 
-    return-object v0
+    return-object p1
 
     :cond_2
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->deserializer:Lcom/google/gson/JsonDeserializer;
@@ -191,9 +227,6 @@
     move-result-object p1
 
     return-object p1
-
-    :cond_3
-    throw v0
 .end method
 
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
@@ -260,7 +293,11 @@
 
     sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/gson/TypeAdapter;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+    check-cast v0, Lcom/google/gson/internal/bind/TypeAdapters$29;
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$29;->write(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/JsonElement;)V
 
     return-void
 .end method

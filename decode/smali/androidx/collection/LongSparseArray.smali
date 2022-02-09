@@ -109,24 +109,22 @@
 
     iget-object v1, p0, Landroidx/collection/LongSparseArray;->mKeys:[J
 
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v2, v0, -0x1
 
-    aget-wide v0, v1, v0
+    aget-wide v2, v1, v2
 
-    cmp-long v0, p1, v0
+    cmp-long v1, p1, v2
 
-    if-gtz v0, :cond_0
+    if-gtz v1, :cond_0
 
     invoke-virtual {p0, p1, p2, p3}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
     return-void
 
     :cond_0
-    iget-boolean v0, p0, Landroidx/collection/LongSparseArray;->mGarbage:Z
+    iget-boolean v1, p0, Landroidx/collection/LongSparseArray;->mGarbage:Z
 
-    if-eqz v0, :cond_1
-
-    iget v0, p0, Landroidx/collection/LongSparseArray;->mSize:I
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Landroidx/collection/LongSparseArray;->mKeys:[J
 
@@ -491,28 +489,26 @@
 
     if-ge v0, v1, :cond_1
 
-    iget-object v1, p0, Landroidx/collection/LongSparseArray;->mValues:[Ljava/lang/Object;
+    iget-object v2, p0, Landroidx/collection/LongSparseArray;->mValues:[Ljava/lang/Object;
 
-    aget-object v2, v1, v0
+    aget-object v3, v2, v0
 
-    sget-object v3, Landroidx/collection/LongSparseArray;->DELETED:Ljava/lang/Object;
+    sget-object v4, Landroidx/collection/LongSparseArray;->DELETED:Ljava/lang/Object;
 
-    if-ne v2, v3, :cond_1
+    if-ne v3, v4, :cond_1
 
-    iget-object v2, p0, Landroidx/collection/LongSparseArray;->mKeys:[J
+    iget-object v1, p0, Landroidx/collection/LongSparseArray;->mKeys:[J
 
-    aput-wide p1, v2, v0
+    aput-wide p1, v1, v0
 
-    aput-object p3, v1, v0
+    aput-object p3, v2, v0
 
     return-void
 
     :cond_1
-    iget-boolean v1, p0, Landroidx/collection/LongSparseArray;->mGarbage:Z
+    iget-boolean v2, p0, Landroidx/collection/LongSparseArray;->mGarbage:Z
 
-    if-eqz v1, :cond_2
-
-    iget v1, p0, Landroidx/collection/LongSparseArray;->mSize:I
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroidx/collection/LongSparseArray;->mKeys:[J
 
@@ -703,7 +699,7 @@
 
     if-gtz v0, :cond_0
 
-    const-string v0, "{}"
+    const-string/jumbo v0, "{}"
 
     return-object v0
 

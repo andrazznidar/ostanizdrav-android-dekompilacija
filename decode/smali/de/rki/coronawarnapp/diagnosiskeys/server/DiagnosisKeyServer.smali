@@ -8,8 +8,6 @@
 
 .field public static final HOUR_FORMATTER:Lorg/joda/time/format/DateTimeFormatter;
 
-.field public static final TAG:Ljava/lang/String;
-
 
 # instance fields
 .field public final diagnosisKeyAPI:Ldagger/Lazy;
@@ -25,21 +23,9 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    const-class v0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "DiagnosisKeyServer::class.java.simpleName"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->TAG:Ljava/lang/String;
-
-    const-string v0, "yyyy-MM-dd"
+    const-string/jumbo v0, "yyyy-MM-dd"
 
     invoke-static {v0}, Lorg/joda/time/format/DateTimeFormat;->forPattern(Ljava/lang/String;)Lorg/joda/time/format/DateTimeFormatter;
 
@@ -86,7 +72,7 @@
     return-void
 .end method
 
-.method public static final access$getKeyApi$p(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
+.method public static final access$getKeyApi(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;)Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
     .locals 1
 
     iget-object p0, p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;->diagnosisKeyAPI:Ldagger/Lazy;
@@ -102,4 +88,37 @@
     check-cast p0, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyApiV1;
 
     return-object p0
+.end method
+
+
+# virtual methods
+.method public final getHourIndex(Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;",
+            "Lorg/joda/time/LocalDate;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/util/List<",
+            "Lorg/joda/time/LocalTime;",
+            ">;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlinx/coroutines/Dispatchers;->IO:Lkotlinx/coroutines/CoroutineDispatcher;
+
+    new-instance v1, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getHourIndex$2;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, p1, p2, v2}, Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer$getHourIndex$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/server/DiagnosisKeyServer;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v1, p3}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method

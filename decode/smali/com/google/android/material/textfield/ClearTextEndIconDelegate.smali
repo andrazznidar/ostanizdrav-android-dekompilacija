@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public final animateIcon(Z)V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
 
@@ -73,6 +73,14 @@
     :goto_0
     if-eqz p1, :cond_1
 
+    iget-object v1, p0, Lcom/google/android/material/textfield/ClearTextEndIconDelegate;->iconInAnim:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
     iget-object p1, p0, Lcom/google/android/material/textfield/ClearTextEndIconDelegate;->iconOutAnim:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
@@ -90,6 +98,8 @@
     goto :goto_1
 
     :cond_1
+    if-nez p1, :cond_2
+
     iget-object p1, p0, Lcom/google/android/material/textfield/ClearTextEndIconDelegate;->iconInAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->cancel()V
@@ -110,13 +120,13 @@
 .end method
 
 .method public initialize()V
-    .locals 8
+    .locals 9
 
     iget-object v0, p0, Lcom/google/android/material/textfield/EndIconDelegate;->textInputLayout:Lcom/google/android/material/textfield/TextInputLayout;
 
     iget-object v1, p0, Lcom/google/android/material/textfield/EndIconDelegate;->context:Landroid/content/Context;
 
-    const v2, 0x7f08015e
+    sget v2, Lcom/google/android/material/R$drawable;->mtrl_ic_cancel:I
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -130,7 +140,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120057
+    sget v2, Lcom/google/android/material/R$string;->clear_text_end_icon_content_description:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -196,33 +206,33 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    const-wide/16 v3, 0x64
+    const-wide/16 v4, 0x64
 
-    invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {v2, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v5, Lcom/google/android/material/textfield/ClearTextEndIconDelegate$8;
+    new-instance v6, Lcom/google/android/material/textfield/ClearTextEndIconDelegate$8;
 
-    invoke-direct {v5, p0}, Lcom/google/android/material/textfield/ClearTextEndIconDelegate$8;-><init>(Lcom/google/android/material/textfield/ClearTextEndIconDelegate;)V
+    invoke-direct {v6, p0}, Lcom/google/android/material/textfield/ClearTextEndIconDelegate$8;-><init>(Lcom/google/android/material/textfield/ClearTextEndIconDelegate;)V
 
-    invoke-virtual {v2, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v2, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    new-instance v5, Landroid/animation/AnimatorSet;
+    new-instance v6, Landroid/animation/AnimatorSet;
 
-    invoke-direct {v5}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-direct {v6}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iput-object v5, p0, Lcom/google/android/material/textfield/ClearTextEndIconDelegate;->iconInAnim:Landroid/animation/AnimatorSet;
+    iput-object v6, p0, Lcom/google/android/material/textfield/ClearTextEndIconDelegate;->iconInAnim:Landroid/animation/AnimatorSet;
 
-    new-array v6, v0, [Landroid/animation/Animator;
+    new-array v7, v0, [Landroid/animation/Animator;
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    aput-object v1, v6, v7
+    aput-object v1, v7, v8
 
     const/4 v1, 0x1
 
-    aput-object v2, v6, v1
+    aput-object v2, v7, v1
 
-    invoke-virtual {v5, v6}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    invoke-virtual {v6, v7}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     iget-object v1, p0, Lcom/google/android/material/textfield/ClearTextEndIconDelegate;->iconInAnim:Landroid/animation/AnimatorSet;
 
@@ -240,11 +250,9 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/android/material/animation/AnimationUtils;->LINEAR_INTERPOLATOR:Landroid/animation/TimeInterpolator;
+    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    invoke-virtual {v0, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {v0, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/google/android/material/textfield/ClearTextEndIconDelegate$8;
 

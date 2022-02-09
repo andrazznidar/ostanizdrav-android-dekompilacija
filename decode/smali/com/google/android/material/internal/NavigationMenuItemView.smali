@@ -52,7 +52,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 2
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -68,27 +68,27 @@
 
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object p2
+    move-result-object v0
 
-    const v0, 0x7f0c0043
+    sget v1, Lcom/google/android/material/R$layout;->design_navigation_menu_item:I
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {p2, v0, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    const p2, 0x7f070092
+    sget v0, Lcom/google/android/material/R$dimen;->design_navigation_icon_size:I
 
-    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result p1
 
     invoke-virtual {p0, p1}, Lcom/google/android/material/internal/NavigationMenuItemView;->setIconSize(I)V
 
-    const p1, 0x7f090178
+    sget p1, Lcom/google/android/material/R$id;->design_menu_item_text:I
 
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -98,11 +98,7 @@
 
     iput-object p1, p0, Lcom/google/android/material/internal/NavigationMenuItemView;->textView:Landroid/widget/CheckedTextView;
 
-    invoke-virtual {p1, v1}, Landroid/widget/CheckedTextView;->setDuplicateParentStateEnabled(Z)V
-
-    iget-object p1, p0, Lcom/google/android/material/internal/NavigationMenuItemView;->textView:Landroid/widget/CheckedTextView;
-
-    iget-object p2, p0, Lcom/google/android/material/internal/NavigationMenuItemView;->accessibilityDelegate:Landroidx/core/view/AccessibilityDelegateCompat;
+    invoke-virtual {p1, v2}, Landroid/widget/CheckedTextView;->setDuplicateParentStateEnabled(Z)V
 
     invoke-static {p1, p2}, Landroidx/core/view/ViewCompat;->setAccessibilityDelegate(Landroid/view/View;Landroidx/core/view/AccessibilityDelegateCompat;)V
 
@@ -118,7 +114,7 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f090177
+    sget v0, Lcom/google/android/material/R$id;->design_menu_item_action_area_stub:I
 
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -209,7 +205,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0400b9
+    sget v4, Landroidx/appcompat/R$attr;->colorControlHighlight:I
 
     invoke-virtual {v3, v4, p2, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -245,7 +241,9 @@
     const/4 v3, 0x0
 
     :goto_1
-    invoke-static {p0, v3}, Landroidx/core/view/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    sget-object p2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0, v3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :cond_3
     invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuItemImpl;->isCheckable()Z
@@ -288,7 +286,7 @@
 
     iget-object p1, p1, Landroidx/appcompat/view/menu/MenuItemImpl;->mTooltipText:Ljava/lang/CharSequence;
 
-    invoke-static {p0, p1}, Landroidx/appcompat/R$string;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
+    invoke-static {p0, p1}, Landroidx/appcompat/widget/TooltipCompat;->setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
 
     iget-object p1, p0, Lcom/google/android/material/internal/NavigationMenuItemView;->itemData:Landroidx/appcompat/view/menu/MenuItemImpl;
 
@@ -334,7 +332,7 @@
 
     const/4 p2, -0x1
 
-    iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iput p2, p1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     iget-object p2, p0, Lcom/google/android/material/internal/NavigationMenuItemView;->actionArea:Landroid/widget/FrameLayout;
 
@@ -359,7 +357,7 @@
 
     const/4 p2, -0x2
 
-    iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    iput p2, p1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     iget-object p2, p0, Lcom/google/android/material/internal/NavigationMenuItemView;->actionArea:Landroid/widget/FrameLayout;
 
@@ -403,14 +401,6 @@
 
     :cond_0
     return-object p1
-.end method
-
-.method public prefersCondensedTitle()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public setCheckable(Z)V
@@ -459,7 +449,7 @@
 .end method
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)V
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -511,7 +501,7 @@
 
     move-result-object p1
 
-    const v1, 0x7f080163
+    sget v1, Lcom/google/android/material/R$drawable;->navigation_empty_icon:I
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -520,6 +510,8 @@
     invoke-virtual {v2}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v2
+
+    sget-object v3, Landroidx/core/content/res/ResourcesCompat;->sTempTypedValue:Ljava/lang/ThreadLocal;
 
     invoke-virtual {p1, v1, v2}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 

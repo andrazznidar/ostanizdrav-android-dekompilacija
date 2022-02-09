@@ -90,7 +90,7 @@
     :cond_0
     const/4 v2, -0x1
 
-    const-string v3, "status"
+    const-string/jumbo v3, "status"
 
     invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
@@ -155,7 +155,7 @@
 .end method
 
 .method public onBroadcastReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0,
@@ -184,93 +184,62 @@
 
     const/4 v1, 0x1
 
-    new-array v2, v1, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    const-string v3, "Received %s"
-
-    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
     move-result-object v2
 
-    new-array v3, v4, [Ljava/lang/Throwable;
+    const/4 v3, 0x0
 
-    invoke-virtual {p1, v0, v2, v3}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    aput-object v2, v1, v3
+
+    const-string v2, "Received %s"
+
+    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-array v2, v3, [Ljava/lang/Throwable;
+
+    invoke-virtual {p1, v0, v1, v2}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p1
 
-    const/4 p2, -0x1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
+    const-string p2, "android.intent.action.BATTERY_OKAY"
 
-    move-result v0
+    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const v2, -0x7606c095    # -6.0004207E-33f
+    move-result p2
 
-    if-eq v0, v2, :cond_2
+    if-nez p2, :cond_2
 
-    const v2, 0x1d398bfd
+    const-string p2, "android.intent.action.BATTERY_LOW"
 
-    if-eq v0, v2, :cond_1
+    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const-string v0, "android.intent.action.BATTERY_LOW"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    move v4, v1
-
-    goto :goto_1
-
-    :cond_2
-    const-string v0, "android.intent.action.BATTERY_OKAY"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    :goto_0
-    move v4, p2
-
-    :goto_1
-    if-eqz v4, :cond_5
-
-    if-eq v4, v1, :cond_4
-
-    goto :goto_2
-
-    :cond_4
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->setState(Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_5
+    :cond_2
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Landroidx/work/impl/constraints/trackers/ConstraintTracker;->setState(Ljava/lang/Object;)V
 
-    :goto_2
+    :goto_0
     return-void
 .end method

@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.diagnosiskeys.download.DownloadDiagnosisKeysTask"
     f = "DownloadDiagnosisKeysTask.kt"
     l = {
-        0xc9,
-        0xcc
+        0xc6,
+        0xc9
     }
     m = "getAvailableKeyFiles"
 .end annotation
@@ -37,6 +37,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$getAvailableKeyFiles$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$getAvailableKeyFiles$1;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
 
@@ -61,6 +71,8 @@
     iput p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$getAvailableKeyFiles$1;->label:I
 
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask$getAvailableKeyFiles$1;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;
+
+    sget-object v0, Lde/rki/coronawarnapp/diagnosiskeys/download/DownloadDiagnosisKeysTask;->TAG:Ljava/lang/String;
 
     const/4 v0, 0x0
 

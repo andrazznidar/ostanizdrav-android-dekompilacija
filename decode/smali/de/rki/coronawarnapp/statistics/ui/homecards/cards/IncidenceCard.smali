@@ -7,7 +7,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardAdapter$ItemVH<",
-        "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;",
+        "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;",
         "Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBinding;",
         ">;"
     }
@@ -20,7 +20,7 @@
         value = {
             "Lkotlin/jvm/functions/Function3<",
             "Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBinding;",
-            "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;",
+            "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;",
             "Ljava/util/List<",
             "+",
             "Ljava/lang/Object;",
@@ -46,11 +46,7 @@
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 1
 
-    const-string v0, "parent"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const v0, 0x7f0c007a
+    const v0, 0x7f0d00ae
 
     invoke-direct {p0, v0, p1}, Lde/rki/coronawarnapp/statistics/ui/homecards/StatisticsCardAdapter$ItemVH;-><init>(ILandroid/view/ViewGroup;)V
 
@@ -58,7 +54,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/statistics/ui/homecards/cards/IncidenceCard$viewBinding$1;-><init>(Lde/rki/coronawarnapp/statistics/ui/homecards/cards/IncidenceCard;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -82,7 +78,7 @@
             "()",
             "Lkotlin/jvm/functions/Function3<",
             "Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBinding;",
-            "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/StatisticsCardItem;",
+            "Lde/rki/coronawarnapp/statistics/ui/homecards/cards/GlobalStatisticsCardItem;",
             "Ljava/util/List<",
             "+",
             "Ljava/lang/Object;",

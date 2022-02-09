@@ -18,14 +18,13 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;",
         "Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;
 
 .field public static final E_FIELD_NUMBER:I = 0x4
 
@@ -33,7 +32,7 @@
 
 .field public static final PARAMS_FIELD_NUMBER:I = 0x2
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -47,13 +46,13 @@
 
 
 # instance fields
-.field public e_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+.field private e_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-.field public n_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+.field private n_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-.field public params_:Lcom/google/crypto/tink/proto/RsaSsaPssParams;
+.field private params_:Lcom/google/crypto/tink/proto/RsaSsaPssParams;
 
-.field public version_:I
+.field private version_:I
 
 
 # direct methods
@@ -73,7 +72,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -238,7 +237,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;->params_:Lcom/google/crypto/tink/proto/RsaSsaPssParams;
 
@@ -694,7 +693,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;->e_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -712,7 +711,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;->n_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -730,7 +729,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;->params_:Lcom/google/crypto/tink/proto/RsaSsaPssParams;
 
@@ -848,7 +847,7 @@
 
     const/4 p3, 0x0
 
-    const-string v0, "version_"
+    const-string/jumbo v0, "version_"
 
     aput-object v0, p1, p3
 
@@ -891,8 +890,6 @@
     invoke-direct {p1}, Lcom/google/crypto/tink/proto/RsaSsaPssPublicKey;-><init>()V
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

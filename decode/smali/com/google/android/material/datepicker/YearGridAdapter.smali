@@ -99,7 +99,7 @@
 
     move-result-object p2
 
-    const v1, 0x7f1201c4
+    sget v1, Lcom/google/android/material/R$string;->mtrl_picker_navigate_to_year_description:I
 
     invoke-virtual {p2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -238,7 +238,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f0c00c4
+    sget v0, Lcom/google/android/material/R$layout;->mtrl_calendar_year:I
 
     const/4 v1, 0x0
 

@@ -74,7 +74,7 @@
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "view must have a tag"
+    const-string/jumbo p2, "view must have a tag"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -124,7 +124,7 @@
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "view must have a tag"
+    const-string/jumbo p2, "view must have a tag"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

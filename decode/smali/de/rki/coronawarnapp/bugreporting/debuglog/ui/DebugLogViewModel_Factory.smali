@@ -4,6 +4,16 @@
 
 
 # instance fields
+.field public final bugReportingSettingsProvider:Ljavax/inject/Provider;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/bugreporting/BugReportingSettings;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final debugLoggerProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -34,21 +44,11 @@
     .end annotation
 .end field
 
-.field public final fileSharingProvider:Ljavax/inject/Provider;
+.field public final logSnapshotterProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/sharing/FileSharing;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public final timeStamperProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
+            "Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter;",
             ">;"
         }
     .end annotation
@@ -58,6 +58,23 @@
 # direct methods
 .method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "debugLoggerProvider",
+            "dispatcherProvider",
+            "enfClientProvider",
+            "bugReportingSettingsProvider",
+            "logSnapshotterProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,13 +85,13 @@
             "Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;",
             ">;",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/TimeStamper;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/util/sharing/FileSharing;",
-            ">;",
-            "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/nearby/ENFClient;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/bugreporting/BugReportingSettings;",
+            ">;",
+            "Ljavax/inject/Provider<",
+            "Lde/rki/coronawarnapp/bugreporting/debuglog/internal/LogSnapshotter;",
             ">;)V"
         }
     .end annotation
@@ -85,11 +102,11 @@
 
     iput-object p2, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->dispatcherProvider:Ljavax/inject/Provider;
 
-    iput-object p3, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->timeStamperProvider:Ljavax/inject/Provider;
+    iput-object p3, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->enfClientProvider:Ljavax/inject/Provider;
 
-    iput-object p4, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->fileSharingProvider:Ljavax/inject/Provider;
+    iput-object p4, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->bugReportingSettingsProvider:Ljavax/inject/Provider;
 
-    iput-object p5, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->enfClientProvider:Ljavax/inject/Provider;
+    iput-object p5, p0, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogViewModel_Factory;->logSnapshotterProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

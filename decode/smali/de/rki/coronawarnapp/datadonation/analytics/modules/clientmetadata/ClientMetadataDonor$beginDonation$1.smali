@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.datadonation.analytics.modules.clientmetadata.ClientMetadataDonor"
     f = "ClientMetadataDonor.kt"
     l = {
-        0x15,
-        0x1e
+        0x14,
+        0x1d
     }
     m = "beginDonation"
 .end annotation
@@ -37,6 +37,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor;
 

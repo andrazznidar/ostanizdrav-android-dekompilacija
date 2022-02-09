@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAnalyticsExposureWindowCollector.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnalyticsExposureWindowCollector.kt\nde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector\n+ 2 TimeMeasurement.kt\nde/rki/coronawarnapp/util/debug/TimeMeasurementKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,52:1\n10#2,3:53\n14#2,2:58\n181#3,2:56\n*E\n*S KotlinDebug\n*F\n+ 1 AnalyticsExposureWindowCollector.kt\nde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector\n*L\n22#1,3:53\n22#1,2:58\n23#1,2:56\n*E\n"
+    value = "SMAP\nAnalyticsExposureWindowCollector.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnalyticsExposureWindowCollector.kt\nde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector\n+ 2 TimeMeasurement.kt\nde/rki/coronawarnapp/util/debug/TimeMeasurementKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,52:1\n10#2,3:53\n14#2,2:58\n211#3,2:56\n*S KotlinDebug\n*F\n+ 1 AnalyticsExposureWindowCollector.kt\nde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector\n*L\n22#1:53,3\n22#1:58,2\n23#1:56,2\n*E\n"
 .end annotation
 
 
@@ -110,7 +110,7 @@
     check-cast v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;
 
     :try_start_0
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -126,7 +126,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -169,7 +169,7 @@
 
     check-cast p2, Lde/rki/coronawarnapp/risk/result/RiskResult;
 
-    invoke-static {v8, p2}, Lcom/google/zxing/client/android/R$id;->access$createAnalyticsExposureWindow(Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;Lde/rki/coronawarnapp/risk/result/RiskResult;)Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;
+    invoke-static {v8, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollectorKt;->access$createAnalyticsExposureWindow(Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;Lde/rki/coronawarnapp/risk/result/RiskResult;)Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;
 
     move-result-object p2
 
@@ -186,39 +186,31 @@
     invoke-virtual {v8, p2, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowRepository;->addNew(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     if-ne p2, v1, :cond_3
 
     return-object v1
 
     :cond_4
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide p1
+    move-result-wide v0
 
-    sub-long/2addr p1, v6
+    sub-long/2addr v0, v6
 
-    new-instance v0, Ljava/lang/Long;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-direct {v0, p1, p2}, Ljava/lang/Long;-><init>(J)V
+    invoke-static {v4, v0, v1}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+    move-result-object v0
 
-    move-result-wide p1
+    new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;J)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-array p2, v3, [Ljava/lang/Object;
-
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v0, p1, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    invoke-virtual {p2, v0, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object p1
 
@@ -231,129 +223,15 @@
 
     sub-long/2addr v0, v6
 
-    new-instance p2, Ljava/lang/Long;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-direct {p2, v0, v1}, Ljava/lang/Long;-><init>(J)V
+    invoke-static {v4, v0, v1}, Landroidx/viewpager2/adapter/FragmentStateAdapter$$ExternalSyntheticOutline0;->m(Ljava/lang/String;J)Ljava/lang/String;
 
-    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+    move-result-object v0
 
-    move-result-wide v0
+    new-array v1, v3, [Ljava/lang/Object;
 
-    invoke-static {v4, v0, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline13(Ljava/lang/String;J)Ljava/lang/String;
-
-    move-result-object p2
-
-    new-array v0, v3, [Ljava/lang/Object;
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v1, p2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, v0, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     throw p1
-.end method
-
-.method public final reportRiskResultsPerWindow(Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map<",
-            "Lcom/google/android/gms/nearby/exposurenotification/ExposureWindow;",
-            "Lde/rki/coronawarnapp/risk/result/RiskResult;",
-            ">;",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Lkotlin/Unit;",
-            ">;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
-
-    instance-of v0, p2, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;
-
-    iget v1, v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;->label:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;->label:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;
-
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;-><init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p2, v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;->result:Ljava/lang/Object;
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v2, v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;->label:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    iget-object p2, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;->analyticsSettings:Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;
-
-    iget-object p2, p2, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings;->analyticsEnabled:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
-
-    invoke-virtual {p2}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;->getInternalValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_3
-
-    iput v3, v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector$reportRiskResultsPerWindow$1;->label:I
-
-    invoke-virtual {p0, p1, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowCollector;->collectAnalyticsData(Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_3
-
-    return-object v1
-
-    :cond_3
-    :goto_1
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p1
 .end method

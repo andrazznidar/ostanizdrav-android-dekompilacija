@@ -62,10 +62,15 @@
     return p1
 .end method
 
-.method public abstract zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+.method public zza(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
+
+    const p0, 0x0
+
+    throw p0
 .end method

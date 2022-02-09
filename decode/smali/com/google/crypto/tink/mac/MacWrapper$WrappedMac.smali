@@ -119,7 +119,7 @@
 
     aput-object p1, v3, v1
 
-    invoke-static {v3}, Lcom/google/android/material/R$style;->concat([[B)[B
+    invoke-static {v3}, Lcom/google/crypto/tink/subtle/Bytes;->concat([[B)[B
 
     move-result-object p1
 
@@ -129,7 +129,7 @@
 
     aput-object p1, v0, v1
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->concat([[B)[B
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/Bytes;->concat([[B)[B
 
     move-result-object p1
 
@@ -162,7 +162,7 @@
 
     aput-object p1, v0, v1
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->concat([[B)[B
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/Bytes;->concat([[B)[B
 
     move-result-object p1
 
@@ -256,7 +256,7 @@
 
     aput-object v5, v3, v4
 
-    invoke-static {v3}, Lcom/google/android/material/R$style;->concat([[B)[B
+    invoke-static {v3}, Lcom/google/crypto/tink/subtle/Bytes;->concat([[B)[B
 
     move-result-object v3
 
@@ -288,7 +288,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "tag prefix matches a key, but cannot verify: "
+    const-string/jumbo v5, "tag prefix matches a key, but cannot verify: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -349,7 +349,7 @@
     :cond_3
     new-instance p1, Ljava/security/GeneralSecurityException;
 
-    const-string p2, "tag too short"
+    const-string/jumbo p2, "tag too short"
 
     invoke-direct {p1, p2}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 

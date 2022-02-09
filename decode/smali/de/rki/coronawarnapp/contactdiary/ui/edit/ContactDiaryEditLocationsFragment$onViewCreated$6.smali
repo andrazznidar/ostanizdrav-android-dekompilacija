@@ -90,7 +90,7 @@
 
     invoke-direct {v2, p1, v1}, Lde/rki/coronawarnapp/contactdiary/ui/edit/ContactDiaryEditLocationsFragmentDirections$ActionContactDiaryEditLocationsFragmentToContactDiaryAddLocationFragment;-><init>(Lde/rki/coronawarnapp/contactdiary/storage/entity/ContactDiaryLocationEntity;Ljava/lang/String;)V
 
-    invoke-static {v0, v2}, Lcom/google/zxing/client/android/R$id;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
+    invoke-static {v0, v2}, Lde/rki/coronawarnapp/util/ui/FragmentExtensionsKt;->doNavigate(Landroidx/fragment/app/Fragment;Landroidx/navigation/NavDirections;)V
 
     :cond_1
     :goto_0

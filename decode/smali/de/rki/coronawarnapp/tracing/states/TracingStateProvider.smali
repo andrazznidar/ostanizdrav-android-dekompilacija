@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTracingStateProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingStateProvider.kt\nde/rki/coronawarnapp/tracing/states/TracingStateProvider\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,108:1\n93#2,7:109\n109#2:119\n237#3:116\n239#3:118\n106#4:117\n*E\n*S KotlinDebug\n*F\n+ 1 TracingStateProvider.kt\nde/rki/coronawarnapp/tracing/states/TracingStateProvider\n*L\n31#1,7:109\n31#1:119\n31#1:116\n31#1:118\n31#1:117\n*E\n"
+    value = "SMAP\nTracingStateProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingStateProvider.kt\nde/rki/coronawarnapp/tracing/states/TracingStateProvider\n+ 2 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 3 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,105:1\n87#2,5:106\n86#2:111\n100#2:115\n237#3:112\n239#3:114\n106#4:113\n*S KotlinDebug\n*F\n+ 1 TracingStateProvider.kt\nde/rki/coronawarnapp/tracing/states/TracingStateProvider\n*L\n31#1:106,5\n31#1:111\n31#1:115\n31#1:112\n31#1:114\n31#1:113\n*E\n"
 .end annotation
 
 
@@ -30,10 +30,10 @@
 
 
 # direct methods
-.method public constructor <init>(ZLde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/storage/TracingRepository;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;)V
-    .locals 4
+.method public constructor <init>(ZLde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Lde/rki/coronawarnapp/storage/TracingRepository;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;Lde/rki/coronawarnapp/installTime/InstallTimeProvider;)V
+    .locals 3
 
-    const-string v0, "tracingStatus"
+    const-string/jumbo v0, "tracingStatus"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -41,7 +41,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "tracingRepository"
+    const-string/jumbo v0, "tracingRepository"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -52,6 +52,10 @@
     const-string v0, "exposureDetectionTracker"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "installTimeProvider"
+
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -75,11 +79,11 @@
 
     invoke-direct {p2, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$2;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    new-instance v2, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
+    new-instance p4, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
 
-    invoke-direct {v2, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {p4, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
-    invoke-interface {p5}, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;->getLatestAndLastSuccessful()Lkotlinx/coroutines/flow/Flow;
+    invoke-interface {p5}, Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;->getLatestAndLastSuccessfulCombinedEwPtRiskLevelResult()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
@@ -90,20 +94,6 @@
     new-instance p5, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
 
     invoke-direct {p5, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
-
-    iget-object p1, p4, Lde/rki/coronawarnapp/storage/TracingRepository;->activeTracingDaysInRetentionPeriod:Lkotlinx/coroutines/flow/Flow;
-
-    new-instance p2, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$4;
-
-    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$4;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    new-instance p4, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
-
-    invoke-direct {p4, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
-
-    const-string p1, "$this$latestSubmission"
-
-    invoke-static {p6, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p6}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTracker;->getCalculations()Lkotlinx/coroutines/flow/Flow;
 
@@ -119,25 +109,25 @@
 
     invoke-direct {p1, p2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/ExposureDetectionTrackerExtensionsKt$latestSubmission$$inlined$map$2;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    new-instance p2, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$5;
+    new-instance p2, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$4;
 
-    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$5;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$4;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    new-instance v3, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
+    new-instance v2, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
 
-    invoke-direct {v3, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {v2, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
     iget-object p1, p3, Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;->isAutoModeEnabled:Lkotlinx/coroutines/flow/Flow;
 
-    new-instance p2, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$6;
+    new-instance p2, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$5;
 
-    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$6;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p2, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$5;-><init>(Lkotlin/coroutines/Continuation;)V
 
     new-instance p3, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
 
     invoke-direct {p3, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
-    const/4 p1, 0x6
+    const/4 p1, 0x5
 
     new-array p1, p1, [Lkotlinx/coroutines/flow/Flow;
 
@@ -145,7 +135,7 @@
 
     aput-object v1, p1, p2
 
-    aput-object v2, p1, p6
+    aput-object p4, p1, p6
 
     const/4 p2, 0x2
 
@@ -153,39 +143,35 @@
 
     const/4 p2, 0x3
 
-    aput-object p4, p1, p2
+    aput-object v2, p1, p2
 
     const/4 p2, 0x4
 
-    aput-object v3, p1, p2
-
-    const/4 p2, 0x5
-
     aput-object p3, p1, p2
 
-    new-instance p2, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$$special$$inlined$combine$1;
+    new-instance p2, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$special$$inlined$combine$1;
 
-    invoke-direct {p2, p1, p0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/tracing/states/TracingStateProvider;)V
+    invoke-direct {p2, p1, p0, p7}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/tracing/states/TracingStateProvider;Lde/rki/coronawarnapp/installTime/InstallTimeProvider;)V
+
+    new-instance p1, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$7;
+
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$7;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    new-instance p3, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;
+
+    invoke-direct {p3, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlin/jvm/functions/Function2;Lkotlinx/coroutines/flow/Flow;)V
 
     new-instance p1, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$8;
 
     invoke-direct {p1, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$8;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    new-instance p3, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;
-
-    invoke-direct {p3, p2, p1}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
-
-    new-instance p1, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;
-
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;-><init>(Lkotlin/coroutines/Continuation;)V
-
     new-instance p2, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;
 
     invoke-direct {p2, p3, p1}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
-    new-instance p1, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$10;
+    new-instance p1, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$10;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/tracing/states/TracingStateProvider$state$9;-><init>(Lkotlin/coroutines/Continuation;)V
 
     new-instance p3, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1;
 

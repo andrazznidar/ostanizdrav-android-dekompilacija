@@ -51,7 +51,7 @@
 
     check-cast p3, Ljava/util/List;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$null"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -59,7 +59,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 1>"
+    const-string v0, "$noName_1"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -67,37 +67,29 @@
 
     iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const-string v0, "itemView"
+    sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-virtual {p3, v1}, Landroid/view/View;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+    invoke-virtual {p3, v0}, Landroid/view/View;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
     iget-object p3, p0, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard;
 
-    iget-object p3, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v0, p3, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v1, p2, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$Item;->state:Lde/rki/coronawarnapp/tracing/states/TracingInProgress;
 
-    iget-object v0, p2, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$Item;->state:Lde/rki/coronawarnapp/tracing/states/TracingInProgress;
+    invoke-virtual {p3}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$onBindData$1;->this$0:Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard;
+    move-result-object p3
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;->getContext()Landroid/content/Context;
+    invoke-virtual {v1, p3}, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->getContainerColor(Landroid/content/Context;)I
 
-    move-result-object v1
+    move-result p3
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->getContainerColor(Landroid/content/Context;)I
+    invoke-static {p3}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
-    move-result v0
+    move-result-object p3
 
-    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    invoke-virtual {p3, v0}, Landroid/view/View;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
+    invoke-virtual {v0, p3}, Landroid/view/View;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object p3, p2, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$Item;->state:Lde/rki/coronawarnapp/tracing/states/TracingInProgress;
 
@@ -107,9 +99,9 @@
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    new-instance p3, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$onBindData$1$1;
+    new-instance p3, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {p3, p2}, Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$onBindData$1$1;-><init>(Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$Item;)V
+    invoke-direct {p3, p2}, Lde/rki/coronawarnapp/ui/settings/SettingsResetFragment$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/tracing/ui/homecards/TracingProgressCard$Item;)V
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

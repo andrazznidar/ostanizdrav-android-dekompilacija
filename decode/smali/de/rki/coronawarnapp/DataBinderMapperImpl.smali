@@ -13,1069 +13,811 @@
 
     new-instance v0, Landroid/util/SparseIntArray;
 
-    const/16 v1, 0x85
+    const/16 v1, 0x86
 
     invoke-direct {v0, v1}, Landroid/util/SparseIntArray;-><init>(I)V
 
     sput-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
-    const v2, 0x7f0c0024
+    const v2, 0x7f0d002d
 
     const/4 v3, 0x1
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0027
+    const v2, 0x7f0d002f
 
     const/4 v3, 0x2
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0028
+    const v2, 0x7f0d0030
 
     const/4 v3, 0x3
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0029
+    const v2, 0x7f0d0031
 
     const/4 v3, 0x4
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c002a
+    const v2, 0x7f0d0032
 
     const/4 v3, 0x5
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c002c
+    const v2, 0x7f0d0034
 
     const/4 v3, 0x6
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c002d
+    const v2, 0x7f0d0035
 
     const/4 v3, 0x7
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0033
+    const v2, 0x7f0d0041
 
     const/16 v3, 0x8
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0035
+    const v2, 0x7f0d0043
 
     const/16 v3, 0x9
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0049
+    const v2, 0x7f0d006f
 
     const/16 v3, 0xa
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c004a
+    const v2, 0x7f0d0070
 
     const/16 v3, 0xb
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c004b
+    const v2, 0x7f0d0071
 
     const/16 v3, 0xc
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c004c
+    const v2, 0x7f0d0072
 
     const/16 v3, 0xd
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c004d
+    const v2, 0x7f0d0073
 
     const/16 v3, 0xe
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c004e
+    const v2, 0x7f0d0074
 
     const/16 v3, 0xf
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c004f
+    const v2, 0x7f0d0075
 
     const/16 v3, 0x10
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0050
+    const v2, 0x7f0d0076
 
     const/16 v3, 0x11
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0051
+    const v2, 0x7f0d0077
 
     const/16 v3, 0x12
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0052
+    const v2, 0x7f0d0078
 
     const/16 v3, 0x13
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0053
+    const v2, 0x7f0d0079
 
     const/16 v3, 0x14
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0054
+    const v2, 0x7f0d007a
 
     const/16 v3, 0x15
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0055
+    const v2, 0x7f0d007b
 
     const/16 v3, 0x16
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0056
+    const v2, 0x7f0d007c
 
     const/16 v3, 0x17
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0057
+    const v2, 0x7f0d007d
 
     const/16 v3, 0x18
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0058
+    const v2, 0x7f0d007e
 
     const/16 v3, 0x19
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0059
+    const v2, 0x7f0d007f
 
     const/16 v3, 0x1a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c005a
+    const v2, 0x7f0d0080
 
     const/16 v3, 0x1b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c005b
+    const v2, 0x7f0d0081
 
     const/16 v3, 0x1c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c005c
+    const v2, 0x7f0d0087
 
     const/16 v3, 0x1d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c005d
+    const v2, 0x7f0d0088
 
     const/16 v3, 0x1e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c005e
+    const v2, 0x7f0d008a
 
     const/16 v3, 0x1f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c005f
+    const v2, 0x7f0d008b
 
     const/16 v3, 0x20
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0060
+    const v2, 0x7f0d008c
 
     const/16 v3, 0x21
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0061
+    const v2, 0x7f0d008d
 
     const/16 v3, 0x22
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0062
+    const v2, 0x7f0d008f
 
     const/16 v3, 0x23
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0063
+    const v2, 0x7f0d0090
 
     const/16 v3, 0x24
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0064
+    const v2, 0x7f0d0091
 
     const/16 v3, 0x25
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0065
+    const v2, 0x7f0d0093
 
     const/16 v3, 0x26
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0066
+    const v2, 0x7f0d0094
 
     const/16 v3, 0x27
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0067
+    const v2, 0x7f0d0095
 
     const/16 v3, 0x28
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0068
+    const v2, 0x7f0d0096
 
     const/16 v3, 0x29
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0069
+    const v2, 0x7f0d0097
 
     const/16 v3, 0x2a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c006a
+    const v2, 0x7f0d0098
 
     const/16 v3, 0x2b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c006b
+    const v2, 0x7f0d0099
 
     const/16 v3, 0x2c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c006c
+    const v2, 0x7f0d009a
 
     const/16 v3, 0x2d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c006d
+    const v2, 0x7f0d009b
 
     const/16 v3, 0x2e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c006e
+    const v2, 0x7f0d009c
 
     const/16 v3, 0x2f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c006f
+    const v2, 0x7f0d009d
 
     const/16 v3, 0x30
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0070
+    const v2, 0x7f0d009e
 
     const/16 v3, 0x31
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0071
+    const v2, 0x7f0d009f
 
     const/16 v3, 0x32
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0072
+    const v2, 0x7f0d00a0
 
     const/16 v3, 0x33
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0073
+    const v2, 0x7f0d00a1
 
     const/16 v3, 0x34
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0074
+    const v2, 0x7f0d00a3
 
     const/16 v3, 0x35
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0077
+    const v2, 0x7f0d00a9
 
     const/16 v3, 0x36
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0078
+    const v2, 0x7f0d00aa
 
     const/16 v3, 0x37
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0079
+    const v2, 0x7f0d00ab
 
     const/16 v3, 0x38
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c007b
+    const v2, 0x7f0d00ad
 
     const/16 v3, 0x39
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c007c
+    const v2, 0x7f0d00b0
 
     const/16 v3, 0x3a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c007d
+    const v2, 0x7f0d00b1
 
     const/16 v3, 0x3b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c007e
+    const v2, 0x7f0d00b2
 
     const/16 v3, 0x3c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0080
+    const v2, 0x7f0d00b4
 
     const/16 v3, 0x3d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0081
+    const v2, 0x7f0d00b5
 
     const/16 v3, 0x3e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0082
+    const v2, 0x7f0d00b6
 
     const/16 v3, 0x3f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0083
+    const v2, 0x7f0d00b7
 
     const/16 v3, 0x40
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0084
+    const v2, 0x7f0d00b8
 
     const/16 v3, 0x41
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0085
+    const v2, 0x7f0d00c9
 
     const/16 v3, 0x42
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0086
+    const v2, 0x7f0d00ca
 
     const/16 v3, 0x43
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0087
+    const v2, 0x7f0d00cb
 
     const/16 v3, 0x44
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0088
+    const v2, 0x7f0d00cd
 
     const/16 v3, 0x45
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c008a
+    const v2, 0x7f0d00ce
 
     const/16 v3, 0x46
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c008b
+    const v2, 0x7f0d00cf
 
     const/16 v3, 0x47
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c008c
+    const v2, 0x7f0d00d1
 
     const/16 v3, 0x48
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c008d
+    const v2, 0x7f0d00d2
 
     const/16 v3, 0x49
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c008e
+    const v2, 0x7f0d00d4
 
     const/16 v3, 0x4a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c008f
+    const v2, 0x7f0d00d5
 
     const/16 v3, 0x4b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0090
+    const v2, 0x7f0d00d6
 
     const/16 v3, 0x4c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0091
+    const v2, 0x7f0d00d8
 
     const/16 v3, 0x4d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0092
+    const v2, 0x7f0d00d9
 
     const/16 v3, 0x4e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0093
+    const v2, 0x7f0d00da
 
     const/16 v3, 0x4f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0094
+    const v2, 0x7f0d00db
 
     const/16 v3, 0x50
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0095
+    const v2, 0x7f0d00dc
 
     const/16 v3, 0x51
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0096
+    const v2, 0x7f0d00dd
 
     const/16 v3, 0x52
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0097
+    const v2, 0x7f0d00de
 
     const/16 v3, 0x53
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0098
+    const v2, 0x7f0d00df
 
     const/16 v3, 0x54
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0099
+    const v2, 0x7f0d00e0
 
     const/16 v3, 0x55
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c009a
+    const v2, 0x7f0d00e1
 
     const/16 v3, 0x56
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c009b
+    const v2, 0x7f0d00e2
 
     const/16 v3, 0x57
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c009c
+    const v2, 0x7f0d00e3
 
     const/16 v3, 0x58
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c009d
+    const v2, 0x7f0d00e4
 
     const/16 v3, 0x59
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c009e
+    const v2, 0x7f0d00e5
 
     const/16 v3, 0x5a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c009f
+    const v2, 0x7f0d00e6
 
     const/16 v3, 0x5b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a0
+    const v2, 0x7f0d00e7
 
     const/16 v3, 0x5c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a2
+    const v2, 0x7f0d00e9
 
     const/16 v3, 0x5d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a3
+    const v2, 0x7f0d00ea
 
     const/16 v3, 0x5e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a4
+    const v2, 0x7f0d00eb
 
     const/16 v3, 0x5f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a5
+    const v2, 0x7f0d00ec
 
     const/16 v3, 0x60
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a6
+    const v2, 0x7f0d00ed
 
     const/16 v3, 0x61
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a7
+    const v2, 0x7f0d00ee
 
     const/16 v3, 0x62
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a8
+    const v2, 0x7f0d00ef
 
     const/16 v3, 0x63
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00a9
+    const v2, 0x7f0d00f0
 
     const/16 v3, 0x64
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00aa
+    const v2, 0x7f0d00f1
 
     const/16 v3, 0x65
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00ab
+    const v2, 0x7f0d00f2
 
     const/16 v3, 0x66
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00ac
+    const v2, 0x7f0d00f3
 
     const/16 v3, 0x67
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00ad
+    const v2, 0x7f0d00f4
 
     const/16 v3, 0x68
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00ae
+    const v2, 0x7f0d00f5
 
     const/16 v3, 0x69
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00af
+    const v2, 0x7f0d00f6
 
     const/16 v3, 0x6a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00b0
+    const v2, 0x7f0d00f7
 
     const/16 v3, 0x6b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00b1
+    const v2, 0x7f0d00f8
 
     const/16 v3, 0x6c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00b2
+    const v2, 0x7f0d00f9
 
     const/16 v3, 0x6d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00b3
+    const v2, 0x7f0d0109
 
     const/16 v3, 0x6e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00b4
+    const v2, 0x7f0d010a
 
     const/16 v3, 0x6f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00d1
+    const v2, 0x7f0d0128
 
     const/16 v3, 0x70
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00d2
+    const v2, 0x7f0d0129
 
     const/16 v3, 0x71
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00fa
+    const v2, 0x7f0d015c
 
     const/16 v3, 0x72
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c00fb
+    const v2, 0x7f0d015d
 
     const/16 v3, 0x73
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c010c
+    const v2, 0x7f0d0189
 
     const/16 v3, 0x74
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c010d
+    const v2, 0x7f0d018a
 
     const/16 v3, 0x75
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c010e
+    const v2, 0x7f0d018b
 
     const/16 v3, 0x76
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c010f
+    const v2, 0x7f0d018c
 
     const/16 v3, 0x77
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0110
+    const v2, 0x7f0d018d
 
     const/16 v3, 0x78
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0111
+    const v2, 0x7f0d018e
 
     const/16 v3, 0x79
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0112
+    const v2, 0x7f0d018f
 
     const/16 v3, 0x7a
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0113
+    const v2, 0x7f0d0190
 
     const/16 v3, 0x7b
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0114
+    const v2, 0x7f0d0191
 
     const/16 v3, 0x7c
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0115
+    const v2, 0x7f0d0192
 
     const/16 v3, 0x7d
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0119
+    const v2, 0x7f0d0193
 
     const/16 v3, 0x7e
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c011a
+    const v2, 0x7f0d0197
 
     const/16 v3, 0x7f
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c011b
+    const v2, 0x7f0d0198
 
     const/16 v3, 0x80
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c011c
+    const v2, 0x7f0d0199
 
     const/16 v3, 0x81
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c011e
+    const v2, 0x7f0d019a
 
     const/16 v3, 0x82
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0127
+    const v2, 0x7f0d01a1
 
     const/16 v3, 0x83
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
-
-    const v2, 0x7f0c0128
+    const v2, 0x7f0d01ac
 
     const/16 v3, 0x84
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
+    const v2, 0x7f0d01ad
 
-    const v2, 0x7f0c0129
+    const/16 v3, 0x85
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v2, 0x7f0d01ae
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -1120,6 +862,18 @@
 
 .method public getDataBinder(Landroidx/databinding/DataBindingComponent;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "component",
+            "view",
+            "layoutId"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/DataBinderMapperImpl;->INTERNAL_LAYOUT_ID_LOOKUP:Landroid/util/SparseIntArray;
 
@@ -1185,7 +939,7 @@
 
     const-string p2, "The tag for include_submission_done is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1213,7 +967,7 @@
 
     const-string p2, "The tag for include_submission_country_selector is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1241,7 +995,7 @@
 
     const-string p2, "The tag for include_submission_country_no_selection is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1269,7 +1023,7 @@
 
     const-string p2, "The tag for include_submission_country_item is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1297,7 +1051,7 @@
 
     const-string p2, "The tag for include_submission_contact is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1325,7 +1079,7 @@
 
     const-string p2, "The tag for include_submission_consent_intro is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1353,7 +1107,7 @@
 
     const-string p2, "The tag for include_submission_consent_body is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1381,7 +1135,7 @@
 
     const-string p2, "The tag for include_submission_behaviour_row is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1390,7 +1144,7 @@
     throw p1
 
     :pswitch_8
-    const-string p3, "layout/include_settings_switch_row_0"
+    const-string p3, "layout/include_settings_plain_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1398,18 +1152,18 @@
 
     if-eqz p3, :cond_a
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsSwitchRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_settings_switch_row is invalid. Received: "
+    const-string p2, "The tag for include_settings_plain_row is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1418,7 +1172,7 @@
     throw p1
 
     :pswitch_9
-    const-string p3, "layout/include_settings_plain_row_0"
+    const-string p3, "layout/include_setting_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1426,18 +1180,18 @@
 
     if-eqz p3, :cond_b
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingsPlainRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_settings_plain_row is invalid. Received: "
+    const-string p2, "The tag for include_setting_row is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1446,7 +1200,7 @@
     throw p1
 
     :pswitch_a
-    const-string p3, "layout/include_setting_row_0"
+    const-string p3, "layout/include_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1454,18 +1208,18 @@
 
     if-eqz p3, :cond_c
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSettingRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_setting_row is invalid. Received: "
+    const-string p2, "The tag for include_row is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1474,7 +1228,7 @@
     throw p1
 
     :pswitch_b
-    const-string p3, "layout/include_row_0"
+    const-string p3, "layout/include_privacy_card_no_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1482,18 +1236,18 @@
 
     if-eqz p3, :cond_d
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_row is invalid. Received: "
+    const-string p2, "The tag for include_privacy_card_no_consent is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1502,7 +1256,7 @@
     throw p1
 
     :pswitch_c
-    const-string p3, "layout/include_privacy_card_no_consent_0"
+    const-string p3, "layout/include_privacy_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1510,18 +1264,18 @@
 
     if-eqz p3, :cond_e
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_privacy_card_no_consent is invalid. Received: "
+    const-string p2, "The tag for include_privacy_card is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1530,7 +1284,7 @@
     throw p1
 
     :pswitch_d
-    const-string p3, "layout/include_privacy_card_0"
+    const-string p3, "layout/include_onboarding_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1538,18 +1292,18 @@
 
     if-eqz p3, :cond_f
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_privacy_card is invalid. Received: "
+    const-string p2, "The tag for include_onboarding is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1558,7 +1312,7 @@
     throw p1
 
     :pswitch_e
-    const-string p3, "layout/include_onboarding_0"
+    const-string p3, "layout/include_navigation_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1566,18 +1320,18 @@
 
     if-eqz p3, :cond_10
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeOnboardingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_10
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_onboarding is invalid. Received: "
+    const-string p2, "The tag for include_navigation_row is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1586,7 +1340,7 @@
     throw p1
 
     :pswitch_f
-    const-string p3, "layout/include_navigation_row_0"
+    const-string p3, "layout/include_main_overview_segment_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1594,18 +1348,18 @@
 
     if-eqz p3, :cond_11
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeNavigationRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_11
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_navigation_row is invalid. Received: "
+    const-string p2, "The tag for include_main_overview_segment is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1614,7 +1368,7 @@
     throw p1
 
     :pswitch_10
-    const-string p3, "layout/include_main_overview_segment_0"
+    const-string p3, "layout/include_main_overview_row_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1622,18 +1376,18 @@
 
     if-eqz p3, :cond_12
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewSegmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_12
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_main_overview_segment is invalid. Received: "
+    const-string p2, "The tag for include_main_overview_row is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1642,7 +1396,7 @@
     throw p1
 
     :pswitch_11
-    const-string p3, "layout/include_main_overview_row_0"
+    const-string p3, "layout/include_main_overview_glossary_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1650,18 +1404,18 @@
 
     if-eqz p3, :cond_13
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewRowBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_13
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_main_overview_row is invalid. Received: "
+    const-string p2, "The tag for include_main_overview_glossary is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1670,7 +1424,7 @@
     throw p1
 
     :pswitch_12
-    const-string p3, "layout/include_main_overview_glossary_0"
+    const-string p3, "layout/include_interoperability_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1678,18 +1432,18 @@
 
     if-eqz p3, :cond_14
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeMainOverviewGlossaryBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_14
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_main_overview_glossary is invalid. Received: "
+    const-string p2, "The tag for include_interoperability is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1698,7 +1452,7 @@
     throw p1
 
     :pswitch_13
-    const-string p3, "layout/include_interoperability_0"
+    const-string p3, "layout/include_interop_riskdetails_no_countries_infoview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1706,18 +1460,18 @@
 
     if-eqz p3, :cond_15
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteroperabilityBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_15
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_interoperability is invalid. Received: "
+    const-string p2, "The tag for include_interop_riskdetails_no_countries_infoview is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1726,7 +1480,7 @@
     throw p1
 
     :pswitch_14
-    const-string p3, "layout/include_interop_riskdetails_no_countries_infoview_0"
+    const-string p3, "layout/include_interop_no_countries_infoview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1734,18 +1488,18 @@
 
     if-eqz p3, :cond_16
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropRiskdetailsNoCountriesInfoviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_16
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_interop_riskdetails_no_countries_infoview is invalid. Received: "
+    const-string p2, "The tag for include_interop_no_countries_infoview is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1754,7 +1508,7 @@
     throw p1
 
     :pswitch_15
-    const-string p3, "layout/include_interop_no_countries_infoview_0"
+    const-string p3, "layout/include_interop_list_participating_countries_overview_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1762,18 +1516,18 @@
 
     if-eqz p3, :cond_17
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropNoCountriesInfoviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_17
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_interop_no_countries_infoview is invalid. Received: "
+    const-string p2, "The tag for include_interop_list_participating_countries_overview is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1782,7 +1536,7 @@
     throw p1
 
     :pswitch_16
-    const-string p3, "layout/include_interop_list_participating_countries_overview_0"
+    const-string p3, "layout/include_information_details_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1790,18 +1544,18 @@
 
     if-eqz p3, :cond_18
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInteropListParticipatingCountriesOverviewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_18
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_interop_list_participating_countries_overview is invalid. Received: "
+    const-string p2, "The tag for include_information_details is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1810,7 +1564,7 @@
     throw p1
 
     :pswitch_17
-    const-string p3, "layout/include_information_details_0"
+    const-string p3, "layout/include_header_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1818,18 +1572,18 @@
 
     if-eqz p3, :cond_19
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeInformationDetailsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_19
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_information_details is invalid. Received: "
+    const-string p2, "The tag for include_header is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1838,7 +1592,7 @@
     throw p1
 
     :pswitch_18
-    const-string p3, "layout/include_header_0"
+    const-string p3, "layout/include_divider_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1846,18 +1600,18 @@
 
     if-eqz p3, :cond_1a
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeHeaderBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_1a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_header is invalid. Received: "
+    const-string p2, "The tag for include_divider is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1866,7 +1620,7 @@
     throw p1
 
     :pswitch_19
-    const-string p3, "layout/include_divider_0"
+    const-string p3, "layout/include_dispatcher_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1874,18 +1628,18 @@
 
     if-eqz p3, :cond_1b
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDividerBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_1b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_divider is invalid. Received: "
+    const-string p2, "The tag for include_dispatcher_card is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1894,7 +1648,7 @@
     throw p1
 
     :pswitch_1a
-    const-string p3, "layout/include_dispatcher_card_0"
+    const-string p3, "layout/include_debuglog_privacy_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1902,18 +1656,18 @@
 
     if-eqz p3, :cond_1c
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDebuglogPrivacyCardBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDispatcherCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDebuglogPrivacyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_1c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_dispatcher_card is invalid. Received: "
+    const-string p2, "The tag for include_debuglog_privacy_card is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1922,7 +1676,7 @@
     throw p1
 
     :pswitch_1b
-    const-string p3, "layout/include_contact_form_0"
+    const-string p3, "layout/include_debugging_debuglog_share_privacy_card_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1930,18 +1684,18 @@
 
     if-eqz p3, :cond_1d
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeDebuggingDebuglogSharePrivacyCardBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeDebuggingDebuglogSharePrivacyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_1d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_contact_form is invalid. Received: "
+    const-string p2, "The tag for include_debugging_debuglog_share_privacy_card is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1950,7 +1704,7 @@
     throw p1
 
     :pswitch_1c
-    const-string p3, "layout/include_button_icon_0"
+    const-string p3, "layout/include_contact_form_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1958,18 +1712,18 @@
 
     if-eqz p3, :cond_1e
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeContactFormBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_1e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_button_icon is invalid. Received: "
+    const-string p2, "The tag for include_contact_form is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -1978,7 +1732,7 @@
     throw p1
 
     :pswitch_1d
-    const-string p3, "layout/include_bullet_point_0"
+    const-string p3, "layout/include_button_icon_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1986,18 +1740,18 @@
 
     if-eqz p3, :cond_1f
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_1f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_bullet_point is invalid. Received: "
+    const-string p2, "The tag for include_button_icon is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2006,7 +1760,7 @@
     throw p1
 
     :pswitch_1e
-    const-string p3, "layout/include_16_years_0"
+    const-string p3, "layout/include_bullet_point_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2014,18 +1768,18 @@
 
     if-eqz p3, :cond_20
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeBulletPointBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_20
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_16_years is invalid. Received: "
+    const-string p2, "The tag for include_bullet_point is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2034,7 +1788,7 @@
     throw p1
 
     :pswitch_1f
-    const-string p3, "layout/home_submission_status_card_unregistered_0"
+    const-string p3, "layout/include_16_years_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2042,18 +1796,18 @@
 
     if-eqz p3, :cond_21
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/Include16YearsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_21
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_unregistered is invalid. Received: "
+    const-string p2, "The tag for include_16_years is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2062,7 +1816,7 @@
     throw p1
 
     :pswitch_20
-    const-string p3, "layout/home_submission_status_card_ready_0"
+    const-string p3, "layout/home_submission_status_card_unregistered_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2070,18 +1824,18 @@
 
     if-eqz p3, :cond_22
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardReadyBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardReadyBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_22
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_ready is invalid. Received: "
+    const-string p2, "The tag for home_submission_status_card_unregistered is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2090,7 +1844,7 @@
     throw p1
 
     :pswitch_21
-    const-string p3, "layout/home_submission_status_card_positive_0"
+    const-string p3, "layout/home_submission_status_card_fetching_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2098,18 +1852,18 @@
 
     if-eqz p3, :cond_23
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardPositiveBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_23
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_positive is invalid. Received: "
+    const-string p2, "The tag for home_submission_status_card_fetching is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2118,7 +1872,7 @@
     throw p1
 
     :pswitch_22
-    const-string p3, "layout/home_submission_status_card_pending_0"
+    const-string p3, "layout/home_submission_status_card_done_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2126,18 +1880,18 @@
 
     if-eqz p3, :cond_24
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardPendingBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardPendingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_24
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_pending is invalid. Received: "
+    const-string p2, "The tag for home_submission_status_card_done is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2146,7 +1900,7 @@
     throw p1
 
     :pswitch_23
-    const-string p3, "layout/home_submission_status_card_negative_0"
+    const-string p3, "layout/home_statistics_cards_vaccinated_once_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2154,18 +1908,18 @@
 
     if-eqz p3, :cond_25
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardNegativeBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedOnceLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardNegativeBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedOnceLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_25
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_negative is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_vaccinated_once_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2174,7 +1928,7 @@
     throw p1
 
     :pswitch_24
-    const-string p3, "layout/home_submission_status_card_invalid_0"
+    const-string p3, "layout/home_statistics_cards_vaccinated_completely_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2182,18 +1936,18 @@
 
     if-eqz p3, :cond_26
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardInvalidBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedCompletelyLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardInvalidBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsVaccinatedCompletelyLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_26
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_invalid is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_vaccinated_completely_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2202,7 +1956,7 @@
     throw p1
 
     :pswitch_25
-    const-string p3, "layout/home_submission_status_card_fetching_0"
+    const-string p3, "layout/home_statistics_cards_sevendayrvalue_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2210,18 +1964,18 @@
 
     if-eqz p3, :cond_27
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardFetchingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_27
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_fetching is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_sevendayrvalue_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2230,7 +1984,7 @@
     throw p1
 
     :pswitch_26
-    const-string p3, "layout/home_submission_status_card_error_0"
+    const-string p3, "layout/home_statistics_cards_seven_day_hospitalization_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2238,18 +1992,18 @@
 
     if-eqz p3, :cond_28
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardErrorBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevenDayHospitalizationLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardErrorBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevenDayHospitalizationLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_28
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_error is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_seven_day_hospitalization_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2258,7 +2012,7 @@
     throw p1
 
     :pswitch_27
-    const-string p3, "layout/home_submission_status_card_done_0"
+    const-string p3, "layout/home_statistics_cards_occupied_intensive_care_beds_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2266,18 +2020,18 @@
 
     if-eqz p3, :cond_29
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsOccupiedIntensiveCareBedsBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsOccupiedIntensiveCareBedsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_29
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_submission_status_card_done is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_occupied_intensive_care_beds is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2286,7 +2040,7 @@
     throw p1
 
     :pswitch_28
-    const-string p3, "layout/home_statistics_cards_sevendayrvalue_layout_0"
+    const-string p3, "layout/home_statistics_cards_keysubmissions_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2294,18 +2048,18 @@
 
     if-eqz p3, :cond_2a
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsKeysubmissionsLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsSevendayrvalueLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsKeysubmissionsLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_2a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_statistics_cards_sevendayrvalue_layout is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_keysubmissions_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2314,7 +2068,7 @@
     throw p1
 
     :pswitch_29
-    const-string p3, "layout/home_statistics_cards_keysubmissions_layout_0"
+    const-string p3, "layout/home_statistics_cards_infections_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2322,18 +2076,18 @@
 
     if-eqz p3, :cond_2b
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsKeysubmissionsLayoutBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsKeysubmissionsLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_2b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_statistics_cards_keysubmissions_layout is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_infections_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2342,7 +2096,7 @@
     throw p1
 
     :pswitch_2a
-    const-string p3, "layout/home_statistics_cards_infections_layout_0"
+    const-string p3, "layout/home_statistics_cards_incidence_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2350,18 +2104,18 @@
 
     if-eqz p3, :cond_2c
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsInfectionsLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_2c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_statistics_cards_infections_layout is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_incidence_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2370,7 +2124,7 @@
     throw p1
 
     :pswitch_2b
-    const-string p3, "layout/home_statistics_cards_incidence_layout_0"
+    const-string p3, "layout/home_statistics_cards_applied_vaccination_rates_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2378,18 +2132,18 @@
 
     if-eqz p3, :cond_2d
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsAppliedVaccinationRatesLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsIncidenceLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeStatisticsCardsAppliedVaccinationRatesLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_2d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_statistics_cards_incidence_layout is invalid. Received: "
+    const-string p2, "The tag for home_statistics_cards_applied_vaccination_rates_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2398,7 +2152,7 @@
     throw p1
 
     :pswitch_2c
-    const-string p3, "layout/home_reenable_risk_card_layout_0"
+    const-string p3, "layout/home_incompatible_card_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2406,18 +2160,18 @@
 
     if-eqz p3, :cond_2e
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeReenableRiskCardLayoutBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/HomeIncompatibleCardLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeReenableRiskCardLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/HomeIncompatibleCardLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_0
 
     :cond_2e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for home_reenable_risk_card_layout is invalid. Received: "
+    const-string p2, "The tag for home_incompatible_card_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2445,7 +2199,7 @@
 
     const-string p2, "The tag for home_fragment_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2473,7 +2227,7 @@
 
     const-string p2, "The tag for home_faq_card_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2482,7 +2236,7 @@
     throw p1
 
     :pswitch_2f
-    const-string p3, "layout/fragment_submission_your_consent_0"
+    const-string p3, "layout/fragment_test_home_test_cards_layout_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2490,18 +2244,18 @@
 
     if-eqz p3, :cond_31
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentTestHomeTestCardsLayoutBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto :goto_0
 
     :cond_31
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_your_consent is invalid. Received: "
+    const-string p2, "The tag for fragment_test_home_test_cards_layout is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2510,7 +2264,7 @@
     throw p1
 
     :pswitch_30
-    const-string p3, "layout/fragment_submission_test_result_positive_no_consent_0"
+    const-string p3, "layout/fragment_submission_your_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2518,18 +2272,18 @@
 
     if-eqz p3, :cond_32
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionYourConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto :goto_0
 
     :cond_32
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result_positive_no_consent is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_your_consent is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2538,7 +2292,7 @@
     throw p1
 
     :pswitch_31
-    const-string p3, "layout/fragment_submission_test_result_pending_0"
+    const-string p3, "layout/fragment_submission_test_result_positive_no_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2546,18 +2300,18 @@
 
     if-eqz p3, :cond_33
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveNoConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto :goto_0
 
     :cond_33
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result_pending is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_test_result_positive_no_consent is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2574,7 +2328,7 @@
     goto/16 :goto_1
 
     :pswitch_32
-    const-string p3, "layout/fragment_submission_test_result_negative_0"
+    const-string p3, "layout/fragment_submission_test_result_positive_keys_shared_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2582,18 +2336,18 @@
 
     if-eqz p3, :cond_35
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPositiveKeysSharedBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_35
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result_negative is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_test_result_positive_keys_shared is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2602,7 +2356,7 @@
     throw p1
 
     :pswitch_33
-    const-string p3, "layout/fragment_submission_test_result_invalid_0"
+    const-string p3, "layout/fragment_submission_test_result_pending_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2610,18 +2364,18 @@
 
     if-eqz p3, :cond_36
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultPendingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_36
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result_invalid is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_test_result_pending is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2630,7 +2384,7 @@
     throw p1
 
     :pswitch_34
-    const-string p3, "layout/fragment_submission_test_result_consent_given_0"
+    const-string p3, "layout/fragment_submission_test_result_negative_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2638,18 +2392,18 @@
 
     if-eqz p3, :cond_37
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultNegativeBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_37
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result_consent_given is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_test_result_negative is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2658,7 +2412,7 @@
     throw p1
 
     :pswitch_35
-    const-string p3, "layout/fragment_submission_test_result_available_0"
+    const-string p3, "layout/fragment_submission_test_result_invalid_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2666,18 +2420,18 @@
 
     if-eqz p3, :cond_38
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultInvalidBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_38
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_test_result_available is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_test_result_invalid is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2686,7 +2440,7 @@
     throw p1
 
     :pswitch_36
-    const-string p3, "layout/fragment_submission_tan_0"
+    const-string p3, "layout/fragment_submission_test_result_consent_given_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2694,18 +2448,18 @@
 
     if-eqz p3, :cond_39
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultConsentGivenBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_39
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_tan is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_test_result_consent_given is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2714,7 +2468,7 @@
     throw p1
 
     :pswitch_37
-    const-string p3, "layout/fragment_submission_symptom_intro_0"
+    const-string p3, "layout/fragment_submission_test_result_available_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2722,18 +2476,18 @@
 
     if-eqz p3, :cond_3a
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTestResultAvailableBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_3a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_symptom_intro is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_test_result_available is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2742,7 +2496,7 @@
     throw p1
 
     :pswitch_38
-    const-string p3, "layout/fragment_submission_symptom_calendar_0"
+    const-string p3, "layout/fragment_submission_tan_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2750,18 +2504,18 @@
 
     if-eqz p3, :cond_3b
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomCalendarBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomCalendarBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_3b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_symptom_calendar is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_tan is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2770,7 +2524,7 @@
     throw p1
 
     :pswitch_39
-    const-string p3, "layout/fragment_submission_result_ready_0"
+    const-string p3, "layout/fragment_submission_symptom_intro_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2778,18 +2532,18 @@
 
     if-eqz p3, :cond_3c
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomIntroBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_3c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_result_ready is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_symptom_intro is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2798,7 +2552,7 @@
     throw p1
 
     :pswitch_3a
-    const-string p3, "layout/fragment_submission_qr_code_scan_0"
+    const-string p3, "layout/fragment_submission_symptom_calendar_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2806,18 +2560,18 @@
 
     if-eqz p3, :cond_3d
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomCalendarBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionQrCodeScanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionSymptomCalendarBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_3d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_qr_code_scan is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_symptom_calendar is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2826,7 +2580,7 @@
     throw p1
 
     :pswitch_3b
-    const-string p3, "layout/fragment_submission_no_consent_positive_other_warning_0"
+    const-string p3, "layout/fragment_submission_result_ready_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2834,18 +2588,18 @@
 
     if-eqz p3, :cond_3e
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionResultReadyBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_3e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_no_consent_positive_other_warning is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_result_ready is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2854,7 +2608,7 @@
     throw p1
 
     :pswitch_3c
-    const-string p3, "layout/fragment_submission_done_0"
+    const-string p3, "layout/fragment_submission_no_consent_positive_other_warning_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2862,18 +2616,18 @@
 
     if-eqz p3, :cond_3f
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionNoConsentPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_3f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_done is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_no_consent_positive_other_warning is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2882,7 +2636,7 @@
     throw p1
 
     :pswitch_3d
-    const-string p3, "layout/fragment_submission_dispatcher_0"
+    const-string p3, "layout/fragment_submission_done_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2890,18 +2644,18 @@
 
     if-eqz p3, :cond_40
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDispatcherBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDispatcherBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDoneBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_40
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_dispatcher is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_done is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2910,7 +2664,7 @@
     throw p1
 
     :pswitch_3e
-    const-string p3, "layout/fragment_submission_country_selection_0"
+    const-string p3, "layout/fragment_submission_dispatcher_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2918,18 +2672,18 @@
 
     if-eqz p3, :cond_41
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDispatcherBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionDispatcherBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_41
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_country_selection is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_dispatcher is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2938,7 +2692,7 @@
     throw p1
 
     :pswitch_3f
-    const-string p3, "layout/fragment_submission_contact_0"
+    const-string p3, "layout/fragment_submission_country_selection_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2946,18 +2700,18 @@
 
     if-eqz p3, :cond_42
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_42
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_contact is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_country_selection is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2966,7 +2720,7 @@
     throw p1
 
     :pswitch_40
-    const-string p3, "layout/fragment_submission_consent_0"
+    const-string p3, "layout/fragment_submission_contact_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2974,18 +2728,18 @@
 
     if-eqz p3, :cond_43
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionContactBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_43
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_submission_consent is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_contact is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -2994,7 +2748,7 @@
     throw p1
 
     :pswitch_41
-    const-string p3, "layout/fragment_statistics_explanation_0"
+    const-string p3, "layout/fragment_submission_consent_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3002,18 +2756,18 @@
 
     if-eqz p3, :cond_44
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionConsentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_44
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_statistics_explanation is invalid. Received: "
+    const-string p2, "The tag for fragment_submission_consent is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3022,7 +2776,7 @@
     throw p1
 
     :pswitch_42
-    const-string p3, "layout/fragment_settings_tracing_0"
+    const-string p3, "layout/fragment_statistics_explanation_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3030,18 +2784,18 @@
 
     if-eqz p3, :cond_45
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_45
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_settings_tracing is invalid. Received: "
+    const-string p2, "The tag for fragment_statistics_explanation is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3050,7 +2804,7 @@
     throw p1
 
     :pswitch_43
-    const-string p3, "layout/fragment_settings_reset_0"
+    const-string p3, "layout/fragment_settings_tracing_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3058,18 +2812,18 @@
 
     if-eqz p3, :cond_46
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSettingsTracingBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_46
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_settings_reset is invalid. Received: "
+    const-string p2, "The tag for fragment_settings_tracing is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3078,7 +2832,7 @@
     throw p1
 
     :pswitch_44
-    const-string p3, "layout/fragment_settings_privacy_preserving_analytics_0"
+    const-string p3, "layout/fragment_settings_reset_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3086,18 +2840,18 @@
 
     if-eqz p3, :cond_47
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSettingsResetBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_47
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_settings_privacy_preserving_analytics is invalid. Received: "
+    const-string p2, "The tag for fragment_settings_reset is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3106,7 +2860,7 @@
     throw p1
 
     :pswitch_45
-    const-string p3, "layout/fragment_settings_notifications_0"
+    const-string p3, "layout/fragment_settings_privacy_preserving_analytics_0"
 
     invoke-virtual {p3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3114,18 +2868,18 @@
 
     if-eqz p3, :cond_48
 
-    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;
+    new-instance v0, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBindingImpl;
 
-    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSettingsNotificationsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/databinding/FragmentSettingsPrivacyPreservingAnalyticsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     goto/16 :goto_1
 
     :cond_48
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for fragment_settings_notifications is invalid. Received: "
+    const-string p2, "The tag for fragment_settings_privacy_preserving_analytics is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3153,7 +2907,7 @@
 
     const-string p2, "The tag for fragment_settings_background_priority is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3181,7 +2935,7 @@
 
     const-string p2, "The tag for fragment_settings is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3209,7 +2963,7 @@
 
     const-string p2, "The tag for fragment_ppa_more_info is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3237,7 +2991,7 @@
 
     const-string p2, "The tag for fragment_onboarding_tracing is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3265,7 +3019,7 @@
 
     const-string p2, "The tag for fragment_onboarding_test is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3293,7 +3047,7 @@
 
     const-string p2, "The tag for fragment_onboarding_privacy is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3321,7 +3075,7 @@
 
     const-string p2, "The tag for fragment_onboarding_ppa is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3349,7 +3103,7 @@
 
     const-string p2, "The tag for fragment_onboarding_notifications is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3377,7 +3131,7 @@
 
     const-string p2, "The tag for fragment_onboarding_delta_ppa is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3405,7 +3159,7 @@
 
     const-string p2, "The tag for fragment_onboarding_delta_interoperability is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3433,7 +3187,7 @@
 
     const-string p2, "The tag for fragment_onboarding is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3461,7 +3215,7 @@
 
     const-string p2, "The tag for fragment_main_share is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3489,7 +3243,7 @@
 
     const-string p2, "The tag for fragment_main_overview is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3517,7 +3271,7 @@
 
     const-string p2, "The tag for fragment_interoperability_configuration is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3545,7 +3299,7 @@
 
     const-string p2, "The tag for fragment_information_terms is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3573,7 +3327,7 @@
 
     const-string p2, "The tag for fragment_information_technical is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3601,7 +3355,7 @@
 
     const-string p2, "The tag for fragment_information_privacy is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3629,7 +3383,7 @@
 
     const-string p2, "The tag for fragment_information_legal is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3657,7 +3411,7 @@
 
     const-string p2, "The tag for fragment_information_contact is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3685,7 +3439,7 @@
 
     const-string p2, "The tag for fragment_information_about is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3713,7 +3467,7 @@
 
     const-string p2, "The tag for fragment_information is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3741,7 +3495,7 @@
 
     const-string p2, "The tag for contact_diary_privacy_card is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3769,7 +3523,7 @@
 
     const-string p2, "The tag for contact_diary_person_list_fragment is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3797,7 +3551,7 @@
 
     const-string p2, "The tag for contact_diary_onboarding_row is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3825,7 +3579,7 @@
 
     const-string p2, "The tag for contact_diary_onboarding_fragment is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3853,7 +3607,7 @@
 
     const-string p2, "The tag for contact_diary_location_list_fragment is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3881,7 +3635,7 @@
 
     const-string p2, "The tag for contact_diary_homescreen_card_include is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3909,7 +3663,7 @@
 
     const-string p2, "The tag for contact_diary_edit_persons_fragment is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3937,7 +3691,7 @@
 
     const-string p2, "The tag for contact_diary_edit_locations_fragment is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3965,7 +3719,7 @@
 
     const-string p2, "The tag for contact_diary_day_fragment is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -3979,7 +3733,7 @@
     :cond_67
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "view must have a tag"
+    const-string/jumbo p2, "view must have a tag"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -3988,8 +3742,6 @@
     :cond_68
     :goto_2
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x33
@@ -4102,6 +3854,18 @@
 
 .method public getDataBinder(Landroidx/databinding/DataBindingComponent;[Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "component",
+            "views",
+            "layoutId"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -4162,7 +3926,7 @@
 
     const-string p2, "The tag for merge_guidelines_side is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4190,7 +3954,7 @@
 
     const-string p2, "The tag for merge_guidelines_card is invalid. Received: "
 
-    invoke-static {p2, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v1}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4201,7 +3965,7 @@
     :cond_5
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string p2, "view must have a tag"
+    const-string/jumbo p2, "view must have a tag"
 
     invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -4214,6 +3978,20 @@
 
 .method public final internalGetViewDataBinding2(Landroidx/databinding/DataBindingComponent;Landroid/view/View;ILjava/lang/Object;)Landroidx/databinding/ViewDataBinding;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "component",
+            "view",
+            "internalId",
+            "tag"
+        }
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -4245,7 +4023,7 @@
 
     const-string p2, "The tag for view_tan_input_group_4 is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4273,7 +4051,7 @@
 
     const-string p2, "The tag for view_tan_input_group_3 is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4301,7 +4079,7 @@
 
     const-string p2, "The tag for view_tan_input_edittext is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4329,7 +4107,7 @@
 
     const-string p2, "The tag for view_bullet_point_text is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4357,7 +4135,7 @@
 
     const-string p2, "The tag for tracing_details_item_riskdetails_low_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4385,7 +4163,7 @@
 
     const-string p2, "The tag for tracing_details_item_riskdetails_increased_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4413,7 +4191,7 @@
 
     const-string p2, "The tag for tracing_details_item_riskdetails_failed_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4441,7 +4219,7 @@
 
     const-string p2, "The tag for tracing_details_item_periodlogged_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4469,7 +4247,7 @@
 
     const-string p2, "The tag for tracing_details_item_behavior_normal_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4497,7 +4275,7 @@
 
     const-string p2, "The tag for tracing_details_item_behavior_increased_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4525,7 +4303,7 @@
 
     const-string p2, "The tag for tracing_details_item_additional_information_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4553,7 +4331,7 @@
 
     const-string p2, "The tag for tracing_details_fragment_layout is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4562,7 +4340,7 @@
     throw p1
 
     :pswitch_c
-    const-string p3, "layout/tracing_details_access_survey_card_0"
+    const-string p3, "layout/tracing_details_find_details_in_journal_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4570,18 +4348,18 @@
 
     if-eqz p3, :cond_c
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingDetailsFindDetailsInJournalBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for tracing_details_access_survey_card is invalid. Received: "
+    const-string p2, "The tag for tracing_details_find_details_in_journal is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4590,7 +4368,7 @@
     throw p1
 
     :pswitch_d
-    const-string p3, "layout/tracing_content_progress_view_0"
+    const-string p3, "layout/tracing_details_access_survey_card_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4598,18 +4376,18 @@
 
     if-eqz p3, :cond_d
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingDetailsAccessSurveyCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for tracing_content_progress_view is invalid. Received: "
+    const-string p2, "The tag for tracing_details_access_survey_card is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4618,7 +4396,7 @@
     throw p1
 
     :pswitch_e
-    const-string p3, "layout/tracing_content_low_view_0"
+    const-string p3, "layout/tracing_content_progress_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4626,18 +4404,18 @@
 
     if-eqz p3, :cond_e
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for tracing_content_low_view is invalid. Received: "
+    const-string p2, "The tag for tracing_content_progress_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4646,7 +4424,7 @@
     throw p1
 
     :pswitch_f
-    const-string p3, "layout/tracing_content_increased_view_0"
+    const-string p3, "layout/tracing_content_low_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4654,18 +4432,18 @@
 
     if-eqz p3, :cond_f
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentLowViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for tracing_content_increased_view is invalid. Received: "
+    const-string p2, "The tag for tracing_content_low_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4674,7 +4452,7 @@
     throw p1
 
     :pswitch_10
-    const-string p3, "layout/tracing_content_failed_view_0"
+    const-string p3, "layout/tracing_content_increased_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4682,18 +4460,18 @@
 
     if-eqz p3, :cond_10
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentFailedViewBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentFailedViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentIncreasedViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_10
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for tracing_content_failed_view is invalid. Received: "
+    const-string p2, "The tag for tracing_content_increased_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4702,7 +4480,7 @@
     throw p1
 
     :pswitch_11
-    const-string p3, "layout/tracing_content_disabled_view_0"
+    const-string p3, "layout/tracing_content_failed_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4710,18 +4488,18 @@
 
     if-eqz p3, :cond_11
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentFailedViewBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentFailedViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_11
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for tracing_content_disabled_view is invalid. Received: "
+    const-string p2, "The tag for tracing_content_failed_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4730,7 +4508,7 @@
     throw p1
 
     :pswitch_12
-    const-string p3, "layout/survey_consent_fragment_0"
+    const-string p3, "layout/tracing_content_disabled_view_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4738,18 +4516,18 @@
 
     if-eqz p3, :cond_12
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/TracingContentDisabledViewBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_12
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for survey_consent_fragment is invalid. Received: "
+    const-string p2, "The tag for tracing_content_disabled_view is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4758,7 +4536,7 @@
     throw p1
 
     :pswitch_13
-    const-string p3, "layout/survey_consent_detail_fragment_0"
+    const-string p3, "layout/survey_consent_fragment_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4766,18 +4544,18 @@
 
     if-eqz p3, :cond_13
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_13
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for survey_consent_detail_fragment is invalid. Received: "
+    const-string p2, "The tag for survey_consent_fragment is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4786,7 +4564,7 @@
     throw p1
 
     :pswitch_14
-    const-string p3, "layout/new_release_info_screen_fragment_0"
+    const-string p3, "layout/survey_consent_detail_fragment_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4794,18 +4572,18 @@
 
     if-eqz p3, :cond_14
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/SurveyConsentDetailFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_14
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for new_release_info_screen_fragment is invalid. Received: "
+    const-string p2, "The tag for survey_consent_detail_fragment is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4814,7 +4592,7 @@
     throw p1
 
     :pswitch_15
-    const-string p3, "layout/new_release_info_item_0"
+    const-string p3, "layout/new_release_info_screen_fragment_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4822,18 +4600,18 @@
 
     if-eqz p3, :cond_15
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/NewReleaseInfoScreenFragmentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_15
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for new_release_info_item is invalid. Received: "
+    const-string p2, "The tag for new_release_info_screen_fragment is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4842,13 +4620,41 @@
     throw p1
 
     :pswitch_16
-    const-string p3, "layout/merge_guidelines_side_0"
+    const-string p3, "layout/new_release_info_item_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
     if-eqz p3, :cond_16
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/NewReleaseInfoItemBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_16
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "The tag for new_release_info_item is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_17
+    const-string p3, "layout/merge_guidelines_side_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_17
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBindingImpl;
 
@@ -4860,12 +4666,12 @@
 
     return-object p3
 
-    :cond_16
+    :cond_17
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for merge_guidelines_side is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4873,14 +4679,14 @@
 
     throw p1
 
-    :pswitch_17
+    :pswitch_18
     const-string p3, "layout/merge_guidelines_card_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    if-eqz p3, :cond_17
+    if-eqz p3, :cond_18
 
     new-instance p3, Lde/rki/coronawarnapp/databinding/MergeGuidelinesCardBindingImpl;
 
@@ -4892,40 +4698,12 @@
 
     return-object p3
 
-    :cond_17
+    :cond_18
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     const-string p2, "The tag for merge_guidelines_card is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_18
-    const-string p3, "layout/include_tracing_status_card_location_0"
-
-    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_18
-
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;
-
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-
-    return-object p3
-
-    :cond_18
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "The tag for include_tracing_status_card_location is invalid. Received: "
-
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4934,7 +4712,7 @@
     throw p1
 
     :pswitch_19
-    const-string p3, "layout/include_tracing_status_card_0"
+    const-string p3, "layout/include_tracing_status_card_location_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4942,18 +4720,18 @@
 
     if-eqz p3, :cond_19
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardLocationBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_19
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_tracing_status_card is invalid. Received: "
+    const-string p2, "The tag for include_tracing_status_card_location is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4962,7 +4740,7 @@
     throw p1
 
     :pswitch_1a
-    const-string p3, "layout/include_test_result_positive_steps_0"
+    const-string p3, "layout/include_tracing_status_card_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4970,18 +4748,18 @@
 
     if-eqz p3, :cond_1a
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTracingStatusCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_1a
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_test_result_positive_steps is invalid. Received: "
+    const-string p2, "The tag for include_tracing_status_card is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -4990,7 +4768,7 @@
     throw p1
 
     :pswitch_1b
-    const-string p3, "layout/include_test_result_card_positive_0"
+    const-string p3, "layout/include_test_result_positive_steps_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -4998,18 +4776,18 @@
 
     if-eqz p3, :cond_1b
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultPositiveStepsBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_1b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_test_result_card_positive is invalid. Received: "
+    const-string p2, "The tag for include_test_result_positive_steps is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -5018,7 +4796,7 @@
     throw p1
 
     :pswitch_1c
-    const-string p3, "layout/include_test_result_card_0"
+    const-string p3, "layout/include_test_result_card_positive_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5026,18 +4804,18 @@
 
     if-eqz p3, :cond_1c
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardPositiveBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_1c
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_test_result_card is invalid. Received: "
+    const-string p2, "The tag for include_test_result_card_positive is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -5046,7 +4824,7 @@
     throw p1
 
     :pswitch_1d
-    const-string p3, "layout/include_submission_tan_0"
+    const-string p3, "layout/include_test_result_card_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5054,18 +4832,18 @@
 
     if-eqz p3, :cond_1d
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_1d
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_submission_tan is invalid. Received: "
+    const-string p2, "The tag for include_test_result_card is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -5074,7 +4852,7 @@
     throw p1
 
     :pswitch_1e
-    const-string p3, "layout/include_submission_positive_other_warning_0"
+    const-string p3, "layout/include_submission_tan_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5082,18 +4860,18 @@
 
     if-eqz p3, :cond_1e
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_1e
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_submission_positive_other_warning is invalid. Received: "
+    const-string p2, "The tag for include_submission_tan is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -5102,7 +4880,7 @@
     throw p1
 
     :pswitch_1f
-    const-string p3, "layout/include_submission_done_further_info_0"
+    const-string p3, "layout/include_submission_positive_other_warning_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5110,18 +4888,18 @@
 
     if-eqz p3, :cond_1f
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionPositiveOtherWarningBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_1f
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "The tag for include_submission_done_further_info is invalid. Received: "
+    const-string p2, "The tag for include_submission_positive_other_warning is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -5130,7 +4908,7 @@
     throw p1
 
     :pswitch_20
-    const-string p3, "layout/include_submission_done_content_0"
+    const-string p3, "layout/include_submission_done_further_info_0"
 
     invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5138,18 +4916,46 @@
 
     if-eqz p3, :cond_20
 
-    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;
 
-    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneFurtherInfoBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
 
     return-object p3
 
     :cond_20
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
+    const-string p2, "The tag for include_submission_done_further_info is invalid. Received: "
+
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_21
+    const-string p3, "layout/include_submission_done_content_0"
+
+    invoke-virtual {p3, p4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_21
+
+    new-instance p3, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;
+
+    invoke-direct {p3, p1, p2}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionDoneContentBindingImpl;-><init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
+
+    return-object p3
+
+    :cond_21
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
     const-string p2, "The tag for include_submission_done_content is invalid. Received: "
 
-    invoke-static {p2, p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline17(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, p4}, Lcom/fasterxml/jackson/databind/ser/impl/MapEntrySerializer$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -5161,6 +4967,7 @@
 
     :pswitch_data_0
     .packed-switch 0x65
+        :pswitch_21
         :pswitch_20
         :pswitch_1f
         :pswitch_1e

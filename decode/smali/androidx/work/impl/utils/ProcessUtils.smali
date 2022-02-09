@@ -39,6 +39,8 @@
 
     const/16 v1, 0x1c
 
+    const/4 v2, 0x0
+
     if-lt v0, v1, :cond_0
 
     invoke-static {}, Landroid/app/Application;->getProcessName()Ljava/lang/String;
@@ -48,11 +50,9 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     :try_start_0
     const-string v3, "android.app.ActivityThread"
@@ -63,23 +63,23 @@
 
     move-result-object v4
 
-    invoke-static {v3, v2, v4}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-static {v3, v1, v4}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
     move-result-object v3
 
     const-string v4, "currentProcessName"
 
-    new-array v5, v2, [Ljava/lang/Class;
+    new-array v5, v1, [Ljava/lang/Class;
 
     invoke-virtual {v3, v4, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v3
 
-    invoke-virtual {v3, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    invoke-virtual {v3, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    new-array v4, v2, [Ljava/lang/Object;
+    new-array v4, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v3, v0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v2, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -104,53 +104,53 @@
 
     sget-object v5, Landroidx/work/impl/utils/ProcessUtils;->TAG:Ljava/lang/String;
 
-    new-array v1, v1, [Ljava/lang/Throwable;
+    new-array v0, v0, [Ljava/lang/Throwable;
 
-    aput-object v3, v1, v2
+    aput-object v3, v0, v1
 
-    const-string v2, "Unable to check ActivityThread for processName"
+    const-string v1, "Unable to check ActivityThread for processName"
 
-    invoke-virtual {v4, v5, v2, v1}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
+    invoke-virtual {v4, v5, v1, v0}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     :cond_1
     invoke-static {}, Landroid/os/Process;->myPid()I
 
-    move-result v1
+    move-result v0
 
-    const-string v2, "activity"
+    const-string v1, "activity"
 
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Landroid/app/ActivityManager;
+    check-cast v1, Landroid/app/ActivityManager;
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v2}, Landroid/app/ActivityManager;->getRunningAppProcesses()Ljava/util/List;
+    invoke-virtual {v1}, Landroid/app/ActivityManager;->getRunningAppProcesses()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
 
     if-nez v3, :cond_3
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :cond_2
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -158,23 +158,25 @@
 
     iget v4, v3, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
 
-    if-ne v4, v1, :cond_2
+    if-ne v4, v0, :cond_2
 
     iget-object v0, v3, Landroid/app/ActivityManager$RunningAppProcessInfo;->processName:Ljava/lang/String;
 
+    goto :goto_0
+
     :cond_3
+    move-object v0, v2
+
     :goto_0
-    iget-object v1, p1, Landroidx/work/Configuration;->mDefaultProcessName:Ljava/lang/String;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result p1
 
-    if-nez v1, :cond_4
+    if-nez p1, :cond_4
 
-    iget-object p0, p1, Landroidx/work/Configuration;->mDefaultProcessName:Ljava/lang/String;
-
-    invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
 

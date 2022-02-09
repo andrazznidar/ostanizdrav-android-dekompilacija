@@ -39,6 +39,14 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "in"
+        }
+    .end annotation
 
     new-instance v0, Landroid/support/v4/os/ResultReceiver;
 
@@ -49,6 +57,14 @@
 
 .method public newArray(I)[Ljava/lang/Object;
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x1000
+        }
+        names = {
+            "size"
+        }
+    .end annotation
 
     new-array p1, p1, [Landroid/support/v4/os/ResultReceiver;
 

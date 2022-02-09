@@ -12,10 +12,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroid/widget/ScrollView;
-
-.field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 .field public final mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
 
@@ -49,7 +45,7 @@
 
     new-array v4, v2, [I
 
-    const v6, 0x7f0c00b4
+    const v6, 0x7f0d010a
 
     aput v6, v4, v5
 
@@ -61,31 +57,25 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f0904bc
+    const v1, 0x7f0a0729
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904c2
+    const v1, 0x7f0a072f
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904be
+    const v1, 0x7f0a072b
 
     const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0904c0
+    const v1, 0x7f0a072d
 
     const/4 v2, 0x6
 
@@ -96,6 +86,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 10
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -159,8 +159,6 @@
 
     check-cast p1, Landroid/widget/ScrollView;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->mboundView0:Landroid/widget/ScrollView;
-
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
@@ -170,8 +168,6 @@
     aget-object p1, v0, p1
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
@@ -188,7 +184,7 @@
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -316,6 +312,14 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

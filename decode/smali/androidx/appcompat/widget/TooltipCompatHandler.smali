@@ -36,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -58,25 +58,39 @@
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    invoke-static {p2}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-static {p1}, Landroidx/core/view/ViewConfigurationCompat;->getScaledHoverSlop(Landroid/view/ViewConfiguration;)I
+    sget-object v0, Landroidx/core/view/ViewConfigurationCompat;->sGetScaledScrollFactorMethod:Ljava/lang/reflect/Method;
 
-    move-result p1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iput p1, p0, Landroidx/appcompat/widget/TooltipCompatHandler;->mHoverSlop:I
+    const/16 v1, 0x1c
+
+    if-lt v0, v1, :cond_0
+
+    invoke-virtual {p2}, Landroid/view/ViewConfiguration;->getScaledHoverSlop()I
+
+    move-result p2
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p2}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
+
+    move-result p2
+
+    div-int/lit8 p2, p2, 0x2
+
+    :goto_0
+    iput p2, p0, Landroidx/appcompat/widget/TooltipCompatHandler;->mHoverSlop:I
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/TooltipCompatHandler;->clearAnchorPos()V
 
-    iget-object p1, p0, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor:Landroid/view/View;
-
     invoke-virtual {p1, p0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
-
-    iget-object p1, p0, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor:Landroid/view/View;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setOnHoverListener(Landroid/view/View$OnHoverListener;)V
 
@@ -366,7 +380,9 @@
 
     iget-object v1, v0, Landroidx/appcompat/widget/TooltipCompatHandler;->mAnchor:Landroid/view/View;
 
-    invoke-static {v1}, Landroidx/core/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
+    sget-object v2, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v1
 
@@ -457,7 +473,7 @@
 
     move-result-object v7
 
-    const v10, 0x7f0701c4
+    sget v10, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_threshold:I
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -493,7 +509,7 @@
 
     move-result-object v7
 
-    const v10, 0x7f0701c3
+    sget v10, Landroidx/appcompat/R$dimen;->tooltip_precise_anchor_extra_offset:I
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -525,12 +541,12 @@
 
     if-eqz v5, :cond_6
 
-    const v12, 0x7f0701c7
+    sget v12, Landroidx/appcompat/R$dimen;->tooltip_y_offset_touch:I
 
     goto :goto_3
 
     :cond_6
-    const v12, 0x7f0701c6
+    sget v12, Landroidx/appcompat/R$dimen;->tooltip_y_offset_non_touch:I
 
     :goto_3
     invoke-virtual {v7, v12}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -625,7 +641,7 @@
 
     move-result-object v13
 
-    const-string v14, "status_bar_height"
+    const-string/jumbo v14, "status_bar_height"
 
     const-string v15, "dimen"
 
@@ -768,7 +784,7 @@
     :goto_7
     iget-object v2, v1, Landroidx/appcompat/widget/TooltipPopup;->mContext:Landroid/content/Context;
 
-    const-string v3, "window"
+    const-string/jumbo v3, "window"
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

@@ -59,23 +59,6 @@
     return-void
 .end method
 
-.method public static zzi()Lcom/google/android/gms/internal/nearby/zznz;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<E:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Lcom/google/android/gms/internal/nearby/zznz<",
-            "TE;>;"
-        }
-    .end annotation
-
-    sget-object v0, Lcom/google/android/gms/internal/nearby/zzoe;->zza:Lcom/google/android/gms/internal/nearby/zznz;
-
-    return-object v0
-.end method
-
 .method public static zzk(Ljava/util/Collection;)Lcom/google/android/gms/internal/nearby/zznz;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -92,13 +75,13 @@
 
     instance-of v0, p0, Lcom/google/android/gms/internal/nearby/zznw;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     check-cast p0, Lcom/google/android/gms/internal/nearby/zznw;
 
-    check-cast p0, Lcom/google/android/gms/internal/nearby/zznz;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->zze()Lcom/google/android/gms/internal/nearby/zznz;
 
-    if-eqz p0, :cond_2
+    move-result-object p0
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznw;->zzf()Z
 
@@ -130,11 +113,6 @@
     return-object p0
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     invoke-interface {p0}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
 
     move-result-object p0
@@ -144,32 +122,24 @@
     const/4 v1, 0x0
 
     :goto_1
-    if-ge v1, v0, :cond_5
+    if-ge v1, v0, :cond_4
 
     aget-object v2, p0, v1
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    :cond_4
+    :cond_3
     new-instance p0, Ljava/lang/NullPointerException;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const/16 v2, 0x14
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    const/16 v0, 0x14
 
     const-string v2, "at index "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/api/internal/BasePendingResult$CallbackHandler$$ExternalSyntheticOutline0;->m(ILjava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -177,14 +147,14 @@
 
     throw p0
 
-    :cond_5
-    if-nez v0, :cond_6
+    :cond_4
+    if-nez v0, :cond_5
 
     sget-object p0, Lcom/google/android/gms/internal/nearby/zzoe;->zza:Lcom/google/android/gms/internal/nearby/zznz;
 
     goto :goto_2
 
-    :cond_6
+    :cond_5
     new-instance v1, Lcom/google/android/gms/internal/nearby/zzoe;
 
     invoke-direct {v1, p0, v0}, Lcom/google/android/gms/internal/nearby/zzoe;-><init>([Ljava/lang/Object;I)V
@@ -309,7 +279,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lcom/airbnb/lottie/R$attr;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, v5}, Lcom/google/android/gms/internal/nearby/zznn;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -323,7 +293,7 @@
     goto :goto_1
 
     :cond_5
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznz;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
@@ -355,7 +325,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lcom/airbnb/lottie/R$attr;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4}, Lcom/google/android/gms/internal/nearby/zznn;->zza(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -575,6 +545,37 @@
     return-object p1
 .end method
 
+.method public final zza()Lcom/google/android/gms/internal/nearby/zzoi;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/nearby/zzoi;"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/nearby/zznz;->zzm(I)Lcom/google/android/gms/internal/nearby/zzoi;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final zze()Lcom/google/android/gms/internal/nearby/zznz;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/android/gms/internal/nearby/zznz<",
+            "TE;>;"
+        }
+    .end annotation
+
+    return-object p0
+.end method
+
 .method public zzg([Ljava/lang/Object;I)I
     .locals 2
 
@@ -615,7 +616,7 @@
 
     move-result v0
 
-    invoke-static {p1, p2, v0}, Lcom/airbnb/lottie/R$attr;->zzd(III)V
+    invoke-static {p1, p2, v0}, Lcom/google/android/gms/internal/nearby/zznp;->zzd(III)V
 
     sub-int/2addr p2, p1
 
@@ -682,7 +683,7 @@
 
     const-string v2, "index"
 
-    invoke-static {p1, v0, v2}, Lcom/airbnb/lottie/R$attr;->zze(IILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v2}, Lcom/google/android/gms/internal/nearby/zznp;->zze(IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
@@ -41,41 +41,37 @@
 
     sput-object v0, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza:Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
-    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    new-instance v1, Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
-    const-string v1, "INFECTIOUSNESS_STANDARD"
+    const-string v3, "INFECTIOUSNESS_STANDARD"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lcom/google/android/gms/nearby/exposurenotification/zzj;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/android/gms/nearby/exposurenotification/zzj;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zzb:Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    sput-object v1, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zzb:Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
-    new-instance v0, Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    new-instance v3, Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
-    const-string v1, "INFECTIOUSNESS_HIGH"
+    const-string v5, "INFECTIOUSNESS_HIGH"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lcom/google/android/gms/nearby/exposurenotification/zzj;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lcom/google/android/gms/nearby/exposurenotification/zzj;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zzc:Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    sput-object v3, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zzc:Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
-    const/4 v1, 0x3
+    const/4 v5, 0x3
 
-    new-array v1, v1, [Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    new-array v5, v5, [Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
-    sget-object v5, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza:Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    aput-object v0, v5, v2
 
-    aput-object v5, v1, v2
+    aput-object v1, v5, v4
 
-    sget-object v2, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zzb:Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    aput-object v3, v5, v6
 
-    aput-object v2, v1, v3
-
-    aput-object v0, v1, v4
-
-    sput-object v1, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zzf:[Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    sput-object v5, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zzf:[Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
     return-void
 .end method

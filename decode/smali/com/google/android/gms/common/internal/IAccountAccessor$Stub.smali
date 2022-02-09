@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/IAccountAccessor$Stub;
-.super Lcom/google/android/gms/internal/common/zza;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.super Lcom/google/android/gms/internal/common/zzb;
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/IAccountAccessor;
@@ -16,12 +16,6 @@
     name = "Stub"
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/common/internal/IAccountAccessor$Stub$zza;
-    }
-.end annotation
-
 
 # direct methods
 .method public static asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/common/internal/IAccountAccessor;
@@ -33,13 +27,6 @@
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
     const-string v0, "com.google.android.gms.common.internal.IAccountAccessor"
 
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
@@ -48,16 +35,16 @@
 
     instance-of v1, v0, Lcom/google/android/gms/common/internal/IAccountAccessor;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     check-cast v0, Lcom/google/android/gms/common/internal/IAccountAccessor;
 
     return-object v0
 
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/common/internal/IAccountAccessor$Stub$zza;
+    :cond_0
+    new-instance v0, Lcom/google/android/gms/common/internal/zzu;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/IAccountAccessor$Stub$zza;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/zzu;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 .end method

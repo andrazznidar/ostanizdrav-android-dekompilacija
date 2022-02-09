@@ -8,75 +8,137 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBaseRiskLevelStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseRiskLevelStorage.kt\nde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 4 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 5 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 6 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 7 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n*L\n1#1,186:1\n1517#2:187\n1588#2,3:188\n1517#2:191\n1588#2,2:192\n734#2:194\n825#2,2:195\n1590#2:197\n1517#2:198\n1588#2,3:199\n1517#2:202\n1588#2,3:203\n50#3,3:206\n58#3:212\n237#4:209\n239#4:211\n106#5:210\n106#5:215\n106#5:220\n106#5:225\n106#5:230\n106#5:235\n47#6:213\n49#6:217\n47#6:218\n49#6:222\n47#6:223\n49#6:227\n47#6:228\n49#6:232\n47#6:233\n49#6:237\n50#7:214\n55#7:216\n50#7:219\n55#7:221\n50#7:224\n55#7:226\n50#7:229\n55#7:231\n50#7:234\n55#7:236\n*E\n*S KotlinDebug\n*F\n+ 1 BaseRiskLevelStorage.kt\nde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage\n*L\n43#1:187\n43#1,3:188\n48#1:191\n48#1,2:192\n49#1:194\n49#1,2:195\n48#1:197\n155#1:198\n155#1,3:199\n167#1:202\n167#1,3:203\n65#1,3:206\n65#1:212\n65#1:209\n65#1:211\n65#1:210\n76#1:215\n80#1:220\n84#1:225\n88#1:230\n92#1:235\n76#1:213\n76#1:217\n80#1:218\n80#1:222\n84#1:223\n84#1:227\n88#1:228\n88#1:232\n92#1:233\n92#1:237\n76#1:214\n76#1:216\n80#1:219\n80#1:221\n84#1:224\n84#1:226\n88#1:229\n88#1:231\n92#1:234\n92#1:236\n*E\n"
+    value = "SMAP\nBaseRiskLevelStorage.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseRiskLevelStorage.kt\nde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 FlowExtensions.kt\nde/rki/coronawarnapp/util/flow/FlowExtensionsKt\n+ 7 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n*L\n1#1,269:1\n47#2:270\n49#2:274\n47#2:275\n49#2:279\n47#2:280\n49#2:284\n50#3:271\n55#3:273\n50#3:276\n55#3:278\n50#3:281\n55#3:283\n106#4:272\n106#4:277\n106#4:282\n106#4:308\n1547#5:285\n1618#5,3:286\n1547#5:289\n1618#5,2:290\n764#5:292\n855#5,2:293\n1620#5:295\n1547#5:296\n1618#5,3:297\n1547#5:300\n1618#5,3:301\n51#6,2:304\n50#6:306\n58#6:310\n237#7:307\n239#7:309\n*S KotlinDebug\n*F\n+ 1 BaseRiskLevelStorage.kt\nde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage\n*L\n89#1:270\n89#1:274\n188#1:275\n188#1:279\n230#1:280\n230#1:284\n89#1:271\n89#1:273\n188#1:276\n188#1:278\n230#1:281\n230#1:283\n89#1:272\n188#1:277\n230#1:282\n179#1:308\n60#1:285\n60#1:286,3\n65#1:289\n65#1:290,2\n66#1:292\n66#1:293,2\n65#1:295\n154#1:296\n154#1:297,3\n166#1:300\n166#1:301,3\n179#1:304,2\n179#1:306\n179#1:310\n179#1:307\n179#1:309\n*E\n"
 .end annotation
 
 
 # instance fields
 .field public final aggregatedRiskPerDateResultTables$delegate:Lkotlin/Lazy;
 
-.field public final aggregatedRiskPerDateResults$delegate:Lkotlin/Lazy;
+.field public final allEwRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelResult;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field public final allEwRiskLevelResultsWithExposureWindows:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelResult;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field public final allPtRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;",
+            ">;>;"
+        }
+    .end annotation
+.end field
 
 .field public final database$delegate:Lkotlin/Lazy;
 
+.field public final ewDayRiskStates$delegate:Lkotlin/Lazy;
+
 .field public final exposureWindowsTables$delegate:Lkotlin/Lazy;
 
-.field public final latestAndLastSuccessful:Lkotlinx/coroutines/flow/Flow;
+.field public final latestAndLastSuccessfulEwRiskLevelResult:Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlinx/coroutines/flow/Flow<",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelResult;",
             ">;>;"
         }
     .end annotation
 .end field
 
-.field public final latestRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+.field public final latestEwRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lkotlinx/coroutines/flow/Flow<",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelResult;",
             ">;>;"
         }
     .end annotation
 .end field
 
-.field public final riskLevelResultMigrator:Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;
+.field public final latestPtRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field public final presenceTracingRiskRepository:Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;
+
+.field public final ptDayRiskStates:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/calculation/PresenceTracingDayRisk;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
+.field public final riskCombinator:Lde/rki/coronawarnapp/risk/storage/internal/RiskCombinator;
 
 .field public final riskResultDatabaseFactory:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;
 
 .field public final riskResultsTables$delegate:Lkotlin/Lazy;
 
+.field public final timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
+
+.field public final traceLocationCheckInRiskStates:Lkotlinx/coroutines/flow/Flow;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/TraceLocationCheckInRisk;",
+            ">;>;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;Lkotlinx/coroutines/CoroutineScope;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;Lkotlinx/coroutines/CoroutineScope;Lde/rki/coronawarnapp/risk/storage/internal/RiskCombinator;Lde/rki/coronawarnapp/util/TimeStamper;)V
     .locals 3
-
-    const-string v0, "riskResultDatabaseFactory"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "riskLevelResultMigrator"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "scope"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->riskResultDatabaseFactory:Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$Factory;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->riskLevelResultMigrator:Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;
+    iput-object p2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->presenceTracingRiskRepository:Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;
+
+    iput-object p4, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->riskCombinator:Lde/rki/coronawarnapp/risk/storage/internal/RiskCombinator;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
     new-instance p1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$database$2;
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$database$2;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -86,7 +148,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$riskResultsTables$2;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -96,139 +158,478 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$exposureWindowsTables$2;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->exposureWindowsTables$delegate:Lkotlin/Lazy;
 
-    new-instance p1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$aggregatedRiskPerDateResultTables$2;
+    new-instance p4, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$aggregatedRiskPerDateResultTables$2;
 
-    invoke-direct {p1, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$aggregatedRiskPerDateResultTables$2;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
+    invoke-direct {p4, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$aggregatedRiskPerDateResultTables$2;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p4}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
-    move-result-object p1
+    move-result-object p4
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->aggregatedRiskPerDateResultTables$delegate:Lkotlin/Lazy;
+    iput-object p4, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->aggregatedRiskPerDateResultTables$delegate:Lkotlin/Lazy;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getRiskResultsTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
 
+    move-result-object p4
+
+    invoke-interface {p4}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p4
+
+    check-cast p1, Lkotlin/SynchronizedLazyImpl;
+
+    invoke-virtual {p1}, Lkotlin/SynchronizedLazyImpl;->getValue()Ljava/lang/Object;
+
     move-result-object p1
 
-    invoke-interface {p1}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
+    check-cast p1, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+
+    invoke-interface {p1}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
-    iget-object p2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->exposureWindowsTables$delegate:Lkotlin/Lazy;
+    new-instance p5, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$allEwRiskLevelResultsWithExposureWindows$1;
 
-    invoke-interface {p2}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object p2
+    invoke-direct {p5, p0, v0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$allEwRiskLevelResultsWithExposureWindows$1;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p2, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
+    new-instance v1, Lkotlinx/coroutines/flow/FlowKt__ZipKt$combine$$inlined$unsafeFlow$1;
 
-    invoke-interface {p2}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p2
-
-    const/4 v0, 0x2
-
-    new-array v1, v0, [Lkotlinx/coroutines/flow/Flow;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const/4 p1, 0x1
-
-    aput-object p2, v1, p1
-
-    new-instance p1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$combine$1;
-
-    invoke-direct {p1, v1, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
-
-    new-instance p2, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1;
-
-    invoke-direct {p2, p1, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
+    invoke-direct {v1, p4, p1, p5}, Lkotlinx/coroutines/flow/FlowKt__ZipKt$combine$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
 
     const-string p1, "RiskLevelStorage"
 
-    const/4 v1, 0x0
+    const/4 p4, 0x4
 
-    const/4 v2, 0x4
+    invoke-static {v1, p1, p3, v0, p4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
 
-    invoke-static {p2, p1, p3, v1, v2}, Lcom/google/zxing/client/android/R$id;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+    move-result-object p5
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->allEwRiskLevelResultsWithExposureWindows:Lkotlinx/coroutines/flow/Flow;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getRiskResultsTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+
+    move-result-object p5
+
+    invoke-interface {p5}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p5
+
+    new-instance v1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$special$$inlined$map$1;
+
+    invoke-direct {v1, p5}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$special$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
+
+    invoke-static {v1, p1, p3, v0, p4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p5
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->allEwRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+
+    new-instance p5, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$ewDayRiskStates$2;
+
+    invoke-direct {p5, p0, p3}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$ewDayRiskStates$2;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlinx/coroutines/CoroutineScope;)V
+
+    invoke-static {p5}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p5
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->ewDayRiskStates$delegate:Lkotlin/Lazy;
+
+    iget-object p5, p2, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;->traceLocationCheckInRiskStates:Lkotlinx/coroutines/flow/Flow;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->traceLocationCheckInRiskStates:Lkotlinx/coroutines/flow/Flow;
+
+    iget-object p5, p2, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;->presenceTracingDayRisk:Lkotlinx/coroutines/flow/Flow;
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->ptDayRiskStates:Lkotlinx/coroutines/flow/Flow;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getRiskResultsTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
+
+    move-result-object p5
+
+    invoke-interface {p5}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;->latestAndLastSuccessful()Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p5
+
+    new-instance v1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$special$$inlined$map$2;
+
+    invoke-direct {v1, p5, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$special$$inlined$map$2;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
+
+    invoke-static {v1, p1, p3, v0, p4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p5
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestAndLastSuccessfulEwRiskLevelResult:Lkotlinx/coroutines/flow/Flow;
+
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;->getRiskLevelResultDao()Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;
+
+    move-result-object p5
+
+    invoke-interface {p5}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p5
+
+    new-instance v1, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository$allEntries$$inlined$map$1;
+
+    invoke-direct {v1, p5, p2}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository$allEntries$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;)V
+
+    invoke-static {v1, p1, p3, v0, p4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p5
+
+    iput-object p5, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->allPtRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;->getRiskLevelResultDao()Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;
+
+    move-result-object p5
+
+    const/4 v1, 0x2
+
+    invoke-interface {p5, v1}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;->latestEntries(I)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p5
+
+    new-instance v2, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository$latestEntries$$inlined$map$1;
+
+    invoke-direct {v2, p5, p2}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository$latestEntries$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;)V
+
+    invoke-static {v2, p1, p3, v0, p4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestPtRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getRiskResultsTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
 
     move-result-object p2
 
-    invoke-interface {p2, v0}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;->latestEntries(I)Lkotlinx/coroutines/flow/Flow;
+    invoke-interface {p2, v1}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;->latestEntries(I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p2
 
-    new-instance v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$2;
+    new-instance p5, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$special$$inlined$map$3;
 
-    invoke-direct {v0, p2, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$2;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
+    invoke-direct {p5, p2}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$special$$inlined$map$3;-><init>(Lkotlinx/coroutines/flow/Flow;)V
 
-    new-instance p2, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$3;
-
-    invoke-direct {p2, v0, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$3;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
-
-    invoke-static {p2, p1, p3, v1, v2}, Lcom/google/zxing/client/android/R$id;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getRiskResultsTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
-
-    move-result-object p2
-
-    invoke-interface {p2}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;->latestAndLastSuccessful()Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p2
-
-    new-instance v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$4;
-
-    invoke-direct {v0, p2, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$4;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
-
-    new-instance p2, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$5;
-
-    invoke-direct {p2, v0, p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$$special$$inlined$map$5;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)V
-
-    invoke-static {p2, p1, p3, v1, v2}, Lcom/google/zxing/client/android/R$id;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
+    invoke-static {p5, p1, p3, v0, p4}, Lde/rki/coronawarnapp/util/flow/FlowExtensionsKt;->shareLatest$default(Lkotlinx/coroutines/flow/Flow;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p1
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestAndLastSuccessful:Lkotlinx/coroutines/flow/Flow;
-
-    new-instance p1, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$aggregatedRiskPerDateResults$2;
-
-    invoke-direct {p1, p0, p3}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$aggregatedRiskPerDateResults$2;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlinx/coroutines/CoroutineScope;)V
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->aggregatedRiskPerDateResults$delegate:Lkotlin/Lazy;
+    iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestEwRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
 
     return-void
 .end method
 
-.method public static final access$getDatabase$p(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;)Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
-    .locals 0
+.method public static final access$combineWithWindows(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 7
 
-    iget-object p0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->database$delegate:Lkotlin/Lazy;
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    instance-of v0, p3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p3
+
+    check-cast v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;
+
+    iget v1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
+
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
+
+    if-eqz v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;
+
+    invoke-direct {v0, p0, p3}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
+
+    :goto_0
+    iget-object p3, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->result:Ljava/lang/Object;
+
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
+
+    const/16 v3, 0xa
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    if-eqz v2, :cond_2
+
+    if-ne v2, v5, :cond_1
+
+    iget-object p0, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->L$0:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/List;
+
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    move-object p1, p0
+
+    goto/16 :goto_2
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    move-result p3
+
+    if-eqz p3, :cond_3
+
+    sget-object v1, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
+
+    goto/16 :goto_7
+
+    :cond_3
+    if-eqz p2, :cond_4
+
+    sget-object p0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result p3
+
+    const-string v0, "Using "
+
+    const-string v1, " given windows for combining."
+
+    invoke-static {v0, p3, v1}, Landroidx/core/os/LocaleListCompatWrapper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p3
+
+    new-array v0, v4, [Ljava/lang/Object;
+
+    invoke-virtual {p0, p3, v0}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    :cond_4
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    new-array p3, v5, [Ljava/lang/Object;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    new-instance v6, Ljava/lang/Integer;
+
+    invoke-direct {v6, v2}, Ljava/lang/Integer;-><init>(I)V
+
+    aput-object v6, p3, v4
+
+    const-string v2, "Retrieving windows for %d results"
+
+    invoke-virtual {p2, v2, p3}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->exposureWindowsTables$delegate:Lkotlin/Lazy;
 
     invoke-interface {p0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+    check-cast p0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
 
-    return-object p0
+    new-instance p2, Ljava/util/ArrayList;
+
+    invoke-static {p1, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result p3
+
+    invoke-direct {p2, p3}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p3
+
+    :goto_1
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;
+
+    iget-object v2, v2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->id:Ljava/lang/String;
+
+    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_5
+    invoke-interface {p0, p2}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;->getWindowsForResult(Ljava/util/List;)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p0
+
+    iput-object p1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->L$0:Ljava/lang/Object;
+
+    iput v5, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
+
+    invoke-static {p0, v0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p3
+
+    if-ne p3, v1, :cond_6
+
+    goto :goto_7
+
+    :cond_6
+    :goto_2
+    move-object p2, p3
+
+    check-cast p2, Ljava/util/List;
+
+    :goto_3
+    sget-object p0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result p3
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const-string v1, "Mapping "
+
+    const-string v2, " windows to "
+
+    const-string v6, " risk results."
+
+    invoke-static {v1, p3, v2, v0, v6}, Landroidx/room/RoomOpenHelper$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p3
+
+    new-array v0, v4, [Ljava/lang/Object;
+
+    invoke-virtual {p0, p3, v0}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-static {p1, v3}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result p0
+
+    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_4
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_a
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;
+
+    new-instance p3, Ljava/util/ArrayList;
+
+    invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_7
+    :goto_5
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v3, v2
+
+    check-cast v3, Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDaoWrapper;
+
+    iget-object v3, v3, Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDaoWrapper;->exposureWindowDao:Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDao;
+
+    iget-object v3, v3, Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDao;->riskLevelResultId:Ljava/lang/String;
+
+    iget-object v4, p1, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->id:Ljava/lang/String;
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-virtual {p3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_5
+
+    :cond_8
+    invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    const/4 p3, 0x0
+
+    invoke-static {p1, p3, v5}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->toRiskResult$default(Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;Ljava/util/List;I)Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;
+
+    move-result-object p1
+
+    goto :goto_6
+
+    :cond_9
+    invoke-virtual {p1, p3}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->toRiskResult(Ljava/util/List;)Lde/rki/coronawarnapp/risk/EwRiskLevelTaskResult;
+
+    move-result-object p1
+
+    :goto_6
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_4
+
+    :cond_a
+    :goto_7
+    return-object v1
 .end method
 
 .method public static deleteAggregatedRiskPerDateResults$suspendImpl(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -277,7 +678,7 @@
     if-ne v2, v4, :cond_1
 
     :try_start_0
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -293,17 +694,17 @@
     throw p0
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-array p2, v4, [Ljava/lang/Object;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object p1, p2, v3
+    new-array v2, v4, [Ljava/lang/Object;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object p1, v2, v3
 
     const-string v5, "deleteAggregatedRiskPerDateResults(results=%s)"
 
-    invoke-virtual {v2, v5, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, v5, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_1
     invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getAggregatedRiskPerDateResultTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
@@ -314,7 +715,7 @@
 
     const/16 v2, 0xa
 
-    invoke-static {p1, v2}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v2}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
 
@@ -335,21 +736,21 @@
 
     move-result-object v2
 
-    check-cast v2, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;
+    check-cast v2, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;
 
-    const-string v5, "$this$toPersistedAggregatedRiskPerDateResult"
+    const-string v5, "<this>"
 
     invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v5, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedAggregatedRiskPerDateResult;
 
-    iget-wide v7, v2, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->dateMillisSinceEpoch:J
+    iget-wide v7, v2, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->dateMillisSinceEpoch:J
 
-    iget-object v9, v2, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->riskLevel:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
+    iget-object v9, v2, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->riskLevel:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    iget v10, v2, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->minimumDistinctEncountersWithLowRisk:I
+    iget v10, v2, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->minimumDistinctEncountersWithLowRisk:I
 
-    iget v11, v2, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->minimumDistinctEncountersWithHighRisk:I
+    iget v11, v2, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->minimumDistinctEncountersWithHighRisk:I
 
     move-object v6, v5
 
@@ -375,13 +776,13 @@
     :catch_0
     move-exception p0
 
-    new-array p1, v3, [Ljava/lang/Object;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object p2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array p2, v3, [Ljava/lang/Object;
 
     const-string v0, "Failed to delete risk level per date results"
 
-    invoke-virtual {p2, p0, v0, p1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, p0, v0, p2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_4
     :goto_2
@@ -390,7 +791,7 @@
     return-object p0
 .end method
 
-.method public static storeResult$suspendImpl(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lde/rki/coronawarnapp/risk/RiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public static storeResult$suspendImpl(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lde/rki/coronawarnapp/risk/EwRiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 20
 
     move-object/from16 v0, p0
@@ -459,9 +860,9 @@
 
     if-ne v5, v6, :cond_1
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -477,34 +878,40 @@
 
     check-cast v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_3
     iget-object v0, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$2:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    iget-object v0, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$1:Ljava/lang/Object;
+    iget-object v1, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$1:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/risk/RiskLevelResult;
+    check-cast v1, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;
 
-    iget-object v0, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
+    iget-object v5, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
 
-    check-cast v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
+    check-cast v5, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
     :try_start_0
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_6
+    move-object v13, v1
+
+    move-object v1, v0
+
+    move-object v0, v5
+
+    goto/16 :goto_7
 
     :catch_0
     move-exception v0
 
-    goto/16 :goto_9
+    goto/16 :goto_a
 
     :cond_4
     iget-object v0, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$2:Ljava/lang/Object;
@@ -513,14 +920,14 @@
 
     iget-object v1, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$1:Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/risk/RiskLevelResult;
+    check-cast v1, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;
 
     iget-object v5, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
 
     check-cast v5, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
     :try_start_1
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -529,9 +936,7 @@
     :catch_1
     move-exception v0
 
-    move v2, v11
-
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_5
     iget-wide v0, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->J$0:J
@@ -542,14 +947,14 @@
 
     iget-object v13, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$1:Ljava/lang/Object;
 
-    check-cast v13, Lde/rki/coronawarnapp/risk/RiskLevelResult;
+    check-cast v13, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;
 
     iget-object v14, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
 
     check-cast v14, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 
     :try_start_2
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
@@ -560,57 +965,55 @@
     :catch_2
     move-exception v0
 
-    move v2, v11
-
     move-object v1, v13
 
-    goto/16 :goto_c
+    goto/16 :goto_b
 
     :cond_6
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-array v2, v11, [Ljava/lang/Object;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getExposureWindows()Ljava/util/List;
+    new-array v5, v11, [Ljava/lang/Object;
 
-    move-result-object v5
+    invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getExposureWindows()Ljava/util/List;
 
-    if-eqz v5, :cond_7
+    move-result-object v13
 
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    if-nez v13, :cond_7
 
-    move-result v5
-
-    new-instance v13, Ljava/lang/Integer;
-
-    invoke-direct {v13, v5}, Ljava/lang/Integer;-><init>(I)V
+    move-object v14, v10
 
     goto :goto_1
 
     :cond_7
-    move-object v13, v10
+    invoke-interface {v13}, Ljava/util/List;->size()I
+
+    move-result v13
+
+    new-instance v14, Ljava/lang/Integer;
+
+    invoke-direct {v14, v13}, Ljava/lang/Integer;-><init>(I)V
 
     :goto_1
-    aput-object v13, v2, v12
-
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v14, v5, v12
 
     const-string v13, "Storing result (exposureWindows.size=%s)"
 
-    invoke-virtual {v5, v13, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v13, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v13
 
-    invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;
+    invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
     move-result-object v2
 
     if-eqz v2, :cond_9
 
-    invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getFailureReason()Lde/rki/coronawarnapp/risk/RiskLevelResult$FailureReason;
+    invoke-interface/range {p1 .. p1}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getFailureReason()Lde/rki/coronawarnapp/risk/EwRiskLevelResult$FailureReason;
 
     move-result-object v2
 
@@ -628,9 +1031,9 @@
     move v2, v11
 
     :goto_3
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_11
 
-    invoke-static {v1, v10, v11}, Lcom/google/zxing/client/android/R$id;->toPersistedRiskResult$default(Lde/rki/coronawarnapp/risk/RiskLevelResult;Ljava/lang/String;I)Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;
+    invoke-static {v1, v10, v11}, Lde/rki/coronawarnapp/coronatest/type/CoronaTestExtensionsKt;->toPersistedRiskResult$default(Lde/rki/coronawarnapp/risk/EwRiskLevelResult;Ljava/lang/String;I)Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;
 
     move-result-object v2
 
@@ -669,39 +1072,42 @@
 
     :goto_4
     :try_start_4
-    const-string v5, "Storing RiskLevelResult took %dms."
+    sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v15, v11, [Ljava/lang/Object;
+    const-string v15, "Storing RiskLevelResult took %dms."
+
+    new-array v6, v11, [Ljava/lang/Object;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v16
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
     sub-long v0, v16, v0
 
-    :try_start_5
     new-instance v11, Ljava/lang/Long;
 
     invoke-direct {v11, v0, v1}, Ljava/lang/Long;-><init>(J)V
 
-    aput-object v11, v15, v12
+    aput-object v11, v6, v12
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    invoke-virtual {v5, v15, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v0, v5, v15}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-interface {v13}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;
+    invoke-interface {v13}, Lde/rki/coronawarnapp/risk/EwRiskLevelResult;->getEwAggregatedRiskResult()Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;
 
     move-result-object v0
 
-    if-eqz v0, :cond_c
+    if-nez v0, :cond_b
 
-    iget-object v0, v0, Lde/rki/coronawarnapp/risk/result/AggregatedRiskResult;->aggregatedRiskPerDateResults:Ljava/util/List;
+    goto :goto_6
 
-    if-eqz v0, :cond_c
+    :cond_b
+    iget-object v0, v0, Lde/rki/coronawarnapp/risk/result/EwAggregatedRiskResult;->exposureWindowDayRisks:Ljava/util/List;
 
+    if-nez v0, :cond_c
+
+    goto :goto_6
+
+    :cond_c
     iput-object v14, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
 
     iput-object v13, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$1:Ljava/lang/Object;
@@ -714,11 +1120,11 @@
 
     move-result-object v0
 
-    if-ne v0, v4, :cond_b
+    if-ne v0, v4, :cond_d
 
     return-object v4
 
-    :cond_b
+    :cond_d
     move-object v0, v2
 
     move-object v1, v13
@@ -732,29 +1138,27 @@
 
     move-object v14, v5
 
-    :cond_c
+    :goto_6
     iget-object v0, v2, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->id:Ljava/lang/String;
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
-    :try_start_6
-    const-string v1, "Cleaning up old results."
+    :try_start_5
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v2, v12, [Ljava/lang/Object;
+    const-string v2, "Cleaning up old results."
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v5, v12, [Ljava/lang/Object;
 
-    invoke-virtual {v5, v1, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v14}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getRiskResultsTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
 
     move-result-object v1
 
-    move-object v2, v14
+    invoke-virtual {v14}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getStoredResultLimit()I
 
-    check-cast v2, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;
-
-    iget v2, v2, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;->storedResultLimit:I
+    move-result v2
 
     iput-object v14, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
 
@@ -768,49 +1172,49 @@
 
     move-result-object v2
 
-    if-ne v2, v4, :cond_d
+    if-ne v2, v4, :cond_e
 
     return-object v4
 
-    :cond_d
+    :cond_e
+    move-object v1, v0
+
     move-object v0, v14
 
-    :goto_6
+    :goto_7
     check-cast v2, Ljava/lang/Number;
 
     invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
 
-    move-result v1
+    move-result v2
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    sget-object v5, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, " old results were deleted."
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, " old results were deleted."
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v6, v12, [Ljava/lang/Object;
+
+    invoke-virtual {v5, v2, v6}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
 
     new-array v2, v12, [Ljava/lang/Object;
 
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v6, "Storing exposure windows."
 
-    invoke-virtual {v5, v1, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
-
-    new-array v1, v12, [Ljava/lang/Object;
-
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v5, "Storing exposure windows."
-
-    invoke-virtual {v2, v5, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v5, v6, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iput-object v0, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
 
@@ -820,96 +1224,57 @@
 
     iput v7, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->label:I
 
-    move-object v1, v0
+    invoke-virtual {v0, v1, v13, v3}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->storeExposureWindows$Corona_Warn_App_deviceRelease(Ljava/lang/String;Lde/rki/coronawarnapp/risk/EwRiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    check-cast v1, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;
+    move-result-object v1
 
-    if-eqz v1, :cond_11
-
-    new-array v1, v12, [Ljava/lang/Object;
-
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v5, "storeExposureWindows(): NOOP"
-
-    invoke-virtual {v2, v5, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    if-ne v1, v4, :cond_e
-
-    return-object v4
-
-    :cond_e
-    :goto_7
-    new-array v1, v12, [Ljava/lang/Object;
-
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v5, "Deleting orphaned exposure windows."
-
-    invoke-virtual {v2, v5, v1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iput-object v10, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
-
-    iput v6, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->label:I
-
-    check-cast v0, Lde/rki/coronawarnapp/risk/storage/DefaultRiskLevelStorage;
-
-    if-eqz v0, :cond_10
-
-    new-array v0, v12, [Ljava/lang/Object;
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v2, "deletedOrphanedExposureWindows(): NOOP"
-
-    invoke-virtual {v1, v2, v0}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    if-ne v0, v4, :cond_f
+    if-ne v1, v4, :cond_f
 
     return-object v4
 
     :cond_f
     :goto_8
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    new-array v2, v12, [Ljava/lang/Object;
+
+    const-string v5, "Deleting orphaned exposure windows."
+
+    invoke-virtual {v1, v5, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iput-object v10, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->L$0:Ljava/lang/Object;
+
+    const/4 v1, 0x5
+
+    iput v1, v3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$storeResult$1;->label:I
+
+    invoke-virtual {v0, v3}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->deletedOrphanedExposureWindows$Corona_Warn_App_deviceRelease(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-ne v0, v4, :cond_10
+
+    return-object v4
+
+    :cond_10
+    :goto_9
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
-    :cond_10
-    throw v10
+    :goto_a
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    :cond_11
-    throw v10
-
-    :goto_9
-    new-array v1, v12, [Ljava/lang/Object;
-
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v12, [Ljava/lang/Object;
 
     const-string v3, "Failed to clean up old results."
 
-    invoke-virtual {v2, v0, v3, v1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, v3, v2}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     throw v0
 
-    :goto_a
-    move-object v1, v13
-
-    :goto_b
-    const/4 v2, 0x1
-
-    goto :goto_c
-
-    :catch_3
-    move-exception v0
-
-    goto :goto_a
-
-    :cond_12
-    :try_start_7
+    :cond_11
+    :try_start_6
     const-string v0, "A result needs to have either an aggregatedRiskResult or a failureReason, not both!"
 
     new-instance v2, Ljava/lang/IllegalArgumentException;
@@ -921,24 +1286,21 @@
     invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_4
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
-    :catch_4
-    move-exception v0
+    :goto_b
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    goto :goto_b
+    const/4 v3, 0x1
 
-    :goto_c
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    aput-object v1, v2, v12
+    aput-object v1, v3, v12
 
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v1, "Failed to store latest result: %s"
 
-    const-string v3, "Failed to store latest result: %s"
-
-    invoke-virtual {v1, v0, v3, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v1, v3}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     throw v0
 .end method
@@ -946,7 +1308,7 @@
 
 # virtual methods
 .method public clear(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 2
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -958,374 +1320,119 @@
         }
     .end annotation
 
-    const/4 p1, 0x0
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v1, [Ljava/lang/Object;
 
-    const-string v1, "clear() - Clearing stored riskleve/exposure-detection results."
+    const-string v3, "clear() - Clearing stored risklevel/exposure-detection results."
 
-    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->database$delegate:Lkotlin/Lazy;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getDatabase()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
 
-    invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->clearAllTables()V
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const-string v2, "clear() - Clearing stored presence tracing matches and results."
+
+    invoke-virtual {v0, v2, v1}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->presenceTracingRiskRepository:Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;
+
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;->clearAllTables(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->clearAllTables()V
-
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p1
-.end method
-
-.method public final combineWithWindows(Ljava/util/List;Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;",
-            ">;",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDaoWrapper;",
-            ">;",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;",
-            ">;>;)",
-            "Ljava/lang/Object;"
-        }
-    .end annotation
-
-    instance-of v0, p3, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p3
-
-    check-cast v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;
-
-    iget v1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
+    if-ne p1, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;
-
-    invoke-direct {v0, p0, p3}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     :goto_0
-    iget-object p3, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->result:Ljava/lang/Object;
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v2, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
-
-    const/16 v3, 0xa
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v5, :cond_1
-
-    iget-object p1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->L$0:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto/16 :goto_2
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_3
-
-    sget-object p1, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
-
     return-object p1
-
-    :cond_3
-    if-eqz p2, :cond_4
-
-    const-string p3, "Using "
-
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p3
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, " given windows for combining."
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p3
-
-    new-array v0, v4, [Ljava/lang/Object;
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v1, p3, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_3
-
-    :cond_4
-    new-array p2, v5, [Ljava/lang/Object;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p3
-
-    new-instance v2, Ljava/lang/Integer;
-
-    invoke-direct {v2, p3}, Ljava/lang/Integer;-><init>(I)V
-
-    aput-object v2, p2, v4
-
-    sget-object p3, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v2, "Retrieving windows for %d results"
-
-    invoke-virtual {p3, v2, p2}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object p2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->exposureWindowsTables$delegate:Lkotlin/Lazy;
-
-    invoke-interface {p2}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;
-
-    new-instance p3, Ljava/util/ArrayList;
-
-    invoke-static {p1, v3}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v2
-
-    invoke-direct {p3, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;
-
-    iget-object v6, v6, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->id:Ljava/lang/String;
-
-    invoke-virtual {p3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_5
-    invoke-interface {p2, p3}, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$ExposureWindowsDao;->getWindowsForResult(Ljava/util/List;)Lkotlinx/coroutines/flow/Flow;
-
-    move-result-object p2
-
-    iput-object p1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->L$0:Ljava/lang/Object;
-
-    iput v5, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$combineWithWindows$1;->label:I
-
-    invoke-static {p2, v0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p3
-
-    if-ne p3, v1, :cond_6
-
-    return-object v1
-
-    :cond_6
-    :goto_2
-    move-object p2, p3
-
-    check-cast p2, Ljava/util/List;
-
-    :goto_3
-    const-string p3, "Mapping "
-
-    invoke-static {p3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p3
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, " windows to "
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, " risk results."
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p3
-
-    new-array v0, v4, [Ljava/lang/Object;
-
-    sget-object v1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v1, p3, v0}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    new-instance p3, Ljava/util/ArrayList;
-
-    invoke-static {p1, v3}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v0
-
-    invoke-direct {p3, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_4
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_7
-    :goto_5
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_8
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v4, v3
-
-    check-cast v4, Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDaoWrapper;
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDaoWrapper;->exposureWindowDao:Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDao;
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/risk/storage/internal/windows/PersistedExposureWindowDao;->riskLevelResultId:Ljava/lang/String;
-
-    iget-object v5, v0, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->id:Ljava/lang/String;
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_7
-
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_5
-
-    :cond_8
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9
+.end method
+
+.method public clearResults(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->toRiskResult(Ljava/util/List;)Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;
+    new-array v2, v1, [Ljava/lang/Object;
+
+    const-string v3, "clearResults() - Clearing stored risklevel/exposure-detection results."
+
+    invoke-virtual {v0, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getDatabase()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroidx/room/RoomDatabase;->clearAllTables()V
+
+    new-array v2, v1, [Ljava/lang/Object;
+
+    const-string v3, "clearResults() - Clearing stored presence tracing results."
+
+    invoke-virtual {v0, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v2, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->presenceTracingRiskRepository:Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;
+
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const-string v3, "Deleting all results."
+
+    invoke-virtual {v0, v3, v1}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;->getRiskLevelResultDao()Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;
 
     move-result-object v0
 
-    goto :goto_6
+    invoke-interface {v0, p1}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;->deleteAll(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    :cond_9
-    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedRiskLevelResultDao;->toRiskResult(Ljava/util/List;)Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;
+    move-result-object p1
 
-    move-result-object v0
+    sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    :goto_6
-    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-ne p1, v0, :cond_0
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_a
-    return-object p3
+    :cond_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    :goto_0
+    if-ne p1, v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    :goto_1
+    return-object p1
 .end method
 
 .method public deleteAggregatedRiskPerDateResults(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -1334,7 +1441,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;",
+            "Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;",
             ">;",
             "Lkotlin/coroutines/Continuation<",
             "-",
@@ -1351,111 +1458,17 @@
     return-object p1
 .end method
 
-.method public final fallbackToLegacyIfEmpty(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+.method public abstract deletedOrphanedExposureWindows$Corona_Warn_App_deviceRelease(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/RiskLevelTaskResult;",
-            ">;",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Ljava/util/List<",
-            "+",
-            "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
-            ">;>;)",
+            "Lkotlin/Unit;",
+            ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
-
-    instance-of v0, p2, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;
-
-    iget v1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;->label:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;->label:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;
-
-    invoke-direct {v0, p0, p2}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p2, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;->result:Ljava/lang/Object;
-
-    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
-
-    iget v2, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;->label:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result p2
-
-    xor-int/2addr p2, v3
-
-    if-eqz p2, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    iget-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->riskLevelResultMigrator:Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;
-
-    iput v3, v0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$fallbackToLegacyIfEmpty$1;->label:I
-
-    invoke-virtual {p1, v0}, Lde/rki/coronawarnapp/risk/storage/legacy/RiskLevelResultMigrator;->getLegacyResults(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_4
-
-    return-object v1
-
-    :cond_4
-    :goto_1
-    move-object p1, p2
-
-    check-cast p1, Ljava/util/List;
-
-    :goto_2
-    return-object p1
 .end method
 
 .method public final getAggregatedRiskPerDateResultTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
@@ -1472,19 +1485,67 @@
     return-object v0
 .end method
 
-.method public getAggregatedRiskPerDateResults()Lkotlinx/coroutines/flow/Flow;
+.method public getAllEwRiskLevelResults()Lkotlinx/coroutines/flow/Flow;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Lkotlinx/coroutines/flow/Flow<",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelResult;",
             ">;>;"
         }
     .end annotation
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->aggregatedRiskPerDateResults$delegate:Lkotlin/Lazy;
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->allEwRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+
+    return-object v0
+.end method
+
+.method public getAllPtRiskLevelResults()Lkotlinx/coroutines/flow/Flow;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/PtRiskLevelResult;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->allPtRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+
+    return-object v0
+.end method
+
+.method public final getDatabase()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->database$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase;
+
+    return-object v0
+.end method
+
+.method public getEwDayRiskStates()Lkotlinx/coroutines/flow/Flow;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->ewDayRiskStates$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
@@ -1495,38 +1556,77 @@
     return-object v0
 .end method
 
-.method public getLatestAndLastSuccessful()Lkotlinx/coroutines/flow/Flow;
-    .locals 1
+.method public getLatestAndLastSuccessfulCombinedEwPtRiskLevelResult()Lkotlinx/coroutines/flow/Flow;
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Lkotlinx/coroutines/flow/Flow<",
-            "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
-            ">;>;"
+            "Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;",
+            ">;"
         }
     .end annotation
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestAndLastSuccessful:Lkotlinx/coroutines/flow/Flow;
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->allEwRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->presenceTracingRiskRepository:Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;->getRiskLevelResultDao()Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskLevelResultDao;->allEntries()Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object v2
+
+    new-instance v3, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository$allEntries$$inlined$map$1;
+
+    invoke-direct {v3, v2, v1}, Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository$allEntries$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lde/rki/coronawarnapp/presencetracing/risk/storage/PresenceTracingRiskRepository;)V
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getEwDayRiskStates()Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object v1
+
+    new-instance v2, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$latestAndLastSuccessfulCombinedEwPtRiskLevelResult$1;
+
+    const/4 v4, 0x0
+
+    invoke-direct {v2, p0, v4}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$latestAndLastSuccessfulCombinedEwPtRiskLevelResult$1;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v3, v1, v2}, Lkotlinx/coroutines/flow/FlowKt;->combine(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function4;)Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public getLatestRiskLevelResults()Lkotlinx/coroutines/flow/Flow;
-    .locals 1
+.method public getLatestCombinedEwPtRiskLevelResults()Lkotlinx/coroutines/flow/Flow;
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Lkotlinx/coroutines/flow/Flow<",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
+            "Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;",
             ">;>;"
         }
     .end annotation
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestEwRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
 
-    return-object v0
+    iget-object v1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->latestPtRiskLevelResults:Lkotlinx/coroutines/flow/Flow;
+
+    new-instance v2, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$latestCombinedEwPtRiskLevelResults$1;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p0, v3}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$latestCombinedEwPtRiskLevelResults$1;-><init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v3, Lkotlinx/coroutines/flow/FlowKt__ZipKt$combine$$inlined$unsafeFlow$1;
+
+    invoke-direct {v3, v0, v1, v2}, Lkotlinx/coroutines/flow/FlowKt__ZipKt$combine$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function3;)V
+
+    return-object v3
 .end method
 
 .method public final getRiskResultsTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$RiskResultsDao;
@@ -1543,13 +1643,33 @@
     return-object v0
 .end method
 
+.method public abstract getStoredResultLimit()I
+.end method
+
+.method public getTraceLocationCheckInRiskStates()Lkotlinx/coroutines/flow/Flow;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/flow/Flow<",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/presencetracing/risk/TraceLocationCheckInRisk;",
+            ">;>;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->traceLocationCheckInRiskStates:Lkotlinx/coroutines/flow/Flow;
+
+    return-object v0
+.end method
+
 .method public final insertAggregatedRiskPerDateResults(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;",
+            "Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;",
             ">;",
             "Lkotlin/coroutines/Continuation<",
             "-",
@@ -1602,7 +1722,7 @@
     if-ne v2, v4, :cond_1
 
     :try_start_0
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1618,17 +1738,17 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-array p2, v4, [Ljava/lang/Object;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object p1, p2, v3
+    new-array v2, v4, [Ljava/lang/Object;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object p1, v2, v3
 
     const-string v5, "insertAggregatedRiskPerDateResults(aggregatedRiskPerDateResults=%s)"
 
-    invoke-virtual {v2, v5, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, v5, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :try_start_1
     invoke-virtual {p0}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->getAggregatedRiskPerDateResultTables$Corona_Warn_App_deviceRelease()Lde/rki/coronawarnapp/risk/storage/internal/RiskResultDatabase$AggregatedRiskPerDateResultDao;
@@ -1639,7 +1759,7 @@
 
     const/16 v5, 0xa
 
-    invoke-static {p1, v5}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v5}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v5
 
@@ -1660,21 +1780,21 @@
 
     move-result-object v5
 
-    check-cast v5, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;
+    check-cast v5, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;
 
-    const-string v6, "$this$toPersistedAggregatedRiskPerDateResult"
+    const-string v6, "<this>"
 
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v6, Lde/rki/coronawarnapp/risk/storage/internal/riskresults/PersistedAggregatedRiskPerDateResult;
 
-    iget-wide v8, v5, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->dateMillisSinceEpoch:J
+    iget-wide v8, v5, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->dateMillisSinceEpoch:J
 
-    iget-object v10, v5, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->riskLevel:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
+    iget-object v10, v5, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->riskLevel:Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
-    iget v11, v5, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->minimumDistinctEncountersWithLowRisk:I
+    iget v11, v5, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->minimumDistinctEncountersWithLowRisk:I
 
-    iget v12, v5, Lde/rki/coronawarnapp/risk/result/AggregatedRiskPerDateResult;->minimumDistinctEncountersWithHighRisk:I
+    iget v12, v5, Lde/rki/coronawarnapp/risk/result/ExposureWindowDayRisk;->minimumDistinctEncountersWithHighRisk:I
 
     move-object v7, v6
 
@@ -1700,13 +1820,13 @@
     :catch_0
     move-exception p1
 
-    new-array p2, v3, [Ljava/lang/Object;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v0, v3, [Ljava/lang/Object;
 
     const-string v1, "Failed to store risk level per date results"
 
-    invoke-virtual {v0, p1, v1, p2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, p1, v1, v0}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_4
     :goto_2
@@ -1715,12 +1835,27 @@
     return-object p1
 .end method
 
-.method public storeResult(Lde/rki/coronawarnapp/risk/RiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public abstract storeExposureWindows$Corona_Warn_App_deviceRelease(Ljava/lang/String;Lde/rki/coronawarnapp/risk/EwRiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelResult;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method
+
+.method public storeResult(Lde/rki/coronawarnapp/risk/EwRiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
+            "Lde/rki/coronawarnapp/risk/EwRiskLevelResult;",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lkotlin/Unit;",
@@ -1729,7 +1864,7 @@
         }
     .end annotation
 
-    invoke-static {p0, p1, p2}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->storeResult$suspendImpl(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lde/rki/coronawarnapp/risk/RiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2}, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;->storeResult$suspendImpl(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lde/rki/coronawarnapp/risk/EwRiskLevelResult;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

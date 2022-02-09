@@ -44,12 +44,8 @@
 
 
 # virtual methods
-.method public evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
     .locals 11
-
-    check-cast p2, Ljava/lang/Integer;
-
-    check-cast p3, Ljava/lang/Integer;
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
@@ -171,19 +167,19 @@
 
     double-to-float p3, v7
 
-    invoke-static {v4, v0, p1, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline0(FFFF)F
+    invoke-static {v4, v0, p1, v0}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;->m(FFFF)F
 
     move-result v0
 
-    invoke-static {v5, v2, p1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline0(FFFF)F
+    invoke-static {v5, v2, p1, v2}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;->m(FFFF)F
 
     move-result v2
 
-    invoke-static {v6, v3, p1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline0(FFFF)F
+    invoke-static {v6, v3, p1, v3}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;->m(FFFF)F
 
     move-result v3
 
-    invoke-static {p3, p2, p1, p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline0(FFFF)F
+    invoke-static {p3, p2, p1, p2}, Landroidx/constraintlayout/core/widgets/analyzer/DependencyGraph$$ExternalSyntheticOutline0;->m(FFFF)F
 
     move-result p1
 
@@ -250,6 +246,20 @@
     or-int/2addr p1, p2
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p2, Ljava/lang/Integer;
+
+    check-cast p3, Ljava/lang/Integer;
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/material/animation/ArgbEvaluatorCompat;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
 
     move-result-object p1
 

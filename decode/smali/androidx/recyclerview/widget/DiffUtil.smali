@@ -10,6 +10,7 @@
         Landroidx/recyclerview/widget/DiffUtil$DiffResult;,
         Landroidx/recyclerview/widget/DiffUtil$Range;,
         Landroidx/recyclerview/widget/DiffUtil$Snake;,
+        Landroidx/recyclerview/widget/DiffUtil$Diagonal;,
         Landroidx/recyclerview/widget/DiffUtil$ItemCallback;,
         Landroidx/recyclerview/widget/DiffUtil$Callback;
     }
@@ -17,11 +18,11 @@
 
 
 # static fields
-.field public static final SNAKE_COMPARATOR:Ljava/util/Comparator;
+.field public static final DIAGONAL_COMPARATOR:Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Comparator<",
-            "Landroidx/recyclerview/widget/DiffUtil$Snake;",
+            "Landroidx/recyclerview/widget/DiffUtil$Diagonal;",
             ">;"
         }
     .end annotation
@@ -36,7 +37,7 @@
 
     invoke-direct {v0}, Landroidx/recyclerview/widget/DiffUtil$1;-><init>()V
 
-    sput-object v0, Landroidx/recyclerview/widget/DiffUtil;->SNAKE_COMPARATOR:Ljava/util/Comparator;
+    sput-object v0, Landroidx/recyclerview/widget/DiffUtil;->DIAGONAL_COMPARATOR:Ljava/util/Comparator;
 
     return-void
 .end method

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field public final zza:Lcom/google/android/gms/internal/nearby/zzaw;
+.field public zza:Ljava/lang/Object;
 
 
 # direct methods
@@ -16,15 +16,19 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzq;->zza:Lcom/google/android/gms/internal/nearby/zzaw;
+    iput-object p1, p0, Lcom/google/android/gms/internal/nearby/zzq;->zza:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public accept(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/nearby/zzq;->zza:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/gms/internal/nearby/zzaw;
 
     check-cast p1, Lcom/google/android/gms/internal/nearby/zzn;
 

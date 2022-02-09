@@ -260,7 +260,7 @@
 
 # virtual methods
 .method public calculateNextRunTime()J
-    .locals 10
+    .locals 12
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->state:Landroidx/work/WorkInfo$State;
 
@@ -331,7 +331,10 @@
 
     move-result-wide v0
 
-    goto :goto_3
+    :goto_2
+    add-long/2addr v0, v2
+
+    return-wide v0
 
     :cond_3
     invoke-virtual {p0}, Landroidx/work/impl/model/WorkSpec;->isPeriodic()Z
@@ -359,51 +362,39 @@
     :cond_4
     iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
 
-    iget-wide v8, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
+    iget-wide v9, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
 
-    cmp-long v0, v0, v8
+    cmp-long v11, v0, v9
 
-    if-eqz v0, :cond_5
+    if-eqz v11, :cond_5
 
     move v2, v3
 
     :cond_5
     if-eqz v2, :cond_7
 
-    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+    if-nez v8, :cond_6
 
-    cmp-long v0, v0, v4
+    const-wide/16 v2, -0x1
 
-    if-nez v0, :cond_6
-
-    const-wide/16 v0, -0x1
-
-    iget-wide v2, p0, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
-
-    mul-long v4, v2, v0
+    mul-long v4, v0, v2
 
     :cond_6
-    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
-
-    add-long/2addr v6, v0
+    add-long/2addr v6, v9
 
     add-long/2addr v6, v4
 
     return-wide v6
 
     :cond_7
-    iget-wide v0, p0, Landroidx/work/impl/model/WorkSpec;->periodStartTime:J
+    if-nez v8, :cond_8
 
-    cmp-long v0, v0, v4
-
-    if-nez v0, :cond_8
-
-    goto :goto_2
+    goto :goto_3
 
     :cond_8
-    iget-wide v4, p0, Landroidx/work/impl/model/WorkSpec;->intervalDuration:J
+    move-wide v4, v9
 
-    :goto_2
+    :goto_3
     add-long/2addr v6, v4
 
     return-wide v6
@@ -422,10 +413,7 @@
     :cond_a
     iget-wide v2, p0, Landroidx/work/impl/model/WorkSpec;->initialDelay:J
 
-    :goto_3
-    add-long/2addr v0, v2
-
-    return-wide v0
+    goto :goto_2
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -703,13 +691,11 @@
 
     iget-object v0, p0, Landroidx/work/impl/model/WorkSpec;->workerClassName:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    const/16 v2, 0x1f
+
+    invoke-static {v0, v1, v2}, Landroidx/room/util/TableInfo$ForeignKey$$ExternalSyntheticOutline0;->m(Ljava/lang/String;II)I
 
     move-result v0
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpec;->inputMergerClassName:Ljava/lang/String;
 
@@ -893,17 +879,17 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    const-string v0, "{WorkSpec: "
+    const-string/jumbo v0, "{WorkSpec: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     iget-object v1, p0, Landroidx/work/impl/model/WorkSpec;->id:Ljava/lang/String;
 
-    const-string v2, "}"
+    const-string/jumbo v2, "}"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Landroidx/constraintlayout/core/widgets/Barrier$$ExternalSyntheticOutline0;->m(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

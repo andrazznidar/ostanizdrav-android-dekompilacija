@@ -25,6 +25,12 @@
 
 
 # virtual methods
+.method public onIncompleteSelectionChanged()V
+    .locals 0
+
+    return-void
+.end method
+
 .method public abstract onSelectionChanged(Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {

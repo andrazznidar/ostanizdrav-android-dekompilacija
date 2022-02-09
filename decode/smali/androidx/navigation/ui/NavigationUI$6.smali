@@ -49,7 +49,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p1}, Lcom/google/android/material/bottomnavigation/BottomNavigationView;->getMenu()Landroid/view/Menu;
+    invoke-virtual {p1}, Lcom/google/android/material/navigation/NavigationBarView;->getMenu()Landroid/view/Menu;
 
     move-result-object p1
 
@@ -79,22 +79,18 @@
 
     if-eq v5, v3, :cond_1
 
-    iget-object v5, v4, Landroidx/navigation/NavDestination;->mParent:Landroidx/navigation/NavGraph;
+    iget-object v4, v4, Landroidx/navigation/NavDestination;->mParent:Landroidx/navigation/NavGraph;
 
-    if-eqz v5, :cond_1
-
-    move-object v4, v5
+    if-eqz v4, :cond_1
 
     goto :goto_1
 
     :cond_1
-    iget v4, v4, Landroidx/navigation/NavDestination;->mId:I
+    const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    if-ne v5, v3, :cond_2
 
-    if-ne v4, v3, :cond_2
-
-    move v3, v5
+    move v3, v4
 
     goto :goto_2
 
@@ -104,7 +100,7 @@
     :goto_2
     if-eqz v3, :cond_3
 
-    invoke-interface {v2, v5}, Landroid/view/MenuItem;->setChecked(Z)Landroid/view/MenuItem;
+    invoke-interface {v2, v4}, Landroid/view/MenuItem;->setChecked(Z)Landroid/view/MenuItem;
 
     :cond_3
     add-int/lit8 v1, v1, 0x1

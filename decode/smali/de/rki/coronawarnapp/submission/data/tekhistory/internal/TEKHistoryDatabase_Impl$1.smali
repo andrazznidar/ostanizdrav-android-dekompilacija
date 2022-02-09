@@ -21,6 +21,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x0
+        }
+        names = {
+            "this$0",
+            "version"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
 
@@ -33,6 +43,14 @@
 # virtual methods
 .method public createAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `tek_history` (`id` TEXT NOT NULL, `batchId` TEXT NOT NULL, `obtainedAt` TEXT NOT NULL, `keyData` BLOB NOT NULL, `rollingStartIntervalNumber` INTEGER NOT NULL, `transmissionRiskLevel` INTEGER NOT NULL, `rollingPeriod` INTEGER NOT NULL, `reportType` INTEGER NOT NULL, `daysSinceOnsetOfSymptoms` INTEGER NOT NULL, PRIMARY KEY(`id`))"
 
@@ -51,6 +69,14 @@
 
 .method public dropAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     const-string v0, "DROP TABLE IF EXISTS `tek_history`"
 
@@ -58,101 +84,95 @@
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;->access$000(Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;)Ljava/util/List;
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    move-result-object p1
+    if-eqz p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
-
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onCreate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object p1, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
 
-    invoke-static {p1}, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;->access$300(Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;)Ljava/util/List;
+    iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    move-result-object p1
+    if-eqz p1, :cond_0
 
-    if-eqz p1, :cond_1
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
-
-    iget-object v0, v0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
+    move-result p1
 
     :goto_0
-    if-ge p1, v0, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
 
     iget-object v1, v1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;
 
@@ -199,12 +219,28 @@
 
 .method public onPostMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public onPreMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     invoke-static {p1}, Landroidx/room/util/DBUtil;->dropFtsSyncTriggers(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
@@ -213,6 +249,14 @@
 
 .method public onValidateSchema(Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/room/RoomOpenHelper$ValidationResult;
     .locals 14
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -316,7 +360,7 @@
 
     new-instance v1, Landroidx/room/util/TableInfo$Column;
 
-    const-string v7, "transmissionRiskLevel"
+    const-string/jumbo v7, "transmissionRiskLevel"
 
     const-string v8, "INTEGER"
 
@@ -324,7 +368,7 @@
 
     invoke-direct/range {v6 .. v12}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v5, "transmissionRiskLevel"
+    const-string/jumbo v5, "transmissionRiskLevel"
 
     invoke-virtual {v0, v5, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -370,7 +414,7 @@
 
     const/4 v3, 0x0
 
-    invoke-static {v0, v2, v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v0, v2, v1, v3}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v1
 
@@ -380,7 +424,7 @@
 
     new-instance v4, Landroidx/room/util/TableInfo;
 
-    const-string v5, "tek_history"
+    const-string/jumbo v5, "tek_history"
 
     invoke-direct {v4, v5, v0, v1, v2}, Landroidx/room/util/TableInfo;-><init>(Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V
 
@@ -396,11 +440,11 @@
 
     new-instance v0, Landroidx/room/RoomOpenHelper$ValidationResult;
 
-    const-string v1, "tek_history(de.rki.coronawarnapp.submission.data.tekhistory.internal.TEKEntryDao).\n Expected:\n"
+    const-string/jumbo v1, "tek_history(de.rki.coronawarnapp.submission.data.tekhistory.internal.TEKEntryDao).\n Expected:\n"
 
     const-string v2, "\n Found:\n"
 
-    invoke-static {v1, v4, v2, p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v1, v4, v2, p1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object p1
 

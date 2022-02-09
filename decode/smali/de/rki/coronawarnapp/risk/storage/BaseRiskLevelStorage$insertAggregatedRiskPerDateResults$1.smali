@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.risk.storage.BaseRiskLevelStorage"
     f = "BaseRiskLevelStorage.kt"
     l = {
-        0xc6
+        0x99
     }
     m = "insertAggregatedRiskPerDateResults"
 .end annotation
@@ -34,6 +34,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$insertAggregatedRiskPerDateResults$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage$insertAggregatedRiskPerDateResults$1;->this$0:Lde/rki/coronawarnapp/risk/storage/BaseRiskLevelStorage;
 

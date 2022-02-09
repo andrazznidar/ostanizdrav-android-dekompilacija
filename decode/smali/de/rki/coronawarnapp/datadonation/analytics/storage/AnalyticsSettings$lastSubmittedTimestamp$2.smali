@@ -67,7 +67,7 @@
 
     check-cast p3, Lorg/joda/time/Instant;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$createFlowPreference"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -75,14 +75,14 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz p3, :cond_0
+    if-nez p3, :cond_0
 
-    iget-wide v0, p3, Lorg/joda/time/Instant;->iMillis:J
+    const-wide/16 v0, 0x0
 
     goto :goto_0
 
     :cond_0
-    const-wide/16 v0, 0x0
+    iget-wide v0, p3, Lorg/joda/time/Instant;->iMillis:J
 
     :goto_0
     invoke-interface {p1, p2, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;

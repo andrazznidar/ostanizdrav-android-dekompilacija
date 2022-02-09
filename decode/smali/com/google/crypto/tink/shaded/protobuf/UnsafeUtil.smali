@@ -47,7 +47,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 22
+    .locals 24
 
     const-class v1, [Ljava/lang/Object;
 
@@ -81,29 +81,27 @@
 
     sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
 
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/Android;->MEMORY_CLASS:Ljava/lang/Class;
+    sget-object v8, Lcom/google/crypto/tink/shaded/protobuf/Android;->MEMORY_CLASS:Ljava/lang/Class;
 
-    sput-object v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->MEMORY_CLASS:Ljava/lang/Class;
+    sput-object v8, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->MEMORY_CLASS:Ljava/lang/Class;
 
-    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->determineAndroidSupportByAddressSize(Ljava/lang/Class;)Z
+    invoke-static {v8}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->determineAndroidSupportByAddressSize(Ljava/lang/Class;)Z
 
-    move-result v0
+    move-result v9
 
-    sput-boolean v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_ANDROID_64:Z
+    sput-boolean v9, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_ANDROID_64:Z
 
-    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v10, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->determineAndroidSupportByAddressSize(Ljava/lang/Class;)Z
+    invoke-static {v10}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->determineAndroidSupportByAddressSize(Ljava/lang/Class;)Z
 
-    move-result v0
+    move-result v11
 
-    sput-boolean v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_ANDROID_32:Z
+    sput-boolean v11, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_ANDROID_32:Z
 
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
-
-    const/4 v8, 0x0
+    const/4 v12, 0x0
 
     if-nez v0, :cond_0
 
@@ -112,135 +110,125 @@
     :cond_0
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Android;->isOnAndroidDevice()Z
 
-    move-result v0
+    move-result v13
 
-    if-eqz v0, :cond_2
+    if-eqz v13, :cond_2
 
-    sget-boolean v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_ANDROID_64:Z
+    if-eqz v9, :cond_1
 
-    if-eqz v0, :cond_1
+    new-instance v12, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android64MemoryAccessor;
 
-    new-instance v8, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android64MemoryAccessor;
-
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
-
-    invoke-direct {v8, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android64MemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
+    invoke-direct {v12, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android64MemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
 
     goto :goto_0
 
     :cond_1
-    sget-boolean v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_ANDROID_32:Z
+    if-eqz v11, :cond_3
 
-    if-eqz v0, :cond_3
+    new-instance v12, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android32MemoryAccessor;
 
-    new-instance v8, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android32MemoryAccessor;
-
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
-
-    invoke-direct {v8, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android32MemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
+    invoke-direct {v12, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$Android32MemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
 
     goto :goto_0
 
     :cond_2
-    new-instance v8, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$JvmMemoryAccessor;
+    new-instance v12, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$JvmMemoryAccessor;
 
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
-
-    invoke-direct {v8, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$JvmMemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
+    invoke-direct {v12, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$JvmMemoryAccessor;-><init>(Lsun/misc/Unsafe;)V
 
     :cond_3
     :goto_0
-    sput-object v8, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$MemoryAccessor;
+    sput-object v12, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$MemoryAccessor;
 
-    const-string v0, "copyMemory"
+    const-string v9, "copyMemory"
 
-    sget-object v8, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->UNSAFE:Lsun/misc/Unsafe;
+    const-string v12, "putLong"
 
-    const-string v10, "putLong"
+    const-string v13, "putInt"
 
-    const-string v11, "putInt"
+    const-string v14, "getInt"
 
-    const-string v12, "getInt"
+    const-string v15, "putByte"
 
-    const-string v13, "putByte"
-
-    const-string v14, "getByte"
-
-    const-string v9, "platform method missing - proto runtime falling back to safer methods: "
-
-    const-string v15, "objectFieldOffset"
+    const-string v11, "getByte"
 
     move-object/from16 v16, v1
 
-    const-string v1, "getLong"
+    const-string v1, "platform method missing - proto runtime falling back to safer methods: "
 
     move-object/from16 v17, v2
 
-    const/4 v2, 0x1
+    const-string v2, "objectFieldOffset"
 
-    const/16 v18, 0x0
+    move-object/from16 v18, v3
 
-    if-nez v8, :cond_4
+    const-string v3, "getLong"
 
-    move-object/from16 v19, v3
+    move-object/from16 v19, v4
+
+    const/4 v4, 0x1
+
+    const/16 v20, 0x0
+
+    if-nez v0, :cond_4
+
+    move-object/from16 v21, v5
 
     :goto_1
-    move-object/from16 v21, v4
+    move-object/from16 v23, v6
 
     :goto_2
-    move/from16 v0, v18
+    move/from16 v0, v20
 
     goto/16 :goto_6
 
     :cond_4
     :try_start_0
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v8
+    move-result-object v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    move-object/from16 v19, v3
+    move-object/from16 v21, v5
 
     :try_start_1
-    new-array v3, v2, [Ljava/lang/Class;
+    new-array v5, v4, [Ljava/lang/Class;
 
-    const-class v20, Ljava/lang/reflect/Field;
+    const-class v22, Ljava/lang/reflect/Field;
 
-    aput-object v20, v3, v18
+    aput-object v22, v5, v20
 
-    invoke-virtual {v8, v15, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v2, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const/4 v3, 0x2
+    const/4 v5, 0x2
 
-    new-array v2, v3, [Ljava/lang/Class;
+    new-array v4, v5, [Ljava/lang/Class;
 
-    aput-object v7, v2, v18
+    aput-object v7, v4, v20
 
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    const/4 v5, 0x1
 
-    const/16 v20, 0x1
+    aput-object v8, v4, v5
 
-    aput-object v3, v2, v20
-
-    invoke-virtual {v8, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->bufferAddressField()Ljava/lang/reflect/Field;
 
-    move-result-object v2
+    move-result-object v4
 
-    if-nez v2, :cond_5
+    if-nez v4, :cond_5
 
     goto :goto_1
 
     :cond_5
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Android;->isOnAndroidDevice()Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_6
+    if-eqz v4, :cond_6
 
-    move-object/from16 v21, v4
+    move-object/from16 v23, v6
 
     :goto_3
     const/4 v0, 0x1
@@ -248,136 +236,106 @@
     goto/16 :goto_6
 
     :cond_6
-    const/4 v2, 0x1
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v3, v18
-
-    invoke-virtual {v8, v14, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const/4 v2, 0x2
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v3, v18
-
-    sget-object v2, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    move-object/from16 v21, v4
-
     const/4 v4, 0x1
 
-    :try_start_2
-    aput-object v2, v3, v4
+    new-array v5, v4, [Ljava/lang/Class;
 
-    invoke-virtual {v8, v13, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    aput-object v8, v5, v20
 
-    new-array v2, v4, [Ljava/lang/Class;
-
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v3, v2, v18
-
-    invoke-virtual {v8, v12, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const/4 v2, 0x2
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v3, v18
-
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x1
-
-    aput-object v2, v3, v4
-
-    invoke-virtual {v8, v11, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    new-array v2, v4, [Ljava/lang/Class;
-
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v3, v2, v18
-
-    invoke-virtual {v8, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const/4 v2, 0x2
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v3, v18
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x1
-
-    aput-object v2, v3, v4
-
-    invoke-virtual {v8, v10, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const/4 v2, 0x3
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v3, v18
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x1
-
-    aput-object v2, v3, v4
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    invoke-virtual {v0, v11, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const/4 v4, 0x2
 
-    aput-object v2, v3, v4
+    new-array v5, v4, [Ljava/lang/Class;
 
-    invoke-virtual {v8, v0, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    aput-object v8, v5, v20
 
-    const/4 v2, 0x5
+    sget-object v4, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    new-array v2, v2, [Ljava/lang/Class;
+    move-object/from16 v23, v6
 
-    aput-object v7, v2, v18
+    const/4 v6, 0x1
 
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    :try_start_2
+    aput-object v4, v5, v6
+
+    invoke-virtual {v0, v15, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    new-array v4, v6, [Ljava/lang/Class;
+
+    aput-object v8, v4, v20
+
+    invoke-virtual {v0, v14, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const/4 v4, 0x2
+
+    new-array v5, v4, [Ljava/lang/Class;
+
+    aput-object v8, v5, v20
 
     const/4 v4, 0x1
 
-    aput-object v3, v2, v4
+    aput-object v10, v5, v4
 
-    const/4 v3, 0x2
+    invoke-virtual {v0, v13, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    aput-object v7, v2, v3
+    new-array v5, v4, [Ljava/lang/Class;
 
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    aput-object v8, v5, v20
 
-    const/4 v4, 0x3
+    invoke-virtual {v0, v3, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    aput-object v3, v2, v4
+    const/4 v4, 0x2
 
-    const/4 v3, 0x4
+    new-array v5, v4, [Ljava/lang/Class;
 
-    sget-object v4, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    aput-object v8, v5, v20
 
-    aput-object v4, v2, v3
+    const/4 v4, 0x1
 
-    invoke-virtual {v8, v0, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    aput-object v8, v5, v4
+
+    invoke-virtual {v0, v12, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const/4 v5, 0x3
+
+    new-array v6, v5, [Ljava/lang/Class;
+
+    aput-object v8, v6, v20
+
+    aput-object v8, v6, v4
+
+    const/4 v4, 0x2
+
+    aput-object v8, v6, v4
+
+    invoke-virtual {v0, v9, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const/4 v4, 0x5
+
+    new-array v4, v4, [Ljava/lang/Class;
+
+    aput-object v7, v4, v20
+
+    const/4 v5, 0x1
+
+    aput-object v8, v4, v5
+
+    const/4 v5, 0x2
+
+    aput-object v7, v4, v5
+
+    const/4 v5, 0x3
+
+    aput-object v8, v4, v5
+
+    const/4 v5, 0x4
+
+    aput-object v8, v4, v5
+
+    invoke-virtual {v0, v9, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -396,29 +354,29 @@
     :catchall_2
     move-exception v0
 
-    move-object/from16 v19, v3
+    move-object/from16 v21, v5
 
     :goto_4
-    move-object/from16 v21, v4
+    move-object/from16 v23, v6
 
     :goto_5
-    sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->logger:Ljava/util/logging/Logger;
+    sget-object v4, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->logger:Ljava/util/logging/Logger;
 
-    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
+    sget-object v5, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v3, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
+    invoke-virtual {v4, v5, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
     goto/16 :goto_2
 
@@ -429,12 +387,11 @@
 
     if-nez v0, :cond_7
 
-    move/from16 v0, v18
+    move/from16 v22, v20
 
-    :goto_7
-    const/16 v20, 0x1
+    const/4 v5, 0x1
 
-    goto/16 :goto_9
+    goto/16 :goto_8
 
     :cond_7
     :try_start_3
@@ -442,410 +399,345 @@
 
     move-result-object v0
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_7
+    .catchall {:try_start_3 .. :try_end_3} :catchall_6
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
     :try_start_4
-    new-array v3, v2, [Ljava/lang/Class;
+    new-array v5, v4, [Ljava/lang/Class;
 
-    const-class v4, Ljava/lang/reflect/Field;
+    const-class v6, Ljava/lang/reflect/Field;
 
-    aput-object v4, v3, v18
+    aput-object v6, v5, v20
 
-    invoke-virtual {v0, v15, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v2, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const-string v3, "arrayBaseOffset"
+    const-string v2, "arrayBaseOffset"
 
-    new-array v4, v2, [Ljava/lang/Class;
+    new-array v5, v4, [Ljava/lang/Class;
 
-    const-class v8, Ljava/lang/Class;
+    const-class v6, Ljava/lang/Class;
 
-    aput-object v8, v4, v18
+    aput-object v6, v5, v20
 
-    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v2, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const-string v3, "arrayIndexScale"
+    const-string v2, "arrayIndexScale"
 
-    new-array v4, v2, [Ljava/lang/Class;
+    new-array v5, v4, [Ljava/lang/Class;
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_6
+    .catchall {:try_start_4 .. :try_end_4} :catchall_5
 
     :try_start_5
-    const-class v2, Ljava/lang/Class;
+    const-class v4, Ljava/lang/Class;
 
-    aput-object v2, v4, v18
+    aput-object v4, v5, v20
 
-    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v2, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const/4 v2, 0x2
 
-    new-array v3, v2, [Ljava/lang/Class;
+    new-array v4, v2, [Ljava/lang/Class;
 
-    aput-object v7, v3, v18
+    aput-object v7, v4, v20
 
     sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_7
+    .catchall {:try_start_5 .. :try_end_5} :catchall_6
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     :try_start_6
-    aput-object v2, v3, v4
+    aput-object v2, v4, v5
 
-    invoke-virtual {v0, v12, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v14, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const/4 v2, 0x3
+    const/4 v4, 0x3
 
-    new-array v3, v2, [Ljava/lang/Class;
+    new-array v6, v4, [Ljava/lang/Class;
 
-    aput-object v7, v3, v18
+    aput-object v7, v6, v20
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v2, v3, v4
+    aput-object v2, v6, v5
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_5
+    .catchall {:try_start_6 .. :try_end_6} :catchall_4
 
     :try_start_7
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    const/4 v4, 0x2
+    const/4 v5, 0x2
 
-    aput-object v2, v3, v4
+    aput-object v4, v6, v5
 
-    invoke-virtual {v0, v11, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v13, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    new-array v2, v4, [Ljava/lang/Class;
+    new-array v4, v5, [Ljava/lang/Class;
 
-    aput-object v7, v2, v18
-
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    aput-object v7, v4, v20
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_6
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     :try_start_8
-    aput-object v3, v2, v4
+    aput-object v2, v4, v5
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x3
+    const/4 v3, 0x3
 
-    new-array v2, v1, [Ljava/lang/Class;
+    new-array v4, v3, [Ljava/lang/Class;
 
-    aput-object v7, v2, v18
+    aput-object v7, v4, v20
 
-    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    aput-object v1, v2, v4
+    aput-object v2, v4, v5
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_5
-
-    :try_start_9
-    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    .catchall {:try_start_8 .. :try_end_8} :catchall_4
 
     const/4 v3, 0x2
 
-    aput-object v1, v2, v3
+    :try_start_9
+    aput-object v2, v4, v3
 
-    invoke-virtual {v0, v10, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v12, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const-string v1, "getObject"
+    const-string v4, "getObject"
 
-    new-array v2, v3, [Ljava/lang/Class;
+    new-array v5, v3, [Ljava/lang/Class;
 
-    aput-object v7, v2, v18
-
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    aput-object v7, v5, v20
     :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_7
-
-    const/4 v4, 0x1
-
-    :try_start_a
-    aput-object v3, v2, v4
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_5
-
-    :try_start_b
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v1, "putObject"
-
-    const/4 v2, 0x3
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    aput-object v7, v3, v18
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-    :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_7
-
-    const/4 v4, 0x1
-
-    :try_start_c
-    aput-object v2, v3, v4
-    :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_5
-
-    const/4 v2, 0x2
-
-    :try_start_d
-    aput-object v7, v3, v2
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Android;->isOnAndroidDevice()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    const/4 v0, 0x1
-
-    goto/16 :goto_7
-
-    :cond_8
-    new-array v1, v2, [Ljava/lang/Class;
-
-    aput-object v7, v1, v18
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-    :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_7
+    .catchall {:try_start_9 .. :try_end_9} :catchall_6
 
     const/4 v3, 0x1
 
-    :try_start_e
-    aput-object v2, v1, v3
+    :try_start_a
+    aput-object v2, v5, v3
 
-    invoke-virtual {v0, v14, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x3
+    const-string v4, "putObject"
 
-    new-array v2, v1, [Ljava/lang/Class;
+    const/4 v5, 0x3
 
-    aput-object v7, v2, v18
+    new-array v6, v5, [Ljava/lang/Class;
 
-    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    aput-object v7, v6, v20
 
-    aput-object v1, v2, v3
-    :try_end_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_4
-
-    :try_start_f
-    sget-object v1, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    aput-object v2, v6, v3
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_3
 
     const/4 v3, 0x2
 
-    aput-object v1, v2, v3
+    :try_start_b
+    aput-object v7, v6, v3
 
-    invoke-virtual {v0, v13, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v4, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    const-string v1, "getBoolean"
+    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/Android;->isOnAndroidDevice()Z
 
-    new-array v2, v3, [Ljava/lang/Class;
+    move-result v4
 
-    aput-object v7, v2, v18
+    if-eqz v4, :cond_8
 
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-    :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_7
+    const/4 v5, 0x1
+
+    const/16 v22, 0x1
+
+    goto/16 :goto_8
+
+    :cond_8
+    new-array v4, v3, [Ljava/lang/Class;
+
+    aput-object v7, v4, v20
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_6
+
+    const/4 v3, 0x1
+
+    :try_start_c
+    aput-object v2, v4, v3
+
+    invoke-virtual {v0, v11, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const/4 v4, 0x3
+
+    new-array v5, v4, [Ljava/lang/Class;
+
+    aput-object v7, v5, v20
+
+    aput-object v2, v5, v3
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_3
+
+    :try_start_d
+    sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+
+    const/4 v4, 0x2
+
+    aput-object v3, v5, v4
+
+    invoke-virtual {v0, v15, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const-string v3, "getBoolean"
+
+    new-array v5, v4, [Ljava/lang/Class;
+
+    aput-object v7, v5, v20
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_6
 
     const/4 v4, 0x1
+
+    :try_start_e
+    aput-object v2, v5, v4
+
+    invoke-virtual {v0, v3, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const-string v3, "putBoolean"
+
+    const/4 v5, 0x3
+
+    new-array v6, v5, [Ljava/lang/Class;
+
+    aput-object v7, v6, v20
+
+    aput-object v2, v6, v4
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_5
+
+    :try_start_f
+    sget-object v4, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    const/4 v5, 0x2
+
+    aput-object v4, v6, v5
+
+    invoke-virtual {v0, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const-string v3, "getFloat"
+
+    new-array v4, v5, [Ljava/lang/Class;
+
+    aput-object v7, v4, v20
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_6
+
+    const/4 v5, 0x1
 
     :try_start_10
-    aput-object v3, v2, v4
+    aput-object v2, v4, v5
+
+    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const-string v3, "putFloat"
+
+    const/4 v4, 0x3
+
+    new-array v6, v4, [Ljava/lang/Class;
+
+    aput-object v7, v6, v20
+
+    aput-object v2, v6, v5
     :try_end_10
-    .catchall {:try_start_10 .. :try_end_10} :catchall_5
+    .catchall {:try_start_10 .. :try_end_10} :catchall_4
 
     :try_start_11
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    sget-object v4, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    const-string v1, "putBoolean"
+    const/4 v5, 0x2
 
-    const/4 v2, 0x3
+    aput-object v4, v6, v5
 
-    new-array v3, v2, [Ljava/lang/Class;
+    invoke-virtual {v0, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    aput-object v7, v3, v18
+    const-string v3, "getDouble"
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    new-array v4, v5, [Ljava/lang/Class;
+
+    aput-object v7, v4, v20
     :try_end_11
-    .catchall {:try_start_11 .. :try_end_11} :catchall_7
+    .catchall {:try_start_11 .. :try_end_11} :catchall_6
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
     :try_start_12
-    aput-object v2, v3, v4
+    aput-object v2, v4, v5
+
+    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    const-string v3, "putDouble"
+
+    const/4 v4, 0x3
+
+    new-array v4, v4, [Ljava/lang/Class;
+
+    aput-object v7, v4, v20
+
+    aput-object v2, v4, v5
+
+    sget-object v2, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+
+    const/4 v6, 0x2
+
+    aput-object v2, v4, v6
+
+    invoke-virtual {v0, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_12
-    .catchall {:try_start_12 .. :try_end_12} :catchall_5
+    .catchall {:try_start_12 .. :try_end_12} :catchall_4
 
-    :try_start_13
-    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    move/from16 v22, v5
 
-    const/4 v4, 0x2
-
-    aput-object v2, v3, v4
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v1, "getFloat"
-
-    new-array v2, v4, [Ljava/lang/Class;
-
-    aput-object v7, v2, v18
-
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-    :try_end_13
-    .catchall {:try_start_13 .. :try_end_13} :catchall_7
-
-    const/4 v4, 0x1
-
-    :try_start_14
-    aput-object v3, v2, v4
-    :try_end_14
-    .catchall {:try_start_14 .. :try_end_14} :catchall_5
-
-    :try_start_15
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v1, "putFloat"
-
-    const/4 v2, 0x3
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    aput-object v7, v3, v18
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-    :try_end_15
-    .catchall {:try_start_15 .. :try_end_15} :catchall_7
-
-    const/4 v4, 0x1
-
-    :try_start_16
-    aput-object v2, v3, v4
-    :try_end_16
-    .catchall {:try_start_16 .. :try_end_16} :catchall_5
-
-    :try_start_17
-    sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x2
-
-    aput-object v2, v3, v4
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v1, "getDouble"
-
-    new-array v2, v4, [Ljava/lang/Class;
-
-    aput-object v7, v2, v18
-
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-    :try_end_17
-    .catchall {:try_start_17 .. :try_end_17} :catchall_7
-
-    const/4 v4, 0x1
-
-    :try_start_18
-    aput-object v3, v2, v4
-    :try_end_18
-    .catchall {:try_start_18 .. :try_end_18} :catchall_5
-
-    :try_start_19
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    const-string v1, "putDouble"
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    aput-object v7, v2, v18
-
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-    :try_end_19
-    .catchall {:try_start_19 .. :try_end_19} :catchall_7
-
-    const/16 v20, 0x1
-
-    :try_start_1a
-    aput-object v3, v2, v20
-
-    sget-object v3, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x2
-
-    aput-object v3, v2, v4
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    :try_end_1a
-    .catchall {:try_start_1a .. :try_end_1a} :catchall_3
-
-    move/from16 v0, v20
-
-    goto :goto_9
+    goto :goto_8
 
     :catchall_3
     move-exception v0
 
-    goto :goto_8
+    move v5, v3
+
+    goto :goto_7
 
     :catchall_4
     move-exception v0
 
-    move/from16 v20, v3
-
-    goto :goto_8
+    goto :goto_7
 
     :catchall_5
     move-exception v0
 
-    move/from16 v20, v4
+    move v5, v4
 
-    goto :goto_8
+    goto :goto_7
 
     :catchall_6
     move-exception v0
 
-    move/from16 v20, v2
+    const/4 v5, 0x1
 
-    goto :goto_8
+    :goto_7
+    sget-object v2, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->logger:Ljava/util/logging/Logger;
 
-    :catchall_7
-    move-exception v0
+    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
-    const/16 v20, 0x1
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    :goto_8
-    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->logger:Ljava/util/logging/Logger;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
+    invoke-virtual {v2, v3, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    move/from16 v0, v18
+    move/from16 v22, v20
 
-    :goto_9
-    sput-boolean v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->HAS_UNSAFE_ARRAY_OPERATIONS:Z
+    :goto_8
+    sput-boolean v22, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->HAS_UNSAFE_ARRAY_OPERATIONS:Z
 
     const-class v0, [B
 
@@ -857,13 +749,9 @@
 
     sput-wide v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->BYTE_ARRAY_BASE_OFFSET:J
 
-    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayBaseOffset(Ljava/lang/Class;)I
+    invoke-static/range {v23 .. v23}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayBaseOffset(Ljava/lang/Class;)I
 
-    invoke-static {v6}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayIndexScale(Ljava/lang/Class;)I
-
-    invoke-static {v5}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayBaseOffset(Ljava/lang/Class;)I
-
-    invoke-static {v5}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayIndexScale(Ljava/lang/Class;)I
+    invoke-static/range {v23 .. v23}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayIndexScale(Ljava/lang/Class;)I
 
     invoke-static/range {v21 .. v21}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayBaseOffset(Ljava/lang/Class;)I
 
@@ -872,6 +760,10 @@
     invoke-static/range {v19 .. v19}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayBaseOffset(Ljava/lang/Class;)I
 
     invoke-static/range {v19 .. v19}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayIndexScale(Ljava/lang/Class;)I
+
+    invoke-static/range {v18 .. v18}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayBaseOffset(Ljava/lang/Class;)I
+
+    invoke-static/range {v18 .. v18}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayIndexScale(Ljava/lang/Class;)I
 
     invoke-static/range {v17 .. v17}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->arrayBaseOffset(Ljava/lang/Class;)I
 
@@ -891,20 +783,20 @@
 
     if-nez v1, :cond_9
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_9
     invoke-virtual {v1, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$MemoryAccessor;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     move-result-wide v0
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_a
-    :goto_a
+    :goto_9
     const-wide/16 v0, -0x1
 
-    :goto_b
+    :goto_a
     sput-wide v0, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->BUFFER_ADDRESS_OFFSET:J
 
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
@@ -915,15 +807,15 @@
 
     if-ne v0, v1, :cond_b
 
-    move/from16 v2, v20
+    move v4, v5
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_b
-    move/from16 v2, v18
+    move/from16 v4, v20
 
-    :goto_c
-    sput-boolean v2, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
+    :goto_b
+    sput-boolean v4, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->IS_BIG_ENDIAN:Z
 
     return-void
 .end method
@@ -1153,47 +1045,41 @@
 
     const/4 v5, 0x3
 
-    new-array v6, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object p0, v6, v2
+    aput-object p0, v8, v2
 
-    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v6, v7
+    aput-object v9, v8, v7
 
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    aput-object v6, v8, v4
 
-    aput-object v8, v6, v4
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "pokeInt"
 
-    new-array v6, v5, [Ljava/lang/Class;
+    new-array v8, v5, [Ljava/lang/Class;
 
-    aput-object p0, v6, v2
+    aput-object p0, v8, v2
 
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v6, v7
+    aput-object v9, v8, v7
 
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    aput-object v6, v8, v4
 
-    aput-object v8, v6, v4
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "peekInt"
 
-    new-array v6, v4, [Ljava/lang/Class;
+    new-array v8, v4, [Ljava/lang/Class;
 
-    aput-object p0, v6, v2
+    aput-object p0, v8, v2
 
-    sget-object v8, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    aput-object v6, v8, v7
 
-    aput-object v8, v6, v7
-
-    invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v3, v8}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     const-string v3, "pokeByte"
 
@@ -1225,11 +1111,7 @@
 
     aput-object v0, v8, v7
 
-    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
     aput-object v9, v8, v4
-
-    sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v8, v5
 
@@ -1243,13 +1125,9 @@
 
     aput-object v0, v6, v7
 
-    sget-object p0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    aput-object v9, v6, v4
 
-    aput-object p0, v6, v4
-
-    sget-object p0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object p0, v6, v5
+    aput-object v9, v6, v5
 
     invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0

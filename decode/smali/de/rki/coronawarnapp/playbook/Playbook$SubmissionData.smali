@@ -17,13 +17,35 @@
 # instance fields
 .field public final consentToFederation:Z
 
+.field public final encryptedCheckIns:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final registrationToken:Ljava/lang/String;
+
+.field public final submissionType:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
 
 .field public final temporaryExposureKeys:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
             "Lde/rki/coronawarnapp/server/protocols/external/exposurenotification/TemporaryExposureKeyExportOuterClass$TemporaryExposureKey;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final unencryptedCheckIns:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;",
             ">;"
         }
     .end annotation
@@ -41,7 +63,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/util/List;ZLjava/util/List;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/util/List;ZLjava/util/List;Ljava/util/List;Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -52,7 +74,15 @@
             ">;Z",
             "Ljava/util/List<",
             "Ljava/lang/String;",
-            ">;)V"
+            ">;",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckIn;",
+            ">;",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/pt/CheckInOuterClass$CheckInProtectedReport;",
+            ">;",
+            "Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;",
+            ")V"
         }
     .end annotation
 
@@ -60,13 +90,25 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "temporaryExposureKeys"
+    const-string/jumbo v0, "temporaryExposureKeys"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "visitedCountries"
+    const-string/jumbo v0, "visitedCountries"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "unencryptedCheckIns"
+
+    invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "encryptedCheckIns"
+
+    invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "submissionType"
+
+    invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -78,70 +120,122 @@
 
     iput-object p4, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
 
+    iput-object p5, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->unencryptedCheckIns:Ljava/util/List;
+
+    iput-object p6, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->encryptedCheckIns:Ljava/util/List;
+
+    iput-object p7, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->submissionType:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->registrationToken:Ljava/lang/String;
-
-    iget-object v1, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->registrationToken:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->temporaryExposureKeys:Ljava/util/List;
-
-    iget-object v1, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->temporaryExposureKeys:Ljava/util/List;
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->consentToFederation:Z
-
-    iget-boolean v1, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->consentToFederation:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
-
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    const/4 p1, 0x0
+    instance-of v1, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;
 
-    return p1
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    :goto_0
-    const/4 p1, 0x1
+    check-cast p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;
 
-    return p1
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->registrationToken:Ljava/lang/String;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->registrationToken:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->temporaryExposureKeys:Ljava/util/List;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->temporaryExposureKeys:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-boolean v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->consentToFederation:Z
+
+    iget-boolean v3, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->consentToFederation:Z
+
+    if-eq v1, v3, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->unencryptedCheckIns:Ljava/util/List;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->unencryptedCheckIns:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->encryptedCheckIns:Ljava/util/List;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->encryptedCheckIns:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->submissionType:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->submissionType:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+
+    if-eq v1, p1, :cond_8
+
+    return v2
+
+    :cond_8
+    return v0
 .end method
 
 .method public hashCode()I
@@ -149,107 +243,130 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->registrationToken:Ljava/lang/String;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
     mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->temporaryExposureKeys:Ljava/util/List;
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    goto :goto_1
-
-    :cond_1
-    move v2, v1
-
-    :goto_1
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v2, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->consentToFederation:Z
-
-    if-eqz v2, :cond_2
-
-    const/4 v2, 0x1
-
-    :cond_2
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    :cond_3
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    const-string v0, "SubmissionData(registrationToken="
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->registrationToken:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", temporaryExposureKeys="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->temporaryExposureKeys:Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/16 v2, 0x1f
 
-    const-string v1, ", consentToFederation="
+    invoke-static {v1, v0, v2}, Lcoil/memory/MemoryCache$Key$Complex$$ExternalSyntheticOutline0;->m(Ljava/util/List;II)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
     iget-boolean v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->consentToFederation:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_0
 
-    const-string v1, ", visitedCountries="
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/16 v2, 0x1f
 
-    const-string v1, ")"
+    invoke-static {v1, v0, v2}, Lcoil/memory/MemoryCache$Key$Complex$$ExternalSyntheticOutline0;->m(Ljava/util/List;II)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->unencryptedCheckIns:Ljava/util/List;
+
+    invoke-static {v1, v0, v2}, Lcoil/memory/MemoryCache$Key$Complex$$ExternalSyntheticOutline0;->m(Ljava/util/List;II)I
+
+    move-result v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->encryptedCheckIns:Ljava/util/List;
+
+    invoke-static {v1, v0, v2}, Lcoil/memory/MemoryCache$Key$Complex$$ExternalSyntheticOutline0;->m(Ljava/util/List;II)I
+
+    move-result v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->submissionType:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    return v1
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 9
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->registrationToken:Ljava/lang/String;
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->temporaryExposureKeys:Ljava/util/List;
+
+    iget-boolean v2, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->consentToFederation:Z
+
+    iget-object v3, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->visitedCountries:Ljava/util/List;
+
+    iget-object v4, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->unencryptedCheckIns:Ljava/util/List;
+
+    iget-object v5, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->encryptedCheckIns:Ljava/util/List;
+
+    iget-object v6, p0, Lde/rki/coronawarnapp/playbook/Playbook$SubmissionData;->submissionType:Lde/rki/coronawarnapp/server/protocols/internal/SubmissionPayloadOuterClass$SubmissionPayload$SubmissionType;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "SubmissionData(registrationToken="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", temporaryExposureKeys="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", consentToFederation="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", visitedCountries="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", unencryptedCheckIns="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", encryptedCheckIns="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", submissionType="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

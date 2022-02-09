@@ -67,6 +67,14 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -158,8 +166,6 @@
 
     aput-object v8, v7, v9
 
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
     aput-object v8, v7, v3
 
     const-class v8, Ljava/lang/String;
@@ -235,8 +241,151 @@
     return v3
 .end method
 
+.method public createNotificationChannel(Landroidx/core/app/NotificationChannelCompat;)V
+    .locals 7
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "channel"
+        }
+    .end annotation
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x1a
+
+    if-ge v0, v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v3, Landroid/app/NotificationChannel;
+
+    iget-object v4, p1, Landroidx/core/app/NotificationChannelCompat;->mId:Ljava/lang/String;
+
+    iget-object v5, p1, Landroidx/core/app/NotificationChannelCompat;->mName:Ljava/lang/CharSequence;
+
+    iget v6, p1, Landroidx/core/app/NotificationChannelCompat;->mImportance:I
+
+    invoke-direct {v3, v4, v5, v6}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
+
+    iget-object v4, p1, Landroidx/core/app/NotificationChannelCompat;->mDescription:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v1}, Landroid/app/NotificationChannel;->setGroup(Ljava/lang/String;)V
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Landroid/app/NotificationChannel;->setShowBadge(Z)V
+
+    iget-object v4, p1, Landroidx/core/app/NotificationChannelCompat;->mSound:Landroid/net/Uri;
+
+    iget-object p1, p1, Landroidx/core/app/NotificationChannelCompat;->mAudioAttributes:Landroid/media/AudioAttributes;
+
+    invoke-virtual {v3, v4, p1}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
+
+    const/4 p1, 0x0
+
+    invoke-virtual {v3, p1}, Landroid/app/NotificationChannel;->enableLights(Z)V
+
+    invoke-virtual {v3, p1}, Landroid/app/NotificationChannel;->setLightColor(I)V
+
+    invoke-virtual {v3, v1}, Landroid/app/NotificationChannel;->setVibrationPattern([J)V
+
+    invoke-virtual {v3, p1}, Landroid/app/NotificationChannel;->enableVibration(Z)V
+
+    move-object v1, v3
+
+    :goto_0
+    if-lt v0, v2, :cond_1
+
+    iget-object p1, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;
+
+    invoke-virtual {p1, v1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public notify(ILandroid/app/Notification;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "id",
+            "notification"
+        }
+    .end annotation
+
+    iget-object v0, p2, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+
+    if-eqz v0, :cond_0
+
+    const-string v1, "android.support.useSideChannel"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;
+
+    iget-object v2, p0, Landroidx/core/app/NotificationManagerCompat;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2, p1, v1, p2}, Landroidx/core/app/NotificationManagerCompat$NotifyTask;-><init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
+
+    invoke-virtual {p0, v0}, Landroidx/core/app/NotificationManagerCompat;->pushSideChannelQueue(Landroidx/core/app/NotificationManagerCompat$Task;)V
+
+    iget-object p2, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;
+
+    invoke-virtual {p2, v1, p1}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat;->mNotificationManager:Landroid/app/NotificationManager;
+
+    invoke-virtual {v0, v1, p1, p2}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
+
+    :goto_1
+    return-void
+.end method
+
 .method public final pushSideChannelQueue(Landroidx/core/app/NotificationManagerCompat$Task;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "task"
+        }
+    .end annotation
 
     sget-object v0, Landroidx/core/app/NotificationManagerCompat;->sLock:Ljava/lang/Object;
 

@@ -28,23 +28,23 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,132:1\n53#2:133\n48#3:134\n82#4:135\n1517#5:136\n1588#5,3:137\n*E\n*S KotlinDebug\n*F\n+ 1 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n*L\n82#1:136\n82#1,3:137\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n82#4:137\n1547#5:138\n1618#5,3:139\n*S KotlinDebug\n*F\n+ 1 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n*L\n82#1:138\n82#1:139,3\n*E\n"
 .end annotation
 
 
 # instance fields
 .field public final synthetic $this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
-.field public final synthetic this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;
+.field public final synthetic this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
 
 # direct methods
-.method public constructor <init>(Lkotlinx/coroutines/flow/FlowCollector;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;)V
+.method public constructor <init>(Lkotlinx/coroutines/flow/FlowCollector;Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
     .locals 0
 
     iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;
+    iput-object p2, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -96,7 +96,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -110,7 +110,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -120,7 +120,7 @@
 
     const/16 v4, 0xa
 
-    invoke-static {p1, v4}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v4}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v4
 
@@ -143,9 +143,7 @@
 
     check-cast v4, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;
-
-    iget-object v5, v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    iget-object v5, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$$inlined$map$1$2;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     new-instance v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;
 

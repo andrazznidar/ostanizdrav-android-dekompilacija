@@ -50,8 +50,6 @@
 
 .field public mPattern:Ljava/util/regex/Pattern;
 
-.field public final mUri:Ljava/lang/String;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -96,8 +94,6 @@
     iput-boolean v1, p0, Landroidx/navigation/NavDeepLink;->mIsParameterizedQuery:Z
 
     iput-object v0, p0, Landroidx/navigation/NavDeepLink;->mMimeTypePattern:Ljava/util/regex/Pattern;
-
-    iput-object p1, p0, Landroidx/navigation/NavDeepLink;->mUri:Ljava/lang/String;
 
     iput-object p2, p0, Landroidx/navigation/NavDeepLink;->mAction:Ljava/lang/String;
 
@@ -325,7 +321,9 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const/4 p2, 0x2
+
+    invoke-static {p1, p2}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
     move-result-object p1
 
@@ -356,7 +354,7 @@
 
     const-string p2, "^("
 
-    invoke-static {p2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -364,7 +362,7 @@
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p3, "|[*]+)/("
+    const-string/jumbo p3, "|[*]+)/("
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -372,7 +370,7 @@
 
     invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p1, "|[*]+)$"
+    const-string/jumbo p1, "|[*]+)$"
 
     invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -403,7 +401,7 @@
 
     const-string v0, " does not match to required \"type/subtype\" format"
 
-    invoke-static {p2, p3, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3, v0}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 

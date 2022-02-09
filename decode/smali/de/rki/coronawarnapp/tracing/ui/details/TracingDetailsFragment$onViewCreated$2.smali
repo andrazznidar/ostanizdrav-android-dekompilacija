@@ -66,7 +66,7 @@
 
     const/4 v2, 0x2
 
-    invoke-static {v0, p1, v1, v2}, Lcom/google/zxing/client/android/R$id;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
+    invoke-static {v0, p1, v1, v2}, Lde/rki/coronawarnapp/util/lists/diffutil/SmartDiffUtilKt;->update$default(Landroidx/recyclerview/widget/RecyclerView$Adapter;Ljava/util/List;ZI)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

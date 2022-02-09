@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 9
+    .locals 14
 
     new-instance v0, Lcom/google/crypto/tink/proto/OutputPrefixType;
 
@@ -51,85 +51,75 @@
 
     sput-object v0, Lcom/google/crypto/tink/proto/OutputPrefixType;->UNKNOWN_PREFIX:Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/OutputPrefixType;
+    new-instance v1, Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    const-string v1, "TINK"
+    const-string v3, "TINK"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3, v3}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v4}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/OutputPrefixType;->TINK:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    sput-object v1, Lcom/google/crypto/tink/proto/OutputPrefixType;->TINK:Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/OutputPrefixType;
+    new-instance v3, Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    const-string v1, "LEGACY"
+    const-string v5, "LEGACY"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4, v4}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v3, v5, v6, v6}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/OutputPrefixType;->LEGACY:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    sput-object v3, Lcom/google/crypto/tink/proto/OutputPrefixType;->LEGACY:Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/OutputPrefixType;
+    new-instance v5, Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    const-string v1, "RAW"
+    const-string v7, "RAW"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5, v5}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v7, v8, v8}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/OutputPrefixType;->RAW:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    sput-object v5, Lcom/google/crypto/tink/proto/OutputPrefixType;->RAW:Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/OutputPrefixType;
+    new-instance v7, Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    const-string v1, "CRUNCHY"
+    const-string v9, "CRUNCHY"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v1, v6, v6}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v7, v9, v10, v10}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/OutputPrefixType;->CRUNCHY:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    sput-object v7, Lcom/google/crypto/tink/proto/OutputPrefixType;->CRUNCHY:Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    new-instance v0, Lcom/google/crypto/tink/proto/OutputPrefixType;
+    new-instance v9, Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    const-string v1, "UNRECOGNIZED"
+    const-string v11, "UNRECOGNIZED"
 
-    const/4 v7, 0x5
+    const/4 v12, 0x5
 
-    const/4 v8, -0x1
+    const/4 v13, -0x1
 
-    invoke-direct {v0, v1, v7, v8}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v9, v11, v12, v13}, Lcom/google/crypto/tink/proto/OutputPrefixType;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/crypto/tink/proto/OutputPrefixType;->UNRECOGNIZED:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    sput-object v9, Lcom/google/crypto/tink/proto/OutputPrefixType;->UNRECOGNIZED:Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    const/4 v1, 0x6
+    const/4 v11, 0x6
 
-    new-array v1, v1, [Lcom/google/crypto/tink/proto/OutputPrefixType;
+    new-array v11, v11, [Lcom/google/crypto/tink/proto/OutputPrefixType;
 
-    sget-object v8, Lcom/google/crypto/tink/proto/OutputPrefixType;->UNKNOWN_PREFIX:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    aput-object v0, v11, v2
 
-    aput-object v8, v1, v2
+    aput-object v1, v11, v4
 
-    sget-object v2, Lcom/google/crypto/tink/proto/OutputPrefixType;->TINK:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    aput-object v3, v11, v6
 
-    aput-object v2, v1, v3
+    aput-object v5, v11, v8
 
-    sget-object v2, Lcom/google/crypto/tink/proto/OutputPrefixType;->LEGACY:Lcom/google/crypto/tink/proto/OutputPrefixType;
+    aput-object v7, v11, v10
 
-    aput-object v2, v1, v4
+    aput-object v9, v11, v12
 
-    sget-object v2, Lcom/google/crypto/tink/proto/OutputPrefixType;->RAW:Lcom/google/crypto/tink/proto/OutputPrefixType;
-
-    aput-object v2, v1, v5
-
-    sget-object v2, Lcom/google/crypto/tink/proto/OutputPrefixType;->CRUNCHY:Lcom/google/crypto/tink/proto/OutputPrefixType;
-
-    aput-object v2, v1, v6
-
-    aput-object v0, v1, v7
-
-    sput-object v1, Lcom/google/crypto/tink/proto/OutputPrefixType;->$VALUES:[Lcom/google/crypto/tink/proto/OutputPrefixType;
+    sput-object v11, Lcom/google/crypto/tink/proto/OutputPrefixType;->$VALUES:[Lcom/google/crypto/tink/proto/OutputPrefixType;
 
     return-void
 .end method

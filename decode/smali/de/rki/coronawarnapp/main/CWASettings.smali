@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCWASettings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 5 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 6 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n*L\n1#1,63:1\n40#2,11:64\n40#2,11:75\n40#2,11:86\n40#2,11:110\n1#3:97\n2871#4,12:98\n88#5,4:121\n92#5:128\n93#5:140\n66#6,3:125\n71#6,11:129\n*E\n*S KotlinDebug\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n*L\n28#1,11:64\n32#1,11:75\n36#1,11:86\n43#1,11:110\n42#1,12:98\n45#1,4:121\n45#1:128\n45#1:140\n45#1,3:125\n45#1,11:129\n*E\n"
+    value = "SMAP\nCWASettings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n+ 2 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreferenceKt\n+ 3 FlowPreference.kt\nde/rki/coronawarnapp/util/preferences/FlowPreference$Companion\n+ 4 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,104:1\n91#2,4:105\n95#2:115\n96#2:118\n91#2,4:119\n95#2:129\n96#2:132\n66#3,6:109\n73#3:116\n84#3:117\n66#3,6:123\n73#3:130\n84#3:131\n39#4,12:133\n39#4,12:145\n39#4,12:157\n39#4,12:169\n39#4,12:181\n39#4,12:206\n39#4,12:218\n39#4,12:230\n39#4,12:242\n39#4,12:254\n1#5:193\n2901#6,12:194\n*S KotlinDebug\n*F\n+ 1 CWASettings.kt\nde/rki/coronawarnapp/main/CWASettings\n*L\n68#1:105,4\n68#1:115\n68#1:118\n73#1:119,4\n73#1:129\n73#1:132\n68#1:109,6\n68#1:116\n68#1:117\n73#1:123,6\n73#1:130\n73#1:131\n27#1:133,12\n31#1:145,12\n35#1:157,12\n39#1:169,12\n43#1:181,12\n50#1:206,12\n54#1:218,12\n58#1:230,12\n62#1:242,12\n66#1:254,12\n49#1:194,12\n*E\n"
 .end annotation
 
 
@@ -22,12 +22,22 @@
     .end annotation
 .end field
 
+.field public final lastNotificationsOnboardingVersionCode:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lde/rki/coronawarnapp/util/preferences/FlowPreference<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final prefs$delegate:Lkotlin/Lazy;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 4
+    .locals 5
 
     const-string v0, "context"
 
@@ -41,7 +51,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/main/CWASettings$prefs$2;-><init>(Lde/rki/coronawarnapp/main/CWASettings;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -55,55 +65,89 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-wide/16 v0, 0x1
+    const-wide/16 v1, 0x1
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    new-instance v3, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$1;
+
+    invoke-direct {v3, v1}, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
+
+    sget-object v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+
+    const-string/jumbo v4, "update.changelog.lastversion"
+
+    invoke-direct {v2, p1, v4, v3, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
+
+    iput-object v2, p0, Lde/rki/coronawarnapp/main/CWASettings;->lastChangelogVersion:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    new-instance v1, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    new-instance v2, Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
-    new-instance v2, Lde/rki/coronawarnapp/main/CWASettings$$special$$inlined$createFlowPreference$1;
+    new-instance v3, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$2;
 
-    invoke-direct {v2, v0}, Lde/rki/coronawarnapp/main/CWASettings$$special$$inlined$createFlowPreference$1;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, v0}, Lde/rki/coronawarnapp/main/CWASettings$special$$inlined$createFlowPreference$2;-><init>(Ljava/lang/Object;)V
 
-    sget-object v0, Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;->INSTANCE:Lde/rki/coronawarnapp/util/preferences/FlowPreference$Companion$basicWriter$1;
+    const-string v0, "notifications.onboarding.versionCode"
 
-    const-string v3, "update.changelog.lastversion"
+    invoke-direct {v2, p1, v0, v3, v1}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
 
-    invoke-direct {v1, p1, v3, v2, v0}, Lde/rki/coronawarnapp/util/preferences/FlowPreference;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)V
-
-    iput-object v1, p0, Lde/rki/coronawarnapp/main/CWASettings;->lastChangelogVersion:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
+    iput-object v2, p0, Lde/rki/coronawarnapp/main/CWASettings;->lastNotificationsOnboardingVersionCode:Lde/rki/coronawarnapp/util/preferences/FlowPreference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getFirstReliableDeviceTime()Lorg/joda/time/Instant;
-    .locals 4
+.method public final getIdOfPositiveTestResultRemindersPcr()Ljava/lang/String;
+    .locals 3
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    const-string v1, "devicetime.correct.first"
+    const-string/jumbo v1, "testresults.id"
 
-    const-wide/16 v2, 0x0
+    const/4 v2, 0x0
 
-    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-wide v0
+    move-result-object v0
 
-    new-instance v2, Lorg/joda/time/Instant;
+    return-object v0
+.end method
 
-    invoke-direct {v2, v0, v1}, Lorg/joda/time/Instant;-><init>(J)V
+.method public final getIdOfPositiveTestResultRemindersRat()Ljava/lang/String;
+    .locals 3
 
-    const-string v0, "Instant.ofEpochMilli(pre\u2026TIME_FIRST_RELIABLE, 0L))"
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
 
-    invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v0
 
-    return-object v2
+    const-string/jumbo v1, "testresults.id.rat"
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public final getLastDeviceTimeStateChangeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
@@ -113,9 +157,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;->INCORRECT:Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    iget-object v1, v1, Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;->key:Ljava/lang/String;
+    const-string v1, "INCORRECT"
 
     const-string v2, "devicetime.laststatechange.state"
 
@@ -188,6 +230,42 @@
     throw v0
 .end method
 
+.method public final getNumberOfRemainingSharePositiveTestResultRemindersPcr()I
+    .locals 3
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "testresults.count"
+
+    const/high16 v2, -0x80000000
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getNumberOfRemainingSharePositiveTestResultRemindersRat()I
+    .locals 3
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "testresults.count.rat"
+
+    const/high16 v2, -0x80000000
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public final getPrefs()Landroid/content/SharedPreferences;
     .locals 1
 
@@ -220,6 +298,62 @@
     return v0
 .end method
 
+.method public final setNumberOfRemainingSharePositiveTestResultRemindersPcr(I)V
+    .locals 2
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "prefs"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "editor"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "testresults.count"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public final setNumberOfRemainingSharePositiveTestResultRemindersRat(I)V
+    .locals 2
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "prefs"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "editor"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "testresults.count.rat"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
 .method public final setWasDeviceTimeIncorrectAcknowledged(Z)V
     .locals 2
 
@@ -237,9 +371,65 @@
 
     const-string v1, "editor"
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v1, "devicetime.incorrect.acknowledged"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public final setWasInteroperabilityShownAtLeastOnce(Z)V
+    .locals 2
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "prefs"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "editor"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "interoperability.showed"
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public final setWasTracingExplanationDialogShown(Z)V
+    .locals 2
+
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "prefs"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "editor"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "tracing.dialog.shown"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 

@@ -216,15 +216,15 @@
 
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object p1, p0, Lcom/airbnb/lottie/model/layer/TextLayer;->textAnimation:Lcom/airbnb/lottie/animation/keyframe/TextKeyframeAnimation;
+    invoke-virtual {p0, v0}, Lcom/airbnb/lottie/model/layer/BaseLayer;->addAnimation(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;)V
 
-    invoke-virtual {p0, p1}, Lcom/airbnb/lottie/model/layer/BaseLayer;->addAnimation(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;)V
-
-    iget-object p1, p2, Lcom/airbnb/lottie/model/layer/Layer;->textProperties:Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;
+    iget-object p1, p2, Lcom/airbnb/lottie/model/layer/Layer;->textProperties:Landroidx/constraintlayout/core/Cache;
 
     if-eqz p1, :cond_0
 
-    iget-object p2, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->color:Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    iget-object p2, p1, Landroidx/constraintlayout/core/Cache;->optimizedArrayRowPool:Ljava/lang/Object;
+
+    check-cast p2, Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     if-eqz p2, :cond_0
 
@@ -245,7 +245,9 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    iget-object p2, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->stroke:Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
+    iget-object p2, p1, Landroidx/constraintlayout/core/Cache;->arrayRowPool:Ljava/lang/Object;
+
+    check-cast p2, Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     if-eqz p2, :cond_1
 
@@ -266,7 +268,9 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    iget-object p2, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->strokeWidth:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    iget-object p2, p1, Landroidx/constraintlayout/core/Cache;->solverVariablePool:Ljava/lang/Object;
+
+    check-cast p2, Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     if-eqz p2, :cond_2
 
@@ -287,7 +291,9 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    iget-object p1, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTextProperties;->tracking:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
+    iget-object p1, p1, Landroidx/constraintlayout/core/Cache;->mIndexedVariables:Ljava/lang/Object;
+
+    check-cast p1, Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
     if-eqz p1, :cond_3
 
@@ -516,10 +522,10 @@
     return-void
 .end method
 
-.method public final applyJustification(Lcom/airbnb/lottie/model/DocumentData$Justification;Landroid/graphics/Canvas;F)V
+.method public final applyJustification$enumunboxing$(ILandroid/graphics/Canvas;F)V
     .locals 2
 
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {p1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
 
     move-result p1
 
@@ -1080,9 +1086,9 @@
 
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    iget-object v8, v2, Lcom/airbnb/lottie/model/DocumentData;->justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    iget v8, v2, Lcom/airbnb/lottie/model/DocumentData;->justification:I
 
-    invoke-virtual {v0, v8, v1, v11}, Lcom/airbnb/lottie/model/layer/TextLayer;->applyJustification(Lcom/airbnb/lottie/model/DocumentData$Justification;Landroid/graphics/Canvas;F)V
+    invoke-virtual {v0, v8, v1, v11}, Lcom/airbnb/lottie/model/layer/TextLayer;->applyJustification$enumunboxing$(ILandroid/graphics/Canvas;F)V
 
     add-int/lit8 v8, v7, -0x1
 
@@ -1471,15 +1477,17 @@
 
     iput-object v4, v8, Lcom/airbnb/lottie/model/MutablePair;->second:Ljava/lang/Object;
 
-    iget-object v10, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->fontMap:Ljava/util/Map;
+    iget-object v9, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->fontMap:Ljava/util/Map;
 
-    invoke-interface {v10, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v9, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v8
 
-    check-cast v8, Landroid/graphics/Typeface;
+    move-object v9, v8
 
-    if-eqz v8, :cond_19
+    check-cast v9, Landroid/graphics/Typeface;
+
+    if-eqz v9, :cond_19
 
     goto :goto_15
 
@@ -1499,27 +1507,27 @@
     :cond_1a
     const-string v8, "fonts/"
 
-    invoke-static {v8, v7}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline31(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v8, v7}, Landroidx/constraintlayout/core/PriorityGoalRow$GoalVariableAccessor$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
-    iget-object v10, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->defaultFontFileExtension:Ljava/lang/String;
+    iget-object v9, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->defaultFontFileExtension:Ljava/lang/String;
 
-    invoke-virtual {v8, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    iget-object v10, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->assetManager:Landroid/content/res/AssetManager;
+    iget-object v9, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->assetManager:Landroid/content/res/AssetManager;
 
-    invoke-static {v10, v8}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v9, v8}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v8
 
-    iget-object v10, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->fontFamilies:Ljava/util/Map;
+    iget-object v9, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->fontFamilies:Ljava/util/Map;
 
-    invoke-interface {v10, v7, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v9, v7, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_12
     const-string v7, "Italic"
@@ -1528,9 +1536,9 @@
 
     move-result v7
 
-    const-string v10, "Bold"
+    const-string v9, "Bold"
 
-    invoke-virtual {v4, v10}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v4, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
@@ -1566,6 +1574,8 @@
 
     if-ne v7, v4, :cond_1e
 
+    move-object v9, v8
+
     goto :goto_14
 
     :cond_1e
@@ -1573,22 +1583,18 @@
 
     move-result-object v4
 
-    move-object v8, v4
+    move-object v9, v4
 
     :goto_14
     iget-object v4, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->fontMap:Ljava/util/Map;
 
     iget-object v5, v5, Lcom/airbnb/lottie/manager/FontAssetManager;->tempPair:Lcom/airbnb/lottie/model/MutablePair;
 
-    invoke-interface {v4, v5, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_15
+    invoke-interface {v4, v5, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1f
-    move-object v8, v9
-
     :goto_15
-    if-nez v8, :cond_20
+    if-nez v9, :cond_20
 
     goto/16 :goto_21
 
@@ -1597,11 +1603,11 @@
 
     iget-object v5, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->lottieDrawable:Lcom/airbnb/lottie/LottieDrawable;
 
-    if-eqz v5, :cond_2d
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v5, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->fillPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v5, v8}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+    invoke-virtual {v5, v9}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     iget-object v5, v0, Lcom/airbnb/lottie/model/layer/TextLayer;->textSizeCallbackAnimation:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
@@ -1753,9 +1759,9 @@
 
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    iget-object v10, v2, Lcom/airbnb/lottie/model/DocumentData;->justification:Lcom/airbnb/lottie/model/DocumentData$Justification;
+    iget v10, v2, Lcom/airbnb/lottie/model/DocumentData;->justification:I
 
-    invoke-virtual {v0, v10, v1, v3}, Lcom/airbnb/lottie/model/layer/TextLayer;->applyJustification(Lcom/airbnb/lottie/model/DocumentData$Justification;Landroid/graphics/Canvas;F)V
+    invoke-virtual {v0, v10, v1, v3}, Lcom/airbnb/lottie/model/layer/TextLayer;->applyJustification$enumunboxing$(ILandroid/graphics/Canvas;F)V
 
     add-int/lit8 v3, v5, -0x1
 
@@ -1996,9 +2002,6 @@
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
-
-    :cond_2d
-    throw v9
 .end method
 
 .method public getBounds(Landroid/graphics/RectF;Landroid/graphics/Matrix;Z)V

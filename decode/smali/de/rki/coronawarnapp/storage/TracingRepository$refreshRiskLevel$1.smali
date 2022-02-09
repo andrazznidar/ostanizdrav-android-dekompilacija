@@ -17,7 +17,8 @@
     c = "de.rki.coronawarnapp.storage.TracingRepository"
     f = "TracingRepository.kt"
     l = {
-        0x7a
+        0x6a,
+        0x6e
     }
     m = "refreshRiskLevel"
 .end annotation
@@ -38,6 +39,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/storage/TracingRepository;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/storage/TracingRepository;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/storage/TracingRepository$refreshRiskLevel$1;->this$0:Lde/rki/coronawarnapp/storage/TracingRepository;
 

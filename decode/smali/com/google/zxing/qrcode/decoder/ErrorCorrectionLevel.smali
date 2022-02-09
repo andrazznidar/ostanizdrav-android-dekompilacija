@@ -27,6 +27,10 @@
 .field public static final enum Q:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
 
+# instance fields
+.field public final bits:I
+
+
 # direct methods
 .method public static constructor <clinit>()V
     .locals 10
@@ -43,65 +47,59 @@
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->L:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    new-instance v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    const-string v1, "M"
+    const-string v4, "M"
 
-    invoke-direct {v0, v1, v3, v2}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v4, v3, v2}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->M:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    sput-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->M:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    new-instance v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    const-string v1, "Q"
+    const-string v5, "Q"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    const/4 v5, 0x3
+    const/4 v7, 0x3
 
-    invoke-direct {v0, v1, v4, v5}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v4, v5, v6, v7}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->Q:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    sput-object v4, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->Q:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    new-instance v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    new-instance v5, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    const-string v1, "H"
+    const-string v8, "H"
 
-    invoke-direct {v0, v1, v5, v4}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v5, v8, v7, v6}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->H:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    sput-object v5, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->H:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    const/4 v1, 0x4
+    const/4 v8, 0x4
 
-    new-array v6, v1, [Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    new-array v9, v8, [Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    sget-object v7, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->L:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    aput-object v0, v9, v2
 
-    aput-object v7, v6, v2
+    aput-object v1, v9, v3
 
-    sget-object v8, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->M:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    aput-object v4, v9, v6
 
-    aput-object v8, v6, v3
+    aput-object v5, v9, v7
 
-    sget-object v9, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->Q:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    sput-object v9, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->$VALUES:[Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    aput-object v9, v6, v4
+    new-array v8, v8, [Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    aput-object v0, v6, v5
+    aput-object v1, v8, v2
 
-    sput-object v6, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->$VALUES:[Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    aput-object v0, v8, v3
 
-    new-array v1, v1, [Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    aput-object v5, v8, v6
 
-    aput-object v8, v1, v2
+    aput-object v4, v8, v7
 
-    aput-object v7, v1, v3
-
-    aput-object v0, v1, v4
-
-    aput-object v9, v1, v5
-
-    sput-object v1, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->FOR_BITS:[Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    sput-object v8, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->FOR_BITS:[Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
     return-void
 .end method
@@ -115,6 +113,8 @@
     .end annotation
 
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->bits:I
 
     return-void
 .end method

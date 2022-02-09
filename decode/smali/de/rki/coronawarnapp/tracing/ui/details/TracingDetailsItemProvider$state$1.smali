@@ -3,12 +3,12 @@
 .source "TracingDetailsItemProvider.kt"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function5;
+.implements Lkotlin/jvm/functions/Function4;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider;-><init>(Lde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/storage/TracingRepository;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/datadonation/survey/Surveys;)V
+    value = Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider;-><init>(Lde/rki/coronawarnapp/tracing/GeneralTracingStatus;Lde/rki/coronawarnapp/risk/storage/RiskLevelStorage;Lde/rki/coronawarnapp/installTime/InstallTimeProvider;Lde/rki/coronawarnapp/datadonation/survey/Surveys;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,13 +19,9 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/coroutines/jvm/internal/SuspendLambda;",
-        "Lkotlin/jvm/functions/Function5<",
+        "Lkotlin/jvm/functions/Function4<",
         "Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;",
-        "Ljava/util/List<",
-        "+",
-        "Lde/rki/coronawarnapp/risk/RiskLevelResult;",
-        ">;",
-        "Ljava/lang/Long;",
+        "Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;",
         "Ljava/util/Collection<",
         "+",
         "Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;",
@@ -41,7 +37,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTracingDetailsItemProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingDetailsItemProvider.kt\nde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,101:1\n1#2:102\n*E\n"
+    value = "SMAP\nTracingDetailsItemProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TracingDetailsItemProvider.kt\nde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,106:1\n1#2:107\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -53,8 +49,6 @@
 
 
 # instance fields
-.field public synthetic J$0:J
-
 .field public synthetic L$0:Ljava/lang/Object;
 
 .field public synthetic L$1:Ljava/lang/Object;
@@ -65,8 +59,17 @@
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;",
+            ">;)V"
+        }
+    .end annotation
 
-    const/4 v0, 0x5
+    const/4 v0, 0x4
 
     invoke-direct {p0, v0, p1}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
 
@@ -75,54 +78,30 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    check-cast p2, Ljava/util/List;
+    check-cast p2, Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;
 
-    check-cast p3, Ljava/lang/Number;
+    check-cast p3, Ljava/util/Collection;
 
-    invoke-virtual {p3}, Ljava/lang/Number;->longValue()J
+    check-cast p4, Lkotlin/coroutines/Continuation;
 
-    move-result-wide v0
+    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;
 
-    check-cast p4, Ljava/util/Collection;
+    invoke-direct {v0, p4}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    check-cast p5, Lkotlin/coroutines/Continuation;
+    iput-object p1, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$0:Ljava/lang/Object;
 
-    const-string p3, "status"
+    iput-object p2, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$1:Ljava/lang/Object;
 
-    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p3, "riskLevelResults"
-
-    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p3, "availableSurveys"
-
-    invoke-static {p4, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p3, "continuation"
-
-    invoke-static {p5, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance p3, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;
-
-    invoke-direct {p3, p5}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, p3, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$0:Ljava/lang/Object;
-
-    iput-object p2, p3, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$1:Ljava/lang/Object;
-
-    iput-wide v0, p3, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->J$0:J
-
-    iput-object p4, p3, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$2:Ljava/lang/Object;
+    iput-object p3, v0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$2:Ljava/lang/Object;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    invoke-virtual {p3, p1}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -130,145 +109,163 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+    .locals 9
 
-    sget-object v0, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;->HIGH_RISK_ENCOUNTER:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
+    sget-object v0, Lde/rki/coronawarnapp/risk/RiskState;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskState;
 
-    sget-object v1, Lde/rki/coronawarnapp/risk/RiskState;->CALCULATION_FAILED:Lde/rki/coronawarnapp/risk/RiskState;
-
-    sget-object v2, Lde/rki/coronawarnapp/risk/RiskState;->LOW_RISK:Lde/rki/coronawarnapp/risk/RiskState;
-
-    sget-object v3, Lde/rki/coronawarnapp/risk/RiskState;->INCREASED_RISK:Lde/rki/coronawarnapp/risk/RiskState;
-
-    sget-object v4, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;->TRACING_INACTIVE:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
-
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    iget-object v5, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$1:Ljava/lang/Object;
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$1:Ljava/lang/Object;
 
-    check-cast v5, Ljava/util/List;
+    check-cast v1, Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;
 
-    iget-wide v6, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->J$0:J
+    iget-object v2, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$2:Ljava/lang/Object;
 
-    iget-object v8, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsItemProvider$state$1;->L$2:Ljava/lang/Object;
+    check-cast v2, Ljava/util/Collection;
 
-    check-cast v8, Ljava/util/Collection;
+    iget-object v1, v1, Lde/rki/coronawarnapp/risk/LastCombinedRiskResults;->lastCalculated:Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;
 
-    invoke-static {v5}, Lcom/google/zxing/client/android/R$id;->tryLatestResultsWithDefaults(Ljava/util/List;)Lde/rki/coronawarnapp/risk/DisplayableRiskResults;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
-    move-result-object v5
+    move-result-object v3
 
-    iget-object v5, v5, Lde/rki/coronawarnapp/risk/DisplayableRiskResults;->lastCalculated:Lde/rki/coronawarnapp/risk/RiskLevelResult;
+    sget-object v4, Lde/rki/coronawarnapp/risk/RiskState;->LOW_RISK:Lde/rki/coronawarnapp/risk/RiskState;
 
-    new-instance v9, Ljava/util/ArrayList;
+    if-ne v3, v4, :cond_0
 
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
+    iget-object v3, v1, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->matchedRiskCount$delegate:Lkotlin/Lazy;
 
-    if-eq p1, v4, :cond_0
+    invoke-interface {v3}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    move-result-object v3
 
-    move-result-object v10
+    check-cast v3, Ljava/lang/Number;
 
-    if-ne v10, v2, :cond_0
+    invoke-virtual {v3}, Ljava/lang/Number;->intValue()I
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getMatchedKeyCount()I
+    move-result v3
 
-    :cond_0
-    if-eq p1, v4, :cond_1
+    if-lez v3, :cond_0
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
-
-    move-result-object v10
-
-    if-ne v10, v3, :cond_1
-
-    sget-object v10, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorIncreasedRiskBox$Item;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorIncreasedRiskBox$Item;
+    const/4 v3, 0x1
 
     goto :goto_0
 
-    :cond_1
-    new-instance v10, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorNormalRiskBox$Item;
-
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
-
-    move-result-object v11
-
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getDaysWithEncounters()I
-
-    move-result v12
-
-    invoke-direct {v10, p1, v11, v12}, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorNormalRiskBox$Item;-><init>(Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;Lde/rki/coronawarnapp/risk/RiskState;I)V
+    :cond_0
+    const/4 v3, 0x0
 
     :goto_0
-    invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    new-instance v5, Ljava/util/ArrayList;
 
-    if-eq p1, v4, :cond_2
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    sget-object v6, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;->TRACING_INACTIVE:Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;
 
-    move-result-object v10
+    if-eq p1, v6, :cond_2
 
-    if-ne v10, v3, :cond_2
+    if-nez v3, :cond_1
 
-    invoke-interface {v8, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+
+    move-result-object v3
+
+    if-ne v3, v0, :cond_2
+
+    :cond_1
+    sget-object v3, Lde/rki/coronawarnapp/tracing/ui/details/items/additionalinfos/FindDetailsInJournalBox$Item;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/details/items/additionalinfos/FindDetailsInJournalBox$Item;
+
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    if-eq p1, v6, :cond_3
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+
+    move-result-object v3
+
+    if-ne v3, v0, :cond_3
+
+    sget-object v3, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorIncreasedRiskBox$Item;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorIncreasedRiskBox$Item;
+
+    goto :goto_1
+
+    :cond_3
+    new-instance v3, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorNormalRiskBox$Item;
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+
+    move-result-object v7
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getDaysWithEncounters()I
 
     move-result v8
 
-    if-eqz v8, :cond_2
+    invoke-direct {v3, p1, v7, v8}, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorNormalRiskBox$Item;-><init>(Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;Lde/rki/coronawarnapp/risk/RiskState;I)V
 
-    new-instance v8, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;
+    :goto_1
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {v8, v0}, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;-><init>(Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;)V
+    if-eq p1, v6, :cond_4
 
-    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
-    :cond_2
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    move-result-object v3
 
-    move-result-object v0
+    if-ne v3, v0, :cond_4
 
-    if-eq v0, v1, :cond_3
+    sget-object v3, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;->HIGH_RISK_ENCOUNTER:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    if-eq p1, v4, :cond_3
+    invoke-interface {v2, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    new-instance v0, Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;
+    move-result v2
 
-    long-to-int v6, v6
+    if-eqz v2, :cond_4
 
-    invoke-direct {v0, v6, p1}, Lde/rki/coronawarnapp/tracing/ui/details/items/periodlogged/PeriodLoggedBox$Item;-><init>(ILde/rki/coronawarnapp/tracing/GeneralTracingStatus$Status;)V
+    new-instance v2, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;
 
-    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v2, v3}, Lde/rki/coronawarnapp/tracing/ui/details/items/survey/UserSurveyBox$Item;-><init>(Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;)V
 
-    :cond_3
-    if-eq p1, v4, :cond_8
-
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_4
-
-    goto :goto_2
+    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_4
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    if-eq p1, v6, :cond_9
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
     move-result-object p1
+
+    sget-object v2, Lde/rki/coronawarnapp/risk/RiskState;->CALCULATION_FAILED:Lde/rki/coronawarnapp/risk/RiskState;
 
     if-ne p1, v2, :cond_5
 
+    goto :goto_2
+
+    :cond_5
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+
+    move-result-object p1
+
+    if-ne p1, v4, :cond_6
+
     new-instance p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsLowRiskBox$Item;
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
     move-result-object v0
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getMatchedKeyCount()I
+    iget-object v1, v1, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->matchedRiskCount$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Number;
+
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
 
     move-result v1
 
@@ -276,53 +273,55 @@
 
     goto :goto_3
 
-    :cond_5
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    :cond_6
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
     move-result-object p1
 
-    if-ne p1, v3, :cond_7
+    if-ne p1, v0, :cond_8
 
     new-instance p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsIncreasedRiskBox$Item;
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getRiskState()Lde/rki/coronawarnapp/risk/RiskState;
 
     move-result-object v0
 
-    invoke-interface {v5}, Lde/rki/coronawarnapp/risk/RiskLevelResult;->getLastRiskEncounterAt()Lorg/joda/time/Instant;
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/risk/CombinedEwPtRiskLevelResult;->getLastRiskEncounterAt()Lorg/joda/time/LocalDate;
 
     move-result-object v1
 
-    if-eqz v1, :cond_6
+    if-nez v1, :cond_7
 
-    goto :goto_1
+    sget-object v1, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/TimeAndDateExtensions;
 
-    :cond_6
     sget-object v1, Lorg/joda/time/Instant;->EPOCH:Lorg/joda/time/Instant;
 
-    :goto_1
-    const-string v2, "latestCalc.lastRiskEncounterAt ?: Instant.EPOCH"
+    invoke-static {v1}, Lde/rki/coronawarnapp/util/TimeAndDateExtensions;->toLocalDateUtc(Lorg/joda/time/Instant;)Lorg/joda/time/LocalDate;
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p1, v0, v1}, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsIncreasedRiskBox$Item;-><init>(Lde/rki/coronawarnapp/risk/RiskState;Lorg/joda/time/Instant;)V
-
-    goto :goto_3
+    move-result-object v1
 
     :cond_7
-    const/4 p1, 0x0
+    invoke-direct {p1, v0, v1}, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsIncreasedRiskBox$Item;-><init>(Lde/rki/coronawarnapp/risk/RiskState;Lorg/joda/time/LocalDate;)V
 
     goto :goto_3
 
     :cond_8
+    const/4 p1, 0x0
+
+    goto :goto_3
+
+    :cond_9
     :goto_2
     sget-object p1, Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsFailedCalculationBox$Item;->INSTANCE:Lde/rki/coronawarnapp/tracing/ui/details/items/riskdetails/DetailsFailedCalculationBox$Item;
 
     :goto_3
-    if-eqz p1, :cond_9
+    if-nez p1, :cond_a
 
-    invoke-virtual {v9, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    goto :goto_4
 
-    :cond_9
-    return-object v9
+    :cond_a
+    invoke-virtual {v5, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_4
+    return-object v5
 .end method

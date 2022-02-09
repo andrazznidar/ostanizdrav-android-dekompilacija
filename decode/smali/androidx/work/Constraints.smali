@@ -35,17 +35,17 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     new-instance v0, Landroidx/work/Constraints$Builder;
 
     invoke-direct {v0}, Landroidx/work/Constraints$Builder;-><init>()V
 
-    invoke-virtual {v0}, Landroidx/work/Constraints$Builder;->build()Landroidx/work/Constraints;
+    new-instance v1, Landroidx/work/Constraints;
 
-    move-result-object v0
+    invoke-direct {v1, v0}, Landroidx/work/Constraints;-><init>(Landroidx/work/Constraints$Builder;)V
 
-    sput-object v0, Landroidx/work/Constraints;->NONE:Landroidx/work/Constraints;
+    sput-object v1, Landroidx/work/Constraints;->NONE:Landroidx/work/Constraints;
 
     return-void
 .end method
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/work/Constraints$Builder;)V
-    .locals 2
+    .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
         accessFlags = {
             0x0
@@ -97,47 +97,37 @@
 
     iput-wide v0, p0, Landroidx/work/Constraints;->mTriggerMaxContentDelay:J
 
-    new-instance v0, Landroidx/work/ContentUriTriggers;
+    new-instance v2, Landroidx/work/ContentUriTriggers;
 
-    invoke-direct {v0}, Landroidx/work/ContentUriTriggers;-><init>()V
+    invoke-direct {v2}, Landroidx/work/ContentUriTriggers;-><init>()V
 
-    iput-object v0, p0, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
+    iput-object v2, p0, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
 
-    iget-boolean v0, p1, Landroidx/work/Constraints$Builder;->mRequiresCharging:Z
+    const/4 v2, 0x0
 
-    iput-boolean v0, p0, Landroidx/work/Constraints;->mRequiresCharging:Z
+    iput-boolean v2, p0, Landroidx/work/Constraints;->mRequiresCharging:Z
 
-    iget-boolean v0, p1, Landroidx/work/Constraints$Builder;->mRequiresDeviceIdle:Z
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iput-boolean v0, p0, Landroidx/work/Constraints;->mRequiresDeviceIdle:Z
+    iput-boolean v2, p0, Landroidx/work/Constraints;->mRequiresDeviceIdle:Z
 
-    iget-object v0, p1, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
+    iget-object v4, p1, Landroidx/work/Constraints$Builder;->mRequiredNetworkType:Landroidx/work/NetworkType;
 
-    iput-object v0, p0, Landroidx/work/Constraints;->mRequiredNetworkType:Landroidx/work/NetworkType;
+    iput-object v4, p0, Landroidx/work/Constraints;->mRequiredNetworkType:Landroidx/work/NetworkType;
 
-    iget-boolean v0, p1, Landroidx/work/Constraints$Builder;->mRequiresBatteryNotLow:Z
+    iput-boolean v2, p0, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
 
-    iput-boolean v0, p0, Landroidx/work/Constraints;->mRequiresBatteryNotLow:Z
+    iput-boolean v2, p0, Landroidx/work/Constraints;->mRequiresStorageNotLow:Z
 
-    iget-boolean v0, p1, Landroidx/work/Constraints$Builder;->mRequiresStorageNotLow:Z
+    const/16 v2, 0x18
 
-    iput-boolean v0, p0, Landroidx/work/Constraints;->mRequiresStorageNotLow:Z
+    if-lt v3, v2, :cond_0
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iget-object p1, p1, Landroidx/work/Constraints$Builder;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
 
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
-
-    iget-object v0, p1, Landroidx/work/Constraints$Builder;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
-
-    iput-object v0, p0, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
-
-    iget-wide v0, p1, Landroidx/work/Constraints$Builder;->mTriggerContentUpdateDelay:J
+    iput-object p1, p0, Landroidx/work/Constraints;->mContentUriTriggers:Landroidx/work/ContentUriTriggers;
 
     iput-wide v0, p0, Landroidx/work/Constraints;->mTriggerContentUpdateDelay:J
-
-    iget-wide v0, p1, Landroidx/work/Constraints$Builder;->mTriggerContentMaxDelay:J
 
     iput-wide v0, p0, Landroidx/work/Constraints;->mTriggerMaxContentDelay:J
 

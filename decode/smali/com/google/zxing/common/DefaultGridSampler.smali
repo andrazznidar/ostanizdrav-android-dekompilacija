@@ -46,9 +46,9 @@
 
     move-object/from16 v3, p4
 
-    if-lez v1, :cond_12
+    if-lez v1, :cond_11
 
-    if-lez v2, :cond_12
+    if-lez v2, :cond_11
 
     new-instance v4, Lcom/google/zxing/common/BitMatrix;
 
@@ -61,7 +61,7 @@
     const/4 v7, 0x0
 
     :goto_0
-    if-ge v7, v2, :cond_11
+    if-ge v7, v2, :cond_10
 
     int-to-float v8, v7
 
@@ -91,7 +91,7 @@
     goto :goto_1
 
     :cond_0
-    if-eqz v3, :cond_10
+    invoke-static/range {p4 .. p4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v8, v3, Lcom/google/zxing/common/PerspectiveTransform;->a11:F
 
@@ -375,14 +375,9 @@
     goto/16 :goto_0
 
     :cond_10
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_11
     return-object v4
 
-    :cond_12
+    :cond_11
     sget-object v0, Lcom/google/zxing/NotFoundException;->INSTANCE:Lcom/google/zxing/NotFoundException;
 
     throw v0

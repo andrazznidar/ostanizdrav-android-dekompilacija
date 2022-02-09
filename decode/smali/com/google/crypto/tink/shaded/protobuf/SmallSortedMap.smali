@@ -26,6 +26,10 @@
 .end annotation
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # instance fields
 .field public entryList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -96,35 +100,6 @@
     iput-object p1, p0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->overflowEntriesDescending:Ljava/util/Map;
 
     return-void
-.end method
-
-.method public static synthetic access$300(Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;)V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->checkMutable()V
-
-    return-void
-.end method
-
-.method public static newFieldMap(I)Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<FieldDescriptorType::",
-            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite<",
-            "TFieldDescriptorType;>;>(I)",
-            "Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap<",
-            "TFieldDescriptorType;",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-
-    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$1;
-
-    invoke-direct {v0, p0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$1;-><init>(I)V
-
-    return-object v0
 .end method
 
 

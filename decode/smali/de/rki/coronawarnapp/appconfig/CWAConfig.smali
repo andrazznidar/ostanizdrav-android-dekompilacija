@@ -28,3 +28,6 @@
 
 .method public abstract isDeviceTimeCheckEnabled()Z
 .end method
+
+.method public abstract isUnencryptedCheckInsEnabled()Z
+.end method

@@ -18,12 +18,62 @@
 
 .field public final surveyNextButton:Landroid/widget/Button;
 
-.field public final toolbar:Landroidx/appcompat/widget/Toolbar;
+.field public final toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/FrameLayout;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/Button;Landroid/widget/ImageView;Landroidx/appcompat/widget/Toolbar;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Lde/rki/coronawarnapp/databinding/IncludeBulletPointBinding;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/FrameLayout;Landroidx/constraintlayout/widget/Guideline;Landroidx/constraintlayout/widget/Guideline;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/Button;Landroid/widget/ImageView;Lcom/google/android/material/appbar/MaterialToolbar;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "_bindingComponent",
+            "_root",
+            "_localFieldCount",
+            "bulletPointOne",
+            "bulletPointThree",
+            "bulletPointTwo",
+            "consentLayout",
+            "contentContainer",
+            "divider",
+            "guidelineEnd",
+            "guidelineStart",
+            "legalBody",
+            "legalPointOne",
+            "legalPointThree",
+            "legalPointTwo",
+            "legalTitle",
+            "surveyBottomInfoBody",
+            "surveyBottomInfoHeadline",
+            "surveyConsentMoreInformation",
+            "surveyNextButton",
+            "surveyTopIllustration",
+            "toolbar"
+        }
+    .end annotation
 
     move-object v0, p0
 
@@ -59,19 +109,29 @@
 
     move-object/from16 v1, p22
 
-    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBinding;->toolbar:Landroidx/appcompat/widget/Toolbar;
+    iput-object v1, v0, Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     return-void
 .end method
 
 .method public static bind(Landroid/view/View;)Lde/rki/coronawarnapp/databinding/SurveyConsentFragmentBinding;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "view"
+        }
+    .end annotation
 
-    sget-object v0, Landroidx/databinding/DataBindingUtil;->sDefaultComponent:Landroidx/databinding/DataBindingComponent;
+    sget-object v0, Landroidx/databinding/DataBindingUtil;->sMapper:Landroidx/databinding/DataBinderMapper;
 
-    const v1, 0x7f0c00fb
+    const v0, 0x7f0d015d
 
-    invoke-static {v0, p0, v1}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
+    const/4 v1, 0x0
+
+    invoke-static {v1, p0, v0}, Landroidx/databinding/ViewDataBinding;->bind(Ljava/lang/Object;Landroid/view/View;I)Landroidx/databinding/ViewDataBinding;
 
     move-result-object p0
 

@@ -159,7 +159,7 @@
 
     float-to-int v0, v2
 
-    invoke-static {v0, v1, p1}, Landroidx/core/app/AppOpsManagerCompat;->clamp(III)I
+    invoke-static {v0, v1, p1}, Landroidx/core/math/MathUtils;->clamp(III)I
 
     move-result v1
 
@@ -250,7 +250,9 @@
 
     if-eqz v2, :cond_0
 
-    invoke-static {p1}, Landroidx/core/view/ViewCompat;->getFitsSystemWindows(Landroid/view/View;)Z
+    sget-object v3, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p1}, Landroid/view/View;->getFitsSystemWindows()Z
 
     move-result p1
 
@@ -387,7 +389,9 @@
 
     if-lez p5, :cond_1
 
-    invoke-static {v2}, Landroidx/core/view/ViewCompat;->getFitsSystemWindows(Landroid/view/View;)Z
+    sget-object v3, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v2}, Landroid/view/View;->getFitsSystemWindows()Z
 
     move-result v3
 

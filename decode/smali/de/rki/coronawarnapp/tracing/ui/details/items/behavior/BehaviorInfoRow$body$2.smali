@@ -41,7 +41,7 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorInfoRow$body$2;->this$0:Lde/rki/coronawarnapp/tracing/ui/details/items/behavior/BehaviorInfoRow;
 
-    const v1, 0x7f0900bd
+    const v1, 0x7f0a0129
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

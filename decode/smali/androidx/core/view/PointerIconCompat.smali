@@ -10,6 +10,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "pointerIcon"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,6 +28,16 @@
 
 .method public static getSystemIcon(Landroid/content/Context;I)Landroidx/core/view/PointerIconCompat;
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "style"
+        }
+    .end annotation
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 

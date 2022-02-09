@@ -22,69 +22,6 @@
     return-void
 .end method
 
-.method public static cancelAlarm(Landroid/content/Context;Landroidx/work/impl/WorkManagerImpl;Ljava/lang/String;)V
-    .locals 4
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0,
-            0x0
-        }
-        names = {
-            "context",
-            "workManager",
-            "workSpecId"
-        }
-    .end annotation
-
-    iget-object p1, p1, Landroidx/work/impl/WorkManagerImpl;->mWorkDatabase:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {p1}, Landroidx/work/impl/WorkDatabase;->systemIdInfoDao()Landroidx/work/impl/model/SystemIdInfoDao;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/work/impl/model/SystemIdInfoDao_Impl;
-
-    invoke-virtual {p1, p2}, Landroidx/work/impl/model/SystemIdInfoDao_Impl;->getSystemIdInfo(Ljava/lang/String;)Landroidx/work/impl/model/SystemIdInfo;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, v0, Landroidx/work/impl/model/SystemIdInfo;->systemId:I
-
-    invoke-static {p0, p2, v0}, Landroidx/work/impl/background/systemalarm/Alarms;->cancelExactAlarm(Landroid/content/Context;Ljava/lang/String;I)V
-
-    invoke-static {}, Landroidx/work/Logger;->get()Landroidx/work/Logger;
-
-    move-result-object p0
-
-    sget-object v0, Landroidx/work/impl/background/systemalarm/Alarms;->TAG:Ljava/lang/String;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p2, v1, v2
-
-    const-string v3, "Removing SystemIdInfo for workSpecId (%s)"
-
-    invoke-static {v3, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-array v2, v2, [Ljava/lang/Throwable;
-
-    invoke-virtual {p0, v0, v1, v2}, Landroidx/work/Logger;->debug(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
-
-    invoke-virtual {p1, p2}, Landroidx/work/impl/model/SystemIdInfoDao_Impl;->removeSystemIdInfo(Ljava/lang/String;)V
-
-    :cond_0
-    return-void
-.end method
-
 .method public static cancelExactAlarm(Landroid/content/Context;Ljava/lang/String;I)V
     .locals 5
     .annotation system Ldalvik/annotation/MethodParameters;
@@ -217,15 +154,9 @@
     invoke-virtual {p1}, Landroidx/work/impl/WorkDatabase;->preferenceDao()Landroidx/work/impl/model/PreferenceDao;
 
     move-result-object v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :try_start_2
     check-cast v3, Landroidx/work/impl/model/PreferenceDao_Impl;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :try_start_3
     invoke-virtual {v3, v2}, Landroidx/work/impl/model/PreferenceDao_Impl;->getLongValue(Ljava/lang/String;)Ljava/lang/Long;
 
     move-result-object v3
@@ -269,15 +200,15 @@
     invoke-virtual {v5, v6}, Landroidx/work/impl/model/PreferenceDao_Impl;->insertPreference(Landroidx/work/impl/model/Preference;)V
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :try_start_4
+    :try_start_2
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     monitor-exit v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     new-instance p1, Landroidx/work/impl/model/SystemIdInfo;
 
@@ -293,7 +224,7 @@
     :catchall_0
     move-exception p0
 
-    :try_start_5
+    :try_start_3
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     throw p0
@@ -302,8 +233,8 @@
     move-exception p0
 
     monitor-exit v1
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw p0
 .end method

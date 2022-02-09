@@ -35,7 +35,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "timeStamper"
+    const-string/jumbo v0, "timeStamper"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -56,11 +56,151 @@
 
 
 # virtual methods
-.method public final getConfigData(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 18
+.method public final clear(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    instance-of v0, p1, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p1
+
+    check-cast v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;
+
+    iget v1, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;->label:I
+
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
+
+    if-eqz v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;->label:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;
+
+    invoke-direct {v0, p0, p1}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;-><init>(Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;Lkotlin/coroutines/Continuation;)V
+
+    :goto_0
+    iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;->result:Ljava/lang/Object;
+
+    sget-object v1, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+
+    iget v2, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;->label:I
+
+    const/4 v3, 0x0
+
+    const-string v4, "clear()"
+
+    const/4 v5, 0x1
+
+    if-eqz v2, :cond_2
+
+    if-ne v2, v5, :cond_1
+
+    iget-object v0, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;->L$0:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;
+
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v2, "AppConfigSource"
+
+    invoke-virtual {p1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v2, v3, [Ljava/lang/Object;
+
+    invoke-virtual {p1, v4, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->localAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
+
+    iput-object p0, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;->L$0:Ljava/lang/Object;
+
+    iput v5, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$clear$1;->label:I
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;->storage:Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v2, v0}, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;->setStoredConfig(Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v1, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    :goto_1
+    if-ne p1, v1, :cond_4
+
+    return-object v1
+
+    :cond_4
+    move-object v0, p0
+
+    :goto_2
+    iget-object p1, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->remoteAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const-string v1, "AppConfigRetriever"
+
+    invoke-virtual {v0, v1}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v1, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v0, v4, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;->remoteCache:Lokhttp3/Cache;
+
+    invoke-virtual {p1}, Lokhttp3/Cache;->evictAll()V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final getConfigData(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 17
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(Z",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lde/rki/coronawarnapp/appconfig/ConfigData;",
@@ -71,69 +211,69 @@
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, p1
+    move/from16 v1, p1
 
-    instance-of v2, v1, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;
+    move-object/from16 v2, p2
 
-    if-eqz v2, :cond_0
+    instance-of v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;
 
-    move-object v2, v1
+    if-eqz v3, :cond_0
 
-    check-cast v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;
+    move-object v3, v2
 
-    iget v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
+    check-cast v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;
 
-    const/high16 v4, -0x80000000
+    iget v4, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
 
-    and-int v5, v3, v4
+    const/high16 v5, -0x80000000
 
-    if-eqz v5, :cond_0
+    and-int v6, v4, v5
 
-    sub-int/2addr v3, v4
+    if-eqz v6, :cond_0
 
-    iput v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
+    sub-int/2addr v4, v5
+
+    iput v4, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;
+    new-instance v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;-><init>(Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v0, v2}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;-><init>(Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;Lkotlin/coroutines/Continuation;)V
 
     :goto_0
-    iget-object v1, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->result:Ljava/lang/Object;
+    iget-object v2, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->result:Ljava/lang/Object;
 
-    sget-object v3, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
+    sget-object v4, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
-    iget v4, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
-
-    const/4 v5, 0x2
+    iget v5, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x1
+    const/4 v7, 0x2
 
-    const-string v8, "AppConfigSource"
+    const/4 v8, 0x1
 
-    const/4 v9, 0x0
+    const-string v9, "AppConfigSource"
 
-    if-eqz v4, :cond_3
+    const/4 v10, 0x0
 
-    if-eq v4, v7, :cond_2
+    if-eqz v5, :cond_3
 
-    if-ne v4, v5, :cond_1
+    if-eq v5, v8, :cond_2
 
-    iget-object v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$1:Ljava/lang/Object;
+    if-ne v5, v7, :cond_1
 
-    check-cast v3, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+    iget-object v1, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$1:Ljava/lang/Object;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
+    check-cast v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
 
-    check-cast v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;
+    iget-object v3, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    check-cast v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;
 
-    move-object v10, v3
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_6
 
@@ -147,187 +287,197 @@
     throw v1
 
     :cond_2
-    iget-object v4, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
+    iget-boolean v1, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->Z$0:Z
 
-    check-cast v4, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;
+    iget-object v5, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    check-cast v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;
+
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_3
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    move-result-object v1
+    invoke-virtual {v2, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    new-array v4, v9, [Ljava/lang/Object;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v10, "getConfigData()"
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v10, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v11, "getConfigData(offlineMode="
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->localAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
+    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object v0, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    iput v7, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
+    const-string v11, ")"
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+    invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v4}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    new-instance v10, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;
+    new-array v11, v10, [Ljava/lang/Object;
 
-    invoke-direct {v10, v1, v6}, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;-><init>(Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {v2, v5, v11}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v4, v10, v2}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v2, v0, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->localAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;
 
-    move-result-object v1
+    iput-object v0, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
 
-    if-ne v1, v3, :cond_4
+    iput-boolean v1, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->Z$0:Z
 
-    return-object v3
+    iput v8, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
+
+    iget-object v5, v2, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+
+    invoke-interface {v5}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
+
+    move-result-object v5
+
+    new-instance v11, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;
+
+    invoke-direct {v11, v2, v6}, Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource$getConfigData$2;-><init>(Lde/rki/coronawarnapp/appconfig/sources/local/LocalAppConfigSource;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v5, v11, v3}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-ne v2, v4, :cond_4
+
+    return-object v4
 
     :cond_4
-    move-object v4, v0
+    move-object v5, v0
 
     :goto_1
-    check-cast v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+    check-cast v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
 
-    iget-object v10, v4, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
+    iget-object v11, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {v10}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
-
-    move-result-object v10
-
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-static {v11}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$$ExternalSyntheticOutline1;->m(Lde/rki/coronawarnapp/util/TimeStamper;)Lorg/joda/time/Instant;
 
     move-result-object v11
 
-    new-array v12, v5, [Ljava/lang/Object;
+    sget-object v12, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object v10, v12, v9
+    invoke-virtual {v12, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    if-eqz v1, :cond_5
+    new-array v13, v7, [Ljava/lang/Object;
 
-    iget-object v13, v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->updatedAt:Lorg/joda/time/Instant;
+    aput-object v11, v13, v10
+
+    if-nez v2, :cond_5
+
+    move-object v14, v6
 
     goto :goto_2
 
     :cond_5
-    move-object v13, v6
+    iget-object v14, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->updatedAt:Lorg/joda/time/Instant;
 
     :goto_2
-    aput-object v13, v12, v7
+    aput-object v14, v13, v8
 
-    const-string v13, "nowUTC=%s localConfig.updatedAt=%s"
+    const-string v14, "nowUTC=%s localConfig.updatedAt=%s"
 
-    invoke-virtual {v11, v13, v12}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v12, v14, v13}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    if-eqz v1, :cond_8
+    if-eqz v2, :cond_8
 
-    const-string v11, "nowUTC"
+    iget-object v13, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->cacheValidity:Lorg/joda/time/Duration;
 
-    invoke-static {v10, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    sget-object v14, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
 
-    iget-object v11, v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->cacheValidity:Lorg/joda/time/Duration;
+    invoke-static {v13, v14}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget-object v12, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
+    move-result v13
 
-    invoke-static {v11, v12}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_6
+    if-eqz v13, :cond_6
 
     goto :goto_3
 
     :cond_6
-    new-instance v11, Lorg/joda/time/Duration;
+    new-instance v13, Lorg/joda/time/Duration;
 
-    iget-object v12, v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->updatedAt:Lorg/joda/time/Instant;
+    iget-object v14, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->updatedAt:Lorg/joda/time/Instant;
 
-    invoke-direct {v11, v10, v12}, Lorg/joda/time/Duration;-><init>(Lorg/joda/time/ReadableInstant;Lorg/joda/time/ReadableInstant;)V
+    invoke-direct {v13, v11, v14}, Lorg/joda/time/Duration;-><init>(Lorg/joda/time/ReadableInstant;Lorg/joda/time/ReadableInstant;)V
 
-    invoke-virtual {v11}, Lorg/joda/time/Duration;->abs()Lorg/joda/time/Duration;
+    invoke-virtual {v13}, Lorg/joda/time/Duration;->abs()Lorg/joda/time/Duration;
 
-    move-result-object v10
+    move-result-object v11
 
-    iget-object v11, v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->cacheValidity:Lorg/joda/time/Duration;
+    iget-object v13, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->cacheValidity:Lorg/joda/time/Duration;
 
-    invoke-virtual {v10, v11}, Lorg/joda/time/base/AbstractDuration;->compareTo(Lorg/joda/time/ReadableDuration;)I
+    invoke-virtual {v11, v13}, Lorg/joda/time/base/AbstractDuration;->compareTo(Lorg/joda/time/ReadableDuration;)I
 
-    move-result v10
+    move-result v11
 
-    if-gtz v10, :cond_7
+    if-gtz v11, :cond_7
 
-    move v10, v7
+    move v11, v8
 
     goto :goto_4
 
     :cond_7
     :goto_3
-    move v10, v9
+    move v11, v10
 
     :goto_4
-    if-eqz v10, :cond_8
+    if-eqz v11, :cond_8
 
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v12, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object v2
+    new-array v1, v10, [Ljava/lang/Object;
 
-    new-array v3, v9, [Ljava/lang/Object;
+    const-string v3, "Returning local config, still valid."
 
-    const-string v4, "Returning local config, still valid."
+    invoke-virtual {v12, v3, v1}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {v2, v4, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-object v1
+    return-object v2
 
     :cond_8
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    invoke-virtual {v12, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-result-object v10
+    if-nez v2, :cond_9
 
-    const-string v11, "Local app config was unavailable("
-
-    invoke-static {v11}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    if-nez v1, :cond_9
-
-    move v12, v7
+    move v11, v8
 
     goto :goto_5
 
     :cond_9
-    move v12, v9
+    move v11, v10
 
     :goto_5
-    const-string v13, ") or invalid."
+    const-string v13, "Local app config was unavailable("
 
-    invoke-static {v11, v12, v13}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline25(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    const-string v14, ") or invalid."
+
+    invoke-static {v13, v11, v14}, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$$ExternalSyntheticOutline0;->m(Ljava/lang/String;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
-    new-array v12, v9, [Ljava/lang/Object;
+    new-array v13, v10, [Ljava/lang/Object;
 
-    invoke-virtual {v10, v11, v12}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v12, v11, v13}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v10, v4, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->remoteAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;
+    if-nez v1, :cond_b
 
-    iput-object v4, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
+    iget-object v1, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->remoteAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;
 
-    iput-object v1, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$1:Ljava/lang/Object;
+    iput-object v5, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$0:Ljava/lang/Object;
 
-    iput v5, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
+    iput-object v2, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->L$1:Ljava/lang/Object;
 
-    iget-object v11, v10, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
+    iput v7, v3, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource$getConfigData$1;->label:I
+
+    iget-object v11, v1, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;->dispatcherProvider:Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;
 
     invoke-interface {v11}, Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;->getIO()Lkotlin/coroutines/CoroutineContext;
 
@@ -335,413 +485,410 @@
 
     new-instance v12, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource$getConfigData$2;
 
-    invoke-direct {v12, v10, v6}, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource$getConfigData$2;-><init>(Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v12, v1, v6}, Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource$getConfigData$2;-><init>(Lde/rki/coronawarnapp/appconfig/sources/remote/RemoteAppConfigSource;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v11, v12, v2}, Lcom/google/zxing/client/android/R$id;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-ne v2, v3, :cond_a
-
-    return-object v3
-
-    :cond_a
-    move-object v10, v1
-
-    move-object v1, v2
-
-    move-object v2, v4
-
-    :goto_6
-    check-cast v1, Lde/rki/coronawarnapp/appconfig/ConfigData;
-
-    if-eqz v1, :cond_11
-
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v3
-
-    new-array v4, v9, [Ljava/lang/Object;
-
-    const-string v10, "Returning remote config."
-
-    invoke-virtual {v3, v10, v4}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->isDeviceTimeCorrect()Z
-
-    move-result v3
-
-    if-nez v3, :cond_b
-
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v3
-
-    new-array v4, v7, [Ljava/lang/Object;
-
-    invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getLocalOffset()Lorg/joda/time/Duration;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Lorg/joda/time/Duration;->getStandardMinutes()J
-
-    move-result-wide v10
-
-    new-instance v12, Ljava/lang/Long;
-
-    invoke-direct {v12, v10, v11}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v12, v4, v9
-
-    const-string v10, "Device time is incorrect, offset=%dmin"
-
-    invoke-virtual {v3, v10, v4}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_b
-    invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->isDeviceTimeCorrect()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c
-
-    iget-object v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getWasDeviceTimeIncorrectAcknowledged()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c
-
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v3
-
-    new-array v4, v9, [Ljava/lang/Object;
-
-    const-string v10, "Resetting previous incorrect device time acknowledgement."
-
-    invoke-virtual {v3, v10, v4}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    invoke-virtual {v3, v9}, Lde/rki/coronawarnapp/main/CWASettings;->setWasDeviceTimeIncorrectAcknowledged(Z)V
-
-    :cond_c
-    invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    move-result-object v3
-
-    sget-object v4, Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;->CORRECT:Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    const-string v10, "editor"
-
-    const-string v11, "prefs"
-
-    const-string v12, "value"
-
-    if-ne v3, v4, :cond_e
-
-    iget-object v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getFirstReliableDeviceTime()Lorg/joda/time/Instant;
-
-    move-result-object v3
-
-    sget-object v4, Lorg/joda/time/Instant;->EPOCH:Lorg/joda/time/Instant;
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_e
-
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v3
-
-    new-array v4, v9, [Ljava/lang/Object;
-
-    const-string v13, "Setting firstReliableDeviceTime to NOW (UTC). "
-
-    invoke-virtual {v3, v13, v4}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    iget-object v4, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
-
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
-
-    move-result-object v4
-
-    if-eqz v3, :cond_d
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    invoke-static {v3, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v3
-
-    invoke-static {v3, v10}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-wide v13, v4, Lorg/joda/time/Instant;->iMillis:J
-
-    const-string v4, "devicetime.correct.first"
-
-    invoke-interface {v3, v4, v13, v14}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    goto :goto_7
-
-    :cond_d
-    throw v6
-
-    :cond_e
-    :goto_7
-    invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    move-result-object v3
-
-    iget-object v4, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    invoke-virtual {v4}, Lde/rki/coronawarnapp/main/CWASettings;->getLastDeviceTimeStateChangeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    move-result-object v4
-
-    if-eq v3, v4, :cond_13
-
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v3
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    iget-object v8, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/main/CWASettings;->getLastDeviceTimeStateChangeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    move-result-object v8
-
-    aput-object v8, v4, v9
-
-    iget-object v8, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    invoke-virtual {v8}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v8
-
-    const-wide/16 v13, 0x0
-
-    const-string v9, "devicetime.laststatechange.timestamp"
-
-    invoke-interface {v8, v9, v13, v14}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v13
-
-    new-instance v8, Lorg/joda/time/Instant;
-
-    invoke-direct {v8, v13, v14}, Lorg/joda/time/Instant;-><init>(J)V
-
-    const-string v13, "Instant.ofEpochMilli(pre\u2026T_STATE_CHANGE_TIME, 0L))"
-
-    invoke-static {v8, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v8, v4, v7
-
-    invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    move-result-object v7
-
-    aput-object v7, v4, v5
-
-    const-string v5, "New device time state, saving timestamp (old=%s(%s), new=%s#)"
-
-    invoke-virtual {v3, v5, v4}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    invoke-interface {v1}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
-
-    move-result-object v4
-
-    if-eqz v3, :cond_10
-
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    invoke-static {v3, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v3
-
-    invoke-static {v3, v10}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v4, v4, Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;->key:Ljava/lang/String;
-
-    const-string v5, "devicetime.laststatechange.state"
-
-    invoke-interface {v3, v5, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    iget-object v3, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
-
-    iget-object v2, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
-
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
-
-    move-result-object v2
-
-    if-eqz v3, :cond_f
-
-    invoke-static {v2, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    invoke-static {v3, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v3
-
-    invoke-static {v3, v10}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-wide v4, v2, Lorg/joda/time/Instant;->iMillis:J
-
-    invoke-interface {v3, v9, v4, v5}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    goto :goto_8
-
-    :cond_f
-    throw v6
-
-    :cond_10
-    throw v6
-
-    :cond_11
-    const-string v1, "Duration.ZERO"
-
-    if-eqz v10, :cond_12
-
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
-
-    move-result-object v2
-
-    new-array v3, v9, [Ljava/lang/Object;
-
-    const-string v4, "Remote config was unavailable, returning local config, even if expired."
-
-    invoke-virtual {v2, v4, v3}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    sget-object v15, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
-
-    invoke-static {v15, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x2f
-
-    invoke-static/range {v10 .. v17}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->copy$default(Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;I)Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+    invoke-static {v11, v12, v3}, Lkotlinx/coroutines/BuildersKt;->withContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v1
 
-    goto :goto_8
+    if-ne v1, v4, :cond_a
 
-    :cond_12
-    invoke-static {v8}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    return-object v4
+
+    :cond_a
+    move-object v3, v5
+
+    move-object/from16 v16, v2
+
+    move-object v2, v1
+
+    move-object/from16 v1, v16
+
+    :goto_6
+    move-object v6, v2
+
+    check-cast v6, Lde/rki/coronawarnapp/appconfig/ConfigData;
+
+    move-object v2, v1
+
+    move-object v5, v3
+
+    :cond_b
+    if-eqz v6, :cond_f
+
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v2, v10, [Ljava/lang/Object;
+
+    const-string v3, "Returning remote config."
+
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/ConfigData;->isDeviceTimeCorrect()Z
+
+    move-result v2
+
+    if-nez v2, :cond_c
+
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v2, v8, [Ljava/lang/Object;
+
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getLocalOffset()Lorg/joda/time/Duration;
 
     move-result-object v3
 
-    new-array v4, v9, [Ljava/lang/Object;
+    invoke-virtual {v3}, Lorg/joda/time/Duration;->getStandardMinutes()J
 
-    const-string v5, "Remote & Local config unavailable! Returning DEFAULT!"
+    move-result-wide v3
 
-    invoke-virtual {v3, v5, v4}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-instance v11, Ljava/lang/Long;
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->defaultAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource;
+    invoke-direct {v11, v3, v4}, Ljava/lang/Long;-><init>(J)V
 
-    if-eqz v2, :cond_14
+    aput-object v11, v2, v10
 
-    new-instance v3, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+    const-string v3, "Device time is incorrect, offset=%dmin"
 
-    iget-object v4, v2, Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource;->configParser:Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v2, v2, Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource;->context:Landroid/content/Context;
+    :cond_c
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/ConfigData;->isDeviceTimeCorrect()Z
 
-    invoke-virtual {v2}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+    move-result v2
+
+    if-eqz v2, :cond_d
+
+    iget-object v2, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/main/CWASettings;->getWasDeviceTimeIncorrectAcknowledged()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_d
+
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v2, v10, [Ljava/lang/Object;
+
+    const-string v3, "Resetting previous incorrect device time acknowledgement."
+
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v2, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    invoke-virtual {v2, v10}, Lde/rki/coronawarnapp/main/CWASettings;->setWasDeviceTimeIncorrectAcknowledged(Z)V
+
+    :cond_d
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
 
     move-result-object v2
 
-    const-string v5, "default_app_config_android.bin"
+    sget-object v3, Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;->CORRECT:Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
 
-    invoke-virtual {v2, v5}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+    const-wide/16 v11, 0x0
+
+    const-string v4, "editor"
+
+    const-string v13, "prefs"
+
+    if-ne v2, v3, :cond_e
+
+    iget-object v2, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    const-string v5, "context.assets.open(\"def\u2026_app_config_android.bin\")"
+    const-string v3, "devicetime.correct.first"
 
-    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-interface {v2, v3, v11, v12}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->readBytes(Ljava/io/InputStream;)[B
+    move-result-wide v14
+
+    new-instance v2, Lorg/joda/time/Instant;
+
+    invoke-direct {v2, v14, v15}, Lorg/joda/time/Instant;-><init>(J)V
+
+    sget-object v14, Lorg/joda/time/Instant;->EPOCH:Lorg/joda/time/Instant;
+
+    invoke-static {v2, v14}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_e
+
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v2, v10, [Ljava/lang/Object;
+
+    const-string v14, "Setting firstReliableDeviceTime to NOW (UTC). "
+
+    invoke-virtual {v1, v14, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v2, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    iget-object v14, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
+
+    invoke-static {v14}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v14, Lorg/joda/time/DateTimeUtils;->cZoneNames:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v14
+
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    invoke-virtual {v4, v2}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;->parse([B)Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
+    invoke-static {v2, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v10
+    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    sget-object v8, Lorg/joda/time/Instant;->EPOCH:Lorg/joda/time/Instant;
+    move-result-object v2
 
-    const-string v2, "Instant.EPOCH"
+    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v8, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-interface {v2, v3, v14, v15}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    sget-object v12, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
+    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    invoke-static {v12, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    :cond_e
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
 
-    sget-object v13, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LOCAL_DEFAULT:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+    move-result-object v2
 
-    sget-object v9, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
+    iget-object v3, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
 
-    invoke-static {v9, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getLastDeviceTimeStateChangeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
 
-    const-string v11, "fallback.local"
+    move-result-object v3
 
-    move-object v7, v3
+    if-eq v2, v3, :cond_11
 
-    invoke-direct/range {v7 .. v13}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
-    move-object v1, v3
+    const/4 v2, 0x3
 
-    :cond_13
+    new-array v2, v2, [Ljava/lang/Object;
+
+    iget-object v3, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getLastDeviceTimeStateChangeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
+
+    move-result-object v3
+
+    aput-object v3, v2, v10
+
+    iget-object v3, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    invoke-virtual {v3}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v3
+
+    const-string v9, "devicetime.laststatechange.timestamp"
+
+    invoke-interface {v3, v9, v11, v12}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v10
+
+    new-instance v3, Lorg/joda/time/Instant;
+
+    invoke-direct {v3, v10, v11}, Lorg/joda/time/Instant;-><init>(J)V
+
+    aput-object v3, v2, v8
+
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
+
+    move-result-object v3
+
+    aput-object v3, v2, v7
+
+    const-string v3, "New device time state, saving timestamp (old=%s(%s), new=%s#)"
+
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v1, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    invoke-interface {v6}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getDeviceTimeState()Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;
+
+    move-result-object v2
+
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string/jumbo v3, "value"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-static {v1, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v2, v2, Lde/rki/coronawarnapp/appconfig/ConfigData$DeviceTimeState;->key:Ljava/lang/String;
+
+    const-string v3, "devicetime.laststatechange.state"
+
+    invoke-interface {v1, v3, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    iget-object v1, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->cwaSettings:Lde/rki/coronawarnapp/main/CWASettings;
+
+    iget-object v2, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
+
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v2, Lorg/joda/time/DateTimeUtils;->cZoneNames:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/main/CWASettings;->getPrefs()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-static {v1, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {v1, v9, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    goto/16 :goto_8
+
+    :cond_f
+    if-eqz v2, :cond_10
+
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v3, v10, [Ljava/lang/Object;
+
+    const-string v4, "Remote config was unavailable, returning local config, even if expired."
+
+    invoke-virtual {v1, v4, v3}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    sget-object v10, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
+
+    iget-object v6, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->serverTime:Lorg/joda/time/Instant;
+
+    iget-object v7, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->cacheValidity:Lorg/joda/time/Duration;
+
+    iget-object v8, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->mappedConfig:Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
+
+    iget-object v9, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->identifier:Ljava/lang/String;
+
+    iget-object v11, v2, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;->configType:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+
+    const-string v1, "serverTime"
+
+    invoke-static {v6, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "cacheValidity"
+
+    invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "mappedConfig"
+
+    invoke-static {v8, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "identifier"
+
+    invoke-static {v9, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "configType"
+
+    invoke-static {v11, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+
+    move-object v5, v1
+
+    invoke-direct/range {v5 .. v11}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+
+    goto :goto_7
+
+    :cond_10
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    invoke-virtual {v1, v9}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+
+    new-array v2, v10, [Ljava/lang/Object;
+
+    const-string v3, "Remote & Local config unavailable! Returning DEFAULT!"
+
+    invoke-virtual {v1, v3, v2}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v1, v5, Lde/rki/coronawarnapp/appconfig/internal/AppConfigSource;->defaultAppConfigSource:Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource;
+
+    iget-object v2, v1, Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource;->configParser:Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;
+
+    iget-object v1, v1, Lde/rki/coronawarnapp/appconfig/sources/fallback/DefaultAppConfigSource;->context:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v1
+
+    const-string v3, "default_app_config_android.bin"
+
+    invoke-virtual {v1, v3}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+
+    move-result-object v1
+
+    const-string v3, "context.assets.open(\"def\u2026_app_config_android.bin\")"
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v1}, Lkotlin/io/ByteStreamsKt;->readBytes(Ljava/io/InputStream;)[B
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Lde/rki/coronawarnapp/appconfig/mapping/ConfigParser;->parse([B)Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;
+
+    move-result-object v6
+
+    sget-object v4, Lorg/joda/time/Instant;->EPOCH:Lorg/joda/time/Instant;
+
+    sget-object v8, Lorg/joda/time/Duration;->ZERO:Lorg/joda/time/Duration;
+
+    sget-object v9, Lde/rki/coronawarnapp/appconfig/ConfigData$Type;->LOCAL_DEFAULT:Lde/rki/coronawarnapp/appconfig/ConfigData$Type;
+
+    new-instance v1, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;
+
+    const-string v7, "fallback.local"
+
+    move-object v3, v1
+
+    move-object v5, v8
+
+    invoke-direct/range {v3 .. v9}, Lde/rki/coronawarnapp/appconfig/internal/ConfigDataContainer;-><init>(Lorg/joda/time/Instant;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/mapping/ConfigMapping;Ljava/lang/String;Lorg/joda/time/Duration;Lde/rki/coronawarnapp/appconfig/ConfigData$Type;)V
+
+    :goto_7
+    move-object v6, v1
+
+    :cond_11
     :goto_8
-    return-object v1
-
-    :cond_14
-    throw v6
+    return-object v6
 .end method

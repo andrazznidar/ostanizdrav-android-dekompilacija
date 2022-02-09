@@ -6,7 +6,7 @@
 # instance fields
 .field public final synthetic val$operations:Ljava/util/List;
 
-.field public final synthetic val$transform:Landroid/graphics/Matrix;
+.field public final synthetic val$transformCopy:Landroid/graphics/Matrix;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     iput-object p2, p0, Lcom/google/android/material/shape/ShapePath$1;->val$operations:Ljava/util/List;
 
-    iput-object p3, p0, Lcom/google/android/material/shape/ShapePath$1;->val$transform:Landroid/graphics/Matrix;
+    iput-object p3, p0, Lcom/google/android/material/shape/ShapePath$1;->val$transformCopy:Landroid/graphics/Matrix;
 
     invoke-direct {p0}, Lcom/google/android/material/shape/ShapePath$ShadowCompatOperation;-><init>()V
 
@@ -46,7 +46,7 @@
 
     check-cast v0, Lcom/google/android/material/shape/ShapePath$ShadowCompatOperation;
 
-    iget-object v1, p0, Lcom/google/android/material/shape/ShapePath$1;->val$transform:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/google/android/material/shape/ShapePath$1;->val$transformCopy:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1, p2, p3, p4}, Lcom/google/android/material/shape/ShapePath$ShadowCompatOperation;->draw(Landroid/graphics/Matrix;Lcom/google/android/material/shadow/ShadowRenderer;ILandroid/graphics/Canvas;)V
 

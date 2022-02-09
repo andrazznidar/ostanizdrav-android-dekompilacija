@@ -32,7 +32,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/verification/server/VerificationServer;",
+            "Lde/rki/coronawarnapp/coronatest/server/VerificationServer;",
             ">;"
         }
     .end annotation
@@ -42,11 +42,22 @@
 # direct methods
 .method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "verificationServerProvider",
+            "submissionServerProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/verification/server/VerificationServer;",
+            "Lde/rki/coronawarnapp/coronatest/server/VerificationServer;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/submission/server/SubmissionServer;",
@@ -74,7 +85,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lde/rki/coronawarnapp/verification/server/VerificationServer;
+    check-cast v0, Lde/rki/coronawarnapp/coronatest/server/VerificationServer;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook_Factory;->submissionServerProvider:Ljavax/inject/Provider;
 
@@ -86,7 +97,7 @@
 
     new-instance v2, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 
-    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;-><init>(Lde/rki/coronawarnapp/verification/server/VerificationServer;Lde/rki/coronawarnapp/submission/server/SubmissionServer;)V
+    invoke-direct {v2, v0, v1}, Lde/rki/coronawarnapp/playbook/DefaultPlaybook;-><init>(Lde/rki/coronawarnapp/coronatest/server/VerificationServer;Lde/rki/coronawarnapp/submission/server/SubmissionServer;)V
 
     return-object v2
 .end method

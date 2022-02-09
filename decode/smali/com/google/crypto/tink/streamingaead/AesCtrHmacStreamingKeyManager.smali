@@ -55,29 +55,29 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/google/crypto/tink/proto/HashType;->UNKNOWN_HASH:Lcom/google/crypto/tink/proto/HashType;
-
     invoke-virtual {p0}, Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;->getDerivedKeySize()I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Lcom/google/crypto/tink/subtle/Validators;->validateAesKeySize(I)V
+    invoke-static {v0}, Lcom/google/crypto/tink/subtle/Validators;->validateAesKeySize(I)V
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;->getHkdfHashType()Lcom/google/crypto/tink/proto/HashType;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eq v1, v0, :cond_9
+    sget-object v1, Lcom/google/crypto/tink/proto/HashType;->UNKNOWN_HASH:Lcom/google/crypto/tink/proto/HashType;
+
+    if-eq v0, v1, :cond_9
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;->getHmacParams()Lcom/google/crypto/tink/proto/HmacParams;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/crypto/tink/proto/HmacParams;->getHash()Lcom/google/crypto/tink/proto/HashType;
+    invoke-virtual {v0}, Lcom/google/crypto/tink/proto/HmacParams;->getHash()Lcom/google/crypto/tink/proto/HashType;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eq v1, v0, :cond_8
+    if-eq v0, v1, :cond_8
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/proto/AesCtrHmacStreamingParams;->getHmacParams()Lcom/google/crypto/tink/proto/HmacParams;
 
@@ -101,7 +101,7 @@
 
     const/4 v2, 0x1
 
-    const-string v3, "tag size too big"
+    const-string/jumbo v3, "tag size too big"
 
     if-eq v1, v2, :cond_4
 
@@ -133,7 +133,7 @@
     :cond_1
     new-instance p0, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "unknown hash type"
+    const-string/jumbo v0, "unknown hash type"
 
     invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
@@ -212,7 +212,7 @@
     :cond_7
     new-instance p0, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "tag size too small"
+    const-string/jumbo v0, "tag size too small"
 
     invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
@@ -221,7 +221,7 @@
     :cond_8
     new-instance p0, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "unknown HMAC hash type"
+    const-string/jumbo v0, "unknown HMAC hash type"
 
     invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
@@ -230,7 +230,7 @@
     :cond_9
     new-instance p0, Ljava/security/GeneralSecurityException;
 
-    const-string v0, "unknown HKDF hash type"
+    const-string/jumbo v0, "unknown HKDF hash type"
 
     invoke-direct {p0, v0}, Ljava/security/GeneralSecurityException;-><init>(Ljava/lang/String;)V
 
@@ -242,7 +242,7 @@
 .method public getKeyType()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesCtrHmacStreamingKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.AesCtrHmacStreamingKey"
 
     return-object v0
 .end method

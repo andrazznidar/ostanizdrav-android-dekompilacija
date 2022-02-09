@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/common/Feature;
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # static fields
@@ -33,9 +33,9 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/common/zzb;
+    new-instance v0, Lcom/google/android/gms/common/zzc;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/zzb;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/zzc;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/Feature;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -82,7 +82,7 @@
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 6
 
     instance-of v0, p1, Lcom/google/android/gms/common/Feature;
@@ -154,7 +154,7 @@
     return-wide v0
 .end method
 
-.method public hashCode()I
+.method public final hashCode()I
     .locals 4
 
     const/4 v0, 0x2
@@ -186,14 +186,14 @@
     return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public final toString()Ljava/lang/String;
     .locals 3
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
-    invoke-static {p0}, Lcom/airbnb/lottie/R$attr;->toStringHelper(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
+    new-instance v0, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;-><init>(Ljava/lang/Object;)V
 
     iget-object v1, p0, Lcom/google/android/gms/common/Feature;->zza:Ljava/lang/String;
 
@@ -209,7 +209,7 @@
 
     move-result-object v1
 
-    const-string v2, "version"
+    const-string/jumbo v2, "version"
 
     invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/Objects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/Objects$ToStringHelper;
 
@@ -220,40 +220,46 @@
     return-object v0
 .end method
 
-.method public writeToParcel(Landroid/os/Parcel;I)V
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
     .param p1    # Landroid/os/Parcel;
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
     .end param
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->beginObjectHeader(Landroid/os/Parcel;)I
+    const/16 p2, 0x4f45
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzb(Landroid/os/Parcel;I)I
 
     move-result p2
 
-    iget-object v0, p0, Lcom/google/android/gms/common/Feature;->zza:Ljava/lang/String;
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/android/gms/common/Feature;->zza:Ljava/lang/String;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-static {p1, v2, v0, v1}, Lcom/airbnb/lottie/R$attr;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v0, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->writeString(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    const/4 v0, 0x2
+    iget v0, p0, Lcom/google/android/gms/common/Feature;->zzb:I
 
-    iget v1, p0, Lcom/google/android/gms/common/Feature;->zzb:I
+    const v1, 0x40002
 
-    invoke-static {p1, v0, v1}, Lcom/airbnb/lottie/R$attr;->writeInt(Landroid/os/Parcel;II)V
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v0, 0x3
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/Feature;->getVersion()J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    invoke-static {p1, v0, v1, v2}, Lcom/airbnb/lottie/R$attr;->writeLong(Landroid/os/Parcel;IJ)V
+    const v2, 0x80003
 
-    invoke-static {p1, p2}, Lcom/airbnb/lottie/R$attr;->zzb(Landroid/os/Parcel;I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelWriter;->zzc(Landroid/os/Parcel;I)V
 
     return-void
 .end method

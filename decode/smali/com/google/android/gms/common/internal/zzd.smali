@@ -1,150 +1,61 @@
 .class public final Lcom/google/android/gms/common/internal/zzd;
-.super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+.super Lcom/google/android/gms/common/internal/zzaa;
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator<",
-        "Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;",
-        ">;"
-    }
-.end annotation
+# instance fields
+.field public zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+.field public final zzb:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/common/internal/BaseGmsClient;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/gms/common/internal/zzaa;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zzd;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
+
+    iput p2, p0, Lcom/google/android/gms/common/internal/zzd;->zzb:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 9
+.method public final onPostInitComplete(ILandroid/os/IBinder;Landroid/os/Bundle;)V
+    .locals 4
 
-    invoke-static {p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zzd;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    move-result v0
+    const-string v1, "onPostInitComplete can be called only once per call to getRemoteService"
 
-    const/4 v1, 0x0
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zzd;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    move-object v4, v1
+    iget v1, p0, Lcom/google/android/gms/common/internal/zzd;->zzb:I
 
-    move-object v7, v4
+    iget-object v2, v0, Lcom/google/android/gms/common/internal/BaseGmsClient;->zzb:Landroid/os/Handler;
 
-    move v5, v2
+    new-instance v3, Lcom/google/android/gms/common/internal/zzf;
 
-    move v6, v5
+    invoke-direct {v3, v0, p1, p2, p3}, Lcom/google/android/gms/common/internal/zzf;-><init>(Lcom/google/android/gms/common/internal/BaseGmsClient;ILandroid/os/IBinder;Landroid/os/Bundle;)V
 
-    move v8, v6
+    const/4 p1, 0x1
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    const/4 p2, -0x1
 
-    move-result v1
+    invoke-virtual {v2, p1, v1, p2, v3}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
-    if-ge v1, v0, :cond_5
+    move-result-object p1
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {v2, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    move-result v1
+    const/4 p1, 0x0
 
-    const v2, 0xffff
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zzd;->zza:Lcom/google/android/gms/common/internal/BaseGmsClient;
 
-    and-int/2addr v2, v1
-
-    const/4 v3, 0x1
-
-    if-eq v2, v3, :cond_4
-
-    const/4 v3, 0x2
-
-    if-eq v2, v3, :cond_3
-
-    const/4 v3, 0x3
-
-    if-eq v2, v3, :cond_2
-
-    const/4 v3, 0x4
-
-    if-eq v2, v3, :cond_1
-
-    const/4 v3, 0x5
-
-    if-eq v2, v3, :cond_0
-
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
-
-    move-result v8
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->createIntArray(Landroid/os/Parcel;I)[I
-
-    move-result-object v7
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readBoolean(Landroid/os/Parcel;I)Z
-
-    move-result v6
-
-    goto :goto_0
-
-    :cond_3
-    invoke-static {p1, v1}, Lcom/airbnb/lottie/R$attr;->readBoolean(Landroid/os/Parcel;I)Z
-
-    move-result v5
-
-    goto :goto_0
-
-    :cond_4
-    sget-object v2, Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v1, v2}, Lcom/airbnb/lottie/R$attr;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;
-
-    goto :goto_0
-
-    :cond_5
-    invoke-static {p1, v0}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
-
-    new-instance p1, Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;
-
-    move-object v3, p1
-
-    invoke-direct/range {v3 .. v8}, Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;-><init>(Lcom/google/android/gms/common/internal/RootTelemetryConfiguration;ZZ[II)V
-
-    return-object p1
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 0
-
-    new-array p1, p1, [Lcom/google/android/gms/common/internal/ConnectionTelemetryConfiguration;
-
-    return-object p1
+    return-void
 .end method

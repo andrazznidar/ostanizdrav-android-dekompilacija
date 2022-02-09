@@ -1,4 +1,4 @@
-.class public Landroidx/viewpager2/adapter/FragmentStateAdapter$FragmentMaxLifecycleEnforcer$3;
+.class Landroidx/viewpager2/adapter/FragmentStateAdapter$FragmentMaxLifecycleEnforcer$3;
 .super Ljava/lang/Object;
 .source "FragmentStateAdapter.java"
 

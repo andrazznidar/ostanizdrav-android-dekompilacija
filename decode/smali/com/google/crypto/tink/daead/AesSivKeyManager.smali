@@ -43,7 +43,7 @@
 .method public getKeyType()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "type.googleapis.com/google.crypto.tink.AesSivKey"
+    const-string/jumbo v0, "type.googleapis.com/google.crypto.tink.AesSivKey"
 
     return-object v0
 .end method
@@ -151,7 +151,7 @@
 
     const-string v1, "invalid key size: "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 

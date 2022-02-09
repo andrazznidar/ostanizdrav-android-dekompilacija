@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,132:1\n53#2:133\n48#3:134\n69#4:135\n1855#5,24:136\n*E\n*S KotlinDebug\n*F\n+ 1 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n*L\n69#1,24:136\n*E\n"
+    value = "SMAP\nCollect.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Collect.kt\nkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 3 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 4 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,134:1\n53#2:135\n48#3:136\n69#4:137\n1895#5,14:138\n*S KotlinDebug\n*F\n+ 1 ENFClient.kt\nde/rki/coronawarnapp/nearby/ENFClient\n*L\n69#1:138,14\n*E\n"
 .end annotation
 
 
@@ -37,7 +37,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lkotlinx/coroutines/flow/FlowCollector;Lde/rki/coronawarnapp/nearby/ENFClient$isPerformingExposureDetection$$inlined$map$2;)V
+.method public constructor <init>(Lkotlinx/coroutines/flow/FlowCollector;)V
     .locals 0
 
     iput-object p1, p0, Lde/rki/coronawarnapp/nearby/ENFClient$isPerformingExposureDetection$$inlined$map$2$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
@@ -92,7 +92,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_4
 
@@ -106,7 +106,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p2, p0, Lde/rki/coronawarnapp/nearby/ENFClient$isPerformingExposureDetection$$inlined$map$2$2;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -186,23 +186,24 @@
     :goto_2
     check-cast p1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;
 
-    if-eqz p1, :cond_7
+    const/4 v2, 0x0
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->isCalculating()Z
-
-    move-result p1
-
-    if-ne p1, v3, :cond_7
-
-    move p1, v3
+    if-nez p1, :cond_7
 
     goto :goto_3
 
     :cond_7
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection;->isCalculating()Z
 
+    move-result p1
+
+    if-ne p1, v3, :cond_8
+
+    move v2, v3
+
+    :cond_8
     :goto_3
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
@@ -212,11 +213,11 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_8
+    if-ne p1, v1, :cond_9
 
     return-object v1
 
-    :cond_8
+    :cond_9
     :goto_4
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

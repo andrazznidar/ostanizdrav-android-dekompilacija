@@ -78,44 +78,41 @@
 
     move-result-object p2
 
-    const/4 v0, 0x0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_1
+    sget-object v0, Landroidx/work/impl/WorkManagerImpl;->sLock:Ljava/lang/Object;
 
-    sget-object v1, Landroidx/work/impl/WorkManagerImpl;->sLock:Ljava/lang/Object;
-
-    monitor-enter v1
+    monitor-enter v0
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
     iput-object p2, p1, Landroidx/work/impl/WorkManagerImpl;->mRescheduleReceiverResult:Landroid/content/BroadcastReceiver$PendingResult;
 
-    iget-boolean v2, p1, Landroidx/work/impl/WorkManagerImpl;->mForceStopRunnableCompleted:Z
+    iget-boolean v1, p1, Landroidx/work/impl/WorkManagerImpl;->mForceStopRunnableCompleted:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-virtual {p2}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
 
-    iput-object v0, p1, Landroidx/work/impl/WorkManagerImpl;->mRescheduleReceiverResult:Landroid/content/BroadcastReceiver$PendingResult;
+    const/4 p2, 0x0
+
+    iput-object p2, p1, Landroidx/work/impl/WorkManagerImpl;->mRescheduleReceiverResult:Landroid/content/BroadcastReceiver$PendingResult;
 
     :cond_0
-    monitor-exit v1
+    monitor-exit v0
 
     goto :goto_0
 
     :catchall_0
     move-exception p1
 
-    monitor-exit v1
+    monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
     throw p1
-
-    :cond_1
-    throw v0
     :try_end_2
     .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_0
 

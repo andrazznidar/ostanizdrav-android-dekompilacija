@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDistricts.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,43:1\n1#2:44\n10#3,4:45\n*E\n*S KotlinDebug\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n*L\n22#1,4:45\n*E\n"
+    value = "SMAP\nDistricts.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 GsonExtensions.kt\nde/rki/coronawarnapp/util/serialization/GsonExtensionsKt\n*L\n1#1,42:1\n1#2:43\n10#3,4:44\n*S KotlinDebug\n*F\n+ 1 Districts.kt\nde/rki/coronawarnapp/datadonation/analytics/common/Districts\n*L\n21#1:44,4\n*E\n"
 .end annotation
 
 
@@ -44,17 +44,14 @@
 
 
 # virtual methods
-.method public final loadDistricts()Ljava/lang/Object;
+.method public final loadDistricts()Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lkotlin/coroutines/Continuation<",
-            "-",
+            "()",
             "Ljava/util/List<",
             "Lde/rki/coronawarnapp/datadonation/analytics/common/Districts$District;",
-            ">;>;)",
-            "Ljava/lang/Object;"
+            ">;"
         }
     .end annotation
 
@@ -104,14 +101,14 @@
     const/4 v0, 0x0
 
     :try_start_1
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->readText(Ljava/io/Reader;)Ljava/lang/String;
+    invoke-static {v2}, Lkotlin/io/TextStreamsKt;->readText(Ljava/io/Reader;)Ljava/lang/String;
 
     move-result-object v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    invoke-static {v2, v0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v2, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/common/Districts;->gson:Lcom/google/gson/Gson;
 
@@ -143,7 +140,7 @@
     move-exception v1
 
     :try_start_4
-    invoke-static {v2, v0}, Lcom/google/zxing/client/android/R$id;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-static {v2, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     throw v1
     :try_end_4
@@ -152,11 +149,11 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "Districts"
+    sget-object v1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    invoke-static {v1}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
+    const-string v2, "Districts"
 
-    move-result-object v1
+    invoke-virtual {v1, v2}, Ltimber/log/Timber$Forest;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     const/4 v2, 0x0
 

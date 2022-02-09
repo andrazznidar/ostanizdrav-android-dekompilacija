@@ -18,3 +18,6 @@
 
 .method public abstract getPhoneNumber()Ljava/lang/String;
 .end method
+
+.method public abstract getTraceLocationID()Lokio/ByteString;
+.end method

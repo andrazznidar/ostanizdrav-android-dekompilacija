@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,11 +46,11 @@
 
     iput-boolean v0, p0, Lcom/airbnb/lottie/PerformanceTracker;->enabled:Z
 
-    new-instance v0, Landroidx/collection/ArraySet;
+    new-instance v1, Landroidx/collection/ArraySet;
 
-    invoke-direct {v0}, Landroidx/collection/ArraySet;-><init>()V
+    invoke-direct {v1, v0}, Landroidx/collection/ArraySet;-><init>(I)V
 
-    iput-object v0, p0, Lcom/airbnb/lottie/PerformanceTracker;->frameListeners:Ljava/util/Set;
+    iput-object v1, p0, Lcom/airbnb/lottie/PerformanceTracker;->frameListeners:Ljava/util/Set;
 
     new-instance v0, Ljava/util/HashMap;
 

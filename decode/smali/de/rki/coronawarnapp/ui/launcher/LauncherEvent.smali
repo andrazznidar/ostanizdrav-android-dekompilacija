@@ -8,7 +8,9 @@
     value = {
         Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToOnboarding;,
         Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$GoToMainActivity;,
-        Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$ShowUpdateDialog;
+        Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$ForceUpdate;,
+        Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$ShowUpdateDialog;,
+        Lde/rki/coronawarnapp/ui/launcher/LauncherEvent$ShowRootedDialog;
     }
 .end annotation
 

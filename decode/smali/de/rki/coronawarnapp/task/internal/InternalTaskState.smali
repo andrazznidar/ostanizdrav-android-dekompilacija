@@ -86,7 +86,7 @@
 
     invoke-static {p9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "task"
+    const-string/jumbo v0, "task"
 
     invoke-static {p10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -236,15 +236,10 @@
 
     if-eqz v1, :cond_9
 
-    iget-object v1, v0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
-
-    goto :goto_9
+    iget-object v3, v0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
 
     :cond_9
-    move-object v1, v3
-
-    :goto_9
-    if-eqz v0, :cond_a
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v0, "id"
 
@@ -266,9 +261,9 @@
 
     invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "task"
+    const-string/jumbo v0, "task"
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     new-instance v0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;
 
@@ -292,141 +287,167 @@
 
     move-object/from16 p9, v11
 
-    move-object/from16 p10, v1
+    move-object/from16 p10, v3
 
     invoke-direct/range {p0 .. p10}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;-><init>(Ljava/util/UUID;Lde/rki/coronawarnapp/task/TaskRequest;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Lorg/joda/time/Instant;Ljava/lang/Throwable;Lde/rki/coronawarnapp/task/Task$Result;Lde/rki/coronawarnapp/task/TaskFactory$Config;Lkotlinx/coroutines/Deferred;Lde/rki/coronawarnapp/task/Task;)V
 
     return-object v0
-
-    :cond_a
-    throw v3
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
+    return v2
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
+    :cond_2
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
 
-    move-result v0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
+    if-nez v1, :cond_3
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
+    return v2
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_3
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
 
-    move-result v0
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
 
-    if-eqz v0, :cond_0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
+    move-result v1
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
+    if-nez v1, :cond_4
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return v2
 
-    move-result v0
+    :cond_4
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
+    move-result v1
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-nez v1, :cond_5
 
-    move-result v0
+    return v2
 
-    if-eqz v0, :cond_0
+    :cond_5
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v1
 
-    move-result v0
+    if-nez v1, :cond_6
 
-    if-eqz v0, :cond_0
+    return v2
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
+    :cond_6
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_7
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
+    return v2
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
+    :cond_7
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
 
-    move-result v0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
+    if-nez v1, :cond_8
 
-    iget-object v1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
+    return v2
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_8
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
-    move-result v0
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
-    if-eqz v0, :cond_0
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
+    move-result v1
+
+    if-nez v1, :cond_9
+
+    return v2
+
+    :cond_9
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
+
+    iget-object v3, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_a
+
+    return v2
+
+    :cond_a
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_b
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_b
+    return v0
 .end method
 
 .method public getError()Ljava/lang/Throwable;
@@ -437,14 +458,14 @@
     return-object v0
 .end method
 
-.method public getExecutionState()Lde/rki/coronawarnapp/task/TaskState$ExecutionState;
+.method public getExecutionState$enumunboxing$()I
     .locals 1
 
     iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lde/rki/coronawarnapp/task/TaskState$ExecutionState;->FINISHED:Lde/rki/coronawarnapp/task/TaskState$ExecutionState;
+    const/4 v0, 0x3
 
     goto :goto_0
 
@@ -453,15 +474,15 @@
 
     if-eqz v0, :cond_1
 
-    sget-object v0, Lde/rki/coronawarnapp/task/TaskState$ExecutionState;->RUNNING:Lde/rki/coronawarnapp/task/TaskState$ExecutionState;
+    const/4 v0, 0x2
 
     goto :goto_0
 
     :cond_1
-    sget-object v0, Lde/rki/coronawarnapp/task/TaskState$ExecutionState;->PENDING:Lde/rki/coronawarnapp/task/TaskState$ExecutionState;
+    const/4 v0, 0x1
 
     :goto_0
-    return-object v0
+    return v0
 .end method
 
 .method public getFinishedAt()Lorg/joda/time/Instant;
@@ -526,182 +547,139 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/util/UUID;->hashCode()I
 
     move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
+
+    const/16 v2, 0x1f
+
+    invoke-static {v0, v1, v2}, Lde/rki/coronawarnapp/appconfig/internal/InternalConfigData$$ExternalSyntheticOutline0;->m(Lorg/joda/time/Instant;II)I
+
+    move-result v0
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    move v1, v2
 
     goto :goto_0
 
     :cond_0
-    move v0, v1
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+
+    move-result v1
 
     :goto_0
+    add-int/2addr v0, v1
+
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
 
-    if-eqz v2, :cond_1
+    if-nez v1, :cond_1
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
+    move v1, v2
 
     goto :goto_1
 
     :cond_1
-    move v2, v1
+    invoke-virtual {v1}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
+
+    move-result v1
 
     :goto_1
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
 
-    if-eqz v2, :cond_2
+    if-nez v1, :cond_2
 
-    invoke-virtual {v2}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
-
-    move-result v2
+    move v1, v2
 
     goto :goto_2
 
     :cond_2
-    move v2, v1
+    invoke-virtual {v1}, Ljava/lang/Throwable;->hashCode()I
+
+    move-result v1
 
     :goto_2
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
 
-    if-eqz v2, :cond_3
-
-    invoke-virtual {v2}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
-
-    move-result v2
+    if-nez v1, :cond_3
 
     goto :goto_3
 
     :cond_3
-    move v2, v1
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
 
     :goto_3
     add-int/2addr v0, v2
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
-    if-eqz v2, :cond_4
-
-    invoke-virtual {v2}, Lorg/joda/time/base/AbstractInstant;->hashCode()I
-
-    move-result v2
-
-    goto :goto_4
-
-    :cond_4
-    move v2, v1
-
-    :goto_4
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
-
-    if-eqz v2, :cond_5
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    goto :goto_5
-
-    :cond_5
-    move v2, v1
-
-    :goto_5
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
-
-    if-eqz v2, :cond_6
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    goto :goto_6
-
-    :cond_6
-    move v2, v1
-
-    :goto_6
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
-
-    if-eqz v2, :cond_7
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    goto :goto_7
-
-    :cond_7
-    move v2, v1
-
-    :goto_7
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
-
-    if-eqz v2, :cond_8
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    goto :goto_8
-
-    :cond_8
-    move v2, v1
-
-    :goto_8
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
-
-    if-eqz v2, :cond_9
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :cond_9
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
     add-int/2addr v0, v1
 
-    return v0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    return v1
 .end method
 
 .method public isActive()Z
     .locals 1
+
+    const-string/jumbo v0, "this"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->isFinished()Z
 
@@ -712,40 +690,14 @@
     return v0
 .end method
 
-.method public isFailed()Z
-    .locals 1
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->isFinished()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->getError()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
 .method public isFinished()Z
     .locals 2
 
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->getExecutionState()Lde/rki/coronawarnapp/task/TaskState$ExecutionState;
+    invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->getExecutionState$enumunboxing$()I
 
-    move-result-object v0
+    move-result v0
 
-    sget-object v1, Lde/rki/coronawarnapp/task/TaskState$ExecutionState;->FINISHED:Lde/rki/coronawarnapp/task/TaskState$ExecutionState;
+    const/4 v1, 0x3
 
     if-ne v0, v1, :cond_0
 
@@ -762,6 +714,10 @@
 
 .method public isSuccessful()Z
     .locals 1
+
+    const-string/jumbo v0, "this"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->isFinished()Z
 
@@ -787,95 +743,97 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 12
 
-    const-string v0, "InternalTaskState(id="
-
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", request="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->id:Ljava/util/UUID;
 
     iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->request:Lde/rki/coronawarnapp/task/TaskRequest;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
 
-    const-string v1, ", createdAt="
+    iget-object v3, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->createdAt:Lorg/joda/time/Instant;
+    iget-object v5, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v6, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
 
-    const-string v1, ", startedAt="
+    iget-object v7, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v8, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->startedAt:Lorg/joda/time/Instant;
+    iget-object v9, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    const-string v1, ", finishedAt="
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v11, "InternalTaskState(id="
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->finishedAt:Lorg/joda/time/Instant;
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", error="
+    const-string v0, ", request="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->error:Ljava/lang/Throwable;
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, ", createdAt="
 
-    const-string v1, ", result="
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->result:Lde/rki/coronawarnapp/task/Task$Result;
+    const-string v0, ", startedAt="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", config="
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", finishedAt="
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->config:Lde/rki/coronawarnapp/task/TaskFactory$Config;
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", job="
+    const-string v0, ", error="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->job:Lkotlinx/coroutines/Deferred;
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, ", result="
 
-    const-string v1, ", task="
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/task/internal/InternalTaskState;->task:Lde/rki/coronawarnapp/task/Task;
+    const-string v0, ", config="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", job="
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", task="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

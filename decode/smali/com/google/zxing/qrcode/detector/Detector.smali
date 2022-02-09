@@ -539,7 +539,7 @@
 
     if-ne v15, v0, :cond_7
 
-    invoke-static {v13, v14, v1, v4}, Lcom/google/zxing/client/android/R$id;->distance(IIII)F
+    invoke-static {v13, v14, v1, v4}, Lcom/google/zxing/common/detector/MathUtils;->distance(IIII)F
 
     move-result v0
 
@@ -592,7 +592,7 @@
 
     move/from16 v5, p2
 
-    invoke-static {v5, v6, v1, v4}, Lcom/google/zxing/client/android/R$id;->distance(IIII)F
+    invoke-static {v5, v6, v1, v4}, Lcom/google/zxing/common/detector/MathUtils;->distance(IIII)F
 
     move-result v0
 

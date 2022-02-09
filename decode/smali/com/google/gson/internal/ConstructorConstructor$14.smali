@@ -11,7 +11,8 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/google/gson/internal/ObjectConstructor<",
-        "TT;>;"
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
@@ -43,13 +44,13 @@
     const/4 v0, 0x1
 
     :try_start_0
-    const-string v1, "sun.misc.Unsafe"
+    const-string/jumbo v1, "sun.misc.Unsafe"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v1
 
-    const-string v2, "theUnsafe"
+    const-string/jumbo v2, "theUnsafe"
 
     invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -188,7 +189,8 @@
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT;"
+            "()",
+            "Ljava/lang/Object;"
         }
     .end annotation
 
@@ -212,7 +214,7 @@
 
     const-string v2, "Unable to invoke no-args constructor for "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 

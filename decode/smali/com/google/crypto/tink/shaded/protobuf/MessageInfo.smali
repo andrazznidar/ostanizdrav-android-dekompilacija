@@ -7,7 +7,7 @@
 .method public abstract getDefaultInstance()Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 .end method
 
-.method public abstract getSyntax()Lcom/google/crypto/tink/shaded/protobuf/ProtoSyntax;
+.method public abstract getSyntax$enumunboxing$()I
 .end method
 
 .method public abstract isMessageSetWireFormat()Z

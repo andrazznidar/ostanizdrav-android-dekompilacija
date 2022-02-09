@@ -1,9 +1,9 @@
 .class public final Lcom/google/android/gms/tasks/zzl;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.2.0"
+.source "com.google.android.gms:play-services-tasks@@17.2.1"
 
 # interfaces
-.implements Lcom/google/android/gms/tasks/zzr;
+.implements Lcom/google/android/gms/tasks/zzq;
 
 
 # annotations
@@ -13,7 +13,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/android/gms/tasks/zzr<",
+        "Lcom/google/android/gms/tasks/zzq<",
         "TTResult;>;"
     }
 .end annotation
@@ -64,11 +64,9 @@
 
     if-nez v0, :cond_1
 
-    move-object v0, p1
+    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->isCanceled()Z
 
-    check-cast v0, Lcom/google/android/gms/tasks/zzu;
-
-    iget-boolean v0, v0, Lcom/google/android/gms/tasks/zzu;->zzd:Z
+    move-result v0
 
     if-nez v0, :cond_1
 
@@ -98,7 +96,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception p1
@@ -111,6 +109,5 @@
     throw p1
 
     :cond_1
-    :goto_0
     return-void
 .end method

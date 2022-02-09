@@ -80,13 +80,17 @@
 .method public visitDoubleList(Lcom/google/protobuf/Internal$DoubleList;Lcom/google/protobuf/Internal$DoubleList;)Lcom/google/protobuf/Internal$DoubleList;
     .locals 3
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    move-object v0, p1
 
-    move-result v0
+    check-cast v0, Lcom/google/protobuf/DoubleArrayList;
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    iget v0, v0, Lcom/google/protobuf/DoubleArrayList;->size:I
 
-    move-result v1
+    move-object v1, p2
+
+    check-cast v1, Lcom/google/protobuf/DoubleArrayList;
+
+    iget v1, v1, Lcom/google/protobuf/DoubleArrayList;->size:I
 
     if-lez v0, :cond_1
 
@@ -109,7 +113,9 @@
     move-result-object p1
 
     :cond_0
-    invoke-interface {p1, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    check-cast p1, Lcom/google/protobuf/DoubleArrayList;
+
+    invoke-virtual {p1, p2}, Lcom/google/protobuf/DoubleArrayList;->addAll(Ljava/util/Collection;)Z
 
     :cond_1
     if-lez v0, :cond_2
@@ -201,6 +207,17 @@
     return-object p1
 .end method
 
+.method public visitFloat(ZFZF)F
+    .locals 0
+
+    if-eqz p3, :cond_0
+
+    move p2, p4
+
+    :cond_0
+    return p2
+.end method
+
 .method public visitInt(ZIZI)I
     .locals 0
 
@@ -215,13 +232,17 @@
 .method public visitIntList(Lcom/google/protobuf/Internal$IntList;Lcom/google/protobuf/Internal$IntList;)Lcom/google/protobuf/Internal$IntList;
     .locals 3
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    move-object v0, p1
 
-    move-result v0
+    check-cast v0, Lcom/google/protobuf/IntArrayList;
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    iget v0, v0, Lcom/google/protobuf/IntArrayList;->size:I
 
-    move-result v1
+    move-object v1, p2
+
+    check-cast v1, Lcom/google/protobuf/IntArrayList;
+
+    iget v1, v1, Lcom/google/protobuf/IntArrayList;->size:I
 
     if-lez v0, :cond_1
 
@@ -244,7 +265,9 @@
     move-result-object p1
 
     :cond_0
-    invoke-interface {p1, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    check-cast p1, Lcom/google/protobuf/IntArrayList;
+
+    invoke-virtual {p1, p2}, Lcom/google/protobuf/IntArrayList;->addAll(Ljava/util/Collection;)Z
 
     :cond_1
     if-lez v0, :cond_2

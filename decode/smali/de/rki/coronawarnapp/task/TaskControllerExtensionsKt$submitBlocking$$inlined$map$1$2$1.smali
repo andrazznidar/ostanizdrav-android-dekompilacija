@@ -16,7 +16,7 @@
     c = "de.rki.coronawarnapp.task.TaskControllerExtensionsKt$submitBlocking$$inlined$map$1$2"
     f = "TaskControllerExtensions.kt"
     l = {
-        0x87
+        0x89
     }
     m = "emit"
 .end annotation

@@ -31,3 +31,30 @@
 
     return-void
 .end method
+
+
+# virtual methods
+.method public abstract areContentsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)Z"
+        }
+    .end annotation
+.end method
+
+.method public abstract areItemsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)Z"
+        }
+    .end annotation
+.end method
+
+.method public abstract getChangePayload(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TT;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+.end method

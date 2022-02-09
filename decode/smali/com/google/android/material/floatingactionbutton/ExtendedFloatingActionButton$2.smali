@@ -57,6 +57,30 @@
     return-object v0
 .end method
 
+.method public getPaddingEnd()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;->this$0:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
+
+    invoke-virtual {v0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->getCollapsedPadding()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getPaddingStart()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$2;->this$0:Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;
+
+    invoke-virtual {v0}, Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton;->getCollapsedPadding()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getWidth()I
     .locals 1
 

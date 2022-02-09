@@ -7,9 +7,7 @@
 .method public constructor <init>()V
     .locals 7
 
-    sget-object v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->APPLICATION_CONFIGURATION_CORRUPT:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-    iget v0, v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->code:I
+    const/16 v0, 0x3e8
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -21,7 +19,7 @@
 
     const/16 v6, 0xc
 
-    const-string v3, "the application configuration is corrupt"
+    const-string/jumbo v3, "the application configuration is corrupt"
 
     move-object v1, p0
 

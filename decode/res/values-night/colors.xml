@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="badgeColor">#ffed382f</color>
+    <color name="colorCalendarTodayText">#ff007fad</color>
+    <color name="colorPrimary">#ff007fad</color>
+    <color name="colorSecondary">#ff007fad</color>
+    <color name="fab_tint">#ff409cc8</color>
+</resources>

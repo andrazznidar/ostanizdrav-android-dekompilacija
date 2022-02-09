@@ -460,7 +460,7 @@
 .end method
 
 .method public setValueCallback(Lcom/airbnb/lottie/value/LottieValueCallback;)V
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -471,7 +471,19 @@
 
     iget-object v0, p0, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->valueCallback:Lcom/airbnb/lottie/value/LottieValueCallback;
 
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lcom/airbnb/lottie/value/LottieValueCallback;->animation:Ljava/lang/Object;
+
+    :cond_0
     iput-object p1, p0, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->valueCallback:Lcom/airbnb/lottie/value/LottieValueCallback;
 
+    if-eqz p1, :cond_1
+
+    iput-object p0, p1, Lcom/airbnb/lottie/value/LottieValueCallback;->animation:Ljava/lang/Object;
+
+    :cond_1
     return-void
 .end method

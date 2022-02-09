@@ -62,383 +62,293 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 16
+    .locals 6
 
-    move-object/from16 v0, p1
+    check-cast p1, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;
 
-    check-cast v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;
+    check-cast p2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
 
-    move-object/from16 v1, p2
+    check-cast p3, Ljava/util/List;
 
-    check-cast v1, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
+    const-string v0, "$this$null"
 
-    move-object/from16 v2, p3
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v2, Ljava/util/List;
+    const-string v0, "initial"
 
-    const-string v3, "$receiver"
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "changes"
 
-    const-string v3, "initial"
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3}, Lkotlin/collections/CollectionsKt___CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
 
-    const-string v3, "changes"
+    move-result-object v0
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    instance-of v1, v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
 
-    invoke-static {v2}, Lkotlin/collections/ArraysKt___ArraysKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v3
+    if-eqz v1, :cond_0
 
-    instance-of v4, v3, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
-
-    const/4 v5, 0x0
-
-    if-nez v4, :cond_0
-
-    move-object v3, v5
-
-    :cond_0
-    check-cast v3, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
-
-    if-eqz v3, :cond_1
-
-    move-object v1, v3
-
-    :cond_1
-    iget-object v3, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->mainBox:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
-
-    invoke-virtual {v3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;->getHeader()Landroid/view/ViewGroup;
-
-    move-result-object v4
-
-    new-instance v6, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$special$$inlined$apply$lambda$1;
-
-    invoke-direct {v6, v3, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$special$$inlined$apply$lambda$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
-
-    const/4 v7, 0x1
-
-    const-wide/16 v8, 0x0
-
-    invoke-static {v4, v8, v9, v6, v7}, Lcom/google/zxing/client/android/R$id;->setOnClickListenerThrottled$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;I)V
-
-    iget-object v4, v1, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->item:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
-
-    invoke-interface {v4}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;->setTitle(Ljava/lang/String;)V
-
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->getSelected()Z
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;->setExpanded(Z)V
-
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->getSelected()Z
-
-    move-result v4
-
-    const/4 v6, 0x0
-
-    if-eqz v4, :cond_2
-
-    const v4, 0x7f120025
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    iget-object v10, v1, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->item:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
-
-    invoke-interface {v10}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationName()Ljava/lang/String;
-
-    move-result-object v10
-
-    aput-object v10, v7, v6
-
-    invoke-static {v4, v7}, Lcom/google/zxing/client/android/R$id;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
-
-    move-result-object v4
+    check-cast v0, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;
 
     goto :goto_0
 
-    :cond_2
-    const v4, 0x7f120026
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    iget-object v10, v1, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->item:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
-
-    invoke-interface {v10}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationName()Ljava/lang/String;
-
-    move-result-object v10
-
-    aput-object v10, v7, v6
-
-    invoke-static {v4, v7}, Lcom/google/zxing/client/android/R$id;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
-
-    move-result-object v4
+    :cond_0
+    move-object v0, v2
 
     :goto_0
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    const-string v7, "context"
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {v4, v6}, Lde/rki/coronawarnapp/util/ui/LazyString;->get(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->getSelected()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3
-
-    const v6, 0x7f12001b
+    if-nez v0, :cond_1
 
     goto :goto_1
 
-    :cond_3
-    const v6, 0x7f12001c
+    :cond_1
+    move-object p2, v0
 
     :goto_1
-    invoke-virtual {v4, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    iget-object v0, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->mainBox:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;
 
-    move-result-object v4
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;->getHeader()Landroid/view/ViewGroup;
 
-    const-string v6, "context.getString(item.clickLabel)"
+    move-result-object v1
 
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v3, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestReadyCard$onBindData$1$$ExternalSyntheticLambda0;
 
-    invoke-static {v3, v4}, Lcom/google/zxing/client/android/R$id;->setClickLabel(Landroid/view/View;Ljava/lang/String;)V
+    invoke-direct {v3, p2, v0}, Lde/rki/coronawarnapp/submission/ui/homecards/RapidTestReadyCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;)V
 
-    iget-object v3, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
+    invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    iget-object v1, p2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->item:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
 
-    move-result v4
+    invoke-interface {v1}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationName()Ljava/lang/String;
 
-    if-eqz v4, :cond_5
+    move-result-object v1
 
-    iget-object v4, v1, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->visit:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;->setTitle(Ljava/lang/String;)V
 
-    if-eqz v4, :cond_4
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->getSelected()Z
 
-    invoke-interface {v4}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;->getCircumstances()Ljava/lang/String;
+    move-result v1
 
-    move-result-object v4
+    invoke-virtual {v0, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/ExpandingDiaryListItemView;->setExpanded(Z)V
 
-    if-eqz v4, :cond_4
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->getSelected()Z
+
+    move-result v1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    if-eqz v1, :cond_2
+
+    const v1, 0x7f130025
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    iget-object v5, p2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->item:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+
+    invoke-interface {v5}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationName()Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v4, v3
+
+    invoke-static {v1, v4}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
+
+    move-result-object v1
 
     goto :goto_2
 
-    :cond_4
-    const-string v4, ""
+    :cond_2
+    const v1, 0x7f130026
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    iget-object v5, p2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->item:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;
+
+    invoke-interface {v5}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocation;->getLocationName()Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v4, v3
+
+    invoke-static {v1, v4}, Lde/rki/coronawarnapp/util/ui/LazyStringKt;->toResolvingString(I[Ljava/lang/Object;)Lde/rki/coronawarnapp/util/ui/LazyString;
+
+    move-result-object v1
 
     :goto_2
-    invoke-virtual {v3, v4}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->setInputText(Ljava/lang/String;)V
-
-    :cond_5
-    iget-object v4, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
-
-    new-instance v6, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$special$$inlined$apply$lambda$2;
-
-    invoke-direct {v6, v0, v2, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$special$$inlined$apply$lambda$2;-><init>(Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;Ljava/util/List;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
-
-    invoke-virtual {v4, v6}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->setInputTextChangedListener(Lkotlin/jvm/functions/Function1;)V
-
-    new-instance v4, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$special$$inlined$apply$lambda$3;
-
-    invoke-direct {v4, v0, v2, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$$special$$inlined$apply$lambda$3;-><init>(Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;Ljava/util/List;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
-
-    invoke-virtual {v3, v4}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->setInfoButtonClickListener(Lkotlin/jvm/functions/Function0;)V
-
-    iget-object v2, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->durationInput:Landroid/widget/TextView;
-
-    iget-object v3, v1, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->visit:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
-
-    if-eqz v3, :cond_6
-
-    invoke-interface {v3}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;->getDuration()Lorg/joda/time/Duration;
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v3
+
+    const-string v4, "context"
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v1, Lde/rki/coronawarnapp/util/ui/LazyStringKt$toResolvingString$1;
+
+    invoke-virtual {v1, v3}, Lde/rki/coronawarnapp/util/ui/LazyStringKt$toResolvingString$1;->get(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->getSelected()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    const v3, 0x7f13001b
 
     goto :goto_3
 
-    :cond_6
-    move-object v3, v5
+    :cond_3
+    const v3, 0x7f13001c
 
     :goto_3
-    if-eqz v3, :cond_9
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    const-string v4, "$this$toContactDiaryFormat"
+    move-result-object v1
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v3, "context.getString(item.clickLabel)"
 
-    invoke-virtual {v3}, Lorg/joda/time/Duration;->getStandardHours()J
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-wide v4
+    invoke-static {v0, v1}, Lde/rki/coronawarnapp/contactdiary/util/ContactDiaryExtensionsKt;->setClickLabel(Landroid/view/View;Ljava/lang/String;)V
 
-    const/16 v6, 0xa
+    iget-object v0, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-    int-to-long v6, v6
+    invoke-interface {p3}, Ljava/util/List;->isEmpty()Z
 
-    cmp-long v4, v4, v6
+    move-result p3
 
-    const/16 v5, 0x30
+    if-eqz p3, :cond_6
 
-    if-gez v4, :cond_7
+    iget-object p3, p2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->visit:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
 
-    invoke-static {v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline28(C)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v3}, Lorg/joda/time/Duration;->getStandardHours()J
-
-    move-result-wide v10
-
-    invoke-virtual {v4, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
+    if-nez p3, :cond_4
 
     goto :goto_4
 
-    :cond_7
-    invoke-virtual {v3}, Lorg/joda/time/Duration;->getStandardHours()J
+    :cond_4
+    invoke-interface {p3}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;->getCircumstances()Ljava/lang/String;
 
-    move-result-wide v10
+    move-result-object p3
 
-    invoke-static {v10, v11}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v4
+    if-nez p3, :cond_5
 
     :goto_4
-    invoke-virtual {v3}, Lorg/joda/time/Duration;->getStandardMinutes()J
+    const-string p3, ""
 
-    move-result-wide v10
+    :cond_5
+    invoke-virtual {v0, p3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->setInputText(Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Lorg/joda/time/Duration;->getStandardHours()J
+    :cond_6
+    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->circumstances:Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;
 
-    move-result-wide v12
+    new-instance v1, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$2$1;
 
-    const/16 v14, 0x3c
+    invoke-direct {v1, p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$2$1;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
 
-    int-to-long v14, v14
+    invoke-virtual {p3, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->setInputTextChangedListener(Lkotlin/jvm/functions/Function1;)V
 
-    mul-long/2addr v12, v14
+    new-instance p3, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$2$2;
 
-    sub-long/2addr v10, v12
+    invoke-direct {p3, p2}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$2$2;-><init>(Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
 
-    cmp-long v6, v10, v6
+    invoke-virtual {v0, p3}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/common/DiaryCircumstancesTextView;->setInfoButtonClickListener(Lkotlin/jvm/functions/Function0;)V
 
-    if-gez v6, :cond_8
+    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->durationInput:Landroid/widget/TextView;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    iget-object v0, p2, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;->visit:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    if-nez v0, :cond_7
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
+    move-object v0, v2
 
     goto :goto_5
 
-    :cond_8
-    invoke-static {v10, v11}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    :cond_7
+    invoke-interface {v0}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryLocationVisit;->getDuration()Lorg/joda/time/Duration;
 
-    move-result-object v5
+    move-result-object v0
 
     :goto_5
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v4, 0x3a
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    :cond_9
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    if-eqz v3, :cond_b
-
-    iget-wide v3, v3, Lorg/joda/time/base/BaseDuration;->iMillis:J
-
-    cmp-long v3, v3, v8
-
-    if-nez v3, :cond_a
+    if-nez v0, :cond_8
 
     goto :goto_6
 
-    :cond_a
-    const v3, 0x7f080091
+    :cond_8
+    invoke-static {v0}, Lde/rki/coronawarnapp/ui/durationpicker/DurationExtensionKt;->toContactDiaryFormat(Lorg/joda/time/Duration;)Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    move-result-object v2
 
-    const v3, 0x7f1302f9
+    :goto_6
+    invoke-virtual {p3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextAppearance(I)V
+    if-eqz v0, :cond_a
+
+    iget-wide v0, v0, Lorg/joda/time/base/BaseDuration;->iMillis:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_9
 
     goto :goto_7
 
-    :cond_b
-    :goto_6
-    invoke-virtual {v2}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+    :cond_9
+    const v0, 0x7f0800bb
 
-    move-result-object v3
+    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    const v4, 0x7f120111
+    const v0, 0x7f140322
 
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setTextAppearance(I)V
 
-    move-result-object v3
+    goto :goto_8
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    const v3, 0x7f080090
-
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setBackgroundResource(I)V
-
-    const v3, 0x7f1302fd
-
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextAppearance(I)V
-
+    :cond_a
     :goto_7
-    iget-object v2, v0, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->durationInput:Landroid/widget/TextView;
+    invoke-virtual {p3}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
-    new-instance v3, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$4;
+    move-result-object v0
 
-    invoke-direct {v3, v0, v1}, Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationViewHolder$onBindData$1$4;-><init>(Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
+    const v1, 0x7f1301aa
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    move-result-object v0
 
-    return-object v0
+    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const v0, 0x7f0800ba
+
+    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    const v0, 0x7f140328
+
+    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setTextAppearance(I)V
+
+    :goto_8
+    iget-object p3, p1, Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;->durationInput:Landroid/widget/TextView;
+
+    new-instance v0, Lde/rki/coronawarnapp/ui/main/home/items/FAQCard$onBindData$1$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p1, p2}, Lde/rki/coronawarnapp/ui/main/home/items/FAQCard$onBindData$1$$ExternalSyntheticLambda0;-><init>(Lde/rki/coronawarnapp/databinding/ContactDiaryLocationListItemBinding;Lde/rki/coronawarnapp/contactdiary/ui/day/tabs/location/DiaryLocationListItem;)V
+
+    invoke-virtual {p3, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
 .end method

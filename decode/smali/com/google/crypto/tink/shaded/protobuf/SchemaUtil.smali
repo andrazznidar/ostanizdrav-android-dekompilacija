@@ -134,23 +134,6 @@
     return p0
 .end method
 
-.method public static computeSizeBoolListNoTag(Ljava/util/List;)I
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List<",
-            "*>;)I"
-        }
-    .end annotation
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static computeSizeByteStringList(ILjava/util/List;)I
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -1555,7 +1538,7 @@
     move v2, v1
 
     :goto_0
-    if-ge v1, v0, :cond_3
+    if-ge v1, v0, :cond_4
 
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1587,17 +1570,24 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {p0, v3, p3, p4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+    if-nez p3, :cond_3
+
+    invoke-virtual {p4}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     move-result-object p3
+
+    :cond_3
+    int-to-long v3, v3
+
+    invoke-virtual {p4, p3, p0, v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->addVarint(Ljava/lang/Object;IJ)V
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_3
-    if-eq v2, v0, :cond_4
+    :cond_4
+    if-eq v2, v0, :cond_5
 
     invoke-interface {p1, v2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
 
@@ -1605,7 +1595,7 @@
 
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    :cond_4
+    :cond_5
     return-object p3
 .end method
 
@@ -1635,7 +1625,7 @@
     :cond_0
     instance-of v0, p1, Ljava/util/RandomAccess;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -1646,7 +1636,7 @@
     move v2, v1
 
     :goto_0
-    if-ge v1, v0, :cond_3
+    if-ge v1, v0, :cond_4
 
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1678,17 +1668,24 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {p0, v3, p3, p4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+    if-nez p3, :cond_3
+
+    invoke-virtual {p4}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     move-result-object p3
+
+    :cond_3
+    int-to-long v3, v3
+
+    invoke-virtual {p4, p3, p0, v3, v4}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->addVarint(Ljava/lang/Object;IJ)V
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_3
-    if-eq v2, v0, :cond_6
+    :cond_4
+    if-eq v2, v0, :cond_8
 
     invoke-interface {p1, v2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
 
@@ -1698,18 +1695,18 @@
 
     goto :goto_3
 
-    :cond_4
+    :cond_5
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :cond_5
+    :cond_6
     :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_8
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1725,17 +1722,24 @@
 
     move-result v1
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_6
 
-    invoke-static {p0, v0, p3, p4}, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->storeUnknownEnum(IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
+    if-nez p3, :cond_7
+
+    invoke-virtual {p4}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     move-result-object p3
+
+    :cond_7
+    int-to-long v0, v0
+
+    invoke-virtual {p4, p3, p0, v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->addVarint(Ljava/lang/Object;IJ)V
 
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_2
 
-    :cond_6
+    :cond_8
     :goto_3
     return-object p3
 .end method
@@ -1809,180 +1813,6 @@
     return-object v0
 .end method
 
-.method public static mergeExtensions(Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            "FT::",
-            "Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite<",
-            "TFT;>;>(",
-            "Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema<",
-            "TFT;>;TT;TT;)V"
-        }
-    .end annotation
-
-    move-object v0, p0
-
-    check-cast v0, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchemaLite;
-
-    if-eqz v0, :cond_1
-
-    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;
-
-    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
-
-    invoke-virtual {p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0, p1}, Lcom/google/crypto/tink/shaded/protobuf/ExtensionSchema;->getMutableExtensions(Ljava/lang/Object;)Lcom/google/crypto/tink/shaded/protobuf/FieldSet;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p2}, Lcom/google/crypto/tink/shaded/protobuf/FieldSet;->mergeFrom(Lcom/google/crypto/tink/shaded/protobuf/FieldSet;)V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public static mergeMap(Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;Ljava/lang/Object;Ljava/lang/Object;J)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;",
-            "TT;TT;J)V"
-        }
-    .end annotation
-
-    invoke-static {p1, p3, p4}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {p2, p3, p4}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->getObject(Ljava/lang/Object;J)Ljava/lang/Object;
-
-    move-result-object p2
-
-    invoke-interface {p0, v0, p2}, Lcom/google/crypto/tink/shaded/protobuf/MapFieldSchema;->mergeFrom(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p2, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil;->MEMORY_ACCESSOR:Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$MemoryAccessor;
-
-    invoke-virtual {p2, p1, p3, p4, p0}, Lcom/google/crypto/tink/shaded/protobuf/UnsafeUtil$MemoryAccessor;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public static mergeUnknownFields(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            "UT:",
-            "Ljava/lang/Object;",
-            "UB:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema<",
-            "TUT;TUB;>;TT;TT;)V"
-        }
-    .end annotation
-
-    check-cast p0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
-
-    if-eqz p0, :cond_1
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object p0, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    iget-object p2, p2, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->DEFAULT_INSTANCE:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    invoke-virtual {p2, v0}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p0, p2}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->mutableCopyOf(Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;)Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    move-result-object p0
-
-    :goto_0
-    iput-object p0, p1, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;->unknownFields:Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    return-void
-
-    :cond_1
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public static requireGeneratedMessage(Ljava/lang/Class;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class<",
-            "*>;)V"
-        }
-    .end annotation
-
-    const-class v0, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;
-
-    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/SchemaUtil;->GENERATED_MESSAGE_CLASS:Ljava/lang/Class;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Message classes must extend GeneratedMessage or GeneratedMessageLite"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
 .method public static safeEquals(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 
@@ -2012,7 +1842,7 @@
 .end method
 
 .method public static storeUnknownEnum(IILjava/lang/Object;Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<UT:",
@@ -2025,51 +1855,18 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    if-nez p2, :cond_0
 
-    if-nez p2, :cond_1
-
-    move-object p2, p3
-
-    check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
-
-    if-eqz p2, :cond_0
-
-    invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->newInstance()Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
+    invoke-virtual {p3}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->newBuilder()Ljava/lang/Object;
 
     move-result-object p2
 
-    goto :goto_0
-
     :cond_0
-    throw v0
+    int-to-long v0, p1
 
-    :cond_1
-    :goto_0
-    int-to-long v1, p1
-
-    check-cast p3, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLiteSchema;
-
-    if-eqz p3, :cond_2
-
-    move-object p1, p2
-
-    check-cast p1, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;
-
-    shl-int/lit8 p0, p0, 0x3
-
-    or-int/lit8 p0, p0, 0x0
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p3
-
-    invoke-virtual {p1, p0, p3}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSetLite;->storeField(ILjava/lang/Object;)V
+    invoke-virtual {p3, p2, p0, v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/UnknownFieldSchema;->addVarint(Ljava/lang/Object;IJ)V
 
     return-object p2
-
-    :cond_2
-    throw v0
 .end method
 
 .method public static writeBoolList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
@@ -2091,17 +1888,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -2132,6 +1929,8 @@
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
     add-int/lit8 p3, p3, 0x1
 
     add-int/lit8 p0, p0, 0x1
@@ -2148,7 +1947,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2176,7 +1975,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2197,11 +1996,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -2224,17 +2018,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -2243,7 +2037,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
     iget-object v1, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2260,16 +2054,11 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
     return-void
 .end method
 
 .method public static writeDoubleList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2287,48 +2076,48 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_4
-
-    const/4 v1, 0x0
-
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_1
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    invoke-virtual {p3, p0, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeTag(II)V
+    invoke-virtual {p3, p0, v1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeTag(II)V
 
-    move p0, v1
+    move p0, v0
 
     move p3, p0
 
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v1
 
-    if-ge p0, v2, :cond_0
+    if-ge p0, v1, :cond_0
 
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/Double;
+    check-cast v1, Ljava/lang/Double;
 
-    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     add-int/lit8 p3, p3, 0x8
 
@@ -2346,11 +2135,11 @@
 
     move-result p0
 
-    if-ge v1, p0, :cond_5
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -2358,62 +2147,53 @@
 
     invoke-virtual {p3}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v2
+    move-result-wide v1
 
-    if-eqz p0, :cond_1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->doubleToRawLongBits(D)J
+    invoke-static {v1, v2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    invoke-virtual {p0, v2, v3}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64NoTag(J)V
+    invoke-virtual {p0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64NoTag(J)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_1
-    throw v0
-
-    :cond_2
     :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p3
 
-    if-ge v1, p3, :cond_5
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/Double;
+    check-cast v1, Ljava/lang/Double;
 
-    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
 
-    move-result-wide v2
+    move-result-wide v1
 
-    if-eqz p3, :cond_3
+    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->doubleToRawLongBits(D)J
+    invoke-static {v1, v2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    invoke-virtual {p3, p0, v2, v3}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
+    invoke-virtual {p3, p0, v1, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed64(IJ)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    :cond_3
-    throw v0
-
-    :cond_4
-    throw v0
-
-    :cond_5
+    :cond_2
     return-void
 .end method
 
@@ -2436,17 +2216,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -2499,7 +2279,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2525,7 +2305,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2546,11 +2326,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -2573,17 +2348,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -2614,6 +2389,8 @@
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
     add-int/lit8 p3, p3, 0x4
 
     add-int/lit8 p0, p0, 0x1
@@ -2630,7 +2407,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2656,7 +2433,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2677,11 +2454,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -2704,17 +2476,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -2745,6 +2517,8 @@
 
     invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
     add-int/lit8 p3, p3, 0x8
 
     add-int/lit8 p0, p0, 0x1
@@ -2761,7 +2535,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2787,7 +2561,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -2808,16 +2582,11 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
 .method public static writeFloatList(ILjava/util/List;Lcom/google/crypto/tink/shaded/protobuf/Writer;Z)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2835,48 +2604,48 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     const/4 v0, 0x0
 
-    if-eqz p2, :cond_4
-
-    const/4 v1, 0x0
-
-    if-eqz p3, :cond_2
+    if-eqz p3, :cond_1
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    invoke-virtual {p3, p0, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeTag(II)V
+    invoke-virtual {p3, p0, v1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeTag(II)V
 
-    move p0, v1
+    move p0, v0
 
     move p3, p0
 
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v1
 
-    if-ge p0, v2, :cond_0
+    if-ge p0, v1, :cond_0
 
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/Float;
+    check-cast v1, Ljava/lang/Float;
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
     add-int/lit8 p3, p3, 0x4
 
@@ -2894,11 +2663,11 @@
 
     move-result p0
 
-    if-ge v1, p0, :cond_5
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p3
 
@@ -2908,7 +2677,7 @@
 
     move-result p3
 
-    if-eqz p0, :cond_1
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p3}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
@@ -2916,52 +2685,43 @@
 
     invoke-virtual {p0, p3}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32NoTag(I)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_1
-    throw v0
-
-    :cond_2
     :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p3
 
-    if-ge v1, p3, :cond_5
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/Float;
+    check-cast v1, Ljava/lang/Float;
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
-    move-result v2
+    move-result v1
 
-    if-eqz p3, :cond_3
+    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
+    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p3, p0, v2}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
+    invoke-virtual {p3, p0, v1}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->writeFixed32(II)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    :cond_3
-    throw v0
-
-    :cond_4
-    throw v0
-
-    :cond_5
+    :cond_2
     return-void
 .end method
 
@@ -2984,17 +2744,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3003,7 +2763,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -3016,11 +2776,6 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
     return-void
 .end method
 
@@ -3043,17 +2798,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3106,7 +2861,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3132,7 +2887,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3153,11 +2908,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -3180,17 +2930,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3243,7 +2993,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3269,7 +3019,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3290,11 +3040,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -3317,17 +3062,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3336,7 +3081,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1
+    if-ge v0, v1, :cond_0
 
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -3353,11 +3098,6 @@
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
     return-void
 .end method
 
@@ -3380,17 +3120,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3421,6 +3161,8 @@
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
     add-int/lit8 p3, p3, 0x4
 
     add-int/lit8 p0, p0, 0x1
@@ -3437,7 +3179,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3463,7 +3205,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3484,11 +3226,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -3511,17 +3248,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3552,6 +3289,8 @@
 
     invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
+    sget-object v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
+
     add-int/lit8 p3, p3, 0x8
 
     add-int/lit8 p0, p0, 0x1
@@ -3568,7 +3307,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3594,7 +3333,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3615,11 +3354,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -3642,17 +3376,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3705,7 +3439,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3735,7 +3469,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3760,11 +3494,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -3787,17 +3516,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -3850,7 +3579,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3880,7 +3609,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -3905,11 +3634,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -3932,17 +3656,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     instance-of v0, p1, Lcom/google/crypto/tink/shaded/protobuf/LazyStringList;
 
@@ -3959,7 +3683,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_2
 
     invoke-interface {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/LazyStringList;->getRaw(I)Ljava/lang/Object;
 
@@ -3995,7 +3719,7 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_3
+    if-ge v1, v0, :cond_2
 
     iget-object v0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -4012,11 +3736,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -4039,17 +3758,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -4102,7 +3821,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -4128,7 +3847,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -4149,11 +3868,6 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method
 
@@ -4176,17 +3890,17 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     check-cast p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;
 
-    if-eqz p2, :cond_2
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -4239,7 +3953,7 @@
 
     move-result p0
 
-    if-ge v0, p0, :cond_3
+    if-ge v0, p0, :cond_2
 
     iget-object p0, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -4265,7 +3979,7 @@
 
     move-result p3
 
-    if-ge v0, p3, :cond_3
+    if-ge v0, p3, :cond_2
 
     iget-object p3, p2, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStreamWriter;->output:Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
 
@@ -4286,10 +4000,5 @@
     goto :goto_2
 
     :cond_2
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_3
     return-void
 .end method

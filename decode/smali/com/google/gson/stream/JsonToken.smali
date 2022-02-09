@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 13
+    .locals 16
 
     new-instance v0, Lcom/google/gson/stream/JsonToken;
 
@@ -51,139 +51,131 @@
 
     sput-object v0, Lcom/google/gson/stream/JsonToken;->BEGIN_ARRAY:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v1, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "END_ARRAY"
+    const-string v3, "END_ARRAY"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->END_ARRAY:Lcom/google/gson/stream/JsonToken;
+    sput-object v1, Lcom/google/gson/stream/JsonToken;->END_ARRAY:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v3, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "BEGIN_OBJECT"
+    const-string v5, "BEGIN_OBJECT"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->BEGIN_OBJECT:Lcom/google/gson/stream/JsonToken;
+    sput-object v3, Lcom/google/gson/stream/JsonToken;->BEGIN_OBJECT:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v5, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "END_OBJECT"
+    const-string v7, "END_OBJECT"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
+    sput-object v5, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v7, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "NAME"
+    const-string v9, "NAME"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v1, v6}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
+    sput-object v7, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v9, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "STRING"
+    const-string v11, "STRING"
 
-    const/4 v7, 0x5
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v1, v7}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->STRING:Lcom/google/gson/stream/JsonToken;
+    sput-object v9, Lcom/google/gson/stream/JsonToken;->STRING:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v11, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "NUMBER"
+    const-string v13, "NUMBER"
 
-    const/4 v8, 0x6
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v1, v8}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v11, v13, v14}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
+    sput-object v11, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v13, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "BOOLEAN"
+    const-string v15, "BOOLEAN"
 
-    const/4 v9, 0x7
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v1, v9}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v13, v15, v14}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->BOOLEAN:Lcom/google/gson/stream/JsonToken;
+    sput-object v13, Lcom/google/gson/stream/JsonToken;->BOOLEAN:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v15, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "NULL"
+    const-string v14, "NULL"
 
-    const/16 v10, 0x8
+    const/16 v12, 0x8
 
-    invoke-direct {v0, v1, v10}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v15, v14, v12}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+    sput-object v15, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
-    new-instance v0, Lcom/google/gson/stream/JsonToken;
+    new-instance v14, Lcom/google/gson/stream/JsonToken;
 
-    const-string v1, "END_DOCUMENT"
+    const-string v12, "END_DOCUMENT"
 
-    const/16 v11, 0x9
+    const/16 v10, 0x9
 
-    invoke-direct {v0, v1, v11}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v14, v12, v10}, Lcom/google/gson/stream/JsonToken;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/gson/stream/JsonToken;->END_DOCUMENT:Lcom/google/gson/stream/JsonToken;
+    sput-object v14, Lcom/google/gson/stream/JsonToken;->END_DOCUMENT:Lcom/google/gson/stream/JsonToken;
 
-    const/16 v1, 0xa
+    const/16 v12, 0xa
 
-    new-array v1, v1, [Lcom/google/gson/stream/JsonToken;
+    new-array v12, v12, [Lcom/google/gson/stream/JsonToken;
 
-    sget-object v12, Lcom/google/gson/stream/JsonToken;->BEGIN_ARRAY:Lcom/google/gson/stream/JsonToken;
+    aput-object v0, v12, v2
 
-    aput-object v12, v1, v2
+    aput-object v1, v12, v4
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->END_ARRAY:Lcom/google/gson/stream/JsonToken;
+    aput-object v3, v12, v6
 
-    aput-object v2, v1, v3
+    aput-object v5, v12, v8
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->BEGIN_OBJECT:Lcom/google/gson/stream/JsonToken;
+    const/4 v0, 0x4
 
-    aput-object v2, v1, v4
+    aput-object v7, v12, v0
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
+    const/4 v0, 0x5
 
-    aput-object v2, v1, v5
+    aput-object v9, v12, v0
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
+    const/4 v0, 0x6
 
-    aput-object v2, v1, v6
+    aput-object v11, v12, v0
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->STRING:Lcom/google/gson/stream/JsonToken;
+    const/4 v0, 0x7
 
-    aput-object v2, v1, v7
+    aput-object v13, v12, v0
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
+    const/16 v0, 0x8
 
-    aput-object v2, v1, v8
+    aput-object v15, v12, v0
 
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->BOOLEAN:Lcom/google/gson/stream/JsonToken;
+    aput-object v14, v12, v10
 
-    aput-object v2, v1, v9
-
-    sget-object v2, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
-
-    aput-object v2, v1, v10
-
-    aput-object v0, v1, v11
-
-    sput-object v1, Lcom/google/gson/stream/JsonToken;->$VALUES:[Lcom/google/gson/stream/JsonToken;
+    sput-object v12, Lcom/google/gson/stream/JsonToken;->$VALUES:[Lcom/google/gson/stream/JsonToken;
 
     return-void
 .end method

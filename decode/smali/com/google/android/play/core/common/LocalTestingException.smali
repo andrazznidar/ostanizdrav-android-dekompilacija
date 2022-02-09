@@ -1,5 +1,6 @@
 .class public final Lcom/google/android/play/core/common/LocalTestingException;
 .super Ljava/lang/Exception;
+.source "com.google.android.play:core@@1.10.1"
 
 
 # direct methods

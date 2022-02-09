@@ -45,22 +45,65 @@
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+    .locals 5
 
     iget-boolean p1, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$7;->cancelled:Z
 
-    if-nez p1, :cond_0
+    if-nez p1, :cond_3
 
+    iget-object p1, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$7;->this$0:Lcom/google/android/material/bottomappbar/BottomAppBar;
+
+    iget v0, p1, Lcom/google/android/material/bottomappbar/BottomAppBar;->pendingMenuResId:I
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    iput v1, p1, Lcom/google/android/material/bottomappbar/BottomAppBar;->pendingMenuResId:I
+
+    invoke-virtual {p1}, Landroidx/appcompat/widget/Toolbar;->getMenu()Landroid/view/Menu;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/view/Menu;->clear()V
+
+    invoke-virtual {p1, v0}, Landroidx/appcompat/widget/Toolbar;->inflateMenu(I)V
+
+    :cond_1
     iget-object p1, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$7;->this$0:Lcom/google/android/material/bottomappbar/BottomAppBar;
 
     iget-object v0, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$7;->val$actionMenuView:Landroidx/appcompat/widget/ActionMenuView;
 
     iget v1, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$7;->val$targetMode:I
 
-    iget-boolean v2, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$7;->val$targetAttached:Z
+    iget-boolean v3, p0, Lcom/google/android/material/bottomappbar/BottomAppBar$7;->val$targetAttached:Z
 
-    invoke-static {p1, v0, v1, v2}, Lcom/google/android/material/bottomappbar/BottomAppBar;->access$1800(Lcom/google/android/material/bottomappbar/BottomAppBar;Landroidx/appcompat/widget/ActionMenuView;IZ)V
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
+    new-instance v4, Lcom/google/android/material/bottomappbar/BottomAppBar$8;
+
+    invoke-direct {v4, p1, v0, v1, v3}, Lcom/google/android/material/bottomappbar/BottomAppBar$8;-><init>(Lcom/google/android/material/bottomappbar/BottomAppBar;Landroidx/appcompat/widget/ActionMenuView;IZ)V
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v4}, Lcom/google/android/material/bottomappbar/BottomAppBar$8;->run()V
+
+    :cond_3
+    :goto_1
     return-void
 .end method

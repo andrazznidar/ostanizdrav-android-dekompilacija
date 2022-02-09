@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.contactdiary.retention.ContactDiaryRetentionWorker"
     f = "ContactDiaryRetentionWorker.kt"
     l = {
-        0x1d
+        0x1c
     }
     m = "doWork"
 .end annotation
@@ -36,6 +36,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker$doWork$1;->this$0:Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionWorker;
 

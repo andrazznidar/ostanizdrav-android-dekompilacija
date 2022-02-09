@@ -49,7 +49,9 @@
 
     check-cast v2, Landroid/view/View;
 
-    invoke-static {v2}, Landroidx/core/view/ViewCompat;->getTransitionName(Landroid/view/View;)Ljava/lang/String;
+    sget-object v3, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v2}, Landroid/view/View;->getTransitionName()Ljava/lang/String;
 
     move-result-object v3
 

@@ -6,18 +6,36 @@
 # instance fields
 .field public mBuilder:Landroidx/core/app/NotificationCompat$Builder;
 
-.field public mSummaryTextSet:Z
-
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroidx/core/app/NotificationCompat$Style;->mSummaryTextSet:Z
-
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract addCompatExtras(Landroid/os/Bundle;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "extras"
+        }
+    .end annotation
+.end method
+
+.method public abstract apply(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)V
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "builder"
+        }
+    .end annotation
 .end method

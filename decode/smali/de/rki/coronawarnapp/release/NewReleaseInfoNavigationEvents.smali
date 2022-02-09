@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lde/rki/coronawarnapp/release/NewReleaseInfoNavigationEvents$CloseScreen;
+        Lde/rki/coronawarnapp/release/NewReleaseInfoNavigationEvents$CloseScreen;,
+        Lde/rki/coronawarnapp/release/NewReleaseInfoNavigationEvents$NavigateToOnboardingDeltaNotificationsFragment;
     }
 .end annotation
 

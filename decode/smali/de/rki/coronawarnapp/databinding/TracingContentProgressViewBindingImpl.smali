@@ -6,12 +6,20 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 11
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     const/4 v0, 0x5
 
@@ -35,7 +43,7 @@
 
     move-object v8, v2
 
-    check-cast v8, Landroidx/appcompat/widget/AppCompatImageView;
+    check-cast v8, Landroid/widget/ImageView;
 
     const/4 v2, 0x1
 
@@ -51,7 +59,7 @@
 
     move-object v10, v2
 
-    check-cast v10, Landroid/widget/ProgressBar;
+    check-cast v10, Lcom/google/android/material/progressindicator/CircularProgressIndicator;
 
     const/4 v6, 0x0
 
@@ -61,7 +69,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v10}, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/TextView;Landroid/widget/ProgressBar;)V
+    invoke-direct/range {v3 .. v10}, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroid/widget/ImageView;Landroid/widget/TextView;Lcom/google/android/material/progressindicator/CircularProgressIndicator;)V
 
     const-wide/16 v2, -0x1
 
@@ -71,7 +79,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->detailsIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->detailsIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
@@ -85,15 +93,13 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->progressIndicator:Landroid/widget/ProgressBar;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->progressIndicator:Lcom/google/android/material/progressindicator/CircularProgressIndicator;
 
     invoke-virtual {p1, v1}, Landroid/widget/ProgressBar;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -128,90 +134,15 @@
 
     cmp-long v0, v0, v2
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_a
+    const/4 v3, 0x0
 
-    if-eqz v4, :cond_a
+    if-eqz v0, :cond_c
 
-    iget-object v1, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const-string v3, "c"
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v3, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
-
-    sget-object v5, Lde/rki/coronawarnapp/tracing/TracingProgress$Downloading;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$Downloading;
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    const v3, 0x7f120299
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v5, Lde/rki/coronawarnapp/tracing/TracingProgress$ENFIsCalculating;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$ENFIsCalculating;
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    const v3, 0x7f120297
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v5, Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_9
-
-    move-object v3, v2
-
-    :goto_0
-    if-eqz v3, :cond_2
-
-    invoke-virtual {v3}, Ljava/lang/Number;->intValue()I
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    const-string v1, ""
-
-    :goto_1
-    iget-boolean v3, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
+    if-eqz v4, :cond_c
 
     iget-object v5, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -219,37 +150,81 @@
 
     move-result-object v5
 
-    const-string v6, "c"
+    const-string v6, "context"
 
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v6, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
+    iget-object v6, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
 
-    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
+    sget-object v7, Lde/rki/coronawarnapp/tracing/TracingProgress$Downloading;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$Downloading;
+
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_0
+
+    const v6, 0x7f1303f5
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v8, Lde/rki/coronawarnapp/tracing/TracingProgress$IsCalculating;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$IsCalculating;
+
+    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    const v6, 0x7f1303f3
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v8, Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;
+
+    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v6
 
-    const/4 v7, 0x1
+    if-eqz v6, :cond_b
 
-    if-eqz v6, :cond_3
+    move-object v6, v3
 
-    if-eq v6, v7, :cond_3
+    :goto_0
+    const-string v8, ""
 
-    const v6, 0x7f060078
+    if-nez v6, :cond_2
 
-    goto :goto_2
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v6}, Ljava/lang/Number;->intValue()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    if-nez v5, :cond_3
+
+    goto :goto_1
 
     :cond_3
-    const v6, 0x7f060065
+    move-object v8, v5
 
-    :goto_2
-    const-string v8, "$this$getColorCompat"
-
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v5, v6}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
-
-    move-result v5
+    :goto_1
+    iget-boolean v5, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->isInDetailsMode:Z
 
     iget-object v6, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
@@ -257,82 +232,121 @@
 
     move-result-object v6
 
-    const-string v8, "c"
+    const-string v9, "context"
 
-    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v8, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
+    iget-object v9, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
-    sget-object v9, Lde/rki/coronawarnapp/tracing/TracingProgress$Downloading;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$Downloading;
-
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v9}, Ljava/lang/Enum;->ordinal()I
 
     move-result v9
 
     if-eqz v9, :cond_4
 
-    const v2, 0x7f120298
+    if-eq v9, v1, :cond_4
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const v9, 0x7f060085
 
-    move-result-object v2
-
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
-    sget-object v9, Lde/rki/coronawarnapp/tracing/TracingProgress$ENFIsCalculating;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$ENFIsCalculating;
+    const v9, 0x7f06006f
 
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :goto_2
+    const-string v10, "<this>"
 
-    move-result v9
+    invoke-static {v6, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v9, :cond_5
+    sget-object v10, Landroidx/core/content/ContextCompat;->sLock:Ljava/lang/Object;
 
-    const v2, 0x7f120296
+    invoke-static {v6, v9}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v6
 
-    move-result-object v2
+    iget-object v9, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+
+    invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v9
+
+    const-string v10, "context"
+
+    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v10, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->tracingProgress:Lde/rki/coronawarnapp/tracing/TracingProgress;
+
+    invoke-static {v10, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_5
+
+    const v3, 0x7f1303f4
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
 
     goto :goto_3
 
     :cond_5
-    sget-object v9, Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;
+    sget-object v7, Lde/rki/coronawarnapp/tracing/TracingProgress$IsCalculating;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$IsCalculating;
 
-    invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v10, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v7
 
-    if-eqz v8, :cond_8
+    if-eqz v7, :cond_6
+
+    const v3, 0x7f1303f2
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    goto :goto_3
+
+    :cond_6
+    sget-object v7, Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;->INSTANCE:Lde/rki/coronawarnapp/tracing/TracingProgress$Idle;
+
+    invoke-static {v10, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_a
 
     :goto_3
-    if-eqz v2, :cond_6
+    const-string v7, ""
 
-    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
-
-    move-result v2
-
-    invoke-virtual {v6, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_6
+    if-nez v3, :cond_7
 
     goto :goto_4
 
-    :cond_6
-    const-string v2, ""
+    :cond_7
+    invoke-virtual {v3}, Ljava/lang/Number;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v9, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-nez v3, :cond_8
 
     :goto_4
-    iget-object v6, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
+    move-object v3, v7
 
-    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
+    :cond_8
+    iget-object v7, p0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    move-result-object v6
+    invoke-virtual {v7}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    const-string v8, "c"
+    move-result-object v7
 
-    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v9, "context"
+
+    invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v4, v4, Lde/rki/coronawarnapp/tracing/states/TracingInProgress;->riskState:Lde/rki/coronawarnapp/risk/RiskState;
 
@@ -340,97 +354,91 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_9
 
-    if-eq v4, v7, :cond_7
+    if-eq v4, v1, :cond_9
 
-    const v4, 0x7f060071
+    const v4, 0x7f060057
 
     goto :goto_5
 
-    :cond_7
-    const v4, 0x7f060073
+    :cond_9
+    const v4, 0x7f06007f
 
     :goto_5
-    const-string v7, "$this$getColorCompat"
+    const-string v9, "<this>"
 
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v6, v4}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    invoke-static {v7, v4}, Landroidx/core/content/ContextCompat$Api23Impl;->getColor(Landroid/content/Context;I)I
 
     move-result v4
 
-    move v10, v4
-
-    move-object v4, v1
-
-    move v1, v10
-
     goto :goto_6
 
-    :cond_8
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw v0
-
-    :cond_9
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw v0
-
     :cond_a
-    move v3, v1
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
-    move v5, v3
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
-    move-object v4, v2
-
-    :goto_6
-    if-eqz v0, :cond_b
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->bodyText:Landroid/widget/TextView;
-
-    invoke-static {v0, v2}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->bodyText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->detailsIcon:Landroidx/appcompat/widget/AppCompatImageView;
-
-    invoke-static {v0, v3}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->detailsIcon:Landroidx/appcompat/widget/AppCompatImageView;
-
-    invoke-static {v0, v5}, Lcom/google/zxing/client/android/R$id;->setTint(Landroid/widget/ImageView;I)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->headline:Landroid/widget/TextView;
-
-    invoke-static {v0, v4}, Landroidx/core/app/AppOpsManagerCompat;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->headline:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    sget v0, Landroidx/databinding/ViewDataBinding;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_b
-
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->progressIndicator:Landroid/widget/ProgressBar;
-
-    invoke-static {v5}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setIndeterminateTintList(Landroid/content/res/ColorStateList;)V
+    throw v0
 
     :cond_b
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_c
+    move v4, v2
+
+    move v5, v4
+
+    move v6, v5
+
+    move-object v8, v3
+
+    :goto_6
+    if-eqz v0, :cond_d
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->bodyText:Landroid/widget/TextView;
+
+    invoke-static {v0, v3}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->bodyText:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->detailsIcon:Landroid/widget/ImageView;
+
+    invoke-static {v0, v5}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->detailsIcon:Landroid/widget/ImageView;
+
+    invoke-static {v0, v6}, Ldagger/android/AndroidInjection;->setTint(Landroid/widget/ImageView;I)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->headline:Landroid/widget/TextView;
+
+    invoke-static {v0, v8}, Landroidx/databinding/adapters/TextViewBindingAdapter;->setText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->headline:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->progressIndicator:Lcom/google/android/material/progressindicator/CircularProgressIndicator;
+
+    const-string/jumbo v3, "view"
+
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v2
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/progressindicator/BaseProgressIndicator;->setIndicatorColor([I)V
+
+    :cond_d
     return-void
 
     :catchall_0
@@ -512,6 +520,14 @@
 
 .method public setState(Lde/rki/coronawarnapp/tracing/states/TracingInProgress;)V
     .locals 4
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "State"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/databinding/TracingContentProgressViewBinding;->mState:Lde/rki/coronawarnapp/tracing/states/TracingInProgress;
 
@@ -530,11 +546,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/16 p1, 0x2a
+    const/16 p1, 0x29
 
     invoke-virtual {p0, p1}, Landroidx/databinding/BaseObservable;->notifyPropertyChanged(I)V
 
-    invoke-super {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
+    invoke-virtual {p0}, Landroidx/databinding/ViewDataBinding;->requestRebind()V
 
     return-void
 

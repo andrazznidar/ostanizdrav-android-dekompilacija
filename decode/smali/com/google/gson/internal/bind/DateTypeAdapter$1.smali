@@ -1,4 +1,4 @@
-.class public Lcom/google/gson/internal/bind/DateTypeAdapter$1;
+.class Lcom/google/gson/internal/bind/DateTypeAdapter$1;
 .super Ljava/lang/Object;
 .source "DateTypeAdapter.java"
 

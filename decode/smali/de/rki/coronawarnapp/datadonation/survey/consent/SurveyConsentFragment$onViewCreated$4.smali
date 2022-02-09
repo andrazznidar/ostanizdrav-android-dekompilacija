@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 14
 
     check-cast p1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentViewModel$State$Error;
 
@@ -65,10 +65,44 @@
 
     invoke-interface {p1, v1}, Lde/rki/coronawarnapp/util/ui/LazyString;->get(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v6
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;->access$showErrorDialog(Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;Ljava/lang/String;)V
+    sget-object p1, Lde/rki/coronawarnapp/datadonation/survey/consent/SurveyConsentFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
 
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    if-nez v4, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;
+
+    const v5, 0x7f13015a
+
+    const v7, 0x7f130159
+
+    const/4 v8, 0x0
+
+    sget-object v9, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/16 v13, 0x1d0
+
+    move-object v3, p1
+
+    invoke-direct/range {v3 .. v13}, Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;-><init>(Landroid/content/Context;ILjava/lang/String;ILjava/lang/Integer;Ljava/lang/Boolean;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+
+    invoke-static {p1}, Lde/rki/coronawarnapp/util/DialogHelper;->showDialog(Lde/rki/coronawarnapp/util/DialogHelper$DialogInstance;)Landroidx/appcompat/app/AlertDialog;
+
+    :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

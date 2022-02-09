@@ -1,6 +1,6 @@
 .class public Lcom/google/android/gms/dynamite/DynamiteModule$DynamiteLoaderClassLoader;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-basement@@17.5.0"
+.source "com.google.android.gms:play-services-basement@@17.6.0"
 
 
 # annotations

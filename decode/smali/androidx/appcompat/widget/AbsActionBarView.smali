@@ -59,7 +59,7 @@
 
     move-result-object p3
 
-    const v0, 0x7f040003
+    sget v0, Landroidx/appcompat/R$attr;->actionBarPopupTheme:I
 
     const/4 v1, 0x1
 
@@ -93,7 +93,7 @@
 .method public static synthetic access$001(Landroidx/appcompat/widget/AbsActionBarView;I)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
@@ -101,7 +101,7 @@
 .method public static synthetic access$101(Landroidx/appcompat/widget/AbsActionBarView;I)V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
@@ -168,7 +168,7 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
@@ -176,17 +176,17 @@
 
     sget-object v0, Landroidx/appcompat/R$styleable;->ActionBar:[I
 
-    const/4 v1, 0x0
+    sget v1, Landroidx/appcompat/R$attr;->actionBarStyle:I
 
-    const v2, 0x7f040006
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    invoke-virtual {p1, v1, v0, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v2, v0, v1, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    const/16 v0, 0xd
+    sget v0, Landroidx/appcompat/R$styleable;->ActionBar_height:I
 
     invoke-virtual {p1, v0, v3}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
@@ -318,7 +318,7 @@
 
     if-nez v3, :cond_1
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -364,7 +364,7 @@
 
     if-nez v2, :cond_1
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -450,7 +450,7 @@
     invoke-virtual {v0}, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1
     return-void

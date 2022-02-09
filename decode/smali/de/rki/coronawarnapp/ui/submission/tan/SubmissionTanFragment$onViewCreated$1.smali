@@ -57,7 +57,9 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment$onViewCreated$1;->this$0:Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->access$getBinding$p(Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;)Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;
+    sget-object v1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentSubmissionTanBinding;
 
     move-result-object v0
 
@@ -67,17 +69,17 @@
 
     iget-object v1, v1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionTanBinding;->submissionTanCharacterError:Landroid/widget/TextView;
 
-    const-string v2, "submissionTanContent.submissionTanCharacterError"
+    const-string/jumbo v2, "submissionTanContent.submissionTanCharacterError"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-boolean v2, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->areCharactersCorrect:Z
 
-    invoke-static {v1, v2}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {v1, v2}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     iget-boolean v1, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->isCorrectLength:Z
 
-    const-string v2, "submissionTanContent.submissionTanError"
+    const-string/jumbo v2, "submissionTanContent.submissionTanError"
 
     if-eqz v1, :cond_0
 
@@ -89,7 +91,7 @@
 
     iget-boolean p1, p1, Lde/rki/coronawarnapp/ui/submission/tan/SubmissionTanViewModel$UIState;->isTanValid:Z
 
-    invoke-static {v0, p1}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     goto :goto_0
 
@@ -102,7 +104,7 @@
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->setGone(Landroid/view/View;Z)V
+    invoke-static {p1, v0}, Lde/rki/coronawarnapp/util/ui/ViewExtensionsKt;->setGone(Landroid/view/View;Z)V
 
     :goto_0
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/trace_location_attendee_nav_graph" app:startDestination="@id/checkInOnboardingFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="CheckInOnboardingFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.attendee.onboarding.CheckInOnboardingFragment" android:id="@id/checkInOnboardingFragment">
+        <deepLink app:uri="cwa://check-in-onboarding/{uri}/?cleanHistory={cleanHistory}" />
+        <deepLink app:uri="cwa://check-in-onboarding/?showBottomNav={showBottomNav}&amp;locationId={locationId}" />
+        <action android:id="@id/action_checkInOnboardingFragment_to_checkInsFragment" app:destination="@id/checkInsFragment" app:popUpTo="@id/trace_location_attendee_nav_graph" app:popUpToInclusive="true" />
+        <action android:id="@id/action_checkInOnboardingFragment_to_privacyFragment" app:destination="@id/checkInPrivacyFragment" />
+        <argument android:name="showBottomNav" android:defaultValue="true" app:argType="boolean" />
+        <argument android:name="cleanHistory" android:defaultValue="false" app:argType="boolean" />
+        <argument android:name="uri" android:defaultValue="@null" app:argType="string" app:nullable="true" />
+        <argument android:name="locationId" android:defaultValue="@null" app:argType="string" app:nullable="true" />
+    </fragment>
+    <fragment android:label="InformationPrivacyFragment" android:name="de.rki.coronawarnapp.ui.information.InformationPrivacyFragment" android:id="@id/checkInPrivacyFragment" />
+    <fragment android:label="fragment_confirm_check_in" android:name="de.rki.coronawarnapp.ui.presencetracing.attendee.confirm.ConfirmCheckInFragment" android:id="@id/confirmCheckInFragment">
+        <deepLink app:uri="cwa://check-in/?locationId={locationId}" />
+        <argument android:name="locationId" app:argType="string" />
+    </fragment>
+    <fragment android:label="EditCheckInFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.attendee.edit.EditCheckInFragment" android:id="@id/editCheckInFragment">
+        <argument android:name="editCheckInId" app:argType="long" />
+    </fragment>
+    <fragment android:label="CheckInsFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.attendee.checkins.CheckInsFragment" android:id="@id/checkInsFragment">
+        <action android:id="@id/action_checkInsFragment_to_confirmCheckInFragment" app:destination="@id/confirmCheckInFragment" />
+        <action android:id="@id/action_checkInsFragment_to_confirmCheckInFragment_cleanHistory" app:destination="@id/confirmCheckInFragment" app:popUpTo="@id/checkInsFragment" app:popUpToInclusive="true" />
+        <argument android:name="uri" android:defaultValue="@null" app:argType="string" app:nullable="true" />
+        <argument android:name="cleanHistory" android:defaultValue="false" app:argType="boolean" />
+        <action android:id="@id/action_checkInsFragment_to_editCheckInFragment" app:destination="@id/editCheckInFragment" />
+        <action android:id="@id/action_checkInsFragment_to_qrCodeDetailFragment" app:destination="@id/qrCodeDetailFragment" />
+        <action android:id="@id/action_checkInsFragment_to_checkInOnboardingFragment" app:destination="@id/checkInOnboardingFragment" />
+    </fragment>
+</navigation>

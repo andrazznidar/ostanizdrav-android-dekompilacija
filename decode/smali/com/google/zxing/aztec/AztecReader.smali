@@ -72,7 +72,9 @@
 
     move-result-object v2
 
-    iget-object v3, v2, Lcom/google/zxing/common/DetectorResult;->points:[Lcom/google/zxing/ResultPoint;
+    iget-object v3, v2, Lcom/google/zxing/common/DetectorResult;->points:Ljava/lang/Object;
+
+    check-cast v3, [Lcom/google/zxing/ResultPoint;
     :try_end_0
     .catch Lcom/google/zxing/NotFoundException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Lcom/google/zxing/FormatException; {:try_start_0 .. :try_end_0} :catch_2
@@ -143,7 +145,11 @@
 
     move-result-object v0
 
-    iget-object v4, v0, Lcom/google/zxing/common/DetectorResult;->points:[Lcom/google/zxing/ResultPoint;
+    iget-object v1, v0, Lcom/google/zxing/common/DetectorResult;->points:Ljava/lang/Object;
+
+    move-object v4, v1
+
+    check-cast v4, [Lcom/google/zxing/ResultPoint;
 
     new-instance v1, Lcom/google/zxing/aztec/decoder/Decoder;
 

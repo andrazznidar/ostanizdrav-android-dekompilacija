@@ -13,11 +13,22 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lkotlin/coroutines/jvm/internal/ContinuationImpl;"
+    }
+.end annotation
+
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "de.rki.coronawarnapp.task.TaskController"
     f = "TaskController.kt"
     l = {
-        0x12a,
+        0x119,
         0x101
     }
     m = "updateSafely"
@@ -41,6 +52,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/task/TaskController;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/task/TaskController;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/task/TaskController$updateSafely$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/task/TaskController$updateSafely$1;->this$0:Lde/rki/coronawarnapp/task/TaskController;
 

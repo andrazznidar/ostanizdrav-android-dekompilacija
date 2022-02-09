@@ -1,18 +1,13 @@
 .class public final Lcom/google/android/gms/tasks/TaskExecutors;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-tasks@@17.2.0"
-
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/tasks/TaskExecutors$zza;
-    }
-.end annotation
+.source "com.google.android.gms:play-services-tasks@@17.2.1"
 
 
 # static fields
 .field public static final MAIN_THREAD:Ljava/util/concurrent/Executor;
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+.end field
 
 .field public static final zza:Ljava/util/concurrent/Executor;
 
@@ -21,9 +16,9 @@
 .method public static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/tasks/TaskExecutors$zza;
+    new-instance v0, Lcom/google/android/gms/tasks/zzu;
 
-    invoke-direct {v0}, Lcom/google/android/gms/tasks/TaskExecutors$zza;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/tasks/zzu;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/tasks/TaskExecutors;->MAIN_THREAD:Ljava/util/concurrent/Executor;
 

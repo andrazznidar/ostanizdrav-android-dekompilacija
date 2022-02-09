@@ -7,9 +7,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 7
 
-    sget-object v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->WRONG_RECEIVER_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-    iget v0, v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->code:I
+    const/16 v0, 0x64
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -19,7 +17,7 @@
 
     const-string v1, "\' type."
 
-    invoke-static {v0, p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 

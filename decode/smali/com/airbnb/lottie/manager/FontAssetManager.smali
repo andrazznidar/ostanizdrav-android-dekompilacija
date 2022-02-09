@@ -8,8 +8,6 @@
 
 .field public defaultFontFileExtension:Ljava/lang/String;
 
-.field public delegate:Lcom/airbnb/lottie/FontAssetDelegate;
-
 .field public final fontFamilies:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -53,7 +51,9 @@
 
     new-instance v0, Lcom/airbnb/lottie/model/MutablePair;
 
-    invoke-direct {v0}, Lcom/airbnb/lottie/model/MutablePair;-><init>()V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/airbnb/lottie/model/MutablePair;-><init>(I)V
 
     iput-object v0, p0, Lcom/airbnb/lottie/manager/FontAssetManager;->tempPair:Lcom/airbnb/lottie/model/MutablePair;
 
@@ -73,19 +73,17 @@
 
     iput-object v0, p0, Lcom/airbnb/lottie/manager/FontAssetManager;->defaultFontFileExtension:Ljava/lang/String;
 
-    const/4 v0, 0x0
+    instance-of v0, p1, Landroid/view/View;
 
-    iput-object v0, p0, Lcom/airbnb/lottie/manager/FontAssetManager;->delegate:Lcom/airbnb/lottie/FontAssetDelegate;
-
-    instance-of v1, p1, Landroid/view/View;
-
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     const-string p1, "LottieDrawable must be inside of a view for images to work."
 
     invoke-static {p1}, Lcom/airbnb/lottie/utils/Logger;->warning(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/airbnb/lottie/manager/FontAssetManager;->assetManager:Landroid/content/res/AssetManager;
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lcom/airbnb/lottie/manager/FontAssetManager;->assetManager:Landroid/content/res/AssetManager;
 
     return-void
 

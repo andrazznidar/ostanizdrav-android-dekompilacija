@@ -8,7 +8,8 @@
     value = {
         "<E:",
         "Ljava/lang/Object;",
-        "><TE>"
+        ">",
+        "Ljava/lang/Object;"
     }
 .end annotation
 
@@ -62,7 +63,7 @@
 
     const-string v1, "index"
 
-    invoke-static {p2, v0, v1}, Lcom/airbnb/lottie/R$attr;->zze(IILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0, v1}, Lcom/google/android/gms/internal/nearby/zznp;->zze(IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -114,21 +115,11 @@
 .method public final next()Ljava/lang/Object;
     .locals 2
 
-    iget v0, p0, Lcom/google/android/gms/internal/nearby/zznx;->zzb:I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznx;->hasNext()Z
 
-    iget v1, p0, Lcom/google/android/gms/internal/nearby/zznx;->zza$com$google$android$gms$internal$nearby$zzns:I
+    move-result v0
 
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget v0, p0, Lcom/google/android/gms/internal/nearby/zznx;->zzb:I
 
@@ -144,7 +135,7 @@
 
     return-object v0
 
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -163,19 +154,11 @@
 .method public final previous()Ljava/lang/Object;
     .locals 2
 
-    iget v0, p0, Lcom/google/android/gms/internal/nearby/zznx;->zzb:I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/nearby/zznx;->hasPrevious()Z
 
-    if-lez v0, :cond_0
+    move-result v0
 
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget v0, p0, Lcom/google/android/gms/internal/nearby/zznx;->zzb:I
 
@@ -191,7 +174,7 @@
 
     return-object v0
 
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

@@ -17,7 +17,7 @@
     c = "de.rki.coronawarnapp.appconfig.sources.local.AppConfigStorage"
     f = "AppConfigStorage.kt"
     l = {
-        0x87
+        0x6d
     }
     m = "setStoredConfig"
 .end annotation
@@ -40,6 +40,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$setStoredConfig$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage$setStoredConfig$1;->this$0:Lde/rki/coronawarnapp/appconfig/sources/local/AppConfigStorage;
 

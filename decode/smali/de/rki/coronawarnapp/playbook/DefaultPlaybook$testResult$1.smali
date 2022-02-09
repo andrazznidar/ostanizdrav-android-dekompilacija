@@ -17,9 +17,9 @@
     c = "de.rki.coronawarnapp.playbook.DefaultPlaybook"
     f = "DefaultPlaybook.kt"
     l = {
-        0x46,
-        0x49,
-        0x4c
+        0x47,
+        0x4a,
+        0x4d
     }
     m = "testResult"
 .end annotation
@@ -42,6 +42,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/playbook/DefaultPlaybook;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/playbook/DefaultPlaybook$testResult$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/playbook/DefaultPlaybook$testResult$1;->this$0:Lde/rki/coronawarnapp/playbook/DefaultPlaybook;
 

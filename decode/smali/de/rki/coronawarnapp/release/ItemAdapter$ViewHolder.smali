@@ -66,11 +66,7 @@
         }
     .end annotation
 
-    const-string p1, "parent"
-
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const p1, 0x7f0c00d1
+    const p1, 0x7f0d0128
 
     invoke-direct {p0, p1, p2}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter$VH;-><init>(ILandroid/view/ViewGroup;)V
 
@@ -78,7 +74,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/release/ItemAdapter$ViewHolder$viewBinding$1;-><init>(Lde/rki/coronawarnapp/release/ItemAdapter$ViewHolder;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -94,19 +90,11 @@
 
 # virtual methods
 .method public bind(Ljava/lang/Object;Ljava/util/List;)V
-    .locals 1
+    .locals 0
 
     check-cast p1, Lde/rki/coronawarnapp/release/NewReleaseInfoItem;
 
-    const-string v0, "item"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "payloads"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p0, p1, p2}, Lcom/google/zxing/client/android/R$id;->bind(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;)V
+    invoke-static {p0, p1, p2}, Lde/rki/coronawarnapp/util/lists/BindableVH$DefaultImpls;->bind(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;)V
 
     return-void
 .end method

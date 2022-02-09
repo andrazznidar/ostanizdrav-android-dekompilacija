@@ -15,6 +15,10 @@
 .end annotation
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+
 # instance fields
 .field public mAlpha:I
 
@@ -56,29 +60,6 @@
     iput v0, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex:I
 
     return-void
-.end method
-
-.method public static resolveDensity(Landroid/content/res/Resources;I)I
-    .locals 0
-
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p0
-
-    iget p1, p0, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    :goto_0
-    if-nez p1, :cond_1
-
-    const/16 p1, 0xa0
-
-    :cond_1
-    return p1
 .end method
 
 
@@ -233,7 +214,7 @@
 
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    if-eqz v0, :cond_3
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-eqz p1, :cond_2
 
@@ -290,11 +271,6 @@
 
     :cond_2
     return-void
-
-    :cond_3
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public canApplyTheme()Z
@@ -309,7 +285,12 @@
     return v0
 .end method
 
-.method public abstract cloneConstantState()Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+.method public cloneConstantState()Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+    .locals 0
+
+    const p0, 0x0
+
+    throw p0
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
@@ -363,9 +344,6 @@
 
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    monitor-enter v0
-
-    :try_start_0
     iget-boolean v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantState:Z
 
     const/4 v2, 0x1
@@ -373,15 +351,10 @@
     if-eqz v1, :cond_0
 
     iget-boolean v2, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCanConstantState:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v0
 
     goto :goto_1
 
     :cond_0
-    :try_start_1
     invoke-virtual {v0}, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->createAllFutures()V
 
     iput-boolean v2, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedConstantState:Z
@@ -406,10 +379,6 @@
     if-nez v6, :cond_1
 
     iput-boolean v4, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCanConstantState:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit v0
 
     move v2, v4
 
@@ -421,12 +390,7 @@
     goto :goto_0
 
     :cond_2
-    :try_start_2
     iput-boolean v2, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCanConstantState:Z
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    monitor-exit v0
 
     :goto_1
     if-eqz v2, :cond_3
@@ -447,13 +411,6 @@
     const/4 v0, 0x0
 
     return-object v0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
 .end method
 
 .method public getCurrent()Landroid/graphics/drawable/Drawable;
@@ -748,9 +705,9 @@
 
     if-nez v1, :cond_8
 
-    iget-boolean v1, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedPadding:Z
+    iget-boolean v5, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mCheckedPadding:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v5, :cond_1
 
     goto :goto_1
 
@@ -834,7 +791,7 @@
 
     :cond_8
     :goto_1
-    iget-object v2, v0, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mConstantPadding:Landroid/graphics/Rect;
+    move-object v2, v1
 
     :goto_2
     if-eqz v2, :cond_a
@@ -956,11 +913,9 @@
     :cond_1
     iget-object v1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    iget-boolean v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasColorFilter:Z
+    iget-boolean v2, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasColorFilter:Z
 
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+    if-eqz v2, :cond_2
 
     iget-object v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mColorFilter:Landroid/graphics/ColorFilter;
 
@@ -969,13 +924,9 @@
     goto :goto_0
 
     :cond_2
-    iget-object v1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+    iget-boolean v2, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintList:Z
 
-    iget-boolean v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintList:Z
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+    if-eqz v2, :cond_3
 
     iget-object v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintList:Landroid/content/res/ColorStateList;
 
@@ -984,11 +935,9 @@
     :cond_3
     iget-object v1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    iget-boolean v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintMode:Z
+    iget-boolean v2, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mHasTintMode:Z
 
-    if-eqz v1, :cond_4
-
-    iget-object v1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+    if-eqz v2, :cond_4
 
     iget-object v1, v1, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
@@ -1616,30 +1565,11 @@
 .end method
 
 .method public setConstantState(Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;)V
-    .locals 1
+    .locals 0
 
-    iput-object p1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mDrawableContainerState:Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;
+    const p0, 0x0
 
-    iget v0, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurIndex:I
-
-    if-ltz v0, :cond_0
-
-    invoke-virtual {p1, v0}, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->getChild(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    iput-object p1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0, p1}, Landroidx/appcompat/graphics/drawable/DrawableContainer;->initializeDrawableForDisplay(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_0
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mLastDrawable:Landroid/graphics/drawable/Drawable;
-
-    return-void
+    throw p0
 .end method
 
 .method public setDither(Z)V
@@ -1722,7 +1652,7 @@
 
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    invoke-static {v0, p1}, Landroidx/core/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     :cond_0
     return-void
@@ -1745,7 +1675,7 @@
 
     iget-object v0, p0, Landroidx/appcompat/graphics/drawable/DrawableContainer;->mCurrDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1}, Landroidx/core/app/AppOpsManagerCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+    invoke-static {v0, p1}, Landroidx/core/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
     :cond_0
     return-void

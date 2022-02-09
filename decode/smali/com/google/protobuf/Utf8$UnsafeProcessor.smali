@@ -73,11 +73,16 @@
     return p0
 
     :cond_2
-    invoke-static {p1}, Lcom/google/protobuf/Utf8;->access$500(I)I
+    sget-object p0, Lcom/google/protobuf/Utf8;->processor:Lcom/google/protobuf/Utf8$Processor;
 
-    move-result p0
+    const/16 p0, -0xc
 
-    return p0
+    if-le p1, p0, :cond_3
+
+    const/4 p1, -0x1
+
+    :cond_3
+    return p1
 .end method
 
 
@@ -441,7 +446,7 @@
     :cond_c
     new-instance v1, Ljava/lang/ArrayIndexOutOfBoundsException;
 
-    invoke-static {v10}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v10}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 

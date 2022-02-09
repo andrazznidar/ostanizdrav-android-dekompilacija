@@ -33,25 +33,19 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 6
+    .locals 12
 
-    const/4 v0, 0x5
+    new-instance v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    new-array v1, v0, [Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    const-string v1, "UNKNOWN"
 
-    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    const/4 v2, 0x0
 
-    const-string v3, "UNKNOWN"
+    invoke-direct {v0, v1, v2, v2}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
 
-    const/4 v4, 0x0
+    sput-object v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->UNKNOWN:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    invoke-direct {v2, v3, v4, v4}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->UNKNOWN:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
-
-    aput-object v2, v1, v4
-
-    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    new-instance v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
     const-string v3, "TEST_RESULT"
 
@@ -59,47 +53,53 @@
 
     const/4 v5, 0x2
 
-    invoke-direct {v2, v3, v4, v5}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v3, v4, v5}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
 
-    sput-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->TEST_RESULT:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    sput-object v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->TEST_RESULT:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    aput-object v2, v1, v4
+    new-instance v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    const-string v6, "WARN_OTHERS"
 
-    const-string v3, "WARN_OTHERS"
+    const/4 v7, 0x3
 
-    const/4 v4, 0x3
+    invoke-direct {v3, v6, v5, v7}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
 
-    invoke-direct {v2, v3, v5, v4}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
+    sput-object v3, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->WARN_OTHERS:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    sput-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->WARN_OTHERS:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    new-instance v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    aput-object v2, v1, v5
+    const-string v8, "SYMPTOMS"
 
-    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    const/4 v9, 0x4
 
-    const-string v3, "SYMPTOMS"
+    invoke-direct {v6, v8, v7, v9}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
 
-    const/4 v5, 0x4
+    sput-object v6, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->SYMPTOMS:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    invoke-direct {v2, v3, v4, v5}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
+    new-instance v8, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    sput-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->SYMPTOMS:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    const-string v10, "SYMPTOM_ONSET"
 
-    aput-object v2, v1, v4
+    const/4 v11, 0x5
 
-    new-instance v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    invoke-direct {v8, v10, v9, v11}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
 
-    const-string v3, "SYMPTOM_ONSET"
+    sput-object v8, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->SYMPTOM_ONSET:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    invoke-direct {v2, v3, v5, v0}, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;-><init>(Ljava/lang/String;II)V
+    new-array v10, v11, [Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    sput-object v2, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->SYMPTOM_ONSET:Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    aput-object v0, v10, v2
 
-    aput-object v2, v1, v5
+    aput-object v1, v10, v4
 
-    sput-object v1, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->$VALUES:[Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
+    aput-object v3, v10, v5
+
+    aput-object v6, v10, v7
+
+    aput-object v8, v10, v9
+
+    sput-object v10, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->$VALUES:[Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
     return-void
 .end method
@@ -138,7 +138,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->$VALUES:[Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/datadonation/analytics/modules/keysubmission/Screen;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

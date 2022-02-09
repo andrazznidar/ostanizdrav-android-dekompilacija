@@ -63,9 +63,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    sget-object p1, Lde/rki/coronawarnapp/environment/BuildConfigWrap;->INSTANCE:Lde/rki/coronawarnapp/environment/BuildConfigWrap;
-
-    sget-wide v0, Lde/rki/coronawarnapp/environment/BuildConfigWrap;->VERSION_CODE:J
+    const-wide/32 v0, 0x205a0c
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 

@@ -5,12 +5,45 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStatisticsExplanationFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatisticsExplanationFragment.kt\nde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment\n+ 2 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,51:1\n16#2,11:52\n*E\n*S KotlinDebug\n*F\n+ 1 StatisticsExplanationFragment.kt\nde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment\n*L\n22#1,11:52\n*E\n"
+    value = "SMAP\nStatisticsExplanationFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatisticsExplanationFragment.kt\nde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment\n+ 2 ViewBindingExtensions.kt\nde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt\n*L\n1#1,59:1\n18#2,11:60\n*S KotlinDebug\n*F\n+ 1 StatisticsExplanationFragment.kt\nde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment\n*L\n22#1:60,11\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0004"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment;",
+        "Landroidx/fragment/app/Fragment;",
+        "<init>",
+        "()V",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
 .end annotation
 
 
 # static fields
 .field public static final synthetic $$delegatedProperties:[Lkotlin/reflect/KProperty;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "[",
+            "Lkotlin/reflect/KProperty<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -33,7 +66,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline35(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/jvm/internal/PropertyReference1Impl;
+    invoke-static {v1, v2, v3, v4}, Lde/rki/coronawarnapp/bugreporting/debuglog/ui/DebugLogFragment$$ExternalSyntheticOutline0;->m(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkotlin/reflect/KProperty1;
 
     move-result-object v1
 
@@ -47,15 +80,17 @@
 .method public constructor <init>()V
     .locals 2
 
-    const v0, 0x7f0c0062
+    const v0, 0x7f0d008d
 
     invoke-direct {p0, v0}, Landroidx/fragment/app/Fragment;-><init>(I)V
 
-    sget-object v0, Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment$$special$$inlined$viewBindingLazy$1;->INSTANCE:Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment$$special$$inlined$viewBindingLazy$1;
+    new-instance v0, Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment$special$$inlined$viewBinding$1;
 
-    sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBindingLazy$2;
+    invoke-direct {v0}, Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment$special$$inlined$viewBinding$1;-><init>()V
 
-    invoke-static {p0, v0, v1}, Lcom/google/zxing/client/android/R$id;->viewBindingLazy(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
+    sget-object v1, Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;->INSTANCE:Lde/rki/coronawarnapp/util/ui/ViewBindingExtensionsKt$viewBinding$2;
+
+    invoke-static {p0, v0, v1}, Lkotlin/sequences/SequencesKt__SequencesJVMKt;->viewBinding(Landroidx/fragment/app/Fragment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lde/rki/coronawarnapp/util/ui/ViewBindingProperty;
 
     move-result-object v0
 
@@ -107,7 +142,7 @@
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 2
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -121,9 +156,9 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/databinding/IncludeButtonIconBinding;->buttonIcon:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    new-instance p2, Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment$setButtonOnClickListener$1;
+    new-instance p2, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment$setButtonOnClickListener$1;-><init>(Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment;)V
+    invoke-direct {p2, p0}, Lde/rki/coronawarnapp/ui/information/InformationFragment$$ExternalSyntheticLambda2;-><init>(Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -131,55 +166,51 @@
 
     move-result-object p1
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;->statisticsExplanationSevenDayRValueText:Landroid/widget/TextView;
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;->statisticsFaqLink:Landroid/widget/TextView;
 
-    const-string p2, "binding.statisticsExplanationSevenDayRValueText"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const p2, 0x7f12032b
-
-    const v0, 0x7f12032a
-
-    const v1, 0x7f12031e
-
-    invoke-static {p1, p2, v0, v1}, Lde/rki/coronawarnapp/util/ViewsKt;->setUrl(Landroid/widget/TextView;III)V
-
-    invoke-virtual {p0}, Lde/rki/coronawarnapp/statistics/ui/StatisticsExplanationFragment;->getBinding()Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;->statisticsExplanationTrendText:Landroid/widget/TextView;
-
-    const p2, 0x7f120334
-
-    invoke-virtual {p0, p2}, Landroidx/fragment/app/Fragment;->getString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string v0, "getString(R.string.stati\u2026s_explanation_trend_text)"
+    const-string/jumbo v0, "statisticsFaqLink"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    const v0, 0x7f1304ad
 
-    new-array v1, v0, [Ljava/lang/Object;
+    const v1, 0x7f1304c1
 
-    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {p2, v1, v1, v0}, LTextViewUrlExtensionsKt;->setTextWithUrl(Landroid/widget/TextView;III)V
+
+    iget-object p2, p1, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;->statisticsExplanationTrendText:Landroid/widget/TextView;
+
+    invoke-virtual {p2}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const v1, 0x7f1304cc
 
-    move-result-object p2
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    const-string v0, "java.lang.String.format(format, *args)"
+    move-result-object v0
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "context.getString(R.stri\u2026s_explanation_trend_text)"
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/databinding/FragmentStatisticsExplanationBinding;->blogLink:Landroid/widget/TextView;
+
+    const-string p2, "blogLink"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const p2, 0x7f1304a9
+
+    const v0, 0x7f1304aa
+
+    const v1, 0x7f1304a8
+
+    invoke-static {p1, p2, v0, v1}, LTextViewUrlExtensionsKt;->setTextWithUrl(Landroid/widget/TextView;III)V
 
     return-void
 .end method

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nGeneralTracingStatus.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GeneralTracingStatus.kt\nde/rki/coronawarnapp/tracing/GeneralTracingStatus\n+ 2 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 3 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,53:1\n237#2:54\n239#2:56\n106#3:55\n*E\n*S KotlinDebug\n*F\n+ 1 GeneralTracingStatus.kt\nde/rki/coronawarnapp/tracing/GeneralTracingStatus\n*L\n22#1:54\n22#1:56\n22#1:55\n*E\n"
+    value = "SMAP\nGeneralTracingStatus.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GeneralTracingStatus.kt\nde/rki/coronawarnapp/tracing/GeneralTracingStatus\n+ 2 Zip.kt\nkotlinx/coroutines/flow/FlowKt__ZipKt\n+ 3 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,53:1\n237#2:54\n239#2:56\n106#3:55\n*S KotlinDebug\n*F\n+ 1 GeneralTracingStatus.kt\nde/rki/coronawarnapp/tracing/GeneralTracingStatus\n*L\n22#1:54\n22#1:56\n22#1:55\n*E\n"
 .end annotation
 
 
@@ -79,9 +79,9 @@
 
     aput-object p1, v0, p2
 
-    new-instance p1, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$$special$$inlined$combine$1;
+    new-instance p1, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$special$$inlined$combine$1;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$special$$inlined$combine$1;-><init>([Lkotlinx/coroutines/flow/Flow;)V
 
     new-instance p2, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$generalStatus$2;
 
@@ -91,7 +91,7 @@
 
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;
 
-    invoke-direct {v0, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {v0, p2, p1}, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;-><init>(Lkotlin/jvm/functions/Function2;Lkotlinx/coroutines/flow/Flow;)V
 
     new-instance p1, Lde/rki/coronawarnapp/tracing/GeneralTracingStatus$generalStatus$3;
 

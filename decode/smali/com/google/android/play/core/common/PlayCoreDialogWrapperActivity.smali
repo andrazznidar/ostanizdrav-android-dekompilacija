@@ -1,12 +1,10 @@
 .class public Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;
 .super Landroid/app/Activity;
+.source "com.google.android.play:core@@1.10.1"
 
 
 # instance fields
-.field public a:Landroid/os/ResultReceiver;
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
-.end field
+.field public zza:Landroid/os/ResultReceiver;
 
 
 # direct methods
@@ -14,30 +12,6 @@
     .locals 0
 
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Landroid/content/Context;)V
-    .locals 3
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    new-instance v1, Landroid/content/ComponentName;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v2, "com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-
-    invoke-direct {v1, p0, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 p0, 0x1
-
-    invoke-static {v0, v1, p0}, Lcom/google/android/material/R$style;->g(Landroid/content/pm/PackageManager;Landroid/content/ComponentName;I)V
 
     return-void
 .end method
@@ -51,7 +25,7 @@
 
     if-nez p1, :cond_1
 
-    iget-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    iget-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->zza:Landroid/os/ResultReceiver;
 
     if-eqz p1, :cond_1
 
@@ -65,10 +39,9 @@
 
     const/4 p3, 0x1
 
-    :goto_0
     invoke-virtual {p1, p3, p2}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     if-nez p2, :cond_1
@@ -79,10 +52,10 @@
 
     const/4 p3, 0x2
 
-    goto :goto_0
+    invoke-virtual {p1, p3, p2}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
     :cond_1
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
@@ -95,7 +68,7 @@
 
     move-result-object v0
 
-    const-string v1, "window_flags"
+    const-string/jumbo v1, "window_flags"
 
     const/4 v2, 0x0
 
@@ -145,7 +118,7 @@
 
     check-cast p1, Landroid/os/ResultReceiver;
 
-    iput-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    iput-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->zza:Landroid/os/ResultReceiver;
 
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
@@ -185,7 +158,7 @@
     return-void
 
     :catch_0
-    iget-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    iget-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->zza:Landroid/os/ResultReceiver;
 
     if-eqz p1, :cond_1
 
@@ -209,7 +182,7 @@
 
     check-cast p1, Landroid/os/ResultReceiver;
 
-    iput-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    iput-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->zza:Landroid/os/ResultReceiver;
 
     return-void
 .end method
@@ -217,7 +190,7 @@
 .method public final onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    iget-object v0, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->zza:Landroid/os/ResultReceiver;
 
     const-string v1, "result_receiver"
 

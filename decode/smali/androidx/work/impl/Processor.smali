@@ -45,8 +45,6 @@
     .end annotation
 .end field
 
-.field public mForegroundLock:Landroid/os/PowerManager$WakeLock;
-
 .field public mForegroundWorkMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -167,10 +165,6 @@
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Landroidx/work/impl/Processor;->mOuterListeners:Ljava/util/List;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Landroidx/work/impl/Processor;->mForegroundLock:Landroid/os/PowerManager$WakeLock;
 
     new-instance p1, Ljava/lang/Object;
 
@@ -432,13 +426,7 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v5
+    const-string v5, "Processor"
 
     const/4 v6, 0x0
 
@@ -662,11 +650,7 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    const-class v5, Landroidx/work/impl/Processor;
-
-    invoke-virtual {v5}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v5
+    const-string v5, "Processor"
 
     aput-object v5, v4, v3
 
@@ -715,16 +699,24 @@
 
     iget-object v1, p0, Landroidx/work/impl/Processor;->mAppContext:Landroid/content/Context;
 
-    invoke-static {v1}, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->createStopForegroundIntent(Landroid/content/Context;)Landroid/content/Intent;
+    sget-object v3, Landroidx/work/impl/foreground/SystemForegroundDispatcher;->TAG:Ljava/lang/String;
 
-    move-result-object v1
+    new-instance v3, Landroid/content/Intent;
+
+    const-class v4, Landroidx/work/impl/foreground/SystemForegroundService;
+
+    invoke-direct {v3, v1, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string v1, "ACTION_STOP_FOREGROUND"
+
+    invoke-virtual {v3, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    iget-object v3, p0, Landroidx/work/impl/Processor;->mAppContext:Landroid/content/Context;
+    iget-object v1, p0, Landroidx/work/impl/Processor;->mAppContext:Landroid/content/Context;
 
-    invoke-virtual {v3, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+    invoke-virtual {v1, v3}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -750,20 +742,8 @@
 
     invoke-virtual {v3, v4, v5, v2}, Landroidx/work/Logger;->error(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
-    :goto_0
-    iget-object v1, p0, Landroidx/work/impl/Processor;->mForegroundLock:Landroid/os/PowerManager$WakeLock;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Landroidx/work/impl/Processor;->mForegroundLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Landroidx/work/impl/Processor;->mForegroundLock:Landroid/os/PowerManager$WakeLock;
-
     :cond_0
+    :goto_0
     monitor-exit v0
 
     return-void

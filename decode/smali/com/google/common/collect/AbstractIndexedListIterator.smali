@@ -27,7 +27,7 @@
 
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableListIterator;-><init>()V
 
-    invoke-static {p2, p1}, Lcom/google/android/material/R$style;->checkPositionIndex(II)I
+    invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkPositionIndex(II)I
 
     iput p1, p0, Lcom/google/common/collect/AbstractIndexedListIterator;->size:I
 

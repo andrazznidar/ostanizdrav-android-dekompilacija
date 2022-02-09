@@ -60,11 +60,9 @@
 
     int-to-long v2, p3
 
-    add-long/2addr v0, v2
+    add-long/2addr v2, v0
 
-    iput-wide v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$UnsafeDirectNioDecoder;->limit:J
-
-    iget-wide v0, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$UnsafeDirectNioDecoder;->address:J
+    iput-wide v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$UnsafeDirectNioDecoder;->limit:J
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
@@ -305,9 +303,11 @@
 
     iput-wide v2, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$UnsafeDirectNioDecoder;->pos:J
 
-    invoke-static {v1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->wrap([B)Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+    sget-object v0, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->EMPTY:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
-    move-result-object v0
+    new-instance v0, Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;
+
+    invoke-direct {v0, v1}, Lcom/google/crypto/tink/shaded/protobuf/ByteString$LiteralByteString;-><init>([B)V
 
     return-object v0
 
@@ -1478,13 +1478,13 @@
 
     move-result v0
 
-    if-lez v0, :cond_3
+    if-lez v0, :cond_2
 
     invoke-virtual {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$UnsafeDirectNioDecoder;->remaining()I
 
     move-result v1
 
-    if-gt v0, v1, :cond_3
+    if-gt v0, v1, :cond_2
 
     iget-wide v1, p0, Lcom/google/crypto/tink/shaded/protobuf/CodedInputStream$UnsafeDirectNioDecoder;->pos:J
 
@@ -1496,7 +1496,7 @@
 
     sget-object v3, Lcom/google/crypto/tink/shaded/protobuf/Utf8;->processor:Lcom/google/crypto/tink/shaded/protobuf/Utf8$Processor;
 
-    if-eqz v3, :cond_2
+    invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->hasArray()Z
 
@@ -1550,19 +1550,14 @@
     return-object v1
 
     :cond_2
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_3
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     const-string v0, ""
 
     return-object v0
 
-    :cond_4
-    if-gtz v0, :cond_5
+    :cond_3
+    if-gtz v0, :cond_4
 
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->negativeSize()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
@@ -1570,7 +1565,7 @@
 
     throw v0
 
-    :cond_5
+    :cond_4
     invoke-static {}, Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;->truncatedMessage()Lcom/google/crypto/tink/shaded/protobuf/InvalidProtocolBufferException;
 
     move-result-object v0

@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/internal/GmsClient;
 .super Lcom/google/android/gms/common/internal/BaseGmsClient;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 # interfaces
 .implements Lcom/google/android/gms/common/api/Api$Client;
@@ -14,8 +14,7 @@
         ">",
         "Lcom/google/android/gms/common/internal/BaseGmsClient<",
         "TT;>;",
-        "Lcom/google/android/gms/common/api/Api$Client;",
-        "Ljava/lang/Object;"
+        "Lcom/google/android/gms/common/api/Api$Client;"
     }
 .end annotation
 
@@ -62,49 +61,55 @@
 
     move-object v0, p4
 
-    sget-object v1, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzb:Ljava/lang/Object;
+    move-object/from16 v1, p5
 
-    monitor-enter v1
+    move-object/from16 v2, p6
+
+    sget-object v3, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzb:Ljava/lang/Object;
+
+    monitor-enter v3
 
     :try_start_0
-    sget-object v2, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzc:Lcom/google/android/gms/common/internal/GmsClientSupervisor;
+    sget-object v4, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzc:Lcom/google/android/gms/common/internal/GmsClientSupervisor;
 
-    if-nez v2, :cond_0
+    if-nez v4, :cond_0
 
-    new-instance v2, Lcom/google/android/gms/common/internal/zzg;
+    new-instance v4, Lcom/google/android/gms/common/internal/zzq;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-direct {v2, v3}, Lcom/google/android/gms/common/internal/zzg;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v5}, Lcom/google/android/gms/common/internal/zzq;-><init>(Landroid/content/Context;)V
 
-    sput-object v2, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzc:Lcom/google/android/gms/common/internal/GmsClientSupervisor;
+    sput-object v4, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzc:Lcom/google/android/gms/common/internal/GmsClientSupervisor;
 
     :cond_0
-    monitor-exit v1
+    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     sget-object v4, Lcom/google/android/gms/common/internal/GmsClientSupervisor;->zzc:Lcom/google/android/gms/common/internal/GmsClientSupervisor;
 
+    sget-object v3, Lcom/google/android/gms/common/GoogleApiAvailability;->zaa:Ljava/lang/Object;
+
     sget-object v5, Lcom/google/android/gms/common/GoogleApiAvailability;->zab:Lcom/google/android/gms/common/GoogleApiAvailability;
 
-    invoke-static/range {p5 .. p5}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v3, "null reference"
 
-    invoke-static/range {p6 .. p6}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v7, Lcom/google/android/gms/common/internal/zag;
+    const-string v3, "null reference"
 
-    move-object/from16 v1, p5
+    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-direct {v7, v1}, Lcom/google/android/gms/common/internal/zag;-><init>(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)V
+    new-instance v7, Lcom/google/android/gms/common/internal/zah;
+
+    invoke-direct {v7, v1}, Lcom/google/android/gms/common/internal/zah;-><init>(Lcom/google/android/gms/common/api/internal/ConnectionCallbacks;)V
 
     new-instance v8, Lcom/google/android/gms/common/internal/zai;
 
-    move-object/from16 v1, p6
-
-    invoke-direct {v8, v1}, Lcom/google/android/gms/common/internal/zai;-><init>(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
+    invoke-direct {v8, v2}, Lcom/google/android/gms/common/internal/zai;-><init>(Lcom/google/android/gms/common/api/internal/OnConnectionFailedListener;)V
 
     iget-object v9, v0, Lcom/google/android/gms/common/internal/ClientSettings;->zah:Ljava/lang/String;
 
@@ -167,7 +172,7 @@
     move-exception v0
 
     :try_start_1
-    monitor-exit v1
+    monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -176,6 +181,35 @@
 
 
 # virtual methods
+.method public final getAccount()Landroid/accounts/Account;
+    .locals 1
+    .annotation build Landroidx/annotation/RecentlyNullable;
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zac:Landroid/accounts/Account;
+
+    return-object v0
+.end method
+
+.method public final getScopes()Ljava/util/Set;
+    .locals 1
+    .annotation build Landroidx/annotation/RecentlyNonNull;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Lcom/google/android/gms/common/api/Scope;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zab:Ljava/util/Set;
+
+    return-object v0
+.end method
+
 .method public getScopesForConnectionlessNonSignIn()Ljava/util/Set;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -195,12 +229,13 @@
 
     iget-object v0, p0, Lcom/google/android/gms/common/internal/GmsClient;->zab:Ljava/util/Set;
 
-    return-object v0
+    goto :goto_0
 
     :cond_0
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
 
+    :goto_0
     return-object v0
 .end method

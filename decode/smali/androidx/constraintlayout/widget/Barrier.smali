@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+.field public mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
 .field public mIndicatedType:I
 
@@ -14,6 +14,14 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "context"
+        }
+    .end annotation
 
     invoke-direct {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;)V
 
@@ -26,6 +34,16 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "attrs"
+        }
+    .end annotation
 
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintHelper;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -38,12 +56,22 @@
 
 
 # virtual methods
+.method public getAllowsGoneWidget()Z
+    .locals 1
+
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
+
+    iget-boolean v0, v0, Landroidx/constraintlayout/core/widgets/Barrier;->mAllowsGoneWidget:Z
+
+    return v0
+.end method
+
 .method public getMargin()I
     .locals 1
 
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
-    iget v0, v0, Landroidx/constraintlayout/solver/widgets/Barrier;->mMargin:I
+    iget v0, v0, Landroidx/constraintlayout/core/widgets/Barrier;->mMargin:I
 
     return v0
 .end method
@@ -58,14 +86,22 @@
 
 .method public init(Landroid/util/AttributeSet;)V
     .locals 6
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "attrs"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/constraintlayout/widget/ConstraintHelper;->init(Landroid/util/AttributeSet;)V
 
-    new-instance v0, Landroidx/constraintlayout/solver/widgets/Barrier;
+    new-instance v0, Landroidx/constraintlayout/core/widgets/Barrier;
 
-    invoke-direct {v0}, Landroidx/constraintlayout/solver/widgets/Barrier;-><init>()V
+    invoke-direct {v0}, Landroidx/constraintlayout/core/widgets/Barrier;-><init>()V
 
-    iput-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iput-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
     if-eqz p1, :cond_4
 
@@ -94,7 +130,7 @@
 
     move-result v3
 
-    const/16 v4, 0xf
+    sget v4, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_barrierDirection:I
 
     if-ne v3, v4, :cond_0
 
@@ -107,11 +143,11 @@
     goto :goto_1
 
     :cond_0
-    const/16 v4, 0xe
+    sget v4, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_barrierAllowsGoneWidgets:I
 
     if-ne v3, v4, :cond_1
 
-    iget-object v4, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iget-object v4, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
     const/4 v5, 0x1
 
@@ -119,12 +155,12 @@
 
     move-result v3
 
-    iput-boolean v3, v4, Landroidx/constraintlayout/solver/widgets/Barrier;->mAllowsGoneWidget:Z
+    iput-boolean v3, v4, Landroidx/constraintlayout/core/widgets/Barrier;->mAllowsGoneWidget:Z
 
     goto :goto_1
 
     :cond_1
-    const/16 v4, 0x10
+    sget v4, Landroidx/constraintlayout/widget/R$styleable;->ConstraintLayout_Layout_barrierMargin:I
 
     if-ne v3, v4, :cond_2
 
@@ -132,9 +168,9 @@
 
     move-result v3
 
-    iget-object v4, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iget-object v4, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
-    iput v3, v4, Landroidx/constraintlayout/solver/widgets/Barrier;->mMargin:I
+    iput v3, v4, Landroidx/constraintlayout/core/widgets/Barrier;->mMargin:I
 
     :cond_2
     :goto_1
@@ -146,17 +182,27 @@
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     :cond_4
-    iget-object p1, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iget-object p1, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
-    iput-object p1, p0, Landroidx/constraintlayout/widget/ConstraintHelper;->mHelperWidget:Landroidx/constraintlayout/solver/widgets/Helper;
+    iput-object p1, p0, Landroidx/constraintlayout/widget/ConstraintHelper;->mHelperWidget:Landroidx/constraintlayout/core/widgets/Helper;
 
     invoke-virtual {p0}, Landroidx/constraintlayout/widget/ConstraintHelper;->validateParams()V
 
     return-void
 .end method
 
-.method public resolveRtl(Landroidx/constraintlayout/solver/widgets/ConstraintWidget;Z)V
+.method public resolveRtl(Landroidx/constraintlayout/core/widgets/ConstraintWidget;Z)V
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "widget",
+            "isRtl"
+        }
+    .end annotation
 
     iget v0, p0, Landroidx/constraintlayout/widget/Barrier;->mIndicatedType:I
 
@@ -199,15 +245,15 @@
 
     :cond_3
     :goto_0
-    instance-of p2, p1, Landroidx/constraintlayout/solver/widgets/Barrier;
+    instance-of p2, p1, Landroidx/constraintlayout/core/widgets/Barrier;
 
     if-eqz p2, :cond_4
 
-    check-cast p1, Landroidx/constraintlayout/solver/widgets/Barrier;
+    check-cast p1, Landroidx/constraintlayout/core/widgets/Barrier;
 
     iget p2, p0, Landroidx/constraintlayout/widget/Barrier;->mResolvedType:I
 
-    iput p2, p1, Landroidx/constraintlayout/solver/widgets/Barrier;->mBarrierType:I
+    iput p2, p1, Landroidx/constraintlayout/core/widgets/Barrier;->mBarrierType:I
 
     :cond_4
     return-void
@@ -215,16 +261,32 @@
 
 .method public setAllowsGoneWidget(Z)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "supportGone"
+        }
+    .end annotation
 
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
-    iput-boolean p1, v0, Landroidx/constraintlayout/solver/widgets/Barrier;->mAllowsGoneWidget:Z
+    iput-boolean p1, v0, Landroidx/constraintlayout/core/widgets/Barrier;->mAllowsGoneWidget:Z
 
     return-void
 .end method
 
 .method public setDpMargin(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "margin"
+        }
+    .end annotation
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
@@ -246,25 +308,41 @@
 
     float-to-int p1, p1
 
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
-    iput p1, v0, Landroidx/constraintlayout/solver/widgets/Barrier;->mMargin:I
+    iput p1, v0, Landroidx/constraintlayout/core/widgets/Barrier;->mMargin:I
 
     return-void
 .end method
 
 .method public setMargin(I)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "margin"
+        }
+    .end annotation
 
-    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/solver/widgets/Barrier;
+    iget-object v0, p0, Landroidx/constraintlayout/widget/Barrier;->mBarrier:Landroidx/constraintlayout/core/widgets/Barrier;
 
-    iput p1, v0, Landroidx/constraintlayout/solver/widgets/Barrier;->mMargin:I
+    iput p1, v0, Landroidx/constraintlayout/core/widgets/Barrier;->mMargin:I
 
     return-void
 .end method
 
 .method public setType(I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "type"
+        }
+    .end annotation
 
     iput p1, p0, Landroidx/constraintlayout/widget/Barrier;->mIndicatedType:I
 

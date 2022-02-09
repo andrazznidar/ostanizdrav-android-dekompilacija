@@ -6,11 +6,15 @@
 # static fields
 .field public static final EMPTY_REGISTRY_LITE:Lcom/google/protobuf/ExtensionRegistryLite;
 
-.field public static final extensionClass:Ljava/lang/Class;
+
+# instance fields
+.field public final extensionsByNumber:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/lang/Class<",
-            "*>;"
+            "Ljava/util/Map<",
+            "Ljava/lang/Object;",
+            "Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<",
+            "**>;>;"
         }
     .end annotation
 .end field
@@ -24,19 +28,10 @@
     const-string v0, "com.google.protobuf.Extension"
 
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    const/4 v0, 0x0
-
-    :goto_0
-    sput-object v0, Lcom/google/protobuf/ExtensionRegistryLite;->extensionClass:Ljava/lang/Class;
-
     new-instance v0, Lcom/google/protobuf/ExtensionRegistryLite;
 
     const/4 v1, 0x1
@@ -66,6 +61,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/protobuf/ExtensionRegistryLite;->extensionsByNumber:Ljava/util/Map;
 
     return-void
 .end method

@@ -122,8 +122,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/common/collect/UnmodifiableListIterator<",
-            "TK;>;"
+            "Lcom/google/common/collect/UnmodifiableListIterator;"
         }
     .end annotation
 
@@ -151,9 +150,9 @@
 
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap$KeySet;->map:Lcom/google/common/collect/ImmutableMap;
 
-    invoke-interface {v0}, Ljava/util/Map;->size()I
+    check-cast v0, Lcom/google/common/collect/RegularImmutableMap;
 
-    move-result v0
+    iget v0, v0, Lcom/google/common/collect/RegularImmutableMap;->size:I
 
     return v0
 .end method

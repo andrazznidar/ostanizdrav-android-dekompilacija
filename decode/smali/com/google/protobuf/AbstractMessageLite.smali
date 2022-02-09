@@ -93,7 +93,7 @@
 
     const-string v0, "Serializing "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -137,28 +137,32 @@
 .end method
 
 .method public toByteArray()[B
-    .locals 3
+    .locals 4
 
     :try_start_0
     invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
 
     move-result v0
 
-    new-array v0, v0, [B
+    new-array v1, v0, [B
 
-    invoke-static {v0}, Lcom/google/protobuf/CodedOutputStream;->newInstance([B)Lcom/google/protobuf/CodedOutputStream;
+    sget-object v2, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    move-result-object v1
+    new-instance v2, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;
 
-    invoke-interface {p0, v1}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
+    const/4 v3, 0x0
 
-    invoke-virtual {v1}, Lcom/google/protobuf/CodedOutputStream;->spaceLeft()I
+    invoke-direct {v2, v1, v3, v0}, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;-><init>([BII)V
 
-    move-result v1
+    invoke-interface {p0, v2}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    if-nez v1, :cond_0
+    invoke-virtual {v2}, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;->spaceLeft()I
 
-    return-object v0
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-object v1
 
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -188,36 +192,38 @@
 .end method
 
 .method public toByteString()Lcom/google/protobuf/ByteString;
-    .locals 3
+    .locals 4
 
     :try_start_0
     invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/protobuf/ByteString;->newCodedBuilder(I)Lcom/google/protobuf/ByteString$CodedBuilder;
+    sget-object v1, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
-    move-result-object v0
+    new-array v1, v0, [B
 
-    iget-object v1, v0, Lcom/google/protobuf/ByteString$CodedBuilder;->output:Lcom/google/protobuf/CodedOutputStream;
+    sget-object v2, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    invoke-interface {p0, v1}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
+    new-instance v2, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;
 
-    iget-object v1, v0, Lcom/google/protobuf/ByteString$CodedBuilder;->output:Lcom/google/protobuf/CodedOutputStream;
+    const/4 v3, 0x0
 
-    invoke-virtual {v1}, Lcom/google/protobuf/CodedOutputStream;->spaceLeft()I
+    invoke-direct {v2, v1, v3, v0}, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;-><init>([BII)V
 
-    move-result v1
+    invoke-interface {p0, v2}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    if-nez v1, :cond_0
+    invoke-virtual {v2}, Lcom/google/protobuf/CodedOutputStream;->spaceLeft()I
 
-    new-instance v1, Lcom/google/protobuf/ByteString$LiteralByteString;
+    move-result v0
 
-    iget-object v0, v0, Lcom/google/protobuf/ByteString$CodedBuilder;->buffer:[B
+    if-nez v0, :cond_0
 
-    invoke-direct {v1, v0}, Lcom/google/protobuf/ByteString$LiteralByteString;-><init>([B)V
+    new-instance v0, Lcom/google/protobuf/ByteString$LiteralByteString;
 
-    return-object v1
+    invoke-direct {v0, v1}, Lcom/google/protobuf/ByteString$LiteralByteString;-><init>([B)V
+
+    return-object v0
 
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -275,7 +281,7 @@
 
     invoke-direct {v2, p1, v1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;-><init>(Ljava/io/OutputStream;I)V
 
-    invoke-virtual {v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
+    invoke-virtual {v2, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->writeUInt32NoTag(I)V
 
     invoke-interface {p0, v2}, Lcom/google/protobuf/MessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
@@ -301,10 +307,15 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/protobuf/CodedOutputStream;->computePreferredBufferSize(I)I
+    sget-object v1, Lcom/google/protobuf/CodedOutputStream;->logger:Ljava/util/logging/Logger;
 
-    move-result v0
+    const/16 v1, 0x1000
 
+    if-le v0, v1, :cond_0
+
+    move v0, v1
+
+    :cond_0
     new-instance v1, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;
 
     invoke-direct {v1, p1, v0}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;-><init>(Ljava/io/OutputStream;I)V
@@ -313,10 +324,10 @@
 
     iget p1, v1, Lcom/google/protobuf/CodedOutputStream$AbstractBufferedEncoder;->position:I
 
-    if-lez p1, :cond_0
+    if-lez p1, :cond_1
 
     invoke-virtual {v1}, Lcom/google/protobuf/CodedOutputStream$OutputStreamEncoder;->doFlush()V
 
-    :cond_0
+    :cond_1
     return-void
 .end method

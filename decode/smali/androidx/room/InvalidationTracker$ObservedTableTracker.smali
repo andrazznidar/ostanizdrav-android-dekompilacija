@@ -28,7 +28,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .locals 3
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,15 +44,13 @@
 
     iput-object p1, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mTriggerStateChanges:[I
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Ljava/util/Arrays;->fill([JJ)V
+    invoke-static {v0, v2, v3}, Ljava/util/Arrays;->fill([JJ)V
 
-    iget-object p1, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mTriggerStates:[Z
+    const/4 p1, 0x0
 
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Ljava/util/Arrays;->fill([ZZ)V
+    invoke-static {v1, p1}, Ljava/util/Arrays;->fill([ZZ)V
 
     return-void
 .end method
@@ -109,11 +107,11 @@
     :goto_1
     iget-object v5, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mTriggerStates:[Z
 
-    aget-boolean v5, v5, v2
+    aget-boolean v6, v5, v2
 
-    if-eq v4, v5, :cond_3
+    if-eq v4, v6, :cond_3
 
-    iget-object v5, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mTriggerStateChanges:[I
+    iget-object v6, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mTriggerStateChanges:[I
 
     if-eqz v4, :cond_2
 
@@ -123,7 +121,7 @@
     const/4 v3, 0x2
 
     :goto_2
-    aput v3, v5, v2
+    aput v3, v6, v2
 
     goto :goto_3
 
@@ -133,9 +131,7 @@
     aput v1, v3, v2
 
     :goto_3
-    iget-object v3, p0, Landroidx/room/InvalidationTracker$ObservedTableTracker;->mTriggerStates:[Z
-
-    aput-boolean v4, v3, v2
+    aput-boolean v4, v5, v2
 
     add-int/lit8 v2, v2, 0x1
 

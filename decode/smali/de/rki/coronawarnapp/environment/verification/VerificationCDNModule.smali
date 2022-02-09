@@ -1,13 +1,15 @@
 .class public final Lde/rki/coronawarnapp/environment/verification/VerificationCDNModule;
-.super Lde/rki/coronawarnapp/environment/BaseEnvironmentModule;
+.super Lde/rki/coronawarnapp/task/internal/TaskModule;
 .source "VerificationCDNModule.kt"
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Lde/rki/coronawarnapp/environment/BaseEnvironmentModule;-><init>()V
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lde/rki/coronawarnapp/task/internal/TaskModule;-><init>(I)V
 
     return-void
 .end method

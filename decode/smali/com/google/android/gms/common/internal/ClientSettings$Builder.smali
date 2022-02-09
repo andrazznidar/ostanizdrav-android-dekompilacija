@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/common/internal/ClientSettings$Builder;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -27,29 +27,23 @@
     .end annotation
 .end field
 
+.field public zac:Ljava/lang/String;
+
 .field public zad:Ljava/lang/String;
-
-.field public zae:Ljava/lang/String;
-
-.field public zaf:Lcom/google/android/gms/signin/SignInOptions;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Lcom/google/android/gms/signin/SignInOptions;->zaa:Lcom/google/android/gms/signin/SignInOptions;
-
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zaf:Lcom/google/android/gms/signin/SignInOptions;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final build()Lcom/google/android/gms/common/internal/ClientSettings;
+.method public build()Lcom/google/android/gms/common/internal/ClientSettings;
     .locals 10
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
@@ -60,11 +54,11 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zab:Landroidx/collection/ArraySet;
 
-    iget-object v6, p0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zad:Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zac:Ljava/lang/String;
 
-    iget-object v7, p0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zae:Ljava/lang/String;
+    iget-object v7, p0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zad:Ljava/lang/String;
 
-    iget-object v8, p0, Lcom/google/android/gms/common/internal/ClientSettings$Builder;->zaf:Lcom/google/android/gms/signin/SignInOptions;
+    sget-object v8, Lcom/google/android/gms/signin/SignInOptions;->zaa:Lcom/google/android/gms/signin/SignInOptions;
 
     const/4 v3, 0x0
 

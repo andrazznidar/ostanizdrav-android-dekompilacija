@@ -46,10 +46,64 @@
 
     iget-object v0, p0, Lcom/google/android/material/button/MaterialButtonToggleGroup$2;->this$0:Lcom/google/android/material/button/MaterialButtonToggleGroup;
 
-    invoke-static {v0, p1}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->access$200(Lcom/google/android/material/button/MaterialButtonToggleGroup;Landroid/view/View;)I
+    sget v1, Lcom/google/android/material/button/MaterialButtonToggleGroup;->DEF_STYLE_RES:I
 
-    move-result v4
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    instance-of v1, p1, Lcom/google/android/material/button/MaterialButton;
+
+    const/4 v4, -0x1
+
+    if-nez v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    move v5, v1
+
+    :goto_0
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
+
+    move-result v6
+
+    if-ge v1, v6, :cond_3
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v6
+
+    if-ne v6, p1, :cond_1
+
+    move v4, v5
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v6
+
+    instance-of v6, v6, Lcom/google/android/material/button/MaterialButton;
+
+    if-eqz v6, :cond_2
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/button/MaterialButtonToggleGroup;->isChildVisible(I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    add-int/lit8 v5, v5, 0x1
+
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
     const/4 v5, 0x1
 
     const/4 v6, 0x0

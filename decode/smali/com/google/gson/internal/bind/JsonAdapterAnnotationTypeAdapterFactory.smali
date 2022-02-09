@@ -133,7 +133,7 @@
 
     const-string p4, "Invalid attempt to bind an instance of "
 
-    invoke-static {p4}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p4}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p4
 
@@ -219,11 +219,9 @@
 
     if-eqz p2, :cond_6
 
-    new-instance p2, Lcom/google/gson/TypeAdapter$1;
+    invoke-virtual {p1}, Lcom/google/gson/TypeAdapter;->nullSafe()Lcom/google/gson/TypeAdapter;
 
-    invoke-direct {p2, p1}, Lcom/google/gson/TypeAdapter$1;-><init>(Lcom/google/gson/TypeAdapter;)V
-
-    move-object p1, p2
+    move-result-object p1
 
     :cond_6
     return-object p1

@@ -55,5 +55,22 @@
     .end annotation
 .end method
 
+.method public abstract getRevokedTraceWarningPackages(I)Lde/rki/coronawarnapp/server/protocols/internal/v2/KeyDownloadParameters$TraceWarningPackageMetadata;
+.end method
+
+.method public abstract getRevokedTraceWarningPackagesCount()I
+.end method
+
+.method public abstract getRevokedTraceWarningPackagesList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lde/rki/coronawarnapp/server/protocols/internal/v2/KeyDownloadParameters$TraceWarningPackageMetadata;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract synthetic isInitialized()Z
 .end method

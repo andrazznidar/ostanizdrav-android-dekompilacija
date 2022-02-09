@@ -13,7 +13,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     new-instance v0, Lde/rki/coronawarnapp/notification/NotificationConstants;
 
@@ -27,17 +27,11 @@
 
     move-result-object v2
 
-    const-string v3, "Duration.standardHours(2)"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     sput-object v2, Lde/rki/coronawarnapp/notification/NotificationConstants;->POSITIVE_RESULT_NOTIFICATION_INITIAL_OFFSET:Lorg/joda/time/Duration;
 
     invoke-static {v0, v1}, Lorg/joda/time/Duration;->standardHours(J)Lorg/joda/time/Duration;
 
     move-result-object v0
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sput-object v0, Lde/rki/coronawarnapp/notification/NotificationConstants;->POSITIVE_RESULT_NOTIFICATION_INTERVAL:Lorg/joda/time/Duration;
 

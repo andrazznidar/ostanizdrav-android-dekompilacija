@@ -75,26 +75,6 @@
     return p0
 .end method
 
-.method public static computeBoolSizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public static computeByteArraySizeNoTag([B)I
-    .locals 0
-
-    array-length p0, p0
-
-    invoke-static {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static computeBytesSize(ILcom/google/crypto/tink/shaded/protobuf/ByteString;)I
     .locals 0
 
@@ -141,14 +121,6 @@
     return p0
 .end method
 
-.method public static computeDoubleSizeNoTag()I
-    .locals 1
-
-    const/16 v0, 0x8
-
-    return v0
-.end method
-
 .method public static computeEnumSize(II)I
     .locals 0
 
@@ -177,14 +149,6 @@
     return p0
 .end method
 
-.method public static computeFixed32SizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x4
-
-    return v0
-.end method
-
 .method public static computeFixed64Size(IJ)I
     .locals 0
 
@@ -197,14 +161,6 @@
     return p0
 .end method
 
-.method public static computeFixed64SizeNoTag()I
-    .locals 1
-
-    const/16 v0, 0x8
-
-    return v0
-.end method
-
 .method public static computeFloatSize(IF)I
     .locals 0
 
@@ -215,14 +171,6 @@
     add-int/lit8 p0, p0, 0x4
 
     return p0
-.end method
-
-.method public static computeFloatSizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x4
-
-    return v0
 .end method
 
 .method public static computeGroupSize(ILcom/google/crypto/tink/shaded/protobuf/MessageLite;Lcom/google/crypto/tink/shaded/protobuf/Schema;)I
@@ -243,18 +191,6 @@
     move-result p1
 
     add-int/2addr p0, p1
-
-    return p0
-.end method
-
-.method public static computeGroupSizeNoTag(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)I
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    invoke-interface {p0}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;->getSerializedSize()I
-
-    move-result p0
 
     return p0
 .end method
@@ -324,20 +260,9 @@
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/LazyFieldLite;->delayedBytes:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/ByteString;->size()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_1
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/LazyFieldLite;->value:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object p0, p0, Lcom/google/crypto/tink/shaded/protobuf/LazyFieldLite;->value:Lcom/google/crypto/tink/shaded/protobuf/MessageLite;
 
@@ -347,7 +272,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     const/4 p0, 0x0
 
     :goto_0
@@ -370,33 +295,6 @@
     return v0
 .end method
 
-.method public static computeMessageSizeNoTag(Lcom/google/crypto/tink/shaded/protobuf/MessageLite;)I
-    .locals 0
-
-    invoke-interface {p0}, Lcom/google/crypto/tink/shaded/protobuf/MessageLite;->getSerializedSize()I
-
-    move-result p0
-
-    invoke-static {p0}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static computePreferredBufferSize(I)I
-    .locals 1
-
-    const/16 v0, 0x1000
-
-    if-le p0, v0, :cond_0
-
-    return v0
-
-    :cond_0
-    return p0
-.end method
-
 .method public static computeSFixed32Size(II)I
     .locals 0
 
@@ -409,14 +307,6 @@
     return p0
 .end method
 
-.method public static computeSFixed32SizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x4
-
-    return v0
-.end method
-
 .method public static computeSFixed64Size(IJ)I
     .locals 0
 
@@ -427,14 +317,6 @@
     add-int/lit8 p0, p0, 0x8
 
     return p0
-.end method
-
-.method public static computeSFixed64SizeNoTag()I
-    .locals 1
-
-    const/16 v0, 0x8
-
-    return v0
 .end method
 
 .method public static computeSInt32Size(II)I
@@ -738,20 +620,6 @@
     xor-long/2addr p0, v0
 
     return-wide p0
-.end method
-
-.method public static newInstance([B)Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream;
-    .locals 3
-
-    array-length v0, p0
-
-    new-instance v1, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream$ArrayEncoder;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v2, v0}, Lcom/google/crypto/tink/shaded/protobuf/CodedOutputStream$ArrayEncoder;-><init>([BII)V
-
-    return-object v1
 .end method
 
 

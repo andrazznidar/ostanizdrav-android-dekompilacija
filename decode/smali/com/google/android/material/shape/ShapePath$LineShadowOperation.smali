@@ -88,7 +88,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->preRotate(F)Z
 
-    if-eqz p2, :cond_0
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget p1, v2, Landroid/graphics/RectF;->bottom:F
 
@@ -104,25 +104,25 @@
 
     invoke-virtual {v2, v1, p1}, Landroid/graphics/RectF;->offset(FF)V
 
-    sget-object p1, Lcom/google/android/material/shadow/ShadowRenderer;->edgeColors:[I
+    sget-object v8, Lcom/google/android/material/shadow/ShadowRenderer;->edgeColors:[I
 
-    iget p3, p2, Lcom/google/android/material/shadow/ShadowRenderer;->shadowEndColor:I
+    iget p1, p2, Lcom/google/android/material/shadow/ShadowRenderer;->shadowEndColor:I
 
-    const/4 v1, 0x0
+    const/4 p3, 0x0
 
-    aput p3, p1, v1
+    aput p1, v8, p3
 
-    iget p3, p2, Lcom/google/android/material/shadow/ShadowRenderer;->shadowMiddleColor:I
+    iget p1, p2, Lcom/google/android/material/shadow/ShadowRenderer;->shadowMiddleColor:I
 
-    const/4 v1, 0x1
+    const/4 p3, 0x1
 
-    aput p3, p1, v1
+    aput p1, v8, p3
 
-    iget p3, p2, Lcom/google/android/material/shadow/ShadowRenderer;->shadowStartColor:I
+    iget p1, p2, Lcom/google/android/material/shadow/ShadowRenderer;->shadowStartColor:I
 
-    const/4 v1, 0x2
+    const/4 p3, 0x2
 
-    aput p3, p1, v1
+    aput p1, v8, p3
 
     iget-object p1, p2, Lcom/google/android/material/shadow/ShadowRenderer;->edgeShadowPaint:Landroid/graphics/Paint;
 
@@ -133,8 +133,6 @@
     iget v5, v2, Landroid/graphics/RectF;->top:F
 
     iget v7, v2, Landroid/graphics/RectF;->bottom:F
-
-    sget-object v8, Lcom/google/android/material/shadow/ShadowRenderer;->edgeColors:[I
 
     sget-object v9, Lcom/google/android/material/shadow/ShadowRenderer;->edgePositions:[F
 
@@ -159,11 +157,6 @@
     invoke-virtual {p4}, Landroid/graphics/Canvas;->restore()V
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method public getAngle()F

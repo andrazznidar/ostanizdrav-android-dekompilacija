@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/util/WatchdogService;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/task/TaskController;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Landroidx/lifecycle/LifecycleOwner;)V
+    value = Lde/rki/coronawarnapp/util/WatchdogService;-><init>(Landroid/content/Context;Lde/rki/coronawarnapp/util/device/BackgroundModeStatus;Landroidx/lifecycle/LifecycleOwner;Lde/rki/coronawarnapp/risk/execution/ExposureWindowRiskWorkScheduler;Lde/rki/coronawarnapp/presencetracing/risk/execution/PresenceTracingRiskWorkScheduler;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -58,18 +58,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "null cannot be cast to non-null type android.os.PowerManager"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast v0, Landroid/os/PowerManager;
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "null cannot be cast to non-null type android.os.PowerManager"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

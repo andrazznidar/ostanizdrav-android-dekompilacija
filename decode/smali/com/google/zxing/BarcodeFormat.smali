@@ -53,7 +53,7 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 17
+    .locals 20
 
     new-instance v0, Lcom/google/zxing/BarcodeFormat;
 
@@ -65,243 +65,243 @@
 
     sput-object v0, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v1, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODABAR"
+    const-string v3, "CODABAR"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1, v3}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
+    sput-object v1, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v3, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODE_39"
+    const-string v5, "CODE_39"
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    invoke-direct {v0, v1, v4}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v3, v5, v6}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+    sput-object v3, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v5, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODE_93"
+    const-string v7, "CODE_93"
 
-    const/4 v5, 0x3
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v5}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v5, v7, v8}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
+    sput-object v5, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v7, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "CODE_128"
+    const-string v9, "CODE_128"
 
-    const/4 v6, 0x4
+    const/4 v10, 0x4
 
-    invoke-direct {v0, v1, v6}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v7, v9, v10}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
+    sput-object v7, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v9, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "DATA_MATRIX"
+    const-string v11, "DATA_MATRIX"
 
-    const/4 v7, 0x5
+    const/4 v12, 0x5
 
-    invoke-direct {v0, v1, v7}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v9, v11, v12}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
+    sput-object v9, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v11, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "EAN_8"
+    const-string v13, "EAN_8"
 
-    const/4 v8, 0x6
+    const/4 v14, 0x6
 
-    invoke-direct {v0, v1, v8}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v11, v13, v14}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
+    sput-object v11, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v13, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "EAN_13"
+    const-string v15, "EAN_13"
 
-    const/4 v9, 0x7
+    const/4 v14, 0x7
 
-    invoke-direct {v0, v1, v9}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v13, v15, v14}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
+    sput-object v13, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v15, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "ITF"
+    const-string v14, "ITF"
 
-    const/16 v10, 0x8
+    const/16 v12, 0x8
 
-    invoke-direct {v0, v1, v10}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v15, v14, v12}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
+    sput-object v15, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v14, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "MAXICODE"
+    const-string v12, "MAXICODE"
 
-    const/16 v11, 0x9
+    const/16 v10, 0x9
 
-    invoke-direct {v0, v1, v11}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v14, v12, v10}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->MAXICODE:Lcom/google/zxing/BarcodeFormat;
+    sput-object v14, Lcom/google/zxing/BarcodeFormat;->MAXICODE:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v12, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "PDF_417"
+    const-string v10, "PDF_417"
 
-    const/16 v12, 0xa
+    const/16 v8, 0xa
 
-    invoke-direct {v0, v1, v12}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v12, v10, v8}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
+    sput-object v12, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v10, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "QR_CODE"
+    const-string v8, "QR_CODE"
 
-    const/16 v13, 0xb
+    const/16 v6, 0xb
 
-    invoke-direct {v0, v1, v13}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v10, v8, v6}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
+    sput-object v10, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v8, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "RSS_14"
+    const-string v6, "RSS_14"
 
-    const/16 v14, 0xc
+    const/16 v4, 0xc
 
-    invoke-direct {v0, v1, v14}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v8, v6, v4}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
+    sput-object v8, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v6, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "RSS_EXPANDED"
+    const-string v4, "RSS_EXPANDED"
 
-    const/16 v15, 0xd
+    const/16 v2, 0xd
 
-    invoke-direct {v0, v1, v15}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v6, v4, v2}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
+    sput-object v6, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    new-instance v4, Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "UPC_A"
+    const-string v2, "UPC_A"
 
-    const/16 v15, 0xe
+    move-object/from16 v17, v6
 
-    invoke-direct {v0, v1, v15}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    const/16 v6, 0xe
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
+    invoke-direct {v4, v2, v6}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    sput-object v4, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
 
-    const-string v1, "UPC_E"
+    new-instance v2, Lcom/google/zxing/BarcodeFormat;
 
-    const/16 v15, 0xf
+    const-string v6, "UPC_E"
 
-    invoke-direct {v0, v1, v15}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    move-object/from16 v18, v4
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
+    const/16 v4, 0xf
 
-    new-instance v0, Lcom/google/zxing/BarcodeFormat;
+    invoke-direct {v2, v6, v4}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    const-string v1, "UPC_EAN_EXTENSION"
+    sput-object v2, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
 
-    const/16 v15, 0x10
+    new-instance v6, Lcom/google/zxing/BarcodeFormat;
 
-    invoke-direct {v0, v1, v15}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
+    const-string v4, "UPC_EAN_EXTENSION"
 
-    sput-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_EAN_EXTENSION:Lcom/google/zxing/BarcodeFormat;
+    move-object/from16 v19, v2
 
-    const/16 v1, 0x11
+    const/16 v2, 0x10
 
-    new-array v1, v1, [Lcom/google/zxing/BarcodeFormat;
+    invoke-direct {v6, v4, v2}, Lcom/google/zxing/BarcodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sget-object v16, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
+    sput-object v6, Lcom/google/zxing/BarcodeFormat;->UPC_EAN_EXTENSION:Lcom/google/zxing/BarcodeFormat;
 
-    aput-object v16, v1, v2
+    const/16 v4, 0x11
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
+    new-array v4, v4, [Lcom/google/zxing/BarcodeFormat;
 
-    aput-object v2, v1, v3
+    const/16 v16, 0x0
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+    aput-object v0, v4, v16
 
-    aput-object v2, v1, v4
+    const/4 v0, 0x1
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
+    aput-object v1, v4, v0
 
-    aput-object v2, v1, v5
+    const/4 v0, 0x2
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
+    aput-object v3, v4, v0
 
-    aput-object v2, v1, v6
+    const/4 v0, 0x3
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
+    aput-object v5, v4, v0
 
-    aput-object v2, v1, v7
+    const/4 v0, 0x4
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
+    aput-object v7, v4, v0
 
-    aput-object v2, v1, v8
+    const/4 v0, 0x5
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
+    aput-object v9, v4, v0
 
-    aput-object v2, v1, v9
+    const/4 v0, 0x6
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
+    aput-object v11, v4, v0
 
-    aput-object v2, v1, v10
+    const/4 v0, 0x7
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->MAXICODE:Lcom/google/zxing/BarcodeFormat;
+    aput-object v13, v4, v0
 
-    aput-object v2, v1, v11
+    const/16 v0, 0x8
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
+    aput-object v15, v4, v0
 
-    aput-object v2, v1, v12
+    const/16 v0, 0x9
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
+    aput-object v14, v4, v0
 
-    aput-object v2, v1, v13
+    const/16 v0, 0xa
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
+    aput-object v12, v4, v0
 
-    aput-object v2, v1, v14
+    const/16 v0, 0xb
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
+    aput-object v10, v4, v0
 
-    const/16 v3, 0xd
+    const/16 v0, 0xc
 
-    aput-object v2, v1, v3
+    aput-object v8, v4, v0
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
+    const/16 v0, 0xd
 
-    const/16 v3, 0xe
+    aput-object v17, v4, v0
 
-    aput-object v2, v1, v3
+    const/16 v0, 0xe
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
+    aput-object v18, v4, v0
 
-    const/16 v3, 0xf
+    const/16 v0, 0xf
 
-    aput-object v2, v1, v3
+    aput-object v19, v4, v0
 
-    aput-object v0, v1, v15
+    aput-object v6, v4, v2
 
-    sput-object v1, Lcom/google/zxing/BarcodeFormat;->$VALUES:[Lcom/google/zxing/BarcodeFormat;
+    sput-object v4, Lcom/google/zxing/BarcodeFormat;->$VALUES:[Lcom/google/zxing/BarcodeFormat;
 
     return-void
 .end method

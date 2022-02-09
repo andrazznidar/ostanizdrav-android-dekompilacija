@@ -79,7 +79,7 @@
 .end method
 
 .method public getColorStateList(I)Landroid/content/res/ColorStateList;
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
@@ -101,7 +101,9 @@
 
     iget-object v1, p0, Landroidx/appcompat/widget/TintTypedArray;->mContext:Landroid/content/Context;
 
-    invoke-static {v1, v0}, Landroidx/appcompat/content/res/AppCompatResources;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+    sget-object v2, Landroidx/appcompat/content/res/AppCompatResources;->TL_TYPED_VALUE:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
@@ -252,7 +254,7 @@
 .end method
 
 .method public getFont(IILandroidx/core/content/res/ResourcesCompat$FontCallback;)Landroid/graphics/Typeface;
-    .locals 9
+    .locals 10
 
     iget-object v0, p0, Landroidx/appcompat/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
@@ -284,6 +286,8 @@
 
     iget-object v4, p0, Landroidx/appcompat/widget/TintTypedArray;->mTypedValue:Landroid/util/TypedValue;
 
+    sget-object v0, Landroidx/core/content/res/ResourcesCompat;->sTempTypedValue:Ljava/lang/ThreadLocal;
+
     invoke-virtual {v2}, Landroid/content/Context;->isRestricted()Z
 
     move-result v0
@@ -297,11 +301,13 @@
 
     const/4 v8, 0x1
 
+    const/4 v9, 0x0
+
     move v5, p2
 
     move-object v6, p3
 
-    invoke-static/range {v2 .. v8}, Landroidx/core/app/AppOpsManagerCompat;->loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;Z)Landroid/graphics/Typeface;
+    invoke-static/range {v2 .. v9}, Landroidx/core/content/res/ResourcesCompat;->loadFont(Landroid/content/Context;ILandroid/util/TypedValue;ILandroidx/core/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;ZZ)Landroid/graphics/Typeface;
 
     move-result-object p1
 

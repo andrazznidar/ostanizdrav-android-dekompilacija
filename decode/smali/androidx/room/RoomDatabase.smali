@@ -8,8 +8,7 @@
     value = {
         Landroidx/room/RoomDatabase$Callback;,
         Landroidx/room/RoomDatabase$MigrationContainer;,
-        Landroidx/room/RoomDatabase$Builder;,
-        Landroidx/room/RoomDatabase$JournalMode;
+        Landroidx/room/RoomDatabase$Builder;
     }
 .end annotation
 
@@ -87,9 +86,9 @@
 
     iput-object v0, p0, Landroidx/room/RoomDatabase;->mSuspendingTransactionId:Ljava/lang/ThreadLocal;
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Landroidx/room/RoomDatabase;->mBackingFieldMap:Ljava/util/Map;
 
@@ -208,6 +207,26 @@
 .method public abstract clearAllTables()V
 .end method
 
+.method public compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
+
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    iget-object v0, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
+
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteOpenHelper;->getWritableDatabase()Landroidx/sqlite/db/SupportSQLiteDatabase;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public abstract createInvalidationTracker()Landroidx/room/InvalidationTracker;
 .end method
 
@@ -314,11 +333,11 @@
 
     const-string v1, "UPDATE room_table_modification_log SET invalidated = 0 WHERE invalidated = 1 "
 
-    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
+    invoke-interface {p1, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     move-result-object p1
 
-    iput-object p1, v0, Landroidx/room/InvalidationTracker;->mCleanupStatement:Landroidx/sqlite/db/SupportSQLiteStatement;
+    iput-object p1, v0, Landroidx/room/InvalidationTracker;->mCleanupStatement:Landroidx/sqlite/db/framework/FrameworkSQLiteStatement;
 
     const/4 p1, 0x1
 

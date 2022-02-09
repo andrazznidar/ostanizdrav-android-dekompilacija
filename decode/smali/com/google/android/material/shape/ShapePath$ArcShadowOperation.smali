@@ -169,21 +169,19 @@
 
     sub-float v2, v6, v2
 
-    sub-float/2addr v6, v2
+    sub-float v10, v6, v2
 
-    div-float/2addr v6, v12
+    div-float/2addr v10, v12
 
-    add-float/2addr v6, v2
+    add-float/2addr v10, v2
 
-    sget-object v10, Lcom/google/android/material/shadow/ShadowRenderer;->cornerPositions:[F
+    sget-object v19, Lcom/google/android/material/shadow/ShadowRenderer;->cornerPositions:[F
 
-    aput v2, v10, v9
+    aput v2, v19, v9
 
-    aput v6, v10, v13
+    aput v10, v19, v13
 
-    iget-object v2, v1, Lcom/google/android/material/shadow/ShadowRenderer;->cornerShadowPaint:Landroid/graphics/Paint;
-
-    new-instance v6, Landroid/graphics/RadialGradient;
+    new-instance v2, Landroid/graphics/RadialGradient;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->centerX()F
 
@@ -195,21 +193,33 @@
 
     sget-object v18, Lcom/google/android/material/shadow/ShadowRenderer;->cornerColors:[I
 
-    sget-object v19, Lcom/google/android/material/shadow/ShadowRenderer;->cornerPositions:[F
-
     sget-object v20, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    move-object v14, v6
+    move-object v14, v2
 
     invoke-direct/range {v14 .. v20}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    invoke-virtual {v2, v6}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    iget-object v9, v1, Lcom/google/android/material/shadow/ShadowRenderer;->cornerShadowPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v9, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     invoke-virtual/range {p4 .. p4}, Landroid/graphics/Canvas;->save()I
 
     move-object/from16 v2, p1
 
     invoke-virtual {v7, v2}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
+
+    invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
+
+    move-result v2
+
+    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
+
+    move-result v9
+
+    div-float/2addr v2, v9
+
+    invoke-virtual {v7, v6, v2}, Landroid/graphics/Canvas;->scale(FF)V
 
     if-nez v8, :cond_3
 

@@ -22,6 +22,9 @@
 .method public abstract getDefaultThemeResId(Landroid/content/Context;)I
 .end method
 
+.method public abstract getDefaultTitleResId()I
+.end method
+
 .method public abstract getSelectedDays()Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -76,4 +79,12 @@
 .end method
 
 .method public abstract select(J)V
+.end method
+
+.method public abstract setSelection(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TS;)V"
+        }
+    .end annotation
 .end method

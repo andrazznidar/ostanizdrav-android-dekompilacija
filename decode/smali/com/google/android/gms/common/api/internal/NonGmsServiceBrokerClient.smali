@@ -1,20 +1,10 @@
 .class public final Lcom/google/android/gms/common/api/internal/NonGmsServiceBrokerClient;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
 .implements Lcom/google/android/gms/common/api/Api$Client;
-
-
-# static fields
-.field public static final zaa:Ljava/lang/String;
-
-
-# instance fields
-.field public zak:Ljava/lang/String;
-
-.field public zal:Ljava/lang/String;
+.implements Landroid/content/ServiceConnection;
 
 
 # direct methods
@@ -22,12 +12,6 @@
     .locals 1
 
     const-class v0, Lcom/google/android/gms/common/api/internal/NonGmsServiceBrokerClient;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/common/api/internal/NonGmsServiceBrokerClient;->zaa:Ljava/lang/String;
 
     return-void
 .end method
@@ -46,16 +30,6 @@
     const/4 p1, 0x0
 
     throw p1
-.end method
-
-.method public final disconnect()V
-    .locals 1
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public final disconnect(Ljava/lang/String;)V
@@ -85,13 +59,15 @@
 .end method
 
 .method public final getEndpointPackageName()Ljava/lang/String;
-    .locals 1
+    .locals 2
     .annotation build Landroidx/annotation/RecentlyNonNull;
     .end annotation
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/airbnb/lottie/R$attr;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "null reference"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     throw v0
 .end method
@@ -101,7 +77,7 @@
     .annotation build Landroidx/annotation/RecentlyNullable;
     .end annotation
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/internal/NonGmsServiceBrokerClient;->zak:Ljava/lang/String;
+    const/4 v0, 0x0
 
     return-object v0
 .end method

@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
-    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$000()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
+    invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
     move-result-object v0
 
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$1;)V
+.method public synthetic constructor <init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder-IA;)V
     .locals 0
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS$Builder;-><init>()V
@@ -59,7 +59,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$mclearAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;)V
 
     return-object p0
 .end method
@@ -73,7 +73,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;)V
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$mclearPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;)V
 
     return-object p0
 .end method
@@ -143,7 +143,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$mmergeAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
 
     return-object p0
 .end method
@@ -157,7 +157,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$700(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPADataIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$mmergePayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPADataIOS;)V
 
     return-object p0
 .end method
@@ -171,7 +171,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$msetAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS$Builder;)V
 
     return-object p0
 .end method
@@ -185,7 +185,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$msetAuthentication(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpacIos$PPACIOS;)V
 
     return-object p0
 .end method
@@ -199,7 +199,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$600(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPADataIOS$Builder;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$msetPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPADataIOS$Builder;)V
 
     return-object p0
 .end method
@@ -213,7 +213,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;
 
-    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->access$500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPADataIOS;)V
+    invoke-static {v0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;->-$$Nest$msetPayload(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaDataRequestIos$PPADataRequestIOS;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPADataIOS;)V
 
     return-object p0
 .end method

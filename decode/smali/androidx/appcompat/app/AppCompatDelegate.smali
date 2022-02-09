@@ -19,12 +19,14 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
     new-instance v0, Landroidx/collection/ArraySet;
 
-    invoke-direct {v0}, Landroidx/collection/ArraySet;-><init>()V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroidx/collection/ArraySet;-><init>(I)V
 
     sput-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActivityDelegates:Landroidx/collection/ArraySet;
 
@@ -45,38 +47,8 @@
     return-void
 .end method
 
-.method public static create(Landroid/app/Activity;Landroidx/appcompat/app/AppCompatCallback;)Landroidx/appcompat/app/AppCompatDelegate;
-    .locals 2
-
-    new-instance v0, Landroidx/appcompat/app/AppCompatDelegateImpl;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1, p1, p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;-><init>(Landroid/content/Context;Landroid/view/Window;Landroidx/appcompat/app/AppCompatCallback;Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
-.method public static create(Landroid/app/Dialog;Landroidx/appcompat/app/AppCompatCallback;)Landroidx/appcompat/app/AppCompatDelegate;
-    .locals 3
-
-    new-instance v0, Landroidx/appcompat/app/AppCompatDelegateImpl;
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2, p1, p0}, Landroidx/appcompat/app/AppCompatDelegateImpl;-><init>(Landroid/content/Context;Landroid/view/Window;Landroidx/appcompat/app/AppCompatCallback;Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
 .method public static removeDelegateFromActives(Landroidx/appcompat/app/AppCompatDelegate;)V
-    .locals 4
+    .locals 3
 
     sget-object v0, Landroidx/appcompat/app/AppCompatDelegate;->sActivityDelegatesLock:Ljava/lang/Object;
 
@@ -88,40 +60,33 @@
     invoke-virtual {v1}, Landroidx/collection/ArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
     :goto_0
-    move-object v2, v1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    check-cast v2, Landroidx/collection/MapCollections$ArrayIterator;
+    move-result v2
 
-    :try_start_1
-    invoke-virtual {v2}, Landroidx/collection/MapCollections$ArrayIterator;->hasNext()Z
+    if-eqz v2, :cond_2
 
-    move-result v3
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    if-eqz v3, :cond_2
+    move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast v2, Ljava/lang/ref/WeakReference;
 
-    move-result-object v3
+    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/ref/WeakReference;
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    check-cast v2, Landroidx/appcompat/app/AppCompatDelegate;
 
-    move-result-object v3
+    if-eq v2, p0, :cond_1
 
-    check-cast v3, Landroidx/appcompat/app/AppCompatDelegate;
-
-    if-eq v3, p0, :cond_1
-
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
     :cond_1
-    invoke-interface {v2}, Ljava/util/Iterator;->remove()V
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
@@ -134,8 +99,8 @@
     move-exception p0
 
     monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
@@ -145,16 +110,64 @@
 .method public abstract addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 .end method
 
+.method public attachBaseContext2(Landroid/content/Context;)Landroid/content/Context;
+    .locals 0
+
+    return-object p1
+.end method
+
+.method public abstract findViewById(I)Landroid/view/View;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Landroid/view/View;",
+            ">(I)TT;"
+        }
+    .end annotation
+.end method
+
+.method public getLocalNightMode()I
+    .locals 1
+
+    const/16 v0, -0x64
+
+    return v0
+.end method
+
+.method public abstract getMenuInflater()Landroid/view/MenuInflater;
+.end method
+
+.method public abstract getSupportActionBar()Landroidx/appcompat/app/ActionBar;
+.end method
+
 .method public abstract installViewFactory()V
 .end method
 
 .method public abstract invalidateOptionsMenu()V
 .end method
 
+.method public abstract onConfigurationChanged(Landroid/content/res/Configuration;)V
+.end method
+
 .method public abstract onCreate(Landroid/os/Bundle;)V
 .end method
 
 .method public abstract onDestroy()V
+.end method
+
+.method public abstract onPostCreate(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract onPostResume()V
+.end method
+
+.method public abstract onSaveInstanceState(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract onStart()V
+.end method
+
+.method public abstract onStop()V
 .end method
 
 .method public abstract requestWindowFeature(I)Z
@@ -167,6 +180,12 @@
 .end method
 
 .method public abstract setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+.end method
+
+.method public setTheme(I)V
+    .locals 0
+
+    return-void
 .end method
 
 .method public abstract setTitle(Ljava/lang/CharSequence;)V

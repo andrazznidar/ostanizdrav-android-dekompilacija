@@ -30,64 +30,6 @@
     return-void
 .end method
 
-.method public static newConstraintProxyUpdateIntent(Landroid/content/Context;ZZZZ)Landroid/content/Intent;
-    .locals 3
-    .annotation system Ldalvik/annotation/MethodParameters;
-        accessFlags = {
-            0x0,
-            0x0,
-            0x0,
-            0x0,
-            0x0
-        }
-        names = {
-            "context",
-            "batteryNotLowProxyEnabled",
-            "batteryChargingProxyEnabled",
-            "storageNotLowProxyEnabled",
-            "networkStateProxyEnabled"
-        }
-    .end annotation
-
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v1, "androidx.work.impl.background.systemalarm.UpdateProxies"
-
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    new-instance v1, Landroid/content/ComponentName;
-
-    const-class v2, Landroidx/work/impl/background/systemalarm/ConstraintProxyUpdateReceiver;
-
-    invoke-direct {v1, p0, v2}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    const-string p0, "KEY_BATTERY_NOT_LOW_PROXY_ENABLED"
-
-    invoke-virtual {v0, p0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    move-result-object p0
-
-    const-string p1, "KEY_BATTERY_CHARGING_PROXY_ENABLED"
-
-    invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    move-result-object p0
-
-    const-string p1, "KEY_STORAGE_NOT_LOW_PROXY_ENABLED"
-
-    invoke-virtual {p0, p1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    move-result-object p0
-
-    const-string p1, "KEY_NETWORK_STATE_PROXY_ENABLED"
-
-    invoke-virtual {p0, p1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    return-object v0
-.end method
-
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V

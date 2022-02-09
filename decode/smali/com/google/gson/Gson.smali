@@ -235,9 +235,9 @@
 
     iput-object v7, v0, Lcom/google/gson/Gson;->calls:Ljava/lang/ThreadLocal;
 
-    new-instance v7, Ljava/util/concurrent/ConcurrentHashMap;
+    new-instance v7, Lj$/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v7}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    invoke-direct {v7}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v7, v0, Lcom/google/gson/Gson;->typeTokenCache:Ljava/util/Map;
 
@@ -303,43 +303,43 @@
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    sget-object v7, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v8, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v8, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-object/from16 v7, p17
+    move-object/from16 v8, p17
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    sget-object v7, Lcom/google/gson/internal/bind/TypeAdapters;->STRING_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v8, Lcom/google/gson/internal/bind/TypeAdapters;->STRING_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Lcom/google/gson/internal/bind/TypeAdapters;->INTEGER_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v8, Lcom/google/gson/internal/bind/TypeAdapters;->INTEGER_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Lcom/google/gson/internal/bind/TypeAdapters;->BOOLEAN_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v8, Lcom/google/gson/internal/bind/TypeAdapters;->BOOLEAN_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Lcom/google/gson/internal/bind/TypeAdapters;->BYTE_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v8, Lcom/google/gson/internal/bind/TypeAdapters;->BYTE_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Lcom/google/gson/internal/bind/TypeAdapters;->SHORT_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v8, Lcom/google/gson/internal/bind/TypeAdapters;->SHORT_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Lcom/google/gson/LongSerializationPolicy;->DEFAULT:Lcom/google/gson/LongSerializationPolicy;
+    sget-object v8, Lcom/google/gson/LongSerializationPolicy;->DEFAULT:Lcom/google/gson/LongSerializationPolicy;
 
-    if-ne v6, v7, :cond_0
+    if-ne v6, v8, :cond_0
 
     sget-object v6, Lcom/google/gson/internal/bind/TypeAdapters;->LONG:Lcom/google/gson/TypeAdapter;
 
@@ -351,41 +351,41 @@
     invoke-direct {v6}, Lcom/google/gson/Gson$3;-><init>()V
 
     :goto_0
-    sget-object v7, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v8, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    const-class v8, Ljava/lang/Long;
+    const-class v9, Ljava/lang/Long;
 
-    new-instance v9, Lcom/google/gson/internal/bind/TypeAdapters$33;
+    invoke-static {v8, v9, v6}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v9, v7, v8, v6}, Lcom/google/gson/internal/bind/TypeAdapters$33;-><init>(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    move-result-object v8
 
-    invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+    sget-object v8, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
-    const-class v8, Ljava/lang/Double;
+    const-class v9, Ljava/lang/Double;
 
     if-eqz v5, :cond_1
 
-    sget-object v9, Lcom/google/gson/internal/bind/TypeAdapters;->DOUBLE:Lcom/google/gson/TypeAdapter;
+    sget-object v10, Lcom/google/gson/internal/bind/TypeAdapters;->DOUBLE:Lcom/google/gson/TypeAdapter;
 
     goto :goto_1
 
     :cond_1
-    new-instance v9, Lcom/google/gson/Gson$1;
+    new-instance v10, Lcom/google/gson/Gson$1;
 
-    invoke-direct {v9, p0}, Lcom/google/gson/Gson$1;-><init>(Lcom/google/gson/Gson;)V
+    invoke-direct {v10, p0}, Lcom/google/gson/Gson$1;-><init>(Lcom/google/gson/Gson;)V
 
     :goto_1
-    new-instance v10, Lcom/google/gson/internal/bind/TypeAdapters$33;
+    invoke-static {v8, v9, v10}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v10, v7, v8, v9}, Lcom/google/gson/internal/bind/TypeAdapters$33;-><init>(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    move-result-object v8
 
-    invoke-virtual {v3, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v7, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    sget-object v8, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    const-class v8, Ljava/lang/Float;
+    const-class v9, Ljava/lang/Float;
 
     if-eqz v5, :cond_2
 
@@ -399,11 +399,11 @@
     invoke-direct {v5, p0}, Lcom/google/gson/Gson$2;-><init>(Lcom/google/gson/Gson;)V
 
     :goto_2
-    new-instance v9, Lcom/google/gson/internal/bind/TypeAdapters$33;
+    invoke-static {v8, v9, v5}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v9, v7, v8, v5}, Lcom/google/gson/internal/bind/TypeAdapters$33;-><init>(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    move-result-object v5
 
-    invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     sget-object v5, Lcom/google/gson/internal/bind/TypeAdapters;->NUMBER_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
@@ -419,35 +419,35 @@
 
     const-class v5, Ljava/util/concurrent/atomic/AtomicLong;
 
-    new-instance v7, Lcom/google/gson/Gson$4;
+    new-instance v8, Lcom/google/gson/Gson$4;
 
-    invoke-direct {v7, v6}, Lcom/google/gson/Gson$4;-><init>(Lcom/google/gson/TypeAdapter;)V
+    invoke-direct {v8, v6}, Lcom/google/gson/Gson$4;-><init>(Lcom/google/gson/TypeAdapter;)V
 
-    new-instance v8, Lcom/google/gson/TypeAdapter$1;
+    new-instance v9, Lcom/google/gson/TypeAdapter$1;
 
-    invoke-direct {v8, v7}, Lcom/google/gson/TypeAdapter$1;-><init>(Lcom/google/gson/TypeAdapter;)V
+    invoke-direct {v9, v8}, Lcom/google/gson/TypeAdapter$1;-><init>(Lcom/google/gson/TypeAdapter;)V
 
-    new-instance v7, Lcom/google/gson/internal/bind/TypeAdapters$32;
+    invoke-static {v5, v9}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v7, v5, v8}, Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    move-result-object v5
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const-class v5, Ljava/util/concurrent/atomic/AtomicLongArray;
 
-    new-instance v7, Lcom/google/gson/Gson$5;
+    new-instance v8, Lcom/google/gson/Gson$5;
 
-    invoke-direct {v7, v6}, Lcom/google/gson/Gson$5;-><init>(Lcom/google/gson/TypeAdapter;)V
+    invoke-direct {v8, v6}, Lcom/google/gson/Gson$5;-><init>(Lcom/google/gson/TypeAdapter;)V
 
     new-instance v6, Lcom/google/gson/TypeAdapter$1;
 
-    invoke-direct {v6, v7}, Lcom/google/gson/TypeAdapter$1;-><init>(Lcom/google/gson/TypeAdapter;)V
+    invoke-direct {v6, v8}, Lcom/google/gson/TypeAdapter$1;-><init>(Lcom/google/gson/TypeAdapter;)V
 
-    new-instance v7, Lcom/google/gson/internal/bind/TypeAdapters$32;
+    invoke-static {v5, v6}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v7, v5, v6}, Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    move-result-object v5
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     sget-object v5, Lcom/google/gson/internal/bind/TypeAdapters;->ATOMIC_INTEGER_ARRAY_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
@@ -469,21 +469,21 @@
 
     sget-object v6, Lcom/google/gson/internal/bind/TypeAdapters;->BIG_DECIMAL:Lcom/google/gson/TypeAdapter;
 
-    new-instance v7, Lcom/google/gson/internal/bind/TypeAdapters$32;
+    invoke-static {v5, v6}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v7, v5, v6}, Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    move-result-object v5
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const-class v5, Ljava/math/BigInteger;
 
     sget-object v6, Lcom/google/gson/internal/bind/TypeAdapters;->BIG_INTEGER:Lcom/google/gson/TypeAdapter;
 
-    new-instance v7, Lcom/google/gson/internal/bind/TypeAdapters$32;
+    invoke-static {v5, v6}, Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-direct {v7, v5, v6}, Lcom/google/gson/internal/bind/TypeAdapters$32;-><init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    move-result-object v5
 
-    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     sget-object v5, Lcom/google/gson/internal/bind/TypeAdapters;->URL_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
@@ -543,43 +543,33 @@
 
     new-instance v5, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;
 
-    iget-object v6, v0, Lcom/google/gson/Gson;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
-
-    invoke-direct {v5, v6}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
+    invoke-direct {v5, v7}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     new-instance v5, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;
 
-    iget-object v6, v0, Lcom/google/gson/Gson;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
-
-    invoke-direct {v5, v6, v4}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Z)V
+    invoke-direct {v5, v7, v4}, Lcom/google/gson/internal/bind/MapTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Z)V
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     new-instance v4, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
 
-    iget-object v5, v0, Lcom/google/gson/Gson;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
-
-    invoke-direct {v4, v5}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
+    invoke-direct {v4, v7}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
 
     iput-object v4, v0, Lcom/google/gson/Gson;->jsonAdapterFactory:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget-object v4, Lcom/google/gson/internal/bind/TypeAdapters;->ENUM_FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sget-object v5, Lcom/google/gson/internal/bind/TypeAdapters;->ENUM_FACTORY:Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    new-instance v4, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;
+    new-instance v5, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;
 
-    iget-object v5, v0, Lcom/google/gson/Gson;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
+    invoke-direct {v5, v7, p2, p1, v4}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/FieldNamingStrategy;Lcom/google/gson/internal/Excluder;Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;)V
 
-    iget-object v6, v0, Lcom/google/gson/Gson;->jsonAdapterFactory:Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;
-
-    invoke-direct {v4, v5, p2, p1, v6}, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/FieldNamingStrategy;Lcom/google/gson/internal/Excluder;Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;)V
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
@@ -631,14 +621,14 @@
 
 
 # virtual methods
-.method public fromJson(Ljava/io/Reader;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+.method public fromJson(Lcom/google/gson/stream/JsonReader;Ljava/lang/reflect/Type;)Ljava/lang/Object;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ljava/io/Reader;",
+            "Lcom/google/gson/stream/JsonReader;",
             "Ljava/lang/reflect/Type;",
             ")TT;"
         }
@@ -651,20 +641,14 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/google/gson/stream/JsonReader;
-
-    invoke-direct {v0, p1}, Lcom/google/gson/stream/JsonReader;-><init>(Ljava/io/Reader;)V
-
-    iget-boolean p1, p0, Lcom/google/gson/Gson;->lenient:Z
-
-    iput-boolean p1, v0, Lcom/google/gson/stream/JsonReader;->lenient:Z
+    iget-boolean v0, p1, Lcom/google/gson/stream/JsonReader;->lenient:Z
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Lcom/google/gson/stream/JsonReader;->lenient:Z
+    iput-boolean v1, p1, Lcom/google/gson/stream/JsonReader;->lenient:Z
 
     :try_start_0
-    invoke-virtual {v0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     const/4 v1, 0x0
 
@@ -676,7 +660,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p2, v0}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    invoke-virtual {p2, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
 
     move-result-object p2
     :try_end_0
@@ -686,12 +670,14 @@
     .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    iput-boolean v0, p1, Lcom/google/gson/stream/JsonReader;->lenient:Z
+
+    return-object p2
 
     :catchall_0
     move-exception p2
 
-    goto :goto_2
+    goto :goto_0
 
     :catch_0
     move-exception p2
@@ -746,25 +732,74 @@
     :catch_3
     move-exception p2
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_0
 
     const/4 p2, 0x0
 
+    iput-boolean v0, p1, Lcom/google/gson/stream/JsonReader;->lenient:Z
+
+    return-object p2
+
+    :cond_0
+    :try_start_2
+    new-instance v1, Lcom/google/gson/JsonSyntaxException;
+
+    invoke-direct {v1, p2}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
     :goto_0
+    iput-boolean v0, p1, Lcom/google/gson/stream/JsonReader;->lenient:Z
+
+    throw p2
+.end method
+
+.method public fromJson(Ljava/io/Reader;Ljava/lang/reflect/Type;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/io/Reader;",
+            "Ljava/lang/reflect/Type;",
+            ")TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/gson/JsonIOException;,
+            Lcom/google/gson/JsonSyntaxException;
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/gson/stream/JsonReader;
+
+    invoke-direct {v0, p1}, Lcom/google/gson/stream/JsonReader;-><init>(Ljava/io/Reader;)V
+
+    iget-boolean p1, p0, Lcom/google/gson/Gson;->lenient:Z
+
     iput-boolean p1, v0, Lcom/google/gson/stream/JsonReader;->lenient:Z
 
-    if-eqz p2, :cond_1
-
-    :try_start_2
-    invoke-virtual {v0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+    invoke-virtual {p0, v0, p2}, Lcom/google/gson/Gson;->fromJson(Lcom/google/gson/stream/JsonReader;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object p1
 
+    if-eqz p1, :cond_1
+
+    :try_start_0
+    invoke-virtual {v0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+
+    move-result-object p2
+
     sget-object v0, Lcom/google/gson/stream/JsonToken;->END_DOCUMENT:Lcom/google/gson/stream/JsonToken;
 
-    if-ne p1, v0, :cond_0
+    if-ne p2, v0, :cond_0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     new-instance p1, Lcom/google/gson/JsonIOException;
@@ -774,11 +809,11 @@
     invoke-direct {p1, p2}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_2
-    .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_2 .. :try_end_2} :catch_5
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_4
+    :try_end_0
+    .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_4
+    :catch_0
     move-exception p1
 
     new-instance p2, Lcom/google/gson/JsonIOException;
@@ -787,7 +822,7 @@
 
     throw p2
 
-    :catch_5
+    :catch_1
     move-exception p1
 
     new-instance p2, Lcom/google/gson/JsonSyntaxException;
@@ -797,23 +832,8 @@
     throw p2
 
     :cond_1
-    :goto_1
-    return-object p2
-
-    :cond_2
-    :try_start_3
-    new-instance v1, Lcom/google/gson/JsonSyntaxException;
-
-    invoke-direct {v1, p2}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :goto_2
-    iput-boolean p1, v0, Lcom/google/gson/stream/JsonReader;->lenient:Z
-
-    throw p2
+    :goto_0
+    return-object p1
 .end method
 
 .method public fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
@@ -1279,7 +1299,7 @@
 .end method
 
 .method public toJson(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     if-nez p1, :cond_0
 
@@ -1302,13 +1322,23 @@
 
     move-result-object v0
 
-    new-instance v1, Ljava/io/StringWriter;
+    invoke-virtual {p0, p1, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
+    move-result-object p1
 
-    invoke-virtual {p0, p1, v0, v1}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V
+    return-object p1
+.end method
 
-    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+.method public toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/io/StringWriter;
+
+    invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/gson/Gson;->toJson(Ljava/lang/Object;Ljava/lang/reflect/Type;Ljava/lang/Appendable;)V
+
+    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -1614,7 +1644,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "{serializeNulls:"
+    const-string/jumbo v1, "{serializeNulls:"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1638,7 +1668,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, "}"
+    const-string/jumbo v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -26,75 +26,73 @@
 
 # virtual methods
 .method public map(Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;)Lde/rki/coronawarnapp/appconfig/ExposureWindowRiskCalculationConfig;
-    .locals 19
-
-    const-string v0, "rawConfig"
-
-    move-object/from16 v1, p1
-
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 18
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->hasRiskCalculationParameters()Z
 
     move-result v0
 
+    const/4 v1, 0x0
+
     const/4 v2, 0x1
 
-    const/4 v3, 0x0
-
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->hasDiagnosisKeysDataMapping()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->getRiskCalculationParameters()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;
 
     move-result-object v0
 
-    new-instance v13, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper$ExposureWindowRiskCalculationContainer;
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTransmissionRiskValueMappingList()Ljava/util/List;
 
-    const-string v3, "riskCalculationParameters"
+    move-result-object v3
 
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    if-nez v3, :cond_b
+
+    new-instance v1, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper$ExposureWindowRiskCalculationContainer;
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getMinutesAtAttenuationFiltersList()Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v6
 
     const-string v3, "riskCalculationParameter\u2026sAtAttenuationFiltersList"
 
-    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getMinutesAtAttenuationWeightsList()Ljava/util/List;
 
-    move-result-object v5
+    move-result-object v7
 
     const-string v3, "riskCalculationParameter\u2026sAtAttenuationWeightsList"
 
-    invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v7, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTrlEncoding()Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;
 
-    move-result-object v6
+    move-result-object v8
 
-    const-string v3, "riskCalculationParameter\u2026             .trlEncoding"
+    const-string v3, "riskCalculationParameters.trlEncoding"
 
-    invoke-static {v6, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v8, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTrlFiltersList()Ljava/util/List;
 
-    move-result-object v7
+    move-result-object v9
 
-    const-string v3, "riskCalculationParameter\u2026          .trlFiltersList"
+    const-string v3, "riskCalculationParameters.trlFiltersList"
 
-    invoke-static {v7, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTransmissionRiskLevelMultiplier()D
-
-    move-result-wide v8
+    invoke-static {v9, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getNormalizedTimePerEWToRiskLevelMappingList()Ljava/util/List;
 
@@ -108,73 +106,75 @@
 
     move-result-object v11
 
-    const-string v0, "riskCalculationParameter\u2026DayToRiskLevelMappingList"
+    const-string v3, "riskCalculationParameter\u2026DayToRiskLevelMappingList"
 
-    invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v11, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$RiskCalculationParameters;->getTransmissionRiskValueMappingList()Ljava/util/List;
+
+    move-result-object v12
+
+    const-string v0, "riskCalculationParameter\u2026ssionRiskValueMappingList"
+
+    invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->getDiagnosisKeysDataMapping()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
 
     move-result-object v0
 
-    const-string v3, "diagnosisKeyDataMapping"
-
-    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getDaysSinceOnsetToInfectiousnessMap()Ljava/util/Map;
 
     move-result-object v0
 
-    const/4 v3, 0x0
-
     if-eqz v0, :cond_0
 
-    move v12, v2
+    move v3, v2
 
     goto :goto_0
 
     :cond_0
-    move v12, v3
+    move v3, v4
 
     :goto_0
-    const-string v14, "daysSinceOnsetToInfectiousness must not be null."
+    const-string v5, "daysSinceOnsetToInfectiousness must not be null."
 
-    invoke-static {v12, v14}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v3, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
-    move-result v12
+    move-result v3
 
-    const/16 v14, 0x1d
+    const/16 v5, 0x1d
 
-    if-gt v12, v14, :cond_1
+    if-gt v3, v5, :cond_1
 
-    move v12, v2
+    move v3, v2
 
     goto :goto_1
 
     :cond_1
-    move v12, v3
+    move v3, v4
 
     :goto_1
-    new-array v15, v2, [Ljava/lang/Object;
+    new-array v13, v2, [Ljava/lang/Object;
 
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v16
+    move-result-object v14
 
-    aput-object v16, v15, v3
+    aput-object v14, v13, v4
 
-    const-string v2, "the size of daysSinceOnsetToInfectiousness exceeds maximum size %d."
+    const-string/jumbo v14, "the size of daysSinceOnsetToInfectiousness exceeds maximum size %d."
 
-    invoke-static {v12, v2, v15}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v3, v14, v13}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    new-array v2, v14, [Ljava/lang/Integer;
+    new-array v3, v5, [Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v12
+    move-result-object v5
 
-    invoke-static {v2, v12}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v3, v5}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -187,128 +187,118 @@
     :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v12
+    move-result v5
 
-    const-string v14, "Invalid value of Infectiousness %d"
+    const-string v13, "Invalid value of Infectiousness %d"
 
-    if-eqz v12, :cond_4
+    if-eqz v5, :cond_4
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v5
 
-    check-cast v12, Ljava/util/Map$Entry;
+    check-cast v5, Ljava/util/Map$Entry;
 
-    invoke-interface {v12}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v14
 
-    check-cast v15, Ljava/lang/Integer;
+    check-cast v14, Ljava/lang/Integer;
 
-    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
+
+    move-result v14
+
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    invoke-static {v14}, Ljava/lang/Math;->abs(I)I
 
     move-result v15
 
-    invoke-interface {v12}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    const/16 v4, 0xe
 
-    move-result-object v12
+    if-gt v15, v4, :cond_2
 
-    check-cast v12, Ljava/lang/Integer;
-
-    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
-
-    move-result v12
-
-    invoke-static {v15}, Ljava/lang/Math;->abs(I)I
-
-    move-result v3
-
-    move-object/from16 v18, v0
-
-    const/16 v0, 0xe
-
-    if-gt v3, v0, :cond_2
-
-    const/4 v0, 0x1
+    move v4, v2
 
     goto :goto_3
 
     :cond_2
-    const/4 v0, 0x0
+    const/4 v4, 0x0
 
     :goto_3
-    const/4 v3, 0x1
+    new-array v15, v2, [Ljava/lang/Object;
 
-    new-array v1, v3, [Ljava/lang/Object;
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v17
 
-    move-result-object v16
+    const/16 v16, 0x0
 
-    const/16 v17, 0x0
+    aput-object v17, v15, v16
 
-    aput-object v16, v1, v17
+    const-string v2, "Invalid day since onset %d"
 
-    const-string v3, "Invalid day since onset %d"
+    invoke-static {v4, v2, v15}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v0, v3, v1}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v5}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
-    invoke-static {v12}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    move-result-object v2
 
-    move-result-object v0
+    if-eqz v2, :cond_3
 
-    if-eqz v0, :cond_3
-
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_4
 
     :cond_3
-    move/from16 v0, v17
+    move/from16 v2, v16
 
     :goto_4
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
-    new-array v3, v1, [Ljava/lang/Object;
+    new-array v15, v4, [Ljava/lang/Object;
 
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v4
 
-    aput-object v1, v3, v17
+    aput-object v4, v15, v16
 
-    invoke-static {v0, v14, v3}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v13, v15}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    add-int/lit8 v15, v15, 0xe
+    add-int/lit8 v14, v14, 0xe
 
-    aput-object v1, v2, v15
+    aput-object v4, v3, v14
 
-    move-object/from16 v1, p1
+    const/4 v2, 0x1
 
-    move-object/from16 v0, v18
-
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     goto :goto_2
 
     :cond_4
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->getDiagnosisKeysDataMapping()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "diagnosisKeysDataMapping"
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getInfectiousnessWhenDaysSinceOnsetMissing()I
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v2
 
-    invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getInfectiousnessWhenDaysSinceOnsetMissing()I
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
+    invoke-static {v2}, Lcom/google/android/gms/nearby/exposurenotification/zzj;->zza(I)Lcom/google/android/gms/nearby/exposurenotification/zzj;
 
     move-result-object v3
 
@@ -322,146 +312,166 @@
     const/4 v3, 0x0
 
     :goto_5
-    const/4 v12, 0x1
+    const/4 v4, 0x1
 
-    new-array v15, v12, [Ljava/lang/Object;
+    new-array v5, v4, [Ljava/lang/Object;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    const/4 v12, 0x0
+    const/4 v4, 0x0
 
-    aput-object v1, v15, v12
+    aput-object v2, v5, v4
 
-    invoke-static {v3, v14, v15}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v3, v13, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual/range {p1 .. p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$ApplicationConfigurationAndroid;->getDiagnosisKeysDataMapping()Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;
 
     move-result-object v3
 
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-virtual {v3}, Lde/rki/coronawarnapp/server/protocols/internal/v2/AppConfigAndroid$DiagnosisKeysDataMapping;->getReportTypeWhenMissing()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_6
+    if-eqz v3, :cond_6
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     goto :goto_6
 
     :cond_6
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     :goto_6
-    const-string v12, "Invalid reportTypeWhenMissing value"
+    const-string v5, "Invalid reportTypeWhenMissing value"
 
-    invoke-static {v3, v12}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-ltz v2, :cond_7
+    if-ltz v3, :cond_7
 
-    const/4 v3, 0x5
+    const/4 v4, 0x5
 
-    if-gt v2, v3, :cond_7
+    if-gt v3, v4, :cond_7
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     goto :goto_7
 
     :cond_7
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     :goto_7
-    const/4 v12, 0x1
+    const/4 v5, 0x1
 
-    new-array v14, v12, [Ljava/lang/Object;
+    new-array v13, v5, [Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v12
+    move-result-object v5
 
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
-    aput-object v12, v14, v15
+    aput-object v5, v13, v14
 
-    const-string v12, "Invalid value of ReportType %d"
+    const-string v5, "Invalid value of ReportType %d"
 
-    invoke-static {v3, v12, v14}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v4, v5, v13}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     if-eqz v0, :cond_8
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     goto :goto_8
 
     :cond_8
-    move v3, v15
+    const/4 v4, 0x0
 
     :goto_8
-    const-string v12, "Must set daysSinceOnsetToInfectiousness"
+    const-string v5, "Must set daysSinceOnsetToInfectiousness"
 
-    invoke-static {v3, v12}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-eqz v2, :cond_9
+    if-eqz v3, :cond_9
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     goto :goto_9
 
     :cond_9
-    move v3, v15
+    const/4 v4, 0x0
 
     :goto_9
-    const-string v12, "Must set reportTypeWhenMissing"
+    const-string v5, "Must set reportTypeWhenMissing"
 
-    invoke-static {v3, v12}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    if-eqz v1, :cond_a
+    if-eqz v2, :cond_a
 
-    const/4 v15, 0x1
+    const/4 v4, 0x1
+
+    goto :goto_a
 
     :cond_a
-    const-string v3, "Must set infectiousnessWhenDaysSinceOnsetMissing"
+    const/4 v4, 0x0
 
-    invoke-static {v15, v3}, Lcom/airbnb/lottie/R$attr;->checkArgument(ZLjava/lang/Object;)V
+    :goto_a
+    const-string v5, "Must set infectiousnessWhenDaysSinceOnsetMissing"
 
-    new-instance v12, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;
+    invoke-static {v4, v5}, Lcom/google/android/gms/common/internal/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    new-instance v13, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;
 
-    move-result v1
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-direct {v12, v0, v2, v1}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;-><init>(Ljava/util/List;II)V
+    move-result v2
 
-    const-string v0, "DiagnosisKeysDataMapping\u2026                }.build()"
+    invoke-direct {v13, v0, v3, v2}, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;-><init>(Ljava/util/List;II)V
 
-    invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-object v5, v1
 
-    move-object v3, v13
+    invoke-direct/range {v5 .. v13}, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper$ExposureWindowRiskCalculationContainer;-><init>(Ljava/util/List;Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;)V
 
-    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/appconfig/mapping/ExposureWindowRiskCalculationConfigMapper$ExposureWindowRiskCalculationContainer;-><init>(Ljava/util/List;Ljava/util/List;Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$TransmissionRiskLevelEncoding;Ljava/util/List;DLjava/util/List;Ljava/util/List;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;)V
-
-    return-object v13
+    return-object v1
 
     :cond_b
+    const-string v0, "Transmission Risk Value Mapping List is empty which indicates an outdated app config"
+
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v2, v0, v3}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    new-instance v2, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v1, v0, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+
+    throw v2
+
+    :cond_c
+    move v3, v2
+
     new-instance v0, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
 
-    const-string v1, "Diagnosis Keys Data Mapping is missing"
+    const-string v2, "Diagnosis Keys Data Mapping is missing"
 
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v3, v1, v2}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
 
     throw v0
 
-    :cond_c
+    :cond_d
+    move v3, v2
+
     new-instance v0, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;
 
-    const-string v1, "Risk Calculation Parameters are missing"
+    const-string v2, "Risk Calculation Parameters are missing"
 
-    invoke-direct {v0, v3, v1, v2}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3}, Lde/rki/coronawarnapp/appconfig/internal/ApplicationConfigurationInvalidException;-><init>(Ljava/lang/Exception;Ljava/lang/String;I)V
 
     throw v0
 .end method

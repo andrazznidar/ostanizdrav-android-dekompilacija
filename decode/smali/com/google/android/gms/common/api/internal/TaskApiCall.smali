@@ -1,6 +1,6 @@
 .class public abstract Lcom/google/android/gms/common/api/internal/TaskApiCall;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
@@ -33,10 +33,6 @@
 # direct methods
 .method public constructor <init>([Lcom/google/android/gms/common/Feature;ZI)V
     .locals 0
-    .param p1    # [Lcom/google/android/gms/common/Feature;
-        .annotation build Landroidx/annotation/RecentlyNonNull;
-        .end annotation
-    .end param
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -59,30 +55,4 @@
     iput p3, p0, Lcom/google/android/gms/common/api/internal/TaskApiCall;->zac:I
 
     return-void
-.end method
-
-.method public static builder()Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
-    .locals 2
-    .annotation build Landroidx/annotation/RecentlyNonNull;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<A::",
-            "Lcom/google/android/gms/common/api/Api$AnyClient;",
-            "ResultT:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder<",
-            "TA;TResultT;>;"
-        }
-    .end annotation
-
-    new-instance v0, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/internal/TaskApiCall$Builder;-><init>(Lcom/google/android/gms/common/api/internal/zaci;)V
-
-    return-object v0
 .end method

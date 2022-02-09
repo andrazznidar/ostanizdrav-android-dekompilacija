@@ -9,7 +9,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;,
         Landroidx/security/crypto/EncryptedSharedPreferences$Editor;,
         Landroidx/security/crypto/EncryptedSharedPreferences$PrefValueEncryptionScheme;,
         Landroidx/security/crypto/EncryptedSharedPreferences$PrefKeyEncryptionScheme;
@@ -32,8 +31,6 @@
     .end annotation
 .end field
 
-.field public final mMasterKeyAlias:Ljava/lang/String;
-
 .field public final mSharedPreferences:Landroid/content/SharedPreferences;
 
 .field public final mValueAead:Lcom/google/crypto/tink/Aead;
@@ -48,8 +45,6 @@
     iput-object p1, p0, Landroidx/security/crypto/EncryptedSharedPreferences;->mFileName:Ljava/lang/String;
 
     iput-object p3, p0, Landroidx/security/crypto/EncryptedSharedPreferences;->mSharedPreferences:Landroid/content/SharedPreferences;
-
-    iput-object p2, p0, Landroidx/security/crypto/EncryptedSharedPreferences;->mMasterKeyAlias:Ljava/lang/String;
 
     iput-object p4, p0, Landroidx/security/crypto/EncryptedSharedPreferences;->mValueAead:Lcom/google/crypto/tink/Aead;
 
@@ -92,7 +87,7 @@
 
     const-string v1, " is a reserved key for the encryption keyset."
 
-    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -159,7 +154,7 @@
 
     const-string v1, "Could not encrypt key. "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -292,7 +287,7 @@
 
     const-string v2, "Could not decrypt key. "
 
-    invoke-static {v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -396,76 +391,76 @@
 
     move-result v1
 
-    const/4 v4, 0x5
+    const/4 v4, 0x1
 
-    const/4 v5, 0x4
+    const/4 v5, 0x2
 
     const/4 v6, 0x3
 
-    const/4 v7, 0x2
+    const/4 v7, 0x4
 
-    const/4 v8, 0x1
+    const/4 v8, 0x5
 
     if-eqz v1, :cond_6
 
-    if-eq v1, v8, :cond_5
+    if-eq v1, v4, :cond_5
 
-    if-eq v1, v7, :cond_4
+    if-eq v1, v5, :cond_4
 
     if-eq v1, v6, :cond_3
 
-    if-eq v1, v5, :cond_2
+    if-eq v1, v7, :cond_2
 
-    if-eq v1, v4, :cond_1
+    if-eq v1, v8, :cond_1
 
-    move-object v1, v2
+    move v1, v3
 
     goto :goto_0
 
     :cond_1
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->BOOLEAN:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
+    const/4 v1, 0x6
 
     goto :goto_0
 
     :cond_2
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->FLOAT:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
+    move v1, v8
 
     goto :goto_0
 
     :cond_3
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->LONG:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
+    move v1, v7
 
     goto :goto_0
 
     :cond_4
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->INT:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
+    move v1, v6
 
     goto :goto_0
 
     :cond_5
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->STRING_SET:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
+    move v1, v5
 
     goto :goto_0
 
     :cond_6
-    sget-object v1, Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;->STRING:Landroidx/security/crypto/EncryptedSharedPreferences$EncryptedType;
+    move v1, v4
 
     :goto_0
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v1}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->$enumboxing$ordinal(I)I
 
     move-result v1
 
     if-eqz v1, :cond_f
 
-    if-eq v1, v8, :cond_c
+    if-eq v1, v4, :cond_c
 
-    if-eq v1, v7, :cond_b
+    if-eq v1, v5, :cond_b
 
     if-eq v1, v6, :cond_a
 
-    if-eq v1, v5, :cond_9
+    if-eq v1, v7, :cond_9
 
-    if-eq v1, v4, :cond_7
+    if-eq v1, v8, :cond_7
 
     goto/16 :goto_2
 
@@ -476,7 +471,7 @@
 
     if-eqz p1, :cond_8
 
-    move v3, v8
+    move v3, v4
 
     :cond_8
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -526,39 +521,39 @@
     :goto_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_d
+    if-eqz v5, :cond_d
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
 
-    move-result v4
+    move-result v5
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v5, v4}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+    invoke-virtual {v6, v5}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
-    move-result v6
+    move-result v7
 
-    add-int/2addr v6, v4
+    add-int/2addr v7, v5
 
-    invoke-virtual {p1, v6}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    sget-object v4, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+    sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-virtual {v4, v5}, Ljava/nio/charset/Charset;->decode(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;
+    invoke-virtual {v5, v6}, Ljava/nio/charset/Charset;->decode(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v1, v4}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
@@ -567,7 +562,7 @@
 
     move-result p1
 
-    if-ne p1, v8, :cond_e
+    if-ne p1, v4, :cond_e
 
     invoke-virtual {v1, v3}, Landroid/util/ArraySet;->valueAt(I)Ljava/lang/Object;
 
@@ -631,7 +626,7 @@
 
     const-string v1, "Could not decrypt value. "
 
-    invoke-static {v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -654,7 +649,7 @@
 
     const-string v1, " is a reserved key for the encryption keyset."
 
-    invoke-static {p1, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline18(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

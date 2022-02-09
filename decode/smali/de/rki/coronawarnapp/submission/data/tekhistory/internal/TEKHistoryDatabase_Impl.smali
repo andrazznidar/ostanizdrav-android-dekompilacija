@@ -16,22 +16,6 @@
     return-void
 .end method
 
-.method public static synthetic access$000(Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;)Ljava/util/List;
-    .locals 0
-
-    iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method public static synthetic access$300(Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;)Ljava/util/List;
-    .locals 0
-
-    iget-object p0, p0, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
-
-    return-object p0
-.end method
-
 
 # virtual methods
 .method public clearAllTables()V
@@ -41,7 +25,7 @@
 
     const-string v1, "PRAGMA wal_checkpoint(FULL)"
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->assertNotMainThread()V
 
     iget-object v2, p0, Landroidx/room/RoomDatabase;->mOpenHelper:Landroidx/sqlite/db/SupportSQLiteOpenHelper;
 
@@ -50,17 +34,17 @@
     move-result-object v2
 
     :try_start_0
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
     const-string v3, "DELETE FROM `tek_history`"
 
     invoke-interface {v2, v3}, Landroidx/sqlite/db/SupportSQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -82,7 +66,7 @@
     :catchall_0
     move-exception v3
 
-    invoke-super {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
+    invoke-virtual {p0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
     invoke-interface {v2, v1}, Landroidx/sqlite/db/SupportSQLiteDatabase;->query(Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -117,7 +101,7 @@
 
     new-instance v1, Landroidx/room/InvalidationTracker;
 
-    const-string v3, "tek_history"
+    const-string/jumbo v3, "tek_history"
 
     filled-new-array {v3}, [Ljava/lang/String;
 
@@ -130,6 +114,14 @@
 
 .method public createOpenHelper(Landroidx/room/DatabaseConfiguration;)Landroidx/sqlite/db/SupportSQLiteOpenHelper;
     .locals 5
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "configuration"
+        }
+    .end annotation
 
     new-instance v0, Landroidx/room/RoomOpenHelper;
 
@@ -173,4 +165,46 @@
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
+
+.method public tekHistory()Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase$TEKHistoryDao;
+    .locals 1
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;->_tEKHistoryDao:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase$TEKHistoryDao;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;->_tEKHistoryDao:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase$TEKHistoryDao;
+
+    return-object v0
+
+    :cond_0
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;->_tEKHistoryDao:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase$TEKHistoryDao;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabaseTEKHistoryDao_Impl;
+
+    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabaseTEKHistoryDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
+
+    iput-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;->_tEKHistoryDao:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase$TEKHistoryDao;
+
+    :cond_1
+    iget-object v0, p0, Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase_Impl;->_tEKHistoryDao:Lde/rki/coronawarnapp/submission/data/tekhistory/internal/TEKHistoryDatabase$TEKHistoryDao;
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

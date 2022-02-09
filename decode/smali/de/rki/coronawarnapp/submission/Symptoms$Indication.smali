@@ -19,12 +19,6 @@
     name = "Indication"
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/submission/Symptoms$Indication$Creator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum<",
@@ -34,9 +28,44 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0002\u0008\u0007\u0008\u0087\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u00012\u00020\u0002B\t\u0008\u0002\u00a2\u0006\u0004\u0008\n\u0010\u000bJ\t\u0010\u0004\u001a\u00020\u0003H\u00d6\u0001J\u0019\u0010\t\u001a\u00020\u00082\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u0003H\u00d6\u0001j\u0002\u0008\u000cj\u0002\u0008\rj\u0002\u0008\u000e\u00a8\u0006\u000f"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/submission/Symptoms$Indication;",
+        "",
+        "Landroid/os/Parcelable;",
+        "",
+        "describeContents",
+        "Landroid/os/Parcel;",
+        "parcel",
+        "flags",
+        "",
+        "writeToParcel",
+        "<init>",
+        "(Ljava/lang/String;I)V",
+        "POSITIVE",
+        "NEGATIVE",
+        "NO_INFORMATION",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # static fields
-.field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+.field private static final synthetic $VALUES:[Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -68,48 +97,70 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method private static final synthetic $values()[Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+    .locals 3
 
     const/4 v0, 0x3
 
     new-array v0, v0, [Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+    sget-object v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->POSITIVE:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    const-string v2, "POSITIVE"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v1, v0, v2
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;-><init>(Ljava/lang/String;I)V
+    sget-object v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->NEGATIVE:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    sput-object v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->POSITIVE:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+    const/4 v2, 0x1
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+    sget-object v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->NO_INFORMATION:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    const-string v2, "NEGATIVE"
+    const/4 v2, 0x2
 
-    const/4 v3, 0x1
+    aput-object v1, v0, v2
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;-><init>(Ljava/lang/String;I)V
+    return-object v0
+.end method
 
-    sput-object v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->NEGATIVE:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+.method public static constructor <clinit>()V
+    .locals 3
 
-    aput-object v1, v0, v3
+    new-instance v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    new-instance v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+    const-string v1, "POSITIVE"
 
-    const-string v2, "NO_INFORMATION"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x2
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->POSITIVE:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    sput-object v1, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->NO_INFORMATION:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+    new-instance v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    aput-object v1, v0, v3
+    const-string v1, "NEGATIVE"
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->NEGATIVE:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+
+    new-instance v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+
+    const-string v1, "NO_INFORMATION"
+
+    const/4 v2, 0x2
+
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->NO_INFORMATION:Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+
+    invoke-static {}, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->$values()[Lde/rki/coronawarnapp/submission/Symptoms$Indication;
+
+    move-result-object v0
 
     sput-object v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->$VALUES:[Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
@@ -122,7 +173,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -154,7 +205,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/submission/Symptoms$Indication;->$VALUES:[Lde/rki/coronawarnapp/submission/Symptoms$Indication;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/submission/Symptoms$Indication;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -176,7 +227,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    const-string p2, "parcel"
+    const-string p2, "out"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

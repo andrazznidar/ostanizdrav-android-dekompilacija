@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nKeyCacheRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 5 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 6 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,148:1\n109#2,11:149\n734#3:160\n825#3,2:161\n1517#3:163\n1588#3,3:164\n1517#3:172\n1588#3,3:173\n1819#3,2:176\n47#4:167\n49#4:171\n50#5:168\n55#5:170\n106#6:169\n*E\n*S KotlinDebug\n*F\n+ 1 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n*L\n49#1,11:149\n61#1:160\n61#1,2:161\n65#1:163\n65#1,3:164\n86#1:172\n86#1,3:173\n135#1,2:176\n82#1:167\n82#1:171\n82#1:168\n82#1:170\n82#1:169\n*E\n"
+    value = "SMAP\nKeyCacheRepository.kt\nKotlin\n*S Kotlin\n*F\n+ 1 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n+ 2 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 5 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 6 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n*L\n1#1,148:1\n109#2,11:149\n764#3:160\n855#3,2:161\n1547#3:163\n1618#3,3:164\n1547#3:172\n1618#3,3:173\n1849#3,2:176\n47#4:167\n49#4:171\n50#5:168\n55#5:170\n106#6:169\n*S KotlinDebug\n*F\n+ 1 KeyCacheRepository.kt\nde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository\n*L\n49#1:149,11\n61#1:160\n61#1:161,2\n65#1:163\n65#1:164,3\n86#1:172\n86#1:173,3\n135#1:176,2\n82#1:167\n82#1:171\n82#1:168\n82#1:170\n82#1:169\n*E\n"
 .end annotation
 
 
@@ -37,7 +37,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "timeStamper"
+    const-string/jumbo v0, "timeStamper"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -53,7 +53,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$storageDir$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -63,7 +63,7 @@
 
     invoke-direct {p1, p0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$database$2;-><init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;)V
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+    invoke-static {p1}, Lkotlin/LazyKt__LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
 
     move-result-object p1
 
@@ -144,7 +144,7 @@
 
     check-cast v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -158,7 +158,7 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iput-object p0, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$allCachedKeys$1;->L$0:Ljava/lang/Object;
 
@@ -250,7 +250,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_3
 
@@ -268,7 +268,7 @@
 
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -277,22 +277,22 @@
 
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_4
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    const/4 p1, 0x0
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    new-array v2, v2, [Ljava/lang/Object;
 
     const-string v6, "clear()"
 
-    invoke-virtual {v2, v6, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v6, v2}, Ltimber/log/Timber$Forest;->i(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iput-object p0, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$clear$1;->L$0:Ljava/lang/Object;
 
@@ -320,7 +320,7 @@
 
     iput v4, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$clear$1;->label:I
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -354,7 +354,7 @@
 .end method
 
 .method public final createCacheEntry(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 17
+    .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -374,8 +374,6 @@
 
     move-object/from16 v0, p1
 
-    move-object/from16 v5, p2
-
     move-object/from16 v6, p3
 
     move-object/from16 v7, p4
@@ -392,13 +390,13 @@
 
     iget v4, v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
-    const/high16 v8, -0x80000000
+    const/high16 v5, -0x80000000
 
-    and-int v9, v4, v8
+    and-int v8, v4, v5
 
-    if-eqz v9, :cond_0
+    if-eqz v8, :cond_0
 
-    sub-int/2addr v4, v8
+    sub-int/2addr v4, v5
 
     iput v4, v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
@@ -418,27 +416,31 @@
 
     iget v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
-    const/4 v13, 0x3
+    const/4 v13, 0x0
 
-    const/4 v15, 0x2
+    const/4 v14, 0x1
 
-    const/4 v10, 0x4
+    const/4 v15, 0x0
 
-    const/4 v9, 0x5
+    const/4 v10, 0x2
 
-    const/4 v8, 0x1
+    const/4 v9, 0x3
+
+    const/4 v8, 0x4
+
+    const/4 v5, 0x5
 
     if-eqz v3, :cond_6
 
-    if-eq v3, v8, :cond_5
+    if-eq v3, v14, :cond_5
 
-    if-eq v3, v15, :cond_4
+    if-eq v3, v10, :cond_4
 
-    if-eq v3, v13, :cond_3
+    if-eq v3, v9, :cond_3
 
-    if-eq v3, v10, :cond_2
+    if-eq v3, v8, :cond_2
 
-    if-ne v3, v9, :cond_1
+    if-ne v3, v5, :cond_1
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
@@ -448,11 +450,9 @@
 
     check-cast v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move v14, v8
-
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -472,11 +472,9 @@
 
     check-cast v3, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move v14, v8
-
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_3
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$3:Ljava/lang/Object;
@@ -491,15 +489,13 @@
 
     check-cast v4, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    iget-object v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
+    iget-object v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move v14, v8
-
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_4
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
@@ -516,18 +512,16 @@
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    move-object v5, v0
+    move-object v6, v0
 
-    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     :try_start_0
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move v14, v8
-
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_5
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
@@ -544,127 +538,110 @@
 
     iget-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    move-object v5, v0
+    move-object v6, v0
 
-    check-cast v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
+    check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
     :try_start_1
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_1
     .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_1 .. :try_end_1} :catch_0
 
-    move v14, v8
+    move v0, v10
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :catch_0
     move-exception v0
 
-    move v14, v8
-
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :cond_6
-    invoke-static {v2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {v2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     new-instance v4, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
     iget-object v2, v1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    invoke-virtual {v2}, Lde/rki/coronawarnapp/util/TimeStamper;->getNowUTC()Lorg/joda/time/Instant;
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    new-instance v16, Lorg/joda/time/Instant;
 
-    const-string v2, "type"
+    invoke-direct/range {v16 .. v16}, Lorg/joda/time/Instant;-><init>()V
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v8, "location"
-
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v9, "day"
-
-    invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v10, "createdAt"
-
-    invoke-static {v3, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v6, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string/jumbo v2, "type"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "location"
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-object/from16 v3, p2
 
-    iget-object v8, v5, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->identifier:Ljava/lang/String;
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "day"
 
-    const/16 v8, 0x2e
+    invoke-static {v6, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object v9, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->typeValue:Ljava/lang/String;
-
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {p2 .. p2}, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;->getIdentifier()Ljava/lang/String;
 
     move-result-object v2
 
-    if-eqz v7, :cond_7
+    iget-object v5, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;->typeValue:Ljava/lang/String;
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const-string v2, "."
 
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    if-nez v7, :cond_7
+
+    goto :goto_1
 
     :cond_7
-    sget-object v8, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    sget-object v9, Lde/rki/coronawarnapp/util/HashExtensions$Format;->HEX:Lde/rki/coronawarnapp/util/HashExtensions$Format;
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "$this$toSHA1"
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v10, "format"
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v10, "SHA-1"
+    move-result-object v5
 
-    invoke-virtual {v8, v2, v10, v9}, Lde/rki/coronawarnapp/util/HashExtensions;->hashString(Ljava/lang/String;Ljava/lang/String;Lde/rki/coronawarnapp/util/HashExtensions$Format;)Ljava/lang/String;
+    :goto_1
+    sget-object v2, Lde/rki/coronawarnapp/util/HashExtensions;->INSTANCE:Lde/rki/coronawarnapp/util/HashExtensions;
 
-    move-result-object v8
+    invoke-static {v2, v5, v15, v14}, Lde/rki/coronawarnapp/util/HashExtensions;->toSHA1$default(Lde/rki/coronawarnapp/util/HashExtensions;Ljava/lang/String;Lde/rki/coronawarnapp/util/HashExtensions$Format;I)Ljava/lang/String;
 
-    const/4 v9, 0x0
+    move-result-object v5
 
-    const/4 v10, 0x0
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
 
     move-object v2, v4
 
-    move-object/from16 v16, v3
-
-    move-object v3, v8
+    move-object v3, v5
 
     move-object v8, v4
 
@@ -676,22 +653,26 @@
 
     move-object/from16 v7, p4
 
-    move-object v13, v8
-
-    const/4 v14, 0x1
+    move-object v15, v8
 
     move-object/from16 v8, v16
 
+    move-object/from16 v9, v17
+
+    move v0, v10
+
+    move/from16 v10, v18
+
     invoke-direct/range {v2 .. v10}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Lorg/joda/time/Instant;Ljava/lang/String;Z)V
 
-    invoke-virtual {v1, v13}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getPathForKey(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Ljava/io/File;
+    invoke-virtual {v1, v15}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getPathForKey(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Ljava/io/File;
 
     move-result-object v2
 
     :try_start_2
     iput-object v1, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
-    iput-object v13, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
+    iput-object v15, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
     iput-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
 
@@ -699,34 +680,36 @@
 
     invoke-virtual {v1, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getDao(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
     :try_end_2
-    .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_2 .. :try_end_2} :catch_1
 
-    if-ne v0, v12, :cond_8
+    if-ne v3, v12, :cond_8
 
     return-object v12
 
     :cond_8
-    move-object v5, v1
+    move-object v6, v1
+
+    move-object v4, v15
+
+    move-object/from16 v19, v3
 
     move-object v3, v2
 
-    move-object v4, v13
+    move-object/from16 v2, v19
 
-    move-object v2, v0
-
-    :goto_1
+    :goto_2
     :try_start_3
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
 
-    iput-object v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
+    iput-object v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
     iput-object v4, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
     iput-object v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
 
-    iput v15, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
+    iput v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
     invoke-interface {v2, v4, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;->insertEntry(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -737,61 +720,52 @@
     return-object v12
 
     :cond_9
-    :goto_2
+    :goto_3
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    const-string v0, "Target path despite no collision exists, deleting: %s"
+    sget-object v0, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array v2, v14, [Ljava/lang/Object;
+    const-string v2, "Target path despite no collision exists, deleting: %s"
 
-    const/4 v6, 0x0
+    new-array v5, v14, [Ljava/lang/Object;
 
-    aput-object v3, v2, v6
+    aput-object v3, v5, v13
 
-    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    invoke-virtual {v6, v0, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v5}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_3
-    .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Landroid/database/sqlite/SQLiteConstraintException; {:try_start_3 .. :try_end_3} :catch_0
 
-    goto :goto_7
+    goto :goto_8
 
     :catch_1
     move-exception v0
 
-    goto :goto_3
-
-    :catch_2
-    move-exception v0
-
-    move-object v5, v1
+    move-object v6, v1
 
     move-object v3, v2
 
-    move-object v4, v13
+    move-object v4, v15
 
-    :goto_3
-    new-array v2, v14, [Ljava/lang/Object;
+    :goto_4
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const/4 v6, 0x0
+    new-array v5, v14, [Ljava/lang/Object;
 
-    aput-object v4, v2, v6
-
-    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v4, v5, v13
 
     const-string v7, "Insertion collision? Overwriting for %s"
 
-    invoke-virtual {v6, v0, v7, v2}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v7, v5}, Ltimber/log/Timber$Forest;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v4}, Lcom/google/zxing/client/android/R$id;->listOf(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v4}, Lkotlin/collections/CollectionsKt__CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
-    iput-object v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
+    iput-object v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
     iput-object v4, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
@@ -799,11 +773,11 @@
 
     iput-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$3:Ljava/lang/Object;
 
-    const/4 v6, 0x3
+    const/4 v5, 0x3
 
-    iput v6, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
+    iput v5, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
-    invoke-virtual {v5, v2, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->delete(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v6, v2, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->delete(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -812,34 +786,32 @@
     return-object v12
 
     :cond_a
-    :goto_4
-    new-array v2, v14, [Ljava/lang/Object;
+    :goto_5
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const/4 v6, 0x0
+    new-array v5, v14, [Ljava/lang/Object;
 
-    aput-object v4, v2, v6
-
-    sget-object v6, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v4, v5, v13
 
     const-string v7, "Retrying insertion for %s"
 
-    invoke-virtual {v6, v0, v7, v2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v7, v5}, Ltimber/log/Timber$Forest;->d(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     iput-object v4, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
 
     iput-object v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$1:Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    iput-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
+    iput-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$2:Ljava/lang/Object;
 
-    iput-object v0, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$3:Ljava/lang/Object;
+    iput-object v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$3:Ljava/lang/Object;
 
     const/4 v2, 0x4
 
     iput v2, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->label:I
 
-    invoke-virtual {v5, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getDao(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v6, v11}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getDao(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -852,7 +824,7 @@
 
     move-object v3, v4
 
-    :goto_5
+    :goto_6
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
 
     iput-object v3, v11, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$createCacheEntry$1;->L$0:Ljava/lang/Object;
@@ -872,13 +844,13 @@
     return-object v12
 
     :cond_c
-    :goto_6
+    :goto_7
     move-object v4, v3
 
     move-object v3, v0
 
     :cond_d
-    :goto_7
+    :goto_8
     invoke-virtual {v3}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     move-result-object v0
@@ -891,17 +863,15 @@
 
     if-nez v2, :cond_e
 
-    new-array v2, v14, [Ljava/lang/Object;
+    sget-object v2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    const/4 v5, 0x0
+    new-array v5, v14, [Ljava/lang/Object;
 
-    aput-object v0, v2, v5
-
-    sget-object v5, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v0, v5, v13
 
     const-string v6, "Parent folder doesn\'t exist, cache cleared? %s"
 
-    invoke-virtual {v5, v6, v2}, Ltimber/log/Timber$Tree;->w(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v2, v6, v5}, Ltimber/log/Timber$Forest;->w(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
@@ -987,7 +957,7 @@
 
     check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_3
 
@@ -1013,22 +983,22 @@
 
     check-cast v6, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_3
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    new-array p2, v5, [Ljava/lang/Object;
+    sget-object p2, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object p1, p2, v3
+    new-array v2, v5, [Ljava/lang/Object;
 
-    sget-object v2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object p1, v2, v3
 
     const-string v6, "delete(keyFiles=%s)"
 
-    invoke-virtual {v2, v6, p2}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p2, v6, v2}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1101,15 +1071,15 @@
     :goto_3
     move-object p2, v6
 
-    new-array v6, v5, [Ljava/lang/Object;
+    sget-object v6, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object p1, v6, v3
+    new-array v7, v5, [Ljava/lang/Object;
 
-    sget-object v7, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object p1, v7, v3
 
     const-string v8, "Deleted %s"
 
-    invoke-virtual {v7, v8, v6}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, v8, v7}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p2, p1}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getPathForKey(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Ljava/io/File;
 
@@ -1117,19 +1087,17 @@
 
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_6
+    if-eqz v7, :cond_6
 
-    new-array v6, v5, [Ljava/lang/Object;
+    new-array v7, v5, [Ljava/lang/Object;
 
-    aput-object p1, v6, v3
+    aput-object p1, v7, v3
 
-    sget-object p1, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string p1, "Deleted cache key file at %s"
 
-    const-string v7, "Deleted cache key file at %s"
-
-    invoke-virtual {p1, v7, v6}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v6, p1, v7}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_6
     move-object p1, v2
@@ -1199,7 +1167,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_4
 
@@ -1217,12 +1185,12 @@
 
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iput-object p0, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$doHouseKeeping$1;->L$0:Ljava/lang/Object;
 
@@ -1285,42 +1253,34 @@
     move v7, v4
 
     :cond_6
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v7
-
     if-eqz v7, :cond_5
 
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     :cond_7
-    new-array p1, v4, [Ljava/lang/Object;
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    aput-object v5, p1, v7
+    new-array v4, v4, [Ljava/lang/Object;
 
-    sget-object v4, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    aput-object v5, v4, v7
 
     const-string v6, "HouseKeeping, deleting: %s"
 
-    invoke-virtual {v4, v6, p1}, Ltimber/log/Timber$Tree;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v6, v4}, Ltimber/log/Timber$Forest;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance p1, Ljava/util/ArrayList;
 
     const/16 v4, 0xa
 
-    invoke-static {v5, v4}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v5, v4}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v4
 
     invoke-direct {p1, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
@@ -1339,7 +1299,7 @@
 
     iget-object v5, v5, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKey;->info:Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
-    invoke-virtual {p1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
@@ -1423,7 +1383,7 @@
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -1437,12 +1397,12 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iput v4, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$getAllCachedKeys$1;->label:I
 
@@ -1460,7 +1420,7 @@
 
     iput v3, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$getAllCachedKeys$1;->label:I
 
-    invoke-static {p1, v0}, Lcom/google/zxing/client/android/R$id;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -1541,16 +1501,16 @@
     check-cast v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
 
     :try_start_0
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto/16 :goto_3
+    goto :goto_2
 
     :catchall_0
     move-exception p1
 
-    goto/16 :goto_5
+    goto :goto_4
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -1574,14 +1534,14 @@
 
     check-cast v7, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object p1, v6
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->database$delegate:Lkotlin/Lazy;
 
@@ -1591,43 +1551,13 @@
 
     check-cast p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase;
 
-    check-cast p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Impl;
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase;->cachedKeyFiles()Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
 
-    iget-object v2, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Impl;->_cachedKeyFileDao:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
+    move-result-object p1
 
-    if-eqz v2, :cond_4
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Impl;->_cachedKeyFileDao:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
-
-    goto :goto_1
-
-    :cond_4
-    monitor-enter p1
-
-    :try_start_1
-    iget-object v2, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Impl;->_cachedKeyFileDao:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
-
-    if-nez v2, :cond_5
-
-    new-instance v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;
-
-    invoke-direct {v2, p1}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;-><init>(Landroidx/room/RoomDatabase;)V
-
-    iput-object v2, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Impl;->_cachedKeyFileDao:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
-
-    :cond_5
-    iget-object v2, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase_Impl;->_cachedKeyFileDao:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
-
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
-
-    move-object p1, v2
-
-    :goto_1
     iget-boolean v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->isInitDone:Z
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_7
 
     iget-object v2, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->initMutex:Lkotlinx/coroutines/sync/Mutex;
 
@@ -1643,22 +1573,22 @@
 
     move-result-object v6
 
-    if-ne v6, v1, :cond_6
+    if-ne v6, v1, :cond_4
 
     return-object v1
 
-    :cond_6
+    :cond_4
     move-object v7, p0
 
-    :goto_2
-    :try_start_2
+    :goto_1
+    :try_start_1
     iget-boolean v6, v7, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->isInitDone:Z
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_5
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_7
+    :cond_5
     iput-boolean v4, v7, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->isInitDone:Z
 
     iput-object p1, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$getDao$1;->L$0:Ljava/lang/Object;
@@ -1672,51 +1602,41 @@
     invoke-virtual {v7, v0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->doHouseKeeping(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_6
 
     return-object v1
 
-    :cond_8
+    :cond_6
     move-object v0, p1
 
     move-object v1, v2
 
-    :goto_3
+    :goto_2
     move-object p1, v0
 
     move-object v2, v1
 
-    :goto_4
+    :goto_3
     invoke-interface {v2, v5}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
-    goto :goto_6
+    goto :goto_5
 
     :catchall_1
     move-exception p1
 
     move-object v1, v2
 
-    :goto_5
+    :goto_4
     invoke-interface {v1, v5}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p1
 
-    :cond_9
-    :goto_6
+    :cond_7
+    :goto_5
     return-object p1
-
-    :catchall_2
-    move-exception v0
-
-    :try_start_3
-    monitor-exit p1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
-
-    throw v0
 .end method
 
 .method public final getEntriesForType(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -1782,7 +1702,7 @@
 
     check-cast p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -1804,12 +1724,12 @@
 
     check-cast v2, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;
 
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iput-object p0, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$getEntriesForType$1;->L$0:Ljava/lang/Object;
 
@@ -1859,7 +1779,7 @@
 
     const/16 v1, 0xa
 
-    invoke-static {p2, v1}, Lcom/google/zxing/client/android/R$id;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {p2, v1}, Lkotlin/collections/CollectionsKt__IteratorsJVMKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
 
@@ -1899,7 +1819,7 @@
 .end method
 
 .method public final getPathForKey(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;)Ljava/io/File;
-    .locals 2
+    .locals 3
 
     const-string v0, "cachedKeyInfo"
 
@@ -1915,7 +1835,13 @@
 
     check-cast v1, Ljava/io/File;
 
-    iget-object p1, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->fileName:Ljava/lang/String;
+    iget-object p1, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->id:Ljava/lang/String;
+
+    const-string v2, ".zip"
+
+    invoke-static {p1, v2}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-direct {v0, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -1923,7 +1849,7 @@
 .end method
 
 .method public final markKeyComplete(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1971,19 +1897,17 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->label:I
 
-    const/4 v3, 0x0
+    const/4 v3, 0x2
 
-    const/4 v4, 0x2
-
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
     if-eqz v2, :cond_3
 
-    if-eq v2, v5, :cond_2
+    if-eq v2, v4, :cond_2
 
-    if-ne v2, v4, :cond_1
+    if-ne v2, v3, :cond_1
 
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -2001,14 +1925,14 @@
 
     check-cast p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$DownloadUpdate;
 
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_3
-    invoke-static {p3}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    if-eqz p1, :cond_6
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string p3, "etag"
 
@@ -2018,11 +1942,11 @@
 
     iget-object p1, p1, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;->id:Ljava/lang/String;
 
-    invoke-direct {p3, p1, p2, v5}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$DownloadUpdate;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {p3, p1, p2, v4}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$DownloadUpdate;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
     iput-object p3, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->L$0:Ljava/lang/Object;
 
-    iput v5, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->label:I
+    iput v4, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->label:I
 
     invoke-virtual {p0, v0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository;->getDao(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -2033,18 +1957,20 @@
     return-object v1
 
     :cond_4
-    move-object v6, p3
+    move-object v5, p3
 
     move-object p3, p1
 
-    move-object p1, v6
+    move-object p1, v5
 
     :goto_1
     check-cast p3, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;
 
-    iput-object v3, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->L$0:Ljava/lang/Object;
+    const/4 p2, 0x0
 
-    iput v4, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->label:I
+    iput-object p2, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->L$0:Ljava/lang/Object;
+
+    iput v3, v0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheRepository$markKeyComplete$1;->label:I
 
     invoke-interface {p3, p1, v0}, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabase$CachedKeyFileDao;->updateDownloadState(Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$DownloadUpdate;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -2059,7 +1985,4 @@
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
-
-    :cond_6
-    throw v3
 .end method

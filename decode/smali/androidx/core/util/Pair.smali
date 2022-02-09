@@ -16,61 +16,34 @@
 .end annotation
 
 
-# instance fields
-.field public final first:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TF;"
-        }
-    .end annotation
-.end field
-
-.field public final second:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TS;"
-        }
-    .end annotation
-.end field
-
-
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "o"
+        }
+    .end annotation
 
     instance-of v0, p1, Landroidx/core/util/Pair;
 
-    const/4 v1, 0x0
-
     if-nez v0, :cond_0
 
-    return v1
+    const/4 p1, 0x0
+
+    return p1
 
     :cond_0
     check-cast p1, Landroidx/core/util/Pair;
 
-    iget-object v0, p1, Landroidx/core/util/Pair;->first:Ljava/lang/Object;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    const/4 p1, 0x1
 
-    invoke-static {v0, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object p1, p1, Landroidx/core/util/Pair;->second:Ljava/lang/Object;
-
-    invoke-static {p1, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
+    return p1
 .end method
 
 .method public hashCode()I

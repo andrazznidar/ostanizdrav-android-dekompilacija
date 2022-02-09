@@ -6,23 +6,14 @@
 .implements Lcom/airbnb/lottie/model/content/ContentModel;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;,
-        Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
-    }
-.end annotation
-
-
 # instance fields
-.field public final capType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+.field public final capType:I
 
 .field public final color:Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
 .field public final hidden:Z
 
-.field public final joinType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+.field public final joinType:I
 
 .field public final lineDashPattern:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -46,7 +37,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Ljava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;FZ)V
+.method public constructor <init>(Ljava/lang/String;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;Ljava/util/List;Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;IIFZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -59,8 +50,8 @@
             "Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;",
             "Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;",
             "Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;",
-            "Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;",
-            "Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
             "FZ)V"
         }
     .end annotation
@@ -79,9 +70,9 @@
 
     iput-object p6, p0, Lcom/airbnb/lottie/model/content/ShapeStroke;->width:Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
 
-    iput-object p7, p0, Lcom/airbnb/lottie/model/content/ShapeStroke;->capType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
+    iput p7, p0, Lcom/airbnb/lottie/model/content/ShapeStroke;->capType:I
 
-    iput-object p8, p0, Lcom/airbnb/lottie/model/content/ShapeStroke;->joinType:Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
+    iput p8, p0, Lcom/airbnb/lottie/model/content/ShapeStroke;->joinType:I
 
     iput p9, p0, Lcom/airbnb/lottie/model/content/ShapeStroke;->miterLimit:F
 

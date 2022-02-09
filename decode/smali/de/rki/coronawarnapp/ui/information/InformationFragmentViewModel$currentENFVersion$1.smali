@@ -59,12 +59,23 @@
 
 
 # direct methods
-.method public constructor <init>(Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lde/rki/coronawarnapp/nearby/ENFClient;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/nearby/ENFClient;",
+            "Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;",
+            ">;)V"
+        }
+    .end annotation
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->$enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->$enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
+    iput-object p2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
 
     const/4 p1, 0x2
 
@@ -89,39 +100,33 @@
         }
     .end annotation
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->$enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->$enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
+    iget-object v2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
 
-    invoke-direct {v0, v1, v2, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;-><init>(Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lde/rki/coronawarnapp/nearby/ENFClient;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;-><init>(Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lkotlin/coroutines/Continuation;)V
 
     iput-object p1, v0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->L$0:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
+
+    check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->$enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
 
-    iget-object v2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->$enfClient:Lde/rki/coronawarnapp/nearby/ENFClient;
+    iget-object v2, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
 
-    invoke-direct {v0, v1, v2, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;-><init>(Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lde/rki/coronawarnapp/nearby/ENFClient;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, p2}, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;-><init>(Lde/rki/coronawarnapp/nearby/ENFClient;Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;Lkotlin/coroutines/Continuation;)V
 
     iput-object p1, v0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->L$0:Ljava/lang/Object;
 
@@ -135,7 +140,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+    .locals 10
 
     sget-object v0, Lkotlin/coroutines/intrinsics/CoroutineSingletons;->COROUTINE_SUSPENDED:Lkotlin/coroutines/intrinsics/CoroutineSingletons;
 
@@ -151,7 +156,7 @@
 
     if-ne v1, v2, :cond_0
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -169,12 +174,12 @@
 
     check-cast v1, Lkotlinx/coroutines/flow/FlowCollector;
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->L$0:Ljava/lang/Object;
 
@@ -204,64 +209,52 @@
 
     const/4 v4, 0x0
 
-    if-eqz p1, :cond_4
+    if-nez p1, :cond_4
 
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v5
-
-    const-string p1, "ENF "
-
-    invoke-static {p1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p1
-
-    iget-object v7, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
-
-    iget-object v7, v7, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;->context:Landroid/content/Context;
-
-    const v8, 0x7f120156
-
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v8, "context.getString(R.string.information_version)"
-
-    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-array v8, v3, [Ljava/lang/Object;
-
-    const/4 v9, 0x0
-
-    new-instance v10, Ljava/lang/Long;
-
-    invoke-direct {v10, v5, v6}, Ljava/lang/Long;-><init>(J)V
-
-    aput-object v10, v8, v9
-
-    invoke-static {v8, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-static {v7, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v5, "java.lang.String.format(this, *args)"
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
+    move-object p1, v4
 
     goto :goto_1
 
     :cond_4
-    move-object p1, v4
+    iget-object v5, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->this$0:Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v6
+
+    iget-object p1, v5, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel;->context:Landroid/content/Context;
+
+    const v5, 0x7f130227
+
+    invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v5, "context.getString(R.string.information_version)"
+
+    invoke-static {p1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-array v5, v3, [Ljava/lang/Object;
+
+    const/4 v8, 0x0
+
+    new-instance v9, Ljava/lang/Long;
+
+    invoke-direct {v9, v6, v7}, Ljava/lang/Long;-><init>(J)V
+
+    aput-object v9, v5, v8
+
+    const-string v6, "java.lang.String.format(this, *args)"
+
+    invoke-static {v5, v3, p1, v6}, Lde/rki/coronawarnapp/coronatest/server/VerificationServer$retrieveRegistrationToken$2$$ExternalSyntheticOutline0;->m([Ljava/lang/Object;ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v3, "ENF "
+
+    invoke-static {v3, p1}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
 
     :goto_1
     iput-object v4, p0, Lde/rki/coronawarnapp/ui/information/InformationFragmentViewModel$currentENFVersion$1;->L$0:Ljava/lang/Object;

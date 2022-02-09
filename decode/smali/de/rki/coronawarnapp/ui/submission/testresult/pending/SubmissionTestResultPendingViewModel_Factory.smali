@@ -14,16 +14,6 @@
     .end annotation
 .end field
 
-.field public final shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public final submissionRepositoryProvider:Ljavax/inject/Provider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -36,16 +26,24 @@
 
 
 # direct methods
-.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljavax/inject/Provider;)V
+.method public constructor <init>(Ljavax/inject/Provider;Ljavax/inject/Provider;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "dispatcherProvider",
+            "submissionRepositoryProvider"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/util/coroutine/DispatcherProvider;",
-            ">;",
-            "Ljavax/inject/Provider<",
-            "Lde/rki/coronawarnapp/notification/ShareTestResultNotificationService;",
             ">;",
             "Ljavax/inject/Provider<",
             "Lde/rki/coronawarnapp/submission/SubmissionRepository;",
@@ -57,9 +55,7 @@
 
     iput-object p1, p0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;->dispatcherProvider:Ljavax/inject/Provider;
 
-    iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;->shareTestResultNotificationServiceProvider:Ljavax/inject/Provider;
-
-    iput-object p3, p0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
+    iput-object p2, p0, Lde/rki/coronawarnapp/ui/submission/testresult/pending/SubmissionTestResultPendingViewModel_Factory;->submissionRepositoryProvider:Ljavax/inject/Provider;
 
     return-void
 .end method

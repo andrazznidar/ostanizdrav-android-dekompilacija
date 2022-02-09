@@ -77,26 +77,6 @@
     return p0
 .end method
 
-.method public static computeBoolSizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public static computeByteArraySizeNoTag([B)I
-    .locals 0
-
-    array-length p0, p0
-
-    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static computeBytesSize(ILcom/google/protobuf/ByteString;)I
     .locals 0
 
@@ -143,14 +123,6 @@
     return p0
 .end method
 
-.method public static computeDoubleSizeNoTag()I
-    .locals 1
-
-    const/16 v0, 0x8
-
-    return v0
-.end method
-
 .method public static computeEnumSize(II)I
     .locals 0
 
@@ -167,38 +139,14 @@
     return p0
 .end method
 
-.method public static computeFixed32SizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x4
-
-    return v0
-.end method
-
-.method public static computeFixed64SizeNoTag()I
-    .locals 1
-
-    const/16 v0, 0x8
-
-    return v0
-.end method
-
-.method public static computeFloatSizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x4
-
-    return v0
-.end method
-
-.method public static computeGroupSizeNoTag(Lcom/google/protobuf/MessageLite;)I
+.method public static computeFloatSize(IF)I
     .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
-    invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
+    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
 
     move-result p0
+
+    add-int/lit8 p0, p0, 0x4
 
     return p0
 .end method
@@ -252,56 +200,6 @@
     return p0
 .end method
 
-.method public static computeLazyFieldSizeNoTag(Lcom/google/protobuf/LazyFieldLite;)I
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/protobuf/LazyFieldLite;->memoizedBytes:Lcom/google/protobuf/ByteString;
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lcom/google/protobuf/LazyFieldLite;->memoizedBytes:Lcom/google/protobuf/ByteString;
-
-    invoke-virtual {p0}, Lcom/google/protobuf/ByteString;->size()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lcom/google/protobuf/LazyFieldLite;->delayedBytes:Lcom/google/protobuf/ByteString;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->size()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lcom/google/protobuf/LazyFieldLite;->value:Lcom/google/protobuf/MessageLite;
-
-    if-eqz v0, :cond_2
-
-    iget-object p0, p0, Lcom/google/protobuf/LazyFieldLite;->value:Lcom/google/protobuf/MessageLite;
-
-    invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_2
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static computeLengthDelimitedFieldSize(I)I
     .locals 1
 
@@ -332,49 +230,6 @@
     add-int/2addr p0, p1
 
     return p0
-.end method
-
-.method public static computeMessageSizeNoTag(Lcom/google/protobuf/MessageLite;)I
-    .locals 0
-
-    invoke-interface {p0}, Lcom/google/protobuf/MessageLite;->getSerializedSize()I
-
-    move-result p0
-
-    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeLengthDelimitedFieldSize(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static computePreferredBufferSize(I)I
-    .locals 1
-
-    const/16 v0, 0x1000
-
-    if-le p0, v0, :cond_0
-
-    return v0
-
-    :cond_0
-    return p0
-.end method
-
-.method public static computeSFixed32SizeNoTag()I
-    .locals 1
-
-    const/4 v0, 0x4
-
-    return v0
-.end method
-
-.method public static computeSFixed64SizeNoTag()I
-    .locals 1
-
-    const/16 v0, 0x8
-
-    return v0
 .end method
 
 .method public static computeStringSize(ILjava/lang/String;)I
@@ -500,6 +355,22 @@
     return p0
 .end method
 
+.method public static computeUInt64Size(IJ)I
+    .locals 0
+
+    invoke-static {p0}, Lcom/google/protobuf/CodedOutputStream;->computeTagSize(I)I
+
+    move-result p0
+
+    invoke-static {p1, p2}, Lcom/google/protobuf/CodedOutputStream;->computeUInt64SizeNoTag(J)I
+
+    move-result p1
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
 .method public static computeUInt64SizeNoTag(J)I
     .locals 6
 
@@ -586,20 +457,6 @@
     xor-int/2addr p0, v0
 
     return p0
-.end method
-
-.method public static newInstance([B)Lcom/google/protobuf/CodedOutputStream;
-    .locals 3
-
-    array-length v0, p0
-
-    new-instance v1, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v2, v0}, Lcom/google/protobuf/CodedOutputStream$ArrayEncoder;-><init>([BII)V
-
-    return-object v1
 .end method
 
 
@@ -747,6 +604,23 @@
             Ljava/io/IOException;
         }
     .end annotation
+.end method
+
+.method public final writeFloat(IF)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-static {p2}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    move-result p2
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/CodedOutputStream;->writeFixed32(II)V
+
+    return-void
 .end method
 
 .method public abstract writeInt32(II)V

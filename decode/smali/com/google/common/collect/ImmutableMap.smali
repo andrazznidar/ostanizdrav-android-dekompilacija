@@ -5,6 +5,7 @@
 # interfaces
 .implements Ljava/util/Map;
 .implements Ljava/io/Serializable;
+.implements Lj$/util/Map;
 
 
 # annotations
@@ -24,7 +25,8 @@
         "Ljava/lang/Object;",
         "Ljava/util/Map<",
         "TK;TV;>;",
-        "Ljava/io/Serializable;"
+        "Ljava/io/Serializable;",
+        "Lj$/util/Map;"
     }
 .end annotation
 
@@ -84,7 +86,7 @@
 
     const-string v0, "expectedSize"
 
-    invoke-static {p0, v0}, Lcom/google/android/material/R$style;->checkNonnegative(ILjava/lang/String;)I
+    invoke-static {p0, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
     new-instance v0, Lcom/google/common/collect/ImmutableMap$Builder;
 
@@ -105,6 +107,36 @@
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
+.end method
+
+.method public synthetic compute(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$compute(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic computeIfAbsent(Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic computeIfPresent(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public containsKey(Ljava/lang/Object;)Z
@@ -204,7 +236,7 @@
 
     check-cast p1, Ljava/util/Map;
 
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -223,6 +255,14 @@
 
     :goto_0
     return p1
+.end method
+
+.method public synthetic forEach(Lj$/util/function/BiConsumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+
+    return-void
 .end method
 
 .method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -264,7 +304,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/material/R$style;->hashCodeImpl(Ljava/util/Set;)I
+    invoke-static {v0}, Landroidx/lifecycle/LifecycleKt;->hashCodeImpl(Ljava/util/Set;)I
 
     move-result v0
 
@@ -274,7 +314,11 @@
 .method public isEmpty()Z
     .locals 1
 
-    invoke-interface {p0}, Ljava/util/Map;->size()I
+    move-object v0, p0
+
+    check-cast v0, Lcom/google/common/collect/RegularImmutableMap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/RegularImmutableMap;->size()I
 
     move-result v0
 
@@ -324,6 +368,16 @@
     return-object v0
 .end method
 
+.method public synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -362,6 +416,16 @@
     throw p1
 .end method
 
+.method public synthetic putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$putIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
@@ -382,16 +446,58 @@
     throw p1
 .end method
 
+.method public synthetic remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$remove(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public synthetic replaceAll(Lj$/util/function/BiFunction;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$replaceAll(Ljava/util/Map;Lj$/util/function/BiFunction;)V
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    invoke-interface {p0}, Ljava/util/Map;->size()I
+    move-object v0, p0
+
+    check-cast v0, Lcom/google/common/collect/RegularImmutableMap;
+
+    invoke-virtual {v0}, Lcom/google/common/collect/RegularImmutableMap;->size()I
 
     move-result v0
 
-    const-string v1, "size"
+    const-string/jumbo v1, "size"
 
-    invoke-static {v0, v1}, Lcom/google/android/material/R$style;->checkNonnegative(ILjava/lang/String;)I
+    invoke-static {v0, v1}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -417,7 +523,7 @@
 
     const/4 v0, 0x1
 
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Ljava/util/Set;
 
     move-result-object v2
 

@@ -17,8 +17,8 @@
     c = "de.rki.coronawarnapp.contactdiary.retention.ContactDiaryRetentionCalculation"
     f = "ContactDiaryRetentionCalculation.kt"
     l = {
-        0x28,
-        0x2c
+        0x29,
+        0x2d
     }
     m = "clearObsoleteContactDiaryLocationVisits"
 .end annotation
@@ -37,6 +37,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionCalculation;Lkotlin/coroutines/Continuation;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionCalculation;",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionCalculation$clearObsoleteContactDiaryLocationVisits$1;",
+            ">;)V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionCalculation$clearObsoleteContactDiaryLocationVisits$1;->this$0:Lde/rki/coronawarnapp/contactdiary/retention/ContactDiaryRetentionCalculation;
 

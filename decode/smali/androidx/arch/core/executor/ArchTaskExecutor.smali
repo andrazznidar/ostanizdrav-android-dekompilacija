@@ -10,8 +10,6 @@
 
 
 # instance fields
-.field public mDefaultTaskExecutor:Landroidx/arch/core/executor/TaskExecutor;
-
 .field public mDelegate:Landroidx/arch/core/executor/TaskExecutor;
 
 
@@ -36,8 +34,6 @@
     new-instance v0, Landroidx/arch/core/executor/DefaultTaskExecutor;
 
     invoke-direct {v0}, Landroidx/arch/core/executor/DefaultTaskExecutor;-><init>()V
-
-    iput-object v0, p0, Landroidx/arch/core/executor/ArchTaskExecutor;->mDefaultTaskExecutor:Landroidx/arch/core/executor/TaskExecutor;
 
     iput-object v0, p0, Landroidx/arch/core/executor/ArchTaskExecutor;->mDelegate:Landroidx/arch/core/executor/TaskExecutor;
 

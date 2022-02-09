@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/rapid_test_profile_nav_graph" app:startDestination="@id/ratProfileOnboardingFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="rat_profile_onboarding_fragment" android:name="de.rki.coronawarnapp.ui.coronatest.rat.profile.onboarding.RATProfileOnboardingFragment" android:id="@id/ratProfileOnboardingFragment">
+        <action android:id="@id/action_ratProfileOnboardingFragment_to_ratProfileCreateFragment" app:destination="@id/ratProfileCreateFragment" app:popUpTo="@id/rapid_test_profile_nav_graph" app:popUpToInclusive="false" />
+        <action android:id="@id/action_ratProfileOnboardingFragment_to_privacyFragment" app:destination="@id/privacyFragment" />
+        <argument android:name="showButton" android:defaultValue="true" app:argType="boolean" />
+    </fragment>
+    <fragment android:label="rat_profile_create_fragment" android:name="de.rki.coronawarnapp.ui.coronatest.rat.profile.create.RATProfileCreateFragment" android:id="@id/ratProfileCreateFragment">
+        <action android:id="@id/action_ratProfileCreateFragment_to_ratProfileQrCodeFragment" app:destination="@id/ratProfileQrCodeFragment" app:popUpTo="@id/rapid_test_profile_nav_graph" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="rat_profile_qr_code_fragment" android:name="de.rki.coronawarnapp.ui.coronatest.rat.profile.qrcode.RATProfileQrCodeFragment" android:id="@id/ratProfileQrCodeFragment">
+        <action android:id="@id/action_ratProfileQrCodeFragment_to_ratProfileCreateFragment" app:destination="@id/ratProfileCreateFragment" />
+        <action android:id="@id/action_ratProfileQrCodeFragment_to_ratProfileOnboardingFragment" app:destination="@id/ratProfileOnboardingFragment" />
+    </fragment>
+    <fragment android:label="InformationPrivacyFragment" android:name="de.rki.coronawarnapp.ui.information.InformationPrivacyFragment" android:id="@id/privacyFragment" />
+</navigation>

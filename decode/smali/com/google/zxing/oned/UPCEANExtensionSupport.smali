@@ -75,18 +75,22 @@
 
     sget-object v3, Lcom/google/zxing/oned/UPCEANExtensionSupport;->EXTENSION_START_PATTERN:[I
 
-    const/4 v4, 0x0
+    array-length v4, v3
 
-    move/from16 v5, p3
+    new-array v4, v4, [I
 
-    invoke-static {v2, v5, v4, v3}, Lcom/google/zxing/oned/UPCEANReader;->findGuardPattern(Lcom/google/zxing/common/BitArray;IZ[I)[I
+    const/4 v5, 0x0
+
+    move/from16 v6, p3
+
+    invoke-static {v2, v6, v5, v3, v4}, Lcom/google/zxing/oned/UPCEANReader;->findGuardPattern(Lcom/google/zxing/common/BitArray;IZ[I[I)[I
 
     move-result-object v3
 
     :try_start_0
-    iget-object v5, v0, Lcom/google/zxing/oned/UPCEANExtensionSupport;->fiveSupport:Lcom/google/zxing/oned/UPCEANExtension5Support;
+    iget-object v4, v0, Lcom/google/zxing/oned/UPCEANExtensionSupport;->fiveSupport:Lcom/google/zxing/oned/UPCEANExtension5Support;
 
-    invoke-virtual {v5, v1, v2, v3}, Lcom/google/zxing/oned/UPCEANExtension5Support;->decodeRow(ILcom/google/zxing/common/BitArray;[I)Lcom/google/zxing/Result;
+    invoke-virtual {v4, v1, v2, v3}, Lcom/google/zxing/oned/UPCEANExtension5Support;->decodeRow(ILcom/google/zxing/common/BitArray;[I)Lcom/google/zxing/Result;
 
     move-result-object v1
     :try_end_0
@@ -95,33 +99,33 @@
     return-object v1
 
     :catch_0
-    iget-object v5, v0, Lcom/google/zxing/oned/UPCEANExtensionSupport;->twoSupport:Lcom/google/zxing/oned/UPCEANExtension2Support;
+    iget-object v4, v0, Lcom/google/zxing/oned/UPCEANExtensionSupport;->twoSupport:Lcom/google/zxing/oned/UPCEANExtension2Support;
 
-    iget-object v6, v5, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeRowStringBuffer:Ljava/lang/StringBuilder;
+    iget-object v6, v4, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeRowStringBuffer:Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->setLength(I)V
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    iget-object v5, v5, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeMiddleCounters:[I
+    iget-object v4, v4, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeMiddleCounters:[I
 
-    aput v4, v5, v4
+    aput v5, v4, v5
 
     const/4 v7, 0x1
 
-    aput v4, v5, v7
+    aput v5, v4, v7
 
     const/4 v8, 0x2
 
-    aput v4, v5, v8
+    aput v5, v4, v8
 
     const/4 v9, 0x3
 
-    aput v4, v5, v9
+    aput v5, v4, v9
 
     iget v9, v2, Lcom/google/zxing/common/BitArray;->size:I
 
     aget v10, v3, v7
 
-    move v11, v4
+    move v11, v5
 
     move v12, v11
 
@@ -132,7 +136,7 @@
 
     sget-object v13, Lcom/google/zxing/oned/UPCEANReader;->L_AND_G_PATTERNS:[[I
 
-    invoke-static {v2, v5, v10, v13}, Lcom/google/zxing/oned/UPCEANReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
+    invoke-static {v2, v4, v10, v13}, Lcom/google/zxing/oned/UPCEANReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
 
     move-result v13
 
@@ -144,14 +148,14 @@
 
     invoke-virtual {v6, v14}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    array-length v14, v5
+    array-length v14, v4
 
-    move v15, v4
+    move v15, v5
 
     :goto_1
     if-ge v15, v14, :cond_0
 
-    aget v16, v5, v15
+    aget v16, v4, v15
 
     add-int v10, v10, v16
 
@@ -211,22 +215,22 @@
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v5
+    move-result v4
 
     const/4 v6, 0x0
 
-    if-eq v5, v8, :cond_4
+    if-eq v4, v8, :cond_4
 
-    move-object v5, v6
+    move-object v4, v6
 
     goto :goto_2
 
     :cond_4
-    new-instance v5, Ljava/util/EnumMap;
+    new-instance v4, Ljava/util/EnumMap;
 
     const-class v9, Lcom/google/zxing/ResultMetadataType;
 
-    invoke-direct {v5, v9}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v4, v9}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
     sget-object v9, Lcom/google/zxing/ResultMetadataType;->ISSUE_NUMBER:Lcom/google/zxing/ResultMetadataType;
 
@@ -234,7 +238,7 @@
 
     move-result-object v11
 
-    invoke-virtual {v5, v9, v11}, Ljava/util/EnumMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v9, v11}, Ljava/util/EnumMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_2
     new-instance v9, Lcom/google/zxing/Result;
@@ -243,7 +247,7 @@
 
     new-instance v11, Lcom/google/zxing/ResultPoint;
 
-    aget v12, v3, v4
+    aget v12, v3, v5
 
     aget v3, v3, v7
 
@@ -259,13 +263,13 @@
 
     invoke-direct {v11, v3, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    aput-object v11, v8, v4
+    aput-object v11, v8, v5
 
     new-instance v3, Lcom/google/zxing/ResultPoint;
 
-    int-to-float v4, v10
+    int-to-float v5, v10
 
-    invoke-direct {v3, v4, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v3, v5, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
     aput-object v3, v8, v7
 
@@ -273,9 +277,9 @@
 
     invoke-direct {v9, v2, v6, v8, v1}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
-    if-eqz v5, :cond_5
+    if-eqz v4, :cond_5
 
-    invoke-virtual {v9, v5}, Lcom/google/zxing/Result;->putAllMetadata(Ljava/util/Map;)V
+    invoke-virtual {v9, v4}, Lcom/google/zxing/Result;->putAllMetadata(Ljava/util/Map;)V
 
     :cond_5
     return-object v9

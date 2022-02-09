@@ -1,5 +1,5 @@
 .class public Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;
-.super Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;
+.super Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;
 .source "FragmentSubmissionCountrySelectionBindingImpl.java"
 
 
@@ -11,10 +11,6 @@
 
 # instance fields
 .field public mDirtyFlags:J
-
-.field public final mboundView0:Landroid/widget/ScrollView;
-
-.field public final mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
 .field public final mboundView11:Lde/rki/coronawarnapp/databinding/MergeGuidelinesSideBinding;
 
@@ -63,15 +59,13 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09046e
+    const v1, 0x7f0a06e7
 
     const/4 v2, 0x7
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f09046c
+    const v1, 0x7f0a06e5
 
     const/16 v2, 0x8
 
@@ -91,15 +85,25 @@
 
     :array_1
     .array-data 4
-        0x7f0c0090
-        0x7f0c00a8
-        0x7f0c00a7
-        0x7f0c00b4
+        0x7f0d00d8
+        0x7f0d00ef
+        0x7f0d00ee
+        0x7f0d010a
     .end array-data
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 12
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->sIncludes:Landroidx/databinding/ViewDataBinding$IncludedLayouts;
 
@@ -167,7 +171,7 @@
 
     move-object v4, p2
 
-    invoke-direct/range {v2 .. v11}, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/Button;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;)V
+    invoke-direct/range {v2 .. v11}, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/Button;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;Landroid/widget/TextView;Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;)V
 
     const-wide/16 v1, -0x1
 
@@ -179,8 +183,6 @@
 
     check-cast p1, Landroid/widget/ScrollView;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mboundView0:Landroid/widget/ScrollView;
-
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/widget/ScrollView;->setTag(Ljava/lang/Object;)V
@@ -190,8 +192,6 @@
     aget-object p1, v0, p1
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
-
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBindingImpl;->mboundView1:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
@@ -208,32 +208,40 @@
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_0
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionButton:Landroid/widget/Button;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCard:Ljava/lang/Object;
+
+    check-cast p1, Landroid/widget/Button;
 
     invoke-virtual {p1, v1}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardRegisteredAtText:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     if-eqz p1, :cond_1
 
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_1
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardStatusIcon:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
 
     if-eqz p1, :cond_2
 
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_2
-    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+    iget-object p1, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->mRegisterDate:Ljava/lang/Object;
+
+    check-cast p1, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
 
     if-eqz p1, :cond_3
 
     iput-object p0, p1, Landroidx/databinding/ViewDataBinding;->mContainingBinding:Landroidx/databinding/ViewDataBinding;
 
     :cond_3
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -336,7 +344,9 @@
 
     if-eqz v6, :cond_4
 
-    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionButton:Landroid/widget/Button;
+    iget-object v6, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCard:Ljava/lang/Object;
+
+    check-cast v6, Landroid/widget/Button;
 
     invoke-virtual {v6, v0}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -349,21 +359,25 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardRegisteredAtText:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v6, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v13, 0x7f08009f
+    const v13, 0x7f0800d0
 
-    invoke-static {v6, v13, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline36(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v6, v13, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline0;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardRegisteredAtText:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     iget-object v6, v1, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
 
-    const v13, 0x7f1203ae
+    const v13, 0x7f130573
 
-    invoke-static {v6, v13, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline37(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
+    invoke-static {v6, v13, v0}, Lde/rki/coronawarnapp/databinding/FragmentInformationAboutBindingImpl$$ExternalSyntheticOutline1;->m(Landroid/view/View;ILde/rki/coronawarnapp/databinding/IncludeHeaderBinding;)V
 
     :cond_5
     and-long/2addr v11, v2
@@ -372,7 +386,9 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardStatusIcon:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
 
     invoke-virtual {v0, v15}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;->setActive(Ljava/lang/Boolean;)V
 
@@ -383,7 +399,9 @@
 
     if-eqz v0, :cond_7
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->mRegisterDate:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
 
     invoke-virtual {v0, v15}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;->setActive(Ljava/lang/Boolean;)V
 
@@ -392,30 +410,30 @@
 
     cmp-long v0, v2, v4
 
-    if-eqz v0, :cond_9
-
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
-
-    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBindingImpl;
-
     if-eqz v0, :cond_8
 
-    goto :goto_0
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->mRegisterDate:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+
+    invoke-virtual {v0, v15}, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;->setCountries(Ljava/util/List;)V
 
     :cond_8
-    throw v15
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardRegisteredAtText:Ljava/lang/Object;
 
-    :cond_9
-    :goto_0
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->mRegisterDate:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
-    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
+    iget-object v0, v1, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardStatusIcon:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->executeBindingsInternal()V
 
@@ -461,7 +479,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardRegisteredAtText:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -472,7 +492,9 @@
     return v1
 
     :cond_1
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->mRegisterDate:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -483,7 +505,9 @@
     return v1
 
     :cond_2
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardStatusIcon:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->hasPendingBindings()Z
 
@@ -534,15 +558,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardRegisteredAtText:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->mRegisterDate:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardStatusIcon:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
 
     invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding;->invalidateAll()V
 
@@ -567,18 +597,32 @@
 
 .method public setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "lifecycleOwner"
+        }
+    .end annotation
 
     invoke-super {p0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionHeader:Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardRegisteredAtText:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeHeaderBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionSelector:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->mRegisterDate:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountrySelectorBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/FragmentSubmissionCountrySelectionBinding;->submissionCountrySelectionNoSelection:Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
+    iget-object v0, p0, Lde/rki/coronawarnapp/databinding/IncludeTestResultCardBinding;->testResultCardStatusIcon:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/databinding/IncludeSubmissionCountryNoSelectionBinding;
 
     invoke-virtual {v0, p1}, Landroidx/databinding/ViewDataBinding;->setLifecycleOwner(Landroidx/lifecycle/LifecycleOwner;)V
 

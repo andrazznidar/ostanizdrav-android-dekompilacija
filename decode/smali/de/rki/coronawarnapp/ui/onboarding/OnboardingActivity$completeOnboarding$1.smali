@@ -20,36 +20,26 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Ljava/lang/Long;",
-        "Ljava/lang/Long;",
+        "Lorg/joda/time/Instant;",
+        "Lorg/joda/time/Instant;",
         ">;"
     }
 .end annotation
 
 
-# static fields
-.field public static final INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;
+# instance fields
+.field public final synthetic this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;)V
+    .locals 0
 
-    new-instance v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;
+    iput-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
-    invoke-direct {v0}, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;-><init>()V
+    const/4 p1, 0x1
 
-    sput-object v0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;->INSTANCE:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
@@ -57,19 +47,28 @@
 
 # virtual methods
 .method public invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 0
 
-    check-cast p1, Ljava/lang/Number;
+    check-cast p1, Lorg/joda/time/Instant;
 
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity$completeOnboarding$1;->this$0:Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;
 
-    sget-object p1, Lde/rki/coronawarnapp/environment/BuildConfigWrap;->INSTANCE:Lde/rki/coronawarnapp/environment/BuildConfigWrap;
+    iget-object p1, p1, Lde/rki/coronawarnapp/ui/onboarding/OnboardingActivity;->timeStamper:Lde/rki/coronawarnapp/util/TimeStamper;
 
-    sget-wide v0, Lde/rki/coronawarnapp/environment/BuildConfigWrap;->VERSION_CODE:J
+    if-eqz p1, :cond_0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    new-instance p1, Lorg/joda/time/Instant;
 
-    move-result-object p1
+    invoke-direct {p1}, Lorg/joda/time/Instant;-><init>()V
 
     return-object p1
+
+    :cond_0
+    const-string/jumbo p1, "timeStamper"
+
+    invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method

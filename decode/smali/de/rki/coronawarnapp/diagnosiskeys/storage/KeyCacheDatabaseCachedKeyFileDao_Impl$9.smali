@@ -36,6 +36,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;Landroidx/room/RoomSQLiteQuery;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x1010
+        }
+        names = {
+            "this$0",
+            "val$_statement"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl$9;->this$0:Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;
 
@@ -75,49 +85,49 @@
     :try_start_0
     const-string v0, "id"
 
-    invoke-static {v2, v0}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
-    const-string v5, "type"
+    const-string/jumbo v5, "type"
 
-    invoke-static {v2, v5}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
     const-string v6, "location"
 
-    invoke-static {v2, v6}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "day"
 
-    invoke-static {v2, v7}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "hour"
 
-    invoke-static {v2, v8}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
     const-string v9, "createdAt"
 
-    invoke-static {v2, v9}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
     const-string v10, "checksumMD5"
 
-    invoke-static {v2, v10}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v10}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
     const-string v11, "completed"
 
-    invoke-static {v2, v11}, Landroidx/navigation/ui/R$anim;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v2, v11}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
@@ -134,7 +144,7 @@
 
     move-result v13
 
-    if-eqz v13, :cond_5
+    if-eqz v13, :cond_2
 
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -160,22 +170,10 @@
 
     iget-object v14, v14, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
 
-    if-eqz v14, :cond_4
+    invoke-virtual {v14, v13}, Lde/rki/coronawarnapp/util/database/CommonConverters;->toLocationCode(Ljava/lang/String;)Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
 
-    if-eqz v13, :cond_0
+    move-result-object v17
 
-    new-instance v14, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;
-
-    invoke-direct {v14, v13}, Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v17, v14
-
-    goto :goto_1
-
-    :cond_0
-    move-object/from16 v17, v4
-
-    :goto_1
     invoke-interface {v2, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v13
@@ -196,22 +194,26 @@
 
     iget-object v14, v14, Lde/rki/coronawarnapp/diagnosiskeys/storage/KeyCacheDatabaseCachedKeyFileDao_Impl;->__commonConverters:Lde/rki/coronawarnapp/util/database/CommonConverters;
 
-    if-eqz v14, :cond_3
+    invoke-static {v14}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v13, :cond_1
+    if-nez v13, :cond_0
 
-    invoke-static {v13}, Lorg/joda/time/LocalTime;->parse(Ljava/lang/String;)Lorg/joda/time/LocalTime;
+    move-object/from16 v19, v4
+
+    goto :goto_1
+
+    :cond_0
+    sget-object v14, Lorg/joda/time/LocalTime;->TIME_DURATION_TYPES:Ljava/util/Set;
+
+    sget-object v14, Lorg/joda/time/format/ISODateTimeFormat$Constants;->ltp:Lorg/joda/time/format/DateTimeFormatter;
+
+    invoke-static {v13, v14}, Lorg/joda/time/LocalTime;->parse(Ljava/lang/String;Lorg/joda/time/format/DateTimeFormatter;)Lorg/joda/time/LocalTime;
 
     move-result-object v13
 
     move-object/from16 v19, v13
 
-    goto :goto_2
-
-    :cond_1
-    move-object/from16 v19, v4
-
-    :goto_2
+    :goto_1
     invoke-interface {v2, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v13
@@ -232,18 +234,18 @@
 
     move-result v13
 
-    if-eqz v13, :cond_2
+    if-eqz v13, :cond_1
 
     const/4 v13, 0x1
 
     move/from16 v22, v13
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_2
+    :cond_1
     move/from16 v22, v3
 
-    :goto_3
+    :goto_2
     new-instance v13, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;
 
     move-object v14, v13
@@ -251,18 +253,12 @@
     invoke-direct/range {v14 .. v22}, Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo;-><init>(Ljava/lang/String;Lde/rki/coronawarnapp/diagnosiskeys/storage/CachedKeyInfo$Type;Lde/rki/coronawarnapp/diagnosiskeys/server/LocationCode;Lorg/joda/time/LocalDate;Lorg/joda/time/LocalTime;Lorg/joda/time/Instant;Ljava/lang/String;Z)V
 
     invoke-virtual {v12, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_3
-    throw v4
-
-    :cond_4
-    throw v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_5
+    goto :goto_0
+
+    :cond_2
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
     return-object v12

@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,10 +43,6 @@
             ">;)V"
         }
     .end annotation
-
-    const-string v0, "items"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lde/rki/coronawarnapp/ui/lists/BaseAdapter;-><init>()V
 
@@ -88,7 +84,9 @@
 
     move-result-object p2
 
-    invoke-virtual {p1, p2, p3}, Lde/rki/coronawarnapp/release/ItemAdapter$ViewHolder;->bind(Ljava/lang/Object;Ljava/util/List;)V
+    check-cast p2, Lde/rki/coronawarnapp/release/NewReleaseInfoItem;
+
+    invoke-static {p1, p2, p3}, Lde/rki/coronawarnapp/util/lists/BindableVH$DefaultImpls;->bind(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;)V
 
     return-void
 .end method

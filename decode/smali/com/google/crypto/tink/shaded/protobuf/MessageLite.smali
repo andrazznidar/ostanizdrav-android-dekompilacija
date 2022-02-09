@@ -15,18 +15,6 @@
 
 
 # virtual methods
-.method public abstract getParserForType()Lcom/google/crypto/tink/shaded/protobuf/Parser;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
-            "+",
-            "Lcom/google/crypto/tink/shaded/protobuf/MessageLite;",
-            ">;"
-        }
-    .end annotation
-.end method
-
 .method public abstract getSerializedSize()I
 .end method
 

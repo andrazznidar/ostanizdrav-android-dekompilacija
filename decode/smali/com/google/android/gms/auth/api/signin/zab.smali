@@ -1,6 +1,6 @@
 .class public final Lcom/google/android/gms/auth/api/signin/zab;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 # interfaces
 .implements Landroid/os/Parcelable$Creator;
@@ -33,7 +33,7 @@
 
     move-object/from16 v0, p1
 
-    invoke-static/range {p1 .. p1}, Lcom/airbnb/lottie/R$attr;->validateObjectHeader(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->validateObjectHeader(Landroid/os/Parcel;)I
 
     move-result v1
 
@@ -78,110 +78,130 @@
 
     move-result v2
 
-    const v3, 0xffff
-
-    and-int/2addr v3, v2
+    int-to-char v3, v2
 
     packed-switch v3, :pswitch_data_0
 
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->skipUnknownField(Landroid/os/Parcel;I)V
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->skipUnknownField(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v2
+
+    move-object/from16 v19, v2
 
     goto :goto_0
 
     :pswitch_1
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v2
+
+    move-object/from16 v18, v2
 
     goto :goto_0
 
     :pswitch_2
     sget-object v3, Lcom/google/android/gms/common/api/Scope;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {v0, v2, v3}, Lcom/airbnb/lottie/R$attr;->createTypedList(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createTypedList(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
-    move-result-object v17
+    move-result-object v2
+
+    move-object/from16 v17, v2
 
     goto :goto_0
 
     :pswitch_3
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v2
+
+    move-object/from16 v16, v2
 
     goto :goto_0
 
     :pswitch_4
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readLong(Landroid/os/Parcel;I)J
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readLong(Landroid/os/Parcel;I)J
 
-    move-result-wide v14
+    move-result-wide v2
+
+    move-wide v14, v2
 
     goto :goto_0
 
     :pswitch_5
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v2
+
+    move-object v13, v2
 
     goto :goto_0
 
     :pswitch_6
     sget-object v3, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {v0, v2, v3}, Lcom/airbnb/lottie/R$attr;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createParcelable(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
 
-    move-object v12, v2
+    check-cast v2, Landroid/net/Uri;
 
-    check-cast v12, Landroid/net/Uri;
+    move-object v12, v2
 
     goto :goto_0
 
     :pswitch_7
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v2
+
+    move-object v11, v2
 
     goto :goto_0
 
     :pswitch_8
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v2
+
+    move-object v10, v2
 
     goto :goto_0
 
     :pswitch_9
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v2
+
+    move-object v9, v2
 
     goto :goto_0
 
     :pswitch_a
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->createString(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v2
+
+    move-object v8, v2
 
     goto :goto_0
 
     :pswitch_b
-    invoke-static {v0, v2}, Lcom/airbnb/lottie/R$attr;->readInt(Landroid/os/Parcel;I)I
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->readInt(Landroid/os/Parcel;I)I
 
-    move-result v7
+    move-result v2
+
+    move v7, v2
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v0, v1}, Lcom/airbnb/lottie/R$attr;->ensureAtEnd(Landroid/os/Parcel;I)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/SafeParcelReader;->ensureAtEnd(Landroid/os/Parcel;I)V
 
     new-instance v0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
@@ -208,7 +228,7 @@
     .end packed-switch
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method public final bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
     new-array p1, p1, [Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;

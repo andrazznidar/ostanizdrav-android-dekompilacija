@@ -11,9 +11,7 @@
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
     .locals 7
 
-    sget-object v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->CWA_WEB_REQUEST_PROBLEM:Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;
-
-    iget v0, v0, Lde/rki/coronawarnapp/exception/reporting/ErrorCodes;->code:I
+    const/16 v0, 0xfa0
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -50,18 +48,6 @@
     invoke-direct/range {v1 .. v6}, Lde/rki/coronawarnapp/exception/reporting/ReportedIOException;-><init>(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Integer;I)V
 
     iput p1, p0, Lde/rki/coronawarnapp/exception/http/CwaWebException;->statusCode:I
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;I)V
-    .locals 0
-
-    and-int/lit8 p3, p4, 0x4
-
-    const/4 p3, 0x0
-
-    invoke-direct {p0, p1, p2, p3}, Lde/rki/coronawarnapp/exception/http/CwaWebException;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

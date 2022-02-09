@@ -28,8 +28,13 @@
 .method public final toType(Ljava/lang/Integer;)Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
     .locals 0
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -39,11 +44,6 @@
     invoke-static {p1}, Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;->forNumber(I)Lde/rki/coronawarnapp/server/protocols/internal/v2/RiskCalculationParametersOuterClass$NormalizedTimeToRiskLevelMapping$RiskLevel;
 
     move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
 
     :goto_0
     return-object p1

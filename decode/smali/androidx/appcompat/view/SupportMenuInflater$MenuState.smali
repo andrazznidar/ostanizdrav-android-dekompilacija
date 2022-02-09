@@ -29,8 +29,6 @@
 
 .field public itemActionProvider:Landroidx/core/view/ActionProvider;
 
-.field public itemActionProviderClassName:Ljava/lang/String;
-
 .field public itemActionViewClassName:Ljava/lang/String;
 
 .field public itemActionViewLayout:I

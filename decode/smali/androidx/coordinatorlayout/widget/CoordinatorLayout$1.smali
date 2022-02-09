@@ -85,9 +85,7 @@
     :goto_1
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
-    iget-object v1, p2, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
-
-    invoke-virtual {v1}, Landroidx/core/view/WindowInsetsCompat$Impl;->isConsumed()Z
+    invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->isConsumed()Z
 
     move-result v1
 
@@ -107,7 +105,9 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Landroidx/core/view/ViewCompat;->getFitsSystemWindows(Landroid/view/View;)Z
+    sget-object v3, Landroidx/core/view/ViewCompat;->sViewPropertyAnimatorMap:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v2}, Landroid/view/View;->getFitsSystemWindows()Z
 
     move-result v3
 
@@ -123,13 +123,7 @@
 
     if-eqz v2, :cond_3
 
-    invoke-virtual {v2, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout$Behavior;->onApplyWindowInsets(Landroidx/core/view/WindowInsetsCompat;)Landroidx/core/view/WindowInsetsCompat;
-
-    move-result-object p2
-
-    iget-object v2, p2, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
-
-    invoke-virtual {v2}, Landroidx/core/view/WindowInsetsCompat$Impl;->isConsumed()Z
+    invoke-virtual {p2}, Landroidx/core/view/WindowInsetsCompat;->isConsumed()Z
 
     move-result v2
 

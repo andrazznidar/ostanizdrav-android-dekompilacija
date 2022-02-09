@@ -17,16 +17,34 @@
 # instance fields
 .field public mMandatorySystemGestureInsets:Landroidx/core/graphics/Insets;
 
+.field public mSystemGestureInsets:Landroidx/core/graphics/Insets;
+
+.field public mTappableElementInsets:Landroidx/core/graphics/Insets;
+
 
 # direct methods
 .method public constructor <init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "host",
+            "insets"
+        }
+    .end annotation
 
     invoke-direct {p0, p1, p2}, Landroidx/core/view/WindowInsetsCompat$Impl28;-><init>(Landroidx/core/view/WindowInsetsCompat;Landroid/view/WindowInsets;)V
 
     const/4 p1, 0x0
 
+    iput-object p1, p0, Landroidx/core/view/WindowInsetsCompat$Impl29;->mSystemGestureInsets:Landroidx/core/graphics/Insets;
+
     iput-object p1, p0, Landroidx/core/view/WindowInsetsCompat$Impl29;->mMandatorySystemGestureInsets:Landroidx/core/graphics/Insets;
+
+    iput-object p1, p0, Landroidx/core/view/WindowInsetsCompat$Impl29;->mTappableElementInsets:Landroidx/core/graphics/Insets;
 
     return-void
 .end method
@@ -34,7 +52,7 @@
 
 # virtual methods
 .method public getMandatorySystemGestureInsets()Landroidx/core/graphics/Insets;
-    .locals 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl29;->mMandatorySystemGestureInsets:Landroidx/core/graphics/Insets;
 
@@ -46,15 +64,7 @@
 
     move-result-object v0
 
-    iget v1, v0, Landroid/graphics/Insets;->left:I
-
-    iget v2, v0, Landroid/graphics/Insets;->top:I
-
-    iget v3, v0, Landroid/graphics/Insets;->right:I
-
-    iget v0, v0, Landroid/graphics/Insets;->bottom:I
-
-    invoke-static {v1, v2, v3, v0}, Landroidx/core/graphics/Insets;->of(IIII)Landroidx/core/graphics/Insets;
+    invoke-static {v0}, Landroidx/core/graphics/Insets;->toCompatInsets(Landroid/graphics/Insets;)Landroidx/core/graphics/Insets;
 
     move-result-object v0
 
@@ -68,6 +78,20 @@
 
 .method public inset(IIII)Landroidx/core/view/WindowInsetsCompat;
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "left",
+            "top",
+            "right",
+            "bottom"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$Impl20;->mPlatformInsets:Landroid/view/WindowInsets;
 
@@ -80,4 +104,18 @@
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public setStableInsets(Landroidx/core/graphics/Insets;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "stableInsets"
+        }
+    .end annotation
+
+    return-void
 .end method

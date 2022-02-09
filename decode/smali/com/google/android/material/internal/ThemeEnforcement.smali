@@ -17,7 +17,7 @@
 
     new-array v1, v0, [I
 
-    const v2, 0x7f0400c2
+    sget v2, Lcom/google/android/material/R$attr;->colorPrimary:I
 
     const/4 v3, 0x0
 
@@ -27,7 +27,7 @@
 
     new-array v0, v0, [I
 
-    const v1, 0x7f0400c5
+    sget v1, Lcom/google/android/material/R$attr;->colorPrimaryVariant:I
 
     aput v1, v0, v3
 
@@ -45,17 +45,17 @@
 
     move-result-object p1
 
-    const/4 p2, 0x1
+    sget p2, Lcom/google/android/material/R$styleable;->ThemeEnforcement_enforceMaterialTheme:I
 
     const/4 p3, 0x0
 
     invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result p3
+    move-result p2
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
-    if-eqz p3, :cond_1
+    if-eqz p2, :cond_1
 
     new-instance p1, Landroid/util/TypedValue;
 
@@ -63,11 +63,13 @@
 
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object p3
+    move-result-object p2
 
-    const v0, 0x7f0401b3
+    sget p3, Lcom/google/android/material/R$attr;->isMaterialTheme:I
 
-    invoke-virtual {p3, v0, p1, p2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    const/4 v0, 0x1
+
+    invoke-virtual {p2, p3, p1, v0}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
     move-result p2
 
@@ -109,7 +111,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    sget v1, Lcom/google/android/material/R$styleable;->ThemeEnforcement_enforceTextAppearance:I
 
     const/4 v2, 0x0
 
@@ -170,7 +172,9 @@
 
     :cond_4
     :goto_1
-    invoke-virtual {v0, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    sget p0, Lcom/google/android/material/R$styleable;->ThemeEnforcement_android_textAppearance:I
+
+    invoke-virtual {v0, p0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p0
 
@@ -245,7 +249,7 @@
 
     const-string v0, " (or a descendant)."
 
-    invoke-static {p1, p2, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline19(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2, v0}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -266,4 +270,22 @@
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public static varargs obtainTintedStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroidx/appcompat/widget/TintTypedArray;
+    .locals 0
+
+    invoke-static {p0, p1, p3, p4}, Lcom/google/android/material/internal/ThemeEnforcement;->checkCompatibleTheme(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+    invoke-static/range {p0 .. p5}, Lcom/google/android/material/internal/ThemeEnforcement;->checkTextAppearance(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
+
+    new-instance p5, Landroidx/appcompat/widget/TintTypedArray;
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object p1
+
+    invoke-direct {p5, p0, p1}, Landroidx/appcompat/widget/TintTypedArray;-><init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
+
+    return-object p5
 .end method

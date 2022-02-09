@@ -18,8 +18,7 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/AesGcmHkdfStreamingParams;",
         "Lcom/google/crypto/tink/proto/AesGcmHkdfStreamingParams$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
@@ -27,13 +26,13 @@
 # static fields
 .field public static final CIPHERTEXT_SEGMENT_SIZE_FIELD_NUMBER:I = 0x1
 
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/AesGcmHkdfStreamingParams;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/AesGcmHkdfStreamingParams;
 
 .field public static final DERIVED_KEY_SIZE_FIELD_NUMBER:I = 0x2
 
 .field public static final HKDF_HASH_TYPE_FIELD_NUMBER:I = 0x3
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -45,11 +44,11 @@
 
 
 # instance fields
-.field public ciphertextSegmentSize_:I
+.field private ciphertextSegmentSize_:I
 
-.field public derivedKeySize_:I
+.field private derivedKeySize_:I
 
-.field public hkdfHashType_:I
+.field private hkdfHashType_:I
 
 
 # direct methods
@@ -69,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V

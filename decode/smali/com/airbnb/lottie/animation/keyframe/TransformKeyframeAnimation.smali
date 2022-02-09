@@ -108,7 +108,7 @@
 
     iput-object v0, p0, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->matrix:Landroid/graphics/Matrix;
 
-    iget-object v0, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTransform;->anchorPoint:Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;
+    iget-object v0, p1, Lcom/airbnb/lottie/model/animatable/AnimatableTransform;->anchorPoint:Lokhttp3/ConnectionPool;
 
     const/4 v1, 0x0
 
@@ -119,7 +119,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue;->createAnimation()Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
+    invoke-virtual {v0}, Lokhttp3/ConnectionPool;->createAnimation()Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
 
     move-result-object v0
 
@@ -752,24 +752,22 @@
 
     iget v2, v0, Landroid/graphics/PointF;->x:F
 
-    cmpl-float v2, v2, v1
+    cmpl-float v3, v2, v1
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
-    iget v2, v0, Landroid/graphics/PointF;->y:F
+    iget v3, v0, Landroid/graphics/PointF;->y:F
 
-    cmpl-float v2, v2, v1
+    cmpl-float v3, v3, v1
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
     :cond_0
-    iget-object v2, p0, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->matrix:Landroid/graphics/Matrix;
-
-    iget v3, v0, Landroid/graphics/PointF;->x:F
+    iget-object v3, p0, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->matrix:Landroid/graphics/Matrix;
 
     iget v0, v0, Landroid/graphics/PointF;->y:F
 
-    invoke-virtual {v2, v3, v0}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    invoke-virtual {v3, v2, v0}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
     :cond_1
     iget-object v0, p0, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->rotation:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
@@ -990,20 +988,18 @@
 
     iget v3, v0, Lcom/airbnb/lottie/value/ScaleXY;->scaleX:F
 
-    cmpl-float v3, v3, v2
+    cmpl-float v4, v3, v2
 
-    if-nez v3, :cond_7
+    if-nez v4, :cond_7
 
-    iget v3, v0, Lcom/airbnb/lottie/value/ScaleXY;->scaleY:F
+    iget v4, v0, Lcom/airbnb/lottie/value/ScaleXY;->scaleY:F
 
-    cmpl-float v2, v3, v2
+    cmpl-float v2, v4, v2
 
     if-eqz v2, :cond_8
 
     :cond_7
     iget-object v2, p0, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->matrix:Landroid/graphics/Matrix;
-
-    iget v3, v0, Lcom/airbnb/lottie/value/ScaleXY;->scaleX:F
 
     iget v0, v0, Lcom/airbnb/lottie/value/ScaleXY;->scaleY:F
 
@@ -1022,20 +1018,18 @@
 
     iget v2, v0, Landroid/graphics/PointF;->x:F
 
-    cmpl-float v2, v2, v1
+    cmpl-float v3, v2, v1
 
-    if-nez v2, :cond_9
+    if-nez v3, :cond_9
 
-    iget v2, v0, Landroid/graphics/PointF;->y:F
+    iget v3, v0, Landroid/graphics/PointF;->y:F
 
-    cmpl-float v1, v2, v1
+    cmpl-float v1, v3, v1
 
     if-eqz v1, :cond_a
 
     :cond_9
     iget-object v1, p0, Lcom/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation;->matrix:Landroid/graphics/Matrix;
-
-    iget v2, v0, Landroid/graphics/PointF;->x:F
 
     neg-float v2, v2
 

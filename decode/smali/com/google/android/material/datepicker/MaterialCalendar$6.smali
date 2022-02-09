@@ -46,7 +46,7 @@
 .end method
 
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .locals 0
+    .locals 1
 
     if-gez p2, :cond_0
 
@@ -88,15 +88,19 @@
 
     iget-object p3, p0, Lcom/google/android/material/datepicker/MaterialCalendar$6;->val$monthsPagerAdapter:Lcom/google/android/material/datepicker/MonthsPagerAdapter;
 
-    iget-object p3, p3, Lcom/google/android/material/datepicker/MonthsPagerAdapter;->calendarConstraints:Lcom/google/android/material/datepicker/CalendarConstraints;
+    iget-object v0, p3, Lcom/google/android/material/datepicker/MonthsPagerAdapter;->calendarConstraints:Lcom/google/android/material/datepicker/CalendarConstraints;
 
-    iget-object p3, p3, Lcom/google/android/material/datepicker/CalendarConstraints;->start:Lcom/google/android/material/datepicker/Month;
+    iget-object v0, v0, Lcom/google/android/material/datepicker/CalendarConstraints;->start:Lcom/google/android/material/datepicker/Month;
 
-    invoke-virtual {p3, p1}, Lcom/google/android/material/datepicker/Month;->monthsLater(I)Lcom/google/android/material/datepicker/Month;
+    invoke-virtual {v0, p1}, Lcom/google/android/material/datepicker/Month;->monthsLater(I)Lcom/google/android/material/datepicker/Month;
 
     move-result-object p1
 
-    iget-object p1, p1, Lcom/google/android/material/datepicker/Month;->longName:Ljava/lang/String;
+    iget-object p3, p3, Lcom/google/android/material/datepicker/MonthsPagerAdapter;->context:Landroid/content/Context;
+
+    invoke-virtual {p1, p3}, Lcom/google/android/material/datepicker/Month;->getLongName(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-virtual {p2, p1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 

@@ -13,8 +13,6 @@
 
 
 # instance fields
-.field public mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;
-
 .field public mDrawsInPressedState:Z
 
 .field public mHijackFocus:Z
@@ -46,11 +44,11 @@
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 2
 
-    const/4 v0, 0x0
+    sget v0, Landroidx/appcompat/R$attr;->dropDownListViewStyle:I
 
-    const v1, 0x7f04012f
+    const/4 v1, 0x0
 
-    invoke-direct {p0, p1, v0, v1}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, v1, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     new-instance p1, Landroid/graphics/Rect;
 
@@ -154,7 +152,7 @@
     return-void
 
     :cond_0
-    invoke-super {p0}, Landroid/widget/ListView;->drawableStateChanged()V
+    invoke-super {p0}, Landroid/widget/AbsListView;->drawableStateChanged()V
 
     const/4 v0, 0x1
 
@@ -172,7 +170,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-super {p0}, Landroid/widget/ListView;->hasFocus()Z
+    invoke-super {p0}, Landroid/view/ViewGroup;->hasFocus()Z
 
     move-result v0
 
@@ -200,7 +198,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-super {p0}, Landroid/widget/ListView;->hasWindowFocus()Z
+    invoke-super {p0}, Landroid/view/View;->hasWindowFocus()Z
 
     move-result v0
 
@@ -228,7 +226,7 @@
 
     if-nez v0, :cond_1
 
-    invoke-super {p0}, Landroid/widget/ListView;->isFocused()Z
+    invoke-super {p0}, Landroid/view/View;->isFocused()Z
 
     move-result v0
 
@@ -261,7 +259,7 @@
     if-nez v0, :cond_1
 
     :cond_0
-    invoke-super {p0}, Landroid/widget/ListView;->isInTouchMode()Z
+    invoke-super {p0}, Landroid/view/View;->isInTouchMode()Z
 
     move-result v0
 
@@ -789,7 +787,7 @@
     :goto_5
     if-eqz v0, :cond_10
 
-    if-eqz v4, :cond_12
+    if-eqz v4, :cond_11
 
     :cond_10
     iput-boolean v5, v1, Landroidx/appcompat/widget/DropDownListView;->mDrawsInPressedState:Z
@@ -815,22 +813,11 @@
     invoke-virtual {v3, v5}, Landroid/view/View;->setPressed(Z)V
 
     :cond_11
-    iget-object v3, v1, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;
-
-    if-eqz v3, :cond_12
-
-    invoke-virtual {v3}, Landroidx/core/view/ViewPropertyAnimatorCompat;->cancel()V
-
-    const/4 v3, 0x0
-
-    iput-object v3, v1, Landroidx/appcompat/widget/DropDownListView;->mClickAnimation:Landroidx/core/view/ViewPropertyAnimatorCompat;
-
-    :cond_12
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_13
 
     iget-object v3, v1, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_12
 
     new-instance v3, Landroidx/core/widget/ListViewAutoScrollHelper;
 
@@ -838,34 +825,34 @@
 
     iput-object v3, v1, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
-    :cond_13
+    :cond_12
     iget-object v3, v1, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
     iget-boolean v4, v3, Landroidx/core/widget/AutoScrollHelper;->mEnabled:Z
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    iput-boolean v5, v3, Landroidx/core/widget/AutoScrollHelper;->mEnabled:Z
+    iput-boolean v4, v3, Landroidx/core/widget/AutoScrollHelper;->mEnabled:Z
 
     invoke-virtual {v3, v1, v2}, Landroidx/core/widget/AutoScrollHelper;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     goto :goto_6
 
-    :cond_14
+    :cond_13
     iget-object v2, v1, Landroidx/appcompat/widget/DropDownListView;->mScrollHelper:Landroidx/core/widget/ListViewAutoScrollHelper;
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_15
 
     iget-boolean v3, v2, Landroidx/core/widget/AutoScrollHelper;->mEnabled:Z
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_14
 
     invoke-virtual {v2}, Landroidx/core/widget/AutoScrollHelper;->requestStop()V
 
-    :cond_15
+    :cond_14
     iput-boolean v5, v2, Landroidx/core/widget/AutoScrollHelper;->mEnabled:Z
 
-    :cond_16
+    :cond_15
     :goto_6
     return v0
 .end method
@@ -879,7 +866,7 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -904,12 +891,10 @@
 
     iput-object v1, p0, Landroidx/appcompat/widget/DropDownListView;->mResolveHoverRunnable:Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;
 
-    iget-object v2, v1, Landroidx/appcompat/widget/DropDownListView$ResolveHoverRunnable;->this$0:Landroidx/appcompat/widget/DropDownListView;
-
-    invoke-virtual {v2, v1}, Landroid/widget/ListView;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v1}, Landroid/widget/ListView;->post(Ljava/lang/Runnable;)Z
 
     :cond_1
-    invoke-super {p0, p1}, Landroid/widget/ListView;->onHoverEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
@@ -1036,7 +1021,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/ListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     :cond_1
-    invoke-super {p0, p1}, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/widget/AbsListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -1068,7 +1053,7 @@
     :goto_0
     iput-object v0, p0, Landroidx/appcompat/widget/DropDownListView;->mSelector:Landroidx/appcompat/widget/DropDownListView$GateKeeperDrawable;
 
-    invoke-super {p0, v0}, Landroid/widget/ListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
+    invoke-super {p0, v0}, Landroid/widget/AbsListView;->setSelector(Landroid/graphics/drawable/Drawable;)V
 
     new-instance v0, Landroid/graphics/Rect;
 

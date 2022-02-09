@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@id/trace_location_organizer_nav_graph" app:startDestination="@id/traceLocationInfoFragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <fragment android:label="TraceLocationQRInfoFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.qrinfo.TraceLocationQRInfoFragment" android:id="@id/traceLocationInfoFragment">
+        <action android:id="@id/action_traceLocationOrganizerQRInfoFragment_to_traceLocationOrganizerListFragment" app:destination="@id/traceLocationsFragment" app:popUpTo="@id/traceLocationInfoFragment" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="TraceLocationCategoryFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.category.TraceLocationCategoryFragment" android:id="@id/traceLocationCategoryFragment">
+        <action android:id="@id/action_traceLocationOrganizerCategoriesFragment_to_traceLocationCreateFragment" app:destination="@id/traceLocationCreateFragment" />
+    </fragment>
+    <fragment android:label="trace_location_create_fragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.create.TraceLocationCreateFragment" android:id="@id/traceLocationCreateFragment">
+        <argument android:name="category" app:argType="de.rki.coronawarnapp.ui.presencetracing.organizer.category.adapter.category.TraceLocationCategory" />
+        <argument android:name="originalItem" android:defaultValue="@null" app:argType="de.rki.coronawarnapp.presencetracing.checkins.qrcode.TraceLocation" app:nullable="true" />
+        <action android:id="@id/action_traceLocationCreateFragment_to_traceLocationOrganizerListFragment" app:destination="@id/traceLocationsFragment" app:popUpTo="@id/mainFragment" app:popUpToInclusive="false" />
+    </fragment>
+    <fragment android:label="TraceLocationSelectionFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.warn.list.TraceLocationSelectionFragment" android:id="@id/traceLocationSelectionFragment">
+        <action android:id="@id/action_traceLocationSelectionFragment_to_traceLocationWarnDurationFragment" app:destination="@id/traceLocationWarnDurationFragment" />
+        <action android:id="@id/action_traceLocationSelectionFragment_to_traceLocationQrScannerFragment" app:destination="@id/traceLocationQrScannerFragment" />
+    </fragment>
+    <fragment android:label="TraceLocationsFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.list.TraceLocationsFragment" android:id="@id/traceLocationsFragment">
+        <action android:id="@id/action_traceLocationsFragment_to_traceLocationCategoryFragment" app:destination="@id/traceLocationCategoryFragment" />
+        <action android:id="@id/action_traceLocationOrganizerListFragment_to_qrCodeDetailFragment" app:destination="@id/qrCodeDetailFragment" />
+        <action android:id="@id/action_traceLocationsFragment_to_qrCodeDetailFragment" app:destination="@id/qrCodeDetailFragment" />
+        <action android:id="@id/action_traceLocationsFragment_to_qrCodePosterFragment" app:destination="@id/qrCodePosterFragment" />
+        <action android:id="@id/action_traceLocationsFragment_to_traceLocationCreateFragment" app:destination="@id/traceLocationCreateFragment" />
+        <action android:id="@id/action_traceLocationOrganizerListFragment_to_traceLocationInfoFragment" app:destination="@id/traceLocationInfoFragment" />
+        <action android:id="@id/action_traceLocationsFragment_to_traceLocationWarnInfoFragment" app:destination="@id/traceLocationWarnInfoFragment" />
+    </fragment>
+    <fragment android:label="QrCodeDetailFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.details.QrCodeDetailFragment" android:id="@id/qrCodeDetailFragment">
+        <argument android:name="traceLocationId" app:argType="long" />
+        <action android:id="@id/action_qrCodeDetailFragment_to_qrCodePosterFragment" app:destination="@id/qrCodePosterFragment" />
+        <action android:id="@id/action_qrCodeDetailFragment_to_traceLocationCreateFragment" app:destination="@id/traceLocationCreateFragment" />
+    </fragment>
+    <fragment android:label="qr_code_poster_fragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.poster.QrCodePosterFragment" android:id="@id/qrCodePosterFragment">
+        <argument android:name="traceLocationId" app:argType="long" />
+    </fragment>
+    <fragment android:label="TraceLocationWarnInfoFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.warn.TraceLocationWarnInfoFragment" android:id="@id/traceLocationWarnInfoFragment">
+        <action android:id="@id/action_traceLocationWarnInfoFragment_to_traceLocationSelectionFragment" app:destination="@id/traceLocationSelectionFragment" app:popUpTo="@id/traceLocationWarnInfoFragment" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="TraceLocationWarnDurationFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.warn.duration.TraceLocationWarnDurationFragment" android:id="@id/traceLocationWarnDurationFragment">
+        <argument android:name="traceLocation" app:argType="de.rki.coronawarnapp.presencetracing.checkins.qrcode.TraceLocation" />
+        <action android:id="@id/action_traceLocationWarnDurationFragment_to_traceLocationTanDurationFragment" app:destination="@id/traceLocationTanDurationFragment" />
+    </fragment>
+    <fragment android:label="TraceLocationWarnTanFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.warn.tan.TraceLocationWarnTanFragment" android:id="@id/traceLocationTanDurationFragment">
+        <argument android:name="traceLocationWarnDuration" app:argType="de.rki.coronawarnapp.ui.presencetracing.organizer.warn.TraceLocationWarnDuration" />
+        <action android:id="@id/action_traceLocationTanDurationFragment_to_traceLocationOrganizerThanksFragment" app:destination="@id/traceLocationOrganizerThanksFragment" app:popUpTo="@id/traceLocationsFragment" app:popUpToInclusive="true" />
+    </fragment>
+    <fragment android:label="trace_location_organizer_thanks_fragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.thanks.TraceLocationOrganizerThanksFragment" android:id="@id/traceLocationOrganizerThanksFragment" />
+    <fragment android:label="OrganizerWarnQrCodeScannerFragment" android:name="de.rki.coronawarnapp.ui.presencetracing.organizer.warn.qrcode.OrganizerWarnQrCodeScannerFragment" android:id="@id/traceLocationQrScannerFragment">
+        <action android:id="@id/action_traceLocationQrScannerFragment_to_traceLocationWarnDurationFragment" app:destination="@id/traceLocationWarnDurationFragment" />
+    </fragment>
+</navigation>

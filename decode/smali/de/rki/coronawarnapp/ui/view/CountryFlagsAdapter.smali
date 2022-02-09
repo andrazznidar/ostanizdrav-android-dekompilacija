@@ -82,7 +82,7 @@
 
     const/4 v0, 0x2
 
-    invoke-static {p1, p2, p3, v0, p3}, Lcom/google/zxing/client/android/R$id;->bind$default(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;ILjava/lang/Object;)V
+    invoke-static {p1, p2, p3, v0, p3}, Lde/rki/coronawarnapp/util/lists/BindableVH$DefaultImpls;->bind$default(Lde/rki/coronawarnapp/util/lists/BindableVH;Ljava/lang/Object;Ljava/util/List;ILjava/lang/Object;)V
 
     return-void
 .end method

@@ -21,6 +21,16 @@
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;I)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x8010,
+            0x0
+        }
+        names = {
+            "this$0",
+            "version"
+        }
+    .end annotation
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;
 
@@ -33,6 +43,14 @@
 # virtual methods
 .method public createAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     const-string v0, "CREATE TABLE IF NOT EXISTS `AnalyticsExposureWindowEntity` (`sha256Hash` TEXT NOT NULL, `calibrationConfidence` INTEGER NOT NULL, `dateMillis` INTEGER NOT NULL, `infectiousness` INTEGER NOT NULL, `reportType` INTEGER NOT NULL, `normalizedTime` REAL NOT NULL, `transmissionRiskLevel` INTEGER NOT NULL, PRIMARY KEY(`sha256Hash`))"
 
@@ -59,6 +77,14 @@
 
 .method public dropAllTables(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     const-string v0, "DROP TABLE IF EXISTS `AnalyticsExposureWindowEntity`"
 
@@ -76,7 +102,7 @@
 
     iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
@@ -85,7 +111,7 @@
     move-result p1
 
     :goto_0
-    if-ge v0, p1, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;
 
@@ -97,29 +123,32 @@
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onCreate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object p1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;
 
     iget-object p1, p1, Landroidx/room/RoomDatabase;->mCallbacks:Ljava/util/List;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
@@ -128,7 +157,7 @@
     move-result p1
 
     :goto_0
-    if-ge v0, p1, :cond_1
+    if-ge v0, p1, :cond_0
 
     iget-object v1, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;
 
@@ -140,23 +169,26 @@
 
     check-cast v1, Landroidx/room/RoomDatabase$Callback;
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
 .method public onOpen(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     iget-object v0, p0, Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl$1;->this$0:Lde/rki/coronawarnapp/datadonation/analytics/modules/exposurewindows/AnalyticsExposureWindowDatabase_Impl;
 
@@ -203,12 +235,28 @@
 
 .method public onPostMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     return-void
 .end method
 
 .method public onPreMigrate(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     invoke-static {p1}, Landroidx/room/util/DBUtil;->dropFtsSyncTriggers(Landroidx/sqlite/db/SupportSQLiteDatabase;)V
 
@@ -217,6 +265,14 @@
 
 .method public onValidateSchema(Landroidx/sqlite/db/SupportSQLiteDatabase;)Landroidx/room/RoomOpenHelper$ValidationResult;
     .locals 20
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "_db"
+        }
+    .end annotation
 
     move-object/from16 v0, p1
 
@@ -228,7 +284,7 @@
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v4, "sha256Hash"
+    const-string/jumbo v4, "sha256Hash"
 
     const-string v5, "TEXT"
 
@@ -246,7 +302,7 @@
 
     invoke-direct/range {v3 .. v9}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v3, "sha256Hash"
+    const-string/jumbo v3, "sha256Hash"
 
     invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -352,7 +408,7 @@
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v9, "transmissionRiskLevel"
+    const-string/jumbo v9, "transmissionRiskLevel"
 
     const-string v10, "INTEGER"
 
@@ -360,11 +416,11 @@
 
     invoke-direct/range {v8 .. v14}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v4, "transmissionRiskLevel"
+    const-string/jumbo v4, "transmissionRiskLevel"
 
     const/4 v5, 0x0
 
-    invoke-static {v1, v4, v2, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v4, v2, v5}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -394,7 +450,7 @@
 
     const-string v2, "AnalyticsExposureWindowEntity(de.rki.coronawarnapp.datadonation.analytics.modules.exposurewindows.AnalyticsExposureWindowEntity).\n Expected:\n"
 
-    invoke-static {v2, v6, v4, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v6, v4, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -477,7 +533,7 @@
 
     new-instance v2, Landroidx/room/util/TableInfo$Column;
 
-    const-string v11, "typicalAttenuation"
+    const-string/jumbo v11, "typicalAttenuation"
 
     const-string v12, "INTEGER"
 
@@ -485,7 +541,7 @@
 
     invoke-direct/range {v10 .. v16}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v9, "typicalAttenuation"
+    const-string/jumbo v9, "typicalAttenuation"
 
     invoke-virtual {v1, v9, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -501,7 +557,7 @@
 
     const-string v6, "secondsSinceLastScan"
 
-    invoke-static {v1, v6, v2, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v6, v2, v5}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -529,7 +585,7 @@
 
     const-string v2, "AnalyticsScanInstanceEntity(de.rki.coronawarnapp.datadonation.analytics.modules.exposurewindows.AnalyticsScanInstanceEntity).\n Expected:\n"
 
-    invoke-static {v2, v7, v4, v1}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v7, v4, v1}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -554,7 +610,7 @@
 
     const/4 v12, 0x1
 
-    const-string v7, "sha256Hash"
+    const-string/jumbo v7, "sha256Hash"
 
     const-string v8, "TEXT"
 
@@ -574,7 +630,7 @@
 
     const/16 v19, 0x1
 
-    const-string v14, "timestamp"
+    const-string/jumbo v14, "timestamp"
 
     const-string v15, "INTEGER"
 
@@ -582,9 +638,9 @@
 
     invoke-direct/range {v13 .. v19}, Landroidx/room/util/TableInfo$Column;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;I)V
 
-    const-string v3, "timestamp"
+    const-string/jumbo v3, "timestamp"
 
-    invoke-static {v1, v3, v2, v5}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline34(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
+    invoke-static {v1, v3, v2, v5}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline1;->m(Ljava/util/HashMap;Ljava/lang/String;Landroidx/room/util/TableInfo$Column;I)Ljava/util/HashSet;
 
     move-result-object v2
 
@@ -612,7 +668,7 @@
 
     const-string v2, "AnalyticsReportedExposureWindowEntity(de.rki.coronawarnapp.datadonation.analytics.modules.exposurewindows.AnalyticsReportedExposureWindowEntity).\n Expected:\n"
 
-    invoke-static {v2, v6, v4, v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline15(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
+    invoke-static {v2, v6, v4, v0}, Landroidx/work/impl/WorkDatabase_Impl$1$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Landroidx/room/util/TableInfo;Ljava/lang/String;Landroidx/room/util/TableInfo;)Ljava/lang/String;
 
     move-result-object v0
 

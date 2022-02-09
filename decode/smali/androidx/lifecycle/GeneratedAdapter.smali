@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract callMethods(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;ZLandroidx/lifecycle/MethodCallsLogger;)V
+.method public abstract callMethods(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;ZLcom/upokecenter/cbor/StringRefs;)V
 .end method

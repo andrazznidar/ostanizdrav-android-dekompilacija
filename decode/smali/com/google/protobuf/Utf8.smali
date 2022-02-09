@@ -161,19 +161,6 @@
     return p0
 .end method
 
-.method public static access$500(I)I
-    .locals 1
-
-    const/16 v0, -0xc
-
-    if-le p0, v0, :cond_0
-
-    const/4 p0, -0x1
-
-    :cond_0
-    return p0
-.end method
-
 .method public static encode(Ljava/lang/CharSequence;[BII)I
     .locals 1
 
@@ -307,7 +294,7 @@
 
     const-string v0, "UTF-8 length does not fit in int: "
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/support/v4/media/RatingCompat$$ExternalSyntheticOutline0;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

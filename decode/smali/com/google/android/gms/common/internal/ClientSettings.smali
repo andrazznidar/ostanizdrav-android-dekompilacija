@@ -1,13 +1,12 @@
 .class public final Lcom/google/android/gms/common/internal/ClientSettings;
 .super Ljava/lang/Object;
-.source "com.google.android.gms:play-services-base@@17.5.0"
+.source "com.google.android.gms:play-services-base@@17.6.0"
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/gms/common/internal/ClientSettings$Builder;,
-        Lcom/google/android/gms/common/internal/ClientSettings$zaa;
+        Lcom/google/android/gms/common/internal/ClientSettings$Builder;
     }
 .end annotation
 
@@ -41,7 +40,7 @@
             "Ljava/util/Map<",
             "Lcom/google/android/gms/common/api/Api<",
             "*>;",
-            "Lcom/google/android/gms/common/internal/ClientSettings$zaa;",
+            "Lcom/google/android/gms/common/internal/zab;",
             ">;"
         }
     .end annotation
@@ -53,7 +52,7 @@
 
 .field public final zai:Lcom/google/android/gms/signin/SignInOptions;
 
-.field public zak:Ljava/lang/Integer;
+.field public zaj:Ljava/lang/Integer;
 
 
 # direct methods
@@ -67,19 +66,11 @@
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
     .end param
-    .param p5    # Landroid/view/View;
-        .annotation build Landroidx/annotation/RecentlyNonNull;
-        .end annotation
-    .end param
     .param p6    # Ljava/lang/String;
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
     .end param
     .param p7    # Ljava/lang/String;
-        .annotation build Landroidx/annotation/RecentlyNonNull;
-        .end annotation
-    .end param
-    .param p8    # Lcom/google/android/gms/signin/SignInOptions;
         .annotation build Landroidx/annotation/RecentlyNonNull;
         .end annotation
     .end param
@@ -93,7 +84,7 @@
             "Ljava/util/Map<",
             "Lcom/google/android/gms/common/api/Api<",
             "*>;",
-            "Lcom/google/android/gms/common/internal/ClientSettings$zaa;",
+            "Lcom/google/android/gms/common/internal/zab;",
             ">;I",
             "Landroid/view/View;",
             "Ljava/lang/String;",
@@ -125,9 +116,9 @@
 
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
-    move-result-object p1
+    move-result-object p2
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zad:Ljava/util/Map;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zad:Ljava/util/Map;
 
     iput-object p6, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zag:Ljava/lang/String;
 
@@ -135,43 +126,41 @@
 
     iput-object p8, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zai:Lcom/google/android/gms/signin/SignInOptions;
 
-    new-instance p1, Ljava/util/HashSet;
+    new-instance p3, Ljava/util/HashSet;
 
-    iget-object p2, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zab:Ljava/util/Set;
-
-    invoke-direct {p1, p2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    iget-object p2, p0, Lcom/google/android/gms/common/internal/ClientSettings;->zad:Ljava/util/Map;
+    invoke-direct {p3, p1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
     invoke-interface {p2}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object p2
+    move-result-object p1
 
     :goto_1
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result p3
+    move-result p2
 
-    if-eqz p3, :cond_1
+    if-eqz p2, :cond_1
 
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object p3
+    move-result-object p2
 
-    check-cast p3, Lcom/google/android/gms/common/internal/ClientSettings$zaa;
+    check-cast p2, Lcom/google/android/gms/common/internal/zab;
 
-    iget-object p3, p3, Lcom/google/android/gms/common/internal/ClientSettings$zaa;->zaa:Ljava/util/Set;
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1, p3}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+    const/4 p2, 0x0
+
+    invoke-interface {p3, p2}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_1
 
     :cond_1
-    invoke-static {p1}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {p3}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object p1
 

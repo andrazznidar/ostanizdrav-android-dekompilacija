@@ -10,8 +10,6 @@
 # instance fields
 .field public mDirtyFlags:J
 
-.field public final mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
 
 # direct methods
 .method public static constructor <clinit>()V
@@ -23,39 +21,31 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f09053d
+    const v1, 0x7f0a07db
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0900bd
+    const v1, 0x7f0a0129
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0901de
+    const v1, 0x7f0a035f
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0900d2
+    const v1, 0x7f0a0156
 
     const/4 v2, 0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f0902d7
+    const v1, 0x7f0a04ab
 
     const/4 v2, 0x5
 
@@ -66,6 +56,16 @@
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
     .locals 12
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
@@ -99,7 +99,7 @@
 
     move-object v9, v1
 
-    check-cast v9, Landroidx/appcompat/widget/AppCompatImageView;
+    check-cast v9, Landroid/widget/ImageView;
 
     const/4 v1, 0x5
 
@@ -125,7 +125,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/constraintlayout/widget/Barrier;Landroidx/appcompat/widget/AppCompatImageView;Landroid/widget/Button;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroid/widget/TextView;Landroidx/constraintlayout/widget/Barrier;Landroid/widget/ImageView;Landroid/widget/Button;Landroid/widget/TextView;)V
 
     const-wide/16 v3, -0x1
 
@@ -137,11 +137,9 @@
 
     check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    iput-object p1, p0, Lde/rki/coronawarnapp/databinding/HomeSubmissionStatusCardUnregisteredBindingImpl;->mboundView0:Landroidx/constraintlayout/widget/ConstraintLayout;
-
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

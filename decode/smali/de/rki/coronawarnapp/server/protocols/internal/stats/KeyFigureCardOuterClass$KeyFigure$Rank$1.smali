@@ -1,4 +1,4 @@
-.class public Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank$1;
+.class Lde/rki/coronawarnapp/server/protocols/internal/stats/KeyFigureCardOuterClass$KeyFigure$Rank$1;
 .super Ljava/lang/Object;
 .source "KeyFigureCardOuterClass.java"
 

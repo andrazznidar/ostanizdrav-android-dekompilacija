@@ -63,7 +63,7 @@
 .end method
 
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
-    .locals 24
+    .locals 21
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 
     move-object/from16 v0, p2
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1a
 
     sget-object v1, Lcom/google/zxing/DecodeHintType;->PURE_BARCODE:Lcom/google/zxing/DecodeHintType;
 
@@ -93,7 +93,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_1a
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
 
@@ -103,13 +103,13 @@
 
     iget v2, v0, Lcom/google/zxing/common/BitMatrix;->height:I
 
-    const/4 v3, 0x0
+    const/4 v3, -0x1
 
-    const/4 v4, -0x1
+    const/4 v4, 0x0
 
-    move v6, v3
+    move v5, v3
 
-    move v5, v4
+    move v6, v4
 
     :goto_0
     iget v7, v0, Lcom/google/zxing/common/BitMatrix;->height:I
@@ -118,7 +118,7 @@
 
     if-ge v6, v7, :cond_7
 
-    move v7, v3
+    move v7, v4
 
     :goto_1
     iget v9, v0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
@@ -149,7 +149,7 @@
 
     if-ge v10, v1, :cond_3
 
-    move v11, v3
+    move v11, v4
 
     :goto_2
     rsub-int/lit8 v12, v11, 0x1f
@@ -172,7 +172,7 @@
     :cond_3
     add-int/lit8 v11, v10, 0x1f
 
-    if-le v11, v4, :cond_5
+    if-le v11, v3, :cond_5
 
     move v11, v8
 
@@ -188,9 +188,9 @@
     :cond_4
     add-int/2addr v10, v11
 
-    if-le v10, v4, :cond_5
+    if-le v10, v3, :cond_5
 
-    move v4, v10
+    move v3, v10
 
     :cond_5
     add-int/lit8 v7, v7, 0x1
@@ -207,95 +207,95 @@
 
     const/4 v7, 0x3
 
-    const/4 v10, 0x2
+    const/4 v9, 0x2
 
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
-    if-lt v4, v1, :cond_9
+    if-lt v3, v1, :cond_9
 
     if-ge v5, v2, :cond_8
 
     goto :goto_4
 
     :cond_8
-    new-array v12, v6, [I
+    new-array v11, v6, [I
 
-    aput v1, v12, v3
+    aput v1, v11, v4
 
-    aput v2, v12, v11
+    aput v2, v11, v10
 
-    sub-int/2addr v4, v1
+    sub-int/2addr v3, v1
 
-    add-int/2addr v4, v11
+    add-int/2addr v3, v10
 
-    aput v4, v12, v10
+    aput v3, v11, v9
 
     sub-int/2addr v5, v2
 
-    add-int/2addr v5, v11
+    add-int/2addr v5, v10
 
-    aput v5, v12, v7
+    aput v5, v11, v7
 
     goto :goto_5
 
     :cond_9
     :goto_4
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
     :goto_5
-    if-eqz v12, :cond_1a
+    if-eqz v11, :cond_19
 
-    aget v1, v12, v3
+    aget v1, v11, v4
 
-    aget v2, v12, v11
+    aget v2, v11, v10
 
-    aget v4, v12, v10
+    aget v3, v11, v9
 
-    aget v5, v12, v7
+    aget v5, v11, v7
 
-    const/16 v12, 0x21
+    const/16 v11, 0x21
 
-    const/16 v13, 0x1e
+    const/16 v12, 0x1e
 
-    add-int/2addr v13, v8
+    add-int/2addr v12, v8
 
-    div-int/lit8 v13, v13, 0x20
+    div-int/lit8 v12, v12, 0x20
 
-    mul-int/lit8 v8, v13, 0x21
+    mul-int/lit8 v8, v12, 0x21
 
     new-array v8, v8, [I
 
-    move v14, v3
+    move v13, v4
 
     :goto_6
-    const/16 v15, 0x1e
+    const/16 v14, 0x1e
 
-    if-ge v14, v12, :cond_c
+    if-ge v13, v11, :cond_c
 
-    mul-int v16, v14, v5
+    mul-int v15, v13, v5
 
-    div-int/lit8 v17, v5, 0x2
+    div-int/lit8 v16, v5, 0x2
 
-    add-int v17, v17, v16
+    add-int v16, v16, v15
 
-    div-int/lit8 v17, v17, 0x21
+    div-int/lit8 v16, v16, 0x21
 
-    add-int v9, v17, v2
+    add-int v15, v16, v2
 
-    move v6, v3
+    move v6, v4
 
     :goto_7
-    if-ge v6, v15, :cond_b
+    if-ge v6, v14, :cond_b
 
-    mul-int v16, v6, v4
+    mul-int v16, v6, v3
 
-    div-int/lit8 v17, v4, 0x2
+    div-int/lit8 v17, v3, 0x2
 
     add-int v17, v17, v16
 
-    and-int/lit8 v16, v14, 0x1
+    and-int/lit8 v16, v13, 0x1
 
-    mul-int v16, v16, v4
+    mul-int v16, v16, v3
 
     div-int/lit8 v16, v16, 0x2
 
@@ -305,13 +305,13 @@
 
     add-int v7, v16, v1
 
-    invoke-virtual {v0, v7, v9}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    invoke-virtual {v0, v7, v15}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
     move-result v7
 
     if-eqz v7, :cond_a
 
-    mul-int v7, v14, v13
+    mul-int v7, v13, v12
 
     div-int/lit8 v16, v6, 0x20
 
@@ -319,11 +319,11 @@
 
     aget v7, v8, v16
 
-    and-int/lit8 v18, v6, 0x1f
+    and-int/lit8 v17, v6, 0x1f
 
-    shl-int v18, v11, v18
+    shl-int v17, v10, v17
 
-    or-int v7, v18, v7
+    or-int v7, v17, v7
 
     aput v7, v8, v16
 
@@ -335,7 +335,7 @@
     goto :goto_7
 
     :cond_b
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v13, v13, 0x1
 
     const/4 v6, 0x4
 
@@ -348,78 +348,78 @@
 
     iget-object v1, v0, Lcom/google/zxing/maxicode/MaxiCodeReader;->decoder:Lcom/google/zxing/maxicode/decoder/Decoder;
 
-    if-eqz v1, :cond_19
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/16 v2, 0x90
 
-    new-array v4, v2, [B
+    new-array v3, v2, [B
 
-    move v5, v3
+    move v5, v4
 
     :goto_8
     const/4 v6, 0x5
 
-    if-ge v5, v12, :cond_10
+    if-ge v5, v11, :cond_10
 
     sget-object v7, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;->BITNR:[[I
 
     aget-object v7, v7, v5
 
-    move v9, v3
+    move v13, v4
 
     :goto_9
-    if-ge v9, v15, :cond_f
+    if-ge v13, v14, :cond_f
 
-    aget v14, v7, v9
+    aget v15, v7, v13
 
-    if-ltz v14, :cond_e
+    if-ltz v15, :cond_e
 
-    mul-int v16, v5, v13
+    mul-int v16, v5, v12
 
-    div-int/lit8 v18, v9, 0x20
+    div-int/lit8 v17, v13, 0x20
 
-    add-int v18, v18, v16
+    add-int v17, v17, v16
 
-    aget v16, v8, v18
+    aget v16, v8, v17
 
-    and-int/lit8 v18, v9, 0x1f
+    and-int/lit8 v17, v13, 0x1f
 
-    ushr-int v16, v16, v18
+    ushr-int v16, v16, v17
 
     and-int/lit8 v16, v16, 0x1
 
     if-eqz v16, :cond_d
 
-    move/from16 v16, v11
+    move/from16 v16, v10
 
     goto :goto_a
 
     :cond_d
-    move/from16 v16, v3
+    move/from16 v16, v4
 
     :goto_a
     if-eqz v16, :cond_e
 
-    div-int/lit8 v16, v14, 0x6
+    div-int/lit8 v16, v15, 0x6
 
-    aget-byte v18, v4, v16
+    aget-byte v17, v3, v16
 
-    rem-int/lit8 v14, v14, 0x6
+    rem-int/lit8 v15, v15, 0x6
 
-    rsub-int/lit8 v14, v14, 0x5
+    rsub-int/lit8 v15, v15, 0x5
 
-    shl-int v14, v11, v14
+    shl-int v15, v10, v15
 
-    int-to-byte v14, v14
+    int-to-byte v15, v15
 
-    or-int v14, v14, v18
+    or-int v15, v15, v17
 
-    int-to-byte v14, v14
+    int-to-byte v15, v15
 
-    aput-byte v14, v4, v16
+    aput-byte v15, v3, v16
 
     :cond_e
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v13, v13, 0x1
 
     goto :goto_9
 
@@ -429,25 +429,25 @@
     goto :goto_8
 
     :cond_10
+    const/16 v17, 0x0
+
+    const/16 v18, 0xa
+
+    const/16 v19, 0xa
+
     const/16 v20, 0x0
 
-    const/16 v21, 0xa
+    move-object v15, v1
 
-    const/16 v22, 0xa
+    move-object/from16 v16, v3
 
-    const/16 v23, 0x0
+    invoke-virtual/range {v15 .. v20}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
-    move-object/from16 v18, v1
-
-    move-object/from16 v19, v4
-
-    invoke-virtual/range {v18 .. v23}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
-
-    aget-byte v5, v4, v3
+    aget-byte v5, v3, v4
 
     and-int/lit8 v5, v5, 0xf
 
-    if-eq v5, v10, :cond_12
+    if-eq v5, v9, :cond_12
 
     const/4 v7, 0x3
 
@@ -463,31 +463,31 @@
 
     const/16 v8, 0x44
 
-    const/16 v9, 0x38
+    const/16 v11, 0x38
 
-    const/16 v23, 0x1
+    const/16 v20, 0x1
 
-    const/16 v20, 0x14
+    const/16 v17, 0x14
 
-    const/16 v21, 0x44
+    const/16 v18, 0x44
 
-    const/16 v22, 0x38
+    const/16 v19, 0x38
 
-    move-object/from16 v18, v1
+    move-object v15, v1
 
-    move-object/from16 v19, v4
+    move-object/from16 v16, v3
 
-    invoke-virtual/range {v18 .. v23}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    invoke-virtual/range {v15 .. v20}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
-    const/16 v23, 0x2
+    const/16 v20, 0x2
 
-    move/from16 v20, v7
+    move/from16 v17, v7
 
-    move/from16 v21, v8
+    move/from16 v18, v8
 
-    move/from16 v22, v9
+    move/from16 v19, v11
 
-    invoke-virtual/range {v18 .. v23}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    invoke-virtual/range {v15 .. v20}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
     const/16 v1, 0x4e
 
@@ -507,31 +507,31 @@
 
     const/16 v8, 0x54
 
-    const/16 v9, 0x28
+    const/16 v11, 0x28
 
-    const/16 v23, 0x1
+    const/16 v20, 0x1
 
-    const/16 v20, 0x14
+    const/16 v17, 0x14
 
-    const/16 v21, 0x54
+    const/16 v18, 0x54
 
-    const/16 v22, 0x28
+    const/16 v19, 0x28
 
-    move-object/from16 v18, v1
+    move-object v15, v1
 
-    move-object/from16 v19, v4
+    move-object/from16 v16, v3
 
-    invoke-virtual/range {v18 .. v23}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    invoke-virtual/range {v15 .. v20}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
-    const/16 v23, 0x2
+    const/16 v20, 0x2
 
-    move/from16 v20, v7
+    move/from16 v17, v7
 
-    move/from16 v21, v8
+    move/from16 v18, v8
 
-    move/from16 v22, v9
+    move/from16 v19, v11
 
-    invoke-virtual/range {v18 .. v23}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    invoke-virtual/range {v15 .. v20}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
     const/16 v1, 0x5e
 
@@ -540,21 +540,21 @@
     :goto_b
     const/16 v7, 0xa
 
-    invoke-static {v4, v3, v1, v3, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v3, v4, v1, v4, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     const/16 v8, 0x14
 
-    array-length v9, v1
+    array-length v11, v1
 
-    sub-int/2addr v9, v7
+    sub-int/2addr v11, v7
 
-    invoke-static {v4, v8, v1, v7, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v3, v8, v1, v7, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    if-eq v5, v10, :cond_15
+    if-eq v5, v9, :cond_15
 
     const/4 v2, 0x3
 
@@ -571,31 +571,31 @@
     :cond_13
     const/16 v2, 0x4d
 
-    invoke-static {v1, v11, v2}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getMessage([BII)Ljava/lang/String;
+    invoke-static {v1, v10, v2}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getMessage([BII)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto/16 :goto_d
 
     :cond_14
     const/16 v2, 0x5d
 
-    invoke-static {v1, v11, v2}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getMessage([BII)Ljava/lang/String;
+    invoke-static {v1, v10, v2}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getMessage([BII)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto/16 :goto_d
 
     :cond_15
     const/4 v2, 0x6
 
-    if-ne v5, v10, :cond_16
+    if-ne v5, v9, :cond_16
 
-    new-array v6, v15, [B
+    new-array v6, v14, [B
 
     fill-array-data v6, :array_0
 
@@ -615,7 +615,7 @@
 
     const-string v9, "0000000000"
 
-    invoke-virtual {v9, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v9, v4, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
@@ -632,63 +632,57 @@
     :cond_16
     new-array v8, v2, [C
 
-    sget-object v9, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
+    sget-object v11, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
 
-    aget-object v9, v9, v3
+    aget-object v12, v11, v4
+
+    new-array v13, v2, [B
+
+    fill-array-data v13, :array_2
+
+    invoke-static {v1, v13}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
+
+    move-result v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/String;->charAt(I)C
+
+    move-result v12
+
+    aput-char v12, v8, v4
+
+    aget-object v12, v11, v4
+
+    new-array v13, v2, [B
+
+    fill-array-data v13, :array_3
+
+    invoke-static {v1, v13}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
+
+    move-result v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/String;->charAt(I)C
+
+    move-result v12
+
+    aput-char v12, v8, v10
+
+    aget-object v10, v11, v4
 
     new-array v12, v2, [B
 
-    fill-array-data v12, :array_2
+    fill-array-data v12, :array_4
 
     invoke-static {v1, v12}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
 
     move-result v12
 
-    invoke-virtual {v9, v12}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v10, v12}, Ljava/lang/String;->charAt(I)C
 
-    move-result v9
+    move-result v10
 
-    aput-char v9, v8, v3
+    aput-char v10, v8, v9
 
-    sget-object v9, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
-
-    aget-object v9, v9, v3
-
-    new-array v12, v2, [B
-
-    fill-array-data v12, :array_3
-
-    invoke-static {v1, v12}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
-
-    move-result v12
-
-    invoke-virtual {v9, v12}, Ljava/lang/String;->charAt(I)C
-
-    move-result v9
-
-    aput-char v9, v8, v11
-
-    sget-object v9, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
-
-    aget-object v9, v9, v3
-
-    new-array v11, v2, [B
-
-    fill-array-data v11, :array_4
-
-    invoke-static {v1, v11}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getInt([B[B)I
-
-    move-result v11
-
-    invoke-virtual {v9, v11}, Ljava/lang/String;->charAt(I)C
-
-    move-result v9
-
-    aput-char v9, v8, v10
-
-    sget-object v9, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
-
-    aget-object v9, v9, v3
+    aget-object v9, v11, v4
 
     new-array v10, v2, [B
 
@@ -706,9 +700,7 @@
 
     aput-char v9, v8, v10
 
-    sget-object v9, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
-
-    aget-object v9, v9, v3
+    aget-object v9, v11, v4
 
     new-array v10, v2, [B
 
@@ -726,9 +718,7 @@
 
     aput-char v9, v8, v10
 
-    sget-object v9, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->SETS:[Ljava/lang/String;
-
-    aget-object v9, v9, v3
+    aget-object v9, v11, v4
 
     new-array v2, v2, [B
 
@@ -789,9 +779,9 @@
 
     move-result-object v7
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
@@ -805,7 +795,7 @@
 
     if-eqz v7, :cond_17
 
-    const/16 v3, 0x9
+    const/16 v4, 0x9
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -827,7 +817,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v4, v3, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_d
 
@@ -852,10 +842,10 @@
 
     move-result-object v2
 
-    invoke-virtual {v4, v3, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_d
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -881,18 +871,13 @@
     return-object v4
 
     :cond_19
-    const/4 v1, 0x0
-
-    throw v1
-
-    :cond_1a
     move-object/from16 v0, p0
 
     sget-object v1, Lcom/google/zxing/NotFoundException;->INSTANCE:Lcom/google/zxing/NotFoundException;
 
     throw v1
 
-    :cond_1b
+    :cond_1a
     move-object/from16 v0, p0
 
     sget-object v1, Lcom/google/zxing/NotFoundException;->INSTANCE:Lcom/google/zxing/NotFoundException;

@@ -31,7 +31,7 @@
         }
     .end annotation
 
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method
@@ -63,7 +63,7 @@
 .method public isOpaque()Z
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/FrameLayout;->isOpaque()Z
+    invoke-super {p0}, Landroid/view/View;->isOpaque()Z
 
     move-result v0
 

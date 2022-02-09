@@ -12,11 +12,7 @@
 
 # direct methods
 .method public constructor <init>(Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;)V
-    .locals 1
-
-    const-string v0, "SurveyType"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,44 +24,42 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 3
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eq v1, p1, :cond_2
 
-    move-result p1
+    return v2
 
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_2
+    return v0
 .end method
 
 .method public getActionId()I
     .locals 1
 
-    const v0, 0x7f090072
+    const v0, 0x7f0a00a2
 
     return v0
 .end method
@@ -73,88 +67,62 @@
 .method public getArguments()Landroid/os/Bundle;
     .locals 4
 
-    new-instance v0, Landroid/os/Bundle;
+    const-class v0, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    new-instance v1, Landroid/os/Bundle;
 
-    const-class v1, Landroid/os/Parcelable;
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    const-class v2, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
+    const-class v2, Landroid/os/Parcelable;
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v1
+    move-result v2
 
-    const-string v2, "SurveyType"
+    const-string v3, "SurveyType"
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_0
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
+    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    if-eqz v1, :cond_0
+    check-cast v0, Landroid/os/Parcelable;
 
-    check-cast v1, Landroid/os/Parcelable;
-
-    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-virtual {v1, v3, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
+    const-class v2, Ljava/io/Serializable;
 
-    const-string v1, "null cannot be cast to non-null type android.os.Parcelable"
+    invoke-virtual {v2, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result v2
 
-    throw v0
+    if-eqz v2, :cond_1
 
-    :cond_1
-    const-class v1, Ljava/io/Serializable;
+    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    const-class v3, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
+    invoke-virtual {v1, v3, v0}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
     :goto_0
-    return-object v0
+    return-object v1
 
-    :cond_2
-    new-instance v0, Ljava/lang/NullPointerException;
+    :cond_1
+    new-instance v1, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "null cannot be cast to non-null type java.io.Serializable"
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    const-string v2, " must implement Parcelable or Serializable or must be an Enum."
 
-    :cond_3
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-static {v0, v2}, Landroidx/appcompat/view/SupportMenuInflater$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    const-class v2, Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
-
-    const-string v3, " must implement Parcelable or Serializable or must be an Enum."
-
-    invoke-static {v2, v1, v3}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline8(Ljava/lang/Class;Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    throw v1
 .end method
 
 .method public hashCode()I
@@ -162,39 +130,33 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
-    const-string v0, "ActionRiskDetailsFragmentToSurveyConsentFragment(SurveyType="
+    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/TracingDetailsFragmentDirections$ActionRiskDetailsFragmentToSurveyConsentFragment;->SurveyType:Lde/rki/coronawarnapp/datadonation/survey/Surveys$Type;
+    const-string v2, "ActionRiskDetailsFragmentToSurveyConsentFragment(SurveyType="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ")"
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

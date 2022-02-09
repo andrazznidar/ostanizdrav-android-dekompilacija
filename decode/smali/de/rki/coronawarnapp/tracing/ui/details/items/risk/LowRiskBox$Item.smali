@@ -25,7 +25,7 @@
 .method public constructor <init>(Lde/rki/coronawarnapp/tracing/states/LowRisk;)V
     .locals 1
 
-    const-string v0, "state"
+    const-string/jumbo v0, "state"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -39,46 +39,48 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 3
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;->state:Lde/rki/coronawarnapp/tracing/states/LowRisk;
+    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;->state:Lde/rki/coronawarnapp/tracing/states/LowRisk;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;->state:Lde/rki/coronawarnapp/tracing/states/LowRisk;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_2
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_2
+    return v0
 .end method
 
 .method public getStableId()J
     .locals 2
 
-    const v0, 0x75983444
+    invoke-static {p0}, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/RiskStateItem$DefaultImpls;->getStableId(Lde/rki/coronawarnapp/tracing/ui/details/items/risk/RiskStateItem;)J
 
-    int-to-long v0, v0
+    move-result-wide v0
 
     return-wide v0
 .end method
@@ -88,39 +90,33 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;->state:Lde/rki/coronawarnapp/tracing/states/LowRisk;
 
-    if-eqz v0, :cond_0
-
     invoke-virtual {v0}, Lde/rki/coronawarnapp/tracing/states/LowRisk;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
-    const-string v0, "Item(state="
+    iget-object v0, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;->state:Lde/rki/coronawarnapp/tracing/states/LowRisk;
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lde/rki/coronawarnapp/tracing/ui/details/items/risk/LowRiskBox$Item;->state:Lde/rki/coronawarnapp/tracing/states/LowRisk;
+    const-string v2, "Item(state="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ")"
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

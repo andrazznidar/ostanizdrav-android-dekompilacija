@@ -33,7 +33,7 @@
 
     sput-object v0, Lcom/airbnb/lottie/parser/DocumentDataParser;->INSTANCE:Lcom/airbnb/lottie/parser/DocumentDataParser;
 
-    const-string v1, "t"
+    const-string/jumbo v1, "t"
 
     const-string v2, "f"
 
@@ -41,7 +41,7 @@
 
     const-string v4, "j"
 
-    const-string v5, "tr"
+    const-string/jumbo v5, "tr"
 
     const-string v6, "lh"
 
@@ -51,7 +51,7 @@
 
     const-string v9, "sc"
 
-    const-string v10, "sw"
+    const-string/jumbo v10, "sw"
 
     const-string v11, "of"
 
@@ -86,9 +86,9 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/airbnb/lottie/model/DocumentData$Justification;->CENTER:Lcom/airbnb/lottie/model/DocumentData$Justification;
-
     invoke-virtual/range {p1 .. p1}, Lcom/airbnb/lottie/parser/moshi/JsonReader;->beginObject()V
+
+    const/4 v0, 0x3
 
     const/4 v1, 0x0
 
@@ -98,7 +98,7 @@
 
     const/4 v4, 0x1
 
-    move-object v9, v0
+    move v9, v0
 
     move-object v6, v1
 
@@ -212,17 +212,17 @@
     goto :goto_1
 
     :cond_0
-    invoke-static {}, Lcom/airbnb/lottie/model/DocumentData$Justification;->values()[Lcom/airbnb/lottie/model/DocumentData$Justification;
+    invoke-static {}, Landroidx/constraintlayout/core/SolverVariable$Type$r8$EnumUnboxingUtility;->com$airbnb$lottie$model$DocumentData$Justification$s$values()[I
 
     move-result-object v3
 
-    aget-object v9, v3, v1
+    aget v9, v3, v1
 
     goto :goto_0
 
     :cond_1
     :goto_1
-    move-object v9, v0
+    move v9, v0
 
     goto :goto_0
 
@@ -258,9 +258,11 @@
 
     move-object v5, v0
 
-    invoke-direct/range {v5 .. v16}, Lcom/airbnb/lottie/model/DocumentData;-><init>(Ljava/lang/String;Ljava/lang/String;FLcom/airbnb/lottie/model/DocumentData$Justification;IFFIIFZ)V
+    invoke-direct/range {v5 .. v16}, Lcom/airbnb/lottie/model/DocumentData;-><init>(Ljava/lang/String;Ljava/lang/String;FIIFFIIFZ)V
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

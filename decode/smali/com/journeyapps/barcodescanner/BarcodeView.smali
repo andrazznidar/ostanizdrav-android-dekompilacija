@@ -3,18 +3,10 @@
 .source "BarcodeView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
-    }
-.end annotation
-
-
 # instance fields
 .field public callback:Lcom/journeyapps/barcodescanner/BarcodeCallback;
 
-.field public decodeMode:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+.field public decodeMode:I
 
 .field public decoderFactory:Lcom/journeyapps/barcodescanner/DecoderFactory;
 
@@ -31,9 +23,9 @@
 
     invoke-direct {p0, p1, p2}, Lcom/journeyapps/barcodescanner/CameraPreview;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object p1, Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;->NONE:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+    const/4 p1, 0x1
 
-    iput-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+    iput p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:I
 
     const/4 p1, 0x0
 
@@ -45,19 +37,17 @@
 
     iput-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->resultCallback:Landroid/os/Handler$Callback;
 
-    new-instance p1, Lcom/journeyapps/barcodescanner/DefaultDecoderFactory;
+    new-instance p2, Lcom/journeyapps/barcodescanner/DefaultDecoderFactory;
 
-    invoke-direct {p1}, Lcom/journeyapps/barcodescanner/DefaultDecoderFactory;-><init>()V
+    invoke-direct {p2}, Lcom/journeyapps/barcodescanner/DefaultDecoderFactory;-><init>()V
 
-    iput-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderFactory:Lcom/journeyapps/barcodescanner/DecoderFactory;
+    iput-object p2, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderFactory:Lcom/journeyapps/barcodescanner/DecoderFactory;
 
-    new-instance p1, Landroid/os/Handler;
+    new-instance p2, Landroid/os/Handler;
 
-    iget-object p2, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->resultCallback:Landroid/os/Handler$Callback;
+    invoke-direct {p2, p1}, Landroid/os/Handler;-><init>(Landroid/os/Handler$Callback;)V
 
-    invoke-direct {p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Handler$Callback;)V
-
-    iput-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->resultHandler:Landroid/os/Handler;
+    iput-object p2, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->resultHandler:Landroid/os/Handler;
 
     return-void
 .end method
@@ -130,7 +120,7 @@
 .method public setDecoderFactory(Lcom/journeyapps/barcodescanner/DecoderFactory;)V
     .locals 1
 
-    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
+    invoke-static {}, Lcom/journeyapps/barcodescanner/Util;->validateMainThread()V
 
     iput-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderFactory:Lcom/journeyapps/barcodescanner/DecoderFactory;
 
@@ -149,87 +139,77 @@
 .end method
 
 .method public final startDecoderThread()V
-    .locals 4
+    .locals 5
 
     invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeView;->stopDecoderThread()V
 
-    iget-object v0, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+    iget v0, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decodeMode:I
 
-    sget-object v1, Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;->NONE:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+    const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_0
 
     iget-boolean v0, p0, Lcom/journeyapps/barcodescanner/CameraPreview;->previewActive:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     new-instance v0, Lcom/journeyapps/barcodescanner/DecoderThread;
 
     invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/CameraPreview;->getCameraInstance()Lcom/journeyapps/barcodescanner/camera/CameraInstance;
 
-    move-result-object v1
+    move-result-object v2
 
     invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeView;->createDecoder()Lcom/journeyapps/barcodescanner/Decoder;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v3, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->resultHandler:Landroid/os/Handler;
+    iget-object v4, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->resultHandler:Landroid/os/Handler;
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/journeyapps/barcodescanner/DecoderThread;-><init>(Lcom/journeyapps/barcodescanner/camera/CameraInstance;Lcom/journeyapps/barcodescanner/Decoder;Landroid/os/Handler;)V
+    invoke-direct {v0, v2, v3, v4}, Lcom/journeyapps/barcodescanner/DecoderThread;-><init>(Lcom/journeyapps/barcodescanner/camera/CameraInstance;Lcom/journeyapps/barcodescanner/Decoder;Landroid/os/Handler;)V
 
     iput-object v0, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderThread:Lcom/journeyapps/barcodescanner/DecoderThread;
 
     invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/CameraPreview;->getPreviewFramingRect()Landroid/graphics/Rect;
 
-    move-result-object v1
+    move-result-object v2
 
-    iput-object v1, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->cropRect:Landroid/graphics/Rect;
+    iput-object v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->cropRect:Landroid/graphics/Rect;
 
     iget-object v0, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderThread:Lcom/journeyapps/barcodescanner/DecoderThread;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
+    invoke-static {}, Lcom/journeyapps/barcodescanner/Util;->validateMainThread()V
 
-    new-instance v1, Landroid/os/HandlerThread;
+    new-instance v2, Landroid/os/HandlerThread;
 
-    const-string v2, "DecoderThread"
+    const-string v3, "DecoderThread"
 
-    invoke-direct {v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    iput-object v1, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->thread:Landroid/os/HandlerThread;
+    iput-object v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->thread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v2}, Landroid/os/HandlerThread;->start()V
 
-    new-instance v1, Landroid/os/Handler;
+    new-instance v2, Landroid/os/Handler;
 
-    iget-object v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->thread:Landroid/os/HandlerThread;
+    iget-object v3, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->thread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v2}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v3}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v3, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->callback:Landroid/os/Handler$Callback;
+    iget-object v4, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->callback:Landroid/os/Handler$Callback;
 
-    invoke-direct {v1, v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+    invoke-direct {v2, v3, v4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
-    iput-object v1, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->handler:Landroid/os/Handler;
-
-    const/4 v1, 0x1
+    iput-object v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->handler:Landroid/os/Handler;
 
     iput-boolean v1, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->running:Z
 
     invoke-virtual {v0}, Lcom/journeyapps/barcodescanner/DecoderThread;->requestNextPreview()V
 
-    goto :goto_0
-
     :cond_0
-    const/4 v0, 0x0
-
-    throw v0
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
@@ -238,36 +218,36 @@
 
     iget-object v0, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderThread:Lcom/journeyapps/barcodescanner/DecoderThread;
 
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x0
-
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lcom/google/zxing/client/android/R$id;->validateMainThread()V
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->LOCK:Ljava/lang/Object;
+    invoke-static {}, Lcom/journeyapps/barcodescanner/Util;->validateMainThread()V
 
-    monitor-enter v2
+    iget-object v1, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->LOCK:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    const/4 v2, 0x0
+
+    :try_start_0
+    iput-boolean v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->running:Z
+
+    iget-object v2, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->handler:Landroid/os/Handler;
 
     const/4 v3, 0x0
 
-    :try_start_0
-    iput-boolean v3, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->running:Z
-
-    iget-object v3, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->handler:Landroid/os/Handler;
-
-    invoke-virtual {v3, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     iget-object v0, v0, Lcom/journeyapps/barcodescanner/DecoderThread;->thread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quit()Z
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput-object v1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderThread:Lcom/journeyapps/barcodescanner/DecoderThread;
+    iput-object v3, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->decoderThread:Lcom/journeyapps/barcodescanner/DecoderThread;
 
     goto :goto_0
 
@@ -275,16 +255,13 @@
     move-exception v0
 
     :try_start_1
-    monitor-exit v2
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
     :cond_0
-    throw v1
-
-    :cond_1
     :goto_0
     return-void
 .end method

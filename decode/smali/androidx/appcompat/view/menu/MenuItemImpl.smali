@@ -822,7 +822,11 @@
     :cond_0
     iget-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemActionRequestChanged()V
+    const/4 v0, 0x1
+
+    iput-boolean v0, p1, Landroidx/appcompat/view/menu/MenuBuilder;->mIsActionItemsStale:Z
+
+    invoke-virtual {p1, v0}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
 
     return-object p0
 .end method
@@ -917,11 +921,11 @@
 
     and-int/lit8 v0, v0, 0x4
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     iget-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    if-eqz p1, :cond_5
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Landroidx/appcompat/view/menu/MenuItemImpl;->getGroupId()I
 
@@ -996,11 +1000,6 @@
     goto :goto_3
 
     :cond_5
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_6
     invoke-virtual {p0, p1}, Landroidx/appcompat/view/menu/MenuItemImpl;->setCheckedInt(Z)V
 
     :goto_3
@@ -1357,19 +1356,19 @@
 .end method
 
 .method public setShowAsAction(I)V
-    .locals 2
+    .locals 3
 
     and-int/lit8 v0, p1, 0x3
 
-    if-eqz v0, :cond_1
-
     const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
 
     if-eq v0, v1, :cond_1
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
     goto :goto_0
 
@@ -1388,7 +1387,9 @@
 
     iget-object p1, p0, Landroidx/appcompat/view/menu/MenuItemImpl;->mMenu:Landroidx/appcompat/view/menu/MenuBuilder;
 
-    invoke-virtual {p1}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemActionRequestChanged()V
+    iput-boolean v1, p1, Landroidx/appcompat/view/menu/MenuBuilder;->mIsActionItemsStale:Z
+
+    invoke-virtual {p1, v1}, Landroidx/appcompat/view/menu/MenuBuilder;->onItemsChanged(Z)V
 
     return-void
 .end method

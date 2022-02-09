@@ -50,7 +50,9 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+    sget p2, Landroidx/appcompat/R$styleable;->ActionBarLayout_android_layout_gravity:I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p2
 

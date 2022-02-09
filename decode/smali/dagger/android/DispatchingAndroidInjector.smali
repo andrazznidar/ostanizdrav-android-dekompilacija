@@ -80,11 +80,11 @@
 
     add-int/2addr v1, v0
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
+    invoke-static {v1}, Lkotlin/collections/ArraysUtilJVM;->newLinkedHashMapWithExpectedSize(I)Ljava/util/LinkedHashMap;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    invoke-interface {v0, p2}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -121,7 +121,7 @@
 
     move-result-object p2
 
-    invoke-virtual {v0, v1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
@@ -192,7 +192,7 @@
 
     move-result-object v6
 
-    invoke-static {v4, v5, v6}, Lcom/google/zxing/client/android/R$id;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4, v5, v6}, Ldagger/internal/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {v4, p1}, Ldagger/android/AndroidInjector;->inject(Ljava/lang/Object;)V
     :try_end_0

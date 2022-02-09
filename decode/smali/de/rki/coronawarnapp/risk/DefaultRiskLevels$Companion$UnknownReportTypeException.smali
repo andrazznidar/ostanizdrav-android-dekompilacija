@@ -3,17 +3,6 @@
 .source "DefaultRiskLevels.kt"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lde/rki/coronawarnapp/risk/DefaultRiskLevels$Companion;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "UnknownReportTypeException"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 1

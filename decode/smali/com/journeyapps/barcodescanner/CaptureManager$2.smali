@@ -66,7 +66,7 @@
 
     iget-object v0, p1, Lcom/journeyapps/barcodescanner/CaptureManager;->activity:Landroid/app/Activity;
 
-    const v1, 0x7f12045d
+    sget v1, Lcom/google/zxing/client/android/R$string;->zxing_msg_camera_framework_bug:I
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

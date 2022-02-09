@@ -59,7 +59,7 @@
 
     move-result-wide p2
 
-    if-eqz p1, :cond_4
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-wide/32 v0, 0xdbba0
 
@@ -195,11 +195,6 @@
     iput-wide p2, p1, Landroidx/work/impl/model/WorkSpec;->flexDuration:J
 
     return-void
-
-    :cond_4
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 

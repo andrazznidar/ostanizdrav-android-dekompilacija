@@ -16,6 +16,12 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$userInfoAgeGroup$2$WhenMappings;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
@@ -67,7 +73,7 @@
 
     check-cast p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;
 
-    const-string v0, "$receiver"
+    const-string v0, "$this$createFlowPreference"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -75,17 +81,23 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "value"
+    const-string/jumbo v0, "value"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    sget-object v0, Lde/rki/coronawarnapp/datadonation/analytics/storage/AnalyticsSettings$userInfoAgeGroup$2$WhenMappings;->$EnumSwitchMapping$0:[I
+
     invoke-virtual {p3}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v0
+    move-result v1
 
-    const/4 v1, 0x4
+    aget v0, v0, v1
 
-    if-eq v0, v1, :cond_0
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    sget-object p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;->AGE_GROUP_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;
 
     invoke-virtual {p3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;->getNumber()I
 
@@ -94,8 +106,6 @@
     goto :goto_0
 
     :cond_0
-    sget-object p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;->AGE_GROUP_UNSPECIFIED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;
-
     invoke-virtual {p3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAAgeGroup;->getNumber()I
 
     move-result p3

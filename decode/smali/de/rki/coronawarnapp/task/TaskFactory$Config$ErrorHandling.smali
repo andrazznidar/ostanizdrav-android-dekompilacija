@@ -32,37 +32,37 @@
 
 # direct methods
 .method public static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
-    const/4 v0, 0x2
+    new-instance v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
-    new-array v0, v0, [Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    const-string v1, "SILENT"
 
-    new-instance v1, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    const/4 v2, 0x0
 
-    const-string v2, "SILENT"
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->SILENT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
-
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->SILENT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
     new-instance v1, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
-    const-string v2, "ALERT"
+    const-string v3, "ALERT"
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v3, v4}, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->ALERT:Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
-    aput-object v1, v0, v3
+    const/4 v3, 0x2
 
-    sput-object v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->$VALUES:[Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+    new-array v3, v3, [Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->$VALUES:[Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
     return-void
 .end method
@@ -99,7 +99,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->$VALUES:[Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/task/TaskFactory$Config$ErrorHandling;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

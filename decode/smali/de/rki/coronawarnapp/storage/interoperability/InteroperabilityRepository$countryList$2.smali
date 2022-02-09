@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigProvider;)V
+    value = Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository;-><init>(Lde/rki/coronawarnapp/appconfig/AppConfigProvider;Lde/rki/coronawarnapp/main/CWASettings;Lde/rki/coronawarnapp/util/network/NetworkStateProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,6 +48,15 @@
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;",
+            ">;)V"
+        }
+    .end annotation
 
     const/4 v0, 0x2
 
@@ -72,10 +81,6 @@
         }
     .end annotation
 
-    const-string v0, "completion"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance v0, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;
 
     invoke-direct {v0, p2}, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;-><init>(Lkotlin/coroutines/Continuation;)V
@@ -85,66 +90,30 @@
     return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+.method public invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Ljava/util/List;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const-string v0, "completion"
+    new-instance v0, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, p2}, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
-
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    invoke-static {p2}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
-
-    move-object v0, p1
-
-    check-cast v0, Ljava/util/List;
-
-    const/4 p1, 0x1
-
-    new-array p1, p1, [Ljava/lang/Object;
-
-    const/4 p2, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0x3e
-
-    const-string v1, ","
-
-    invoke-static/range {v0 .. v7}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    aput-object v0, p1, p2
-
-    sget-object p2, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
-
-    const-string v0, "Country list: %s"
-
-    invoke-virtual {p2, v0, p1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    iput-object p1, v0, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;->L$0:Ljava/lang/Object;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    invoke-virtual {v0, p1}, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    .locals 10
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lde/rki/coronawarnapp/storage/interoperability/InteroperabilityRepository$countryList$2;->L$0:Ljava/lang/Object;
 
@@ -152,11 +121,13 @@
 
     check-cast v0, Ljava/util/List;
 
-    const/4 p1, 0x1
+    sget-object p1, Ltimber/log/Timber;->Forest:Ltimber/log/Timber$Forest;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    const/4 v8, 0x0
+    new-array v8, v1, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
 
     const/4 v2, 0x0
 
@@ -172,17 +143,15 @@
 
     const-string v1, ","
 
-    invoke-static/range {v0 .. v7}, Lkotlin/collections/ArraysKt___ArraysKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
+    invoke-static/range {v0 .. v7}, Lkotlin/collections/CollectionsKt___CollectionsKt;->joinToString$default(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;I)Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, p1, v8
+    aput-object v0, v8, v9
 
-    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+    const-string v0, "Country list: %s"
 
-    const-string v1, "Country list: %s"
-
-    invoke-virtual {v0, v1, p1}, Ltimber/log/Timber$Tree;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v0, v8}, Ltimber/log/Timber$Forest;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

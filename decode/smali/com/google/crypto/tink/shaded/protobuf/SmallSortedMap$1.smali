@@ -4,19 +4,10 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->newFieldMap(I)Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap<",
-        "TFieldDescriptorType;",
+        "Lcom/google/crypto/tink/shaded/protobuf/FieldSet$FieldDescriptorLite;",
         "Ljava/lang/Object;",
         ">;"
     }

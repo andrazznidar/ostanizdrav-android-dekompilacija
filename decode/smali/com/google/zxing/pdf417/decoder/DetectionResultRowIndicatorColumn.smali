@@ -1,5 +1,5 @@
 .class public final Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;
-.super Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;
+.super Lcom/google/android/play/core/assetpacks/zzbi;
 .source "DetectionResultRowIndicatorColumn.java"
 
 
@@ -11,7 +11,7 @@
 .method public constructor <init>(Lcom/google/zxing/pdf417/decoder/BoundingBox;Z)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;-><init>(Lcom/google/zxing/pdf417/decoder/BoundingBox;)V
+    invoke-direct {p0, p1}, Lcom/google/android/play/core/assetpacks/zzbi;-><init>(Lcom/google/zxing/pdf417/decoder/BoundingBox;)V
 
     iput-boolean p2, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->isLeft:Z
 
@@ -20,10 +20,12 @@
 
 
 # virtual methods
-.method public getBarcodeMetadata()Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
-    .locals 12
+.method public getBarcodeMetadata()Lcom/google/zxing/pdf417/decoder/Codeword;
+    .locals 15
 
-    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+    iget-object v0, p0, Lcom/google/android/play/core/assetpacks/zzbi;->zzb:Ljava/lang/Object;
+
+    check-cast v0, [Lcom/google/zxing/pdf417/decoder/Codeword;
 
     new-instance v1, Lcom/google/zxing/pdf417/decoder/BarcodeValue;
 
@@ -194,35 +196,41 @@
     goto :goto_2
 
     :cond_6
-    new-instance v5, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
+    new-instance v5, Lcom/google/zxing/pdf417/decoder/Codeword;
 
     invoke-virtual {v1}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;->getValue()[I
 
     move-result-object v1
 
-    aget v1, v1, v6
+    aget v9, v1, v6
 
     invoke-virtual {v2}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;->getValue()[I
 
-    move-result-object v2
+    move-result-object v1
 
-    aget v2, v2, v6
+    aget v10, v1, v6
 
     invoke-virtual {v3}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;->getValue()[I
 
-    move-result-object v3
+    move-result-object v1
 
-    aget v3, v3, v6
+    aget v11, v1, v6
 
     invoke-virtual {v4}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;->getValue()[I
 
-    move-result-object v4
+    move-result-object v1
 
-    aget v4, v4, v6
+    aget v12, v1, v6
 
-    invoke-direct {v5, v1, v2, v3, v4}, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;-><init>(IIII)V
+    const/4 v13, 0x2
 
-    invoke-virtual {p0, v0, v5}, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->removeIncorrectCodewords([Lcom/google/zxing/pdf417/decoder/Codeword;Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;)V
+    const/4 v14, 0x0
+
+    move-object v8, v5
+
+    invoke-direct/range {v8 .. v14}, Lcom/google/zxing/pdf417/decoder/Codeword;-><init>(IIIIILde/rki/coronawarnapp/presencetracing/storage/entity/TraceLocationEntityKt$$IA$1;)V
+
+    invoke-virtual {p0, v0, v5}, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->removeIncorrectCodewords([Lcom/google/zxing/pdf417/decoder/Codeword;Lcom/google/zxing/pdf417/decoder/Codeword;)V
 
     return-object v5
 
@@ -233,7 +241,7 @@
     return-object v0
 .end method
 
-.method public final removeIncorrectCodewords([Lcom/google/zxing/pdf417/decoder/Codeword;Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;)V
+.method public final removeIncorrectCodewords([Lcom/google/zxing/pdf417/decoder/Codeword;Lcom/google/zxing/pdf417/decoder/Codeword;)V
     .locals 5
 
     const/4 v0, 0x0
@@ -255,7 +263,7 @@
 
     iget v1, v1, Lcom/google/zxing/pdf417/decoder/Codeword;->rowNumber:I
 
-    iget v3, p2, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;->rowCount:I
+    iget v3, p2, Lcom/google/zxing/pdf417/decoder/Codeword;->rowNumber:I
 
     const/4 v4, 0x0
 
@@ -290,7 +298,7 @@
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    iget v1, p2, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;->columnCount:I
+    iget v1, p2, Lcom/google/zxing/pdf417/decoder/Codeword;->startX:I
 
     if-eq v2, v1, :cond_6
 
@@ -301,13 +309,13 @@
     :cond_3
     div-int/lit8 v1, v2, 0x3
 
-    iget v3, p2, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;->errorCorrectionLevel:I
+    iget v3, p2, Lcom/google/zxing/pdf417/decoder/Codeword;->endX:I
 
     if-ne v1, v3, :cond_4
 
     rem-int/lit8 v2, v2, 0x3
 
-    iget v1, p2, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;->rowCountLowerPart:I
+    iget v1, p2, Lcom/google/zxing/pdf417/decoder/Codeword;->value:I
 
     if-eq v2, v1, :cond_6
 
@@ -321,7 +329,7 @@
 
     add-int/2addr v2, v3
 
-    iget v1, p2, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;->rowCountUpperPart:I
+    iget v1, p2, Lcom/google/zxing/pdf417/decoder/Codeword;->bucket:I
 
     if-eq v2, v1, :cond_6
 
@@ -354,7 +362,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-super {p0}, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->toString()Ljava/lang/String;
+    invoke-super {p0}, Lcom/google/android/play/core/assetpacks/zzbi;->toString()Ljava/lang/String;
 
     move-result-object v1
 

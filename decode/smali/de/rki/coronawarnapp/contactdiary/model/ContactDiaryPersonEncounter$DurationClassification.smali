@@ -25,9 +25,9 @@
 # static fields
 .field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-.field public static final enum LESS_THAN_15_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+.field public static final enum LESS_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-.field public static final enum MORE_THAN_15_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+.field public static final enum MORE_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
 
 # instance fields
@@ -35,40 +35,58 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 5
+.method public static final synthetic $values()[Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    .locals 3
 
     const/4 v0, 0x2
 
     new-array v0, v0, [Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    new-instance v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->LESS_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    const-string v2, "LESS_THAN_15_MINUTES"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v1, v0, v2
 
-    const-string v4, "LessThan15Minutes"
+    sget-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->MORE_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const/4 v2, 0x1
 
-    sput-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->LESS_THAN_15_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    aput-object v1, v0, v2
 
-    aput-object v1, v0, v3
+    return-object v0
+.end method
 
-    new-instance v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+.method public static constructor <clinit>()V
+    .locals 4
 
-    const-string v2, "MORE_THAN_15_MINUTES"
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    const/4 v3, 0x1
+    const-string v1, "LESS_THAN_10_MINUTES"
 
-    const-string v4, "MoreThan15Minutes"
+    const/4 v2, 0x0
 
-    invoke-direct {v1, v2, v3, v4}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const-string v3, "LessThan10Minutes"
 
-    sput-object v1, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->MORE_THAN_15_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+    invoke-direct {v0, v1, v2, v3}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    aput-object v1, v0, v3
+    sput-object v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->LESS_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+
+    new-instance v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+
+    const-string v1, "MORE_THAN_10_MINUTES"
+
+    const/4 v2, 0x1
+
+    const-string v3, "MoreThan10Minutes"
+
+    invoke-direct {v0, v1, v2, v3}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->MORE_THAN_10_MINUTES:Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+
+    invoke-static {}, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->$values()[Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
+
+    move-result-object v0
 
     sput-object v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->$VALUES:[Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
@@ -111,7 +129,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->$VALUES:[Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/contactdiary/model/ContactDiaryPersonEncounter$DurationClassification;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

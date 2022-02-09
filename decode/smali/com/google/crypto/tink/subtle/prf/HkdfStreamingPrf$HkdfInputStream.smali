@@ -126,8 +126,6 @@
 
     :cond_1
     :goto_0
-    iget-object v0, p0, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf$HkdfInputStream;->mac:Ljavax/crypto/Mac;
-
     new-instance v1, Ljavax/crypto/spec/SecretKeySpec;
 
     iget-object v2, p0, Lcom/google/crypto/tink/subtle/prf/HkdfStreamingPrf$HkdfInputStream;->mac:Ljavax/crypto/Mac;

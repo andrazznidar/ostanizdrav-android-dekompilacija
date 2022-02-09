@@ -14,8 +14,6 @@
 
 .field public final lottieDrawable:Lcom/airbnb/lottie/LottieDrawable;
 
-.field public final name:Ljava/lang/String;
-
 .field public final path:Landroid/graphics/Path;
 
 .field public final shapeAnimation:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
@@ -29,12 +27,12 @@
     .end annotation
 .end field
 
-.field public trimPaths:Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;
+.field public trimPaths:Lcom/google/android/gms/internal/nearby/zzed;
 
 
 # direct methods
 .method public constructor <init>(Lcom/airbnb/lottie/LottieDrawable;Lcom/airbnb/lottie/model/layer/BaseLayer;Lcom/airbnb/lottie/model/content/ShapePath;)V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,15 +42,13 @@
 
     iput-object v0, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->path:Landroid/graphics/Path;
 
-    new-instance v0, Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;
+    new-instance v0, Lcom/google/android/gms/internal/nearby/zzed;
 
-    invoke-direct {v0}, Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;-><init>()V
+    const/4 v1, 0x1
 
-    iput-object v0, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->trimPaths:Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/nearby/zzed;-><init>(I)V
 
-    iget-object v0, p3, Lcom/airbnb/lottie/model/content/ShapePath;->name:Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->name:Ljava/lang/String;
+    iput-object v0, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->trimPaths:Lcom/google/android/gms/internal/nearby/zzed;
 
     iget-boolean v0, p3, Lcom/airbnb/lottie/model/content/ShapePath;->hidden:Z
 
@@ -70,8 +66,6 @@
 
     invoke-virtual {p2, p1}, Lcom/airbnb/lottie/model/layer/BaseLayer;->addAnimation(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;)V
 
-    iget-object p1, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->shapeAnimation:Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
-
     iget-object p1, p1, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;->listeners:Ljava/util/List;
 
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -81,14 +75,6 @@
 
 
 # virtual methods
-.method public getName()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->name:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public getPath()Landroid/graphics/Path;
     .locals 3
 
@@ -136,11 +122,11 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
-    iget-object v0, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->trimPaths:Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;
+    iget-object v0, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->trimPaths:Lcom/google/android/gms/internal/nearby/zzed;
 
     iget-object v2, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->path:Landroid/graphics/Path;
 
-    invoke-virtual {v0, v2}, Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;->apply(Landroid/graphics/Path;)V
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/internal/nearby/zzed;->apply(Landroid/graphics/Path;)V
 
     iput-boolean v1, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->isPathValid:Z
 
@@ -198,15 +184,17 @@
 
     check-cast v0, Lcom/airbnb/lottie/animation/content/TrimPathContent;
 
-    iget-object v1, v0, Lcom/airbnb/lottie/animation/content/TrimPathContent;->type:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
+    iget v1, v0, Lcom/airbnb/lottie/animation/content/TrimPathContent;->type:I
 
-    sget-object v2, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->SIMULTANEOUSLY:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
+    const/4 v2, 0x1
 
     if-ne v1, v2, :cond_0
 
-    iget-object v1, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->trimPaths:Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;
+    iget-object v1, p0, Lcom/airbnb/lottie/animation/content/ShapeContent;->trimPaths:Lcom/google/android/gms/internal/nearby/zzed;
 
-    iget-object v1, v1, Lcom/airbnb/lottie/animation/content/CompoundTrimPathContent;->contents:Ljava/util/List;
+    iget-object v1, v1, Lcom/google/android/gms/internal/nearby/zzed;->zza:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

@@ -7,7 +7,9 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Landroidx/collection/MapCollections<",
-        "TE;TE;>;"
+        "Ljava/lang/Object;",
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
@@ -57,7 +59,9 @@
         value = {
             "()",
             "Ljava/util/Map<",
-            "TE;TE;>;"
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ">;"
         }
     .end annotation
 
@@ -108,7 +112,10 @@
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TE;TE;)V"
+            "(",
+            "Ljava/lang/Object;",
+            "Ljava/lang/Object;",
+            ")V"
         }
     .end annotation
 
@@ -133,7 +140,10 @@
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(ITE;)TE;"
+            "(I",
+            "Ljava/lang/Object;",
+            ")",
+            "Ljava/lang/Object;"
         }
     .end annotation
 

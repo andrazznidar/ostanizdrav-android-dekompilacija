@@ -51,63 +51,63 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
+    const-string/jumbo v0, "showDialog"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
+
+    iget-object v0, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->deviceTimeIncorrectDialog:Lcom/google/android/play/core/appupdate/zzh;
+
+    if-eqz v0, :cond_0
+
+    new-instance v1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;
+
+    invoke-direct {v1, p1}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;-><init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment;)V
+
+    const-string p1, "onAcknowledged"
+
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p1, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
+
+    iget-object v0, v0, Lcom/google/android/play/core/appupdate/zzh;->zza:Ljava/lang/Object;
+
+    check-cast v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
+
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;-><init>(Landroid/content/Context;)V
+
+    const v0, 0x7f1301a4
+
+    invoke-virtual {p1, v0}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setTitle(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
+
+    const v0, 0x7f1301a2
+
+    invoke-virtual {p1, v0}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setMessage(I)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
+
+    new-instance v0, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/util/DialogHelper$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function0;)V
+
+    const v1, 0x7f1301a3
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/google/android/material/dialog/MaterialAlertDialogBuilder;
+
+    invoke-virtual {p1}, Landroidx/appcompat/app/AlertDialog$Builder;->show()Landroidx/appcompat/app/AlertDialog;
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;->this$0:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/HomeFragment;->deviceTimeIncorrectDialog:Lde/rki/coronawarnapp/ui/main/home/popups/DeviceTimeIncorrectDialog;
-
-    if-eqz p1, :cond_1
-
-    new-instance v0, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;
-
-    invoke-direct {v0, p0}, Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9$1;-><init>(Lde/rki/coronawarnapp/ui/main/home/HomeFragment$onViewCreated$9;)V
-
-    const-string v1, "onAcknowledged"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v1, Landroidx/appcompat/app/AlertDialog$Builder;
-
-    iget-object p1, p1, Lde/rki/coronawarnapp/ui/main/home/popups/DeviceTimeIncorrectDialog;->homeFragment:Lde/rki/coronawarnapp/ui/main/home/HomeFragment;
-
-    invoke-virtual {p1}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1}, Landroidx/appcompat/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
-
-    const p1, 0x7f12010b
-
-    invoke-virtual {v1, p1}, Landroidx/appcompat/app/AlertDialog$Builder;->setTitle(I)Landroidx/appcompat/app/AlertDialog$Builder;
-
-    const p1, 0x7f120109
-
-    invoke-virtual {v1, p1}, Landroidx/appcompat/app/AlertDialog$Builder;->setMessage(I)Landroidx/appcompat/app/AlertDialog$Builder;
-
-    new-instance p1, Lde/rki/coronawarnapp/ui/main/home/popups/DeviceTimeIncorrectDialog$show$$inlined$apply$lambda$1;
-
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/ui/main/home/popups/DeviceTimeIncorrectDialog$show$$inlined$apply$lambda$1;-><init>(Lkotlin/jvm/functions/Function0;)V
-
-    const v0, 0x7f12010a
-
-    invoke-virtual {v1, v0, p1}, Landroidx/appcompat/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroidx/appcompat/app/AlertDialog$Builder;
-
-    invoke-virtual {v1}, Landroidx/appcompat/app/AlertDialog$Builder;->show()Landroidx/appcompat/app/AlertDialog;
-
-    :goto_0
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p1
-
-    :cond_1
     const-string p1, "deviceTimeIncorrectDialog"
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
@@ -115,4 +115,10 @@
     const/4 p1, 0x0
 
     throw p1
+
+    :cond_1
+    :goto_0
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
 .end method

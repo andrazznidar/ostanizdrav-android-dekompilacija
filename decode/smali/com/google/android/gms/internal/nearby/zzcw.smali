@@ -47,7 +47,13 @@
 
     check-cast p2, Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;
 
-    invoke-interface {p0, p1, p2}, Lcom/google/android/gms/internal/nearby/zzcx;->zzb(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/nearby/exposurenotification/DiagnosisKeysDataMapping;)V
+    move-object p4, p0
+
+    check-cast p4, Lcom/google/android/gms/internal/nearby/zzak;
+
+    iget-object p4, p4, Lcom/google/android/gms/internal/nearby/zzak;->zza:Lcom/google/android/gms/tasks/TaskCompletionSource;
+
+    invoke-static {p1, p2, p4}, Lcom/google/android/gms/common/api/internal/TaskUtil;->trySetResultOrApiException(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lcom/google/android/gms/tasks/TaskCompletionSource;)Z
 
     return p3
 

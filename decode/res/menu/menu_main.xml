@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:icon="@drawable/ic_main_share" android:id="@id/menu_share" android:orderInCategory="1" android:title="@string/button_share" android:contentDescription="@string/button_share" app:showAsAction="always" />
-    <item android:id="@id/menu_help" android:title="@string/menu_help" />
-    <item android:id="@id/menu_information" android:title="@string/menu_information" />
-    <item android:id="@id/menu_settings" android:title="@string/menu_settings" />
-    <item android:id="@id/menu_test" android:visible="false" android:title="Test Menu" />
+    <item android:icon="@drawable/ic_main_share" android:id="@id/mainSharingFragment" android:orderInCategory="1" android:title="@string/button_share" android:contentDescription="@string/button_share" app:showAsAction="always" />
+    <item android:id="@id/mainOverviewFragment" android:title="@string/menu_help" />
+    <item android:id="@id/informationFragment" android:title="@string/menu_information" />
+    <item android:id="@id/settingsFragment" android:title="@string/menu_settings" />
+    <item android:id="@id/test_nav_graph" android:visible="false" android:title="Test Menu" />
 </menu>

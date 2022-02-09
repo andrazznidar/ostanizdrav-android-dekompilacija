@@ -216,15 +216,15 @@
 
     move-result v3
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_d
 
-    const-class v3, Ljava/util/concurrent/ConcurrentNavigableMap;
+    const-class v1, Ljava/util/concurrent/ConcurrentNavigableMap;
 
-    invoke-virtual {v3, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_9
+    if-eqz v1, :cond_9
 
     new-instance v1, Lcom/google/gson/internal/ConstructorConstructor$9;
 
@@ -233,13 +233,13 @@
     goto :goto_1
 
     :cond_9
-    const-class v3, Ljava/util/concurrent/ConcurrentMap;
+    const-class v1, Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-virtual {v3, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_a
+    if-eqz v1, :cond_a
 
     new-instance v1, Lcom/google/gson/internal/ConstructorConstructor$10;
 
@@ -248,13 +248,13 @@
     goto :goto_1
 
     :cond_a
-    const-class v3, Ljava/util/SortedMap;
+    const-class v1, Ljava/util/SortedMap;
 
-    invoke-virtual {v3, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_b
+    if-eqz v1, :cond_b
 
     new-instance v1, Lcom/google/gson/internal/ConstructorConstructor$11;
 
@@ -263,39 +263,39 @@
     goto :goto_1
 
     :cond_b
-    instance-of v3, v0, Ljava/lang/reflect/ParameterizedType;
+    instance-of v1, v0, Ljava/lang/reflect/ParameterizedType;
 
-    if-eqz v3, :cond_d
+    if-eqz v1, :cond_c
 
-    const-class v3, Ljava/lang/String;
+    const-class v1, Ljava/lang/String;
 
-    move-object v4, v0
+    move-object v3, v0
 
-    check-cast v4, Ljava/lang/reflect/ParameterizedType;
+    check-cast v3, Ljava/lang/reflect/ParameterizedType;
 
-    invoke-interface {v4}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
+    invoke-interface {v3}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
-    move-result-object v4
+    move-result-object v3
 
-    aget-object v2, v4, v2
+    aget-object v2, v3, v2
 
-    if-eqz v2, :cond_c
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {v2}, Lcom/google/gson/internal/$Gson$Types;->canonicalize(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/gson/internal/$Gson$Types;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
-
     move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v2}, Lcom/google/gson/internal/$Gson$Types;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
-    invoke-virtual {v3, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    move-result-object v3
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    invoke-virtual {v1, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_c
 
     new-instance v1, Lcom/google/gson/internal/ConstructorConstructor$12;
 
@@ -304,20 +304,17 @@
     goto :goto_1
 
     :cond_c
-    throw v1
-
-    :cond_d
     new-instance v1, Lcom/google/gson/internal/ConstructorConstructor$13;
 
     invoke-direct {v1, p0}, Lcom/google/gson/internal/ConstructorConstructor$13;-><init>(Lcom/google/gson/internal/ConstructorConstructor;)V
 
-    :cond_e
+    :cond_d
     :goto_1
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_e
 
     return-object v1
 
-    :cond_f
+    :cond_e
     new-instance v1, Lcom/google/gson/internal/ConstructorConstructor$14;
 
     invoke-direct {v1, p0, p1, v0}, Lcom/google/gson/internal/ConstructorConstructor$14;-><init>(Lcom/google/gson/internal/ConstructorConstructor;Ljava/lang/Class;Ljava/lang/reflect/Type;)V

@@ -39,7 +39,9 @@
 
     if-nez p1, :cond_0
 
-    sget-object p1, Lcom/journeyapps/barcodescanner/CameraPreview;->TAG:Ljava/lang/String;
+    sget p1, Lcom/journeyapps/barcodescanner/CameraPreview;->$r8$clinit:I
+
+    const-string p1, "CameraPreview"
 
     const-string p2, "*** WARNING *** surfaceChanged() gave us a null surface!"
 
@@ -55,8 +57,6 @@
     invoke-direct {p2, p3, p4}, Lcom/journeyapps/barcodescanner/Size;-><init>(II)V
 
     iput-object p2, p1, Lcom/journeyapps/barcodescanner/CameraPreview;->currentSurfaceSize:Lcom/journeyapps/barcodescanner/Size;
-
-    iget-object p1, p0, Lcom/journeyapps/barcodescanner/CameraPreview$2;->this$0:Lcom/journeyapps/barcodescanner/CameraPreview;
 
     invoke-virtual {p1}, Lcom/journeyapps/barcodescanner/CameraPreview;->startPreviewIfReady()V
 

@@ -18,18 +18,17 @@
         "Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite<",
         "Lcom/google/crypto/tink/proto/KeyTemplate;",
         "Lcom/google/crypto/tink/proto/KeyTemplate$Builder;",
-        ">;",
-        "Ljava/lang/Object;"
+        ">;"
     }
 .end annotation
 
 
 # static fields
-.field public static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/KeyTemplate;
+.field private static final DEFAULT_INSTANCE:Lcom/google/crypto/tink/proto/KeyTemplate;
 
 .field public static final OUTPUT_PREFIX_TYPE_FIELD_NUMBER:I = 0x3
 
-.field public static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/crypto/tink/shaded/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/crypto/tink/shaded/protobuf/Parser<",
@@ -45,11 +44,11 @@
 
 
 # instance fields
-.field public outputPrefixType_:I
+.field private outputPrefixType_:I
 
-.field public typeUrl_:Ljava/lang/String;
+.field private typeUrl_:Ljava/lang/String;
 
-.field public value_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
+.field private value_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
 
 # direct methods
@@ -69,7 +68,7 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/crypto/tink/shaded/protobuf/GeneratedMessageLite;-><init>()V
@@ -658,7 +657,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/KeyTemplate;->typeUrl_:Ljava/lang/String;
 
@@ -698,7 +697,7 @@
         }
     .end annotation
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/crypto/tink/proto/KeyTemplate;->value_:Lcom/google/crypto/tink/shaded/protobuf/ByteString;
 
@@ -800,11 +799,11 @@
 
     const/4 p3, 0x0
 
-    const-string v0, "typeUrl_"
+    const-string/jumbo v0, "typeUrl_"
 
     aput-object v0, p1, p3
 
-    const-string p3, "value_"
+    const-string/jumbo p3, "value_"
 
     aput-object p3, p1, p2
 

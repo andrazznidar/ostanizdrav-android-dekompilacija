@@ -17,6 +17,14 @@
 # virtual methods
 .method public charAt(I)C
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "index"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -25,6 +33,14 @@
 
 .method public getSpanEnd(Ljava/lang/Object;)I
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "tag"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -33,6 +49,14 @@
 
 .method public getSpanFlags(Ljava/lang/Object;)I
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "tag"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -41,6 +65,14 @@
 
 .method public getSpanStart(Ljava/lang/Object;)I
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "tag"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -52,6 +84,19 @@
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "NewApi"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "start",
+            "end",
+            "type"
         }
     .end annotation
 
@@ -89,6 +134,18 @@
 
 .method public nextSpanTransition(IILjava/lang/Class;)I
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "start",
+            "limit",
+            "type"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 
@@ -100,6 +157,15 @@
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "NewApi"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "what"
         }
     .end annotation
 
@@ -138,6 +204,21 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0,
+            0x0,
+            0x0
+        }
+        names = {
+            "what",
+            "start",
+            "end",
+            "flags"
+        }
+    .end annotation
+
     instance-of p1, p1, Landroid/text/style/MetricAffectingSpan;
 
     if-nez p1, :cond_1
@@ -167,6 +248,16 @@
 
 .method public subSequence(II)Ljava/lang/CharSequence;
     .locals 0
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "start",
+            "end"
+        }
+    .end annotation
 
     const/4 p1, 0x0
 

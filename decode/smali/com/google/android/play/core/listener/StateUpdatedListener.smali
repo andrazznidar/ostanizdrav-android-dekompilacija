@@ -1,5 +1,6 @@
 .class public interface abstract Lcom/google/android/play/core/listener/StateUpdatedListener;
 .super Ljava/lang/Object;
+.source "com.google.android.play:core@@1.10.1"
 
 
 # annotations
@@ -15,10 +16,6 @@
 
 # virtual methods
 .method public abstract onStateUpdate(Ljava/lang/Object;)V
-    .param p1    # Ljava/lang/Object;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TStateT;)V"

@@ -60,13 +60,13 @@
 
     if-eqz v0, :cond_1
 
-    instance-of v1, v0, Landroidx/databinding/ViewDataBinding$WeakListener;
+    instance-of v1, v0, Landroidx/databinding/WeakListener;
 
     if-eqz v1, :cond_0
 
-    check-cast v0, Landroidx/databinding/ViewDataBinding$WeakListener;
+    check-cast v0, Landroidx/databinding/WeakListener;
 
-    invoke-virtual {v0}, Landroidx/databinding/ViewDataBinding$WeakListener;->unregister()Z
+    invoke-virtual {v0}, Landroidx/databinding/WeakListener;->unregister()Z
 
     goto :goto_0
 
@@ -92,8 +92,6 @@
     iget-object v0, p0, Landroidx/databinding/ViewDataBinding$7;->this$0:Landroidx/databinding/ViewDataBinding;
 
     iget-object v0, v0, Landroidx/databinding/ViewDataBinding;->mRoot:Landroid/view/View;
-
-    sget-object v1, Landroidx/databinding/ViewDataBinding;->ROOT_REATTACHED_LISTENER:Landroid/view/View$OnAttachStateChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 

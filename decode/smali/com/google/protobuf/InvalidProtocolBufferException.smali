@@ -3,6 +3,10 @@
 .source "InvalidProtocolBufferException.java"
 
 
+# instance fields
+.field public unfinishedMessage:Lcom/google/protobuf/MessageLite;
+
+
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
@@ -58,4 +62,14 @@
     invoke-direct {v0, v1}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+    .locals 0
+
+    iput-object p1, p0, Lcom/google/protobuf/InvalidProtocolBufferException;->unfinishedMessage:Lcom/google/protobuf/MessageLite;
+
+    return-object p0
 .end method

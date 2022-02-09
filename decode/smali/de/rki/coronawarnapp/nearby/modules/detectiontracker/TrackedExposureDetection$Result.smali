@@ -24,9 +24,36 @@
     }
 .end annotation
 
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008\u0006\u0008\u0087\u0001\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\t\u0008\u0002\u00a2\u0006\u0004\u0008\u0002\u0010\u0003j\u0002\u0008\u0004j\u0002\u0008\u0005j\u0002\u0008\u0006\u00a8\u0006\u0007"
+    }
+    d2 = {
+        "Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;",
+        "",
+        "<init>",
+        "(Ljava/lang/String;I)V",
+        "NO_MATCHES",
+        "UPDATED_STATE",
+        "TIMEOUT",
+        "Corona-Warn-App_deviceRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x5,
+        0x1
+    }
+.end annotation
+
 
 # static fields
-.field public static final synthetic $VALUES:[Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+.field private static final synthetic $VALUES:[Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
 .field public static final enum NO_MATCHES:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
@@ -48,55 +75,77 @@
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 4
+.method private static final synthetic $values()[Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+    .locals 3
 
     const/4 v0, 0x3
 
     new-array v0, v0, [Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+    sget-object v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->NO_MATCHES:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    const-string v2, "NO_MATCHES"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v1, v0, v2
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;-><init>(Ljava/lang/String;I)V
+    sget-object v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->UPDATED_STATE:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    sput-object v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->NO_MATCHES:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+    const/4 v2, 0x1
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+    sget-object v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->TIMEOUT:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    const-string v2, "UPDATED_STATE"
+    const/4 v2, 0x2
 
-    const/4 v3, 0x1
+    aput-object v1, v0, v2
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;-><init>(Ljava/lang/String;I)V
+    return-object v0
+.end method
 
-    sput-object v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->UPDATED_STATE:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+.method public static constructor <clinit>()V
+    .locals 3
 
-    aput-object v1, v0, v3
+    new-instance v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    new-instance v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+    const-string v1, "NO_MATCHES"
 
-    const-string v2, "TIMEOUT"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x2
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v2, v3}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->NO_MATCHES:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    sput-object v1, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->TIMEOUT:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+    new-instance v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    aput-object v1, v0, v3
+    const-string v1, "UPDATED_STATE"
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->UPDATED_STATE:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+
+    new-instance v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+
+    const-string v1, "TIMEOUT"
+
+    const/4 v2, 0x2
+
+    invoke-direct {v0, v1, v2}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->TIMEOUT:Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+
+    invoke-static {}, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->$values()[Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
+
+    move-result-object v0
 
     sput-object v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->$VALUES:[Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -128,7 +177,7 @@
 
     sget-object v0, Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->$VALUES:[Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;
 
-    invoke-virtual {v0}, [Lde/rki/coronawarnapp/nearby/modules/detectiontracker/TrackedExposureDetection$Result;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

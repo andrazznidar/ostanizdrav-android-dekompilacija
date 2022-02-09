@@ -34,7 +34,9 @@
 
     move-result v1
 
-    invoke-interface {p0}, Landroid/widget/ListAdapter;->getCount()I
+    check-cast p0, Landroidx/appcompat/view/menu/MenuAdapter;
+
+    invoke-virtual {p0}, Landroidx/appcompat/view/menu/MenuAdapter;->getCount()I
 
     move-result v2
 
@@ -146,14 +148,6 @@
 .method public abstract addMenu(Landroidx/appcompat/view/menu/MenuBuilder;)V
 .end method
 
-.method public closeMenuOnSubMenuOpened()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method public collapseItemActionView(Landroidx/appcompat/view/menu/MenuBuilder;Landroidx/appcompat/view/menu/MenuItemImpl;)Z
     .locals 0
 
@@ -232,9 +226,9 @@
 
     check-cast p1, Landroid/view/MenuItem;
 
-    invoke-virtual {p0}, Landroidx/appcompat/view/menu/MenuPopup;->closeMenuOnSubMenuOpened()Z
+    instance-of p3, p0, Landroidx/appcompat/view/menu/CascadingMenuPopup;
 
-    move-result p3
+    xor-int/lit8 p3, p3, 0x1
 
     if-eqz p3, :cond_1
 

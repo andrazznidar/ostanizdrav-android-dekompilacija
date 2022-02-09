@@ -66,39 +66,6 @@
     return-void
 .end method
 
-.method public static asImmutableList([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<E:",
-            "Ljava/lang/Object;",
-            ">([",
-            "Ljava/lang/Object;",
-            ")",
-            "Lcom/google/common/collect/ImmutableList<",
-            "TE;>;"
-        }
-    .end annotation
-
-    array-length v0, p0
-
-    if-nez v0, :cond_0
-
-    sget-object p0, Lcom/google/common/collect/RegularImmutableList;->EMPTY:Lcom/google/common/collect/ImmutableList;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Lcom/google/common/collect/RegularImmutableList;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/RegularImmutableList;-><init>([Ljava/lang/Object;I)V
-
-    move-object p0, v1
-
-    :goto_0
-    return-object p0
-.end method
-
 
 # virtual methods
 .method public final add(ILjava/lang/Object;)V
@@ -240,7 +207,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lcom/google/android/material/R$style;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, v5}, Lcom/google/common/base/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -286,7 +253,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lcom/google/android/material/R$style;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4}, Lcom/google/common/base/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -478,7 +445,7 @@
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/android/material/R$style;->checkPositionIndex(II)I
+    invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndex(II)I
 
     invoke-virtual {p0}, Ljava/util/AbstractCollection;->isEmpty()Z
 
@@ -568,7 +535,7 @@
 
     move-result v0
 
-    invoke-static {p1, p2, v0}, Lcom/google/android/material/R$style;->checkPositionIndexes(III)V
+    invoke-static {p1, p2, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
 
     sub-int/2addr p2, p1
 

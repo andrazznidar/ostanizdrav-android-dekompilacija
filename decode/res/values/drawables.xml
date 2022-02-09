@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="drawable" name="material_ic_keyboard_arrow_next_black_24dp">@drawable/material_ic_keyboard_arrow_right_black_24dp</item>
+    <item type="drawable" name="material_ic_keyboard_arrow_previous_black_24dp">@drawable/material_ic_keyboard_arrow_left_black_24dp</item>
     <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
     <item type="drawable" name="notification_template_icon_low_bg">#0cffffff</item>
-    <drawable name="APKTOOL_DUMMY_e" />
-    <drawable name="APKTOOL_DUMMY_f" />
-    <drawable name="APKTOOL_DUMMY_14" />
-    <drawable name="APKTOOL_DUMMY_15" />
-    <drawable name="APKTOOL_DUMMY_1a" />
-    <drawable name="APKTOOL_DUMMY_2a" />
-    <drawable name="APKTOOL_DUMMY_2b" />
-    <drawable name="APKTOOL_DUMMY_2c" />
-    <drawable name="APKTOOL_DUMMY_2d" />
-    <drawable name="APKTOOL_DUMMY_2e" />
-    <drawable name="APKTOOL_DUMMY_2f" />
-    <drawable name="APKTOOL_DUMMY_40" />
-    <drawable name="APKTOOL_DUMMY_44" />
-    <drawable name="APKTOOL_DUMMY_45" />
-    <drawable name="APKTOOL_DUMMY_46" />
-    <drawable name="APKTOOL_DUMMY_47" />
-    <drawable name="APKTOOL_DUMMY_48" />
-    <drawable name="APKTOOL_DUMMY_4c" />
-    <drawable name="APKTOOL_DUMMY_51" />
-    <drawable name="APKTOOL_DUMMY_53" />
-    <drawable name="APKTOOL_DUMMY_54" />
-    <drawable name="APKTOOL_DUMMY_55" />
-    <drawable name="APKTOOL_DUMMY_56" />
-    <drawable name="APKTOOL_DUMMY_57" />
-    <drawable name="APKTOOL_DUMMY_58" />
-    <drawable name="APKTOOL_DUMMY_7a" />
-    <drawable name="APKTOOL_DUMMY_7e" />
-    <drawable name="APKTOOL_DUMMY_83" />
-    <drawable name="APKTOOL_DUMMY_87" />
-    <drawable name="APKTOOL_DUMMY_8c" />
-    <drawable name="APKTOOL_DUMMY_9a" />
-    <drawable name="APKTOOL_DUMMY_9b" />
-    <drawable name="APKTOOL_DUMMY_167" />
-    <drawable name="APKTOOL_DUMMY_168" />
-    <drawable name="APKTOOL_DUMMY_169" />
-    <drawable name="APKTOOL_DUMMY_16a" />
-    <drawable name="APKTOOL_DUMMY_16f" />
+    <item type="drawable" name="APKTOOL_DUMMY_2d" />
+    <item type="drawable" name="APKTOOL_DUMMY_2e" />
+    <item type="drawable" name="APKTOOL_DUMMY_33" />
+    <item type="drawable" name="APKTOOL_DUMMY_34" />
+    <item type="drawable" name="APKTOOL_DUMMY_39" />
+    <item type="drawable" name="APKTOOL_DUMMY_50" />
+    <item type="drawable" name="APKTOOL_DUMMY_54" />
+    <item type="drawable" name="APKTOOL_DUMMY_59" />
+    <item type="drawable" name="APKTOOL_DUMMY_5d" />
+    <item type="drawable" name="APKTOOL_DUMMY_5e" />
+    <item type="drawable" name="APKTOOL_DUMMY_5f" />
+    <item type="drawable" name="APKTOOL_DUMMY_60" />
+    <item type="drawable" name="APKTOOL_DUMMY_61" />
+    <item type="drawable" name="APKTOOL_DUMMY_65" />
+    <item type="drawable" name="APKTOOL_DUMMY_6c" />
+    <item type="drawable" name="APKTOOL_DUMMY_6e" />
+    <item type="drawable" name="APKTOOL_DUMMY_6f" />
+    <item type="drawable" name="APKTOOL_DUMMY_70" />
+    <item type="drawable" name="APKTOOL_DUMMY_a4" />
+    <item type="drawable" name="APKTOOL_DUMMY_a8" />
+    <item type="drawable" name="APKTOOL_DUMMY_ad" />
+    <item type="drawable" name="APKTOOL_DUMMY_b1" />
+    <item type="drawable" name="APKTOOL_DUMMY_b6" />
+    <item type="drawable" name="APKTOOL_DUMMY_c8" />
+    <item type="drawable" name="APKTOOL_DUMMY_c9" />
+    <item type="drawable" name="APKTOOL_DUMMY_166" />
+    <item type="drawable" name="APKTOOL_DUMMY_203" />
+    <item type="drawable" name="APKTOOL_DUMMY_204" />
+    <item type="drawable" name="APKTOOL_DUMMY_205" />
+    <item type="drawable" name="APKTOOL_DUMMY_206" />
+    <item type="drawable" name="APKTOOL_DUMMY_20b" />
 </resources>

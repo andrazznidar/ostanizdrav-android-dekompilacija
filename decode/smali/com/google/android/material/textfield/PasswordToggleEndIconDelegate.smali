@@ -77,7 +77,7 @@
 
     iget-object v1, p0, Lcom/google/android/material/textfield/EndIconDelegate;->context:Landroid/content/Context;
 
-    const v2, 0x7f080097
+    sget v2, Lcom/google/android/material/R$drawable;->design_password_eye:I
 
     invoke-static {v1, v2}, Landroidx/appcompat/content/res/AppCompatResources;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
@@ -91,7 +91,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120245
+    sget v2, Lcom/google/android/material/R$string;->password_toggle_content_description:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

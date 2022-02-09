@@ -5,14 +5,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nZipHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,75:1\n1819#2,2:76\n1227#3,3:78\n*E\n*S KotlinDebug\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n*L\n46#1,2:76\n71#1,3:78\n*E\n"
+    value = "SMAP\nZipHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,75:1\n1849#2,2:76\n1261#3,3:78\n*S KotlinDebug\n*F\n+ 1 ZipHelper.kt\nde/rki/coronawarnapp/util/ZipHelper\n*L\n46#1:76,2\n71#1:78,3\n*E\n"
 .end annotation
 
 
 # static fields
 .field public static final INSTANCE:Lde/rki/coronawarnapp/util/ZipHelper;
-
-.field public static final TAG:Ljava/lang/String;
 
 
 # direct methods
@@ -25,19 +23,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lkotlin/jvm/internal/ClassReference;
-
-    invoke-virtual {v0}, Lkotlin/jvm/internal/ClassReference;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lde/rki/coronawarnapp/util/ZipHelper;->TAG:Ljava/lang/String;
+    invoke-interface {v0}, Lkotlin/reflect/KClass;->getSimpleName()Ljava/lang/String;
 
     return-void
 .end method
 
 .method public static final readIntoMap(Lkotlin/sequences/Sequence;)Ljava/util/Map;
-    .locals 4
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,24 +47,26 @@
         }
     .end annotation
 
-    const-string v0, "$this$readIntoMap"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     sget-object v0, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
 
-    invoke-interface {p0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
+    check-cast p0, Lkotlin/sequences/SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1;
+
+    invoke-virtual {p0}, Lkotlin/sequences/SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    move-object v1, p0
 
-    move-result v1
+    check-cast v1, Lkotlin/sequences/SequenceBuilderIterator;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v1}, Lkotlin/sequences/SequenceBuilderIterator;->hasNext()Z
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v1}, Lkotlin/sequences/SequenceBuilderIterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -90,7 +84,7 @@
 
     move-result-object v2
 
-    invoke-static {v1}, Lcom/google/zxing/client/android/R$id;->readBytes(Ljava/io/InputStream;)[B
+    invoke-static {v1}, Lkotlin/io/ByteStreamsKt;->readBytes(Ljava/io/InputStream;)[B
 
     move-result-object v1
 
@@ -98,41 +92,61 @@
 
     invoke-direct {v3, v2, v1}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    const-string v1, "$this$plus"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v1, "pair"
-
-    invoke-static {v3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_0
+    if-eqz v4, :cond_0
 
-    invoke-static {v3}, Lcom/google/zxing/client/android/R$id;->mapOf(Lkotlin/Pair;)Ljava/util/Map;
+    invoke-static {v3}, Lkotlin/collections/MapsKt__MapsJVMKt;->mapOf(Lkotlin/Pair;)Ljava/util/Map;
 
     move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Ljava/util/LinkedHashMap;
+    new-instance v3, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
+    invoke-direct {v3, v0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
 
-    iget-object v0, v3, Lkotlin/Pair;->first:Ljava/lang/Object;
+    invoke-virtual {v3, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, v3, Lkotlin/Pair;->second:Ljava/lang/Object;
-
-    invoke-virtual {v1, v0, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-object v0, v1
+    move-object v0, v3
 
     goto :goto_0
 
     :cond_1
     return-object v0
+.end method
+
+.method public static final unzip(Ljava/io/InputStream;)Lkotlin/sequences/Sequence;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/io/InputStream;",
+            ")",
+            "Lkotlin/sequences/Sequence<",
+            "Lkotlin/Pair<",
+            "Ljava/util/zip/ZipEntry;",
+            "Ljava/io/InputStream;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lde/rki/coronawarnapp/util/ZipHelper$unzip$1;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lde/rki/coronawarnapp/util/ZipHelper$unzip$1;-><init>(Ljava/io/InputStream;Lkotlin/coroutines/Continuation;)V
+
+    new-instance p0, Lkotlin/sequences/SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1;
+
+    invoke-direct {p0, v0}, Lkotlin/sequences/SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1;-><init>(Lkotlin/jvm/functions/Function2;)V
+
+    return-object p0
 .end method

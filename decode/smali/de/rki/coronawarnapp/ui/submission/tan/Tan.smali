@@ -49,7 +49,7 @@
 
     invoke-direct {v1, v2, v3}, Lkotlin/ranges/CharRange;-><init>(CC)V
 
-    invoke-static {v0, v1}, Lkotlin/collections/ArraysKt___ArraysKt;->plus(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->plus(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
 
     invoke-direct {v1, v2, v3}, Lkotlin/ranges/CharRange;-><init>(CC)V
 
-    invoke-static {v0, v1}, Lkotlin/collections/ArraysKt___ArraysKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt___CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
 
@@ -71,11 +71,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 9
-
-    const-string v0, "value"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -83,152 +79,133 @@
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result p1
-
-    const/4 v0, 0x1
+    move-result v0
 
     const/16 v1, 0xa
 
     const/4 v2, 0x0
 
-    if-ne p1, v1, :cond_0
+    const/4 v3, 0x1
 
-    move p1, v0
+    if-ne v0, v1, :cond_0
+
+    move v0, v3
 
     goto :goto_0
 
     :cond_0
-    move p1, v2
+    move v0, v2
 
     :goto_0
-    iput-boolean p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isCorrectLength:Z
-
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
-
-    const-string v3, "tan"
-
-    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-boolean v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isCorrectLength:Z
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v0
 
-    move v5, v2
-
-    :goto_1
-    if-ge v5, v4, :cond_2
-
-    invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
-
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "character"
-
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v7, 0x2
-
-    const-string v8, "23456789ABCDEFGHJKMNPQRSTUVWXYZ"
-
-    invoke-static {v8, v6, v2, v7}, Lkotlin/text/StringsKt__IndentKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    move p1, v2
-
-    goto :goto_2
+    move v4, v2
 
     :cond_1
-    add-int/lit8 v5, v5, 0x1
+    if-ge v4, v0, :cond_2
+
+    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
+
+    move-result v5
+
+    add-int/lit8 v4, v4, 0x1
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isTanCharacterValid(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    move p1, v2
 
     goto :goto_1
 
     :cond_2
-    move p1, v0
+    move p1, v3
 
-    :goto_2
+    :goto_1
     iput-boolean p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->areCharactersValid:Z
 
-    iget-boolean p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isCorrectLength:Z
+    iget-boolean v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isCorrectLength:Z
 
-    if-eqz p1, :cond_9
+    if-eqz v0, :cond_7
 
-    iget-object p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
 
-    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string/jumbo v4, "tan"
 
-    invoke-static {p1}, Lkotlin/text/StringsKt__IndentKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v3
+    invoke-static {v0}, Lkotlin/text/StringsKt__StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v3
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    move-result-object v4
 
-    move-result v3
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    if-eq v3, v1, :cond_3
+    move-result v4
 
-    goto/16 :goto_4
+    if-eq v4, v1, :cond_3
+
+    goto :goto_2
 
     :cond_3
     const/16 v1, 0x9
 
-    invoke-virtual {p1, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v3, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v3, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
-
-    const-string v4, "Locale.ROOT"
-
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v3, "(this as java.lang.String).toUpperCase(locale)"
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v3, "SHA-256"
-
-    invoke-static {v3}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
-
-    move-result-object v3
-
-    sget-object v4, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
-
-    const-string v5, "StandardCharsets.US_ASCII"
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v1
-
-    const-string v4, "(this as java.lang.String).getBytes(charset)"
+    const-string v4, "(this as java.lang.Strin\u2026ing(startIndex, endIndex)"
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v1}, Ljava/security/MessageDigest;->digest([B)[B
+    sget-object v4, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
-    new-array v3, v0, [Ljava/lang/Object;
+    const-string v4, "(this as java.lang.Strin\u2026.toUpperCase(Locale.ROOT)"
+
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v4, "SHA-256"
+
+    invoke-static {v4}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v4
+
+    sget-object v5, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
+
+    const-string v6, "US_ASCII"
+
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v1
+
+    const-string v5, "(this as java.lang.String).getBytes(charset)"
+
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v4, v1}, Ljava/security/MessageDigest;->digest([B)[B
+
+    move-result-object v1
+
+    new-array v4, v3, [Ljava/lang/Object;
 
     aget-byte v1, v1, v2
 
@@ -236,36 +213,36 @@
 
     move-result-object v1
 
-    aput-object v1, v3, v2
+    aput-object v1, v4, v2
 
-    invoke-static {v3, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    const-string v3, "%02x"
-
-    invoke-static {v3, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v1
 
-    const-string v3, "java.lang.String.format(this, *args)"
+    const-string v4, "%02x"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v4, "java.lang.String.format(this, *args)"
+
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
 
-    const/16 v3, 0x30
+    const/16 v4, 0x30
 
-    if-ne v1, v3, :cond_4
+    if-ne v1, v4, :cond_4
 
     const/16 v1, 0x47
 
     :cond_4
-    const/16 v3, 0x31
+    const/16 v4, 0x31
 
-    if-ne v1, v3, :cond_5
+    if-ne v1, v4, :cond_5
 
     const/16 v1, 0x48
 
@@ -274,83 +251,45 @@
 
     move-result v1
 
-    const-string v3, "$this$last"
+    invoke-static {v0}, Lkotlin/text/StringsKt___StringsKt;->last(Ljava/lang/CharSequence;)C
 
-    invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v0
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    invoke-static {v0}, Ljava/lang/Character;->toUpperCase(C)C
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_6
+    if-ne v1, v0, :cond_6
 
-    move v3, v0
+    move v0, v3
 
     goto :goto_3
 
     :cond_6
-    move v3, v2
-
-    :goto_3
-    if-nez v3, :cond_8
-
-    invoke-static {p1}, Lkotlin/text/StringsKt__IndentKt;->getLastIndex(Ljava/lang/CharSequence;)I
-
-    move-result v3
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Character;->toUpperCase(C)C
-
-    move-result p1
-
-    if-ne v1, p1, :cond_7
-
-    move p1, v0
-
-    goto :goto_5
-
-    :cond_7
-    :goto_4
-    move p1, v2
-
-    :goto_5
-    if-eqz p1, :cond_9
-
-    move p1, v0
-
-    goto :goto_6
-
-    :cond_8
-    new-instance p1, Ljava/util/NoSuchElementException;
-
-    const-string v0, "Char sequence is empty."
-
-    invoke-direct {p1, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_9
-    move p1, v2
-
-    :goto_6
-    iput-boolean p1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isTanValidFormat:Z
-
-    iget-boolean v1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->areCharactersValid:Z
-
-    if-eqz v1, :cond_a
-
-    if-eqz p1, :cond_a
-
-    goto :goto_7
-
-    :cond_a
+    :goto_2
     move v0, v2
 
-    :goto_7
-    iput-boolean v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isTanValid:Z
+    :goto_3
+    if-eqz v0, :cond_7
+
+    move v0, v3
+
+    goto :goto_4
+
+    :cond_7
+    move v0, v2
+
+    :goto_4
+    iput-boolean v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isTanValidFormat:Z
+
+    if-eqz p1, :cond_8
+
+    if-eqz v0, :cond_8
+
+    move v2, v3
+
+    :cond_8
+    iput-boolean v2, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->isTanValid:Z
 
     return-void
 .end method
@@ -368,7 +307,7 @@
 
     const/4 v2, 0x2
 
-    invoke-static {v0, p0, v1, v2}, Lkotlin/text/StringsKt__IndentKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
+    invoke-static {v0, p0, v1, v2}, Lkotlin/text/StringsKt__StringsKt;->contains$default(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZI)Z
 
     move-result p0
 
@@ -378,38 +317,40 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 3
 
-    if-eq p0, p1, :cond_1
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Lde/rki/coronawarnapp/ui/submission/tan/Tan;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    return v0
 
+    :cond_0
+    instance-of v1, p1, Lde/rki/coronawarnapp/ui/submission/tan/Tan;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
     check-cast p1, Lde/rki/coronawarnapp/ui/submission/tan/Tan;
 
-    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
+    iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
 
     iget-object p1, p1, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_2
 
-    goto :goto_0
+    return v2
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    :cond_2
+    return v0
 .end method
 
 .method public hashCode()I
@@ -417,35 +358,23 @@
 
     iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    const-string v0, "Tan(value="
+    iget-object v0, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline29(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lde/rki/coronawarnapp/ui/submission/tan/Tan;->value:Ljava/lang/String;
+    const-string v1, "Tan(value="
 
     const-string v2, ")"
 
-    invoke-static {v0, v1, v2}, Lcom/android/tools/r8/GeneratedOutlineSupport;->outline23(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Landroidx/core/graphics/PathParser$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

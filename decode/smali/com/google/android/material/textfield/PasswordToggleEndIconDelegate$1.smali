@@ -1,9 +1,6 @@
 .class public Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$1;
-.super Ljava/lang/Object;
+.super Lcom/google/android/material/internal/TextWatcherAdapter;
 .source "PasswordToggleEndIconDelegate.java"
-
-# interfaces
-.implements Landroid/text/TextWatcher;
 
 
 # annotations
@@ -27,19 +24,13 @@
 
     iput-object p1, p0, Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate$1;->this$0:Lcom/google/android/material/textfield/PasswordToggleEndIconDelegate;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/material/internal/TextWatcherAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 0
-
-    return-void
-.end method
-
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
@@ -54,12 +45,6 @@
     xor-int/lit8 p1, p1, 0x1
 
     invoke-virtual {p2, p1}, Lcom/google/android/material/internal/CheckableImageButton;->setChecked(Z)V
-
-    return-void
-.end method
-
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
 
     return-void
 .end method

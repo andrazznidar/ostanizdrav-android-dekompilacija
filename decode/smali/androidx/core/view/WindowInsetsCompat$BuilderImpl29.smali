@@ -35,8 +35,16 @@
 
 .method public constructor <init>(Landroidx/core/view/WindowInsetsCompat;)V
     .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "insets"
+        }
+    .end annotation
 
-    invoke-direct {p0}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl;-><init>()V
+    invoke-direct {p0, p1}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl;-><init>(Landroidx/core/view/WindowInsetsCompat;)V
 
     invoke-virtual {p1}, Landroidx/core/view/WindowInsetsCompat;->toWindowInsets()Landroid/view/WindowInsets;
 
@@ -64,7 +72,9 @@
 
 # virtual methods
 .method public build()Landroidx/core/view/WindowInsetsCompat;
-    .locals 1
+    .locals 3
+
+    invoke-virtual {p0}, Landroidx/core/view/WindowInsetsCompat$BuilderImpl;->applyInsetTypes()V
 
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;->mPlatBuilder:Landroid/view/WindowInsets$Builder;
 
@@ -76,23 +86,29 @@
 
     move-result-object v0
 
+    iget-object v1, v0, Landroidx/core/view/WindowInsetsCompat;->mImpl:Landroidx/core/view/WindowInsetsCompat$Impl;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroidx/core/view/WindowInsetsCompat$Impl;->setOverriddenInsets([Landroidx/core/graphics/Insets;)V
+
     return-object v0
 .end method
 
 .method public setStableInsets(Landroidx/core/graphics/Insets;)V
-    .locals 4
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "insets"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;->mPlatBuilder:Landroid/view/WindowInsets$Builder;
 
-    iget v1, p1, Landroidx/core/graphics/Insets;->left:I
-
-    iget v2, p1, Landroidx/core/graphics/Insets;->top:I
-
-    iget v3, p1, Landroidx/core/graphics/Insets;->right:I
-
-    iget p1, p1, Landroidx/core/graphics/Insets;->bottom:I
-
-    invoke-static {v1, v2, v3, p1}, Landroid/graphics/Insets;->of(IIII)Landroid/graphics/Insets;
+    invoke-virtual {p1}, Landroidx/core/graphics/Insets;->toPlatformInsets()Landroid/graphics/Insets;
 
     move-result-object p1
 
@@ -102,19 +118,19 @@
 .end method
 
 .method public setSystemWindowInsets(Landroidx/core/graphics/Insets;)V
-    .locals 4
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0
+        }
+        names = {
+            "insets"
+        }
+    .end annotation
 
     iget-object v0, p0, Landroidx/core/view/WindowInsetsCompat$BuilderImpl29;->mPlatBuilder:Landroid/view/WindowInsets$Builder;
 
-    iget v1, p1, Landroidx/core/graphics/Insets;->left:I
-
-    iget v2, p1, Landroidx/core/graphics/Insets;->top:I
-
-    iget v3, p1, Landroidx/core/graphics/Insets;->right:I
-
-    iget p1, p1, Landroidx/core/graphics/Insets;->bottom:I
-
-    invoke-static {v1, v2, v3, p1}, Landroid/graphics/Insets;->of(IIII)Landroid/graphics/Insets;
+    invoke-virtual {p1}, Landroidx/core/graphics/Insets;->toPlatformInsets()Landroid/graphics/Insets;
 
     move-result-object p1
 

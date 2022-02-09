@@ -24,28 +24,22 @@
 
     and-int/lit8 p3, p4, 0x2
 
-    const/4 v0, 0x0
+    const/4 p4, 0x0
 
     if-eqz p3, :cond_0
 
-    move-object p2, v0
+    move-object p2, p4
 
     :cond_0
-    and-int/lit8 p3, p4, 0x4
-
-    const-string p3, "type"
-
-    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string p4, ": "
+    const-string v0, ": "
 
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -53,7 +47,7 @@
 
     move-result-object p2
 
-    invoke-direct {p0, p2, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p2, p4}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     iput-object p1, p0, Lde/rki/coronawarnapp/datadonation/survey/SurveyException;->type:Lde/rki/coronawarnapp/datadonation/survey/SurveyException$Type;
 
@@ -81,7 +75,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const v0, 0x7f1200f0
+    const v0, 0x7f130156
 
     goto :goto_0
 
@@ -93,7 +87,7 @@
     throw p1
 
     :cond_1
-    const v0, 0x7f1200eb
+    const v0, 0x7f130151
 
     :goto_0
     new-instance v2, Lde/rki/coronawarnapp/util/HumanReadableError;

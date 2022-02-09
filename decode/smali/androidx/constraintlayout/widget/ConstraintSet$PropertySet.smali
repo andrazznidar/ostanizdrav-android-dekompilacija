@@ -54,7 +54,17 @@
 
 # virtual methods
 .method public fillFromAttributeList(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 4
+    .locals 3
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "context",
+            "attrs"
+        }
+    .end annotation
 
     sget-object v0, Landroidx/constraintlayout/widget/R$styleable;->PropertySet:[I
 
@@ -68,79 +78,85 @@
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->getIndexCount()I
 
-    move-result v0
+    move-result p2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-ge v1, v0, :cond_4
+    if-ge v0, p2, :cond_4
 
-    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getIndex(I)I
+    invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getIndex(I)I
 
-    move-result v2
+    move-result v1
 
-    if-ne v2, p2, :cond_0
+    sget v2, Landroidx/constraintlayout/widget/R$styleable;->PropertySet_android_alpha:I
 
-    iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->alpha:F
+    if-ne v1, v2, :cond_0
 
-    invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    iget v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->alpha:F
 
-    move-result v2
+    invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->alpha:F
+    move-result v1
+
+    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->alpha:F
 
     goto :goto_1
 
     :cond_0
-    if-nez v2, :cond_1
+    sget v2, Landroidx/constraintlayout/widget/R$styleable;->PropertySet_android_visibility:I
 
-    iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
+    if-ne v1, v2, :cond_1
 
-    invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
+    iget v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
 
-    move-result v2
+    invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
+    move-result v1
 
-    sget-object v3, Landroidx/constraintlayout/widget/ConstraintSet;->VISIBILITY_FLAGS:[I
+    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
 
-    aget v2, v3, v2
+    sget-object v2, Landroidx/constraintlayout/widget/ConstraintSet;->VISIBILITY_FLAGS:[I
 
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
+    sget-object v2, Landroidx/constraintlayout/widget/ConstraintSet;->VISIBILITY_FLAGS:[I
+
+    aget v1, v2, v1
+
+    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->visibility:I
 
     goto :goto_1
 
     :cond_1
-    const/4 v3, 0x4
+    sget v2, Landroidx/constraintlayout/widget/R$styleable;->PropertySet_visibilityMode:I
 
-    if-ne v2, v3, :cond_2
+    if-ne v1, v2, :cond_2
 
-    iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mVisibilityMode:I
+    iget v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mVisibilityMode:I
 
-    invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v2
+    move-result v1
 
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mVisibilityMode:I
+    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mVisibilityMode:I
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x3
+    sget v2, Landroidx/constraintlayout/widget/R$styleable;->PropertySet_motionProgress:I
 
-    if-ne v2, v3, :cond_3
+    if-ne v1, v2, :cond_3
 
-    iget v3, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mProgress:F
+    iget v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mProgress:F
 
-    invoke-virtual {p1, v2, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    move-result v2
+    move-result v1
 
-    iput v2, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mProgress:F
+    iput v1, p0, Landroidx/constraintlayout/widget/ConstraintSet$PropertySet;->mProgress:F
 
     :cond_3
     :goto_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 

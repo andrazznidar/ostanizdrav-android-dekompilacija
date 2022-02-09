@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Iterator;
+.implements Lj$/util/Iterator;
 
 
 # annotations
@@ -21,7 +22,8 @@
         "Ljava/lang/Object;",
         "Ljava/util/Iterator<",
         "Ljava/util/Map$Entry<",
-        "TK;TV;>;>;"
+        "TK;TV;>;>;",
+        "Lj$/util/Iterator;"
     }
 .end annotation
 
@@ -61,6 +63,14 @@
 
 
 # virtual methods
+.method public synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public final getOverflowIterator()Ljava/util/Iterator;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -210,7 +220,9 @@
 
     iget-object v0, p0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$EntryIterator;->this$0:Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;
 
-    invoke-static {v0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->access$300(Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;)V
+    sget v1, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->$r8$clinit:I
+
+    invoke-virtual {v0}, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap;->checkMutable()V
 
     iget v0, p0, Lcom/google/crypto/tink/shaded/protobuf/SmallSortedMap$EntryIterator;->pos:I
 

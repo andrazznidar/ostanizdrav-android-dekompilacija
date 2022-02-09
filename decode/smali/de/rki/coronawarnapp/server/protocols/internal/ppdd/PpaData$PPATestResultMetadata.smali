@@ -36,13 +36,13 @@
 # static fields
 .field public static final DAYSSINCEMOSTRECENTDATEATRISKLEVELATTESTREGISTRATION_FIELD_NUMBER:I = 0x4
 
-.field public static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;
+.field private static final DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;
 
 .field public static final HOURSSINCEHIGHRISKWARNINGATTESTREGISTRATION_FIELD_NUMBER:I = 0x5
 
 .field public static final HOURSSINCETESTREGISTRATION_FIELD_NUMBER:I = 0x2
 
-.field public static volatile PARSER:Lcom/google/protobuf/Parser; = null
+.field private static volatile PARSER:Lcom/google/protobuf/Parser; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/protobuf/Parser<",
@@ -52,24 +52,196 @@
     .end annotation
 .end field
 
+.field public static final PTDAYSSINCEMOSTRECENTDATEATRISKLEVELATTESTREGISTRATION_FIELD_NUMBER:I = 0x7
+
+.field public static final PTHOURSSINCEHIGHRISKWARNINGATTESTREGISTRATION_FIELD_NUMBER:I = 0x8
+
+.field public static final PTRISKLEVELATTESTREGISTRATION_FIELD_NUMBER:I = 0x6
+
 .field public static final RISKLEVELATTESTREGISTRATION_FIELD_NUMBER:I = 0x3
 
 .field public static final TESTRESULT_FIELD_NUMBER:I = 0x1
 
 
 # instance fields
-.field public daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+.field private daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
-.field public hoursSinceHighRiskWarningAtTestRegistration_:I
+.field private hoursSinceHighRiskWarningAtTestRegistration_:I
 
-.field public hoursSinceTestRegistration_:I
+.field private hoursSinceTestRegistration_:I
 
-.field public riskLevelAtTestRegistration_:I
+.field private ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
-.field public testResult_:I
+.field private ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+.field private ptRiskLevelAtTestRegistration_:I
+
+.field private riskLevelAtTestRegistration_:I
+
+.field private testResult_:I
 
 
 # direct methods
+.method public static bridge synthetic -$$Nest$mclearDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearHoursSinceHighRiskWarningAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearHoursSinceTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearHoursSinceTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearPtHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearPtHoursSinceHighRiskWarningAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearPtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearPtRiskLevelAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearRiskLevelAtTestRegistration()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$mclearTestResult(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
+    .locals 0
+
+    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearTestResult()V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setHoursSinceHighRiskWarningAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetHoursSinceTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setHoursSinceTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPtHoursSinceHighRiskWarningAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setPtHoursSinceHighRiskWarningAtTestRegistration(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setPtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetPtRiskLevelAtTestRegistrationValue(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setPtRiskLevelAtTestRegistrationValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetRiskLevelAtTestRegistrationValue(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setRiskLevelAtTestRegistrationValue(I)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTestResult(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setTestResult(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;)V
+
+    return-void
+.end method
+
+.method public static bridge synthetic -$$Nest$msetTestResultValue(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setTestResultValue(I)V
+
+    return-void
+.end method
+
+.method public static synthetic -$$Nest$sfgetDEFAULT_INSTANCE()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;
+    .locals 1
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;
+
+    return-object v0
+.end method
+
 .method public static constructor <clinit>()V
     .locals 1
 
@@ -84,114 +256,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
-
-    return-void
-.end method
-
-.method public static synthetic access$11700()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;
-    .locals 1
-
-    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;
-
-    return-object v0
-.end method
-
-.method public static synthetic access$11800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setTestResultValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$11900(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setTestResult(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$12000(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearTestResult()V
-
-    return-void
-.end method
-
-.method public static synthetic access$12100(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setHoursSinceTestRegistration(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$12200(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearHoursSinceTestRegistration()V
-
-    return-void
-.end method
-
-.method public static synthetic access$12300(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setRiskLevelAtTestRegistrationValue(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$12400(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
-
-    return-void
-.end method
-
-.method public static synthetic access$12500(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearRiskLevelAtTestRegistration()V
-
-    return-void
-.end method
-
-.method public static synthetic access$12600(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$12700(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
-
-    return-void
-.end method
-
-.method public static synthetic access$12800(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->setHoursSinceHighRiskWarningAtTestRegistration(I)V
-
-    return-void
-.end method
-
-.method public static synthetic access$12900(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;)V
-    .locals 0
-
-    invoke-direct {p0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->clearHoursSinceHighRiskWarningAtTestRegistration()V
 
     return-void
 .end method
@@ -222,6 +290,36 @@
     const/4 v0, 0x0
 
     iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceTestRegistration_:I
+
+    return-void
+.end method
+
+.method private clearPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    return-void
+.end method
+
+.method private clearPtHoursSinceHighRiskWarningAtTestRegistration()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    return-void
+.end method
+
+.method private clearPtRiskLevelAtTestRegistration()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
 
     return-void
 .end method
@@ -522,10 +620,48 @@
     return-void
 .end method
 
+.method private setPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration(I)V
+    .locals 0
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    return-void
+.end method
+
+.method private setPtHoursSinceHighRiskWarningAtTestRegistration(I)V
+    .locals 0
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    return-void
+.end method
+
+.method private setPtRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->getNumber()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    return-void
+.end method
+
+.method private setPtRiskLevelAtTestRegistrationValue(I)V
+    .locals 0
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    return-void
+.end method
+
 .method private setRiskLevelAtTestRegistration(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->getNumber()I
 
@@ -534,11 +670,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setRiskLevelAtTestRegistrationValue(I)V
@@ -552,7 +683,7 @@
 .method private setTestResult(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;)V
     .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResult;->getNumber()I
 
@@ -561,11 +692,6 @@
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->testResult_:I
 
     return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
 .end method
 
 .method private setTestResultValue(I)V
@@ -648,32 +774,44 @@
 
     :cond_2
     :goto_1
-    if-nez v1, :cond_9
+    if-nez v1, :cond_c
 
     :try_start_1
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result p1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_b
 
     const/16 p3, 0x8
 
-    if-eq p1, p3, :cond_7
+    if-eq p1, p3, :cond_a
 
     const/16 p3, 0x10
 
-    if-eq p1, p3, :cond_6
+    if-eq p1, p3, :cond_9
 
     const/16 p3, 0x18
 
-    if-eq p1, p3, :cond_5
+    if-eq p1, p3, :cond_8
 
     const/16 p3, 0x20
 
-    if-eq p1, p3, :cond_4
+    if-eq p1, p3, :cond_7
 
     const/16 p3, 0x28
+
+    if-eq p1, p3, :cond_6
+
+    const/16 p3, 0x30
+
+    if-eq p1, p3, :cond_5
+
+    const/16 p3, 0x38
+
+    if-eq p1, p3, :cond_4
+
+    const/16 p3, 0x40
 
     if-eq p1, p3, :cond_3
 
@@ -690,7 +828,7 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
 
     goto :goto_1
 
@@ -699,7 +837,7 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
     goto :goto_1
 
@@ -708,7 +846,7 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
 
     goto :goto_1
 
@@ -717,11 +855,38 @@
 
     move-result p1
 
-    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceTestRegistration_:I
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
 
     goto :goto_1
 
     :cond_7
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    goto :goto_1
+
+    :cond_8
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
+
+    goto :goto_1
+
+    :cond_9
+    invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceTestRegistration_:I
+
+    goto :goto_1
+
+    :cond_a
     invoke-virtual {p2}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32()I
 
     move-result p1
@@ -734,7 +899,7 @@
 
     goto :goto_1
 
-    :cond_8
+    :cond_b
     :goto_2
     move v1, v2
 
@@ -777,7 +942,7 @@
     :goto_3
     throw p1
 
-    :cond_9
+    :cond_c
     :pswitch_2
     sget-object p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->DEFAULT_INSTANCE:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;
 
@@ -790,33 +955,29 @@
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->testResult_:I
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_d
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_4
 
-    :cond_a
-    move p1, v1
+    :cond_d
+    move v0, v1
 
     :goto_4
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->testResult_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->testResult_:I
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_e
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_5
 
-    :cond_b
-    move v3, v1
+    :cond_e
+    move v4, v1
 
     :goto_5
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->testResult_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -824,33 +985,29 @@
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceTestRegistration_:I
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_f
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_6
 
-    :cond_c
-    move p1, v1
+    :cond_f
+    move v0, v1
 
     :goto_6
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceTestRegistration_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceTestRegistration_:I
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_10
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_7
 
-    :cond_d
-    move v3, v1
+    :cond_10
+    move v4, v1
 
     :goto_7
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceTestRegistration_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -858,33 +1015,29 @@
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_11
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_8
 
-    :cond_e
-    move p1, v1
+    :cond_11
+    move v0, v1
 
     :goto_8
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_12
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_9
 
-    :cond_f
-    move v3, v1
+    :cond_12
+    move v4, v1
 
     :goto_9
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -892,33 +1045,29 @@
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_13
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_a
 
-    :cond_10
-    move p1, v1
+    :cond_13
+    move v0, v1
 
     :goto_a
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_14
 
-    move v3, v2
+    move v4, v2
 
     goto :goto_b
 
-    :cond_11
-    move v3, v1
+    :cond_14
+    move v4, v1
 
     :goto_b
-    iget v4, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
-
-    invoke-interface {p2, p1, v0, v3, v4}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
@@ -926,39 +1075,125 @@
 
     iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_15
 
-    move p1, v2
+    move v0, v2
 
     goto :goto_c
 
-    :cond_12
-    move p1, v1
+    :cond_15
+    move v0, v1
 
     :goto_c
-    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
-
     iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
 
-    if-eqz v3, :cond_13
+    if-eqz v3, :cond_16
 
-    move v1, v2
+    move v4, v2
 
-    :cond_13
-    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
+    goto :goto_d
 
-    invoke-interface {p2, p1, v0, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+    :cond_16
+    move v4, v1
+
+    :goto_d
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
 
     move-result p1
 
     iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
+
+    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    if-eqz p1, :cond_17
+
+    move v0, v2
+
+    goto :goto_e
+
+    :cond_17
+    move v0, v1
+
+    :goto_e
+    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    if-eqz v3, :cond_18
+
+    move v4, v2
+
+    goto :goto_f
+
+    :cond_18
+    move v4, v1
+
+    :goto_f
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz p1, :cond_19
+
+    move v0, v2
+
+    goto :goto_10
+
+    :cond_19
+    move v0, v1
+
+    :goto_10
+    iget v3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz v3, :cond_1a
+
+    move v4, v2
+
+    goto :goto_11
+
+    :cond_1a
+    move v4, v1
+
+    :goto_11
+    invoke-interface {p2, v0, p1, v4, v3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    iget p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz p1, :cond_1b
+
+    move v0, v2
+
+    goto :goto_12
+
+    :cond_1b
+    move v0, v1
+
+    :goto_12
+    iget p3, p3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz p3, :cond_1c
+
+    move v1, v2
+
+    :cond_1c
+    invoke-interface {p2, v0, p1, v1, p3}, Lcom/google/protobuf/GeneratedMessageLite$Visitor;->visitInt(ZIZI)I
+
+    move-result p1
+
+    iput p1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
 
     return-object p0
 
     :pswitch_4
     new-instance p1, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata$Builder;
 
-    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$1;)V
+    invoke-direct {p1, v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata$Builder;-><init>(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata$Builder-IA;)V
 
     return-object p1
 
@@ -976,6 +1211,8 @@
     invoke-direct {p1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;-><init>()V
 
     return-object p1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -1014,6 +1251,47 @@
     return v0
 .end method
 
+.method public getPtDaysSinceMostRecentDateAtRiskLevelAtTestRegistration()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    return v0
+.end method
+
+.method public getPtHoursSinceHighRiskWarningAtTestRegistration()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    return v0
+.end method
+
+.method public getPtRiskLevelAtTestRegistration()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    invoke-static {v0}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->forNumber(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->UNRECOGNIZED:Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public getPtRiskLevelAtTestRegistrationValue()I
+    .locals 1
+
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    return v0
+.end method
+
 .method public getRiskLevelAtTestRegistration()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;
     .locals 1
 
@@ -1040,7 +1318,7 @@
 .end method
 
 .method public getSerializedSize()I
-    .locals 3
+    .locals 4
 
     iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
@@ -1093,15 +1371,15 @@
 
     invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->getNumber()I
 
-    move-result v2
+    move-result v3
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v3, :cond_3
 
     const/4 v1, 0x3
 
-    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
+    iget v3, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
 
-    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
 
     move-result v1
 
@@ -1112,9 +1390,9 @@
 
     if-eqz v1, :cond_4
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    invoke-static {v2, v1}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
+    invoke-static {v3, v1}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
 
     move-result v1
 
@@ -1125,7 +1403,39 @@
 
     if-eqz v1, :cond_5
 
-    const/4 v2, 0x5
+    const/4 v3, 0x5
+
+    invoke-static {v3, v1}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_5
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    invoke-virtual {v2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->getNumber()I
+
+    move-result v2
+
+    if-eq v1, v2, :cond_6
+
+    const/4 v1, 0x6
+
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeEnumSize(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_6
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz v1, :cond_7
+
+    const/4 v2, 0x7
 
     invoke-static {v2, v1}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
 
@@ -1133,7 +1443,20 @@
 
     add-int/2addr v0, v1
 
-    :cond_5
+    :cond_7
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz v1, :cond_8
+
+    const/16 v2, 0x8
+
+    invoke-static {v2, v1}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_8
     iput v0, p0, Lcom/google/protobuf/GeneratedMessageLite;->memoizedSerializedSize:I
 
     return v0
@@ -1165,7 +1488,7 @@
 .end method
 
 .method public writeTo(Lcom/google/protobuf/CodedOutputStream;)V
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1204,34 +1527,67 @@
 
     invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->getNumber()I
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v2, :cond_2
 
     const/4 v0, 0x3
 
-    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
+    iget v2, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->riskLevelAtTestRegistration_:I
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_2
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->daysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
 
     if-eqz v0, :cond_3
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
     :cond_3
     iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->hoursSinceHighRiskWarningAtTestRegistration_:I
 
     if-eqz v0, :cond_4
 
-    const/4 v1, 0x5
+    const/4 v2, 0x5
+
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    :cond_4
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    invoke-virtual {v1}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPARiskLevel;->getNumber()I
+
+    move-result v1
+
+    if-eq v0, v1, :cond_5
+
+    const/4 v0, 0x6
+
+    iget v1, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptRiskLevelAtTestRegistration_:I
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    :cond_5
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptDaysSinceMostRecentDateAtRiskLevelAtTestRegistration_:I
+
+    if-eqz v0, :cond_6
+
+    const/4 v1, 0x7
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    :cond_4
+    :cond_6
+    iget v0, p0, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPATestResultMetadata;->ptHoursSinceHighRiskWarningAtTestRegistration_:I
+
+    if-eqz v0, :cond_7
+
+    const/16 v1, 0x8
+
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    :cond_7
     return-void
 .end method

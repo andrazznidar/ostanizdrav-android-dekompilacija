@@ -65,7 +65,7 @@
 
     new-instance p1, Landroidx/collection/SparseArrayCompat;
 
-    invoke-direct {p1, p2}, Landroidx/collection/SparseArrayCompat;-><init>(I)V
+    invoke-direct {p1}, Landroidx/collection/SparseArrayCompat;-><init>()V
 
     iput-object p1, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mStateIds:Landroidx/collection/SparseArrayCompat;
 
@@ -91,63 +91,6 @@
 
 
 # virtual methods
-.method public addTransition(IILandroid/graphics/drawable/Drawable;Z)I
-    .locals 9
-
-    invoke-super {p0, p3}, Landroidx/appcompat/graphics/drawable/DrawableContainer$DrawableContainerState;->addChild(Landroid/graphics/drawable/Drawable;)I
-
-    move-result p3
-
-    invoke-static {p1, p2}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->generateTransitionKey(II)J
-
-    move-result-wide v0
-
-    if-eqz p4, :cond_0
-
-    const-wide v2, 0x200000000L
-
-    goto :goto_0
-
-    :cond_0
-    const-wide/16 v2, 0x0
-
-    :goto_0
-    iget-object v4, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mTransitions:Landroidx/collection/LongSparseArray;
-
-    int-to-long v5, p3
-
-    or-long v7, v5, v2
-
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    invoke-virtual {v4, v0, v1, v7}, Landroidx/collection/LongSparseArray;->append(JLjava/lang/Object;)V
-
-    if-eqz p4, :cond_1
-
-    invoke-static {p2, p1}, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->generateTransitionKey(II)J
-
-    move-result-wide p1
-
-    iget-object p4, p0, Landroidx/appcompat/graphics/drawable/AnimatedStateListDrawableCompat$AnimatedStateListState;->mTransitions:Landroidx/collection/LongSparseArray;
-
-    const-wide v0, 0x100000000L
-
-    or-long/2addr v0, v5
-
-    or-long/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p4, p1, p2, v0}, Landroidx/collection/LongSparseArray;->append(JLjava/lang/Object;)V
-
-    :cond_1
-    return p3
-.end method
-
 .method public getKeyframeIdAt(I)I
     .locals 2
 
@@ -176,27 +119,6 @@
 
     :goto_0
     return v0
-.end method
-
-.method public indexOfKeyframe([I)I
-    .locals 0
-
-    invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->indexOfStateSet([I)I
-
-    move-result p1
-
-    if-ltz p1, :cond_0
-
-    return p1
-
-    :cond_0
-    sget-object p1, Landroid/util/StateSet;->WILD_CARD:[I
-
-    invoke-super {p0, p1}, Landroidx/appcompat/graphics/drawable/StateListDrawable$StateListState;->indexOfStateSet([I)I
-
-    move-result p1
-
-    return p1
 .end method
 
 .method public mutate()V

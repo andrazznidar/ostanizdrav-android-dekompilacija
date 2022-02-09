@@ -220,7 +220,7 @@
 .method public read([BII)I
     .locals 1
 
-    if-eqz p1, :cond_1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-ltz p2, :cond_0
 
@@ -242,11 +242,6 @@
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
-
-    throw p1
-
-    :cond_1
-    const/4 p1, 0x0
 
     throw p1
 .end method

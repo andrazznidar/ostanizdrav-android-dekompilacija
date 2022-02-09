@@ -4,38 +4,34 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;
-    }
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nBackgroundNoise.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackgroundNoise.kt\nde/rki/coronawarnapp/playbook/BackgroundNoise\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,25:1\n1741#2,3:26\n*S KotlinDebug\n*F\n+ 1 BackgroundNoise.kt\nde/rki/coronawarnapp/playbook/BackgroundNoise\n*L\n16#1:26,3\n*E\n"
 .end annotation
 
 
-# static fields
-.field public static final Companion:Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;
+# instance fields
+.field public final coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
 
-.field public static volatile instance:Lde/rki/coronawarnapp/playbook/BackgroundNoise;
+.field public final playbook:Lde/rki/coronawarnapp/playbook/Playbook;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;Lde/rki/coronawarnapp/playbook/Playbook;)V
+    .locals 1
 
-    new-instance v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;
+    const-string v0, "coronaTestRepository"
 
-    const/4 v1, 0x0
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const-string v0, "playbook"
 
-    sput-object v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->Companion:Lde/rki/coronawarnapp/playbook/BackgroundNoise$Companion;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+    iput-object p2, p0, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->playbook:Lde/rki/coronawarnapp/playbook/Playbook;
 
     return-void
 .end method
@@ -43,7 +39,7 @@
 
 # virtual methods
 .method public final foregroundScheduleCheck(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,15 +85,19 @@
 
     iget v2, v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;->label:I
 
-    const/4 v3, 0x1
+    const/4 v3, 0x2
 
-    if-eqz v2, :cond_2
+    const/4 v4, 0x1
+
+    if-eqz v2, :cond_3
+
+    if-eq v2, v4, :cond_2
 
     if-ne v2, v3, :cond_1
 
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto/16 :goto_4
 
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
@@ -109,45 +109,113 @@
     throw p1
 
     :cond_2
-    invoke-static {p1}, Lcom/google/zxing/client/android/R$id;->throwOnFailure(Ljava/lang/Object;)V
+    iget-object v2, v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;->L$0:Ljava/lang/Object;
 
-    sget-object p1, Lde/rki/coronawarnapp/storage/LocalData;->INSTANCE:Lde/rki/coronawarnapp/storage/LocalData;
+    check-cast v2, Lde/rki/coronawarnapp/playbook/BackgroundNoise;
 
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/storage/LocalData;->isAllowedToSubmitDiagnosisKeys()Z
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-result p1
+    goto :goto_1
 
-    if-eqz p1, :cond_3
+    :cond_3
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->coronaTestRepository:Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;
+
+    iget-object p1, p1, Lde/rki/coronawarnapp/coronatest/CoronaTestRepository;->coronaTests:Lkotlinx/coroutines/flow/Flow;
+
+    iput-object p0, v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;->L$0:Ljava/lang/Object;
+
+    iput v4, v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;->label:I
+
+    invoke-static {p1, v0}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v1, :cond_4
+
+    return-object v1
+
+    :cond_4
+    move-object v2, p0
+
+    :goto_1
+    check-cast p1, Ljava/lang/Iterable;
+
+    instance-of v5, p1, Ljava/util/Collection;
+
+    const/4 v6, 0x0
+
+    if-eqz v5, :cond_5
+
+    move-object v5, p1
+
+    check-cast v5, Ljava/util/Collection;
+
+    invoke-interface {v5}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_6
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_7
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;
+
+    invoke-interface {v5}, Lde/rki/coronawarnapp/coronatest/type/CoronaTest;->isSubmissionAllowed()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_6
+
+    goto :goto_3
+
+    :cond_7
+    :goto_2
+    move v4, v6
+
+    :goto_3
+    if-eqz v4, :cond_9
 
     sget-object p1, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
-    sget-object p1, Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
-
-    invoke-virtual {p1}, Lkotlin/random/Random;->nextFloat()F
+    invoke-virtual {p1}, Lkotlin/random/Random$Default;->nextFloat()F
 
     move-result p1
 
-    const/16 v2, 0x64
+    const/16 v4, 0x64
 
-    int-to-float v2, v2
+    int-to-float v4, v4
 
-    mul-float/2addr p1, v2
+    mul-float/2addr p1, v4
+
+    const/4 v4, 0x0
+
+    cmpg-float p1, p1, v4
+
+    if-gez p1, :cond_9
+
+    iget-object p1, v2, Lde/rki/coronawarnapp/playbook/BackgroundNoise;->playbook:Lde/rki/coronawarnapp/playbook/Playbook;
 
     const/4 v2, 0x0
 
-    cmpg-float p1, p1, v2
-
-    if-gez p1, :cond_3
-
-    sget-object p1, Lde/rki/coronawarnapp/util/di/AppInjector;->INSTANCE:Lde/rki/coronawarnapp/util/di/AppInjector;
-
-    invoke-virtual {p1}, Lde/rki/coronawarnapp/util/di/AppInjector;->getComponent()Lde/rki/coronawarnapp/util/di/ApplicationComponent;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lde/rki/coronawarnapp/util/di/ApplicationComponent;->getPlaybook()Lde/rki/coronawarnapp/playbook/Playbook;
-
-    move-result-object p1
+    iput-object v2, v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Lde/rki/coronawarnapp/playbook/BackgroundNoise$foregroundScheduleCheck$1;->label:I
 
@@ -155,12 +223,17 @@
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_3
+    if-ne p1, v1, :cond_8
 
     return-object v1
 
-    :cond_3
-    :goto_1
+    :cond_8
+    :goto_4
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+
+    :cond_9
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1

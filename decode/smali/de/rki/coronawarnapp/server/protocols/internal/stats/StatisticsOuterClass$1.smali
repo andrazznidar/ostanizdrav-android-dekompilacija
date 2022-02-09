@@ -1,4 +1,4 @@
-.class public synthetic Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$1;
+.class synthetic Lde/rki/coronawarnapp/server/protocols/internal/stats/StatisticsOuterClass$1;
 .super Ljava/lang/Object;
 .source "StatisticsOuterClass.java"
 

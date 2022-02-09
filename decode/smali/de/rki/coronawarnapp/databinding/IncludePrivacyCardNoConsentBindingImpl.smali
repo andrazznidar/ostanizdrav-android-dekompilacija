@@ -21,33 +21,33 @@
 
     sput-object v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const v1, 0x7f090338
+    const v1, 0x7f0a0549
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090335
+    const v1, 0x7f0a0545
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090336
+    const v1, 0x7f0a0547
 
     const/4 v2, 0x3
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    sget-object v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
-
-    const v1, 0x7f090337
+    const v1, 0x7f0a0548
 
     const/4 v2, 0x4
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+
+    const v1, 0x7f0a0546
+
+    const/4 v2, 0x5
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
@@ -55,11 +55,21 @@
 .end method
 
 .method public constructor <init>(Landroidx/databinding/DataBindingComponent;Landroid/view/View;)V
-    .locals 12
+    .locals 13
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x0,
+            0x0
+        }
+        names = {
+            "bindingComponent",
+            "root"
+        }
+    .end annotation
 
     sget-object v0, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBindingImpl;->sViewsWithIds:Landroid/util/SparseIntArray;
 
-    const/4 v1, 0x5
+    const/4 v1, 0x6
 
     const/4 v2, 0x0
 
@@ -83,7 +93,7 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x5
 
     aget-object v1, v0, v1
 
@@ -91,7 +101,7 @@
 
     check-cast v9, Landroid/widget/TextView;
 
-    const/4 v1, 0x4
+    const/4 v1, 0x3
 
     aget-object v1, v0, v1
 
@@ -99,13 +109,21 @@
 
     check-cast v10, Landroid/widget/TextView;
 
+    const/4 v1, 0x4
+
+    aget-object v1, v0, v1
+
+    move-object v11, v1
+
+    check-cast v11, Landroid/widget/TextView;
+
     const/4 v1, 0x1
 
     aget-object v0, v0, v1
 
-    move-object v11, v0
+    move-object v12, v0
 
-    check-cast v11, Landroid/widget/TextView;
+    check-cast v12, Landroid/widget/TextView;
 
     const/4 v6, 0x0
 
@@ -115,7 +133,7 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v3 .. v11}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    invoke-direct/range {v3 .. v12}, Lde/rki/coronawarnapp/databinding/IncludePrivacyCardNoConsentBinding;-><init>(Ljava/lang/Object;Landroid/view/View;ILandroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     const-wide/16 v0, -0x1
 
@@ -125,7 +143,7 @@
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    const p1, 0x7f09015b
+    sget p1, Landroidx/databinding/library/R$id;->dataBinding:I
 
     invoke-virtual {p2, p1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
