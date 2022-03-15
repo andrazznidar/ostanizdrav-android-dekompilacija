@@ -200,7 +200,7 @@
 
     div-float/2addr v1, v4
 
-    const v4, 0x3f0d6239    # 0.55228f
+    const v4, 0x3f0d6239
 
     mul-float v12, v3, v4
 

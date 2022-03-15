@@ -419,7 +419,7 @@
 
     move-result v2
 
-    const v3, 0x310888    # 4.503E-39f
+    const v3, 0x310888
 
     if-eq v2, v3, :cond_2
 
@@ -2034,7 +2034,7 @@
 
     move-result v7
 
-    const v8, 0x310888    # 4.503E-39f
+    const v8, 0x310888
 
     if-eq v7, v8, :cond_b
 

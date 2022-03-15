@@ -106,7 +106,7 @@
 
     if-eq v1, v2, :cond_1
 
-    const v2, 0x480aabeb    # 141999.67f
+    const v2, 0x480aabeb
 
     if-eq v1, v2, :cond_0
 

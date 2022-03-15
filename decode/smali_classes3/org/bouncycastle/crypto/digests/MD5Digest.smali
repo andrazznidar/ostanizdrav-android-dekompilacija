@@ -1140,7 +1140,7 @@
 
     aget v1, v1, v2
 
-    const v2, 0x4881d05    # 3.2000097E-36f
+    const v2, 0x4881d05
 
     move v4, v13
 

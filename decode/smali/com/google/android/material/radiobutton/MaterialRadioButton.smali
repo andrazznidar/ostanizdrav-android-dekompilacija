@@ -190,7 +190,7 @@
 
     const/4 v0, 0x1
 
-    const v5, 0x3f0a3d71    # 0.54f
+    const v5, 0x3f0a3d71
 
     invoke-static {v2, v1, v5}, Ldagger/android/AndroidInjection;->layer(IIF)I
 
@@ -200,7 +200,7 @@
 
     const/4 v0, 0x2
 
-    const v5, 0x3ec28f5c    # 0.38f
+    const v5, 0x3ec28f5c
 
     invoke-static {v2, v1, v5}, Ldagger/android/AndroidInjection;->layer(IIF)I
 

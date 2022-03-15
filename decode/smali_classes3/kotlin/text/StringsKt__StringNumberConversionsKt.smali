@@ -235,7 +235,7 @@
     :goto_0
     const-wide/16 v5, 0x0
 
-    const-wide v10, -0x38e38e38e38e38eL    # -2.772000429909333E291
+    const-wide v10, -0x38e38e38e38e38eL
 
     move-wide v12, v10
 
@@ -294,7 +294,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    const-wide v10, -0x38e38e38e38e38eL    # -2.772000429909333E291
+    const-wide v10, -0x38e38e38e38e38eL
 
     goto :goto_1
 

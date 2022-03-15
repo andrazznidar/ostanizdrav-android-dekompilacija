@@ -1454,7 +1454,7 @@
 
     move-result v2
 
-    const v3, 0x310888    # 4.503E-39f
+    const v3, 0x310888
 
     if-eq v2, v3, :cond_2
 

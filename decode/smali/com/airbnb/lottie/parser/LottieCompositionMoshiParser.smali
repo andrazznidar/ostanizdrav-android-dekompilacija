@@ -1088,7 +1088,7 @@
 
     double-to-float v3, v9
 
-    const v9, 0x3c23d70a    # 0.01f
+    const v9, 0x3c23d70a
 
     sub-float v11, v3, v9
 

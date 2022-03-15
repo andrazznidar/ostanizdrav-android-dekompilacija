@@ -21,7 +21,7 @@
 
     invoke-direct {v0, p1}, Lcom/google/android/material/transition/ScaleProvider;-><init>(Z)V
 
-    const p1, 0x3f59999a    # 0.85f
+    const p1, 0x3f59999a
 
     iput p1, v0, Lcom/google/android/material/transition/ScaleProvider;->outgoingEndScale:F
 

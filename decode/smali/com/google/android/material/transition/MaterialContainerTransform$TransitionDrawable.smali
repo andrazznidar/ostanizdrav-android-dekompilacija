@@ -957,18 +957,18 @@
     :goto_2
     if-lez v5, :cond_3
 
-    const v5, 0x3f7d70a4    # 0.99f
+    const v5, 0x3f7d70a4
 
     sub-float v6, v9, v13
 
-    const v7, 0x3c23d700    # 0.00999999f
+    const v7, 0x3c23d700
 
     div-float/2addr v6, v7
 
     goto :goto_3
 
     :cond_3
-    const v5, 0x3c23d70a    # 0.01f
+    const v5, 0x3c23d70a
 
     div-float v6, v9, v5
 
@@ -1481,7 +1481,7 @@
 
     sub-float/2addr v1, v13
 
-    const v2, 0x3e99999a    # 0.3f
+    const v2, 0x3e99999a
 
     mul-float/2addr v1, v2
 
@@ -1555,7 +1555,7 @@
 
     iget-object v3, v0, Lcom/google/android/material/transition/MaterialContainerTransform$TransitionDrawable;->fadeModeEvaluator:Lcom/google/android/material/transition/FadeModeEvaluator;
 
-    const v4, 0x3eb33333    # 0.35f
+    const v4, 0x3eb33333
 
     invoke-interface {v3, v9, v1, v2, v4}, Lcom/google/android/material/transition/FadeModeEvaluator;->evaluate(FFFF)Lcom/google/android/material/transition/FadeModeResult;
 

@@ -659,7 +659,7 @@ usesFramework:
   ids:
   - 1
   tag: null
-version: 2.6.0
+version: 2.6.1
 versionInfo:
-  versionCode: '2120204'
-  versionName: 2.12.2
+  versionCode: '2120301'
+  versionName: 2.12.3

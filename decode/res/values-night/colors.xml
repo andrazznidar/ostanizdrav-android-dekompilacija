@@ -5,4 +5,7 @@
     <color name="colorPrimary">#ff007fad</color>
     <color name="colorSecondary">#ff007fad</color>
     <color name="fab_tint">#ff409cc8</color>
+    <color name="starsColor1">#ff0191c6</color>
+    <color name="starsColor2">#ff116a9f</color>
+    <color name="starsColor3">#ff025a8f</color>
 </resources>

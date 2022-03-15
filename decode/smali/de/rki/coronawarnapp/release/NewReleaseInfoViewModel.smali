@@ -57,7 +57,7 @@
 
     const/4 p2, 0x0
 
-    const-string v0, "2.12.2"
+    const-string v0, "2.12.3"
 
     aput-object v0, p1, p2
 

@@ -131,7 +131,7 @@
 
     aput-object v9, v8, v4
 
-    const v9, 0x3dcccccd    # 0.1f
+    const v9, 0x3dcccccd
 
     if-ne v2, v3, :cond_4
 

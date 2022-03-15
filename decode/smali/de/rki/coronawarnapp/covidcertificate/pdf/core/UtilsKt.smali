@@ -70,7 +70,7 @@
 
     mul-float/2addr v4, p3
 
-    const p3, 0x3f99999a    # 1.2f
+    const p3, 0x3f99999a
 
     mul-float/2addr v4, p3
 

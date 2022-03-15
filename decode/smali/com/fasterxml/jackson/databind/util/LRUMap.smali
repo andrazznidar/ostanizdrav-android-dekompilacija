@@ -44,7 +44,7 @@
 
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
-    const v1, 0x3f4ccccd    # 0.8f
+    const v1, 0x3f4ccccd
 
     const/4 v2, 0x4
 

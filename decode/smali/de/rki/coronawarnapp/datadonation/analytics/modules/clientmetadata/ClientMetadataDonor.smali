@@ -170,7 +170,9 @@
 
     move-result-object v4
 
-    invoke-virtual {v4, v3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setPatch(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
+    const/4 v5, 0x3
+
+    invoke-virtual {v4, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setPatch(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
 
     move-result-object v4
 

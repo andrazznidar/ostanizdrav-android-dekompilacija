@@ -181,7 +181,7 @@
 
     iget p0, p0, Landroid/content/res/Configuration;->fontScale:F
 
-    const v0, 0x3fa66666    # 1.3f
+    const v0, 0x3fa66666
 
     cmpl-float p0, p0, v0
 

@@ -74,11 +74,11 @@
 .method public add(Landroidx/constraintlayout/core/SolverVariable;FZ)V
     .locals 11
 
-    const v0, -0x457ced91    # -0.001f
+    const v0, -0x457ced91
 
     cmpl-float v1, p2, v0
 
-    const v2, 0x3a83126f    # 0.001f
+    const v2, 0x3a83126f
 
     if-lez v1, :cond_0
 

@@ -457,7 +457,7 @@
 
     const/4 v1, -0x1
 
-    const v2, 0x3ec28f5c    # 0.38f
+    const v2, 0x3ec28f5c
 
     const/4 v3, 0x0
 
@@ -564,7 +564,7 @@
 
     move-result v7
 
-    const v9, 0x3ec28f5c    # 0.38f
+    const v9, 0x3ec28f5c
 
     cmpg-float v7, v7, v9
 

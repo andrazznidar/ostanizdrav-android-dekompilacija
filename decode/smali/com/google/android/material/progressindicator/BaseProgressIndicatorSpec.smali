@@ -205,7 +205,7 @@
 
     move-result-object p1
 
-    const p3, 0x3e4ccccd    # 0.2f
+    const p3, 0x3e4ccccd
 
     invoke-virtual {p1, v0, p3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 

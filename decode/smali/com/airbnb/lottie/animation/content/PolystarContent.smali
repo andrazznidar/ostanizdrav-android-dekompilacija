@@ -1182,7 +1182,7 @@
     :goto_f
     mul-float v31, v31, v3
 
-    const v3, 0x3ef4e26d    # 0.47829f
+    const v3, 0x3ef4e26d
 
     mul-float v31, v31, v3
 

@@ -331,7 +331,7 @@
 
     :array_1
     .array-data 4
-        0x3fffffff    # 1.9999999f
+        0x3fffffff
         0x2aaaaaa9
         0x1fffffff
         0x19999998

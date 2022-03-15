@@ -87,7 +87,7 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "2.12.2"
+    const-string v5, "2.12.3"
 
     aput-object v5, v0, v4
 

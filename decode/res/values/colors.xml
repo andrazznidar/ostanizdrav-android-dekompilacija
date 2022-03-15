@@ -205,9 +205,9 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <color name="starsColor1">#ff0191c6</color>
-    <color name="starsColor2">#ff116a9f</color>
-    <color name="starsColor3">#ff025a8f</color>
+    <color name="starsColor1">#ff66b2cd</color>
+    <color name="starsColor2">#ff66b2cd</color>
+    <color name="starsColor3">#ff66b2cd</color>
     <color name="starsColorInvalid">#ff576778</color>
     <color name="swipeDeleteBackgroundColor">#ffeb4d3d</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>

@@ -118,7 +118,7 @@
 
     if-eq v3, v0, :cond_1
 
-    const v3, 0x3e19999a    # 0.15f
+    const v3, 0x3e19999a
 
     cmpl-float v2, v2, v3
 

@@ -246,13 +246,13 @@
 
     aget-object v1, p1, v0
 
-    const v2, 0x3ee66666    # 0.45f
+    const v2, 0x3ee66666
 
     invoke-static {p0, v1, v2}, Lcom/google/zxing/oned/OneDReader;->patternMatchVariance([I[IF)F
 
     move-result v1
 
-    const v2, 0x3e4ccccd    # 0.2f
+    const v2, 0x3e4ccccd
 
     cmpg-float v1, v1, v2
 

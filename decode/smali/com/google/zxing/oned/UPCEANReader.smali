@@ -316,7 +316,7 @@
 
     array-length p0, p3
 
-    const p2, 0x3ef5c28f    # 0.48f
+    const p2, 0x3ef5c28f
 
     const/4 v0, -0x1
 
@@ -327,7 +327,7 @@
 
     aget-object v2, p3, v1
 
-    const v3, 0x3f333333    # 0.7f
+    const v3, 0x3f333333
 
     invoke-static {p1, v2, v3}, Lcom/google/zxing/oned/OneDReader;->patternMatchVariance([I[IF)F
 
@@ -415,13 +415,13 @@
 
     if-ne v4, v5, :cond_3
 
-    const v5, 0x3f333333    # 0.7f
+    const v5, 0x3f333333
 
     invoke-static {p4, p3, v5}, Lcom/google/zxing/oned/OneDReader;->patternMatchVariance([I[IF)F
 
     move-result v5
 
-    const v7, 0x3ef5c28f    # 0.48f
+    const v7, 0x3ef5c28f
 
     cmpg-float v5, v5, v7
 

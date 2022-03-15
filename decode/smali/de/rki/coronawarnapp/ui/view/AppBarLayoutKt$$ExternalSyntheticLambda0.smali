@@ -59,7 +59,7 @@
 
     int-to-float p1, p1
 
-    const v3, 0x3f333333    # 0.7f
+    const v3, 0x3f333333
 
     mul-float/2addr p1, v3
 

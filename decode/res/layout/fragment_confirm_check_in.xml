@@ -10,7 +10,7 @@
                 </LinearLayout>
                 <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" app:layout_scrollFlags="scroll|enterAlways" app:navigationIcon="@drawable/ic_close" app:navigationIconTint="@color/colorStableLight">
                     <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_text_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                        <ImageView android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginEnd="72.0dip" app:srcCompat="@drawable/ic_cwa_logo_white" />
+                        <ImageView android:visibility="gone" android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginEnd="72.0dip" app:srcCompat="@drawable/ic_cwa_logo_white" />
                         <TextView android:textColor="@color/colorStableLight" android:id="@id/confirm_checkin_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_huge" android:layout_marginBottom="@dimen/spacing_normal" android:text="@string/confirm_checkin_title_text" android:layout_marginStart="@dimen/spacing_normal" style="@style/headline6" />
                     </LinearLayout>
                 </com.google.android.material.appbar.MaterialToolbar>

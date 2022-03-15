@@ -255,7 +255,7 @@
 
     invoke-virtual {v10, v6, v11, v13}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    const v6, 0x43f4b333    # 489.4f
+    const v6, 0x43f4b333
 
     const v10, 0x43d28000    # 421.0f
 
@@ -295,7 +295,7 @@
 
     const v12, 0x43e10666
 
-    const v13, 0x42fe4ccd    # 127.15f
+    const v13, 0x42fe4ccd
 
     invoke-direct {v11, v12, v6, v13}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;-><init>(FFF)V
 
@@ -325,7 +325,7 @@
 
     const v11, 0x4412f000    # 587.75f
 
-    const v14, 0x439bef5c    # 311.87f
+    const v14, 0x439bef5c
 
     const v12, 0x4383f1ec
 
@@ -375,7 +375,7 @@
 
     new-instance v10, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v11, 0x44299c29    # 678.44f
+    const v11, 0x44299c29
 
     const v12, 0x43e10666
 
@@ -391,7 +391,7 @@
 
     new-instance v10, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v11, 0x4435b99a    # 726.9f
+    const v11, 0x4435b99a
 
     invoke-direct {v10, v12, v11, v13}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;-><init>(FFF)V
 
@@ -462,9 +462,9 @@
 
     new-instance v11, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v12, 0x43e2b47b    # 453.41f
+    const v12, 0x43e2b47b
 
-    const v14, 0x43018ccd    # 129.55f
+    const v14, 0x43018ccd
 
     invoke-direct {v11, v12, v6, v14}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;-><init>(FFF)V
 
@@ -573,7 +573,7 @@
 
     new-instance v12, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v14, 0x43ee199a    # 476.2f
+    const v14, 0x43ee199a
 
     const v13, 0x42e18000    # 112.75f
 
@@ -608,11 +608,11 @@
 
     new-instance v11, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v12, 0x441170a4    # 581.76f
+    const v12, 0x441170a4
 
     const v13, 0x439d228f
 
-    const v14, 0x436ce3d7    # 236.89f
+    const v14, 0x436ce3d7
 
     invoke-direct {v11, v13, v12, v14}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;-><init>(FFF)V
 
@@ -645,11 +645,11 @@
 
     new-instance v11, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v12, 0x4428d47b    # 675.32f
+    const v12, 0x4428d47b
 
     const v13, 0x42e18000    # 112.75f
 
-    const v14, 0x43ee199a    # 476.2f
+    const v14, 0x43ee199a
 
     invoke-direct {v11, v14, v12, v13}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;-><init>(FFF)V
 
@@ -699,7 +699,7 @@
 
     new-instance v10, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v11, 0x443feb85    # 767.68f
+    const v11, 0x443feb85
 
     invoke-direct {v10, v14, v11, v13}, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;-><init>(FFF)V
 
@@ -740,9 +740,9 @@
 
     new-instance v9, Lde/rki/coronawarnapp/covidcertificate/pdf/core/TextArea;
 
-    const v10, 0x442d53d7    # 693.31f
+    const v10, 0x442d53d7
 
-    const v11, 0x41e63d71    # 28.78f
+    const v11, 0x41e63d71
 
     const v12, 0x4385c000    # 267.5f
 
@@ -970,7 +970,7 @@
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    const v7, 0x3e75a858    # 0.2399f
+    const v7, 0x3e75a858
 
     invoke-virtual {v6, v7, v7}, Landroid/graphics/Canvas;->scale(FF)V
 
