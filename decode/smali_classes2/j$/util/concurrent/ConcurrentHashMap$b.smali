@@ -235,7 +235,7 @@
 
     if-ge v0, v6, :cond_1
 
-    const v7, 0x3ffffffb
+    const v7, 0x3ffffffb    # 1.9999994f
 
     if-lt v0, v7, :cond_0
 
@@ -365,7 +365,7 @@
 
     if-ge v1, v6, :cond_2
 
-    const v7, 0x3ffffffb
+    const v7, 0x3ffffffb    # 1.9999994f
 
     if-lt v1, v7, :cond_1
 

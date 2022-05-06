@@ -7,24 +7,24 @@
 .method public static EOCF_sRGB(F)F
     .locals 4
 
-    const v0, 0x3d25aee6
+    const v0, 0x3d25aee6    # 0.04045f
 
     cmpg-float v0, p0, v0
 
     if-gtz v0, :cond_0
 
-    const v0, 0x414eb852
+    const v0, 0x414eb852    # 12.92f
 
     div-float/2addr p0, v0
 
     goto :goto_0
 
     :cond_0
-    const v0, 0x3d6147ae
+    const v0, 0x3d6147ae    # 0.055f
 
     add-float/2addr p0, v0
 
-    const v0, 0x3f870a3d
+    const v0, 0x3f870a3d    # 1.055f
 
     div-float/2addr p0, v0
 
@@ -925,13 +925,13 @@
 .method public static OECF_sRGB(F)F
     .locals 4
 
-    const v0, 0x3b4d2e1c
+    const v0, 0x3b4d2e1c    # 0.0031308f
 
     cmpg-float v0, p0, v0
 
     if-gtz v0, :cond_0
 
-    const v0, 0x414eb852
+    const v0, 0x414eb852    # 12.92f
 
     mul-float/2addr p0, v0
 

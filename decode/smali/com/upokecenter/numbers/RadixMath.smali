@@ -149,7 +149,7 @@
     :array_0
     .array-data 4
         0x7fffffff
-        0x3fffffff
+        0x3fffffff    # 1.9999999f
         0x1fffffff
         0xfffffff
         0x7ffffff
@@ -1117,9 +1117,9 @@
     :cond_8
     if-nez p4, :cond_51
 
-    const v14, -0x3ffffffe
+    const v14, -0x3ffffffe    # -2.0000005f
 
-    const v15, 0x3ffffffe
+    const v15, 0x3ffffffe    # 1.9999998f
 
     const/16 v1, 0x9
 
@@ -1618,13 +1618,13 @@
 
     if-eqz v0, :cond_20
 
-    const v1, -0x3ffffffe
+    const v1, -0x3ffffffe    # -2.0000005f
 
     move/from16 v22, v4
 
     if-lt v14, v1, :cond_27
 
-    const v4, 0x3ffffffe
+    const v4, 0x3ffffffe    # 1.9999998f
 
     if-gt v14, v4, :cond_27
 
@@ -11779,9 +11779,9 @@
 
     move-result v12
 
-    const v14, 0x3ffffffe
+    const v14, 0x3ffffffe    # 1.9999998f
 
-    const v15, -0x3ffffffe
+    const v15, -0x3ffffffe    # -2.0000005f
 
     if-eqz v12, :cond_1c
 

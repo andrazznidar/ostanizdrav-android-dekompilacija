@@ -251,7 +251,7 @@
     :array_0
     .array-data 4
         0x0
-        0x3f666666
+        0x3f666666    # 0.9f
         0x3f800000    # 1.0f
     .end array-data
 .end method
@@ -495,7 +495,7 @@
 
     move-result p2
 
-    const v0, 0x3a83126f
+    const v0, 0x3a83126f    # 0.001f
 
     cmpl-float p2, p2, v0
 

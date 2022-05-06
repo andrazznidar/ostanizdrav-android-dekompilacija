@@ -1119,8 +1119,8 @@ Before your data is analyzed, it is necessary to ensure that each app that share
     <string name="risk_details_headline_infection_risk">Risk of Infection</string>
     <string name="risk_details_headline_period_logged">Period Logged</string>
     <string name="risk_details_increased_risk_faq_link_label">NIJZ</string>
-    <string name="risk_details_increased_risk_faq_link_text">At a time when the app alerts you to a higher risk, we advise you to stay quarantined at home, unless you are among the exceptions. Please follow the instructions on the NIJZ website.</string>
-    <string name="risk_details_increased_risk_faq_url">https://www.nijz.si/sl/obvescen-o-viskorizicnem-stiku-s-strani-aplikacije-ostanizdrav</string>
+    <string name="risk_details_increased_risk_faq_link_text">At a time when the app alerts you to a higher risk, follow the Instructions for persons exposed to SARS-CoV-2 on the NIJZ website.</string>
+    <string name="risk_details_increased_risk_faq_url">https://www.nijz.si/sl/izolacija</string>
     <string name="risk_details_increased_risk_faq_vaccination">We recommend that you get vaccinated against covid-19 if you have not already done so.</string>
     <string name="risk_details_information_active_tracing_days_circle_progress" />
     <string name="risk_details_information_body_increased_risk_date" />

@@ -1740,7 +1740,7 @@
 
     div-float/2addr v7, v6
 
-    const v6, 0x3e99999a
+    const v6, 0x3e99999a    # 0.3f
 
     cmpl-float v7, v7, v6
 
@@ -1797,7 +1797,7 @@
     :cond_4
     if-le v12, v14, :cond_6
 
-    const v12, 0x410b3333
+    const v12, 0x410b3333    # 8.7f
 
     cmpl-float v12, v13, v12
 

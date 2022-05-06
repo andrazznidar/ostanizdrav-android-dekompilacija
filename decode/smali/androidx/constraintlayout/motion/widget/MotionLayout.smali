@@ -191,7 +191,7 @@
 
     mul-float/2addr v4, v2
 
-    const v11, 0x3089705f
+    const v11, 0x3089705f    # 1.0E-9f
 
     mul-float/2addr v4, v11
 
@@ -240,7 +240,7 @@
 
     move-result v4
 
-    const v9, 0x3727c5ac
+    const v9, 0x3727c5ac    # 1.0E-5f
 
     cmpl-float v4, v4, v9
 

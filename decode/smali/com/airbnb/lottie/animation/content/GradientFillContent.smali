@@ -656,7 +656,7 @@
 
     if-gtz v4, :cond_5
 
-    const v3, 0x3a83126f
+    const v3, 0x3a83126f    # 0.001f
 
     :cond_5
     move v12, v3

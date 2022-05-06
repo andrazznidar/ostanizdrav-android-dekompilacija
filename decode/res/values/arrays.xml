@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="new_release_body">
-        <item>Add your EU digital COVID certificates to the application. In this way, you will be able to prove that you meet the PCT conditions using the application.</item>
-        <item>You can now add digital COVID certificates of family members in the app.</item>
-        <item>You can now verify the validity of certificates for a selected country before you travel.</item>
-        <item>\#OstaniZdrav offers you to check-in at events. Event organizers and store owners can generate a QR code with the app. Visitors can then scan this QR code upon arrival and save a check-in in the app. The application can also create an entry in contact journal on request. If someone who attends this event is later diagnosed with SARS-CoV-2, others who were present at the event at the same time may be alerted.</item>
-        <item>For quick access to the QR code scanner, it has been added to the toolbar. With it, you can scan a QR code at an event or a COVID certificate. It also allows you to import QR codes from a file or photo.</item>
+        <item>"Nacionalni inštitut za javno zdravje pripravlja raziskavo o aplikaciji za obveščanje stikov #OstaniZdrav. Cilj raziskave je pridobiti mnenja o uporabnosti in učinkovitosti aplikacije ter njeni vlogi pri spremembah vedenja.
+ Kot uporabnika aplikacije vas prosimo, da si vzamete 5 minut časa in rešite anketo na tej povezavi.
+ Vaše sodelovanje je prostovoljno in anonimno."</item>
     </string-array>
     <string-array name="new_release_linkified_labels">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>na tej povezavi</item>
     </string-array>
     <string-array name="new_release_target_urls">
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>https://anketa.nijz.si/ostanizdrav_1</item>
     </string-array>
     <string-array name="new_release_title">
-        <item>EU digital COVID certificates</item>
-        <item>Family Certificates</item>
-        <item>EU Certificate Validation</item>
-        <item>Check-in at events</item>
-        <item>QR code Scanner</item>
+        <item>Vabilo za sodelovanje v raziskavi</item>
     </string-array>
     <string-array name="submission_done_further_info_bullet_points">
         <item>The duration of isolation is at the discretion of your treating physician.</item>

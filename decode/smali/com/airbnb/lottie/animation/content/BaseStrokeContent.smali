@@ -653,7 +653,7 @@
 
     aget v13, v12, v11
 
-    const v14, 0x3dcccccd
+    const v14, 0x3dcccccd    # 0.1f
 
     cmpg-float v13, v13, v14
 

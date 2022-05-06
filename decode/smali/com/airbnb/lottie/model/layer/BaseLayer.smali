@@ -1067,7 +1067,7 @@
 
     move-result v14
 
-    const v15, 0x40233333
+    const v15, 0x40233333    # 2.55f
 
     if-eqz v14, :cond_18
 

@@ -1291,7 +1291,7 @@
 
     int-to-float p1, p1
 
-    const v1, 0x3f7d70a4
+    const v1, 0x3f7d70a4    # 0.99f
 
     add-float/2addr p1, v1
 
@@ -1411,7 +1411,7 @@
 
     int-to-float p2, p2
 
-    const v1, 0x3f7d70a4
+    const v1, 0x3f7d70a4    # 0.99f
 
     add-float/2addr p2, v1
 

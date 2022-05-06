@@ -241,7 +241,7 @@
 
     iget-object v0, v1, Lcom/google/android/material/floatingactionbutton/BorderDrawable;->paint:Landroid/graphics/Paint;
 
-    const v3, 0x3faaa993
+    const v3, 0x3faaa993    # 1.3333f
 
     mul-float/2addr p4, v3
 

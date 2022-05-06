@@ -576,7 +576,7 @@
 
     double-to-float v7, v7
 
-    const v8, 0x3a83126f
+    const v8, 0x3a83126f    # 0.001f
 
     sub-float/2addr v7, v8
 

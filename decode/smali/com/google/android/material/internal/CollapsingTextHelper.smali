@@ -859,7 +859,7 @@
 
     move-result v3
 
-    const v4, 0x3a83126f
+    const v4, 0x3a83126f    # 0.001f
 
     cmpg-float v3, v3, v4
 

@@ -2845,7 +2845,7 @@
 
     int-to-float p1, p1
 
-    const v2, 0x3dcccccd
+    const v2, 0x3dcccccd    # 0.1f
 
     mul-float/2addr p2, v2
 

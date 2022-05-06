@@ -126,7 +126,7 @@
 
     move-result v2
 
-    const v3, 0x3dcccccd
+    const v3, 0x3dcccccd    # 0.1f
 
     cmpg-float v2, v2, v3
 

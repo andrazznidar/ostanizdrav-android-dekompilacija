@@ -20,11 +20,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v0, 0x3f8ccccd
+    const v0, 0x3f8ccccd    # 1.1f
 
     iput v0, p0, Lcom/google/android/material/transition/ScaleProvider;->outgoingEndScale:F
 
-    const v0, 0x3f4ccccd
+    const v0, 0x3f4ccccd    # 0.8f
 
     iput v0, p0, Lcom/google/android/material/transition/ScaleProvider;->incomingStartScale:F
 

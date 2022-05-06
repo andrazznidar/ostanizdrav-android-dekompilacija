@@ -63,7 +63,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    const-wide/32 v0, 0x205a6d
+    const-wide/32 v0, 0x2080b6
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 

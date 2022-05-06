@@ -239,7 +239,7 @@
 
     :cond_4
     :goto_1
-    const p1, 0x3dcccccd
+    const p1, 0x3dcccccd    # 0.1f
 
     iput p1, p0, Landroidx/dynamicanimation/animation/DynamicAnimation;->mMinVisibleChange:F
 

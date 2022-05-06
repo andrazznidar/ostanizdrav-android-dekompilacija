@@ -1071,7 +1071,7 @@
 
     div-float/2addr v1, v2
 
-    const v2, 0x3faa9fbe
+    const v2, 0x3faa9fbe    # 1.333f
 
     div-float v2, v1, v2
 
@@ -1419,7 +1419,7 @@
     goto :goto_1
 
     :cond_3
-    const v0, 0x3d4ccccd
+    const v0, 0x3d4ccccd    # 0.05f
 
     mul-float/2addr v5, v0
 

@@ -720,7 +720,7 @@
 
     move-result v0
 
-    const v1, 0x310888
+    const v1, 0x310888    # 4.503E-39f
 
     if-eq v0, v1, :cond_1
 

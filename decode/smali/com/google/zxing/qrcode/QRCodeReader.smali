@@ -792,7 +792,7 @@
 
     invoke-static {v4, v8}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    const v4, 0x3e4ccccd
+    const v4, 0x3e4ccccd    # 0.2f
 
     mul-float/2addr v4, v7
 

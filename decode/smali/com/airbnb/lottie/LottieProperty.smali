@@ -245,7 +245,7 @@
 
     sput-object v0, Lcom/airbnb/lottie/LottieProperty;->TRANSFORM_START_OPACITY:Ljava/lang/Float;
 
-    const v0, 0x4141999a
+    const v0, 0x4141999a    # 12.1f
 
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 

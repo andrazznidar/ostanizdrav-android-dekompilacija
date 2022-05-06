@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 
 Name: AndroidManifest.xml
-SHA-256-Digest: /oDDw1r8LnZ2qccU8hdiTuWmzfobJFgWz95G6KK43po=
+SHA-256-Digest: zKt9fr92zn5ZU9DCBHkVCeh+fQtH0Yyd1ArOCzBdmTM=
 
 Name: META-INF/androidx.activity_activity-ktx.version
 SHA-256-Digest: EOLhF7AVI4kconGmFa426dXlI0j9fWQvZnJ2AsG43L4=
@@ -305,7 +305,7 @@ Name: assets/privacy_en.html
 SHA-256-Digest: PVmNDw8PdtOdCdiZQAraoaoFV4YsPzQdcvNOTTyj8Jg=
 
 Name: assets/privacy_sl.html
-SHA-256-Digest: dsqKybkhOQWghuWAZCRRbJ7Ic6WbP7f/gjm+mLapOtY=
+SHA-256-Digest: qjVi8hHMZt2pJEQpOwDElD/C3+zAZhPezo9jDhwRR3E=
 
 Name: assets/recovery_certificate_template.pdf
 SHA-256-Digest: LQV3Q7wks72wfeduhmazobb1lepAOqKF2Jd9FHGM7jE=
@@ -335,7 +335,7 @@ Name: build-data.properties
 SHA-256-Digest: vx9cjTIWzh7dzG7okgI0sruSok1zvJZHh6s2y4/ivck=
 
 Name: classes.dex
-SHA-256-Digest: ScHN7WSe5jf2lClBZ+L/deLYfWeaohwLeFc+xPYz0Nw=
+SHA-256-Digest: tG6FeWcPM3WbC0Lgvcpv0jockYeMCrikctBrxyyM2e8=
 
 Name: classes2.dex
 SHA-256-Digest: fkg2bAid0Swn21Hq7CUSs1adCUIN0qzkewHqinc3ptE=
@@ -6055,7 +6055,7 @@ Name: res/raw/zxing_beep.ogg
 SHA-256-Digest: m9b1hW2RYtSkHAFpdu3Ev8Lfu/+dmPBaNipQ+meN1bw=
 
 Name: res/xml/locales_config.xml
-SHA-256-Digest: Pqst2OxXjKKHcgv4yTWBjFg9V9vj/JJF/utK7R+0La4=
+SHA-256-Digest: s5LwQOePxLSdQNENgIICbuHeDCJ6sqyLmOImvkBtweE=
 
 Name: res/xml/network_security_config.xml
 SHA-256-Digest: XbZ33wHuI8wxrF9iOXL0rGE6cUSNwooDVCywUojhqSw=
@@ -6082,7 +6082,7 @@ Name: res/xml/standalone_badge_offset.xml
 SHA-256-Digest: XAiTSUTr0BwaWca4UwqNazXiJruXwf37q0Rahe7Wbao=
 
 Name: resources.arsc
-SHA-256-Digest: EEVQvMtqKLUOoVn177TFaE66BKaTfTiDTImRoYYixUE=
+SHA-256-Digest: tMxQsje0G0pGUbD1i5NSw0t4Uy92thX8E2v+H56ix3Q=
 
 Name: stamp-cert-sha256
 SHA-256-Digest: HZwqAqk4Fv9ceuZPmq0Cwj3kncUUYg2xp61iTSqDZ5w=

@@ -366,7 +366,7 @@
 
     int-to-float p2, p2
 
-    const v4, 0x3f99999a
+    const v4, 0x3f99999a    # 1.2f
 
     mul-float/2addr p2, v4
 

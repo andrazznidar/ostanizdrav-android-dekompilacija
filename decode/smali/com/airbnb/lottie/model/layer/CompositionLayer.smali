@@ -667,7 +667,7 @@
 
     move-result p1
 
-    const v0, 0x3c23d70a
+    const v0, 0x3c23d70a    # 0.01f
 
     add-float/2addr p1, v0
 

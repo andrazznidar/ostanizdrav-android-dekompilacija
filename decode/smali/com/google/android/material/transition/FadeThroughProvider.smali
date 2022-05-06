@@ -92,7 +92,7 @@
 
     const/4 v1, 0x0
 
-    const v3, 0x3eb33333
+    const v3, 0x3eb33333    # 0.35f
 
     const/high16 v4, 0x3f800000    # 1.0f
 
@@ -136,7 +136,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x3eb33333
+    const v4, 0x3eb33333    # 0.35f
 
     move-object v0, p2
 

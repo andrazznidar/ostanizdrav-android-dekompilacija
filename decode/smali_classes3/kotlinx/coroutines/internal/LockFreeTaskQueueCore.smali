@@ -112,7 +112,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x3fffffff
+    const v2, 0x3fffffff    # 1.9999999f
 
     if-gt p2, v2, :cond_0
 
@@ -236,7 +236,7 @@
     :cond_3
     iget-boolean v4, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->singleConsumer:Z
 
-    const v5, 0x3fffffff
+    const v5, 0x3fffffff    # 1.9999999f
 
     if-nez v4, :cond_5
 
@@ -436,7 +436,7 @@
 
     sub-int/2addr v0, v2
 
-    const v1, 0x3fffffff
+    const v1, 0x3fffffff    # 1.9999999f
 
     and-int/2addr v0, v1
 
@@ -689,7 +689,7 @@
     :cond_4
     add-int/lit8 v0, v14, 0x1
 
-    const v1, 0x3fffffff
+    const v1, 0x3fffffff    # 1.9999999f
 
     and-int/2addr v0, v1
 

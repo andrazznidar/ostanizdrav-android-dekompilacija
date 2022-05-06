@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public beginDonation(Lde/rki/coronawarnapp/datadonation/analytics/modules/DonorModule$Request;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,15 +91,15 @@
 
     iget v1, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->label:I
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x1
 
     if-eqz v1, :cond_3
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v3, :cond_2
 
-    if-ne v1, v3, :cond_1
+    if-ne v1, v2, :cond_1
 
     iget-object p1, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->L$0:Ljava/lang/Object;
 
@@ -136,7 +136,7 @@
 
     iput-object p0, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->L$0:Ljava/lang/Object;
 
-    iput v2, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->label:I
+    iput v3, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->label:I
 
     invoke-static {p2, p1}, Lkotlinx/coroutines/flow/FlowKt;->first(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -154,41 +154,39 @@
 
     invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid;->newBuilder()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;
 
-    move-result-object v2
+    move-result-object v4
 
     invoke-static {}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion;->newBuilder()Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v4, v3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setMajor(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
+    invoke-virtual {v5, v2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setMajor(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
-    const/16 v5, 0xc
+    const/16 v6, 0xd
 
-    invoke-virtual {v4, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setMinor(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
+    invoke-virtual {v5, v6}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setMinor(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
-    const/4 v5, 0x3
+    invoke-virtual {v5, v3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setPatch(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
 
-    invoke-virtual {v4, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;->setPatch(I)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion$Builder;
+    move-result-object v3
 
-    move-result-object v4
+    invoke-virtual {v3}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
-    invoke-virtual {v4}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
-
-    move-result-object v4
+    move-result-object v3
 
     const-string v5, "newBuilder()\n           \u2026\n                .build()"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v4, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion;
+    check-cast v3, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion;
 
-    invoke-virtual {v2, v4}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;->setCwaVersion(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion;)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;
+    invoke-virtual {v4, v3}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;->setCwaVersion(Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPASemanticVersion;)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;
 
-    move-result-object v2
+    move-result-object v3
 
     sget-object v4, Lde/rki/coronawarnapp/util/BuildVersionWrap;->INSTANCE:Lde/rki/coronawarnapp/util/BuildVersionWrap;
 
@@ -196,15 +194,15 @@
 
     int-to-long v4, v4
 
-    invoke-virtual {v2, v4, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;->setAndroidApiLevel(J)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;
+    invoke-virtual {v3, v4, v5}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;->setAndroidApiLevel(J)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;
 
-    move-result-object v2
+    move-result-object v3
 
     invoke-interface {p2}, Lde/rki/coronawarnapp/appconfig/ConfigData;->getIdentifier()Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-virtual {v2, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;->setAppConfigETag(Ljava/lang/String;)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;
+    invoke-virtual {v3, p2}, Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;->setAppConfigETag(Ljava/lang/String;)Lde/rki/coronawarnapp/server/protocols/internal/ppdd/PpaData$PPAClientMetadataAndroid$Builder;
 
     move-result-object p2
 
@@ -212,7 +210,7 @@
 
     iput-object p2, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->L$0:Ljava/lang/Object;
 
-    iput v3, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->label:I
+    iput v2, p1, Lde/rki/coronawarnapp/datadonation/analytics/modules/clientmetadata/ClientMetadataDonor$beginDonation$1;->label:I
 
     iget-object v1, v1, Lde/rki/coronawarnapp/nearby/ENFClient;->enfVersion:Lde/rki/coronawarnapp/nearby/modules/version/ENFVersion;
 
@@ -225,11 +223,11 @@
     return-object v0
 
     :cond_5
-    move-object v6, p2
+    move-object v7, p2
 
     move-object p2, p1
 
-    move-object p1, v6
+    move-object p1, v7
 
     :goto_2
     check-cast p2, Ljava/lang/Long;

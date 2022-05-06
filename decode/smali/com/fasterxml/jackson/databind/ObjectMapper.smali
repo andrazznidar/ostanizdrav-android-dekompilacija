@@ -118,7 +118,7 @@
 
     const/16 v3, 0x40
 
-    const v4, 0x3f19999a
+    const v4, 0x3f19999a    # 0.6f
 
     const/4 v5, 0x2
 

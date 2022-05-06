@@ -191,7 +191,7 @@
 
     iget-object p1, p0, Landroidx/core/widget/AutoScrollHelper;->mRelativeEdges:[F
 
-    const v1, 0x3e4ccccd
+    const v1, 0x3e4ccccd    # 0.2f
 
     aput v1, p1, v4
 
@@ -199,7 +199,7 @@
 
     iget-object p1, p0, Landroidx/core/widget/AutoScrollHelper;->mRelativeVelocity:[F
 
-    const v1, 0x3a83126f
+    const v1, 0x3a83126f    # 0.001f
 
     aput v1, p1, v4
 

@@ -55,7 +55,7 @@
 
     move-result p1
 
-    const p2, 0x3dcccccd
+    const p2, 0x3dcccccd    # 0.1f
 
     cmpg-float p2, p1, p2
 
